@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/09/18/Hello_World/</url>
+    <content><![CDATA[<p>I made it! 😃</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>About</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<img src="/images/me.jpg" alt="me on the grass :)" title="me on the grass :)" width="300">  
+<p>Hello, I’m Meng.<br>
+Studying CS and EE, working on professionalization……\ ( &gt; &lt; ) /</p>
+<hr>
+<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> See my <a href="https://mengisok.notion.site/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a><br>
+<span class="emoji" alias="mailbox" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4eb.png?v8">📫</span> <a href="mailto:mengisok@outlook.com">mengisok@outlook.com</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Codes</title>
+    <url>/codes/index.html</url>
+    <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Sitemap</title>
+    <url>/sitemap/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Tools</title>
+    <url>/tools/index.html</url>
+    <content><![CDATA[<h2 id="span-class-emoji-alias-pencil-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f4dd-png-v8-📝-span-To-Blog"><strong><span class="emoji" alias="pencil" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png?v8">📝</span>To Blog</strong></h2>
+<h3 id="Useful-Links"><strong>Useful Links</strong></h3>
+<p><a href="https://hexo.io/">Hexo</a><br>
+<a href="https://theme-next.js.org/">NexT</a></p>
+<span id="more"></span>
+<p><a href="https://www.markdownguide.org/cheat-sheet/">Markdown Guide</a><br>
+<a href="https://fontawesome.com/search">Font Awesome</a><br>
+<a href="https://www.color-hex.com/">Color Hex</a></p>
+<h3 id="Good-Blogs"><strong>Good Blogs</strong></h3>
+<p><a href="https://blog.learn-or-die.com/zh-tw/">Learn or Die</a></p>
+<h2 id="span-class-emoji-alias-computer-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f4bb-png-v8-💻-span-To-Code"><strong><span class="emoji" alias="computer" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png?v8">💻</span>To Code</strong></h2>
+<h3 id="English-Tutorials"><strong>English Tutorials</strong></h3>
+<p><a href="https://www.w3schools.com/">W3Schools</a><br>
+<a href="https://www.tutorialspoint.com/index.htm">Tutorialspoint</a><br>
+<a href="https://www.educative.io/learn">Educative</a></p>
+<h3 id="English-Communities"><strong>English Communities</strong></h3>
+<p><a href="https://leetcode.com/">LeetCode</a><br>
+<a href="https://dev.to/">Dev</a></p>
+<h3 id="中文教程"><strong>中文教程</strong></h3>
+<p><a href="https://www.runoob.com/">菜鸟教程</a></p>
+<h3 id="中文社区"><strong>中文社区</strong></h3>
+<p><a href="https://leetcode.cn/">LeetCode.cn</a></p>
+<h3 id="八股文"><strong>八股文</strong></h3>
+<p><a href="https://www.xiaolincoding.com/">小林coding</a><br>
+<a href="https://javaguide.cn/">JavaGuide</a></p>
+]]></content>
+  </entry>
+</search>
