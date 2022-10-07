@@ -7,11 +7,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>about</title>
     <url>/about/index.html</url>
     <content><![CDATA[<img src="/images/me.jpg" alt="me on the grass" title="me on the grass" width="300">  
@@ -21,6 +16,11 @@ Studying CS and EE, working on professionalization……\ ( &gt; &lt; ) /</p>
 <p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> See my <a href="https://mengisok.notion.site/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a><br>
 <span class="emoji" alias="mailbox" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4eb.png?v8">📫</span> <a href="mailto:mengisok@outlook.com">mengisok@outlook.com</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Codes</title>
