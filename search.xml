@@ -7,7 +7,12 @@
 ]]></content>
   </entry>
   <entry>
-    <title>About</title>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>about</title>
     <url>/about/index.html</url>
     <content><![CDATA[<img src="/images/me.jpg" alt="me on the grass" title="me on the grass" width="300">  
 <p>Hello, I’m Meng.<br>
@@ -24,9 +29,10 @@ Studying CS and EE, working on professionalization……\ ( &gt; &lt; ) /</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
+    <title>Schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
   </entry>
   <entry>
     <title>Sitemap</title>
@@ -38,12 +44,6 @@ Studying CS and EE, working on professionalization……\ ( &gt; &lt; ) /</p>
     <title>Tags</title>
     <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Schedule</title>
-    <url>/schedule/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
   </entry>
   <entry>
     <title>Tools</title>
