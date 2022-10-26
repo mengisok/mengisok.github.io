@@ -35,7 +35,7 @@
 <p>My current progress:<br>
 <img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>
 Congrats to myself and keep it up! 💪🏻</p>
-<h3 id="References">References</h3>
+<p><strong>References</strong></p>
 <div id="refer-anchor-1"></div>
 <p>[1] <a href="https://leetcode.com/explore/learn/card/array-and-string/">Leetcode</a></p>
 <div id="refer-anchor-2"></div>  
@@ -58,26 +58,21 @@ You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to k
 ]]></content>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Codes</title>
     <url>/codes/index.html</url>
     <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
 ]]></content>
   </entry>
   <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Schedule</title>
     <url>/schedule/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Sitemap</title>
@@ -100,5 +95,10 @@ You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to k
 <h2 id="span-class-emoji-alias-computer-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f4bb-png-v8-💻-span-To-Code"><strong><span class="emoji" alias="computer" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png?v8">💻</span>To Code</strong></h2>
 <p><a href="https://leetcode.com/">LeetCode</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
