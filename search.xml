@@ -7,15 +7,31 @@
 ]]></content>
   </entry>
   <entry>
-    <title>about</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<img src="/images/me.png" alt="me" title="me" width="300">  
-<p>Hello, I’m Meng.<br>
-Studying CS and EE, working on professionalization……\ ( &gt; &lt; ) /</p>
-<hr>
-<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> See my <a href="https://mengisok.notion.site/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a><br>
-<span class="emoji" alias="mailbox" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4eb.png?v8">📫</span> <a href="mailto:mengisok@outlook.com">mengisok@outlook.com</a></p>
-]]></content>
+    <title>Two-pointer</title>
+    <url>/2022/10/26/Two-pointer/</url>
+    <content><![CDATA[<p><em>I finished the chapter “Array and String” in Leetcode this month, and learnt an amazing technique called Two-pointer. So I’d like to note it.</em></p>
+<h2 id="Meaning">Meaning</h2>
+<p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
+<h2 id="Application-scenarios">Application scenarios</h2>
+<ol>
+<li>When you want to iterate the array from <strong>two ends to the middle</strong>, you can use one pointer starts from the <strong>beginning</strong> while the other pointer starts from the <strong>end</strong>. They have <strong>same steps</strong>.</li>
+</ol>
+<span id="more"></span>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reverseString</span><span class="params">(<span class="type">char</span>[] s)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> s.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="type">char</span> <span class="variable">temp</span> <span class="operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="comment">// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] numbers, <span class="type">int</span> target) {</span><br><span class="line">        <span class="type">int</span>[] res = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> numbers.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            } <span class="keyword">else</span> <span class="keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="number">0</span>] = start + <span class="number">1</span>;</span><br><span class="line">        res[<span class="number">1</span>] = end + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ol start="2">
+<li>When you want one <strong>slow-runner</strong> and one <strong>fast-runner</strong> at the same time, you can use one pointer for the <strong>iteration</strong> while another one for the <strong>special position</strong>. They have <strong>different steps</strong>.</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Remove Element</span></span><br><span class="line"><span class="comment">// "i" for iteration and "k" for the elements to remove</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeElement</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> val)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="comment">// "i" for iteration and "max" for finding the max number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="params">(<span class="type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) {</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="comment">// "i" for iteration and "j" for the unique elements</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> j + <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Move Zeroes</span></span><br><span class="line"><span class="comment">// "i" for iteration and "k" works on the non-zero elements</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">moveZeroes</span><span class="params">(<span class="type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) {</span><br><span class="line">                <span class="keyword">if</span> (k &lt; n-<span class="number">1</span>) {</span><br><span class="line">                    <span class="keyword">while</span> (nums[k] == <span class="number">0</span> &amp;&amp; k &lt; n-<span class="number">1</span>) {k++; } </span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+      </tags>
   </entry>
   <entry>
     <title>Categories</title>
@@ -26,6 +42,16 @@ Studying CS and EE, working on professionalization……\ ( &gt; &lt; ) /</p>
     <title>Codes</title>
     <url>/codes/index.html</url>
     <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>About</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<img src="/images/me.png" alt="me" title="me" width="300">  
+<p>Hello, I’m Meng.<br>
+Studying CS and EE, working on professionalization……\ ( &gt; &lt; ) /</p>
+<hr>
+<p><span class="emoji" alias="mailbox" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4eb.png?v8">📫</span> <a href="mailto:hanmengisok@gmail.com">hanmengisok@gmail.com</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -51,28 +77,14 @@ Studying CS and EE, working on professionalization……\ ( &gt; &lt; ) /</p>
     <content><![CDATA[<h2 id="span-class-emoji-alias-pencil-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f4dd-png-v8-📝-span-To-Blog"><strong><span class="emoji" alias="pencil" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png?v8">📝</span>To Blog</strong></h2>
 <h3 id="Useful-Links"><strong>Useful Links</strong></h3>
 <p><a href="https://hexo.io/">Hexo</a><br>
-<a href="https://theme-next.js.org/">NexT</a></p>
-<span id="more"></span>
-<p><a href="https://www.markdownguide.org/cheat-sheet/">Markdown Guide</a><br>
+<a href="https://theme-next.js.org/">NexT</a><br>
+<a href="https://www.markdownguide.org/cheat-sheet/">Markdown Guide</a><br>
 <a href="https://fontawesome.com/search">Font Awesome</a><br>
 <a href="https://www.color-hex.com/">Color Hex</a></p>
 <h3 id="Good-Blogs"><strong>Good Blogs</strong></h3>
 <p><a href="https://blog.learn-or-die.com/zh-tw/">Learn or Die</a></p>
 <h2 id="span-class-emoji-alias-computer-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f4bb-png-v8-💻-span-To-Code"><strong><span class="emoji" alias="computer" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png?v8">💻</span>To Code</strong></h2>
-<h3 id="English-Tutorials"><strong>English Tutorials</strong></h3>
-<p><a href="https://www.w3schools.com/">W3Schools</a><br>
-<a href="https://www.tutorialspoint.com/index.htm">Tutorialspoint</a><br>
-<a href="https://www.educative.io/learn">Educative</a></p>
-<h3 id="English-Communities"><strong>English Communities</strong></h3>
-<p><a href="https://leetcode.com/">LeetCode</a><br>
-<a href="https://dev.to/">Dev</a></p>
-<h3 id="中文教程"><strong>中文教程</strong></h3>
-<p><a href="https://www.runoob.com/">菜鸟教程</a></p>
-<h3 id="中文社区"><strong>中文社区</strong></h3>
-<p><a href="https://leetcode.cn/">LeetCode.cn</a></p>
-<h3 id="八股文"><strong>八股文</strong></h3>
-<p><a href="https://www.xiaolincoding.com/">小林coding</a><br>
-<a href="https://javaguide.cn/">JavaGuide</a></p>
+<p><a href="https://leetcode.com/">LeetCode</a></p>
 ]]></content>
   </entry>
 </search>
