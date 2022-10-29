@@ -61,6 +61,11 @@ Congrats to myself and keep it up! 💪🏻</p>
       </tags>
   </entry>
   <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>About</title>
     <url>/about/index.html</url>
     <content><![CDATA[<img src="/images/me.png" alt="me" title="me" width="300">  
@@ -70,13 +75,14 @@ You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to k
 ]]></content>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Schedule</title>
     <url>/schedule/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Sitemap</title>
+    <url>/sitemap/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
   </entry>
@@ -90,12 +96,6 @@ You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to k
     <title>Tags</title>
     <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Sitemap</title>
-    <url>/sitemap/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
   </entry>
   <entry>
     <title>Tools</title>
