@@ -43,7 +43,7 @@
   right: 0;
   top: 27px;
 }
-#PDFBug .panels > div {
+#PDFBug .panels &gt; div {
   padding: 5px;
 }
 #PDFBug button.active {
