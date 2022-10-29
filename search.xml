@@ -7,6 +7,18 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Latex CV</title>
+    <url>/2022/10/29/Latex-CV/</url>
+    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at my CV:</p>
+<div class="pdf-container" data-target="/pdfs/Han_Meng.pdf" data-height="500px"></div>]]></content>
+      <categories>
+        <category>job</category>
+      </categories>
+      <tags>
+        <tag>latex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Two-pointer</title>
     <url>/2022/10/26/Two-pointer/</url>
     <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, it came to a not bad end: I finished the Explore <em>Array and String</em><a href="#refer-anchor-1"><sup>1</sup></a> in Leetcode.</p>
@@ -49,23 +61,6 @@ Congrats to myself and keep it up! 💪🏻</p>
       </tags>
   </entry>
   <entry>
-    <title>Latex CV</title>
-    <url>/2022/10/29/Latex-CV/</url>
-    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at my CV:</p>
-<div class="pdf-container" data-target="/pdfs/Han_Meng.pdf" data-height="500px"></div>]]></content>
-      <categories>
-        <category>job</category>
-      </categories>
-      <tags>
-        <tag>latex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>About</title>
     <url>/about/index.html</url>
     <content><![CDATA[<img src="/images/me.png" alt="me" title="me" width="300">  
@@ -81,10 +76,14 @@ You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to k
 ]]></content>
   </entry>
   <entry>
-    <title>Sitemap</title>
-    <url>/sitemap/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Schedule</title>
@@ -93,9 +92,10 @@ You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to k
 ]]></content>
   </entry>
   <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
+    <title>Sitemap</title>
+    <url>/sitemap/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
   </entry>
   <entry>
     <title>Tools</title>
