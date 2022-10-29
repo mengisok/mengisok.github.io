@@ -61,6 +61,15 @@ Congrats to myself and keep it up! 💪🏻</p>
       </tags>
   </entry>
   <entry>
+    <title>About</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<img src="/images/me.png" alt="me" title="me" width="300">  
+<p>Hello, I’m Meng. I blog to record my learning and growth : )<br>
+You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to know more about my eductaion and career background. And my <a href="https://github.com/mengisok">github</a> is almost empty yet… I’ll work on it!</p>
+<p><span class="emoji" alias="mailbox" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4eb.png?v8">📫</span> Contact me by <a href="mailto:hanmengisok@gmail.com">hanmengisok@gmail.com</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Codes</title>
     <url>/codes/index.html</url>
     <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
@@ -72,23 +81,8 @@ Congrats to myself and keep it up! 💪🏻</p>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>About</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<img src="/images/me.png" alt="me" title="me" width="300">  
-<p>Hello, I’m Meng. I blog to record my learning and growth : )<br>
-You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to know more about my eductaion and career background. And my <a href="https://github.com/mengisok">github</a> is almost empty yet… I’ll work on it!</p>
-<p><span class="emoji" alias="mailbox" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4eb.png?v8">📫</span> Contact me by <a href="mailto:hanmengisok@gmail.com">hanmengisok@gmail.com</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Schedule</title>
     <url>/schedule/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Sitemap</title>
-    <url>/sitemap/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
   </entry>
@@ -96,6 +90,12 @@ You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to k
     <title>Tags</title>
     <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Sitemap</title>
+    <url>/sitemap/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
   </entry>
   <entry>
     <title>Tools</title>
