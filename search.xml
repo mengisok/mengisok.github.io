@@ -9,25 +9,43 @@
   <entry>
     <title>Latex CV</title>
     <url>/2022/10/29/Latex-CV/</url>
-    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a></p>
+    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
 <p>Here’s how I did it:</p>
-<ol>
-<li>If you only use latex occasionally or a few times, an onilne latex Overleaf can save you lots of troubles. You can find templates, edit and compile them online.</li>
-<li>If you want to do more things, use following steps:</li>
-</ol>
+<p>-&gt; If you only use latex occasionally or a few times, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
+-&gt; If you want to do more things, use following steps:</p>
 <span id="more"></span>
 <h2 id="Download-MiKTeX-and-VSCode">Download MiKTeX and VSCode</h2>
-<p>MiKTeX<br>
-You will get MiKTeX Consle and TeXworks. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
+<p><strong>MiKTeX</strong><br>
+You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
 Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.</p>
-<p>VSCode<br>
+<p><strong>VSCode</strong><br>
 Remember to download extension <em>latex workshop</em>.</p>
 <h2 id="Find-a-template">Find a template</h2>
 <p>On Overleaf or Github.<br>
-Here are my favorites:</p>
+Here are my favorites:<br>
+<a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">新卒のためのLaTeX履歴書テンプレート</a><br>
+<a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>
+And mine:<br>
+<a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)</p>
+<h2 id="Edit-the-template">Edit the template</h2>
+<p>You may encounter many problems at this step, most of which require you to download <em>Packages</em> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</p>
+<h2 id="Share-your-template">Share your template</h2>
+<ol>
+<li>Git your template to github<br>
+(Already bound git and your github accounts and set SSH key)<br>
+-&gt; Create a new repository<br>
+-&gt; Git bash the folder which contains full files about your template<br>
+-&gt; Run the following code in Git:</li>
+</ol>
+<pre><code>git init
+git add .
+git commit -m 'Description'
+git remote add origin https://...  (copy from github)
+git push -u origin master
+</code></pre>
 <ol start="2">
-<li>Use VSCode to edit the template and preview pdf. You may encounter many problems at this step, most of which require you to download <em>Packages</em> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</li>
-<li></li>
+<li>Submit to Overleaf<br>
+That’s where I found the original template for my CV! I think put templates there may help more people.</li>
 </ol>
 ]]></content>
       <categories>
@@ -100,6 +118,11 @@ You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to k
 ]]></content>
   </entry>
   <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Codes</title>
     <url>/codes/index.html</url>
     <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
@@ -126,10 +149,5 @@ You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to k
 <h2 id="span-class-emoji-alias-computer-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f4bb-png-v8-💻-span-To-Code"><strong><span class="emoji" alias="computer" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png?v8">💻</span>To Code</strong></h2>
 <p><a href="https://leetcode.com/">LeetCode</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
