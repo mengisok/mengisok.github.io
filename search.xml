@@ -7,6 +7,32 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Latex CV</title>
+    <url>/2022/10/29/Latex-CV/</url>
+    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a></p>
+<span id="more"></span>
+<p>Here’s how I did it:</p>
+<h2 id="Required-tools">Required tools</h2>
+<p>MiKTeX<br>
+You will get MiKTeX Consle and TeXworks. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window.<br>
+Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.<br>
+VSCode<br>
+Remember to download extension <em>latex workshop</em>.</p>
+<h2 id="Steps">Steps</h2>
+<ol>
+<li>Find a template on Overleaf or Github.</li>
+<li>Use VSCode to edit the template and preview pdf. You may encounter many problems at this step, most of which require you to download <em>Packages</em> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</li>
+<li></li>
+</ol>
+]]></content>
+      <categories>
+        <category>job</category>
+      </categories>
+      <tags>
+        <tag>latex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Two-pointer</title>
     <url>/2022/10/26/Two-pointer/</url>
     <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, it came to a not bad end: I finished the Explore <em>Array and String</em><a href="#refer-anchor-1"><sup>1</sup></a> in Leetcode.</p>
@@ -49,26 +75,9 @@ Congrats to myself and keep it up! 💪🏻</p>
       </tags>
   </entry>
   <entry>
-    <title>Latex CV</title>
-    <url>/2022/10/29/Latex-CV/</url>
-    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a></p>
-<span id="more"></span>
-<p>Here’s how I did it:</p>
-<h2 id="Required-tools">Required tools</h2>
-<p>MiKTeX, VSCode (download extension <em>latex workshop</em>)</p>
-<h2 id="Steps">Steps</h2>
-<ol>
-<li>Find a template on Overleaf or Github.</li>
-<li>Use VSCode to edit the template and preview pdf. You may come across many problems in this step,</li>
-<li></li>
-</ol>
-]]></content>
-      <categories>
-        <category>job</category>
-      </categories>
-      <tags>
-        <tag>latex</tag>
-      </tags>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>About</title>
@@ -77,17 +86,6 @@ Congrats to myself and keep it up! 💪🏻</p>
 <p>Hello, I’m Meng. I blog to record my learning and growth : )<br>
 You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to know more about my eductaion and career background. And my <a href="https://github.com/mengisok">github</a> is almost empty yet… I’ll work on it!</p>
 <p><span class="emoji" alias="mailbox" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4eb.png?v8">📫</span> Contact me by <a href="mailto:hanmengisok@gmail.com">hanmengisok@gmail.com</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Codes</title>
-    <url>/codes/index.html</url>
-    <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
 ]]></content>
   </entry>
   <entry>
@@ -101,6 +99,17 @@ You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to k
     <url>/sitemap/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Codes</title>
+    <url>/codes/index.html</url>
+    <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Tools</title>
@@ -117,10 +126,5 @@ You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to k
 <h2 id="span-class-emoji-alias-computer-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f4bb-png-v8-💻-span-To-Code"><strong><span class="emoji" alias="computer" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bb.png?v8">💻</span>To Code</strong></h2>
 <p><a href="https://leetcode.com/">LeetCode</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
