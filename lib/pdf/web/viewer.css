@@ -110,7 +110,7 @@
 
 
 :root {
-  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width="1px" height="1px" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" style="fill:rgba(0, 54, 255, 0.13);"></rect></svg>");
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
   --input-focus-border-color: Highlight;
   --input-focus-outline: 1px solid Canvas;
   --input-unfocused-border-color: transparent;
@@ -150,8 +150,8 @@
   transform-origin: 0 0;
 }
 
-.annotationLayer .linkAnnotation &gt; a,
-.annotationLayer .buttonWidgetAnnotation.pushButton &gt; a {
+.annotationLayer .linkAnnotation > a,
+.annotationLayer .buttonWidgetAnnotation.pushButton > a {
   position: absolute;
   font-size: 1em;
   top: 0;
@@ -160,13 +160,13 @@
   height: 100%;
 }
 
-.annotationLayer .buttonWidgetAnnotation.pushButton &gt; canvas {
+.annotationLayer .buttonWidgetAnnotation.pushButton > canvas {
   width: 100%;
   height: 100%;
 }
 
-.annotationLayer .linkAnnotation &gt; a:hover,
-.annotationLayer .buttonWidgetAnnotation.pushButton &gt; a:hover {
+.annotationLayer .linkAnnotation > a:hover,
+.annotationLayer .buttonWidgetAnnotation.pushButton > a:hover {
   opacity: 0.2;
   background: rgba(255, 255, 0, 1);
   box-shadow: 0 2px 10px rgba(255, 255, 0, 1);
@@ -348,7 +348,7 @@
   pointer-events: auto;
 }
 
-.annotationLayer .popup &gt; * {
+.annotationLayer .popup > * {
   font-size: calc(9px * var(--scale-factor));
 }
 
@@ -367,7 +367,7 @@
   padding-top: calc(2px * var(--scale-factor));
 }
 
-.annotationLayer .richText &gt; * {
+.annotationLayer .richText > * {
   white-space: pre-wrap;
   font-size: calc(9px * var(--scale-factor));
 }
@@ -414,7 +414,7 @@
 
 
 :root {
-  --xfa-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width="1px" height="1px" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" style="fill:rgba(0, 54, 255, 0.13);"></rect></svg>");
+  --xfa-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
   --xfa-focus-outline: auto;
 }
 
@@ -559,10 +559,10 @@
   align-items: center;
 }
 
-.xfaLeft &gt; .xfaCaption,
-.xfaLeft &gt; .xfaCaptionForCheckButton,
-.xfaRight &gt; .xfaCaption,
-.xfaRight &gt; .xfaCaptionForCheckButton {
+.xfaLeft > .xfaCaption,
+.xfaLeft > .xfaCaptionForCheckButton,
+.xfaRight > .xfaCaption,
+.xfaRight > .xfaCaptionForCheckButton {
   max-height: 100%;
 }
 
@@ -578,10 +578,10 @@
   align-items: flex-start;
 }
 
-.xfaTop &gt; .xfaCaption,
-.xfaTop &gt; .xfaCaptionForCheckButton,
-.xfaBottom &gt; .xfaCaption,
-.xfaBottom &gt; .xfaCaptionForCheckButton {
+.xfaTop > .xfaCaption,
+.xfaTop > .xfaCaptionForCheckButton,
+.xfaBottom > .xfaCaption,
+.xfaBottom > .xfaCaptionForCheckButton {
   width: 100%;
 }
 
@@ -625,10 +625,10 @@
   padding-inline: 2px;
 }
 
-.xfaTop &gt; .xfaTextfield,
-.xfaTop &gt; .xfaSelect,
-.xfaBottom &gt; .xfaTextfield,
-.xfaBottom &gt; .xfaSelect {
+.xfaTop > .xfaTextfield,
+.xfaTop > .xfaSelect,
+.xfaBottom > .xfaTextfield,
+.xfaBottom > .xfaSelect {
   flex: 0 1 auto;
 }
 
@@ -691,7 +691,7 @@
   align-items: stretch;
 }
 
-.xfaTb &gt; div {
+.xfaTb > div {
   justify-content: left;
 }
 
@@ -727,7 +727,7 @@
   flex: 1;
 }
 
-.xfaTable .xfaRlRow &gt; div {
+.xfaTable .xfaRlRow > div {
   flex: 1;
 }
 
@@ -1287,7 +1287,7 @@ body {
   cursor: none;
 }
 
-.pdfPresentationMode.pdfPresentationModeControls &gt; *,
+.pdfPresentationMode.pdfPresentationModeControls > *,
 .pdfPresentationMode.pdfPresentationModeControls .textLayer span {
   cursor: default;
 }
@@ -1612,24 +1612,24 @@ body {
   min-width: 300px;
   background-color: var(--toolbar-bg-color);
 }
-.findbar &gt; div {
+.findbar > div {
   height: 32px;
 }
-[dir="ltr"] .findbar &gt; div#findbarInputContainer {
+[dir="ltr"] .findbar > div#findbarInputContainer {
   margin-right: 4px;
 }
-[dir="rtl"] .findbar &gt; div#findbarInputContainer {
+[dir="rtl"] .findbar > div#findbarInputContainer {
   margin-left: 4px;
 }
-.findbar &gt; div#findbarInputContainer {
+.findbar > div#findbarInputContainer {
   -webkit-margin-end: 4px;
           margin-inline-end: 4px;
 }
-.findbar.wrapContainers &gt; div,
-.findbar.wrapContainers &gt; div#findbarMessageContainer &gt; * {
+.findbar.wrapContainers > div,
+.findbar.wrapContainers > div#findbarMessageContainer > * {
   clear: both;
 }
-.findbar.wrapContainers &gt; div#findbarMessageContainer {
+.findbar.wrapContainers > div#findbarMessageContainer {
   height: auto;
 }
 
@@ -1695,7 +1695,7 @@ body {
   margin-bottom: -4px;
 }
 
-.editorParamsToolbarContainer &gt; .editorParamsSetter {
+.editorParamsToolbarContainer > .editorParamsSetter {
   min-height: 26px;
   display: flex;
   align-items: center;
@@ -1926,27 +1926,27 @@ body {
   float: inline-end;
 }
 
-[dir="ltr"] #toolbarViewerLeft &gt; *,[dir="ltr"] 
-#toolbarViewerMiddle &gt; *,[dir="ltr"] 
-#toolbarViewerRight &gt; *,[dir="ltr"] 
+[dir="ltr"] #toolbarViewerLeft > *,[dir="ltr"] 
+#toolbarViewerMiddle > *,[dir="ltr"] 
+#toolbarViewerRight > *,[dir="ltr"] 
 #toolbarSidebarLeft *,[dir="ltr"] 
 #toolbarSidebarRight *,[dir="ltr"] 
 .findbar * {
   float: left;
 }
 
-[dir="rtl"] #toolbarViewerLeft &gt; *,[dir="rtl"] 
-#toolbarViewerMiddle &gt; *,[dir="rtl"] 
-#toolbarViewerRight &gt; *,[dir="rtl"] 
+[dir="rtl"] #toolbarViewerLeft > *,[dir="rtl"] 
+#toolbarViewerMiddle > *,[dir="rtl"] 
+#toolbarViewerRight > *,[dir="rtl"] 
 #toolbarSidebarLeft *,[dir="rtl"] 
 #toolbarSidebarRight *,[dir="rtl"] 
 .findbar * {
   float: right;
 }
 
-#toolbarViewerLeft &gt; *,
-#toolbarViewerMiddle &gt; *,
-#toolbarViewerRight &gt; *,
+#toolbarViewerLeft > *,
+#toolbarViewerMiddle > *,
+#toolbarViewerRight > *,
 #toolbarSidebarLeft *,
 #toolbarSidebarRight *,
 .findbar * {
@@ -1991,13 +1991,13 @@ body {
   margin: 2px;
   display: inline-block;
 }
-[dir="ltr"] .splitToolbarButton &gt; .toolbarButton {
+[dir="ltr"] .splitToolbarButton > .toolbarButton {
   float: left;
 }
-[dir="rtl"] .splitToolbarButton &gt; .toolbarButton {
+[dir="rtl"] .splitToolbarButton > .toolbarButton {
   float: right;
 }
-.splitToolbarButton &gt; .toolbarButton {
+.splitToolbarButton > .toolbarButton {
   float: inline-start;
 }
 
@@ -2016,12 +2016,12 @@ body {
   background-color: var(--dialog-button-hover-bg-color);
 }
 
-.dialogButton:hover &gt; span,
-.dialogButton:focus-visible &gt; span {
+.dialogButton:hover > span,
+.dialogButton:focus-visible > span {
   color: var(--dialog-button-hover-color);
 }
 
-.toolbarButton &gt; span {
+.toolbarButton > span {
   display: inline-block;
   width: 0;
   height: 0;
@@ -2034,22 +2034,22 @@ body {
   opacity: 0.5;
 }
 
-.splitToolbarButton &gt; .toolbarButton:hover,
-.splitToolbarButton &gt; .toolbarButton:focus-visible,
+.splitToolbarButton > .toolbarButton:hover,
+.splitToolbarButton > .toolbarButton:focus-visible,
 .dropdownToolbarButton:hover {
   background-color: var(--button-hover-color);
 }
-.splitToolbarButton &gt; .toolbarButton {
+.splitToolbarButton > .toolbarButton {
   position: relative;
   margin: 0;
 }
-[dir="ltr"] #toolbarSidebar .splitToolbarButton &gt; .toolbarButton {
+[dir="ltr"] #toolbarSidebar .splitToolbarButton > .toolbarButton {
   margin-right: 2px;
 }
-[dir="rtl"] #toolbarSidebar .splitToolbarButton &gt; .toolbarButton {
+[dir="rtl"] #toolbarSidebar .splitToolbarButton > .toolbarButton {
   margin-left: 2px;
 }
-#toolbarSidebar .splitToolbarButton &gt; .toolbarButton {
+#toolbarSidebar .splitToolbarButton > .toolbarButton {
   -webkit-margin-end: 2px;
           margin-inline-end: 2px;
 }
@@ -2100,7 +2100,7 @@ body {
 }
 
 .toolbarButton.toggled,
-.splitToolbarButton.toggled &gt; .toolbarButton.toggled,
+.splitToolbarButton.toggled > .toolbarButton.toggled,
 .secondaryToolbarButton.toggled {
   background-color: var(--toggled-btn-bg-color);
   color: var(--toggled-btn-color);
@@ -2112,7 +2112,7 @@ body {
 }
 
 .toolbarButton.toggled:hover:active,
-.splitToolbarButton.toggled &gt; .toolbarButton.toggled:hover:active,
+.splitToolbarButton.toggled > .toolbarButton.toggled:hover:active,
 .secondaryToolbarButton.toggled:hover:active {
   background-color: var(--toggled-hover-active-btn-color);
 }
@@ -2137,15 +2137,15 @@ body {
           mask-image: var(--toolbarButton-menuArrow-icon);
 }
 
-[dir="ltr"] .dropdownToolbarButton &gt; select {
+[dir="ltr"] .dropdownToolbarButton > select {
   padding-left: 6px;
 }
 
-[dir="rtl"] .dropdownToolbarButton &gt; select {
+[dir="rtl"] .dropdownToolbarButton > select {
   padding-right: 6px;
 }
 
-.dropdownToolbarButton &gt; select {
+.dropdownToolbarButton > select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -2160,12 +2160,12 @@ body {
   border: none;
   background-color: var(--dropdown-btn-bg-color);
 }
-.dropdownToolbarButton &gt; select:hover,
-.dropdownToolbarButton &gt; select:focus-visible {
+.dropdownToolbarButton > select:hover,
+.dropdownToolbarButton > select:focus-visible {
   background-color: var(--button-hover-color);
   color: var(--toggled-btn-color);
 }
-.dropdownToolbarButton &gt; select &gt; option {
+.dropdownToolbarButton > select > option {
   background: var(--doorhanger-bg-color);
   color: var(--main-color);
 }
@@ -2401,13 +2401,13 @@ a.secondaryToolbarButton[href="#"] {
   box-sizing: border-box;
   display: inline-block;
 }
-[dir="ltr"] .secondaryToolbarButton &gt; span {
+[dir="ltr"] .secondaryToolbarButton > span {
   padding-right: 4px;
 }
-[dir="rtl"] .secondaryToolbarButton &gt; span {
+[dir="rtl"] .secondaryToolbarButton > span {
   padding-left: 4px;
 }
-.secondaryToolbarButton &gt; span {
+.secondaryToolbarButton > span {
   -webkit-padding-end: 4px;
           padding-inline-end: 4px;
 }
@@ -2593,8 +2593,8 @@ a.secondaryToolbarButton[href="#"] {
   padding: 10px 30px 0;
 }
 
-#thumbnailView &gt; a:active,
-#thumbnailView &gt; a:focus {
+#thumbnailView > a:active,
+#thumbnailView > a:focus {
   outline: 0;
 }
 
@@ -2611,10 +2611,10 @@ a.secondaryToolbarButton[href="#"] {
   margin: 0 10px 5px;
 }
 
-#thumbnailView &gt; a:last-of-type &gt; .thumbnail {
+#thumbnailView > a:last-of-type > .thumbnail {
   margin-bottom: 10px;
 }
-#thumbnailView &gt; a:last-of-type &gt; .thumbnail:not([data-loaded]) {
+#thumbnailView > a:last-of-type > .thumbnail:not([data-loaded]) {
   margin-bottom: 9px;
 }
 
@@ -2637,53 +2637,53 @@ a.secondaryToolbarButton[href="#"] {
   padding: 7px;
 }
 
-a:focus &gt; .thumbnail &gt; .thumbnailSelectionRing &gt; .thumbnailImage,
-.thumbnail:hover &gt; .thumbnailSelectionRing &gt; .thumbnailImage {
+a:focus > .thumbnail > .thumbnailSelectionRing > .thumbnailImage,
+.thumbnail:hover > .thumbnailSelectionRing > .thumbnailImage {
   opacity: 0.9;
 }
 
-a:focus &gt; .thumbnail &gt; .thumbnailSelectionRing,
-.thumbnail:hover &gt; .thumbnailSelectionRing {
+a:focus > .thumbnail > .thumbnailSelectionRing,
+.thumbnail:hover > .thumbnailSelectionRing {
   background-color: var(--sidebaritem-bg-color);
   background-clip: padding-box;
   color: rgba(255, 255, 255, 0.9);
 }
 
-.thumbnail.selected &gt; .thumbnailSelectionRing &gt; .thumbnailImage {
+.thumbnail.selected > .thumbnailSelectionRing > .thumbnailImage {
   opacity: 1;
 }
 
-.thumbnail.selected &gt; .thumbnailSelectionRing {
+.thumbnail.selected > .thumbnailSelectionRing {
   background-color: var(--sidebaritem-bg-color);
   background-clip: padding-box;
   color: rgba(255, 255, 255, 1);
 }
 
-[dir="ltr"] .treeWithDeepNesting &gt; .treeItem,[dir="ltr"] 
-.treeItem &gt; .treeItems {
+[dir="ltr"] .treeWithDeepNesting > .treeItem,[dir="ltr"] 
+.treeItem > .treeItems {
   margin-left: 20px;
 }
 
-[dir="rtl"] .treeWithDeepNesting &gt; .treeItem,[dir="rtl"] 
-.treeItem &gt; .treeItems {
+[dir="rtl"] .treeWithDeepNesting > .treeItem,[dir="rtl"] 
+.treeItem > .treeItems {
   margin-right: 20px;
 }
 
-.treeWithDeepNesting &gt; .treeItem,
-.treeItem &gt; .treeItems {
+.treeWithDeepNesting > .treeItem,
+.treeItem > .treeItems {
   -webkit-margin-start: 20px;
           margin-inline-start: 20px;
 }
 
-[dir="ltr"] .treeItem &gt; a {
+[dir="ltr"] .treeItem > a {
   padding-left: 4px;
 }
 
-[dir="rtl"] .treeItem &gt; a {
+[dir="rtl"] .treeItem > a {
   padding-right: 4px;
 }
 
-.treeItem &gt; a {
+.treeItem > a {
   text-decoration: none;
   display: inline-block;
   /* Subtract the right padding (left, in RTL mode) of the container: */
@@ -2704,26 +2704,26 @@ a:focus &gt; .thumbnail &gt; .thumbnailSelectionRing,
   cursor: pointer;
 }
 
-#layersView .treeItem &gt; a * {
+#layersView .treeItem > a * {
   cursor: pointer;
 }
-[dir="ltr"] #layersView .treeItem &gt; a &gt; label {
+[dir="ltr"] #layersView .treeItem > a > label {
   padding-left: 4px;
 }
-[dir="rtl"] #layersView .treeItem &gt; a &gt; label {
+[dir="rtl"] #layersView .treeItem > a > label {
   padding-right: 4px;
 }
-#layersView .treeItem &gt; a &gt; label {
+#layersView .treeItem > a > label {
   -webkit-padding-start: 4px;
           padding-inline-start: 4px;
 }
-[dir="ltr"] #layersView .treeItem &gt; a &gt; label &gt; input {
+[dir="ltr"] #layersView .treeItem > a > label > input {
   float: left;
 }
-[dir="rtl"] #layersView .treeItem &gt; a &gt; label &gt; input {
+[dir="rtl"] #layersView .treeItem > a > label > input {
   float: right;
 }
-#layersView .treeItem &gt; a &gt; label &gt; input {
+#layersView .treeItem > a > label > input {
   float: inline-start;
   margin-top: 1px;
 }
@@ -2763,7 +2763,7 @@ a:focus &gt; .thumbnail &gt; .thumbnailSelectionRing,
   display: none;
 }
 
-.treeItem.selected &gt; a {
+.treeItem.selected > a {
   background-color: var(--treeitem-selected-bg-color);
   color: var(--treeitem-selected-color);
 }
@@ -2771,7 +2771,7 @@ a:focus &gt; .thumbnail &gt; .thumbnailSelectionRing,
 .treeItemToggler:hover,
 .treeItemToggler:hover + a,
 .treeItemToggler:hover ~ .treeItems,
-.treeItem &gt; a:hover {
+.treeItem > a:hover {
   background-color: var(--sidebaritem-bg-color);
   background-clip: padding-box;
   border-radius: 2px;
@@ -2807,11 +2807,11 @@ dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-dialog &gt; .row {
+dialog > .row {
   display: table-row;
 }
 
-dialog &gt; .row &gt; * {
+dialog > .row > * {
   display: table-cell;
 }
 
@@ -2846,21 +2846,21 @@ dialog :link {
 #documentPropertiesDialog {
   text-align: left;
 }
-[dir="ltr"] #documentPropertiesDialog .row &gt; * {
+[dir="ltr"] #documentPropertiesDialog .row > * {
   text-align: left;
 }
-[dir="rtl"] #documentPropertiesDialog .row &gt; * {
+[dir="rtl"] #documentPropertiesDialog .row > * {
   text-align: right;
 }
-#documentPropertiesDialog .row &gt; * {
+#documentPropertiesDialog .row > * {
   min-width: 100px;
   text-align: start;
 }
-#documentPropertiesDialog .row &gt; span {
+#documentPropertiesDialog .row > span {
   width: 125px;
   word-wrap: break-word;
 }
-#documentPropertiesDialog .row &gt; p {
+#documentPropertiesDialog .row > p {
   max-width: 225px;
   word-wrap: break-word;
 }
@@ -2911,7 +2911,7 @@ dialog :link {
     height: 100%;
   }
   /* wrapper around (scaled) print canvas elements */
-  #printContainer &gt; .printedPage {
+  #printContainer > .printedPage {
     page-break-after: always;
     page-break-inside: avoid;
 
@@ -2925,11 +2925,11 @@ dialog :link {
     align-items: center;
   }
 
-  #printContainer &gt; .xfaPrintedPage .xfaPage {
+  #printContainer > .xfaPrintedPage .xfaPage {
     position: absolute;
   }
 
-  #printContainer &gt; .xfaPrintedPage {
+  #printContainer > .xfaPrintedPage {
     page-break-after: always;
     page-break-inside: avoid;
     width: 100%;
@@ -2937,8 +2937,8 @@ dialog :link {
     position: relative;
   }
 
-  #printContainer &gt; .printedPage canvas,
-  #printContainer &gt; .printedPage img {
+  #printContainer > .printedPage canvas,
+  #printContainer > .printedPage img {
     /* The intrinsic canvas / image size will make sure that we fit the page. */
     max-width: 100%;
     max-height: 100%;
