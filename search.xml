@@ -132,15 +132,23 @@ You can see my <a href="https://www.linkedin.com/in/mengisok/">linkedin</a> to k
 ]]></content>
   </entry>
   <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Links</title>
+    <url>/links/index.html</url>
+    <content><![CDATA[<p>Here’s a list of some <strong>blogs</strong>, which are amazing and worth learning:<br>
+<a href="https://blog.learn-or-die.com/index.html">Learn or Die</a><br>
+<a href="https://einverne.github.io/">Ein Verne</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Codes</title>
     <url>/codes/index.html</url>
     <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Schedule</title>
