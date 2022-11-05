@@ -56,6 +56,31 @@ That’s where I found the original template for my CV! I think put templates th
       </tags>
   </entry>
   <entry>
+    <title>October Summary</title>
+    <url>/2022/10/31/October-Summary/</url>
+    <content><![CDATA[<p>This October is the second month of the new semester, and a lot has happened during this period–I even wanted to quit from school because I was eager to go abroad😂 (you know, the deterioration of the political environment and the popularity of “runology”). But when I calmed down, I realized that the most important thing was to enhance my capabilities, which I could only count on, before I’m strong enough. Thus I keep telling myself: learn as you can, no matter what’s going on around you.</p>
+<p>Today is also Halloween. I’m typing under the quilt in the last hour of today. Hope I’ll be celebrating today in the future aha!</p>
+<span id="more"></span>
+<p>So here’s my October –</p>
+<h2 id="Programming">Programming</h2>
+<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
+<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
+<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
+<h2 id="Language">Language</h2>
+<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
+<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
+<h2 id="Other">Other</h2>
+<p>As for movies or books, unfortunately almost none. Life’s so short. (I use more than Python🤭)</p>
+<p>OK bye for now! It’s midnight.</p>
+]]></content>
+      <categories>
+        <category>sum up</category>
+      </categories>
+      <tags>
+        <tag>mood</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Two-pointer</title>
     <url>/2022/10/26/Two-pointer/</url>
     <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, it came to a not bad end: I finished the Explore <em>Array and String</em><a href="#refer-anchor-1"><sup>1</sup></a> in Leetcode.</p>
@@ -98,31 +123,6 @@ Congrats to myself and keep it up! 💪🏻</p>
       </tags>
   </entry>
   <entry>
-    <title>October Summary</title>
-    <url>/2022/10/31/October-Summary/</url>
-    <content><![CDATA[<p>This October is the second month of the new semester, and a lot has happened during this period–I even wanted to quit from school because I was eager to go abroad😂 (you know, the deterioration of the political environment and the popularity of “runology”). But when I calmed down, I realized that the most important thing was to enhance my capabilities, which I could only count on, before I’m strong enough. Thus I keep telling myself: learn as you can, no matter what’s going on around you.</p>
-<p>Today is also Halloween. I’m typing under the quilt in the last hour of today. Hope I’ll be celebrating today in the future aha!</p>
-<span id="more"></span>
-<p>So here’s my October –</p>
-<h2 id="Programming">Programming</h2>
-<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
-<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
-<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
-<h2 id="Language">Language</h2>
-<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
-<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
-<h2 id="Other">Other</h2>
-<p>As for movies or books, unfortunately almost none. Life’s so short. (I use more than Python🤭)</p>
-<p>OK bye for now! It’s midnight.</p>
-]]></content>
-      <categories>
-        <category>sum up</category>
-      </categories>
-      <tags>
-        <tag>mood</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Notes</title>
     <url>/Notes/index.html</url>
     <content><![CDATA[<h2 id="Course-Notes">Course Notes</h2>
@@ -139,9 +139,12 @@ Congrats to myself and keep it up! 💪🏻</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
+    <title>Links</title>
+    <url>/links/index.html</url>
+    <content><![CDATA[<h2 id="Amazing-Blogs">Amazing Blogs</h2>
+<p><a href="https://blog.learn-or-die.com/index.html">Learn or Die</a><br>
+<a href="https://einverne.github.io/">Ein Verne</a></p>
+]]></content>
   </entry>
   <entry>
     <title>Codes</title>
@@ -150,17 +153,14 @@ Congrats to myself and keep it up! 💪🏻</p>
 ]]></content>
   </entry>
   <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Schedule</title>
     <url>/schedule/index.html</url>
     <content><![CDATA[<p>Test.</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Links</title>
-    <url>/links/index.html</url>
-    <content><![CDATA[<h2 id="Amazing-Blogs">Amazing Blogs</h2>
-<p><a href="https://blog.learn-or-die.com/index.html">Learn or Die</a><br>
-<a href="https://einverne.github.io/">Ein Verne</a></p>
 ]]></content>
   </entry>
   <entry>
