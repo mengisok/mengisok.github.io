@@ -88,116 +88,6 @@ It’s a fresh new concept to me. Sounds interesting that you can develop a web 
       </tags>
   </entry>
   <entry>
-    <title>Adaptive Filters</title>
-    <url>/2022/11/19/Adaptive-Filters/</url>
-    <content><![CDATA[<p>I watched a well-organized and concise youtube video titled <a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a>, which is also a basic course I am taking this semester. I focused on the key points in my course and made a bit of notes.</p>
-<h2 id="Limitations-of-fixed-coefficient-digital-filters">Limitations of fixed-coefficient digital filters</h2>
-<ul>
-<li>Fixed-coefficient digital filters
-<ul>
-<li>FIR, IIR</li>
-<li>LP, HP, etc</li>
-</ul>
-</li>
-<li>Limitations
-<ul>
-<li>Time-varying noise-frequency</li>
-<li>Overlapping bands of signal and noise</li>
-</ul>
-</li>
-</ul>
-<h2 id="Adaptive-filters">Adaptive filters</h2>
-<img src="/images/adaptive_filter.png" alt="adaptive_filter" title="adaptive_filter" width="400"> 
-<ul>
-<li>2 main components
-<ul>
-<li>Digital filter (with <strong>adjustable</strong> coefficients)</li>
-<li>Adaptive algorithm</li>
-</ul>
-</li>
-<li>2 input signals: $y_k$ and $x_k$
-<ul>
-<li>$y_k = s_k + n_k$</li>
-<li>$s_k$ = desired signal</li>
-<li>$n_k$ = noise</li>
-<li>$x_k$ = contaminating signal which is <strong>correlated with $n_k$</strong>, gives an estimate of $n_k$, i.e. $\hat{n_k}$</li>
-</ul>
-</li>
-<li>Goal: produce <strong>optimum</strong> $\hat{n_k}$
-<ul>
-<li>$e_k = \hat{s_k} = y_k - \hat{n_k} = s_k + n_k - \hat{n_k}$</li>
-</ul>
-</li>
-<li>Theorem: <strong>minimize $e_k$, maximize the signal-to-noise ratio</strong></li>
-</ul>
-<h2 id="LMS-algorithm">LMS algorithm</h2>
-<h3 id="Wiener-filter">Wiener filter</h3>
-<img src="/images/wiener_filter.png" alt="wiener_filter" title="wiener_filter" width="400"> 
-<ul>
-<li>An input signal&nbsp;<em>w(n)</em> is convolved w ith the Wiener filter&nbsp;<em>g(n)</em> and the result is compared to a reference signal&nbsp;<em>s(n)</em> to obtain the filtering error&nbsp;<em>e(n)</em></li>
-<li>Criterion: <strong>MMSE</strong> (Minimum Mean Square Error)
-<ul>
-<li>Minimize $J = E[e(n)^2] = E[(x(n) - s(n))^2] = E[(w(n) * g(n) - s(n))^2]$</li>
-<li><em>J</em> can be used to draw the <strong>Error-Performance surface</strong></li>
-</ul>
-</li>
-<li>The&nbsp;<a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">Least mean squares filter</a> converges to the&nbsp;<a href="https://en.wikipedia.org/wiki/Wiener_filter">Wiener filter</a></li>
-</ul>
-<h3 id="Wiener-Hopf-solution">Wiener-Hopf solution</h3>
-<p>Set gradient of <em>J</em> of <em>H</em> to zero, deduced that<br>
-$H_{opt} = R_{xx}^{-1} R_{xs}$</p>
-<p>where<br>
-$R_{xx} = E(X_k X_k^T)$<br>
-$R_{xs} = E(y_k X_k)$</p>
-<ul>
-<li>Requires knowledge of $R_{xx}, R_{xs}$</li>
-<li>Matrix inversion is expensive</li>
-<li>For non-stationary, $H_{opt}$ needs to be computed repeatedly</li>
-</ul>
-<h3 id="LMS-adaptive-algorithm">LMS adaptive algorithm</h3>
-<p>Version 1: $H(n+1) = H(n) + \mu (- \nabla(n))$<br>
-Version 2: $H(n+1) = H(n) + \frac{1}{2}\delta (- \nabla(n))$</p>
-<p>then<br>
-$H(n+1) = H(n) + 2\mu e(n)X(n)$<br>
-or $H(n+1) = H(n) + \delta e(n)X(n)$</p>
-<p>where<br>
-$e(n) = y(n) - H^T(n)X(n)$<br>
-$\mu$ and $\delta$ are step-sizes</p>
-<ul>
-<li>Based on the <strong>steepest descent algorithm</strong> (update H(n) along the opposite direction of the gradient):<br>
-$H(n+1) = H(n) + \mu (- \nabla(n))$</li>
-<li>Using <strong>instantaneous</strong> estimates <strong>instead of the means</strong> (unbiased):<br>
-$J = E[e(n)^2] = e(n)^2$<br>
-$\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
-<li>Step-size determines <strong>stablility</strong> and <strong>rate of convergence</strong>
-<ul>
-<li>If too large, too much fluctuation</li>
-<li>If too small, convergences too slow</li>
-</ul>
-</li>
-</ul>
-<h3 id="Limitations">Limitations</h3>
-<ul>
-<li>If the noise is non-stationary, the error-performance surface will change rapidly</li>
-<li>If $x(n)$ is proportional to $y(n)$, signal will be obliterated</li>
-<li>H(n) never reached the theoretical optimum (fluctuation)</li>
-</ul>
-<h2 id="Applications">Applications</h2>
-<ul>
-<li>Acoustic echo cancellation</li>
-<li>Cancelling EOG from contaminated EEG and get correct EEG</li>
-<li>Cancelling maternal ECG and get foetal ECG during labour</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Signal Processing</category>
-      </categories>
-      <tags>
-        <tag>Filter</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Getting Started with Git &amp; Github</title>
     <url>/2022/11/17/Getting-Started-with-Git-Github/</url>
     <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>.</p>
@@ -355,6 +245,122 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
+    <title>Adaptive Filters</title>
+    <url>/2022/11/19/Adaptive-Filters/</url>
+    <content><![CDATA[<p>I watched a well-organized and concise youtube video titled <a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a>, which is also a basic course I am taking this semester. I focused on the key points in my course and made a bit of notes.</p>
+<h2 id="Limitations-of-fixed-coefficient-digital-filters">Limitations of fixed-coefficient digital filters</h2>
+<ul>
+<li>Fixed-coefficient digital filters
+<ul>
+<li>FIR, IIR</li>
+<li>LP, HP, etc</li>
+</ul>
+</li>
+<li>Limitations
+<ul>
+<li>Time-varying noise-frequency</li>
+<li>Overlapping bands of signal and noise</li>
+</ul>
+</li>
+</ul>
+<h2 id="Adaptive-filters">Adaptive filters</h2>
+<img src="/images/adaptive_filter.png" alt="adaptive_filter" title="adaptive_filter" width="400"> 
+<ul>
+<li>2 main components
+<ul>
+<li>Digital filter (with <strong>adjustable</strong> coefficients)</li>
+<li>Adaptive algorithm</li>
+</ul>
+</li>
+<li>2 input signals: $y_k$ and $x_k$
+<ul>
+<li>$y_k = s_k + n_k$</li>
+<li>$s_k$ = desired signal</li>
+<li>$n_k$ = noise</li>
+<li>$x_k$ = contaminating signal which is <strong>correlated with $n_k$</strong>, gives an estimate of $n_k$, i.e. $\hat{n_k}$</li>
+</ul>
+</li>
+<li>Goal: produce <strong>optimum</strong> $\hat{n_k}$
+<ul>
+<li>$e_k = \hat{s_k} = y_k - \hat{n_k} = s_k + n_k - \hat{n_k}$</li>
+</ul>
+</li>
+<li>Theorem: <strong>minimize $e_k$, maximize the signal-to-noise ratio</strong></li>
+</ul>
+<h2 id="LMS-algorithm">LMS algorithm</h2>
+<h3 id="Wiener-filter">Wiener filter</h3>
+<img src="/images/wiener_filter.png" alt="wiener_filter" title="wiener_filter" width="400"> 
+<ul>
+<li>An input signal&nbsp;<em>w(n)</em> is convolved w ith the Wiener filter&nbsp;<em>g(n)</em> and the result is compared to a reference signal&nbsp;<em>s(n)</em> to obtain the filtering error&nbsp;<em>e(n)</em></li>
+<li>Criterion: <strong>MMSE</strong> (Minimum Mean Square Error)
+<ul>
+<li>Minimize $J = E[e(n)^2] = E[(x(n) - s(n))^2] = E[(w(n) * g(n) - s(n))^2]$</li>
+<li><em>J</em> can be used to draw the <strong>Error-Performance surface</strong></li>
+</ul>
+</li>
+<li>The&nbsp;<a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">Least mean squares filter</a> converges to the&nbsp;<a href="https://en.wikipedia.org/wiki/Wiener_filter">Wiener filter</a></li>
+</ul>
+<h3 id="Wiener-Hopf-solution">Wiener-Hopf solution</h3>
+<p>Set gradient of <em>J</em> of <em>H</em> to zero, deduced that<br>
+$H_{opt} = R_{xx}^{-1} R_{xs}$</p>
+<p>where<br>
+$R_{xx} = E(X_k X_k^T)$<br>
+$R_{xs} = E(y_k X_k)$</p>
+<ul>
+<li>Requires knowledge of $R_{xx}, R_{xs}$</li>
+<li>Matrix inversion is expensive</li>
+<li>For non-stationary, $H_{opt}$ needs to be computed repeatedly</li>
+</ul>
+<h3 id="LMS-adaptive-algorithm">LMS adaptive algorithm</h3>
+<p>Version 1: $H(n+1) = H(n) + \mu (- \nabla(n))$<br>
+Version 2: $H(n+1) = H(n) + \frac{1}{2}\delta (- \nabla(n))$</p>
+<p>then<br>
+$H(n+1) = H(n) + 2\mu e(n)X(n)$<br>
+or $H(n+1) = H(n) + \delta e(n)X(n)$</p>
+<p>where<br>
+$e(n) = y(n) - H^T(n)X(n)$<br>
+$\mu$ and $\delta$ are step-sizes</p>
+<ul>
+<li>Based on the <strong>steepest descent algorithm</strong> (update H(n) along the opposite direction of the gradient):<br>
+$H(n+1) = H(n) + \mu (- \nabla(n))$</li>
+<li>Using <strong>instantaneous</strong> estimates <strong>instead of the means</strong> (unbiased):<br>
+$J = E[e(n)^2] = e(n)^2$<br>
+$\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
+<li>Step-size determines <strong>stablility</strong> and <strong>rate of convergence</strong>
+<ul>
+<li>If too large, too much fluctuation</li>
+<li>If too small, convergences too slow</li>
+</ul>
+</li>
+</ul>
+<h3 id="Limitations">Limitations</h3>
+<ul>
+<li>If the noise is non-stationary, the error-performance surface will change rapidly</li>
+<li>If $x(n)$ is proportional to $y(n)$, signal will be obliterated</li>
+<li>H(n) never reached the theoretical optimum (fluctuation)</li>
+</ul>
+<h2 id="Applications">Applications</h2>
+<ul>
+<li>Acoustic echo cancellation</li>
+<li>Cancelling EOG from contaminated EEG and get correct EEG</li>
+<li>Cancelling maternal ECG and get foetal ECG during labour</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Signal Processing</category>
+      </categories>
+      <tags>
+        <tag>Filter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/09/18/Hello_World/</url>
+    <content><![CDATA[<p>I made it! 😃</p>
+]]></content>
+  </entry>
+  <entry>
     <title>LaTeX CV</title>
     <url>/2022/10/29/Latex-CV/</url>
     <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
@@ -405,12 +411,6 @@ That’s where I found the original template for my CV! I think put templates th
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/09/18/Hello_World/</url>
-    <content><![CDATA[<p>I made it! 😃</p>
-]]></content>
-  </entry>
-  <entry>
     <title>October Summary</title>
     <url>/2022/10/31/October-Summary/</url>
     <content><![CDATA[<p>This October is the second month of the new semester, and a lot has happened during this period–I even wanted to quit from school because I was eager to go abroad😂 (you know, the deterioration of the political environment and the popularity of “runology”). But when I calmed down, I realized that the most important thing was to enhance my capabilities, which I could only count on, before I’m strong enough. Thus I keep telling myself: learn as you can, no matter what’s going on around you.</p>
@@ -434,48 +434,6 @@ That’s where I found the original template for my CV! I think put templates th
       </categories>
       <tags>
         <tag>Mood</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Two-pointer</title>
-    <url>/2022/10/26/Two-pointer/</url>
-    <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, it came to a not bad end: I finished the Explore <em>Array and String</em><a href="#refer-anchor-1"><sup>1</sup></a> in Leetcode.</p>
-<img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
-<p>The biggest lesson for me is an amazing technique called <strong>Two-pointer</strong>. At first I thought it’s nested two for-loops, but then I found it’s actually much more flesxible and useful. So I’d like to note it.</p>
-<span id="more"></span>
-<h2 id="Meaning">Meaning</h2>
-<p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
-<h2 id="Application-scenarios">Application scenarios</h2>
-<ol>
-<li>When you want to iterate the array from <strong>two ends to the middle</strong>, you can use one pointer starts from the <strong>beginning</strong> while the other pointer starts from the <strong>end</strong>. They have <strong>same steps</strong>.</li>
-</ol>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reverseString</span><span class="params">(<span class="type">char</span>[] s)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> s.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="type">char</span> <span class="variable">temp</span> <span class="operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="comment">// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] numbers, <span class="type">int</span> target) {</span><br><span class="line">        <span class="type">int</span>[] res = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> numbers.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            } <span class="keyword">else</span> <span class="keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="number">0</span>] = start + <span class="number">1</span>;</span><br><span class="line">        res[<span class="number">1</span>] = end + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<ol start="2">
-<li>When you want one <strong>slow-runner</strong> and one <strong>fast-runner</strong> at the same time, you can use one pointer for the <strong>iteration</strong> while another one for the <strong>special position</strong>. They have <strong>different steps</strong>.</li>
-</ol>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Remove Element</span></span><br><span class="line"><span class="comment">// "i" for iteration and "k" for the elements to remove</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeElement</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> val)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>Here an important concept is introduced: <strong>in-place.</strong></p>
-<blockquote>
-<p>An in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements.<a href="#refer-anchor-2"><sup>2</sup></a></p>
-</blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="comment">// "i" for iteration and "max" for finding the max number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="params">(<span class="type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) {</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="comment">// "i" for iteration and "j" for the unique elements</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> j + <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Move Zeroes</span></span><br><span class="line"><span class="comment">// "i" for iteration and "k" works on the non-zero elements</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">moveZeroes</span><span class="params">(<span class="type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) {</span><br><span class="line">                <span class="keyword">if</span> (k &lt; n-<span class="number">1</span>) {</span><br><span class="line">                    <span class="keyword">while</span> (nums[k] == <span class="number">0</span> &amp;&amp; k &lt; n-<span class="number">1</span>) {k++; } </span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>My current progress:<br>
-<img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>
-Congrats to myself and keep it up! 💪🏻</p>
-<p><strong>References</strong></p>
-<div id="refer-anchor-1"></div>
-<p>[1] <a href="https://leetcode.com/explore/learn/card/array-and-string/">Leetcode</a></p>
-<div id="refer-anchor-2"></div>  
-<p>[2] <a href="https://leetcode.com/explore/learn/card/array-and-string/">Wikipedia</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -614,6 +572,48 @@ Congrats to myself and keep it up! 💪🏻</p>
       </tags>
   </entry>
   <entry>
+    <title>Two-pointer</title>
+    <url>/2022/10/26/Two-pointer/</url>
+    <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, it came to a not bad end: I finished the Explore <em>Array and String</em><a href="#refer-anchor-1"><sup>1</sup></a> in Leetcode.</p>
+<img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
+<p>The biggest lesson for me is an amazing technique called <strong>Two-pointer</strong>. At first I thought it’s nested two for-loops, but then I found it’s actually much more flesxible and useful. So I’d like to note it.</p>
+<span id="more"></span>
+<h2 id="Meaning">Meaning</h2>
+<p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
+<h2 id="Application-scenarios">Application scenarios</h2>
+<ol>
+<li>When you want to iterate the array from <strong>two ends to the middle</strong>, you can use one pointer starts from the <strong>beginning</strong> while the other pointer starts from the <strong>end</strong>. They have <strong>same steps</strong>.</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reverseString</span><span class="params">(<span class="type">char</span>[] s)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> s.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="type">char</span> <span class="variable">temp</span> <span class="operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="comment">// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] numbers, <span class="type">int</span> target) {</span><br><span class="line">        <span class="type">int</span>[] res = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> numbers.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            } <span class="keyword">else</span> <span class="keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="number">0</span>] = start + <span class="number">1</span>;</span><br><span class="line">        res[<span class="number">1</span>] = end + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ol start="2">
+<li>When you want one <strong>slow-runner</strong> and one <strong>fast-runner</strong> at the same time, you can use one pointer for the <strong>iteration</strong> while another one for the <strong>special position</strong>. They have <strong>different steps</strong>.</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Remove Element</span></span><br><span class="line"><span class="comment">// "i" for iteration and "k" for the elements to remove</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeElement</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> val)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>Here an important concept is introduced: <strong>in-place.</strong></p>
+<blockquote>
+<p>An in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements.<a href="#refer-anchor-2"><sup>2</sup></a></p>
+</blockquote>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="comment">// "i" for iteration and "max" for finding the max number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="params">(<span class="type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) {</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="comment">// "i" for iteration and "j" for the unique elements</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> j + <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Move Zeroes</span></span><br><span class="line"><span class="comment">// "i" for iteration and "k" works on the non-zero elements</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">moveZeroes</span><span class="params">(<span class="type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) {</span><br><span class="line">                <span class="keyword">if</span> (k &lt; n-<span class="number">1</span>) {</span><br><span class="line">                    <span class="keyword">while</span> (nums[k] == <span class="number">0</span> &amp;&amp; k &lt; n-<span class="number">1</span>) {k++; } </span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>My current progress:<br>
+<img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>
+Congrats to myself and keep it up! 💪🏻</p>
+<p><strong>References</strong></p>
+<div id="refer-anchor-1"></div>
+<p>[1] <a href="https://leetcode.com/explore/learn/card/array-and-string/">Leetcode</a></p>
+<div id="refer-anchor-2"></div>  
+<p>[2] <a href="https://leetcode.com/explore/learn/card/array-and-string/">Wikipedia</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Notes</title>
     <url>/Notes/index.html</url>
     <content><![CDATA[<h2 id="Course-Notes">Course Notes</h2>
@@ -644,6 +644,12 @@ Congrats to myself and keep it up! 💪🏻</p>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>Schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Links</title>
     <url>/links/index.html</url>
     <content><![CDATA[<p>Time to take a Java coffee and see some interesting blogs or websites 😛</p>
@@ -657,21 +663,15 @@ I’m learning his git tutorial and it’s really written in an easy to understa
 ]]></content>
   </entry>
   <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Sitemap</title>
     <url>/sitemap/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Schedule</title>
-    <url>/schedule/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title></title>
@@ -20645,6 +20645,405 @@ export { PDFBug };
   </entry>
   <entry>
     <title></title>
+    <url>/lib/pdf/web/viewer.html</url>
+    <content><![CDATA[
+    <div id="outerContainer">
+
+      <div id="sidebarContainer">
+        <div id="toolbarSidebar">
+          <div id="toolbarSidebarLeft">
+            <div id="sidebarViewButtons" class="splitToolbarButton toggled" role="radiogroup">
+              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs" role="radio" aria-checked="true" aria-controls="thumbnailView">
+                 <span data-l10n-id="thumbs_label">Thumbnails</span>
+              </button>
+              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline" role="radio" aria-checked="false" aria-controls="outlineView">
+                 <span data-l10n-id="document_outline_label">Document Outline</span>
+              </button>
+              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments" role="radio" aria-checked="false" aria-controls="attachmentsView">
+                 <span data-l10n-id="attachments_label">Attachments</span>
+              </button>
+              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers" role="radio" aria-checked="false" aria-controls="layersView">
+                 <span data-l10n-id="layers_label">Layers</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="toolbarSidebarRight">
+            <div id="outlineOptionsContainer" class="hidden">
+              <div class="verticalToolbarSeparator"></div>
+
+              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
+                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="sidebarContent">
+          <div id="thumbnailView">
+          </div>
+          <div id="outlineView" class="hidden">
+          </div>
+          <div id="attachmentsView" class="hidden">
+          </div>
+          <div id="layersView" class="hidden">
+          </div>
+        </div>
+        <div id="sidebarResizer"></div>
+      </div>  <!-- sidebarContainer -->
+
+      <div id="mainContainer">
+        <div class="findbar hidden doorHanger" id="findbar">
+          <div id="findbarInputContainer">
+            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input" aria-invalid="false">
+            <div class="splitToolbarButton">
+              <button id="findPrevious" class="toolbarButton" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
+                <span data-l10n-id="find_previous_label">Previous</span>
+              </button>
+              <div class="splitToolbarButtonSeparator"></div>
+              <button id="findNext" class="toolbarButton" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
+                <span data-l10n-id="find_next_label">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="findbarOptionsOneContainer">
+            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight All</label>
+            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match Case</label>
+          </div>
+          <div id="findbarOptionsTwoContainer">
+            <input type="checkbox" id="findMatchDiacritics" class="toolbarField" tabindex="96">
+            <label for="findMatchDiacritics" class="toolbarLabel" data-l10n-id="find_match_diacritics_label">Match Diacritics</label>
+            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="97">
+            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole Words</label>
+          </div>
+
+          <div id="findbarMessageContainer" aria-live="polite">
+            <span id="findResultsCount" class="toolbarLabel"></span>
+            <span id="findMsg" class="toolbarLabel"></span>
+          </div>
+        </div>  <!-- findbar -->
+
+        <div class="editorParamsToolbar hidden doorHangerRight" id="editorFreeTextParamsToolbar">
+          <div class="editorParamsToolbarContainer">
+            <div class="editorParamsSetter">
+              <label for="editorFreeTextColor" class="editorParamsLabel" data-l10n-id="editor_free_text_color">Color</label>
+              <input type="color" id="editorFreeTextColor" class="editorParamsColor" tabindex="100">
+            </div>
+            <div class="editorParamsSetter">
+              <label for="editorFreeTextFontSize" class="editorParamsLabel" data-l10n-id="editor_free_text_size">Size</label>
+              <input type="range" id="editorFreeTextFontSize" class="editorParamsSlider" value="10" min="5" max="100" step="1" tabindex="101">
+            </div>
+          </div>
+        </div>
+
+        <div class="editorParamsToolbar hidden doorHangerRight" id="editorInkParamsToolbar">
+          <div class="editorParamsToolbarContainer">
+            <div class="editorParamsSetter">
+              <label for="editorInkColor" class="editorParamsLabel" data-l10n-id="editor_ink_color">Color</label>
+              <input type="color" id="editorInkColor" class="editorParamsColor" tabindex="102">
+            </div>
+            <div class="editorParamsSetter">
+              <label for="editorInkThickness" class="editorParamsLabel" data-l10n-id="editor_ink_thickness">Thickness</label>
+              <input type="range" id="editorInkThickness" class="editorParamsSlider" value="1" min="1" max="20" step="1" tabindex="103">
+            </div>
+            <div class="editorParamsSetter">
+              <label for="editorInkOpacity" class="editorParamsLabel" data-l10n-id="editor_ink_opacity">Opacity</label>
+              <input type="range" id="editorInkOpacity" class="editorParamsSlider" value="100" min="1" max="100" step="1" tabindex="104">
+            </div>
+          </div>
+        </div>
+
+        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
+          <div id="secondaryToolbarButtonContainer">
+            <button id="secondaryOpenFile" class="secondaryToolbarButton visibleLargeView" title="Open File" tabindex="51" data-l10n-id="open_file">
+              <span data-l10n-id="open_file_label">Open</span>
+            </button>
+
+            <button id="secondaryPrint" class="secondaryToolbarButton visibleMediumView" title="Print" tabindex="52" data-l10n-id="print">
+              <span data-l10n-id="print_label">Print</span>
+            </button>
+
+            <button id="secondaryDownload" class="secondaryToolbarButton visibleMediumView" title="Download" tabindex="53" data-l10n-id="download">
+              <span data-l10n-id="download_label">Download</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator visibleLargeView"></div>
+
+            <button id="presentationMode" class="secondaryToolbarButton" title="Switch to Presentation Mode" tabindex="54" data-l10n-id="presentation_mode">
+              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+            </button>
+
+            <a href="#" id="viewBookmark" class="secondaryToolbarButton" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
+              <span data-l10n-id="bookmark_label">Current View</span>
+            </a>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="firstPage" class="secondaryToolbarButton" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
+              <span data-l10n-id="first_page_label">Go to First Page</span>
+            </button>
+            <button id="lastPage" class="secondaryToolbarButton" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
+              <span data-l10n-id="last_page_label">Go to Last Page</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="pageRotateCw" class="secondaryToolbarButton" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
+              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
+            </button>
+            <button id="pageRotateCcw" class="secondaryToolbarButton" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
+              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <div id="cursorToolButtons" role="radiogroup">
+              <button id="cursorSelectTool" class="secondaryToolbarButton toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool" role="radio" aria-checked="true">
+                <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
+              </button>
+              <button id="cursorHandTool" class="secondaryToolbarButton" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool" role="radio" aria-checked="false">
+                <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
+              </button>
+            </div>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <div id="scrollModeButtons" role="radiogroup">
+              <button id="scrollPage" class="secondaryToolbarButton" title="Use Page Scrolling" tabindex="62" data-l10n-id="scroll_page" role="radio" aria-checked="false">
+                <span data-l10n-id="scroll_page_label">Page Scrolling</span>
+              </button>
+              <button id="scrollVertical" class="secondaryToolbarButton toggled" title="Use Vertical Scrolling" tabindex="63" data-l10n-id="scroll_vertical" role="radio" aria-checked="true">
+                <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
+              </button>
+              <button id="scrollHorizontal" class="secondaryToolbarButton" title="Use Horizontal Scrolling" tabindex="64" data-l10n-id="scroll_horizontal" role="radio" aria-checked="false">
+                <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
+              </button>
+              <button id="scrollWrapped" class="secondaryToolbarButton" title="Use Wrapped Scrolling" tabindex="65" data-l10n-id="scroll_wrapped" role="radio" aria-checked="false">
+                <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
+              </button>
+            </div>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <div id="spreadModeButtons" role="radiogroup">
+              <button id="spreadNone" class="secondaryToolbarButton toggled" title="Do not join page spreads" tabindex="66" data-l10n-id="spread_none" role="radio" aria-checked="true">
+                <span data-l10n-id="spread_none_label">No Spreads</span>
+              </button>
+              <button id="spreadOdd" class="secondaryToolbarButton" title="Join page spreads starting with odd-numbered pages" tabindex="67" data-l10n-id="spread_odd" role="radio" aria-checked="false">
+                <span data-l10n-id="spread_odd_label">Odd Spreads</span>
+              </button>
+              <button id="spreadEven" class="secondaryToolbarButton" title="Join page spreads starting with even-numbered pages" tabindex="68" data-l10n-id="spread_even" role="radio" aria-checked="false">
+                <span data-l10n-id="spread_even_label">Even Spreads</span>
+              </button>
+            </div>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="documentProperties" class="secondaryToolbarButton" title="Document Properties…" tabindex="69" data-l10n-id="document_properties" aria-controls="documentPropertiesDialog">
+              <span data-l10n-id="document_properties_label">Document Properties…</span>
+            </button>
+          </div>
+        </div>  <!-- secondaryToolbar -->
+
+        <div class="toolbar">
+          <div id="toolbarContainer">
+            <div id="toolbarViewer">
+              <div id="toolbarViewerLeft">
+                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
+                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+                </button>
+                <div class="toolbarButtonSpacer"></div>
+                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
+                  <span data-l10n-id="findbar_label">Find</span>
+                </button>
+                <div class="splitToolbarButton hiddenSmallView">
+                  <button class="toolbarButton" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
+                    <span data-l10n-id="previous_label">Previous</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button class="toolbarButton" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
+                    <span data-l10n-id="next_label">Next</span>
+                  </button>
+                </div>
+                <input type="number" id="pageNumber" class="toolbarField" title="Page" value="1" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
+                <span id="numPages" class="toolbarLabel"></span>
+              </div>
+              <div id="toolbarViewerRight">
+                <button id="openFile" class="toolbarButton hiddenLargeView" title="Open File" tabindex="31" data-l10n-id="open_file">
+                  <span data-l10n-id="open_file_label">Open</span>
+                </button>
+
+                <button id="print" class="toolbarButton hiddenMediumView" title="Print" tabindex="32" data-l10n-id="print">
+                  <span data-l10n-id="print_label">Print</span>
+                </button>
+
+                <button id="download" class="toolbarButton hiddenMediumView" title="Download" tabindex="33" data-l10n-id="download">
+                  <span data-l10n-id="download_label">Download</span>
+                </button>
+
+                <div class="verticalToolbarSeparator hiddenMediumView"></div>
+
+                <div id="editorModeButtons" class="splitToolbarButton toggled" role="radiogroup">
+                  <button id="editorFreeText" class="toolbarButton" disabled="disabled" title="Text" role="radio" aria-checked="false" tabindex="34" data-l10n-id="editor_free_text2">
+                    <span data-l10n-id="editor_free_text2_label">Text</span>
+                  </button>
+                  <button id="editorInk" class="toolbarButton" disabled="disabled" title="Draw" role="radio" aria-checked="false" tabindex="35" data-l10n-id="editor_ink2">
+                    <span data-l10n-id="editor_ink2_label">Draw</span>
+                  </button>
+                </div>
+
+                <div id="editorModeSeparator" class="verticalToolbarSeparator"></div>
+
+                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="48" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
+                  <span data-l10n-id="tools_label">Tools</span>
+                </button>
+              </div>
+              <div id="toolbarViewerMiddle">
+                <div class="splitToolbarButton">
+                  <button id="zoomOut" class="toolbarButton" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
+                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button id="zoomIn" class="toolbarButton" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
+                    <span data-l10n-id="zoom_in_label">Zoom In</span>
+                   </button>
+                </div>
+                <span id="scaleSelectContainer" class="dropdownToolbarButton">
+                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
+                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
+                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
+                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
+                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
+                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 50 }">50%</option>
+                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 75 }">75%</option>
+                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 100 }">100%</option>
+                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 125 }">125%</option>
+                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 150 }">150%</option>
+                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 200 }">200%</option>
+                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 300 }">300%</option>
+                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 400 }">400%</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            <div id="loadingBar">
+              <div class="progress">
+                <div class="glimmer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="viewerContainer" tabindex="0">
+          <div id="viewer" class="pdfViewer"></div>
+        </div>
+      </div> <!-- mainContainer -->
+
+      <div id="dialogContainer">
+        <dialog id="passwordDialog">
+          <div class="row">
+            <label for="password" id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</label>
+          </div>
+          <div class="row">
+            <input type="password" id="password" class="toolbarField">
+          </div>
+          <div class="buttonRow">
+            <button id="passwordCancel" class="dialogButton"><span data-l10n-id="password_cancel">Cancel</span></button>
+            <button id="passwordSubmit" class="dialogButton"><span data-l10n-id="password_ok">OK</span></button>
+          </div>
+        </dialog>
+        <dialog id="documentPropertiesDialog">
+          <div class="row">
+            <span id="fileNameLabel" data-l10n-id="document_properties_file_name">File name:</span>
+            <p id="fileNameField" aria-labelledby="fileNameLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="fileSizeLabel" data-l10n-id="document_properties_file_size">File size:</span>
+            <p id="fileSizeField" aria-labelledby="fileSizeLabel">-</p>
+          </div>
+          <div class="separator"></div>
+          <div class="row">
+            <span id="titleLabel" data-l10n-id="document_properties_title">Title:</span>
+            <p id="titleField" aria-labelledby="titleLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="authorLabel" data-l10n-id="document_properties_author">Author:</span>
+            <p id="authorField" aria-labelledby="authorLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="subjectLabel" data-l10n-id="document_properties_subject">Subject:</span>
+            <p id="subjectField" aria-labelledby="subjectLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="keywordsLabel" data-l10n-id="document_properties_keywords">Keywords:</span>
+            <p id="keywordsField" aria-labelledby="keywordsLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="creationDateLabel" data-l10n-id="document_properties_creation_date">Creation Date:</span>
+            <p id="creationDateField" aria-labelledby="creationDateLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="modificationDateLabel" data-l10n-id="document_properties_modification_date">Modification Date:</span>
+            <p id="modificationDateField" aria-labelledby="modificationDateLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="creatorLabel" data-l10n-id="document_properties_creator">Creator:</span>
+            <p id="creatorField" aria-labelledby="creatorLabel">-</p>
+          </div>
+          <div class="separator"></div>
+          <div class="row">
+            <span id="producerLabel" data-l10n-id="document_properties_producer">PDF Producer:</span>
+            <p id="producerField" aria-labelledby="producerLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="versionLabel" data-l10n-id="document_properties_version">PDF Version:</span>
+            <p id="versionField" aria-labelledby="versionLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="pageCountLabel" data-l10n-id="document_properties_page_count">Page Count:</span>
+            <p id="pageCountField" aria-labelledby="pageCountLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="pageSizeLabel" data-l10n-id="document_properties_page_size">Page Size:</span>
+            <p id="pageSizeField" aria-labelledby="pageSizeLabel">-</p>
+          </div>
+          <div class="separator"></div>
+          <div class="row">
+            <span id="linearizedLabel" data-l10n-id="document_properties_linearized">Fast Web View:</span>
+            <p id="linearizedField" aria-labelledby="linearizedLabel">-</p>
+          </div>
+          <div class="buttonRow">
+            <button id="documentPropertiesClose" class="dialogButton"><span data-l10n-id="document_properties_close">Close</span></button>
+          </div>
+        </dialog>
+        <dialog id="printServiceDialog" style="min-width: 200px;">
+          <div class="row">
+            <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
+          </div>
+          <div class="row">
+            <progress value="0" max="100"></progress>
+            <span data-l10n-id="print_progress_percent" data-l10n-args="{ &quot;progress&quot;: 0 }" class="relative-progress">0%</span>
+          </div>
+          <div class="buttonRow">
+            <button id="printCancel" class="dialogButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
+          </div>
+        </dialog>
+      </div>  <!-- dialogContainer -->
+
+    </div> <!-- outerContainer -->
+    <div id="printContainer"></div>
+
+    <input type="file" id="fileInput" class="hidden">
+  
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
     <url>/lib/pdf/web/viewer.css</url>
     <content><![CDATA[/* Copyright 2014 Mozilla Foundation
  *
@@ -23668,405 +24067,6 @@ dialog :link {
     display: none;
   }
 }
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/viewer.html</url>
-    <content><![CDATA[
-    <div id="outerContainer">
-
-      <div id="sidebarContainer">
-        <div id="toolbarSidebar">
-          <div id="toolbarSidebarLeft">
-            <div id="sidebarViewButtons" class="splitToolbarButton toggled" role="radiogroup">
-              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs" role="radio" aria-checked="true" aria-controls="thumbnailView">
-                 <span data-l10n-id="thumbs_label">Thumbnails</span>
-              </button>
-              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline" role="radio" aria-checked="false" aria-controls="outlineView">
-                 <span data-l10n-id="document_outline_label">Document Outline</span>
-              </button>
-              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments" role="radio" aria-checked="false" aria-controls="attachmentsView">
-                 <span data-l10n-id="attachments_label">Attachments</span>
-              </button>
-              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers" role="radio" aria-checked="false" aria-controls="layersView">
-                 <span data-l10n-id="layers_label">Layers</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="toolbarSidebarRight">
-            <div id="outlineOptionsContainer" class="hidden">
-              <div class="verticalToolbarSeparator"></div>
-
-              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
-                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div id="sidebarContent">
-          <div id="thumbnailView">
-          </div>
-          <div id="outlineView" class="hidden">
-          </div>
-          <div id="attachmentsView" class="hidden">
-          </div>
-          <div id="layersView" class="hidden">
-          </div>
-        </div>
-        <div id="sidebarResizer"></div>
-      </div>  <!-- sidebarContainer -->
-
-      <div id="mainContainer">
-        <div class="findbar hidden doorHanger" id="findbar">
-          <div id="findbarInputContainer">
-            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input" aria-invalid="false">
-            <div class="splitToolbarButton">
-              <button id="findPrevious" class="toolbarButton" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
-                <span data-l10n-id="find_previous_label">Previous</span>
-              </button>
-              <div class="splitToolbarButtonSeparator"></div>
-              <button id="findNext" class="toolbarButton" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
-                <span data-l10n-id="find_next_label">Next</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="findbarOptionsOneContainer">
-            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
-            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight All</label>
-            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
-            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match Case</label>
-          </div>
-          <div id="findbarOptionsTwoContainer">
-            <input type="checkbox" id="findMatchDiacritics" class="toolbarField" tabindex="96">
-            <label for="findMatchDiacritics" class="toolbarLabel" data-l10n-id="find_match_diacritics_label">Match Diacritics</label>
-            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="97">
-            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole Words</label>
-          </div>
-
-          <div id="findbarMessageContainer" aria-live="polite">
-            <span id="findResultsCount" class="toolbarLabel"></span>
-            <span id="findMsg" class="toolbarLabel"></span>
-          </div>
-        </div>  <!-- findbar -->
-
-        <div class="editorParamsToolbar hidden doorHangerRight" id="editorFreeTextParamsToolbar">
-          <div class="editorParamsToolbarContainer">
-            <div class="editorParamsSetter">
-              <label for="editorFreeTextColor" class="editorParamsLabel" data-l10n-id="editor_free_text_color">Color</label>
-              <input type="color" id="editorFreeTextColor" class="editorParamsColor" tabindex="100">
-            </div>
-            <div class="editorParamsSetter">
-              <label for="editorFreeTextFontSize" class="editorParamsLabel" data-l10n-id="editor_free_text_size">Size</label>
-              <input type="range" id="editorFreeTextFontSize" class="editorParamsSlider" value="10" min="5" max="100" step="1" tabindex="101">
-            </div>
-          </div>
-        </div>
-
-        <div class="editorParamsToolbar hidden doorHangerRight" id="editorInkParamsToolbar">
-          <div class="editorParamsToolbarContainer">
-            <div class="editorParamsSetter">
-              <label for="editorInkColor" class="editorParamsLabel" data-l10n-id="editor_ink_color">Color</label>
-              <input type="color" id="editorInkColor" class="editorParamsColor" tabindex="102">
-            </div>
-            <div class="editorParamsSetter">
-              <label for="editorInkThickness" class="editorParamsLabel" data-l10n-id="editor_ink_thickness">Thickness</label>
-              <input type="range" id="editorInkThickness" class="editorParamsSlider" value="1" min="1" max="20" step="1" tabindex="103">
-            </div>
-            <div class="editorParamsSetter">
-              <label for="editorInkOpacity" class="editorParamsLabel" data-l10n-id="editor_ink_opacity">Opacity</label>
-              <input type="range" id="editorInkOpacity" class="editorParamsSlider" value="100" min="1" max="100" step="1" tabindex="104">
-            </div>
-          </div>
-        </div>
-
-        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
-          <div id="secondaryToolbarButtonContainer">
-            <button id="secondaryOpenFile" class="secondaryToolbarButton visibleLargeView" title="Open File" tabindex="51" data-l10n-id="open_file">
-              <span data-l10n-id="open_file_label">Open</span>
-            </button>
-
-            <button id="secondaryPrint" class="secondaryToolbarButton visibleMediumView" title="Print" tabindex="52" data-l10n-id="print">
-              <span data-l10n-id="print_label">Print</span>
-            </button>
-
-            <button id="secondaryDownload" class="secondaryToolbarButton visibleMediumView" title="Download" tabindex="53" data-l10n-id="download">
-              <span data-l10n-id="download_label">Download</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator visibleLargeView"></div>
-
-            <button id="presentationMode" class="secondaryToolbarButton" title="Switch to Presentation Mode" tabindex="54" data-l10n-id="presentation_mode">
-              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-            </button>
-
-            <a href="#" id="viewBookmark" class="secondaryToolbarButton" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
-              <span data-l10n-id="bookmark_label">Current View</span>
-            </a>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="firstPage" class="secondaryToolbarButton" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
-              <span data-l10n-id="first_page_label">Go to First Page</span>
-            </button>
-            <button id="lastPage" class="secondaryToolbarButton" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
-              <span data-l10n-id="last_page_label">Go to Last Page</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="pageRotateCw" class="secondaryToolbarButton" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
-              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
-            </button>
-            <button id="pageRotateCcw" class="secondaryToolbarButton" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
-              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <div id="cursorToolButtons" role="radiogroup">
-              <button id="cursorSelectTool" class="secondaryToolbarButton toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool" role="radio" aria-checked="true">
-                <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
-              </button>
-              <button id="cursorHandTool" class="secondaryToolbarButton" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool" role="radio" aria-checked="false">
-                <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
-              </button>
-            </div>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <div id="scrollModeButtons" role="radiogroup">
-              <button id="scrollPage" class="secondaryToolbarButton" title="Use Page Scrolling" tabindex="62" data-l10n-id="scroll_page" role="radio" aria-checked="false">
-                <span data-l10n-id="scroll_page_label">Page Scrolling</span>
-              </button>
-              <button id="scrollVertical" class="secondaryToolbarButton toggled" title="Use Vertical Scrolling" tabindex="63" data-l10n-id="scroll_vertical" role="radio" aria-checked="true">
-                <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
-              </button>
-              <button id="scrollHorizontal" class="secondaryToolbarButton" title="Use Horizontal Scrolling" tabindex="64" data-l10n-id="scroll_horizontal" role="radio" aria-checked="false">
-                <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
-              </button>
-              <button id="scrollWrapped" class="secondaryToolbarButton" title="Use Wrapped Scrolling" tabindex="65" data-l10n-id="scroll_wrapped" role="radio" aria-checked="false">
-                <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
-              </button>
-            </div>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <div id="spreadModeButtons" role="radiogroup">
-              <button id="spreadNone" class="secondaryToolbarButton toggled" title="Do not join page spreads" tabindex="66" data-l10n-id="spread_none" role="radio" aria-checked="true">
-                <span data-l10n-id="spread_none_label">No Spreads</span>
-              </button>
-              <button id="spreadOdd" class="secondaryToolbarButton" title="Join page spreads starting with odd-numbered pages" tabindex="67" data-l10n-id="spread_odd" role="radio" aria-checked="false">
-                <span data-l10n-id="spread_odd_label">Odd Spreads</span>
-              </button>
-              <button id="spreadEven" class="secondaryToolbarButton" title="Join page spreads starting with even-numbered pages" tabindex="68" data-l10n-id="spread_even" role="radio" aria-checked="false">
-                <span data-l10n-id="spread_even_label">Even Spreads</span>
-              </button>
-            </div>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="documentProperties" class="secondaryToolbarButton" title="Document Properties…" tabindex="69" data-l10n-id="document_properties" aria-controls="documentPropertiesDialog">
-              <span data-l10n-id="document_properties_label">Document Properties…</span>
-            </button>
-          </div>
-        </div>  <!-- secondaryToolbar -->
-
-        <div class="toolbar">
-          <div id="toolbarContainer">
-            <div id="toolbarViewer">
-              <div id="toolbarViewerLeft">
-                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
-                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
-                </button>
-                <div class="toolbarButtonSpacer"></div>
-                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
-                  <span data-l10n-id="findbar_label">Find</span>
-                </button>
-                <div class="splitToolbarButton hiddenSmallView">
-                  <button class="toolbarButton" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
-                    <span data-l10n-id="previous_label">Previous</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button class="toolbarButton" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
-                    <span data-l10n-id="next_label">Next</span>
-                  </button>
-                </div>
-                <input type="number" id="pageNumber" class="toolbarField" title="Page" value="1" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
-                <span id="numPages" class="toolbarLabel"></span>
-              </div>
-              <div id="toolbarViewerRight">
-                <button id="openFile" class="toolbarButton hiddenLargeView" title="Open File" tabindex="31" data-l10n-id="open_file">
-                  <span data-l10n-id="open_file_label">Open</span>
-                </button>
-
-                <button id="print" class="toolbarButton hiddenMediumView" title="Print" tabindex="32" data-l10n-id="print">
-                  <span data-l10n-id="print_label">Print</span>
-                </button>
-
-                <button id="download" class="toolbarButton hiddenMediumView" title="Download" tabindex="33" data-l10n-id="download">
-                  <span data-l10n-id="download_label">Download</span>
-                </button>
-
-                <div class="verticalToolbarSeparator hiddenMediumView"></div>
-
-                <div id="editorModeButtons" class="splitToolbarButton toggled" role="radiogroup">
-                  <button id="editorFreeText" class="toolbarButton" disabled="disabled" title="Text" role="radio" aria-checked="false" tabindex="34" data-l10n-id="editor_free_text2">
-                    <span data-l10n-id="editor_free_text2_label">Text</span>
-                  </button>
-                  <button id="editorInk" class="toolbarButton" disabled="disabled" title="Draw" role="radio" aria-checked="false" tabindex="35" data-l10n-id="editor_ink2">
-                    <span data-l10n-id="editor_ink2_label">Draw</span>
-                  </button>
-                </div>
-
-                <div id="editorModeSeparator" class="verticalToolbarSeparator"></div>
-
-                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="48" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
-                  <span data-l10n-id="tools_label">Tools</span>
-                </button>
-              </div>
-              <div id="toolbarViewerMiddle">
-                <div class="splitToolbarButton">
-                  <button id="zoomOut" class="toolbarButton" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
-                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button id="zoomIn" class="toolbarButton" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
-                    <span data-l10n-id="zoom_in_label">Zoom In</span>
-                   </button>
-                </div>
-                <span id="scaleSelectContainer" class="dropdownToolbarButton">
-                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
-                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
-                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
-                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
-                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
-                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
-                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 50 }">50%</option>
-                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 75 }">75%</option>
-                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 100 }">100%</option>
-                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 125 }">125%</option>
-                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 150 }">150%</option>
-                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 200 }">200%</option>
-                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 300 }">300%</option>
-                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 400 }">400%</option>
-                  </select>
-                </span>
-              </div>
-            </div>
-            <div id="loadingBar">
-              <div class="progress">
-                <div class="glimmer">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="viewerContainer" tabindex="0">
-          <div id="viewer" class="pdfViewer"></div>
-        </div>
-      </div> <!-- mainContainer -->
-
-      <div id="dialogContainer">
-        <dialog id="passwordDialog">
-          <div class="row">
-            <label for="password" id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</label>
-          </div>
-          <div class="row">
-            <input type="password" id="password" class="toolbarField">
-          </div>
-          <div class="buttonRow">
-            <button id="passwordCancel" class="dialogButton"><span data-l10n-id="password_cancel">Cancel</span></button>
-            <button id="passwordSubmit" class="dialogButton"><span data-l10n-id="password_ok">OK</span></button>
-          </div>
-        </dialog>
-        <dialog id="documentPropertiesDialog">
-          <div class="row">
-            <span id="fileNameLabel" data-l10n-id="document_properties_file_name">File name:</span>
-            <p id="fileNameField" aria-labelledby="fileNameLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="fileSizeLabel" data-l10n-id="document_properties_file_size">File size:</span>
-            <p id="fileSizeField" aria-labelledby="fileSizeLabel">-</p>
-          </div>
-          <div class="separator"></div>
-          <div class="row">
-            <span id="titleLabel" data-l10n-id="document_properties_title">Title:</span>
-            <p id="titleField" aria-labelledby="titleLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="authorLabel" data-l10n-id="document_properties_author">Author:</span>
-            <p id="authorField" aria-labelledby="authorLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="subjectLabel" data-l10n-id="document_properties_subject">Subject:</span>
-            <p id="subjectField" aria-labelledby="subjectLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="keywordsLabel" data-l10n-id="document_properties_keywords">Keywords:</span>
-            <p id="keywordsField" aria-labelledby="keywordsLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="creationDateLabel" data-l10n-id="document_properties_creation_date">Creation Date:</span>
-            <p id="creationDateField" aria-labelledby="creationDateLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="modificationDateLabel" data-l10n-id="document_properties_modification_date">Modification Date:</span>
-            <p id="modificationDateField" aria-labelledby="modificationDateLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="creatorLabel" data-l10n-id="document_properties_creator">Creator:</span>
-            <p id="creatorField" aria-labelledby="creatorLabel">-</p>
-          </div>
-          <div class="separator"></div>
-          <div class="row">
-            <span id="producerLabel" data-l10n-id="document_properties_producer">PDF Producer:</span>
-            <p id="producerField" aria-labelledby="producerLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="versionLabel" data-l10n-id="document_properties_version">PDF Version:</span>
-            <p id="versionField" aria-labelledby="versionLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="pageCountLabel" data-l10n-id="document_properties_page_count">Page Count:</span>
-            <p id="pageCountField" aria-labelledby="pageCountLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="pageSizeLabel" data-l10n-id="document_properties_page_size">Page Size:</span>
-            <p id="pageSizeField" aria-labelledby="pageSizeLabel">-</p>
-          </div>
-          <div class="separator"></div>
-          <div class="row">
-            <span id="linearizedLabel" data-l10n-id="document_properties_linearized">Fast Web View:</span>
-            <p id="linearizedField" aria-labelledby="linearizedLabel">-</p>
-          </div>
-          <div class="buttonRow">
-            <button id="documentPropertiesClose" class="dialogButton"><span data-l10n-id="document_properties_close">Close</span></button>
-          </div>
-        </dialog>
-        <dialog id="printServiceDialog" style="min-width: 200px;">
-          <div class="row">
-            <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
-          </div>
-          <div class="row">
-            <progress value="0" max="100"></progress>
-            <span data-l10n-id="print_progress_percent" data-l10n-args="{ &quot;progress&quot;: 0 }" class="relative-progress">0%</span>
-          </div>
-          <div class="buttonRow">
-            <button id="printCancel" class="dialogButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
-          </div>
-        </dialog>
-      </div>  <!-- dialogContainer -->
-
-    </div> <!-- outerContainer -->
-    <div id="printContainer"></div>
-
-    <input type="file" id="fileInput" class="hidden">
-  
-
 ]]></content>
   </entry>
   <entry>
