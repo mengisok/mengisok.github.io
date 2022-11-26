@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/09/18/Hello_World/</url>
-    <content><![CDATA[<p>I made it! 😃</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Adaptive Filters</title>
     <url>/2022/11/19/Adaptive-Filters/</url>
     <content><![CDATA[<p>I watched a well-organized and concise youtube video titled <a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a>, which is also a basic course I am taking this semester. I focused on the key points in my course and made a bit of notes.</p>
@@ -114,6 +108,93 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </categories>
       <tags>
         <tag>Filter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My First LinkedIn Certificate!</title>
+    <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
+    <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
+<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> in your account settings to get a monthly free plan. Also you must use a <strong>visa</strong> credit card.)</p>
+<p>In a word, I had my first linkedin learning course:<br>
+<a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
+<h2 id="Nice-course-span-class-emoji-alias-thumbsup-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f44d-png-v8-👍-span">Nice course <span class="emoji" alias="thumbsup" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8">👍</span></h2>
+<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br>
+<strong>Practical</strong>! The author introduced many useful websites for learning and developing.</p>
+<h2 id="What-I-have-learned">What I have learned</h2>
+<p><strong>Types of web development jobs</strong><br>
+For planning and prototyping:</p>
+<ul>
+<li>UX (User Experience)</li>
+<li>UI (User Interface)</li>
+</ul>
+<p>For coding and developing:</p>
+<ul>
+<li>Front-end Dev (Javascript, CSS, HTML; frameworks)</li>
+<li>Back-end Dev</li>
+</ul>
+<p><strong>Javascript, CSS, HTML</strong></p>
+<ul>
+<li>HTML identifies <strong>structural elements</strong>.</li>
+<li>CSS changes the <strong>appearance and style</strong>.</li>
+<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
+</ul>
+<p><strong>A little knowledge of Github</strong><br>
+That’s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I’ll hands on it lately.</p>
+<p><strong>No-code</strong><br>
+It’s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost – money? It’s limited anyway, especially when you know more and get greedy <span class="emoji" alias="smirk" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8">😏</span>.</p>
+<h2 id="Useful-tools">Useful tools</h2>
+<p>Prototying tools:</p>
+<ul>
+<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
+</ul>
+<p>Graphic design tools:</p>
+<ul>
+<li>Illustrator, Photoshop (professional)</li>
+<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)</li>
+<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
+</ul>
+<p>Coding editors:</p>
+<ul>
+<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)</li>
+<li><strong>VS Code</strong></li>
+<li><a href="https://atom.io/">Atom</a> (free, highly customizable)</li>
+<li><a href="https://brackets.io/">Brackets</a></li>
+</ul>
+<p>Web host:</p>
+<ul>
+<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
+</ul>
+<h2 id="No-code-tools">No-code tools</h2>
+<p>CMSs (Content Management System):</p>
+<ul>
+<li>Joomla!</li>
+<li>Drupal</li>
+<li><strong>Wordpress</strong></li>
+</ul>
+<p>Website buliders:</p>
+<ul>
+<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple)</li>
+<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
+</ul>
+<p>Databases:</p>
+<ul>
+<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a></li>
+<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
+</ul>
+<p>Apps:</p>
+<ul>
+<li><a href="https://bubble.io/">Bubble</a> (web)</li>
+<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)</li>
+<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
+</ul>
+<p>At last, here’s my certificate and I’d like to get more in the future 😻 ~</p>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> ]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Web Development</category>
+      </categories>
+      <tags>
+        <tag>Front-end</tag>
       </tags>
   </entry>
   <entry>
@@ -274,91 +355,10 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
-    <title>My First LinkedIn Certificate!</title>
-    <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
-    <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
-<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> in your account settings to get a monthly free plan. Also you must use a <strong>visa</strong> credit card.)</p>
-<p>In a word, I had my first linkedin learning course:<br>
-<a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
-<h2 id="Nice-course-span-class-emoji-alias-thumbsup-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f44d-png-v8-👍-span">Nice course <span class="emoji" alias="thumbsup" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8">👍</span></h2>
-<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br>
-<strong>Practical</strong>! The author introduced many useful websites for learning and developing.</p>
-<h2 id="What-I-have-learned">What I have learned</h2>
-<p><strong>Types of web development jobs</strong><br>
-For planning and prototyping:</p>
-<ul>
-<li>UX (User Experience)</li>
-<li>UI (User Interface)</li>
-</ul>
-<p>For coding and developing:</p>
-<ul>
-<li>Front-end Dev (Javascript, CSS, HTML; frameworks)</li>
-<li>Back-end Dev</li>
-</ul>
-<p><strong>Javascript, CSS, HTML</strong></p>
-<ul>
-<li>HTML identifies <strong>structural elements</strong>.</li>
-<li>CSS changes the <strong>appearance and style</strong>.</li>
-<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
-</ul>
-<p><strong>A little knowledge of Github</strong><br>
-That’s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I’ll hands on it lately.</p>
-<p><strong>No-code</strong><br>
-It’s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost – money? It’s limited anyway, especially when you know more and get greedy <span class="emoji" alias="smirk" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8">😏</span>.</p>
-<h2 id="Useful-tools">Useful tools</h2>
-<p>Prototying tools:</p>
-<ul>
-<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
-</ul>
-<p>Graphic design tools:</p>
-<ul>
-<li>Illustrator, Photoshop (professional)</li>
-<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)</li>
-<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
-</ul>
-<p>Coding editors:</p>
-<ul>
-<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)</li>
-<li><strong>VS Code</strong></li>
-<li><a href="https://atom.io/">Atom</a> (free, highly customizable)</li>
-<li><a href="https://brackets.io/">Brackets</a></li>
-</ul>
-<p>Web host:</p>
-<ul>
-<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
-</ul>
-<h2 id="No-code-tools">No-code tools</h2>
-<p>CMSs (Content Management System):</p>
-<ul>
-<li>Joomla!</li>
-<li>Drupal</li>
-<li><strong>Wordpress</strong></li>
-</ul>
-<p>Website buliders:</p>
-<ul>
-<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple)</li>
-<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
-</ul>
-<p>Databases:</p>
-<ul>
-<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a></li>
-<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
-</ul>
-<p>Apps:</p>
-<ul>
-<li><a href="https://bubble.io/">Bubble</a> (web)</li>
-<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)</li>
-<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
-</ul>
-<p>At last, here’s my certificate and I’d like to get more in the future 😻 ~</p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> ]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Web Development</category>
-      </categories>
-      <tags>
-        <tag>Front-end</tag>
-      </tags>
+    <title>Hello World</title>
+    <url>/2022/09/18/Hello_World/</url>
+    <content><![CDATA[<p>I made it! 😃</p>
+]]></content>
   </entry>
   <entry>
     <title>October Summary</title>
@@ -384,6 +384,98 @@ It’s a fresh new concept to me. Sounds interesting that you can develop a web 
       </categories>
       <tags>
         <tag>Mood</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LaTeX CV</title>
+    <url>/2022/10/29/Latex-CV/</url>
+    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
+<p>Here’s how I did it:</p>
+<p>-&gt; If you only use latex occasionally or a few times, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
+-&gt; If you want to do more things, use following steps:</p>
+<span id="more"></span>
+<h2 id="Download-MiKTeX-and-VSCode">Download MiKTeX and VSCode</h2>
+<p><strong>MiKTeX</strong><br>
+You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
+Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.</p>
+<p><strong>VSCode</strong><br>
+Remember to download extension <em>latex workshop</em>.</p>
+<h2 id="Find-a-template">Find a template</h2>
+<p>On Overleaf or Github.<br>
+Here are my favorites:<br>
+<a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">新卒のためのLaTeX履歴書テンプレート</a><br>
+<a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>
+And mine:<br>
+<a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)</p>
+<h2 id="Edit-the-template">Edit the template</h2>
+<p>You may encounter many problems at this step, most of which require you to download <em>Packages</em> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</p>
+<h2 id="Share-your-template">Share your template</h2>
+<ol>
+<li>Git your template to github<br>
+(Already bound git and your github accounts and set SSH key)<br>
+-&gt; Create a new repository<br>
+-&gt; Git bash the folder which contains full files about your template<br>
+-&gt; Run the following code in Git:</li>
+</ol>
+<pre><code class="language-C">git init
+git add .
+git commit -m 'Description'
+git remote add origin https://...  (copy from github)
+git push -u origin master
+</code></pre>
+<ol start="2">
+<li>Submit to Overleaf<br>
+That’s where I found the original template for my CV! I think put templates there may help more people.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Job</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Two-pointer</title>
+    <url>/2022/10/26/Two-pointer/</url>
+    <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, it came to a not bad end: I finished the Explore <em>Array and String</em><a href="#refer-anchor-1"><sup>1</sup></a> in Leetcode.</p>
+<img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
+<p>The biggest lesson for me is an amazing technique called <strong>Two-pointer</strong>. At first I thought it’s nested two for-loops, but then I found it’s actually much more flesxible and useful. So I’d like to note it.</p>
+<span id="more"></span>
+<h2 id="Meaning">Meaning</h2>
+<p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
+<h2 id="Application-scenarios">Application scenarios</h2>
+<ol>
+<li>When you want to iterate the array from <strong>two ends to the middle</strong>, you can use one pointer starts from the <strong>beginning</strong> while the other pointer starts from the <strong>end</strong>. They have <strong>same steps</strong>.</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reverseString</span><span class="params">(<span class="type">char</span>[] s)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> s.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="type">char</span> <span class="variable">temp</span> <span class="operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="comment">// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] numbers, <span class="type">int</span> target) {</span><br><span class="line">        <span class="type">int</span>[] res = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> numbers.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            } <span class="keyword">else</span> <span class="keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="number">0</span>] = start + <span class="number">1</span>;</span><br><span class="line">        res[<span class="number">1</span>] = end + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ol start="2">
+<li>When you want one <strong>slow-runner</strong> and one <strong>fast-runner</strong> at the same time, you can use one pointer for the <strong>iteration</strong> while another one for the <strong>special position</strong>. They have <strong>different steps</strong>.</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Remove Element</span></span><br><span class="line"><span class="comment">// "i" for iteration and "k" for the elements to remove</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeElement</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> val)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>Here an important concept is introduced: <strong>in-place.</strong></p>
+<blockquote>
+<p>An in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements.<a href="#refer-anchor-2"><sup>2</sup></a></p>
+</blockquote>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="comment">// "i" for iteration and "max" for finding the max number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="params">(<span class="type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) {</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="comment">// "i" for iteration and "j" for the unique elements</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> j + <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Move Zeroes</span></span><br><span class="line"><span class="comment">// "i" for iteration and "k" works on the non-zero elements</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">moveZeroes</span><span class="params">(<span class="type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) {</span><br><span class="line">                <span class="keyword">if</span> (k &lt; n-<span class="number">1</span>) {</span><br><span class="line">                    <span class="keyword">while</span> (nums[k] == <span class="number">0</span> &amp;&amp; k &lt; n-<span class="number">1</span>) {k++; } </span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>My current progress:<br>
+<img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>
+Congrats to myself and keep it up! 💪🏻</p>
+<p><strong>References</strong></p>
+<div id="refer-anchor-1"></div>
+<p>[1] <a href="https://leetcode.com/explore/learn/card/array-and-string/">Leetcode</a></p>
+<div id="refer-anchor-2"></div>  
+<p>[2] <a href="https://leetcode.com/explore/learn/card/array-and-string/">Wikipedia</a></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -522,98 +614,6 @@ It’s a fresh new concept to me. Sounds interesting that you can develop a web 
       </tags>
   </entry>
   <entry>
-    <title>Two-pointer</title>
-    <url>/2022/10/26/Two-pointer/</url>
-    <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, it came to a not bad end: I finished the Explore <em>Array and String</em><a href="#refer-anchor-1"><sup>1</sup></a> in Leetcode.</p>
-<img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
-<p>The biggest lesson for me is an amazing technique called <strong>Two-pointer</strong>. At first I thought it’s nested two for-loops, but then I found it’s actually much more flesxible and useful. So I’d like to note it.</p>
-<span id="more"></span>
-<h2 id="Meaning">Meaning</h2>
-<p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
-<h2 id="Application-scenarios">Application scenarios</h2>
-<ol>
-<li>When you want to iterate the array from <strong>two ends to the middle</strong>, you can use one pointer starts from the <strong>beginning</strong> while the other pointer starts from the <strong>end</strong>. They have <strong>same steps</strong>.</li>
-</ol>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">reverseString</span><span class="params">(<span class="type">char</span>[] s)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> s.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="type">char</span> <span class="variable">temp</span> <span class="operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="comment">// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] twoSum(<span class="type">int</span>[] numbers, <span class="type">int</span> target) {</span><br><span class="line">        <span class="type">int</span>[] res = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> numbers.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            } <span class="keyword">else</span> <span class="keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="number">0</span>] = start + <span class="number">1</span>;</span><br><span class="line">        res[<span class="number">1</span>] = end + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<ol start="2">
-<li>When you want one <strong>slow-runner</strong> and one <strong>fast-runner</strong> at the same time, you can use one pointer for the <strong>iteration</strong> while another one for the <strong>special position</strong>. They have <strong>different steps</strong>.</li>
-</ol>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Remove Element</span></span><br><span class="line"><span class="comment">// "i" for iteration and "k" for the elements to remove</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeElement</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> val)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>Here an important concept is introduced: <strong>in-place.</strong></p>
-<blockquote>
-<p>An in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements.<a href="#refer-anchor-2"><sup>2</sup></a></p>
-</blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="comment">// "i" for iteration and "max" for finding the max number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="params">(<span class="type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) {</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">            } <span class="keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="comment">// "i" for iteration and "j" for the unique elements</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> j + <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Move Zeroes</span></span><br><span class="line"><span class="comment">// "i" for iteration and "k" works on the non-zero elements</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">moveZeroes</span><span class="params">(<span class="type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) {</span><br><span class="line">                <span class="keyword">if</span> (k &lt; n-<span class="number">1</span>) {</span><br><span class="line">                    <span class="keyword">while</span> (nums[k] == <span class="number">0</span> &amp;&amp; k &lt; n-<span class="number">1</span>) {k++; } </span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>My current progress:<br>
-<img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>
-Congrats to myself and keep it up! 💪🏻</p>
-<p><strong>References</strong></p>
-<div id="refer-anchor-1"></div>
-<p>[1] <a href="https://leetcode.com/explore/learn/card/array-and-string/">Leetcode</a></p>
-<div id="refer-anchor-2"></div>  
-<p>[2] <a href="https://leetcode.com/explore/learn/card/array-and-string/">Wikipedia</a></p>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LaTeX CV</title>
-    <url>/2022/10/29/Latex-CV/</url>
-    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
-<p>Here’s how I did it:</p>
-<p>-&gt; If you only use latex occasionally or a few times, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
--&gt; If you want to do more things, use following steps:</p>
-<span id="more"></span>
-<h2 id="Download-MiKTeX-and-VSCode">Download MiKTeX and VSCode</h2>
-<p><strong>MiKTeX</strong><br>
-You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
-Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.</p>
-<p><strong>VSCode</strong><br>
-Remember to download extension <em>latex workshop</em>.</p>
-<h2 id="Find-a-template">Find a template</h2>
-<p>On Overleaf or Github.<br>
-Here are my favorites:<br>
-<a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">新卒のためのLaTeX履歴書テンプレート</a><br>
-<a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>
-And mine:<br>
-<a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)</p>
-<h2 id="Edit-the-template">Edit the template</h2>
-<p>You may encounter many problems at this step, most of which require you to download <em>Packages</em> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</p>
-<h2 id="Share-your-template">Share your template</h2>
-<ol>
-<li>Git your template to github<br>
-(Already bound git and your github accounts and set SSH key)<br>
--&gt; Create a new repository<br>
--&gt; Git bash the folder which contains full files about your template<br>
--&gt; Run the following code in Git:</li>
-</ol>
-<pre><code class="language-C">git init
-git add .
-git commit -m 'Description'
-git remote add origin https://...  (copy from github)
-git push -u origin master
-</code></pre>
-<ol start="2">
-<li>Submit to Overleaf<br>
-That’s where I found the original template for my CV! I think put templates there may help more people.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Job</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-        <tag>Latex</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Notes</title>
     <url>/Notes/index.html</url>
     <content><![CDATA[<h2 id="Course-Notes">Course Notes</h2>
@@ -623,24 +623,30 @@ That’s where I found the original template for my CV! I think put templates th
 ]]></content>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>About</title>
     <url>/about/index.html</url>
     <content><![CDATA[<img src="/images/bin_cat.png" alt="bin_cat" title="bin_cat" width="350">  
-<p>Hello, I’m Meng. I’m now a master student, majoring in Electronic Information. Yep, I have put cats all over this site 😼.</p>
+<p>Hello, I’m Meng. I’m now a master’s student, majoring in Electronic Information. Yep, I have put cats all over this site 😼.</p>
 <p>I’m more interested in self-study and thanks to the Internet I can do so. I’m learning everything related to software development and hope to get more involved in open source projects in the future – exactly what my idol <a href="https://en.wikipedia.org/wiki/Linus_Torvalds"><em>Linus Torvalds</em></a> did.</p>
 <p>Anyway, <strong>Long live the spirit of the Internet!</strong></p>
 <p><font size="1">(This site is built with the <a href="https://hexo.io/">Hexo</a> framework, using the <a href="https://github.com/probberechts/hexo-theme-cactus">Cactus</a> theme.)<font></font></font></p><font size="1"><font>
 </font></font>]]></content>
   </entry>
   <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Codes</title>
     <url>/codes/index.html</url>
     <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Sitemap</title>
+    <url>/sitemap/index.html</url>
+    <content><![CDATA[<p>Test.</p>
 ]]></content>
   </entry>
   <entry>
@@ -659,12 +665,6 @@ I’m learning his git tutorial and it’s really written in an easy to understa
   <entry>
     <title>Schedule</title>
     <url>/schedule/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Sitemap</title>
-    <url>/sitemap/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
   </entry>
@@ -704,8 +704,8 @@ I’m learning his git tutorial and it’s really written in an easy to understa
   </entry>
   <entry>
     <title></title>
-    <url>/lib/pdf/web/debugger.js</url>
-    <content><![CDATA[/* Copyright 2012 Mozilla Foundation
+    <url>/lib/pdf/web/debugger.css</url>
+    <content><![CDATA[/* Copyright 2014 Mozilla Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -720,603 +720,104 @@ I’m learning his git tutorial and it’s really written in an easy to understa
  * limitations under the License.
  */
 
-let opMap;
+#PDFBug,
+#PDFBug input,
+#PDFBug button,
+#PDFBug select {
+  font: message-box;
+}
+#PDFBug {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(102, 102, 102, 1);
+  position: fixed;
+  top: 32px;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  padding: 0;
+  width: 300px;
+}
+#PDFBug .controls {
+  background: rgba(238, 238, 238, 1);
+  border-bottom: 1px solid rgba(102, 102, 102, 1);
+  padding: 3px;
+}
+#PDFBug .panels {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 27px;
+}
+#PDFBug .panels &gt; div {
+  padding: 5px;
+}
+#PDFBug button.active {
+  font-weight: bold;
+}
+.debuggerShowText,
+.debuggerHideText:hover {
+  background-color: rgba(255, 255, 0, 1);
+}
+#PDFBug .stats {
+  font-family: courier;
+  font-size: 10px;
+  white-space: pre;
+}
+#PDFBug .stats .title {
+  font-weight: bold;
+}
+#PDFBug table {
+  font-size: 10px;
+  white-space: pre;
+}
+#PDFBug table.showText {
+  border-collapse: collapse;
+  text-align: center;
+}
+#PDFBug table.showText,
+#PDFBug table.showText tr,
+#PDFBug table.showText td {
+  border: 1px solid black;
+  padding: 1px;
+}
+#PDFBug table.showText td.advance {
+  color: grey;
+}
 
-const FontInspector = (function FontInspectorClosure() {
-  let fonts;
-  let active = false;
-  const fontAttribute = "data-font-name";
-  function removeSelection() {
-    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
-    for (const div of divs) {
-      div.className = "";
-    }
-  }
-  function resetSelection() {
-    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
-    for (const div of divs) {
-      div.className = "debuggerHideText";
-    }
-  }
-  function selectFont(fontName, show) {
-    const divs = document.querySelectorAll(
-      `span[${fontAttribute}=${fontName}]`
-    );
-    for (const div of divs) {
-      div.className = show ? "debuggerShowText" : "debuggerHideText";
-    }
-  }
-  function textLayerClick(e) {
-    if (
-      !e.target.dataset.fontName ||
-      e.target.tagName.toUpperCase() !== "SPAN"
-    ) {
-      return;
-    }
-    const fontName = e.target.dataset.fontName;
-    const selects = document.getElementsByTagName("input");
-    for (const select of selects) {
-      if (select.dataset.fontName !== fontName) {
-        continue;
-      }
-      select.checked = !select.checked;
-      selectFont(fontName, select.checked);
-      select.scrollIntoView();
-    }
-  }
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "FontInspector",
-    name: "Font Inspector",
-    panel: null,
-    manager: null,
-    init(pdfjsLib) {
-      const panel = this.panel;
-      const tmp = document.createElement("button");
-      tmp.addEventListener("click", resetSelection);
-      tmp.textContent = "Refresh";
-      panel.append(tmp);
+#viewer.textLayer-visible .textLayer {
+  opacity: 1;
+}
 
-      fonts = document.createElement("div");
-      panel.append(fonts);
-    },
-    cleanup() {
-      fonts.textContent = "";
-    },
-    enabled: false,
-    get active() {
-      return active;
-    },
-    set active(value) {
-      active = value;
-      if (active) {
-        document.body.addEventListener("click", textLayerClick, true);
-        resetSelection();
-      } else {
-        document.body.removeEventListener("click", textLayerClick, true);
-        removeSelection();
-      }
-    },
-    // FontInspector specific functions.
-    fontAdded(fontObj, url) {
-      function properties(obj, list) {
-        const moreInfo = document.createElement("table");
-        for (const entry of list) {
-          const tr = document.createElement("tr");
-          const td1 = document.createElement("td");
-          td1.textContent = entry;
-          tr.append(td1);
-          const td2 = document.createElement("td");
-          td2.textContent = obj[entry].toString();
-          tr.append(td2);
-          moreInfo.append(tr);
-        }
-        return moreInfo;
-      }
-      const moreInfo = properties(fontObj, ["name", "type"]);
-      const fontName = fontObj.loadedName;
-      const font = document.createElement("div");
-      const name = document.createElement("span");
-      name.textContent = fontName;
-      const download = document.createElement("a");
-      if (url) {
-        url = /url\(['"]?([^)"']+)/.exec(url);
-        download.href = url[1];
-      } else if (fontObj.data) {
-        download.href = URL.createObjectURL(
-          new Blob([fontObj.data], { type: fontObj.mimetype })
-        );
-      }
-      download.textContent = "Download";
-      const logIt = document.createElement("a");
-      logIt.href = "";
-      logIt.textContent = "Log";
-      logIt.addEventListener("click", function (event) {
-        event.preventDefault();
-        console.log(fontObj);
-      });
-      const select = document.createElement("input");
-      select.setAttribute("type", "checkbox");
-      select.dataset.fontName = fontName;
-      select.addEventListener("click", function () {
-        selectFont(fontName, select.checked);
-      });
-      font.append(select, name, " ", download, " ", logIt, moreInfo);
-      fonts.append(font);
-      // Somewhat of a hack, should probably add a hook for when the text layer
-      // is done rendering.
-      setTimeout(() =&gt; {
-        if (this.active) {
-          resetSelection();
-        }
-      }, 2000);
-    },
-  };
-})();
+#viewer.textLayer-visible .canvasWrapper {
+  background-color: rgba(128, 255, 128, 1);
+}
 
-// Manages all the page steppers.
-const StepperManager = (function StepperManagerClosure() {
-  let steppers = [];
-  let stepperDiv = null;
-  let stepperControls = null;
-  let stepperChooser = null;
-  let breakPoints = Object.create(null);
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "Stepper",
-    name: "Stepper",
-    panel: null,
-    manager: null,
-    init(pdfjsLib) {
-      const self = this;
-      stepperControls = document.createElement("div");
-      stepperChooser = document.createElement("select");
-      stepperChooser.addEventListener("change", function (event) {
-        self.selectStepper(this.value);
-      });
-      stepperControls.append(stepperChooser);
-      stepperDiv = document.createElement("div");
-      this.panel.append(stepperControls, stepperDiv);
-      if (sessionStorage.getItem("pdfjsBreakPoints")) {
-        breakPoints = JSON.parse(sessionStorage.getItem("pdfjsBreakPoints"));
-      }
+#viewer.textLayer-visible .canvasWrapper canvas {
+  mix-blend-mode: screen;
+}
 
-      opMap = Object.create(null);
-      for (const key in pdfjsLib.OPS) {
-        opMap[pdfjsLib.OPS[key]] = key;
-      }
-    },
-    cleanup() {
-      stepperChooser.textContent = "";
-      stepperDiv.textContent = "";
-      steppers = [];
-    },
-    enabled: false,
-    active: false,
-    // Stepper specific functions.
-    create(pageIndex) {
-      const debug = document.createElement("div");
-      debug.id = "stepper" + pageIndex;
-      debug.hidden = true;
-      debug.className = "stepper";
-      stepperDiv.append(debug);
-      const b = document.createElement("option");
-      b.textContent = "Page " + (pageIndex + 1);
-      b.value = pageIndex;
-      stepperChooser.append(b);
-      const initBreakPoints = breakPoints[pageIndex] || [];
-      const stepper = new Stepper(debug, pageIndex, initBreakPoints);
-      steppers.push(stepper);
-      if (steppers.length === 1) {
-        this.selectStepper(pageIndex, false);
-      }
-      return stepper;
-    },
-    selectStepper(pageIndex, selectPanel) {
-      pageIndex |= 0;
-      if (selectPanel) {
-        this.manager.selectPanel(this);
-      }
-      for (const stepper of steppers) {
-        stepper.panel.hidden = stepper.pageIndex !== pageIndex;
-      }
-      for (const option of stepperChooser.options) {
-        option.selected = (option.value | 0) === pageIndex;
-      }
-    },
-    saveBreakPoints(pageIndex, bps) {
-      breakPoints[pageIndex] = bps;
-      sessionStorage.setItem("pdfjsBreakPoints", JSON.stringify(breakPoints));
-    },
-  };
-})();
+#viewer.textLayer-visible .textLayer span {
+  background-color: rgba(255, 255, 0, 0.1);
+  color: rgba(0, 0, 0, 1);
+  border: solid 1px rgba(255, 0, 0, 0.5);
+  box-sizing: border-box;
+}
 
-// The stepper for each page's operatorList.
-const Stepper = (function StepperClosure() {
-  // Shorter way to create element and optionally set textContent.
-  function c(tag, textContent) {
-    const d = document.createElement(tag);
-    if (textContent) {
-      d.textContent = textContent;
-    }
-    return d;
-  }
+#viewer.textLayer-visible .textLayer span[aria-owns] {
+  background-color: rgba(255, 0, 0, 0.3);
+}
 
-  function simplifyArgs(args) {
-    if (typeof args === "string") {
-      const MAX_STRING_LENGTH = 75;
-      return args.length &lt;= MAX_STRING_LENGTH
-        ? args
-        : args.substring(0, MAX_STRING_LENGTH) + "...";
-    }
-    if (typeof args !== "object" || args === null) {
-      return args;
-    }
-    if ("length" in args) {
-      // array
-      const MAX_ITEMS = 10,
-        simpleArgs = [];
-      let i, ii;
-      for (i = 0, ii = Math.min(MAX_ITEMS, args.length); i &lt; ii; i++) {
-        simpleArgs.push(simplifyArgs(args[i]));
-      }
-      if (i &lt; args.length) {
-        simpleArgs.push("...");
-      }
-      return simpleArgs;
-    }
-    const simpleObj = {};
-    for (const key in args) {
-      simpleObj[key] = simplifyArgs(args[key]);
-    }
-    return simpleObj;
-  }
+#viewer.textLayer-hover .textLayer span:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+}
 
-  // eslint-disable-next-line no-shadow
-  class Stepper {
-    constructor(panel, pageIndex, initialBreakPoints) {
-      this.panel = panel;
-      this.breakPoint = 0;
-      this.nextBreakPoint = null;
-      this.pageIndex = pageIndex;
-      this.breakPoints = initialBreakPoints;
-      this.currentIdx = -1;
-      this.operatorListIdx = 0;
-      this.indentLevel = 0;
-    }
-
-    init(operatorList) {
-      const panel = this.panel;
-      const content = c("div", "c=continue, s=step");
-      const table = c("table");
-      content.append(table);
-      table.cellSpacing = 0;
-      const headerRow = c("tr");
-      table.append(headerRow);
-      headerRow.append(
-        c("th", "Break"),
-        c("th", "Idx"),
-        c("th", "fn"),
-        c("th", "args")
-      );
-      panel.append(content);
-      this.table = table;
-      this.updateOperatorList(operatorList);
-    }
-
-    updateOperatorList(operatorList) {
-      const self = this;
-
-      function cboxOnClick() {
-        const x = +this.dataset.idx;
-        if (this.checked) {
-          self.breakPoints.push(x);
-        } else {
-          self.breakPoints.splice(self.breakPoints.indexOf(x), 1);
-        }
-        StepperManager.saveBreakPoints(self.pageIndex, self.breakPoints);
-      }
-
-      const MAX_OPERATORS_COUNT = 15000;
-      if (this.operatorListIdx &gt; MAX_OPERATORS_COUNT) {
-        return;
-      }
-
-      const chunk = document.createDocumentFragment();
-      const operatorsToDisplay = Math.min(
-        MAX_OPERATORS_COUNT,
-        operatorList.fnArray.length
-      );
-      for (let i = this.operatorListIdx; i &lt; operatorsToDisplay; i++) {
-        const line = c("tr");
-        line.className = "line";
-        line.dataset.idx = i;
-        chunk.append(line);
-        const checked = this.breakPoints.includes(i);
-        const args = operatorList.argsArray[i] || [];
-
-        const breakCell = c("td");
-        const cbox = c("input");
-        cbox.type = "checkbox";
-        cbox.className = "points";
-        cbox.checked = checked;
-        cbox.dataset.idx = i;
-        cbox.onclick = cboxOnClick;
-
-        breakCell.append(cbox);
-        line.append(breakCell, c("td", i.toString()));
-        const fn = opMap[operatorList.fnArray[i]];
-        let decArgs = args;
-        if (fn === "showText") {
-          const glyphs = args[0];
-          const charCodeRow = c("tr");
-          const fontCharRow = c("tr");
-          const unicodeRow = c("tr");
-          for (const glyph of glyphs) {
-            if (typeof glyph === "object" &amp;&amp; glyph !== null) {
-              charCodeRow.append(c("td", glyph.originalCharCode));
-              fontCharRow.append(c("td", glyph.fontChar));
-              unicodeRow.append(c("td", glyph.unicode));
-            } else {
-              // null or number
-              const advanceEl = c("td", glyph);
-              advanceEl.classList.add("advance");
-              charCodeRow.append(advanceEl);
-              fontCharRow.append(c("td"));
-              unicodeRow.append(c("td"));
-            }
-          }
-          decArgs = c("td");
-          const table = c("table");
-          table.classList.add("showText");
-          decArgs.append(table);
-          table.append(charCodeRow, fontCharRow, unicodeRow);
-        } else if (fn === "restore") {
-          this.indentLevel--;
-        }
-        line.append(c("td", " ".repeat(this.indentLevel * 2) + fn));
-        if (fn === "save") {
-          this.indentLevel++;
-        }
-
-        if (decArgs instanceof HTMLElement) {
-          line.append(decArgs);
-        } else {
-          line.append(c("td", JSON.stringify(simplifyArgs(decArgs))));
-        }
-      }
-      if (operatorsToDisplay &lt; operatorList.fnArray.length) {
-        const lastCell = c("td", "...");
-        lastCell.colspan = 4;
-        chunk.append(lastCell);
-      }
-      this.operatorListIdx = operatorList.fnArray.length;
-      this.table.append(chunk);
-    }
-
-    getNextBreakPoint() {
-      this.breakPoints.sort(function (a, b) {
-        return a - b;
-      });
-      for (const breakPoint of this.breakPoints) {
-        if (breakPoint &gt; this.currentIdx) {
-          return breakPoint;
-        }
-      }
-      return null;
-    }
-
-    breakIt(idx, callback) {
-      StepperManager.selectStepper(this.pageIndex, true);
-      this.currentIdx = idx;
-
-      const listener = evt =&gt; {
-        switch (evt.keyCode) {
-          case 83: // step
-            document.removeEventListener("keydown", listener);
-            this.nextBreakPoint = this.currentIdx + 1;
-            this.goTo(-1);
-            callback();
-            break;
-          case 67: // continue
-            document.removeEventListener("keydown", listener);
-            this.nextBreakPoint = this.getNextBreakPoint();
-            this.goTo(-1);
-            callback();
-            break;
-        }
-      };
-      document.addEventListener("keydown", listener);
-      this.goTo(idx);
-    }
-
-    goTo(idx) {
-      const allRows = this.panel.getElementsByClassName("line");
-      for (const row of allRows) {
-        if ((row.dataset.idx | 0) === idx) {
-          row.style.backgroundColor = "rgb(251,250,207)";
-          row.scrollIntoView();
-        } else {
-          row.style.backgroundColor = null;
-        }
-      }
-    }
-  }
-  return Stepper;
-})();
-
-const Stats = (function Stats() {
-  let stats = [];
-  function clear(node) {
-    node.textContent = ""; // Remove any `node` contents from the DOM.
-  }
-  function getStatIndex(pageNumber) {
-    for (const [i, stat] of stats.entries()) {
-      if (stat.pageNumber === pageNumber) {
-        return i;
-      }
-    }
-    return false;
-  }
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "Stats",
-    name: "Stats",
-    panel: null,
-    manager: null,
-    init(pdfjsLib) {},
-    enabled: false,
-    active: false,
-    // Stats specific functions.
-    add(pageNumber, stat) {
-      if (!stat) {
-        return;
-      }
-      const statsIndex = getStatIndex(pageNumber);
-      if (statsIndex !== false) {
-        stats[statsIndex].div.remove();
-        stats.splice(statsIndex, 1);
-      }
-      const wrapper = document.createElement("div");
-      wrapper.className = "stats";
-      const title = document.createElement("div");
-      title.className = "title";
-      title.textContent = "Page: " + pageNumber;
-      const statsDiv = document.createElement("div");
-      statsDiv.textContent = stat.toString();
-      wrapper.append(title, statsDiv);
-      stats.push({ pageNumber, div: wrapper });
-      stats.sort(function (a, b) {
-        return a.pageNumber - b.pageNumber;
-      });
-      clear(this.panel);
-      for (const entry of stats) {
-        this.panel.append(entry.div);
-      }
-    },
-    cleanup() {
-      stats = [];
-      clear(this.panel);
-    },
-  };
-})();
-
-// Manages all the debugging tools.
-const PDFBug = (function PDFBugClosure() {
-  const panelWidth = 300;
-  const buttons = [];
-  let activePanel = null;
-
-  return {
-    tools: [FontInspector, StepperManager, Stats],
-    enable(ids) {
-      const all = ids.length === 1 &amp;&amp; ids[0] === "all";
-      const tools = this.tools;
-      for (const tool of tools) {
-        if (all || ids.includes(tool.id)) {
-          tool.enabled = true;
-        }
-      }
-      if (!all) {
-        // Sort the tools by the order they are enabled.
-        tools.sort(function (a, b) {
-          let indexA = ids.indexOf(a.id);
-          indexA = indexA &lt; 0 ? tools.length : indexA;
-          let indexB = ids.indexOf(b.id);
-          indexB = indexB &lt; 0 ? tools.length : indexB;
-          return indexA - indexB;
-        });
-      }
-    },
-    init(pdfjsLib, container, ids) {
-      this.loadCSS();
-      this.enable(ids);
-      /*
-       * Basic Layout:
-       * PDFBug
-       *  Controls
-       *  Panels
-       *    Panel
-       *    Panel
-       *    ...
-       */
-      const ui = document.createElement("div");
-      ui.id = "PDFBug";
-
-      const controls = document.createElement("div");
-      controls.setAttribute("class", "controls");
-      ui.append(controls);
-
-      const panels = document.createElement("div");
-      panels.setAttribute("class", "panels");
-      ui.append(panels);
-
-      container.append(ui);
-      container.style.right = panelWidth + "px";
-
-      // Initialize all the debugging tools.
-      for (const tool of this.tools) {
-        const panel = document.createElement("div");
-        const panelButton = document.createElement("button");
-        panelButton.textContent = tool.name;
-        panelButton.addEventListener("click", event =&gt; {
-          event.preventDefault();
-          this.selectPanel(tool);
-        });
-        controls.append(panelButton);
-        panels.append(panel);
-        tool.panel = panel;
-        tool.manager = this;
-        if (tool.enabled) {
-          tool.init(pdfjsLib);
-        } else {
-          panel.textContent =
-            `${tool.name} is disabled. To enable add "${tool.id}" to ` +
-            "the pdfBug parameter and refresh (separate multiple by commas).";
-        }
-        buttons.push(panelButton);
-      }
-      this.selectPanel(0);
-    },
-    loadCSS() {
-      const { url } = import.meta;
-
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = url.replace(/.js$/, ".css");
-
-      document.head.append(link);
-    },
-    cleanup() {
-      for (const tool of this.tools) {
-        if (tool.enabled) {
-          tool.cleanup();
-        }
-      }
-    },
-    selectPanel(index) {
-      if (typeof index !== "number") {
-        index = this.tools.indexOf(index);
-      }
-      if (index === activePanel) {
-        return;
-      }
-      activePanel = index;
-      for (const [j, tool] of this.tools.entries()) {
-        const isActive = j === index;
-        buttons[j].classList.toggle("active", isActive);
-        tool.active = isActive;
-        tool.panel.hidden = !isActive;
-      }
-    },
-  };
-})();
-
-globalThis.FontInspector = FontInspector;
-globalThis.StepperManager = StepperManager;
-globalThis.Stats = Stats;
-
-export { PDFBug };
+#viewer.textLayer-shadow .textLayer span {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 1);
+}
 ]]></content>
   </entry>
   <entry>
@@ -20527,8 +20028,8 @@ const pdfjsBuild = '987062c';
   </entry>
   <entry>
     <title></title>
-    <url>/lib/pdf/web/debugger.css</url>
-    <content><![CDATA[/* Copyright 2014 Mozilla Foundation
+    <url>/lib/pdf/web/debugger.js</url>
+    <content><![CDATA[/* Copyright 2012 Mozilla Foundation
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20543,104 +20044,603 @@ const pdfjsBuild = '987062c';
  * limitations under the License.
  */
 
-#PDFBug,
-#PDFBug input,
-#PDFBug button,
-#PDFBug select {
-  font: message-box;
-}
-#PDFBug {
-  background-color: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(102, 102, 102, 1);
-  position: fixed;
-  top: 32px;
-  right: 0;
-  bottom: 0;
-  font-size: 10px;
-  padding: 0;
-  width: 300px;
-}
-#PDFBug .controls {
-  background: rgba(238, 238, 238, 1);
-  border-bottom: 1px solid rgba(102, 102, 102, 1);
-  padding: 3px;
-}
-#PDFBug .panels {
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  position: absolute;
-  right: 0;
-  top: 27px;
-}
-#PDFBug .panels &gt; div {
-  padding: 5px;
-}
-#PDFBug button.active {
-  font-weight: bold;
-}
-.debuggerShowText,
-.debuggerHideText:hover {
-  background-color: rgba(255, 255, 0, 1);
-}
-#PDFBug .stats {
-  font-family: courier;
-  font-size: 10px;
-  white-space: pre;
-}
-#PDFBug .stats .title {
-  font-weight: bold;
-}
-#PDFBug table {
-  font-size: 10px;
-  white-space: pre;
-}
-#PDFBug table.showText {
-  border-collapse: collapse;
-  text-align: center;
-}
-#PDFBug table.showText,
-#PDFBug table.showText tr,
-#PDFBug table.showText td {
-  border: 1px solid black;
-  padding: 1px;
-}
-#PDFBug table.showText td.advance {
-  color: grey;
-}
+let opMap;
 
-#viewer.textLayer-visible .textLayer {
-  opacity: 1;
-}
+const FontInspector = (function FontInspectorClosure() {
+  let fonts;
+  let active = false;
+  const fontAttribute = "data-font-name";
+  function removeSelection() {
+    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
+    for (const div of divs) {
+      div.className = "";
+    }
+  }
+  function resetSelection() {
+    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
+    for (const div of divs) {
+      div.className = "debuggerHideText";
+    }
+  }
+  function selectFont(fontName, show) {
+    const divs = document.querySelectorAll(
+      `span[${fontAttribute}=${fontName}]`
+    );
+    for (const div of divs) {
+      div.className = show ? "debuggerShowText" : "debuggerHideText";
+    }
+  }
+  function textLayerClick(e) {
+    if (
+      !e.target.dataset.fontName ||
+      e.target.tagName.toUpperCase() !== "SPAN"
+    ) {
+      return;
+    }
+    const fontName = e.target.dataset.fontName;
+    const selects = document.getElementsByTagName("input");
+    for (const select of selects) {
+      if (select.dataset.fontName !== fontName) {
+        continue;
+      }
+      select.checked = !select.checked;
+      selectFont(fontName, select.checked);
+      select.scrollIntoView();
+    }
+  }
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "FontInspector",
+    name: "Font Inspector",
+    panel: null,
+    manager: null,
+    init(pdfjsLib) {
+      const panel = this.panel;
+      const tmp = document.createElement("button");
+      tmp.addEventListener("click", resetSelection);
+      tmp.textContent = "Refresh";
+      panel.append(tmp);
 
-#viewer.textLayer-visible .canvasWrapper {
-  background-color: rgba(128, 255, 128, 1);
-}
+      fonts = document.createElement("div");
+      panel.append(fonts);
+    },
+    cleanup() {
+      fonts.textContent = "";
+    },
+    enabled: false,
+    get active() {
+      return active;
+    },
+    set active(value) {
+      active = value;
+      if (active) {
+        document.body.addEventListener("click", textLayerClick, true);
+        resetSelection();
+      } else {
+        document.body.removeEventListener("click", textLayerClick, true);
+        removeSelection();
+      }
+    },
+    // FontInspector specific functions.
+    fontAdded(fontObj, url) {
+      function properties(obj, list) {
+        const moreInfo = document.createElement("table");
+        for (const entry of list) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          td1.textContent = entry;
+          tr.append(td1);
+          const td2 = document.createElement("td");
+          td2.textContent = obj[entry].toString();
+          tr.append(td2);
+          moreInfo.append(tr);
+        }
+        return moreInfo;
+      }
+      const moreInfo = properties(fontObj, ["name", "type"]);
+      const fontName = fontObj.loadedName;
+      const font = document.createElement("div");
+      const name = document.createElement("span");
+      name.textContent = fontName;
+      const download = document.createElement("a");
+      if (url) {
+        url = /url\(['"]?([^)"']+)/.exec(url);
+        download.href = url[1];
+      } else if (fontObj.data) {
+        download.href = URL.createObjectURL(
+          new Blob([fontObj.data], { type: fontObj.mimetype })
+        );
+      }
+      download.textContent = "Download";
+      const logIt = document.createElement("a");
+      logIt.href = "";
+      logIt.textContent = "Log";
+      logIt.addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log(fontObj);
+      });
+      const select = document.createElement("input");
+      select.setAttribute("type", "checkbox");
+      select.dataset.fontName = fontName;
+      select.addEventListener("click", function () {
+        selectFont(fontName, select.checked);
+      });
+      font.append(select, name, " ", download, " ", logIt, moreInfo);
+      fonts.append(font);
+      // Somewhat of a hack, should probably add a hook for when the text layer
+      // is done rendering.
+      setTimeout(() =&gt; {
+        if (this.active) {
+          resetSelection();
+        }
+      }, 2000);
+    },
+  };
+})();
 
-#viewer.textLayer-visible .canvasWrapper canvas {
-  mix-blend-mode: screen;
-}
+// Manages all the page steppers.
+const StepperManager = (function StepperManagerClosure() {
+  let steppers = [];
+  let stepperDiv = null;
+  let stepperControls = null;
+  let stepperChooser = null;
+  let breakPoints = Object.create(null);
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "Stepper",
+    name: "Stepper",
+    panel: null,
+    manager: null,
+    init(pdfjsLib) {
+      const self = this;
+      stepperControls = document.createElement("div");
+      stepperChooser = document.createElement("select");
+      stepperChooser.addEventListener("change", function (event) {
+        self.selectStepper(this.value);
+      });
+      stepperControls.append(stepperChooser);
+      stepperDiv = document.createElement("div");
+      this.panel.append(stepperControls, stepperDiv);
+      if (sessionStorage.getItem("pdfjsBreakPoints")) {
+        breakPoints = JSON.parse(sessionStorage.getItem("pdfjsBreakPoints"));
+      }
 
-#viewer.textLayer-visible .textLayer span {
-  background-color: rgba(255, 255, 0, 0.1);
-  color: rgba(0, 0, 0, 1);
-  border: solid 1px rgba(255, 0, 0, 0.5);
-  box-sizing: border-box;
-}
+      opMap = Object.create(null);
+      for (const key in pdfjsLib.OPS) {
+        opMap[pdfjsLib.OPS[key]] = key;
+      }
+    },
+    cleanup() {
+      stepperChooser.textContent = "";
+      stepperDiv.textContent = "";
+      steppers = [];
+    },
+    enabled: false,
+    active: false,
+    // Stepper specific functions.
+    create(pageIndex) {
+      const debug = document.createElement("div");
+      debug.id = "stepper" + pageIndex;
+      debug.hidden = true;
+      debug.className = "stepper";
+      stepperDiv.append(debug);
+      const b = document.createElement("option");
+      b.textContent = "Page " + (pageIndex + 1);
+      b.value = pageIndex;
+      stepperChooser.append(b);
+      const initBreakPoints = breakPoints[pageIndex] || [];
+      const stepper = new Stepper(debug, pageIndex, initBreakPoints);
+      steppers.push(stepper);
+      if (steppers.length === 1) {
+        this.selectStepper(pageIndex, false);
+      }
+      return stepper;
+    },
+    selectStepper(pageIndex, selectPanel) {
+      pageIndex |= 0;
+      if (selectPanel) {
+        this.manager.selectPanel(this);
+      }
+      for (const stepper of steppers) {
+        stepper.panel.hidden = stepper.pageIndex !== pageIndex;
+      }
+      for (const option of stepperChooser.options) {
+        option.selected = (option.value | 0) === pageIndex;
+      }
+    },
+    saveBreakPoints(pageIndex, bps) {
+      breakPoints[pageIndex] = bps;
+      sessionStorage.setItem("pdfjsBreakPoints", JSON.stringify(breakPoints));
+    },
+  };
+})();
 
-#viewer.textLayer-visible .textLayer span[aria-owns] {
-  background-color: rgba(255, 0, 0, 0.3);
-}
+// The stepper for each page's operatorList.
+const Stepper = (function StepperClosure() {
+  // Shorter way to create element and optionally set textContent.
+  function c(tag, textContent) {
+    const d = document.createElement(tag);
+    if (textContent) {
+      d.textContent = textContent;
+    }
+    return d;
+  }
 
-#viewer.textLayer-hover .textLayer span:hover {
-  background-color: rgba(255, 255, 255, 1);
-  color: rgba(0, 0, 0, 1);
-}
+  function simplifyArgs(args) {
+    if (typeof args === "string") {
+      const MAX_STRING_LENGTH = 75;
+      return args.length &lt;= MAX_STRING_LENGTH
+        ? args
+        : args.substring(0, MAX_STRING_LENGTH) + "...";
+    }
+    if (typeof args !== "object" || args === null) {
+      return args;
+    }
+    if ("length" in args) {
+      // array
+      const MAX_ITEMS = 10,
+        simpleArgs = [];
+      let i, ii;
+      for (i = 0, ii = Math.min(MAX_ITEMS, args.length); i &lt; ii; i++) {
+        simpleArgs.push(simplifyArgs(args[i]));
+      }
+      if (i &lt; args.length) {
+        simpleArgs.push("...");
+      }
+      return simpleArgs;
+    }
+    const simpleObj = {};
+    for (const key in args) {
+      simpleObj[key] = simplifyArgs(args[key]);
+    }
+    return simpleObj;
+  }
 
-#viewer.textLayer-shadow .textLayer span {
-  background-color: rgba(255, 255, 255, 0.6);
-  color: rgba(0, 0, 0, 1);
-}
+  // eslint-disable-next-line no-shadow
+  class Stepper {
+    constructor(panel, pageIndex, initialBreakPoints) {
+      this.panel = panel;
+      this.breakPoint = 0;
+      this.nextBreakPoint = null;
+      this.pageIndex = pageIndex;
+      this.breakPoints = initialBreakPoints;
+      this.currentIdx = -1;
+      this.operatorListIdx = 0;
+      this.indentLevel = 0;
+    }
+
+    init(operatorList) {
+      const panel = this.panel;
+      const content = c("div", "c=continue, s=step");
+      const table = c("table");
+      content.append(table);
+      table.cellSpacing = 0;
+      const headerRow = c("tr");
+      table.append(headerRow);
+      headerRow.append(
+        c("th", "Break"),
+        c("th", "Idx"),
+        c("th", "fn"),
+        c("th", "args")
+      );
+      panel.append(content);
+      this.table = table;
+      this.updateOperatorList(operatorList);
+    }
+
+    updateOperatorList(operatorList) {
+      const self = this;
+
+      function cboxOnClick() {
+        const x = +this.dataset.idx;
+        if (this.checked) {
+          self.breakPoints.push(x);
+        } else {
+          self.breakPoints.splice(self.breakPoints.indexOf(x), 1);
+        }
+        StepperManager.saveBreakPoints(self.pageIndex, self.breakPoints);
+      }
+
+      const MAX_OPERATORS_COUNT = 15000;
+      if (this.operatorListIdx &gt; MAX_OPERATORS_COUNT) {
+        return;
+      }
+
+      const chunk = document.createDocumentFragment();
+      const operatorsToDisplay = Math.min(
+        MAX_OPERATORS_COUNT,
+        operatorList.fnArray.length
+      );
+      for (let i = this.operatorListIdx; i &lt; operatorsToDisplay; i++) {
+        const line = c("tr");
+        line.className = "line";
+        line.dataset.idx = i;
+        chunk.append(line);
+        const checked = this.breakPoints.includes(i);
+        const args = operatorList.argsArray[i] || [];
+
+        const breakCell = c("td");
+        const cbox = c("input");
+        cbox.type = "checkbox";
+        cbox.className = "points";
+        cbox.checked = checked;
+        cbox.dataset.idx = i;
+        cbox.onclick = cboxOnClick;
+
+        breakCell.append(cbox);
+        line.append(breakCell, c("td", i.toString()));
+        const fn = opMap[operatorList.fnArray[i]];
+        let decArgs = args;
+        if (fn === "showText") {
+          const glyphs = args[0];
+          const charCodeRow = c("tr");
+          const fontCharRow = c("tr");
+          const unicodeRow = c("tr");
+          for (const glyph of glyphs) {
+            if (typeof glyph === "object" &amp;&amp; glyph !== null) {
+              charCodeRow.append(c("td", glyph.originalCharCode));
+              fontCharRow.append(c("td", glyph.fontChar));
+              unicodeRow.append(c("td", glyph.unicode));
+            } else {
+              // null or number
+              const advanceEl = c("td", glyph);
+              advanceEl.classList.add("advance");
+              charCodeRow.append(advanceEl);
+              fontCharRow.append(c("td"));
+              unicodeRow.append(c("td"));
+            }
+          }
+          decArgs = c("td");
+          const table = c("table");
+          table.classList.add("showText");
+          decArgs.append(table);
+          table.append(charCodeRow, fontCharRow, unicodeRow);
+        } else if (fn === "restore") {
+          this.indentLevel--;
+        }
+        line.append(c("td", " ".repeat(this.indentLevel * 2) + fn));
+        if (fn === "save") {
+          this.indentLevel++;
+        }
+
+        if (decArgs instanceof HTMLElement) {
+          line.append(decArgs);
+        } else {
+          line.append(c("td", JSON.stringify(simplifyArgs(decArgs))));
+        }
+      }
+      if (operatorsToDisplay &lt; operatorList.fnArray.length) {
+        const lastCell = c("td", "...");
+        lastCell.colspan = 4;
+        chunk.append(lastCell);
+      }
+      this.operatorListIdx = operatorList.fnArray.length;
+      this.table.append(chunk);
+    }
+
+    getNextBreakPoint() {
+      this.breakPoints.sort(function (a, b) {
+        return a - b;
+      });
+      for (const breakPoint of this.breakPoints) {
+        if (breakPoint &gt; this.currentIdx) {
+          return breakPoint;
+        }
+      }
+      return null;
+    }
+
+    breakIt(idx, callback) {
+      StepperManager.selectStepper(this.pageIndex, true);
+      this.currentIdx = idx;
+
+      const listener = evt =&gt; {
+        switch (evt.keyCode) {
+          case 83: // step
+            document.removeEventListener("keydown", listener);
+            this.nextBreakPoint = this.currentIdx + 1;
+            this.goTo(-1);
+            callback();
+            break;
+          case 67: // continue
+            document.removeEventListener("keydown", listener);
+            this.nextBreakPoint = this.getNextBreakPoint();
+            this.goTo(-1);
+            callback();
+            break;
+        }
+      };
+      document.addEventListener("keydown", listener);
+      this.goTo(idx);
+    }
+
+    goTo(idx) {
+      const allRows = this.panel.getElementsByClassName("line");
+      for (const row of allRows) {
+        if ((row.dataset.idx | 0) === idx) {
+          row.style.backgroundColor = "rgb(251,250,207)";
+          row.scrollIntoView();
+        } else {
+          row.style.backgroundColor = null;
+        }
+      }
+    }
+  }
+  return Stepper;
+})();
+
+const Stats = (function Stats() {
+  let stats = [];
+  function clear(node) {
+    node.textContent = ""; // Remove any `node` contents from the DOM.
+  }
+  function getStatIndex(pageNumber) {
+    for (const [i, stat] of stats.entries()) {
+      if (stat.pageNumber === pageNumber) {
+        return i;
+      }
+    }
+    return false;
+  }
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "Stats",
+    name: "Stats",
+    panel: null,
+    manager: null,
+    init(pdfjsLib) {},
+    enabled: false,
+    active: false,
+    // Stats specific functions.
+    add(pageNumber, stat) {
+      if (!stat) {
+        return;
+      }
+      const statsIndex = getStatIndex(pageNumber);
+      if (statsIndex !== false) {
+        stats[statsIndex].div.remove();
+        stats.splice(statsIndex, 1);
+      }
+      const wrapper = document.createElement("div");
+      wrapper.className = "stats";
+      const title = document.createElement("div");
+      title.className = "title";
+      title.textContent = "Page: " + pageNumber;
+      const statsDiv = document.createElement("div");
+      statsDiv.textContent = stat.toString();
+      wrapper.append(title, statsDiv);
+      stats.push({ pageNumber, div: wrapper });
+      stats.sort(function (a, b) {
+        return a.pageNumber - b.pageNumber;
+      });
+      clear(this.panel);
+      for (const entry of stats) {
+        this.panel.append(entry.div);
+      }
+    },
+    cleanup() {
+      stats = [];
+      clear(this.panel);
+    },
+  };
+})();
+
+// Manages all the debugging tools.
+const PDFBug = (function PDFBugClosure() {
+  const panelWidth = 300;
+  const buttons = [];
+  let activePanel = null;
+
+  return {
+    tools: [FontInspector, StepperManager, Stats],
+    enable(ids) {
+      const all = ids.length === 1 &amp;&amp; ids[0] === "all";
+      const tools = this.tools;
+      for (const tool of tools) {
+        if (all || ids.includes(tool.id)) {
+          tool.enabled = true;
+        }
+      }
+      if (!all) {
+        // Sort the tools by the order they are enabled.
+        tools.sort(function (a, b) {
+          let indexA = ids.indexOf(a.id);
+          indexA = indexA &lt; 0 ? tools.length : indexA;
+          let indexB = ids.indexOf(b.id);
+          indexB = indexB &lt; 0 ? tools.length : indexB;
+          return indexA - indexB;
+        });
+      }
+    },
+    init(pdfjsLib, container, ids) {
+      this.loadCSS();
+      this.enable(ids);
+      /*
+       * Basic Layout:
+       * PDFBug
+       *  Controls
+       *  Panels
+       *    Panel
+       *    Panel
+       *    ...
+       */
+      const ui = document.createElement("div");
+      ui.id = "PDFBug";
+
+      const controls = document.createElement("div");
+      controls.setAttribute("class", "controls");
+      ui.append(controls);
+
+      const panels = document.createElement("div");
+      panels.setAttribute("class", "panels");
+      ui.append(panels);
+
+      container.append(ui);
+      container.style.right = panelWidth + "px";
+
+      // Initialize all the debugging tools.
+      for (const tool of this.tools) {
+        const panel = document.createElement("div");
+        const panelButton = document.createElement("button");
+        panelButton.textContent = tool.name;
+        panelButton.addEventListener("click", event =&gt; {
+          event.preventDefault();
+          this.selectPanel(tool);
+        });
+        controls.append(panelButton);
+        panels.append(panel);
+        tool.panel = panel;
+        tool.manager = this;
+        if (tool.enabled) {
+          tool.init(pdfjsLib);
+        } else {
+          panel.textContent =
+            `${tool.name} is disabled. To enable add "${tool.id}" to ` +
+            "the pdfBug parameter and refresh (separate multiple by commas).";
+        }
+        buttons.push(panelButton);
+      }
+      this.selectPanel(0);
+    },
+    loadCSS() {
+      const { url } = import.meta;
+
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = url.replace(/.js$/, ".css");
+
+      document.head.append(link);
+    },
+    cleanup() {
+      for (const tool of this.tools) {
+        if (tool.enabled) {
+          tool.cleanup();
+        }
+      }
+    },
+    selectPanel(index) {
+      if (typeof index !== "number") {
+        index = this.tools.indexOf(index);
+      }
+      if (index === activePanel) {
+        return;
+      }
+      activePanel = index;
+      for (const [j, tool] of this.tools.entries()) {
+        const isActive = j === index;
+        buttons[j].classList.toggle("active", isActive);
+        tool.active = isActive;
+        tool.panel.hidden = !isActive;
+      }
+    },
+  };
+})();
+
+globalThis.FontInspector = FontInspector;
+globalThis.StepperManager = StepperManager;
+globalThis.Stats = Stats;
+
+export { PDFBug };
 ]]></content>
   </entry>
   <entry>
