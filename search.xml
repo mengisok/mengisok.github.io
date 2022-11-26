@@ -111,6 +111,93 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
+    <title>My First LinkedIn Certificate!</title>
+    <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
+    <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
+<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> in your account settings to get a monthly free plan. Also you must use a <strong>visa</strong> credit card.)</p>
+<p>In a word, I had my first linkedin learning course:<br>
+<a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
+<h2 id="Nice-course-span-class-emoji-alias-thumbsup-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f44d-png-v8-👍-span">Nice course <span class="emoji" alias="thumbsup" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8">👍</span></h2>
+<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br>
+<strong>Practical</strong>! The author introduced many useful websites for learning and developing.</p>
+<h2 id="What-I-have-learned">What I have learned</h2>
+<p><strong>Types of web development jobs</strong><br>
+For planning and prototyping:</p>
+<ul>
+<li>UX (User Experience)</li>
+<li>UI (User Interface)</li>
+</ul>
+<p>For coding and developing:</p>
+<ul>
+<li>Front-end Dev (Javascript, CSS, HTML; frameworks)</li>
+<li>Back-end Dev</li>
+</ul>
+<p><strong>Javascript, CSS, HTML</strong></p>
+<ul>
+<li>HTML identifies <strong>structural elements</strong>.</li>
+<li>CSS changes the <strong>appearance and style</strong>.</li>
+<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
+</ul>
+<p><strong>A little knowledge of Github</strong><br>
+That’s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I’ll hands on it lately.</p>
+<p><strong>No-code</strong><br>
+It’s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost – money? It’s limited anyway, especially when you know more and get greedy <span class="emoji" alias="smirk" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8">😏</span>.</p>
+<h2 id="Useful-tools">Useful tools</h2>
+<p>Prototying tools:</p>
+<ul>
+<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
+</ul>
+<p>Graphic design tools:</p>
+<ul>
+<li>Illustrator, Photoshop (professional)</li>
+<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)</li>
+<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
+</ul>
+<p>Coding editors:</p>
+<ul>
+<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)</li>
+<li><strong>VS Code</strong></li>
+<li><a href="https://atom.io/">Atom</a> (free, highly customizable)</li>
+<li><a href="https://brackets.io/">Brackets</a></li>
+</ul>
+<p>Web host:</p>
+<ul>
+<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
+</ul>
+<h2 id="No-code-tools">No-code tools</h2>
+<p>CMSs (Content Management System):</p>
+<ul>
+<li>Joomla!</li>
+<li>Drupal</li>
+<li><strong>Wordpress</strong></li>
+</ul>
+<p>Website buliders:</p>
+<ul>
+<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple)</li>
+<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
+</ul>
+<p>Databases:</p>
+<ul>
+<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a></li>
+<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
+</ul>
+<p>Apps:</p>
+<ul>
+<li><a href="https://bubble.io/">Bubble</a> (web)</li>
+<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)</li>
+<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
+</ul>
+<p>At last, here’s my certificate and I’d like to get more in the future 😻 ~</p>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> ]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Web Development</category>
+      </categories>
+      <tags>
+        <tag>Front-end</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Getting Started with Git &amp; Github</title>
     <url>/2022/11/17/Getting-Started-with-Git-Github/</url>
     <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>.</p>
@@ -268,149 +355,6 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
-    <title>My First LinkedIn Certificate!</title>
-    <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
-    <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
-<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> in your account settings to get a monthly free plan. Also you must use a <strong>visa</strong> credit card.)</p>
-<p>In a word, I had my first linkedin learning course:<br>
-<a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
-<h2 id="Nice-course-span-class-emoji-alias-thumbsup-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f44d-png-v8-👍-span">Nice course <span class="emoji" alias="thumbsup" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8">👍</span></h2>
-<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br>
-<strong>Practical</strong>! The author introduced many useful websites for learning and developing.</p>
-<h2 id="What-I-have-learned">What I have learned</h2>
-<p><strong>Types of web development jobs</strong><br>
-For planning and prototyping:</p>
-<ul>
-<li>UX (User Experience)</li>
-<li>UI (User Interface)</li>
-</ul>
-<p>For coding and developing:</p>
-<ul>
-<li>Front-end Dev (Javascript, CSS, HTML; frameworks)</li>
-<li>Back-end Dev</li>
-</ul>
-<p><strong>Javascript, CSS, HTML</strong></p>
-<ul>
-<li>HTML identifies <strong>structural elements</strong>.</li>
-<li>CSS changes the <strong>appearance and style</strong>.</li>
-<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
-</ul>
-<p><strong>A little knowledge of Github</strong><br>
-That’s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I’ll hands on it lately.</p>
-<p><strong>No-code</strong><br>
-It’s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost – money? It’s limited anyway, especially when you know more and get greedy <span class="emoji" alias="smirk" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8">😏</span>.</p>
-<h2 id="Useful-tools">Useful tools</h2>
-<p>Prototying tools:</p>
-<ul>
-<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
-</ul>
-<p>Graphic design tools:</p>
-<ul>
-<li>Illustrator, Photoshop (professional)</li>
-<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)</li>
-<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
-</ul>
-<p>Coding editors:</p>
-<ul>
-<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)</li>
-<li><strong>VS Code</strong></li>
-<li><a href="https://atom.io/">Atom</a> (free, highly customizable)</li>
-<li><a href="https://brackets.io/">Brackets</a></li>
-</ul>
-<p>Web host:</p>
-<ul>
-<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
-</ul>
-<h2 id="No-code-tools">No-code tools</h2>
-<p>CMSs (Content Management System):</p>
-<ul>
-<li>Joomla!</li>
-<li>Drupal</li>
-<li><strong>Wordpress</strong></li>
-</ul>
-<p>Website buliders:</p>
-<ul>
-<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple)</li>
-<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
-</ul>
-<p>Databases:</p>
-<ul>
-<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a></li>
-<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
-</ul>
-<p>Apps:</p>
-<ul>
-<li><a href="https://bubble.io/">Bubble</a> (web)</li>
-<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)</li>
-<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
-</ul>
-<p>At last, here’s my certificate and I’d like to get more in the future 😻 ~</p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> ]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Web Development</category>
-      </categories>
-      <tags>
-        <tag>Front-end</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/09/18/Hello_World/</url>
-    <content><![CDATA[<p>I made it! 😃</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>LaTeX CV</title>
-    <url>/2022/10/29/Latex-CV/</url>
-    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
-<p>Here’s how I did it:</p>
-<p>-&gt; If you only use latex occasionally or a few times, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
--&gt; If you want to do more things, use following steps:</p>
-<span id="more"></span>
-<h2 id="Download-MiKTeX-and-VSCode">Download MiKTeX and VSCode</h2>
-<p><strong>MiKTeX</strong><br>
-You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
-Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.</p>
-<p><strong>VSCode</strong><br>
-Remember to download extension <em>latex workshop</em>.</p>
-<h2 id="Find-a-template">Find a template</h2>
-<p>On Overleaf or Github.<br>
-Here are my favorites:<br>
-<a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">新卒のためのLaTeX履歴書テンプレート</a><br>
-<a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>
-And mine:<br>
-<a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)</p>
-<h2 id="Edit-the-template">Edit the template</h2>
-<p>You may encounter many problems at this step, most of which require you to download <em>Packages</em> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</p>
-<h2 id="Share-your-template">Share your template</h2>
-<ol>
-<li>Git your template to github<br>
-(Already bound git and your github accounts and set SSH key)<br>
--&gt; Create a new repository<br>
--&gt; Git bash the folder which contains full files about your template<br>
--&gt; Run the following code in Git:</li>
-</ol>
-<pre><code class="language-C">git init
-git add .
-git commit -m 'Description'
-git remote add origin https://...  (copy from github)
-git push -u origin master
-</code></pre>
-<ol start="2">
-<li>Submit to Overleaf<br>
-That’s where I found the original template for my CV! I think put templates there may help more people.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Job</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-        <tag>Latex</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>October Summary</title>
     <url>/2022/10/31/October-Summary/</url>
     <content><![CDATA[<p>This October is the second month of the new semester, and a lot has happened during this period–I even wanted to quit from school because I was eager to go abroad😂 (you know, the deterioration of the political environment and the popularity of “runology”). But when I calmed down, I realized that the most important thing was to enhance my capabilities, which I could only count on, before I’m strong enough. Thus I keep telling myself: learn as you can, no matter what’s going on around you.</p>
@@ -435,6 +379,12 @@ That’s where I found the original template for my CV! I think put templates th
       <tags>
         <tag>Mood</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/09/18/Hello_World/</url>
+    <content><![CDATA[<p>I made it! 😃</p>
+]]></content>
   </entry>
   <entry>
     <title>Reconnecting with MATLAB</title>
@@ -614,9 +564,54 @@ Congrats to myself and keep it up! 💪🏻</p>
       </tags>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
+    <title>LaTeX CV</title>
+    <url>/2022/10/29/Latex-CV/</url>
+    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
+<p>Here’s how I did it:</p>
+<p>-&gt; If you only use latex occasionally or a few times, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
+-&gt; If you want to do more things, use following steps:</p>
+<span id="more"></span>
+<h2 id="Download-MiKTeX-and-VSCode">Download MiKTeX and VSCode</h2>
+<p><strong>MiKTeX</strong><br>
+You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
+Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.</p>
+<p><strong>VSCode</strong><br>
+Remember to download extension <em>latex workshop</em>.</p>
+<h2 id="Find-a-template">Find a template</h2>
+<p>On Overleaf or Github.<br>
+Here are my favorites:<br>
+<a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">新卒のためのLaTeX履歴書テンプレート</a><br>
+<a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>
+And mine:<br>
+<a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)</p>
+<h2 id="Edit-the-template">Edit the template</h2>
+<p>You may encounter many problems at this step, most of which require you to download <em>Packages</em> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</p>
+<h2 id="Share-your-template">Share your template</h2>
+<ol>
+<li>Git your template to github<br>
+(Already bound git and your github accounts and set SSH key)<br>
+-&gt; Create a new repository<br>
+-&gt; Git bash the folder which contains full files about your template<br>
+-&gt; Run the following code in Git:</li>
+</ol>
+<pre><code class="language-C">git init
+git add .
+git commit -m 'Description'
+git remote add origin https://...  (copy from github)
+git push -u origin master
+</code></pre>
+<ol start="2">
+<li>Submit to Overleaf<br>
+That’s where I found the original template for my CV! I think put templates there may help more people.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Job</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>Latex</tag>
+      </tags>
   </entry>
   <entry>
     <title>Notes</title>
@@ -644,6 +639,17 @@ Congrats to myself and keep it up! 💪🏻</p>
 ]]></content>
   </entry>
   <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Links</title>
     <url>/links/index.html</url>
     <content><![CDATA[<p>Time to take a Java coffee and see some interesting blogs or websites 😛</p>
@@ -655,17 +661,6 @@ This blogger impressed me with his rich content and his persistence in writing a
 <p><a href="https://www.liaoxuefeng.com/">廖雪峰的官方网站</a><br>
 I’m learning his git tutorial and it’s really written in an easy to understand way. I’ll look at the java tutorial next.</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Schedule</title>
-    <url>/schedule/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Sitemap</title>
@@ -700,6 +695,129 @@ I’m learning his git tutorial and it’s really written in an easy to understa
 <p>Enjoy it!</p>
 <h2 id="Update">Update</h2>
 <figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site/source/lib/pdf</span><br><span class="line">$ git pull</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/web/debugger.css</url>
+    <content><![CDATA[/* Copyright 2014 Mozilla Foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#PDFBug,
+#PDFBug input,
+#PDFBug button,
+#PDFBug select {
+  font: message-box;
+}
+#PDFBug {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(102, 102, 102, 1);
+  position: fixed;
+  top: 32px;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  padding: 0;
+  width: 300px;
+}
+#PDFBug .controls {
+  background: rgba(238, 238, 238, 1);
+  border-bottom: 1px solid rgba(102, 102, 102, 1);
+  padding: 3px;
+}
+#PDFBug .panels {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 27px;
+}
+#PDFBug .panels &gt; div {
+  padding: 5px;
+}
+#PDFBug button.active {
+  font-weight: bold;
+}
+.debuggerShowText,
+.debuggerHideText:hover {
+  background-color: rgba(255, 255, 0, 1);
+}
+#PDFBug .stats {
+  font-family: courier;
+  font-size: 10px;
+  white-space: pre;
+}
+#PDFBug .stats .title {
+  font-weight: bold;
+}
+#PDFBug table {
+  font-size: 10px;
+  white-space: pre;
+}
+#PDFBug table.showText {
+  border-collapse: collapse;
+  text-align: center;
+}
+#PDFBug table.showText,
+#PDFBug table.showText tr,
+#PDFBug table.showText td {
+  border: 1px solid black;
+  padding: 1px;
+}
+#PDFBug table.showText td.advance {
+  color: grey;
+}
+
+#viewer.textLayer-visible .textLayer {
+  opacity: 1;
+}
+
+#viewer.textLayer-visible .canvasWrapper {
+  background-color: rgba(128, 255, 128, 1);
+}
+
+#viewer.textLayer-visible .canvasWrapper canvas {
+  mix-blend-mode: screen;
+}
+
+#viewer.textLayer-visible .textLayer span {
+  background-color: rgba(255, 255, 0, 0.1);
+  color: rgba(0, 0, 0, 1);
+  border: solid 1px rgba(255, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+#viewer.textLayer-visible .textLayer span[aria-owns] {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+#viewer.textLayer-hover .textLayer span:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+#viewer.textLayer-shadow .textLayer span {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 1);
+}
 ]]></content>
   </entry>
   <entry>
@@ -19907,124 +20025,6 @@ const pdfjsBuild = '987062c';
 ;
 });
 //# sourceMappingURL=pdf.js.map]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/debugger.css</url>
-    <content><![CDATA[/* Copyright 2014 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-#PDFBug,
-#PDFBug input,
-#PDFBug button,
-#PDFBug select {
-  font: message-box;
-}
-#PDFBug {
-  background-color: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(102, 102, 102, 1);
-  position: fixed;
-  top: 32px;
-  right: 0;
-  bottom: 0;
-  font-size: 10px;
-  padding: 0;
-  width: 300px;
-}
-#PDFBug .controls {
-  background: rgba(238, 238, 238, 1);
-  border-bottom: 1px solid rgba(102, 102, 102, 1);
-  padding: 3px;
-}
-#PDFBug .panels {
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  position: absolute;
-  right: 0;
-  top: 27px;
-}
-#PDFBug .panels &gt; div {
-  padding: 5px;
-}
-#PDFBug button.active {
-  font-weight: bold;
-}
-.debuggerShowText,
-.debuggerHideText:hover {
-  background-color: rgba(255, 255, 0, 1);
-}
-#PDFBug .stats {
-  font-family: courier;
-  font-size: 10px;
-  white-space: pre;
-}
-#PDFBug .stats .title {
-  font-weight: bold;
-}
-#PDFBug table {
-  font-size: 10px;
-  white-space: pre;
-}
-#PDFBug table.showText {
-  border-collapse: collapse;
-  text-align: center;
-}
-#PDFBug table.showText,
-#PDFBug table.showText tr,
-#PDFBug table.showText td {
-  border: 1px solid black;
-  padding: 1px;
-}
-#PDFBug table.showText td.advance {
-  color: grey;
-}
-
-#viewer.textLayer-visible .textLayer {
-  opacity: 1;
-}
-
-#viewer.textLayer-visible .canvasWrapper {
-  background-color: rgba(128, 255, 128, 1);
-}
-
-#viewer.textLayer-visible .canvasWrapper canvas {
-  mix-blend-mode: screen;
-}
-
-#viewer.textLayer-visible .textLayer span {
-  background-color: rgba(255, 255, 0, 0.1);
-  color: rgba(0, 0, 0, 1);
-  border: solid 1px rgba(255, 0, 0, 0.5);
-  box-sizing: border-box;
-}
-
-#viewer.textLayer-visible .textLayer span[aria-owns] {
-  background-color: rgba(255, 0, 0, 0.3);
-}
-
-#viewer.textLayer-hover .textLayer span:hover {
-  background-color: rgba(255, 255, 255, 1);
-  color: rgba(0, 0, 0, 1);
-}
-
-#viewer.textLayer-shadow .textLayer span {
-  background-color: rgba(255, 255, 255, 0.6);
-  color: rgba(0, 0, 0, 1);
-}
-]]></content>
   </entry>
   <entry>
     <title></title>
