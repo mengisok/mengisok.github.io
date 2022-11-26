@@ -104,7 +104,7 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
 ]]></content>
       <categories>
         <category>Learning</category>
-        <category>Digital Signal Processing</category>
+        <category>Signal Processing</category>
       </categories>
       <tags>
         <tag>Filter</tag>
@@ -268,12 +268,6 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/09/18/Hello_World/</url>
-    <content><![CDATA[<p>I made it! 😃</p>
-]]></content>
-  </entry>
-  <entry>
     <title>My First LinkedIn Certificate!</title>
     <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
     <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
@@ -361,6 +355,12 @@ It’s a fresh new concept to me. Sounds interesting that you can develop a web 
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/09/18/Hello_World/</url>
+    <content><![CDATA[<p>I made it! 😃</p>
+]]></content>
+  </entry>
+  <entry>
     <title>LaTeX CV</title>
     <url>/2022/10/29/Latex-CV/</url>
     <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
@@ -437,6 +437,141 @@ That’s where I found the original template for my CV! I think put templates th
       </tags>
   </entry>
   <entry>
+    <title>Reconnecting with MATLAB</title>
+    <url>/2022/11/20/Reconnecting-with-MATLAB/</url>
+    <content><![CDATA[<p>Yeah I did learned MATLAB in my undergraduate period, but now I have almost forgotten all about it… In order to finish two computer assignments in MATLAB next week, I watched a tutorial on LinkedIn Learning. It’s <a href="https://www.linkedin.com/learning/learning-matlab-2/welcome?autoplay=true">Learning MATLAB</a>.</p>
+<h2 id="General-concepts">General concepts</h2>
+<h3 id="Clear-commands">Clear commands</h3>
+<ul>
+<li>
+<p><code>clc</code>  clears the screen</p>
+</li>
+<li>
+<p><code>clear myVar</code>  deletes variable myVar</p>
+<p><code>clear all</code>  deletes all variables</p>
+</li>
+</ul>
+<h3 id="Create-variables">Create variables</h3>
+<ul>
+<li>Creating a scalar: <code>myScalar = 10</code></li>
+<li>Creating a vector:
+<ul>
+<li>Row vector: <code>myVector = [4 5 6]</code></li>
+<li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
+</ul>
+</li>
+<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code>
+<ul>
+<li><code>myMatrix(1, 2)</code>  gets 5</li>
+<li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
+<li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
+</ul>
+</li>
+<li>Using “;” at the end of command line means it will suppress (i.e. don’t show) the result</li>
+</ul>
+<h3 id="Variable-classes">Variable classes</h3>
+<ul>
+<li>double (default)</li>
+<li><code>format long</code>  changes double class to long class</li>
+<li>double, long, short, single, logical (boolean), etc</li>
+</ul>
+<h3 id="Cell-arrays">Cell arrays</h3>
+<p>A matrix which has different kinds of elements</p>
+<p><code>myCell = {[1 2 3] [4 5 6 7]; 'v1' 'v2'}</code></p>
+<p><code>myCell{1, 2}</code>  gets [4 5 6 7]</p>
+<h2 id="Core-syntax">Core syntax</h2>
+<h3 id="Script">Script</h3>
+<ul>
+<li>“.m” file</li>
+<li>Comment: <code>%</code></li>
+<li><code>disp()</code>: display something</li>
+<li><code>randi()</code>: random integers</li>
+<li>To tanspose a matrix: <code>matrix'</code></li>
+</ul>
+<h3 id="Matrices">Matrices</h3>
+<ul>
+<li>
+<p>Create some standard matrices:</p>
+<p><code>zeros(m, n)</code></p>
+<p><code>ones(m, n)</code></p>
+<p><code>randi(m, n)</code></p>
+</li>
+<li>
+<p>Matrix multiplication</p>
+<ul>
+<li>Standard multiplication: <code>M1 * M2</code></li>
+<li>Element by element multiplication: <code>M1 .* M2</code></li>
+</ul>
+</li>
+<li>
+<p>Division is alike</p>
+<ul>
+<li>Element by element division: <code>M1 ./ M2</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="If-statements">If statements</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Switch-statements">Switch statements</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span> ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="For-loops">For loops</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% step = 1</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>: <span class="number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% step = 2</span></span><br><span class="line"><span class="comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% n =25;</span></span><br><span class="line"><span class="comment">% step = 5;</span></span><br><span class="line"><span class="comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="While-loops">While loops</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Programming">Programming</h2>
+<h3 id="Set-path">Set path</h3>
+<p>If MATLAB can’t find your scripts or functions or anything else, make sure you have added the path</p>
+<h3 id="Function">Function</h3>
+<ul>
+<li>Create a function from “Current Folder”, and it’s a .m file</li>
+<li>Edit the pattern and wirte your function</li>
+</ul>
+<h3 id="Import-data">Import data</h3>
+<p>To import a CSV file:</p>
+<ul>
+<li>Copy and paste it to “Current Folder”</li>
+<li><code>csvread('sine.csv')</code></li>
+</ul>
+<h3 id="Debugging">Debugging</h3>
+<p>Set breakpoints at little dashes in the left of Editor</p>
+<h3 id="Performance">Performance</h3>
+<ul>
+<li>Preallocate some memory can speed large calculations</li>
+<li>Use “tik … tok” to count the time</li>
+</ul>
+<h2 id="Data-representations">Data representations</h2>
+<h3 id="Plot">Plot</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">figure</span></span><br><span class="line"><span class="comment">% figure(1)</span></span><br><span class="line"><span class="built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>Add a grid: <code>grid on</code></li>
+<li>Make the window fits perfectly to the plot: <code>axis tight</code></li>
+<li>Set limits to axis: <code>ylim([-1 1])</code></li>
+<li>Change the color: <code>plot(x, y, 'm') % magenta</code></li>
+<li>Change the marker: <code>plot(x, y, 'o') % circle, magenta</code></li>
+<li>Plot curves multiple times with different lines: <code>hold on</code>. To end it, use <code>hold off</code></li>
+<li>Add annotations: <code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
+<li>Use <code>close all</code> to close all figures</li>
+</ul>
+<h3 id="Image">Image</h3>
+<ul>
+<li>Use <code>imread()</code> to import the image file</li>
+<li>Use <code>image()</code> to plot the image (default square)</li>
+<li>Use <code>imshow()</code> to plot the image in the correct aspect ratio, and there’s no label on the axis</li>
+</ul>
+<h3 id="3D-plot">3D plot</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="number">-2</span>*<span class="built_in">pi</span>:<span class="number">.5</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Simulink">Simulink</h2>
+<p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Signal Processing</category>
+      </categories>
+      <tags>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Two-pointer</title>
     <url>/2022/10/26/Two-pointer/</url>
     <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, it came to a not bad end: I finished the Explore <em>Array and String</em><a href="#refer-anchor-1"><sup>1</sup></a> in Leetcode.</p>
@@ -488,10 +623,9 @@ Congrats to myself and keep it up! 💪🏻</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Codes</title>
-    <url>/codes/index.html</url>
-    <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
-]]></content>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>About</title>
@@ -504,9 +638,16 @@ Congrats to myself and keep it up! 💪🏻</p>
 </font></font>]]></content>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
+    <title>Codes</title>
+    <url>/codes/index.html</url>
+    <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
   </entry>
   <entry>
     <title>Links</title>
@@ -524,12 +665,6 @@ I’m learning his git tutorial and it’s really written in an easy to understa
   <entry>
     <title>Sitemap</title>
     <url>/sitemap/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Schedule</title>
-    <url>/schedule/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
   </entry>
@@ -19775,6 +19910,124 @@ const pdfjsBuild = '987062c';
   </entry>
   <entry>
     <title></title>
+    <url>/lib/pdf/web/debugger.css</url>
+    <content><![CDATA[/* Copyright 2014 Mozilla Foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#PDFBug,
+#PDFBug input,
+#PDFBug button,
+#PDFBug select {
+  font: message-box;
+}
+#PDFBug {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(102, 102, 102, 1);
+  position: fixed;
+  top: 32px;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  padding: 0;
+  width: 300px;
+}
+#PDFBug .controls {
+  background: rgba(238, 238, 238, 1);
+  border-bottom: 1px solid rgba(102, 102, 102, 1);
+  padding: 3px;
+}
+#PDFBug .panels {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 27px;
+}
+#PDFBug .panels &gt; div {
+  padding: 5px;
+}
+#PDFBug button.active {
+  font-weight: bold;
+}
+.debuggerShowText,
+.debuggerHideText:hover {
+  background-color: rgba(255, 255, 0, 1);
+}
+#PDFBug .stats {
+  font-family: courier;
+  font-size: 10px;
+  white-space: pre;
+}
+#PDFBug .stats .title {
+  font-weight: bold;
+}
+#PDFBug table {
+  font-size: 10px;
+  white-space: pre;
+}
+#PDFBug table.showText {
+  border-collapse: collapse;
+  text-align: center;
+}
+#PDFBug table.showText,
+#PDFBug table.showText tr,
+#PDFBug table.showText td {
+  border: 1px solid black;
+  padding: 1px;
+}
+#PDFBug table.showText td.advance {
+  color: grey;
+}
+
+#viewer.textLayer-visible .textLayer {
+  opacity: 1;
+}
+
+#viewer.textLayer-visible .canvasWrapper {
+  background-color: rgba(128, 255, 128, 1);
+}
+
+#viewer.textLayer-visible .canvasWrapper canvas {
+  mix-blend-mode: screen;
+}
+
+#viewer.textLayer-visible .textLayer span {
+  background-color: rgba(255, 255, 0, 0.1);
+  color: rgba(0, 0, 0, 1);
+  border: solid 1px rgba(255, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+#viewer.textLayer-visible .textLayer span[aria-owns] {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+#viewer.textLayer-hover .textLayer span:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+#viewer.textLayer-shadow .textLayer span {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 1);
+}
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
     <url>/lib/pdf/web/debugger.js</url>
     <content><![CDATA[/* Copyright 2012 Mozilla Foundation
  *
@@ -20388,124 +20641,6 @@ globalThis.StepperManager = StepperManager;
 globalThis.Stats = Stats;
 
 export { PDFBug };
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/debugger.css</url>
-    <content><![CDATA[/* Copyright 2014 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-#PDFBug,
-#PDFBug input,
-#PDFBug button,
-#PDFBug select {
-  font: message-box;
-}
-#PDFBug {
-  background-color: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(102, 102, 102, 1);
-  position: fixed;
-  top: 32px;
-  right: 0;
-  bottom: 0;
-  font-size: 10px;
-  padding: 0;
-  width: 300px;
-}
-#PDFBug .controls {
-  background: rgba(238, 238, 238, 1);
-  border-bottom: 1px solid rgba(102, 102, 102, 1);
-  padding: 3px;
-}
-#PDFBug .panels {
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  position: absolute;
-  right: 0;
-  top: 27px;
-}
-#PDFBug .panels &gt; div {
-  padding: 5px;
-}
-#PDFBug button.active {
-  font-weight: bold;
-}
-.debuggerShowText,
-.debuggerHideText:hover {
-  background-color: rgba(255, 255, 0, 1);
-}
-#PDFBug .stats {
-  font-family: courier;
-  font-size: 10px;
-  white-space: pre;
-}
-#PDFBug .stats .title {
-  font-weight: bold;
-}
-#PDFBug table {
-  font-size: 10px;
-  white-space: pre;
-}
-#PDFBug table.showText {
-  border-collapse: collapse;
-  text-align: center;
-}
-#PDFBug table.showText,
-#PDFBug table.showText tr,
-#PDFBug table.showText td {
-  border: 1px solid black;
-  padding: 1px;
-}
-#PDFBug table.showText td.advance {
-  color: grey;
-}
-
-#viewer.textLayer-visible .textLayer {
-  opacity: 1;
-}
-
-#viewer.textLayer-visible .canvasWrapper {
-  background-color: rgba(128, 255, 128, 1);
-}
-
-#viewer.textLayer-visible .canvasWrapper canvas {
-  mix-blend-mode: screen;
-}
-
-#viewer.textLayer-visible .textLayer span {
-  background-color: rgba(255, 255, 0, 0.1);
-  color: rgba(0, 0, 0, 1);
-  border: solid 1px rgba(255, 0, 0, 0.5);
-  box-sizing: border-box;
-}
-
-#viewer.textLayer-visible .textLayer span[aria-owns] {
-  background-color: rgba(255, 0, 0, 0.3);
-}
-
-#viewer.textLayer-hover .textLayer span:hover {
-  background-color: rgba(255, 255, 255, 1);
-  color: rgba(0, 0, 0, 1);
-}
-
-#viewer.textLayer-shadow .textLayer span {
-  background-color: rgba(255, 255, 255, 0.6);
-  color: rgba(0, 0, 0, 1);
-}
 ]]></content>
   </entry>
   <entry>
