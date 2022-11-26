@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Adaptive Filters</title>
+    <url>/2022/11/19/Adaptive-Filters/</url>
+    <content><![CDATA[<p>I watched a well-organized and concise youtube video titled <a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a>, which is also a basic course I am taking this semester. I focused on the key points in my course and made a bit of notes.</p>
+<h2 id="Limitations-of-fixed-coefficient-digital-filters">Limitations of fixed-coefficient digital filters</h2>
+<ul>
+<li>Fixed-coefficient digital filters
+<ul>
+<li>FIR, IIR</li>
+<li>LP, HP, etc</li>
+</ul>
+</li>
+<li>Limitations
+<ul>
+<li>Time-varying noise-frequency</li>
+<li>Overlapping bands of signal and noise</li>
+</ul>
+</li>
+</ul>
+<h2 id="Adaptive-filters">Adaptive filters</h2>
+<img src="/images/adaptive_filter.png" alt="adaptive_filter" title="adaptive_filter" width="400"> 
+<ul>
+<li>2 main components
+<ul>
+<li>Digital filter (with <strong>adjustable</strong> coefficients)</li>
+<li>Adaptive algorithm</li>
+</ul>
+</li>
+<li>2 input signals: $y_k$ and $x_k$
+<ul>
+<li>$y_k = s_k + n_k$</li>
+<li>$s_k$ = desired signal</li>
+<li>$n_k$ = noise</li>
+<li>$x_k$ = contaminating signal which is <strong>correlated with $n_k$</strong>, gives an estimate of $n_k$, i.e. $\hat{n_k}$</li>
+</ul>
+</li>
+<li>Goal: produce <strong>optimum</strong> $\hat{n_k}$
+<ul>
+<li>$e_k = \hat{s_k} = y_k - \hat{n_k} = s_k + n_k - \hat{n_k}$</li>
+</ul>
+</li>
+<li>Theorem: <strong>minimize $e_k$, maximize the signal-to-noise ratio</strong></li>
+</ul>
+<h2 id="LMS-algorithm">LMS algorithm</h2>
+<h3 id="Wiener-filter">Wiener filter</h3>
+<img src="/images/wiener_filter.png" alt="wiener_filter" title="wiener_filter" width="400"> 
+<ul>
+<li>An input signal&nbsp;<em>w(n)</em> is convolved w ith the Wiener filter&nbsp;<em>g(n)</em> and the result is compared to a reference signal&nbsp;<em>s(n)</em> to obtain the filtering error&nbsp;<em>e(n)</em></li>
+<li>Criterion: <strong>MMSE</strong> (Minimum Mean Square Error)
+<ul>
+<li>Minimize $J = E[e(n)^2] = E[(x(n) - s(n))^2] = E[(w(n) * g(n) - s(n))^2]$</li>
+<li><em>J</em> can be used to draw the <strong>Error-Performance surface</strong></li>
+</ul>
+</li>
+<li>The&nbsp;<a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">Least mean squares filter</a> converges to the&nbsp;<a href="https://en.wikipedia.org/wiki/Wiener_filter">Wiener filter</a></li>
+</ul>
+<h3 id="Wiener-Hopf-solution">Wiener-Hopf solution</h3>
+<p>Set gradient of <em>J</em> of <em>H</em> to zero, deduced that<br>
+$H_{opt} = R_{xx}^{-1} R_{xs}$</p>
+<p>where<br>
+$R_{xx} = E(X_k X_k^T)$<br>
+$R_{xs} = E(y_k X_k)$</p>
+<ul>
+<li>Requires knowledge of $R_{xx}, R_{xs}$</li>
+<li>Matrix inversion is expensive</li>
+<li>For non-stationary, $H_{opt}$ needs to be computed repeatedly</li>
+</ul>
+<h3 id="LMS-adaptive-algorithm">LMS adaptive algorithm</h3>
+<p>Version 1: $H(n+1) = H(n) + \mu (- \nabla(n))$<br>
+Version 2: $H(n+1) = H(n) + \frac{1}{2}\delta (- \nabla(n))$</p>
+<p>then<br>
+$H(n+1) = H(n) + 2\mu e(n)X(n)$<br>
+or $H(n+1) = H(n) + \delta e(n)X(n)$</p>
+<p>where<br>
+$e(n) = y(n) - H^T(n)X(n)$<br>
+$\mu$ and $\delta$ are step-sizes</p>
+<ul>
+<li>Based on the <strong>steepest descent algorithm</strong> (update H(n) along the opposite direction of the gradient):<br>
+$H(n+1) = H(n) + \mu (- \nabla(n))$</li>
+<li>Using <strong>instantaneous</strong> estimates <strong>instead of the means</strong> (unbiased):<br>
+$J = E[e(n)^2] = e(n)^2$<br>
+$\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
+<li>Step-size determines <strong>stablility</strong> and <strong>rate of convergence</strong>
+<ul>
+<li>If too large, too much fluctuation</li>
+<li>If too small, convergences too slow</li>
+</ul>
+</li>
+</ul>
+<h3 id="Limitations">Limitations</h3>
+<ul>
+<li>If the noise is non-stationary, the error-performance surface will change rapidly</li>
+<li>If $x(n)$ is proportional to $y(n)$, signal will be obliterated</li>
+<li>H(n) never reached the theoretical optimum (fluctuation)</li>
+</ul>
+<h2 id="Applications">Applications</h2>
+<ul>
+<li>Acoustic echo cancellation</li>
+<li>Cancelling EOG from contaminated EEG and get correct EEG</li>
+<li>Cancelling maternal ECG and get foetal ECG during labour</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Signal Processing</category>
+      </categories>
+      <tags>
+        <tag>Filter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Getting Started with Git &amp; Github</title>
     <url>/2022/11/17/Getting-Started-with-Git-Github/</url>
     <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>.</p>
@@ -158,116 +268,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Adaptive Filters</title>
-    <url>/2022/11/19/Adaptive-Filters/</url>
-    <content><![CDATA[<p>I watched a well-organized and concise youtube video titled <a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a>, which is also a basic course I am taking this semester. I focused on the key points in my course and made a bit of notes.</p>
-<h2 id="Limitations-of-fixed-coefficient-digital-filters">Limitations of fixed-coefficient digital filters</h2>
-<ul>
-<li>Fixed-coefficient digital filters
-<ul>
-<li>FIR, IIR</li>
-<li>LP, HP, etc</li>
-</ul>
-</li>
-<li>Limitations
-<ul>
-<li>Time-varying noise-frequency</li>
-<li>Overlapping bands of signal and noise</li>
-</ul>
-</li>
-</ul>
-<h2 id="Adaptive-filters">Adaptive filters</h2>
-<img src="/images/adaptive_filter.png" alt="adaptive_filter" title="adaptive_filter" width="400"> 
-<ul>
-<li>2 main components
-<ul>
-<li>Digital filter (with <strong>adjustable</strong> coefficients)</li>
-<li>Adaptive algorithm</li>
-</ul>
-</li>
-<li>2 input signals: $y_k$ and $x_k$
-<ul>
-<li>$y_k = s_k + n_k$</li>
-<li>$s_k$ = desired signal</li>
-<li>$n_k$ = noise</li>
-<li>$x_k$ = contaminating signal which is <strong>correlated with $n_k$</strong>, gives an estimate of $n_k$, i.e. $\hat{n_k}$</li>
-</ul>
-</li>
-<li>Goal: produce <strong>optimum</strong> $\hat{n_k}$
-<ul>
-<li>$e_k = \hat{s_k} = y_k - \hat{n_k} = s_k + n_k - \hat{n_k}$</li>
-</ul>
-</li>
-<li>Theorem: <strong>minimize $e_k$, maximize the signal-to-noise ratio</strong></li>
-</ul>
-<h2 id="LMS-algorithm">LMS algorithm</h2>
-<h3 id="Wiener-filter">Wiener filter</h3>
-<img src="/images/wiener_filter.png" alt="wiener_filter" title="wiener_filter" width="400"> 
-<ul>
-<li>An input signal&nbsp;<em>w(n)</em> is convolved w ith the Wiener filter&nbsp;<em>g(n)</em> and the result is compared to a reference signal&nbsp;<em>s(n)</em> to obtain the filtering error&nbsp;<em>e(n)</em></li>
-<li>Criterion: <strong>MMSE</strong> (Minimum Mean Square Error)
-<ul>
-<li>Minimize $J = E[e(n)^2] = E[(x(n) - s(n))^2] = E[(w(n) * g(n) - s(n))^2]$</li>
-<li><em>J</em> can be used to draw the <strong>Error-Performance surface</strong></li>
-</ul>
-</li>
-<li>The&nbsp;<a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">Least mean squares filter</a> converges to the&nbsp;<a href="https://en.wikipedia.org/wiki/Wiener_filter">Wiener filter</a></li>
-</ul>
-<h3 id="Wiener-Hopf-solution">Wiener-Hopf solution</h3>
-<p>Set gradient of <em>J</em> of <em>H</em> to zero, deduced that<br>
-$H_{opt} = R_{xx}^{-1} R_{xs}$</p>
-<p>where<br>
-$R_{xx} = E(X_k X_k^T)$<br>
-$R_{xs} = E(y_k X_k)$</p>
-<ul>
-<li>Requires knowledge of $R_{xx}, R_{xs}$</li>
-<li>Matrix inversion is expensive</li>
-<li>For non-stationary, $H_{opt}$ needs to be computed repeatedly</li>
-</ul>
-<h3 id="LMS-adaptive-algorithm">LMS adaptive algorithm</h3>
-<p>Version 1: $H(n+1) = H(n) + \mu (- \nabla(n))$<br>
-Version 2: $H(n+1) = H(n) + \frac{1}{2}\delta (- \nabla(n))$</p>
-<p>then<br>
-$H(n+1) = H(n) + 2\mu e(n)X(n)$<br>
-or $H(n+1) = H(n) + \delta e(n)X(n)$</p>
-<p>where<br>
-$e(n) = y(n) - H^T(n)X(n)$<br>
-$\mu$ and $\delta$ are step-sizes</p>
-<ul>
-<li>Based on the <strong>steepest descent algorithm</strong> (update H(n) along the opposite direction of the gradient):<br>
-$H(n+1) = H(n) + \mu (- \nabla(n))$</li>
-<li>Using <strong>instantaneous</strong> estimates <strong>instead of the means</strong> (unbiased):<br>
-$J = E[e(n)^2] = e(n)^2$<br>
-$\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
-<li>Step-size determines <strong>stablility</strong> and <strong>rate of convergence</strong>
-<ul>
-<li>If too large, too much fluctuation</li>
-<li>If too small, convergences too slow</li>
-</ul>
-</li>
-</ul>
-<h3 id="Limitations">Limitations</h3>
-<ul>
-<li>If the noise is non-stationary, the error-performance surface will change rapidly</li>
-<li>If $x(n)$ is proportional to $y(n)$, signal will be obliterated</li>
-<li>H(n) never reached the theoretical optimum (fluctuation)</li>
-</ul>
-<h2 id="Applications">Applications</h2>
-<ul>
-<li>Acoustic echo cancellation</li>
-<li>Cancelling EOG from contaminated EEG and get correct EEG</li>
-<li>Cancelling maternal ECG and get foetal ECG during labour</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Signal Processing</category>
-      </categories>
-      <tags>
-        <tag>Filter</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>My First LinkedIn Certificate!</title>
     <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
     <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
@@ -355,6 +355,12 @@ It’s a fresh new concept to me. Sounds interesting that you can develop a web 
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/09/18/Hello_World/</url>
+    <content><![CDATA[<p>I made it! 😃</p>
+]]></content>
+  </entry>
+  <entry>
     <title>LaTeX CV</title>
     <url>/2022/10/29/Latex-CV/</url>
     <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
@@ -402,38 +408,6 @@ That’s where I found the original template for my CV! I think put templates th
       <tags>
         <tag>Git</tag>
         <tag>Latex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/09/18/Hello_World/</url>
-    <content><![CDATA[<p>I made it! 😃</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>October Summary</title>
-    <url>/2022/10/31/October-Summary/</url>
-    <content><![CDATA[<p>This October is the second month of the new semester, and a lot has happened during this period–I even wanted to quit from school because I was eager to go abroad😂 (you know, the deterioration of the political environment and the popularity of “runology”). But when I calmed down, I realized that the most important thing was to enhance my capabilities, which I could only count on, before I’m strong enough. Thus I keep telling myself: learn as you can, no matter what’s going on around you.</p>
-<p>Today is also Halloween. I’m typing under the quilt in the last hour of today. Hope I’ll be celebrating today in the future aha!</p>
-<span id="more"></span>
-<p>So here’s my October –</p>
-<h2 id="Programming">Programming</h2>
-<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
-<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
-<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
-<h2 id="Language">Language</h2>
-<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
-<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
-<h2 id="Other">Other</h2>
-<p>As for movies or books, unfortunately almost none. Life’s so short. (I use more than Python🤭)</p>
-<p>OK bye for now! It’s midnight.</p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-        <category>Monthly Summary</category>
-      </categories>
-      <tags>
-        <tag>Mood</tag>
       </tags>
   </entry>
   <entry>
@@ -609,6 +583,35 @@ Congrats to myself and keep it up! 💪🏻</p>
       <categories>
         <category>Leetcode</category>
       </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>October Summary</title>
+    <url>/2022/10/31/October-Summary/</url>
+    <content><![CDATA[<p>This October is the second month of the new semester, and a lot has happened during this period–I even wanted to quit from school because I was eager to go abroad😂 (you know, the deterioration of the political environment and the popularity of “runology”). But when I calmed down, I realized that the most important thing was to enhance my capabilities, which I could only count on, before I’m strong enough. Thus I keep telling myself: learn as you can, no matter what’s going on around you.</p>
+<p>Today is also Halloween. I’m typing under the quilt in the last hour of today. Hope I’ll be celebrating today in the future aha!</p>
+<span id="more"></span>
+<p>So here’s my October –</p>
+<h2 id="Programming">Programming</h2>
+<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
+<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
+<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
+<h2 id="Language">Language</h2>
+<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
+<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
+<h2 id="Other">Other</h2>
+<p>As for movies or books, unfortunately almost none. Life’s so short. (I use more than Python🤭)</p>
+<p>OK bye for now! It’s midnight.</p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+        <category>Monthly Summary</category>
+      </categories>
+      <tags>
+        <tag>Mood</tag>
+      </tags>
   </entry>
   <entry>
     <title>Notes</title>
@@ -618,6 +621,11 @@ Congrats to myself and keep it up! 💪🏻</p>
 <a href="https://mengisok.notion.site/5712822f24cd4e91899e356526a3e7c7">Combinatorial Mathematics 组合数学</a><br>
 <a href="https://mengisok.notion.site/2f4975a496874c25988f2681d02aa97a">Digital Image Analysis 数字图像分析</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Codes</title>
@@ -634,11 +642,6 @@ Congrats to myself and keep it up! 💪🏻</p>
 <p>Anyway, <strong>Long live the spirit of the Internet!</strong></p>
 <p><font size="1">(This site is built with the <a href="https://hexo.io/">Hexo</a> framework, using the <a href="https://github.com/probberechts/hexo-theme-cactus">Cactus</a> theme.)<font></font></font></p><font size="1"><font>
 </font></font>]]></content>
-  </entry>
-  <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Links</title>
@@ -660,15 +663,15 @@ I’m learning his git tutorial and it’s really written in an easy to understa
 ]]></content>
   </entry>
   <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Sitemap</title>
     <url>/sitemap/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title></title>
@@ -697,741 +700,6 @@ I’m learning his git tutorial and it’s really written in an easy to understa
 <p>Enjoy it!</p>
 <h2 id="Update">Update</h2>
 <figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site/source/lib/pdf</span><br><span class="line">$ git pull</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/debugger.css</url>
-    <content><![CDATA[/* Copyright 2014 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-#PDFBug,
-#PDFBug input,
-#PDFBug button,
-#PDFBug select {
-  font: message-box;
-}
-#PDFBug {
-  background-color: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(102, 102, 102, 1);
-  position: fixed;
-  top: 32px;
-  right: 0;
-  bottom: 0;
-  font-size: 10px;
-  padding: 0;
-  width: 300px;
-}
-#PDFBug .controls {
-  background: rgba(238, 238, 238, 1);
-  border-bottom: 1px solid rgba(102, 102, 102, 1);
-  padding: 3px;
-}
-#PDFBug .panels {
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  position: absolute;
-  right: 0;
-  top: 27px;
-}
-#PDFBug .panels &gt; div {
-  padding: 5px;
-}
-#PDFBug button.active {
-  font-weight: bold;
-}
-.debuggerShowText,
-.debuggerHideText:hover {
-  background-color: rgba(255, 255, 0, 1);
-}
-#PDFBug .stats {
-  font-family: courier;
-  font-size: 10px;
-  white-space: pre;
-}
-#PDFBug .stats .title {
-  font-weight: bold;
-}
-#PDFBug table {
-  font-size: 10px;
-  white-space: pre;
-}
-#PDFBug table.showText {
-  border-collapse: collapse;
-  text-align: center;
-}
-#PDFBug table.showText,
-#PDFBug table.showText tr,
-#PDFBug table.showText td {
-  border: 1px solid black;
-  padding: 1px;
-}
-#PDFBug table.showText td.advance {
-  color: grey;
-}
-
-#viewer.textLayer-visible .textLayer {
-  opacity: 1;
-}
-
-#viewer.textLayer-visible .canvasWrapper {
-  background-color: rgba(128, 255, 128, 1);
-}
-
-#viewer.textLayer-visible .canvasWrapper canvas {
-  mix-blend-mode: screen;
-}
-
-#viewer.textLayer-visible .textLayer span {
-  background-color: rgba(255, 255, 0, 0.1);
-  color: rgba(0, 0, 0, 1);
-  border: solid 1px rgba(255, 0, 0, 0.5);
-  box-sizing: border-box;
-}
-
-#viewer.textLayer-visible .textLayer span[aria-owns] {
-  background-color: rgba(255, 0, 0, 0.3);
-}
-
-#viewer.textLayer-hover .textLayer span:hover {
-  background-color: rgba(255, 255, 255, 1);
-  color: rgba(0, 0, 0, 1);
-}
-
-#viewer.textLayer-shadow .textLayer span {
-  background-color: rgba(255, 255, 255, 0.6);
-  color: rgba(0, 0, 0, 1);
-}
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/debugger.js</url>
-    <content><![CDATA[/* Copyright 2012 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-let opMap;
-
-const FontInspector = (function FontInspectorClosure() {
-  let fonts;
-  let active = false;
-  const fontAttribute = "data-font-name";
-  function removeSelection() {
-    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
-    for (const div of divs) {
-      div.className = "";
-    }
-  }
-  function resetSelection() {
-    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
-    for (const div of divs) {
-      div.className = "debuggerHideText";
-    }
-  }
-  function selectFont(fontName, show) {
-    const divs = document.querySelectorAll(
-      `span[${fontAttribute}=${fontName}]`
-    );
-    for (const div of divs) {
-      div.className = show ? "debuggerShowText" : "debuggerHideText";
-    }
-  }
-  function textLayerClick(e) {
-    if (
-      !e.target.dataset.fontName ||
-      e.target.tagName.toUpperCase() !== "SPAN"
-    ) {
-      return;
-    }
-    const fontName = e.target.dataset.fontName;
-    const selects = document.getElementsByTagName("input");
-    for (const select of selects) {
-      if (select.dataset.fontName !== fontName) {
-        continue;
-      }
-      select.checked = !select.checked;
-      selectFont(fontName, select.checked);
-      select.scrollIntoView();
-    }
-  }
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "FontInspector",
-    name: "Font Inspector",
-    panel: null,
-    manager: null,
-    init(pdfjsLib) {
-      const panel = this.panel;
-      const tmp = document.createElement("button");
-      tmp.addEventListener("click", resetSelection);
-      tmp.textContent = "Refresh";
-      panel.append(tmp);
-
-      fonts = document.createElement("div");
-      panel.append(fonts);
-    },
-    cleanup() {
-      fonts.textContent = "";
-    },
-    enabled: false,
-    get active() {
-      return active;
-    },
-    set active(value) {
-      active = value;
-      if (active) {
-        document.body.addEventListener("click", textLayerClick, true);
-        resetSelection();
-      } else {
-        document.body.removeEventListener("click", textLayerClick, true);
-        removeSelection();
-      }
-    },
-    // FontInspector specific functions.
-    fontAdded(fontObj, url) {
-      function properties(obj, list) {
-        const moreInfo = document.createElement("table");
-        for (const entry of list) {
-          const tr = document.createElement("tr");
-          const td1 = document.createElement("td");
-          td1.textContent = entry;
-          tr.append(td1);
-          const td2 = document.createElement("td");
-          td2.textContent = obj[entry].toString();
-          tr.append(td2);
-          moreInfo.append(tr);
-        }
-        return moreInfo;
-      }
-      const moreInfo = properties(fontObj, ["name", "type"]);
-      const fontName = fontObj.loadedName;
-      const font = document.createElement("div");
-      const name = document.createElement("span");
-      name.textContent = fontName;
-      const download = document.createElement("a");
-      if (url) {
-        url = /url\(['"]?([^)"']+)/.exec(url);
-        download.href = url[1];
-      } else if (fontObj.data) {
-        download.href = URL.createObjectURL(
-          new Blob([fontObj.data], { type: fontObj.mimetype })
-        );
-      }
-      download.textContent = "Download";
-      const logIt = document.createElement("a");
-      logIt.href = "";
-      logIt.textContent = "Log";
-      logIt.addEventListener("click", function (event) {
-        event.preventDefault();
-        console.log(fontObj);
-      });
-      const select = document.createElement("input");
-      select.setAttribute("type", "checkbox");
-      select.dataset.fontName = fontName;
-      select.addEventListener("click", function () {
-        selectFont(fontName, select.checked);
-      });
-      font.append(select, name, " ", download, " ", logIt, moreInfo);
-      fonts.append(font);
-      // Somewhat of a hack, should probably add a hook for when the text layer
-      // is done rendering.
-      setTimeout(() =&gt; {
-        if (this.active) {
-          resetSelection();
-        }
-      }, 2000);
-    },
-  };
-})();
-
-// Manages all the page steppers.
-const StepperManager = (function StepperManagerClosure() {
-  let steppers = [];
-  let stepperDiv = null;
-  let stepperControls = null;
-  let stepperChooser = null;
-  let breakPoints = Object.create(null);
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "Stepper",
-    name: "Stepper",
-    panel: null,
-    manager: null,
-    init(pdfjsLib) {
-      const self = this;
-      stepperControls = document.createElement("div");
-      stepperChooser = document.createElement("select");
-      stepperChooser.addEventListener("change", function (event) {
-        self.selectStepper(this.value);
-      });
-      stepperControls.append(stepperChooser);
-      stepperDiv = document.createElement("div");
-      this.panel.append(stepperControls, stepperDiv);
-      if (sessionStorage.getItem("pdfjsBreakPoints")) {
-        breakPoints = JSON.parse(sessionStorage.getItem("pdfjsBreakPoints"));
-      }
-
-      opMap = Object.create(null);
-      for (const key in pdfjsLib.OPS) {
-        opMap[pdfjsLib.OPS[key]] = key;
-      }
-    },
-    cleanup() {
-      stepperChooser.textContent = "";
-      stepperDiv.textContent = "";
-      steppers = [];
-    },
-    enabled: false,
-    active: false,
-    // Stepper specific functions.
-    create(pageIndex) {
-      const debug = document.createElement("div");
-      debug.id = "stepper" + pageIndex;
-      debug.hidden = true;
-      debug.className = "stepper";
-      stepperDiv.append(debug);
-      const b = document.createElement("option");
-      b.textContent = "Page " + (pageIndex + 1);
-      b.value = pageIndex;
-      stepperChooser.append(b);
-      const initBreakPoints = breakPoints[pageIndex] || [];
-      const stepper = new Stepper(debug, pageIndex, initBreakPoints);
-      steppers.push(stepper);
-      if (steppers.length === 1) {
-        this.selectStepper(pageIndex, false);
-      }
-      return stepper;
-    },
-    selectStepper(pageIndex, selectPanel) {
-      pageIndex |= 0;
-      if (selectPanel) {
-        this.manager.selectPanel(this);
-      }
-      for (const stepper of steppers) {
-        stepper.panel.hidden = stepper.pageIndex !== pageIndex;
-      }
-      for (const option of stepperChooser.options) {
-        option.selected = (option.value | 0) === pageIndex;
-      }
-    },
-    saveBreakPoints(pageIndex, bps) {
-      breakPoints[pageIndex] = bps;
-      sessionStorage.setItem("pdfjsBreakPoints", JSON.stringify(breakPoints));
-    },
-  };
-})();
-
-// The stepper for each page's operatorList.
-const Stepper = (function StepperClosure() {
-  // Shorter way to create element and optionally set textContent.
-  function c(tag, textContent) {
-    const d = document.createElement(tag);
-    if (textContent) {
-      d.textContent = textContent;
-    }
-    return d;
-  }
-
-  function simplifyArgs(args) {
-    if (typeof args === "string") {
-      const MAX_STRING_LENGTH = 75;
-      return args.length &lt;= MAX_STRING_LENGTH
-        ? args
-        : args.substring(0, MAX_STRING_LENGTH) + "...";
-    }
-    if (typeof args !== "object" || args === null) {
-      return args;
-    }
-    if ("length" in args) {
-      // array
-      const MAX_ITEMS = 10,
-        simpleArgs = [];
-      let i, ii;
-      for (i = 0, ii = Math.min(MAX_ITEMS, args.length); i &lt; ii; i++) {
-        simpleArgs.push(simplifyArgs(args[i]));
-      }
-      if (i &lt; args.length) {
-        simpleArgs.push("...");
-      }
-      return simpleArgs;
-    }
-    const simpleObj = {};
-    for (const key in args) {
-      simpleObj[key] = simplifyArgs(args[key]);
-    }
-    return simpleObj;
-  }
-
-  // eslint-disable-next-line no-shadow
-  class Stepper {
-    constructor(panel, pageIndex, initialBreakPoints) {
-      this.panel = panel;
-      this.breakPoint = 0;
-      this.nextBreakPoint = null;
-      this.pageIndex = pageIndex;
-      this.breakPoints = initialBreakPoints;
-      this.currentIdx = -1;
-      this.operatorListIdx = 0;
-      this.indentLevel = 0;
-    }
-
-    init(operatorList) {
-      const panel = this.panel;
-      const content = c("div", "c=continue, s=step");
-      const table = c("table");
-      content.append(table);
-      table.cellSpacing = 0;
-      const headerRow = c("tr");
-      table.append(headerRow);
-      headerRow.append(
-        c("th", "Break"),
-        c("th", "Idx"),
-        c("th", "fn"),
-        c("th", "args")
-      );
-      panel.append(content);
-      this.table = table;
-      this.updateOperatorList(operatorList);
-    }
-
-    updateOperatorList(operatorList) {
-      const self = this;
-
-      function cboxOnClick() {
-        const x = +this.dataset.idx;
-        if (this.checked) {
-          self.breakPoints.push(x);
-        } else {
-          self.breakPoints.splice(self.breakPoints.indexOf(x), 1);
-        }
-        StepperManager.saveBreakPoints(self.pageIndex, self.breakPoints);
-      }
-
-      const MAX_OPERATORS_COUNT = 15000;
-      if (this.operatorListIdx &gt; MAX_OPERATORS_COUNT) {
-        return;
-      }
-
-      const chunk = document.createDocumentFragment();
-      const operatorsToDisplay = Math.min(
-        MAX_OPERATORS_COUNT,
-        operatorList.fnArray.length
-      );
-      for (let i = this.operatorListIdx; i &lt; operatorsToDisplay; i++) {
-        const line = c("tr");
-        line.className = "line";
-        line.dataset.idx = i;
-        chunk.append(line);
-        const checked = this.breakPoints.includes(i);
-        const args = operatorList.argsArray[i] || [];
-
-        const breakCell = c("td");
-        const cbox = c("input");
-        cbox.type = "checkbox";
-        cbox.className = "points";
-        cbox.checked = checked;
-        cbox.dataset.idx = i;
-        cbox.onclick = cboxOnClick;
-
-        breakCell.append(cbox);
-        line.append(breakCell, c("td", i.toString()));
-        const fn = opMap[operatorList.fnArray[i]];
-        let decArgs = args;
-        if (fn === "showText") {
-          const glyphs = args[0];
-          const charCodeRow = c("tr");
-          const fontCharRow = c("tr");
-          const unicodeRow = c("tr");
-          for (const glyph of glyphs) {
-            if (typeof glyph === "object" &amp;&amp; glyph !== null) {
-              charCodeRow.append(c("td", glyph.originalCharCode));
-              fontCharRow.append(c("td", glyph.fontChar));
-              unicodeRow.append(c("td", glyph.unicode));
-            } else {
-              // null or number
-              const advanceEl = c("td", glyph);
-              advanceEl.classList.add("advance");
-              charCodeRow.append(advanceEl);
-              fontCharRow.append(c("td"));
-              unicodeRow.append(c("td"));
-            }
-          }
-          decArgs = c("td");
-          const table = c("table");
-          table.classList.add("showText");
-          decArgs.append(table);
-          table.append(charCodeRow, fontCharRow, unicodeRow);
-        } else if (fn === "restore") {
-          this.indentLevel--;
-        }
-        line.append(c("td", " ".repeat(this.indentLevel * 2) + fn));
-        if (fn === "save") {
-          this.indentLevel++;
-        }
-
-        if (decArgs instanceof HTMLElement) {
-          line.append(decArgs);
-        } else {
-          line.append(c("td", JSON.stringify(simplifyArgs(decArgs))));
-        }
-      }
-      if (operatorsToDisplay &lt; operatorList.fnArray.length) {
-        const lastCell = c("td", "...");
-        lastCell.colspan = 4;
-        chunk.append(lastCell);
-      }
-      this.operatorListIdx = operatorList.fnArray.length;
-      this.table.append(chunk);
-    }
-
-    getNextBreakPoint() {
-      this.breakPoints.sort(function (a, b) {
-        return a - b;
-      });
-      for (const breakPoint of this.breakPoints) {
-        if (breakPoint &gt; this.currentIdx) {
-          return breakPoint;
-        }
-      }
-      return null;
-    }
-
-    breakIt(idx, callback) {
-      StepperManager.selectStepper(this.pageIndex, true);
-      this.currentIdx = idx;
-
-      const listener = evt =&gt; {
-        switch (evt.keyCode) {
-          case 83: // step
-            document.removeEventListener("keydown", listener);
-            this.nextBreakPoint = this.currentIdx + 1;
-            this.goTo(-1);
-            callback();
-            break;
-          case 67: // continue
-            document.removeEventListener("keydown", listener);
-            this.nextBreakPoint = this.getNextBreakPoint();
-            this.goTo(-1);
-            callback();
-            break;
-        }
-      };
-      document.addEventListener("keydown", listener);
-      this.goTo(idx);
-    }
-
-    goTo(idx) {
-      const allRows = this.panel.getElementsByClassName("line");
-      for (const row of allRows) {
-        if ((row.dataset.idx | 0) === idx) {
-          row.style.backgroundColor = "rgb(251,250,207)";
-          row.scrollIntoView();
-        } else {
-          row.style.backgroundColor = null;
-        }
-      }
-    }
-  }
-  return Stepper;
-})();
-
-const Stats = (function Stats() {
-  let stats = [];
-  function clear(node) {
-    node.textContent = ""; // Remove any `node` contents from the DOM.
-  }
-  function getStatIndex(pageNumber) {
-    for (const [i, stat] of stats.entries()) {
-      if (stat.pageNumber === pageNumber) {
-        return i;
-      }
-    }
-    return false;
-  }
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "Stats",
-    name: "Stats",
-    panel: null,
-    manager: null,
-    init(pdfjsLib) {},
-    enabled: false,
-    active: false,
-    // Stats specific functions.
-    add(pageNumber, stat) {
-      if (!stat) {
-        return;
-      }
-      const statsIndex = getStatIndex(pageNumber);
-      if (statsIndex !== false) {
-        stats[statsIndex].div.remove();
-        stats.splice(statsIndex, 1);
-      }
-      const wrapper = document.createElement("div");
-      wrapper.className = "stats";
-      const title = document.createElement("div");
-      title.className = "title";
-      title.textContent = "Page: " + pageNumber;
-      const statsDiv = document.createElement("div");
-      statsDiv.textContent = stat.toString();
-      wrapper.append(title, statsDiv);
-      stats.push({ pageNumber, div: wrapper });
-      stats.sort(function (a, b) {
-        return a.pageNumber - b.pageNumber;
-      });
-      clear(this.panel);
-      for (const entry of stats) {
-        this.panel.append(entry.div);
-      }
-    },
-    cleanup() {
-      stats = [];
-      clear(this.panel);
-    },
-  };
-})();
-
-// Manages all the debugging tools.
-const PDFBug = (function PDFBugClosure() {
-  const panelWidth = 300;
-  const buttons = [];
-  let activePanel = null;
-
-  return {
-    tools: [FontInspector, StepperManager, Stats],
-    enable(ids) {
-      const all = ids.length === 1 &amp;&amp; ids[0] === "all";
-      const tools = this.tools;
-      for (const tool of tools) {
-        if (all || ids.includes(tool.id)) {
-          tool.enabled = true;
-        }
-      }
-      if (!all) {
-        // Sort the tools by the order they are enabled.
-        tools.sort(function (a, b) {
-          let indexA = ids.indexOf(a.id);
-          indexA = indexA &lt; 0 ? tools.length : indexA;
-          let indexB = ids.indexOf(b.id);
-          indexB = indexB &lt; 0 ? tools.length : indexB;
-          return indexA - indexB;
-        });
-      }
-    },
-    init(pdfjsLib, container, ids) {
-      this.loadCSS();
-      this.enable(ids);
-      /*
-       * Basic Layout:
-       * PDFBug
-       *  Controls
-       *  Panels
-       *    Panel
-       *    Panel
-       *    ...
-       */
-      const ui = document.createElement("div");
-      ui.id = "PDFBug";
-
-      const controls = document.createElement("div");
-      controls.setAttribute("class", "controls");
-      ui.append(controls);
-
-      const panels = document.createElement("div");
-      panels.setAttribute("class", "panels");
-      ui.append(panels);
-
-      container.append(ui);
-      container.style.right = panelWidth + "px";
-
-      // Initialize all the debugging tools.
-      for (const tool of this.tools) {
-        const panel = document.createElement("div");
-        const panelButton = document.createElement("button");
-        panelButton.textContent = tool.name;
-        panelButton.addEventListener("click", event =&gt; {
-          event.preventDefault();
-          this.selectPanel(tool);
-        });
-        controls.append(panelButton);
-        panels.append(panel);
-        tool.panel = panel;
-        tool.manager = this;
-        if (tool.enabled) {
-          tool.init(pdfjsLib);
-        } else {
-          panel.textContent =
-            `${tool.name} is disabled. To enable add "${tool.id}" to ` +
-            "the pdfBug parameter and refresh (separate multiple by commas).";
-        }
-        buttons.push(panelButton);
-      }
-      this.selectPanel(0);
-    },
-    loadCSS() {
-      const { url } = import.meta;
-
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = url.replace(/.js$/, ".css");
-
-      document.head.append(link);
-    },
-    cleanup() {
-      for (const tool of this.tools) {
-        if (tool.enabled) {
-          tool.cleanup();
-        }
-      }
-    },
-    selectPanel(index) {
-      if (typeof index !== "number") {
-        index = this.tools.indexOf(index);
-      }
-      if (index === activePanel) {
-        return;
-      }
-      activePanel = index;
-      for (const [j, tool] of this.tools.entries()) {
-        const isActive = j === index;
-        buttons[j].classList.toggle("active", isActive);
-        tool.active = isActive;
-        tool.panel.hidden = !isActive;
-      }
-    },
-  };
-})();
-
-globalThis.FontInspector = FontInspector;
-globalThis.StepperManager = StepperManager;
-globalThis.Stats = Stats;
-
-export { PDFBug };
 ]]></content>
   </entry>
   <entry>
@@ -20639,6 +19907,741 @@ const pdfjsBuild = '987062c';
 ;
 });
 //# sourceMappingURL=pdf.js.map]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/web/debugger.css</url>
+    <content><![CDATA[/* Copyright 2014 Mozilla Foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#PDFBug,
+#PDFBug input,
+#PDFBug button,
+#PDFBug select {
+  font: message-box;
+}
+#PDFBug {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(102, 102, 102, 1);
+  position: fixed;
+  top: 32px;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  padding: 0;
+  width: 300px;
+}
+#PDFBug .controls {
+  background: rgba(238, 238, 238, 1);
+  border-bottom: 1px solid rgba(102, 102, 102, 1);
+  padding: 3px;
+}
+#PDFBug .panels {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 27px;
+}
+#PDFBug .panels &gt; div {
+  padding: 5px;
+}
+#PDFBug button.active {
+  font-weight: bold;
+}
+.debuggerShowText,
+.debuggerHideText:hover {
+  background-color: rgba(255, 255, 0, 1);
+}
+#PDFBug .stats {
+  font-family: courier;
+  font-size: 10px;
+  white-space: pre;
+}
+#PDFBug .stats .title {
+  font-weight: bold;
+}
+#PDFBug table {
+  font-size: 10px;
+  white-space: pre;
+}
+#PDFBug table.showText {
+  border-collapse: collapse;
+  text-align: center;
+}
+#PDFBug table.showText,
+#PDFBug table.showText tr,
+#PDFBug table.showText td {
+  border: 1px solid black;
+  padding: 1px;
+}
+#PDFBug table.showText td.advance {
+  color: grey;
+}
+
+#viewer.textLayer-visible .textLayer {
+  opacity: 1;
+}
+
+#viewer.textLayer-visible .canvasWrapper {
+  background-color: rgba(128, 255, 128, 1);
+}
+
+#viewer.textLayer-visible .canvasWrapper canvas {
+  mix-blend-mode: screen;
+}
+
+#viewer.textLayer-visible .textLayer span {
+  background-color: rgba(255, 255, 0, 0.1);
+  color: rgba(0, 0, 0, 1);
+  border: solid 1px rgba(255, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+#viewer.textLayer-visible .textLayer span[aria-owns] {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+#viewer.textLayer-hover .textLayer span:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+#viewer.textLayer-shadow .textLayer span {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 1);
+}
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/web/debugger.js</url>
+    <content><![CDATA[/* Copyright 2012 Mozilla Foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+let opMap;
+
+const FontInspector = (function FontInspectorClosure() {
+  let fonts;
+  let active = false;
+  const fontAttribute = "data-font-name";
+  function removeSelection() {
+    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
+    for (const div of divs) {
+      div.className = "";
+    }
+  }
+  function resetSelection() {
+    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
+    for (const div of divs) {
+      div.className = "debuggerHideText";
+    }
+  }
+  function selectFont(fontName, show) {
+    const divs = document.querySelectorAll(
+      `span[${fontAttribute}=${fontName}]`
+    );
+    for (const div of divs) {
+      div.className = show ? "debuggerShowText" : "debuggerHideText";
+    }
+  }
+  function textLayerClick(e) {
+    if (
+      !e.target.dataset.fontName ||
+      e.target.tagName.toUpperCase() !== "SPAN"
+    ) {
+      return;
+    }
+    const fontName = e.target.dataset.fontName;
+    const selects = document.getElementsByTagName("input");
+    for (const select of selects) {
+      if (select.dataset.fontName !== fontName) {
+        continue;
+      }
+      select.checked = !select.checked;
+      selectFont(fontName, select.checked);
+      select.scrollIntoView();
+    }
+  }
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "FontInspector",
+    name: "Font Inspector",
+    panel: null,
+    manager: null,
+    init(pdfjsLib) {
+      const panel = this.panel;
+      const tmp = document.createElement("button");
+      tmp.addEventListener("click", resetSelection);
+      tmp.textContent = "Refresh";
+      panel.append(tmp);
+
+      fonts = document.createElement("div");
+      panel.append(fonts);
+    },
+    cleanup() {
+      fonts.textContent = "";
+    },
+    enabled: false,
+    get active() {
+      return active;
+    },
+    set active(value) {
+      active = value;
+      if (active) {
+        document.body.addEventListener("click", textLayerClick, true);
+        resetSelection();
+      } else {
+        document.body.removeEventListener("click", textLayerClick, true);
+        removeSelection();
+      }
+    },
+    // FontInspector specific functions.
+    fontAdded(fontObj, url) {
+      function properties(obj, list) {
+        const moreInfo = document.createElement("table");
+        for (const entry of list) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          td1.textContent = entry;
+          tr.append(td1);
+          const td2 = document.createElement("td");
+          td2.textContent = obj[entry].toString();
+          tr.append(td2);
+          moreInfo.append(tr);
+        }
+        return moreInfo;
+      }
+      const moreInfo = properties(fontObj, ["name", "type"]);
+      const fontName = fontObj.loadedName;
+      const font = document.createElement("div");
+      const name = document.createElement("span");
+      name.textContent = fontName;
+      const download = document.createElement("a");
+      if (url) {
+        url = /url\(['"]?([^)"']+)/.exec(url);
+        download.href = url[1];
+      } else if (fontObj.data) {
+        download.href = URL.createObjectURL(
+          new Blob([fontObj.data], { type: fontObj.mimetype })
+        );
+      }
+      download.textContent = "Download";
+      const logIt = document.createElement("a");
+      logIt.href = "";
+      logIt.textContent = "Log";
+      logIt.addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log(fontObj);
+      });
+      const select = document.createElement("input");
+      select.setAttribute("type", "checkbox");
+      select.dataset.fontName = fontName;
+      select.addEventListener("click", function () {
+        selectFont(fontName, select.checked);
+      });
+      font.append(select, name, " ", download, " ", logIt, moreInfo);
+      fonts.append(font);
+      // Somewhat of a hack, should probably add a hook for when the text layer
+      // is done rendering.
+      setTimeout(() =&gt; {
+        if (this.active) {
+          resetSelection();
+        }
+      }, 2000);
+    },
+  };
+})();
+
+// Manages all the page steppers.
+const StepperManager = (function StepperManagerClosure() {
+  let steppers = [];
+  let stepperDiv = null;
+  let stepperControls = null;
+  let stepperChooser = null;
+  let breakPoints = Object.create(null);
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "Stepper",
+    name: "Stepper",
+    panel: null,
+    manager: null,
+    init(pdfjsLib) {
+      const self = this;
+      stepperControls = document.createElement("div");
+      stepperChooser = document.createElement("select");
+      stepperChooser.addEventListener("change", function (event) {
+        self.selectStepper(this.value);
+      });
+      stepperControls.append(stepperChooser);
+      stepperDiv = document.createElement("div");
+      this.panel.append(stepperControls, stepperDiv);
+      if (sessionStorage.getItem("pdfjsBreakPoints")) {
+        breakPoints = JSON.parse(sessionStorage.getItem("pdfjsBreakPoints"));
+      }
+
+      opMap = Object.create(null);
+      for (const key in pdfjsLib.OPS) {
+        opMap[pdfjsLib.OPS[key]] = key;
+      }
+    },
+    cleanup() {
+      stepperChooser.textContent = "";
+      stepperDiv.textContent = "";
+      steppers = [];
+    },
+    enabled: false,
+    active: false,
+    // Stepper specific functions.
+    create(pageIndex) {
+      const debug = document.createElement("div");
+      debug.id = "stepper" + pageIndex;
+      debug.hidden = true;
+      debug.className = "stepper";
+      stepperDiv.append(debug);
+      const b = document.createElement("option");
+      b.textContent = "Page " + (pageIndex + 1);
+      b.value = pageIndex;
+      stepperChooser.append(b);
+      const initBreakPoints = breakPoints[pageIndex] || [];
+      const stepper = new Stepper(debug, pageIndex, initBreakPoints);
+      steppers.push(stepper);
+      if (steppers.length === 1) {
+        this.selectStepper(pageIndex, false);
+      }
+      return stepper;
+    },
+    selectStepper(pageIndex, selectPanel) {
+      pageIndex |= 0;
+      if (selectPanel) {
+        this.manager.selectPanel(this);
+      }
+      for (const stepper of steppers) {
+        stepper.panel.hidden = stepper.pageIndex !== pageIndex;
+      }
+      for (const option of stepperChooser.options) {
+        option.selected = (option.value | 0) === pageIndex;
+      }
+    },
+    saveBreakPoints(pageIndex, bps) {
+      breakPoints[pageIndex] = bps;
+      sessionStorage.setItem("pdfjsBreakPoints", JSON.stringify(breakPoints));
+    },
+  };
+})();
+
+// The stepper for each page's operatorList.
+const Stepper = (function StepperClosure() {
+  // Shorter way to create element and optionally set textContent.
+  function c(tag, textContent) {
+    const d = document.createElement(tag);
+    if (textContent) {
+      d.textContent = textContent;
+    }
+    return d;
+  }
+
+  function simplifyArgs(args) {
+    if (typeof args === "string") {
+      const MAX_STRING_LENGTH = 75;
+      return args.length &lt;= MAX_STRING_LENGTH
+        ? args
+        : args.substring(0, MAX_STRING_LENGTH) + "...";
+    }
+    if (typeof args !== "object" || args === null) {
+      return args;
+    }
+    if ("length" in args) {
+      // array
+      const MAX_ITEMS = 10,
+        simpleArgs = [];
+      let i, ii;
+      for (i = 0, ii = Math.min(MAX_ITEMS, args.length); i &lt; ii; i++) {
+        simpleArgs.push(simplifyArgs(args[i]));
+      }
+      if (i &lt; args.length) {
+        simpleArgs.push("...");
+      }
+      return simpleArgs;
+    }
+    const simpleObj = {};
+    for (const key in args) {
+      simpleObj[key] = simplifyArgs(args[key]);
+    }
+    return simpleObj;
+  }
+
+  // eslint-disable-next-line no-shadow
+  class Stepper {
+    constructor(panel, pageIndex, initialBreakPoints) {
+      this.panel = panel;
+      this.breakPoint = 0;
+      this.nextBreakPoint = null;
+      this.pageIndex = pageIndex;
+      this.breakPoints = initialBreakPoints;
+      this.currentIdx = -1;
+      this.operatorListIdx = 0;
+      this.indentLevel = 0;
+    }
+
+    init(operatorList) {
+      const panel = this.panel;
+      const content = c("div", "c=continue, s=step");
+      const table = c("table");
+      content.append(table);
+      table.cellSpacing = 0;
+      const headerRow = c("tr");
+      table.append(headerRow);
+      headerRow.append(
+        c("th", "Break"),
+        c("th", "Idx"),
+        c("th", "fn"),
+        c("th", "args")
+      );
+      panel.append(content);
+      this.table = table;
+      this.updateOperatorList(operatorList);
+    }
+
+    updateOperatorList(operatorList) {
+      const self = this;
+
+      function cboxOnClick() {
+        const x = +this.dataset.idx;
+        if (this.checked) {
+          self.breakPoints.push(x);
+        } else {
+          self.breakPoints.splice(self.breakPoints.indexOf(x), 1);
+        }
+        StepperManager.saveBreakPoints(self.pageIndex, self.breakPoints);
+      }
+
+      const MAX_OPERATORS_COUNT = 15000;
+      if (this.operatorListIdx &gt; MAX_OPERATORS_COUNT) {
+        return;
+      }
+
+      const chunk = document.createDocumentFragment();
+      const operatorsToDisplay = Math.min(
+        MAX_OPERATORS_COUNT,
+        operatorList.fnArray.length
+      );
+      for (let i = this.operatorListIdx; i &lt; operatorsToDisplay; i++) {
+        const line = c("tr");
+        line.className = "line";
+        line.dataset.idx = i;
+        chunk.append(line);
+        const checked = this.breakPoints.includes(i);
+        const args = operatorList.argsArray[i] || [];
+
+        const breakCell = c("td");
+        const cbox = c("input");
+        cbox.type = "checkbox";
+        cbox.className = "points";
+        cbox.checked = checked;
+        cbox.dataset.idx = i;
+        cbox.onclick = cboxOnClick;
+
+        breakCell.append(cbox);
+        line.append(breakCell, c("td", i.toString()));
+        const fn = opMap[operatorList.fnArray[i]];
+        let decArgs = args;
+        if (fn === "showText") {
+          const glyphs = args[0];
+          const charCodeRow = c("tr");
+          const fontCharRow = c("tr");
+          const unicodeRow = c("tr");
+          for (const glyph of glyphs) {
+            if (typeof glyph === "object" &amp;&amp; glyph !== null) {
+              charCodeRow.append(c("td", glyph.originalCharCode));
+              fontCharRow.append(c("td", glyph.fontChar));
+              unicodeRow.append(c("td", glyph.unicode));
+            } else {
+              // null or number
+              const advanceEl = c("td", glyph);
+              advanceEl.classList.add("advance");
+              charCodeRow.append(advanceEl);
+              fontCharRow.append(c("td"));
+              unicodeRow.append(c("td"));
+            }
+          }
+          decArgs = c("td");
+          const table = c("table");
+          table.classList.add("showText");
+          decArgs.append(table);
+          table.append(charCodeRow, fontCharRow, unicodeRow);
+        } else if (fn === "restore") {
+          this.indentLevel--;
+        }
+        line.append(c("td", " ".repeat(this.indentLevel * 2) + fn));
+        if (fn === "save") {
+          this.indentLevel++;
+        }
+
+        if (decArgs instanceof HTMLElement) {
+          line.append(decArgs);
+        } else {
+          line.append(c("td", JSON.stringify(simplifyArgs(decArgs))));
+        }
+      }
+      if (operatorsToDisplay &lt; operatorList.fnArray.length) {
+        const lastCell = c("td", "...");
+        lastCell.colspan = 4;
+        chunk.append(lastCell);
+      }
+      this.operatorListIdx = operatorList.fnArray.length;
+      this.table.append(chunk);
+    }
+
+    getNextBreakPoint() {
+      this.breakPoints.sort(function (a, b) {
+        return a - b;
+      });
+      for (const breakPoint of this.breakPoints) {
+        if (breakPoint &gt; this.currentIdx) {
+          return breakPoint;
+        }
+      }
+      return null;
+    }
+
+    breakIt(idx, callback) {
+      StepperManager.selectStepper(this.pageIndex, true);
+      this.currentIdx = idx;
+
+      const listener = evt =&gt; {
+        switch (evt.keyCode) {
+          case 83: // step
+            document.removeEventListener("keydown", listener);
+            this.nextBreakPoint = this.currentIdx + 1;
+            this.goTo(-1);
+            callback();
+            break;
+          case 67: // continue
+            document.removeEventListener("keydown", listener);
+            this.nextBreakPoint = this.getNextBreakPoint();
+            this.goTo(-1);
+            callback();
+            break;
+        }
+      };
+      document.addEventListener("keydown", listener);
+      this.goTo(idx);
+    }
+
+    goTo(idx) {
+      const allRows = this.panel.getElementsByClassName("line");
+      for (const row of allRows) {
+        if ((row.dataset.idx | 0) === idx) {
+          row.style.backgroundColor = "rgb(251,250,207)";
+          row.scrollIntoView();
+        } else {
+          row.style.backgroundColor = null;
+        }
+      }
+    }
+  }
+  return Stepper;
+})();
+
+const Stats = (function Stats() {
+  let stats = [];
+  function clear(node) {
+    node.textContent = ""; // Remove any `node` contents from the DOM.
+  }
+  function getStatIndex(pageNumber) {
+    for (const [i, stat] of stats.entries()) {
+      if (stat.pageNumber === pageNumber) {
+        return i;
+      }
+    }
+    return false;
+  }
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "Stats",
+    name: "Stats",
+    panel: null,
+    manager: null,
+    init(pdfjsLib) {},
+    enabled: false,
+    active: false,
+    // Stats specific functions.
+    add(pageNumber, stat) {
+      if (!stat) {
+        return;
+      }
+      const statsIndex = getStatIndex(pageNumber);
+      if (statsIndex !== false) {
+        stats[statsIndex].div.remove();
+        stats.splice(statsIndex, 1);
+      }
+      const wrapper = document.createElement("div");
+      wrapper.className = "stats";
+      const title = document.createElement("div");
+      title.className = "title";
+      title.textContent = "Page: " + pageNumber;
+      const statsDiv = document.createElement("div");
+      statsDiv.textContent = stat.toString();
+      wrapper.append(title, statsDiv);
+      stats.push({ pageNumber, div: wrapper });
+      stats.sort(function (a, b) {
+        return a.pageNumber - b.pageNumber;
+      });
+      clear(this.panel);
+      for (const entry of stats) {
+        this.panel.append(entry.div);
+      }
+    },
+    cleanup() {
+      stats = [];
+      clear(this.panel);
+    },
+  };
+})();
+
+// Manages all the debugging tools.
+const PDFBug = (function PDFBugClosure() {
+  const panelWidth = 300;
+  const buttons = [];
+  let activePanel = null;
+
+  return {
+    tools: [FontInspector, StepperManager, Stats],
+    enable(ids) {
+      const all = ids.length === 1 &amp;&amp; ids[0] === "all";
+      const tools = this.tools;
+      for (const tool of tools) {
+        if (all || ids.includes(tool.id)) {
+          tool.enabled = true;
+        }
+      }
+      if (!all) {
+        // Sort the tools by the order they are enabled.
+        tools.sort(function (a, b) {
+          let indexA = ids.indexOf(a.id);
+          indexA = indexA &lt; 0 ? tools.length : indexA;
+          let indexB = ids.indexOf(b.id);
+          indexB = indexB &lt; 0 ? tools.length : indexB;
+          return indexA - indexB;
+        });
+      }
+    },
+    init(pdfjsLib, container, ids) {
+      this.loadCSS();
+      this.enable(ids);
+      /*
+       * Basic Layout:
+       * PDFBug
+       *  Controls
+       *  Panels
+       *    Panel
+       *    Panel
+       *    ...
+       */
+      const ui = document.createElement("div");
+      ui.id = "PDFBug";
+
+      const controls = document.createElement("div");
+      controls.setAttribute("class", "controls");
+      ui.append(controls);
+
+      const panels = document.createElement("div");
+      panels.setAttribute("class", "panels");
+      ui.append(panels);
+
+      container.append(ui);
+      container.style.right = panelWidth + "px";
+
+      // Initialize all the debugging tools.
+      for (const tool of this.tools) {
+        const panel = document.createElement("div");
+        const panelButton = document.createElement("button");
+        panelButton.textContent = tool.name;
+        panelButton.addEventListener("click", event =&gt; {
+          event.preventDefault();
+          this.selectPanel(tool);
+        });
+        controls.append(panelButton);
+        panels.append(panel);
+        tool.panel = panel;
+        tool.manager = this;
+        if (tool.enabled) {
+          tool.init(pdfjsLib);
+        } else {
+          panel.textContent =
+            `${tool.name} is disabled. To enable add "${tool.id}" to ` +
+            "the pdfBug parameter and refresh (separate multiple by commas).";
+        }
+        buttons.push(panelButton);
+      }
+      this.selectPanel(0);
+    },
+    loadCSS() {
+      const { url } = import.meta;
+
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = url.replace(/.js$/, ".css");
+
+      document.head.append(link);
+    },
+    cleanup() {
+      for (const tool of this.tools) {
+        if (tool.enabled) {
+          tool.cleanup();
+        }
+      }
+    },
+    selectPanel(index) {
+      if (typeof index !== "number") {
+        index = this.tools.indexOf(index);
+      }
+      if (index === activePanel) {
+        return;
+      }
+      activePanel = index;
+      for (const [j, tool] of this.tools.entries()) {
+        const isActive = j === index;
+        buttons[j].classList.toggle("active", isActive);
+        tool.active = isActive;
+        tool.panel.hidden = !isActive;
+      }
+    },
+  };
+})();
+
+globalThis.FontInspector = FontInspector;
+globalThis.StepperManager = StepperManager;
+globalThis.Stats = Stats;
+
+export { PDFBug };
+]]></content>
   </entry>
   <entry>
     <title></title>
