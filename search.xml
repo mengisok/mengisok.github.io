@@ -413,8 +413,8 @@ That’s where I found the original template for my CV! I think put templates th
   <entry>
     <title>November Summary</title>
     <url>/2022/12/02/November-Summary/</url>
-    <content><![CDATA[<p>Last month, in the beginning of the summary, I wrote I was down, but I didn’t know the future can be more turbulent… The only thing I can do is facing the reality and keeping my faith.</p>
-<p>Actually I didn’t learn much in the first half of November. Due to the coming exams in the next month, I had to focus more on the lessons than Leetcode, LinkedIn Learning or something else. I also registered for an IELTS indicator exam next January. As long as I pass all the exams, I’ll pick up my exploration!</p>
+    <content><![CDATA[<p>Last month, at the beginning of the summary, I wrote I was down, but I didn’t know the future could be more turbulent… The only thing I can do is facing the reality and keeping my faith.</p>
+<p>Actually I didn’t learn much in November. Due to the coming exams in December, I had to focus more on the lessons than Leetcode, LinkedIn Learning or something else. I also registered for an IELTS indicator exam next January. As long as I pass all the exams, I’ll pick up my exploration!</p>
 <h2 id="Leetcode">Leetcode</h2>
 <p>Solved <strong>64 problems</strong> on Leetcode till now.</p>
 <p>Finished the Explore <strong>Arrays 101</strong> (the remaining one was only available for Premium). It’s very easy even for beginners like me.</p>
@@ -443,30 +443,6 @@ That’s where I found the original template for my CV! I think put templates th
 <h2 id="Japanese">Japanese</h2>
 <p>Kept on learning Japanese on Duolinguo for <strong>42 days</strong>.</p>
 <p>I found out that there were only two Japanese language tests in China, JLPT and JTEST. JLPT is held only two times every year, and it’s often cancelled. JTEST is held more frequently, but it’s not as highly acknowledged as JLPT so I’m hesitant to prepare for it.</p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-        <category>Monthly Summary</category>
-      </categories>
-      <tags>
-        <tag>Mood</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>October Summary</title>
-    <url>/2022/10/31/October-Summary/</url>
-    <content><![CDATA[<p>This October is the second month of the new semester, and a lot has happened during this period–I even wanted to quit from school because I was eager to go abroad😂 (you know, the deterioration of the political environment and the popularity of “runology”). But when I calmed down, I realized that the most important thing was to enhance my capabilities, which I could only count on, before I’m strong enough. Thus I keep telling myself: learn as you can, no matter what’s going on around you.</p>
-<p>Today is also Halloween. I’m typing under the quilt in the last hour of today. Hope I’ll be celebrating today in the future aha!</p>
-<span id="more"></span>
-<p>So here’s my October –</p>
-<h2 id="Programming">Programming</h2>
-<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
-<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
-<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
-<h2 id="Language">Language</h2>
-<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
-<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
-<p>Bye for now! It’s midnight.</p>
 ]]></content>
       <categories>
         <category>Summary</category>
@@ -612,6 +588,30 @@ That’s where I found the original template for my CV! I think put templates th
       </tags>
   </entry>
   <entry>
+    <title>October Summary</title>
+    <url>/2022/10/31/October-Summary/</url>
+    <content><![CDATA[<p>This October is the second month of the new semester, and a lot has happened during this period–I even wanted to quit from school because I was eager to go abroad😂 (you know, the deterioration of the political environment and the popularity of “runology”). But when I calmed down, I realized that the most important thing was to enhance my capabilities, which I could only count on, before I’m strong enough. Thus I keep telling myself: learn as you can, no matter what’s going on around you.</p>
+<p>Today is also Halloween. I’m typing under the quilt in the last hour of today. Hope I’ll be celebrating today in the future aha!</p>
+<span id="more"></span>
+<p>So here’s my October –</p>
+<h2 id="Programming">Programming</h2>
+<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
+<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
+<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
+<h2 id="Language">Language</h2>
+<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
+<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
+<p>Bye for now! It’s midnight.</p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+        <category>Monthly Summary</category>
+      </categories>
+      <tags>
+        <tag>Mood</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Two-pointer</title>
     <url>/2022/10/26/Two-pointer/</url>
     <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, it came to a not bad end: I finished the Explore <em>Array and String</em><a href="#refer-anchor-1"><sup>1</sup></a> in Leetcode.</p>
@@ -663,6 +663,11 @@ Congrats to myself and keep it up! 💪🏻</p>
 ]]></content>
   </entry>
   <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Codes</title>
     <url>/codes/index.html</url>
     <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
@@ -679,9 +684,10 @@ Congrats to myself and keep it up! 💪🏻</p>
 </font></font>]]></content>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
+    <title>Schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
   </entry>
   <entry>
     <title>Links</title>
@@ -697,8 +703,8 @@ I’m learning his git tutorial and it’s really written in an easy to understa
 ]]></content>
   </entry>
   <entry>
-    <title>Schedule</title>
-    <url>/schedule/index.html</url>
+    <title>Sitemap</title>
+    <url>/sitemap/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
   </entry>
@@ -706,12 +712,6 @@ I’m learning his git tutorial and it’s really written in an easy to understa
     <title>Tags</title>
     <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Sitemap</title>
-    <url>/sitemap/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
   </entry>
   <entry>
     <title></title>
