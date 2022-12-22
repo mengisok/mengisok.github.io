@@ -111,160 +111,137 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
-    <title>Getting Started with Git &amp; Github</title>
-    <url>/2022/11/17/Getting-Started-with-Git-Github/</url>
-    <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>.</p>
-<p>By the way, I found it very convenient to make notes in Notion first and then export Mardown, modify it, copy and paste it into the Blog.</p>
-<h2 id="Start">Start</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"name"</span></span><br><span class="line">git config --global user.email <span class="string">"mail"</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Staging-files">Staging files</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git add filename</span><br><span class="line">git add .</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git commit -m <span class="string">"message"</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Git-environments">Git environments</h2>
+    <title>Basic MATLAB</title>
+    <url>/2022/11/20/Basic-MATLAB/</url>
+    <content><![CDATA[<h2 id="General-concepts">General concepts</h2>
+<h3 id="Clear-commands">Clear commands</h3>
 <ul>
-<li>Working</li>
-<li>Staging</li>
-<li>Commit</li>
+<li>
+<p><code>clc</code>  clears the screen</p>
+</li>
+<li>
+<p><code>clear myVar</code>  deletes variable myVar</p>
+<p><code>clear all</code>  deletes all variables</p>
+</li>
 </ul>
-<h2 id="File-states">File states</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Create-variables">Create variables</h3>
 <ul>
-<li>Tracked (after commit)
+<li>Creating a scalar: <code>myScalar = 10</code></li>
+<li>Creating a vector:
 <ul>
-<li>Unmodified</li>
-<li>Modified</li>
-<li>Staged</li>
+<li>Row vector: <code>myVector = [4 5 6]</code></li>
+<li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
 </ul>
 </li>
-<li>Untracked</li>
-</ul>
-<h2 id="Restoring-files">Restoring files</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git restore filename</span><br><span class="line">git restore . </span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Ignoring-files">Ignoring files</h2>
+<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code>
 <ul>
-<li>Sensitive info</li>
-<li>Personal notes</li>
-<li>System files</li>
-</ul>
-<p>Use <strong>.gitignore</strong> file</p>
-<h2 id="Clearing-the-cache">Clearing the cache</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Deleting">Deleting</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git rm filename</span><br></pre></td></tr></tbody></table></figure>
-<p>Delete, and move to stage and ready to commit.</p>
-<h2 id="Renaming">Renaming</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git mv oldname newname </span><br></pre></td></tr></tbody></table></figure>
-<p>Move to stage too.</p>
-<h2 id="Showing-differences">Showing differences</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">got <span class="built_in">log</span> --oneline</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Amending">Amending</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git reset</span><br><span class="line">git reset --hard</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Rebasing">Rebasing</h2>
-<p>A time machine. Rewrite the history.</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git rebase </span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Branches">Branches</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></tbody></table></figure>
-<p>Copying a branch:</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="keyword">switch</span> -c NAME</span><br></pre></td></tr></tbody></table></figure>
-<p>Merging:</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>Deleting a branch:</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git branch --delete NAME</span><br></pre></td></tr></tbody></table></figure>
-<p>Git flow:</p>
-<ul>
-<li>Fix branch</li>
-<li>Make changes</li>
-<li>Merge to master</li>
-<li>Delete old branch</li>
-</ul>
-<h2 id="Merge-conflicts">Merge conflicts</h2>
-<p>Choose one.</p>
-<h2 id="Stashing">Stashing</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash <span class="built_in">list</span></span><br><span class="line">git stash apply</span><br><span class="line">git stash pop</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Git-clean">Git clean</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git clean -n</span><br><span class="line">git clean -d</span><br><span class="line">git clean -f</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Github">Github</h2>
-<ul>
-<li>Cloud repository</li>
-<li>Collaborative dev</li>
-<li>Projet management</li>
-</ul>
-<p>Working with github:</p>
-<ul>
-<li>Set up remote</li>
-<li>Push</li>
-<li>Fetch/pull</li>
-</ul>
-<h2 id="Pushing-to-github">Pushing to github</h2>
-<p>Remotes:</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git remote add NAME URL</span><br><span class="line">git remote remove NAME</span><br><span class="line">git rename OLDNAME NEWNAME</span><br><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
-<p>Git push:</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git push REMOTE BRANCH</span><br><span class="line">git push -u origin main</span><br><span class="line">git push --all</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Github-options">Github options</h2>
-<h3 id="Issues">Issues</h3>
-<p>Collaborate with people</p>
-<ul>
-<li>Write notes, like to-do items, for youself or others</li>
-<li>Assign to-do to individuals, and they can comment</li>
-</ul>
-<h3 id="Pull-requests">Pull requests</h3>
-<p>Change the repo</p>
-<ul>
-<li>Approve changes that somebody else has made</li>
-<li>Compare different branches</li>
-</ul>
-<h3 id="Actions">Actions</h3>
-<p>Manage the repo (advanced)</p>
-<ul>
-<li>Run tests</li>
-<li>Host code automatically</li>
-<li>Download other’s actions to use</li>
-</ul>
-<h3 id="Projects">Projects</h3>
-<p>Manage the repo</p>
-<ul>
-<li>Kanban board</li>
-</ul>
-<h3 id="Wiki">Wiki</h3>
-<p>Create documentation that is easy for people to look at (not really necessary)</p>
-<h3 id="Security">Security</h3>
-<p>Manage policies for security (advanced)</p>
-<h3 id="Insights">Insights</h3>
-<p>Know contributors, traffic, etc (private)</p>
-<h3 id="Settings">Settings</h3>
-<ul>
-<li>Convert this repo to be a template</li>
-<li>Github pages</li>
-</ul>
-<h2 id="Managing-projects">Managing projects</h2>
-<ul>
-<li>Contributors
-<ul>
-<li>Invite a collaborator</li>
+<li><code>myMatrix(1, 2)</code>  gets 5</li>
+<li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
+<li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
 </ul>
 </li>
-<li>Issues</li>
-<li>Labels</li>
-<li>Miletones</li>
-<li>Projects</li>
+<li>Using “;” at the end of command line means it will suppress (i.e. don’t show) the result</li>
 </ul>
-<h2 id="Syncing">Syncing</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git clone </span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git fetch</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></tbody></table></figure>
-<p>pull = fetch + merge</p>
+<h3 id="Variable-classes">Variable classes</h3>
+<ul>
+<li>double (default)</li>
+<li><code>format long</code>  changes double class to long class</li>
+<li>double, long, short, single, logical (boolean), etc</li>
+</ul>
+<h3 id="Cell-arrays">Cell arrays</h3>
+<p>A matrix which has different kinds of elements</p>
+<p><code>myCell = {[1 2 3] [4 5 6 7]; 'v1' 'v2'}</code></p>
+<p><code>myCell{1, 2}</code>  gets [4 5 6 7]</p>
+<h2 id="Core-syntax">Core syntax</h2>
+<h3 id="Script">Script</h3>
+<ul>
+<li>“.m” file</li>
+<li>Comment: <code>%</code></li>
+<li><code>disp()</code>: display something</li>
+<li><code>randi()</code>: random integers</li>
+<li>To tanspose a matrix: <code>matrix'</code></li>
+</ul>
+<h3 id="Matrices">Matrices</h3>
+<ul>
+<li>
+<p>Create some standard matrices:</p>
+<p><code>zeros(m, n)</code></p>
+<p><code>ones(m, n)</code></p>
+<p><code>randi(m, n)</code></p>
+</li>
+<li>
+<p>Matrix multiplication</p>
+<ul>
+<li>Standard multiplication: <code>M1 * M2</code></li>
+<li>Element by element multiplication: <code>M1 .* M2</code></li>
+</ul>
+</li>
+<li>
+<p>Division is alike</p>
+<ul>
+<li>Element by element division: <code>M1 ./ M2</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="If-statements">If statements</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Switch-statements">Switch statements</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span> ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="For-loops">For loops</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% step = 1</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>: <span class="number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% step = 2</span></span><br><span class="line"><span class="comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% n =25;</span></span><br><span class="line"><span class="comment">% step = 5;</span></span><br><span class="line"><span class="comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="While-loops">While loops</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Programming">Programming</h2>
+<h3 id="Set-path">Set path</h3>
+<p>If MATLAB can’t find your scripts or functions or anything else, make sure you have added the path</p>
+<h3 id="Function">Function</h3>
+<ul>
+<li>Create a function from “Current Folder”, and it’s a .m file</li>
+<li>Edit the pattern and wirte your function</li>
+</ul>
+<h3 id="Import-data">Import data</h3>
+<p>To import a CSV file:</p>
+<ul>
+<li>Copy and paste it to “Current Folder”</li>
+<li><code>csvread('sine.csv')</code></li>
+</ul>
+<h3 id="Debugging">Debugging</h3>
+<p>Set breakpoints at little dashes in the left of Editor</p>
+<h3 id="Performance">Performance</h3>
+<ul>
+<li>Preallocate some memory can speed large calculations</li>
+<li>Use “tik … tok” to count the time</li>
+</ul>
+<h2 id="Data-representations">Data representations</h2>
+<h3 id="Plot">Plot</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">figure</span></span><br><span class="line"><span class="comment">% figure(1)</span></span><br><span class="line"><span class="built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>Add a grid: <code>grid on</code></li>
+<li>Make the window fits perfectly to the plot: <code>axis tight</code></li>
+<li>Set limits to axis: <code>ylim([-1 1])</code></li>
+<li>Change the color: <code>plot(x, y, 'm') % magenta</code></li>
+<li>Change the marker: <code>plot(x, y, 'o') % circle, magenta</code></li>
+<li>Plot curves multiple times with different lines: <code>hold on</code>. To end it, use <code>hold off</code></li>
+<li>Add annotations: <code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
+<li>Use <code>close all</code> to close all figures</li>
+</ul>
+<h3 id="Image">Image</h3>
+<ul>
+<li>Use <code>imread()</code> to import the image file</li>
+<li>Use <code>image()</code> to plot the image (default square)</li>
+<li>Use <code>imshow()</code> to plot the image in the correct aspect ratio, and there’s no label on the axis</li>
+</ul>
+<h3 id="3D-plot">3D plot</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="number">-2</span>*<span class="built_in">pi</span>:<span class="number">.5</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Simulink">Simulink</h2>
+<p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
 ]]></content>
       <categories>
         <category>Learning</category>
-        <category>Software Development</category>
+        <category>Signal Processing</category>
       </categories>
       <tags>
-        <tag>Git</tag>
-        <tag>Github</tag>
+        <tag>MATLAB</tag>
       </tags>
   </entry>
   <entry>
@@ -585,192 +562,160 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
-    <title>Basic MATLAB</title>
-    <url>/2022/11/20/Basic-MATLAB/</url>
-    <content><![CDATA[<h2 id="General-concepts">General concepts</h2>
-<h3 id="Clear-commands">Clear commands</h3>
+    <title>Getting Started with Git &amp; Github</title>
+    <url>/2022/11/17/Getting-Started-with-Git-Github/</url>
+    <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>.</p>
+<p>By the way, I found it very convenient to make notes in Notion first and then export Mardown, modify it, copy and paste it into the Blog.</p>
+<h2 id="Start">Start</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"name"</span></span><br><span class="line">git config --global user.email <span class="string">"mail"</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Staging-files">Staging files</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git add filename</span><br><span class="line">git add .</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git commit -m <span class="string">"message"</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Git-environments">Git environments</h2>
 <ul>
-<li>
-<p><code>clc</code>  clears the screen</p>
-</li>
-<li>
-<p><code>clear myVar</code>  deletes variable myVar</p>
-<p><code>clear all</code>  deletes all variables</p>
-</li>
+<li>Working</li>
+<li>Staging</li>
+<li>Commit</li>
 </ul>
-<h3 id="Create-variables">Create variables</h3>
+<h2 id="File-states">File states</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></tbody></table></figure>
 <ul>
-<li>Creating a scalar: <code>myScalar = 10</code></li>
-<li>Creating a vector:
+<li>Tracked (after commit)
 <ul>
-<li>Row vector: <code>myVector = [4 5 6]</code></li>
-<li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
-</ul>
-</li>
-<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code>
-<ul>
-<li><code>myMatrix(1, 2)</code>  gets 5</li>
-<li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
-<li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
+<li>Unmodified</li>
+<li>Modified</li>
+<li>Staged</li>
 </ul>
 </li>
-<li>Using “;” at the end of command line means it will suppress (i.e. don’t show) the result</li>
+<li>Untracked</li>
 </ul>
-<h3 id="Variable-classes">Variable classes</h3>
+<h2 id="Restoring-files">Restoring files</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git restore filename</span><br><span class="line">git restore . </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Ignoring-files">Ignoring files</h2>
 <ul>
-<li>double (default)</li>
-<li><code>format long</code>  changes double class to long class</li>
-<li>double, long, short, single, logical (boolean), etc</li>
+<li>Sensitive info</li>
+<li>Personal notes</li>
+<li>System files</li>
 </ul>
-<h3 id="Cell-arrays">Cell arrays</h3>
-<p>A matrix which has different kinds of elements</p>
-<p><code>myCell = {[1 2 3] [4 5 6 7]; 'v1' 'v2'}</code></p>
-<p><code>myCell{1, 2}</code>  gets [4 5 6 7]</p>
-<h2 id="Core-syntax">Core syntax</h2>
-<h3 id="Script">Script</h3>
+<p>Use <strong>.gitignore</strong> file</p>
+<h2 id="Clearing-the-cache">Clearing the cache</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Deleting">Deleting</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git rm filename</span><br></pre></td></tr></tbody></table></figure>
+<p>Delete, and move to stage and ready to commit.</p>
+<h2 id="Renaming">Renaming</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git mv oldname newname </span><br></pre></td></tr></tbody></table></figure>
+<p>Move to stage too.</p>
+<h2 id="Showing-differences">Showing differences</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">got <span class="built_in">log</span> --oneline</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Amending">Amending</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git reset</span><br><span class="line">git reset --hard</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Rebasing">Rebasing</h2>
+<p>A time machine. Rewrite the history.</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git rebase </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Branches">Branches</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></tbody></table></figure>
+<p>Copying a branch:</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="keyword">switch</span> -c NAME</span><br></pre></td></tr></tbody></table></figure>
+<p>Merging:</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>Deleting a branch:</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git branch --delete NAME</span><br></pre></td></tr></tbody></table></figure>
+<p>Git flow:</p>
 <ul>
-<li>“.m” file</li>
-<li>Comment: <code>%</code></li>
-<li><code>disp()</code>: display something</li>
-<li><code>randi()</code>: random integers</li>
-<li>To tanspose a matrix: <code>matrix'</code></li>
+<li>Fix branch</li>
+<li>Make changes</li>
+<li>Merge to master</li>
+<li>Delete old branch</li>
 </ul>
-<h3 id="Matrices">Matrices</h3>
+<h2 id="Merge-conflicts">Merge conflicts</h2>
+<p>Choose one.</p>
+<h2 id="Stashing">Stashing</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash <span class="built_in">list</span></span><br><span class="line">git stash apply</span><br><span class="line">git stash pop</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Git-clean">Git clean</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git clean -n</span><br><span class="line">git clean -d</span><br><span class="line">git clean -f</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Github">Github</h2>
 <ul>
-<li>
-<p>Create some standard matrices:</p>
-<p><code>zeros(m, n)</code></p>
-<p><code>ones(m, n)</code></p>
-<p><code>randi(m, n)</code></p>
+<li>Cloud repository</li>
+<li>Collaborative dev</li>
+<li>Projet management</li>
+</ul>
+<p>Working with github:</p>
+<ul>
+<li>Set up remote</li>
+<li>Push</li>
+<li>Fetch/pull</li>
+</ul>
+<h2 id="Pushing-to-github">Pushing to github</h2>
+<p>Remotes:</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git remote add NAME URL</span><br><span class="line">git remote remove NAME</span><br><span class="line">git rename OLDNAME NEWNAME</span><br><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
+<p>Git push:</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git push REMOTE BRANCH</span><br><span class="line">git push -u origin main</span><br><span class="line">git push --all</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Github-options">Github options</h2>
+<h3 id="Issues">Issues</h3>
+<p>Collaborate with people</p>
+<ul>
+<li>Write notes, like to-do items, for youself or others</li>
+<li>Assign to-do to individuals, and they can comment</li>
+</ul>
+<h3 id="Pull-requests">Pull requests</h3>
+<p>Change the repo</p>
+<ul>
+<li>Approve changes that somebody else has made</li>
+<li>Compare different branches</li>
+</ul>
+<h3 id="Actions">Actions</h3>
+<p>Manage the repo (advanced)</p>
+<ul>
+<li>Run tests</li>
+<li>Host code automatically</li>
+<li>Download other’s actions to use</li>
+</ul>
+<h3 id="Projects">Projects</h3>
+<p>Manage the repo</p>
+<ul>
+<li>Kanban board</li>
+</ul>
+<h3 id="Wiki">Wiki</h3>
+<p>Create documentation that is easy for people to look at (not really necessary)</p>
+<h3 id="Security">Security</h3>
+<p>Manage policies for security (advanced)</p>
+<h3 id="Insights">Insights</h3>
+<p>Know contributors, traffic, etc (private)</p>
+<h3 id="Settings">Settings</h3>
+<ul>
+<li>Convert this repo to be a template</li>
+<li>Github pages</li>
+</ul>
+<h2 id="Managing-projects">Managing projects</h2>
+<ul>
+<li>Contributors
+<ul>
+<li>Invite a collaborator</li>
+</ul>
 </li>
-<li>
-<p>Matrix multiplication</p>
-<ul>
-<li>Standard multiplication: <code>M1 * M2</code></li>
-<li>Element by element multiplication: <code>M1 .* M2</code></li>
+<li>Issues</li>
+<li>Labels</li>
+<li>Miletones</li>
+<li>Projects</li>
 </ul>
-</li>
-<li>
-<p>Division is alike</p>
-<ul>
-<li>Element by element division: <code>M1 ./ M2</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="If-statements">If statements</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Switch-statements">Switch statements</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span> ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="For-loops">For loops</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% step = 1</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>: <span class="number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% step = 2</span></span><br><span class="line"><span class="comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% n =25;</span></span><br><span class="line"><span class="comment">% step = 5;</span></span><br><span class="line"><span class="comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="While-loops">While loops</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Programming">Programming</h2>
-<h3 id="Set-path">Set path</h3>
-<p>If MATLAB can’t find your scripts or functions or anything else, make sure you have added the path</p>
-<h3 id="Function">Function</h3>
-<ul>
-<li>Create a function from “Current Folder”, and it’s a .m file</li>
-<li>Edit the pattern and wirte your function</li>
-</ul>
-<h3 id="Import-data">Import data</h3>
-<p>To import a CSV file:</p>
-<ul>
-<li>Copy and paste it to “Current Folder”</li>
-<li><code>csvread('sine.csv')</code></li>
-</ul>
-<h3 id="Debugging">Debugging</h3>
-<p>Set breakpoints at little dashes in the left of Editor</p>
-<h3 id="Performance">Performance</h3>
-<ul>
-<li>Preallocate some memory can speed large calculations</li>
-<li>Use “tik … tok” to count the time</li>
-</ul>
-<h2 id="Data-representations">Data representations</h2>
-<h3 id="Plot">Plot</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">figure</span></span><br><span class="line"><span class="comment">% figure(1)</span></span><br><span class="line"><span class="built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>Add a grid: <code>grid on</code></li>
-<li>Make the window fits perfectly to the plot: <code>axis tight</code></li>
-<li>Set limits to axis: <code>ylim([-1 1])</code></li>
-<li>Change the color: <code>plot(x, y, 'm') % magenta</code></li>
-<li>Change the marker: <code>plot(x, y, 'o') % circle, magenta</code></li>
-<li>Plot curves multiple times with different lines: <code>hold on</code>. To end it, use <code>hold off</code></li>
-<li>Add annotations: <code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
-<li>Use <code>close all</code> to close all figures</li>
-</ul>
-<h3 id="Image">Image</h3>
-<ul>
-<li>Use <code>imread()</code> to import the image file</li>
-<li>Use <code>image()</code> to plot the image (default square)</li>
-<li>Use <code>imshow()</code> to plot the image in the correct aspect ratio, and there’s no label on the axis</li>
-</ul>
-<h3 id="3D-plot">3D plot</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="number">-2</span>*<span class="built_in">pi</span>:<span class="number">.5</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Simulink">Simulink</h2>
-<p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
+<h2 id="Syncing">Syncing</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git clone </span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git fetch</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></tbody></table></figure>
+<p>pull = fetch + merge</p>
 ]]></content>
       <categories>
         <category>Learning</category>
-        <category>Signal Processing</category>
+        <category>Software Development</category>
       </categories>
       <tags>
-        <tag>MATLAB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/09/18/Hello_World/</url>
-    <content><![CDATA[<p>I made it! 😃</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>LaTeX CV</title>
-    <url>/2022/10/29/Latex-CV/</url>
-    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
-<p>Here’s how I did it:</p>
-<p>-&gt; If you only use latex occasionally or a few times, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
--&gt; If you want to do more things, use following steps:</p>
-<span id="more"></span>
-<h2 id="Download-MiKTeX-and-VSCode">Download MiKTeX and VSCode</h2>
-<p><strong>MiKTeX</strong><br>
-You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
-Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.</p>
-<p><strong>VSCode</strong><br>
-Remember to download extension <em>latex workshop</em>.</p>
-<h2 id="Find-a-template">Find a template</h2>
-<p>On Overleaf or Github.<br>
-Here are my favorites:<br>
-<a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">新卒のためのLaTeX履歴書テンプレート</a><br>
-<a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>
-And mine:<br>
-<a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)</p>
-<h2 id="Edit-the-template">Edit the template</h2>
-<p>You may encounter many problems at this step, most of which require you to download <em>Packages</em> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</p>
-<h2 id="Share-your-template">Share your template</h2>
-<ol>
-<li>Git your template to github<br>
-(Already bound git and your github accounts and set SSH key)<br>
--&gt; Create a new repository<br>
--&gt; Git bash the folder which contains full files about your template<br>
--&gt; Run the following code in Git:</li>
-</ol>
-<pre><code class="language-C">git init
-git add .
-git commit -m 'Description'
-git remote add origin https://...  (copy from github)
-git push -u origin master
-</code></pre>
-<ol start="2">
-<li>Submit to Overleaf<br>
-That’s where I found the original template for my CV! I think put templates there may help more people.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Job</category>
-      </categories>
-      <tags>
-        <tag>Latex</tag>
+        <tag>Git</tag>
+        <tag>Github</tag>
       </tags>
   </entry>
   <entry>
@@ -858,6 +803,61 @@ It’s a fresh new concept to me. Sounds interesting that you can develop a web 
       </categories>
       <tags>
         <tag>Front-end</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/09/18/Hello_World/</url>
+    <content><![CDATA[<p>I made it! 😃</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>LaTeX CV</title>
+    <url>/2022/10/29/Latex-CV/</url>
+    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
+<p>Here’s how I did it:</p>
+<p>-&gt; If you only use latex occasionally or a few times, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
+-&gt; If you want to do more things, use following steps:</p>
+<span id="more"></span>
+<h2 id="Download-MiKTeX-and-VSCode">Download MiKTeX and VSCode</h2>
+<p><strong>MiKTeX</strong><br>
+You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
+Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.</p>
+<p><strong>VSCode</strong><br>
+Remember to download extension <em>latex workshop</em>.</p>
+<h2 id="Find-a-template">Find a template</h2>
+<p>On Overleaf or Github.<br>
+Here are my favorites:<br>
+<a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">新卒のためのLaTeX履歴書テンプレート</a><br>
+<a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>
+And mine:<br>
+<a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)</p>
+<h2 id="Edit-the-template">Edit the template</h2>
+<p>You may encounter many problems at this step, most of which require you to download <em>Packages</em> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</p>
+<h2 id="Share-your-template">Share your template</h2>
+<ol>
+<li>Git your template to github<br>
+(Already bound git and your github accounts and set SSH key)<br>
+-&gt; Create a new repository<br>
+-&gt; Git bash the folder which contains full files about your template<br>
+-&gt; Run the following code in Git:</li>
+</ol>
+<pre><code class="language-C">git init
+git add .
+git commit -m 'Description'
+git remote add origin https://...  (copy from github)
+git push -u origin master
+</code></pre>
+<ol start="2">
+<li>Submit to Overleaf<br>
+That’s where I found the original template for my CV! I think put templates there may help more people.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Job</category>
+      </categories>
+      <tags>
+        <tag>Latex</tag>
       </tags>
   </entry>
   <entry>
@@ -966,11 +966,6 @@ Congrats to myself and keep it up! 💪🏻</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>About</title>
     <url>/about/index.html</url>
     <content><![CDATA[<img src="/images/bin_cat.png" alt="bin_cat" title="bin_cat" width="350">  
@@ -987,15 +982,9 @@ Congrats to myself and keep it up! 💪🏻</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Schedule</title>
-    <url>/schedule/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
   </entry>
   <entry>
     <title>Links</title>
@@ -1011,39 +1000,21 @@ I’m learning his git tutorial and it’s really written in an easy to understa
 ]]></content>
   </entry>
   <entry>
+    <title>Schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Sitemap</title>
     <url>/sitemap/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>/lib/pdf/README.html</url>
-    <content><![CDATA[<h1><a href="https://github.com/mozilla/pdf.js">PDF.js</a> for <a href="https://github.com/next-theme/hexo-theme-next">NexT</a></h1>
-<h2 id="Introduce">Introduce</h2>
-<p>This is a plugin that allows to preview PDF files in the blog pages.</p>
-<p>If the browser supports embedded PDFs natively, NexT will create a <code>&lt;embed&gt;</code> tag and include the PDF file on your website. Otherwise it will create a <code>&lt;iframe&gt;</code> tag and uses PDF.js by @mozilla to render the pdf file.</p>
-<p>Follow the guide below to install dependencies.</p>
-<h2 id="Installation">Installation</h2>
-<h3 id="Step-1-→-Go-to-Hexo-dir">Step 1 → Go to Hexo dir</h3>
-<p>Change dir to <strong>Hexo</strong> directory. There must be <code>source</code>, <code>themes</code> and other directories:</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">_config.next.yml  db.json           package-lock.json scaffolds         themes</span><br><span class="line">_config.yml       node_modules      package.json      <span class="built_in">source</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Step-2-→-Get-module">Step 2 → Get module</h3>
-<p>Install module to <code>source/lib</code> directory:</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/next-theme/theme-next-pdf <span class="built_in">source</span>/lib/pdf</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Step-3-→-Set-it-up">Step 3 → Set it up</h3>
-<p>Enable module in <strong>NexT</strong> <code>_config.next.yml</code> file:</p>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># PDF tag</span></span><br><span class="line"><span class="comment"># NexT will try to load pdf files natively, if failed, pdf.js will be used.</span></span><br><span class="line"><span class="comment"># So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.</span></span><br><span class="line"><span class="comment"># See: https://github.com/next-theme/theme-next-pdf</span></span><br><span class="line"><span class="attr">pdf:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Default height</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">500px</span></span><br></pre></td></tr></tbody></table></figure>
-<p>Find and edit <code>skip_render</code> settings in <strong>Hexo</strong> <code>_config.yml</code> file:</p>
-<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">lib/**/*</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Usage">Usage</h2>
-<p>In order to embed PDF files in the article, you just need to create an <code>pdf</code> tag with the URL of your local PDF file, e.g.</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /path/to/your/file.pdf %}</span><br></pre></td></tr></tbody></table></figure>
-<p>Notice: Do not use cross-origin PDF files, it might be blocked by the CORS policy.</p>
-<p>Enjoy it!</p>
-<h2 id="Update">Update</h2>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site/source/lib/pdf</span><br><span class="line">$ git pull</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title></title>
@@ -1161,6 +1132,35 @@ I’m learning his git tutorial and it’s really written in an easy to understa
   background-color: rgba(255, 255, 255, 0.6);
   color: rgba(0, 0, 0, 1);
 }
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/README.html</url>
+    <content><![CDATA[<h1><a href="https://github.com/mozilla/pdf.js">PDF.js</a> for <a href="https://github.com/next-theme/hexo-theme-next">NexT</a></h1>
+<h2 id="Introduce">Introduce</h2>
+<p>This is a plugin that allows to preview PDF files in the blog pages.</p>
+<p>If the browser supports embedded PDFs natively, NexT will create a <code>&lt;embed&gt;</code> tag and include the PDF file on your website. Otherwise it will create a <code>&lt;iframe&gt;</code> tag and uses PDF.js by @mozilla to render the pdf file.</p>
+<p>Follow the guide below to install dependencies.</p>
+<h2 id="Installation">Installation</h2>
+<h3 id="Step-1-→-Go-to-Hexo-dir">Step 1 → Go to Hexo dir</h3>
+<p>Change dir to <strong>Hexo</strong> directory. There must be <code>source</code>, <code>themes</code> and other directories:</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line">_config.next.yml  db.json           package-lock.json scaffolds         themes</span><br><span class="line">_config.yml       node_modules      package.json      <span class="built_in">source</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Step-2-→-Get-module">Step 2 → Get module</h3>
+<p>Install module to <code>source/lib</code> directory:</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/next-theme/theme-next-pdf <span class="built_in">source</span>/lib/pdf</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Step-3-→-Set-it-up">Step 3 → Set it up</h3>
+<p>Enable module in <strong>NexT</strong> <code>_config.next.yml</code> file:</p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># PDF tag</span></span><br><span class="line"><span class="comment"># NexT will try to load pdf files natively, if failed, pdf.js will be used.</span></span><br><span class="line"><span class="comment"># So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.</span></span><br><span class="line"><span class="comment"># See: https://github.com/next-theme/theme-next-pdf</span></span><br><span class="line"><span class="attr">pdf:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Default height</span></span><br><span class="line">  <span class="attr">height:</span> <span class="string">500px</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Find and edit <code>skip_render</code> settings in <strong>Hexo</strong> <code>_config.yml</code> file:</p>
+<figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">lib/**/*</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Usage">Usage</h2>
+<p>In order to embed PDF files in the article, you just need to create an <code>pdf</code> tag with the URL of your local PDF file, e.g.</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /path/to/your/file.pdf %}</span><br></pre></td></tr></tbody></table></figure>
+<p>Notice: Do not use cross-origin PDF files, it might be blocked by the CORS policy.</p>
+<p>Enjoy it!</p>
+<h2 id="Update">Update</h2>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site/source/lib/pdf</span><br><span class="line">$ git pull</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
   </entry>
   <entry>
