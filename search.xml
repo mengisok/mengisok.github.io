@@ -268,233 +268,6 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
-    <title>Basic MATLAB</title>
-    <url>/2022/11/20/Basic-MATLAB/</url>
-    <content><![CDATA[<h2 id="General-concepts">General concepts</h2>
-<h3 id="Clear-commands">Clear commands</h3>
-<ul>
-<li>
-<p><code>clc</code>  clears the screen</p>
-</li>
-<li>
-<p><code>clear myVar</code>  deletes variable myVar</p>
-<p><code>clear all</code>  deletes all variables</p>
-</li>
-</ul>
-<h3 id="Create-variables">Create variables</h3>
-<ul>
-<li>Creating a scalar: <code>myScalar = 10</code></li>
-<li>Creating a vector:
-<ul>
-<li>Row vector: <code>myVector = [4 5 6]</code></li>
-<li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
-</ul>
-</li>
-<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code>
-<ul>
-<li><code>myMatrix(1, 2)</code>  gets 5</li>
-<li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
-<li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
-</ul>
-</li>
-<li>Using “;” at the end of command line means it will suppress (i.e. don’t show) the result</li>
-</ul>
-<h3 id="Variable-classes">Variable classes</h3>
-<ul>
-<li>double (default)</li>
-<li><code>format long</code>  changes double class to long class</li>
-<li>double, long, short, single, logical (boolean), etc</li>
-</ul>
-<h3 id="Cell-arrays">Cell arrays</h3>
-<p>A matrix which has different kinds of elements</p>
-<p><code>myCell = {[1 2 3] [4 5 6 7]; 'v1' 'v2'}</code></p>
-<p><code>myCell{1, 2}</code>  gets [4 5 6 7]</p>
-<h2 id="Core-syntax">Core syntax</h2>
-<h3 id="Script">Script</h3>
-<ul>
-<li>“.m” file</li>
-<li>Comment: <code>%</code></li>
-<li><code>disp()</code>: display something</li>
-<li><code>randi()</code>: random integers</li>
-<li>To tanspose a matrix: <code>matrix'</code></li>
-</ul>
-<h3 id="Matrices">Matrices</h3>
-<ul>
-<li>
-<p>Create some standard matrices:</p>
-<p><code>zeros(m, n)</code></p>
-<p><code>ones(m, n)</code></p>
-<p><code>randi(m, n)</code></p>
-</li>
-<li>
-<p>Matrix multiplication</p>
-<ul>
-<li>Standard multiplication: <code>M1 * M2</code></li>
-<li>Element by element multiplication: <code>M1 .* M2</code></li>
-</ul>
-</li>
-<li>
-<p>Division is alike</p>
-<ul>
-<li>Element by element division: <code>M1 ./ M2</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="If-statements">If statements</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Switch-statements">Switch statements</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span> ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="For-loops">For loops</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% step = 1</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>: <span class="number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% step = 2</span></span><br><span class="line"><span class="comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% n =25;</span></span><br><span class="line"><span class="comment">% step = 5;</span></span><br><span class="line"><span class="comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="While-loops">While loops</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Programming">Programming</h2>
-<h3 id="Set-path">Set path</h3>
-<p>If MATLAB can’t find your scripts or functions or anything else, make sure you have added the path</p>
-<h3 id="Function">Function</h3>
-<ul>
-<li>Create a function from “Current Folder”, and it’s a .m file</li>
-<li>Edit the pattern and wirte your function</li>
-</ul>
-<h3 id="Import-data">Import data</h3>
-<p>To import a CSV file:</p>
-<ul>
-<li>Copy and paste it to “Current Folder”</li>
-<li><code>csvread('sine.csv')</code></li>
-</ul>
-<h3 id="Debugging">Debugging</h3>
-<p>Set breakpoints at little dashes in the left of Editor</p>
-<h3 id="Performance">Performance</h3>
-<ul>
-<li>Preallocate some memory can speed large calculations</li>
-<li>Use “tik … tok” to count the time</li>
-</ul>
-<h2 id="Data-representations">Data representations</h2>
-<h3 id="Plot">Plot</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">figure</span></span><br><span class="line"><span class="comment">% figure(1)</span></span><br><span class="line"><span class="built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>Add a grid: <code>grid on</code></li>
-<li>Make the window fits perfectly to the plot: <code>axis tight</code></li>
-<li>Set limits to axis: <code>ylim([-1 1])</code></li>
-<li>Change the color: <code>plot(x, y, 'm') % magenta</code></li>
-<li>Change the marker: <code>plot(x, y, 'o') % circle, magenta</code></li>
-<li>Plot curves multiple times with different lines: <code>hold on</code>. To end it, use <code>hold off</code></li>
-<li>Add annotations: <code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
-<li>Use <code>close all</code> to close all figures</li>
-</ul>
-<h3 id="Image">Image</h3>
-<ul>
-<li>Use <code>imread()</code> to import the image file</li>
-<li>Use <code>image()</code> to plot the image (default square)</li>
-<li>Use <code>imshow()</code> to plot the image in the correct aspect ratio, and there’s no label on the axis</li>
-</ul>
-<h3 id="3D-plot">3D plot</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="number">-2</span>*<span class="built_in">pi</span>:<span class="number">.5</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Simulink">Simulink</h2>
-<p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Signal Processing</category>
-      </categories>
-      <tags>
-        <tag>MATLAB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>My First LinkedIn Certificate!</title>
-    <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
-    <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
-<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> in your account settings to get a monthly free plan. Also you must use a <strong>visa</strong> credit card.)</p>
-<p>In a word, I had my first linkedin learning course:<br>
-<a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
-<h2 id="Nice-course-span-class-emoji-alias-thumbsup-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f44d-png-v8-👍-span">Nice course <span class="emoji" alias="thumbsup" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8">👍</span></h2>
-<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br>
-<strong>Practical</strong>! The author introduced many useful websites for learning and developing.</p>
-<h2 id="What-I-have-learned">What I have learned</h2>
-<p><strong>Types of web development jobs</strong><br>
-For planning and prototyping:</p>
-<ul>
-<li>UX (User Experience)</li>
-<li>UI (User Interface)</li>
-</ul>
-<p>For coding and developing:</p>
-<ul>
-<li>Front-end Dev (Javascript, CSS, HTML; frameworks)</li>
-<li>Back-end Dev</li>
-</ul>
-<p><strong>Javascript, CSS, HTML</strong></p>
-<ul>
-<li>HTML identifies <strong>structural elements</strong>.</li>
-<li>CSS changes the <strong>appearance and style</strong>.</li>
-<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
-</ul>
-<p><strong>A little knowledge of Github</strong><br>
-That’s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I’ll hands on it lately.</p>
-<p><strong>No-code</strong><br>
-It’s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost – money? It’s limited anyway, especially when you know more and get greedy <span class="emoji" alias="smirk" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8">😏</span>.</p>
-<h2 id="Useful-tools">Useful tools</h2>
-<p>Prototying tools:</p>
-<ul>
-<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
-</ul>
-<p>Graphic design tools:</p>
-<ul>
-<li>Illustrator, Photoshop (professional)</li>
-<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)</li>
-<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
-</ul>
-<p>Coding editors:</p>
-<ul>
-<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)</li>
-<li><strong>VS Code</strong></li>
-<li><a href="https://atom.io/">Atom</a> (free, highly customizable)</li>
-<li><a href="https://brackets.io/">Brackets</a></li>
-</ul>
-<p>Web host:</p>
-<ul>
-<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
-</ul>
-<h2 id="No-code-tools">No-code tools</h2>
-<p>CMSs (Content Management System):</p>
-<ul>
-<li>Joomla!</li>
-<li>Drupal</li>
-<li><strong>Wordpress</strong></li>
-</ul>
-<p>Website buliders:</p>
-<ul>
-<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple)</li>
-<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
-</ul>
-<p>Databases:</p>
-<ul>
-<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a></li>
-<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
-</ul>
-<p>Apps:</p>
-<ul>
-<li><a href="https://bubble.io/">Bubble</a> (web)</li>
-<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)</li>
-<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
-</ul>
-<p>At last, here’s my certificate and I’d like to get more in the future 😻 ~</p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> ]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Web Development</category>
-      </categories>
-      <tags>
-        <tag>Front-end</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/09/18/Hello_World/</url>
-    <content><![CDATA[<p>I made it! 😃</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Git学习笔记-廖雪峰</title>
     <url>/2022/12/22/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%BB%96%E9%9B%AA%E5%B3%B0/</url>
     <content><![CDATA[<p>看了<a href="https://www.liaoxuefeng.com/wiki/896043488029600">廖雪峰的Git教程</a>，做了点笔记。</p>
@@ -812,6 +585,146 @@ It’s a fresh new concept to me. Sounds interesting that you can develop a web 
       </tags>
   </entry>
   <entry>
+    <title>Basic MATLAB</title>
+    <url>/2022/11/20/Basic-MATLAB/</url>
+    <content><![CDATA[<h2 id="General-concepts">General concepts</h2>
+<h3 id="Clear-commands">Clear commands</h3>
+<ul>
+<li>
+<p><code>clc</code>  clears the screen</p>
+</li>
+<li>
+<p><code>clear myVar</code>  deletes variable myVar</p>
+<p><code>clear all</code>  deletes all variables</p>
+</li>
+</ul>
+<h3 id="Create-variables">Create variables</h3>
+<ul>
+<li>Creating a scalar: <code>myScalar = 10</code></li>
+<li>Creating a vector:
+<ul>
+<li>Row vector: <code>myVector = [4 5 6]</code></li>
+<li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
+</ul>
+</li>
+<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code>
+<ul>
+<li><code>myMatrix(1, 2)</code>  gets 5</li>
+<li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
+<li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
+</ul>
+</li>
+<li>Using “;” at the end of command line means it will suppress (i.e. don’t show) the result</li>
+</ul>
+<h3 id="Variable-classes">Variable classes</h3>
+<ul>
+<li>double (default)</li>
+<li><code>format long</code>  changes double class to long class</li>
+<li>double, long, short, single, logical (boolean), etc</li>
+</ul>
+<h3 id="Cell-arrays">Cell arrays</h3>
+<p>A matrix which has different kinds of elements</p>
+<p><code>myCell = {[1 2 3] [4 5 6 7]; 'v1' 'v2'}</code></p>
+<p><code>myCell{1, 2}</code>  gets [4 5 6 7]</p>
+<h2 id="Core-syntax">Core syntax</h2>
+<h3 id="Script">Script</h3>
+<ul>
+<li>“.m” file</li>
+<li>Comment: <code>%</code></li>
+<li><code>disp()</code>: display something</li>
+<li><code>randi()</code>: random integers</li>
+<li>To tanspose a matrix: <code>matrix'</code></li>
+</ul>
+<h3 id="Matrices">Matrices</h3>
+<ul>
+<li>
+<p>Create some standard matrices:</p>
+<p><code>zeros(m, n)</code></p>
+<p><code>ones(m, n)</code></p>
+<p><code>randi(m, n)</code></p>
+</li>
+<li>
+<p>Matrix multiplication</p>
+<ul>
+<li>Standard multiplication: <code>M1 * M2</code></li>
+<li>Element by element multiplication: <code>M1 .* M2</code></li>
+</ul>
+</li>
+<li>
+<p>Division is alike</p>
+<ul>
+<li>Element by element division: <code>M1 ./ M2</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="If-statements">If statements</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Switch-statements">Switch statements</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span> ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="For-loops">For loops</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% step = 1</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>: <span class="number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% step = 2</span></span><br><span class="line"><span class="comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% n =25;</span></span><br><span class="line"><span class="comment">% step = 5;</span></span><br><span class="line"><span class="comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="While-loops">While loops</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Programming">Programming</h2>
+<h3 id="Set-path">Set path</h3>
+<p>If MATLAB can’t find your scripts or functions or anything else, make sure you have added the path</p>
+<h3 id="Function">Function</h3>
+<ul>
+<li>Create a function from “Current Folder”, and it’s a .m file</li>
+<li>Edit the pattern and wirte your function</li>
+</ul>
+<h3 id="Import-data">Import data</h3>
+<p>To import a CSV file:</p>
+<ul>
+<li>Copy and paste it to “Current Folder”</li>
+<li><code>csvread('sine.csv')</code></li>
+</ul>
+<h3 id="Debugging">Debugging</h3>
+<p>Set breakpoints at little dashes in the left of Editor</p>
+<h3 id="Performance">Performance</h3>
+<ul>
+<li>Preallocate some memory can speed large calculations</li>
+<li>Use “tik … tok” to count the time</li>
+</ul>
+<h2 id="Data-representations">Data representations</h2>
+<h3 id="Plot">Plot</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">figure</span></span><br><span class="line"><span class="comment">% figure(1)</span></span><br><span class="line"><span class="built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>Add a grid: <code>grid on</code></li>
+<li>Make the window fits perfectly to the plot: <code>axis tight</code></li>
+<li>Set limits to axis: <code>ylim([-1 1])</code></li>
+<li>Change the color: <code>plot(x, y, 'm') % magenta</code></li>
+<li>Change the marker: <code>plot(x, y, 'o') % circle, magenta</code></li>
+<li>Plot curves multiple times with different lines: <code>hold on</code>. To end it, use <code>hold off</code></li>
+<li>Add annotations: <code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
+<li>Use <code>close all</code> to close all figures</li>
+</ul>
+<h3 id="Image">Image</h3>
+<ul>
+<li>Use <code>imread()</code> to import the image file</li>
+<li>Use <code>image()</code> to plot the image (default square)</li>
+<li>Use <code>imshow()</code> to plot the image in the correct aspect ratio, and there’s no label on the axis</li>
+</ul>
+<h3 id="3D-plot">3D plot</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="number">-2</span>*<span class="built_in">pi</span>:<span class="number">.5</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Simulink">Simulink</h2>
+<p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Signal Processing</category>
+      </categories>
+      <tags>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/09/18/Hello_World/</url>
+    <content><![CDATA[<p>I made it! 😃</p>
+]]></content>
+  </entry>
+  <entry>
     <title>LaTeX CV</title>
     <url>/2022/10/29/Latex-CV/</url>
     <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
@@ -861,6 +774,93 @@ That’s where I found the original template for my CV! I think put templates th
       </tags>
   </entry>
   <entry>
+    <title>My First LinkedIn Certificate!</title>
+    <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
+    <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
+<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> in your account settings to get a monthly free plan. Also you must use a <strong>visa</strong> credit card.)</p>
+<p>In a word, I had my first linkedin learning course:<br>
+<a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
+<h2 id="Nice-course-span-class-emoji-alias-thumbsup-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f44d-png-v8-👍-span">Nice course <span class="emoji" alias="thumbsup" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8">👍</span></h2>
+<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br>
+<strong>Practical</strong>! The author introduced many useful websites for learning and developing.</p>
+<h2 id="What-I-have-learned">What I have learned</h2>
+<p><strong>Types of web development jobs</strong><br>
+For planning and prototyping:</p>
+<ul>
+<li>UX (User Experience)</li>
+<li>UI (User Interface)</li>
+</ul>
+<p>For coding and developing:</p>
+<ul>
+<li>Front-end Dev (Javascript, CSS, HTML; frameworks)</li>
+<li>Back-end Dev</li>
+</ul>
+<p><strong>Javascript, CSS, HTML</strong></p>
+<ul>
+<li>HTML identifies <strong>structural elements</strong>.</li>
+<li>CSS changes the <strong>appearance and style</strong>.</li>
+<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
+</ul>
+<p><strong>A little knowledge of Github</strong><br>
+That’s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I’ll hands on it lately.</p>
+<p><strong>No-code</strong><br>
+It’s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost – money? It’s limited anyway, especially when you know more and get greedy <span class="emoji" alias="smirk" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8">😏</span>.</p>
+<h2 id="Useful-tools">Useful tools</h2>
+<p>Prototying tools:</p>
+<ul>
+<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
+</ul>
+<p>Graphic design tools:</p>
+<ul>
+<li>Illustrator, Photoshop (professional)</li>
+<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)</li>
+<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
+</ul>
+<p>Coding editors:</p>
+<ul>
+<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)</li>
+<li><strong>VS Code</strong></li>
+<li><a href="https://atom.io/">Atom</a> (free, highly customizable)</li>
+<li><a href="https://brackets.io/">Brackets</a></li>
+</ul>
+<p>Web host:</p>
+<ul>
+<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
+</ul>
+<h2 id="No-code-tools">No-code tools</h2>
+<p>CMSs (Content Management System):</p>
+<ul>
+<li>Joomla!</li>
+<li>Drupal</li>
+<li><strong>Wordpress</strong></li>
+</ul>
+<p>Website buliders:</p>
+<ul>
+<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple)</li>
+<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
+</ul>
+<p>Databases:</p>
+<ul>
+<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a></li>
+<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
+</ul>
+<p>Apps:</p>
+<ul>
+<li><a href="https://bubble.io/">Bubble</a> (web)</li>
+<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)</li>
+<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
+</ul>
+<p>At last, here’s my certificate and I’d like to get more in the future 😻 ~</p>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> ]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Web Development</category>
+      </categories>
+      <tags>
+        <tag>Front-end</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>November Summary</title>
     <url>/2022/12/02/November-Summary/</url>
     <content><![CDATA[<h2 id="Leetcode">Leetcode</h2>
@@ -891,6 +891,23 @@ That’s where I found the original template for my CV! I think put templates th
 <h2 id="Japanese">Japanese</h2>
 <p>Kept on learning Japanese on Duolinguo for <strong>42 days</strong>.</p>
 <p>I found out that there were only two Japanese language tests in China, JLPT and JTEST. JLPT is held only two times every year, and it’s often cancelled. JTEST is held more frequently, but it’s not as highly acknowledged as JLPT so I’m hesitant to prepare for it.</p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+        <category>Monthly Summary</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>October Summary</title>
+    <url>/2022/10/31/October-Summary/</url>
+    <content><![CDATA[<h2 id="Programming">Programming</h2>
+<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
+<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
+<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
+<h2 id="Language">Language</h2>
+<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
+<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
+<p>Bye for now! It’s midnight.</p>
 ]]></content>
       <categories>
         <category>Summary</category>
@@ -940,23 +957,6 @@ Congrats to myself and keep it up! 💪🏻</p>
       </tags>
   </entry>
   <entry>
-    <title>October Summary</title>
-    <url>/2022/10/31/October-Summary/</url>
-    <content><![CDATA[<h2 id="Programming">Programming</h2>
-<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
-<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
-<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
-<h2 id="Language">Language</h2>
-<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
-<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
-<p>Bye for now! It’s midnight.</p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-        <category>Monthly Summary</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Notes</title>
     <url>/Notes/index.html</url>
     <content><![CDATA[<h2 id="Course-Notes">Course Notes</h2>
@@ -981,6 +981,23 @@ Congrats to myself and keep it up! 💪🏻</p>
 </font></font>]]></content>
   </entry>
   <entry>
+    <title>Codes</title>
+    <url>/codes/index.html</url>
+    <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Links</title>
     <url>/links/index.html</url>
     <content><![CDATA[<p>Time to take a Java coffee and see some interesting blogs or websites 😛</p>
@@ -994,27 +1011,10 @@ I’m learning his git tutorial and it’s really written in an easy to understa
 ]]></content>
   </entry>
   <entry>
-    <title>Codes</title>
-    <url>/codes/index.html</url>
-    <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Schedule</title>
-    <url>/schedule/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Sitemap</title>
     <url>/sitemap/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title></title>
@@ -20988,405 +20988,6 @@ const pdfjsBuild = '987062c';
   </entry>
   <entry>
     <title></title>
-    <url>/lib/pdf/web/viewer.html</url>
-    <content><![CDATA[
-    <div id="outerContainer">
-
-      <div id="sidebarContainer">
-        <div id="toolbarSidebar">
-          <div id="toolbarSidebarLeft">
-            <div id="sidebarViewButtons" class="splitToolbarButton toggled" role="radiogroup">
-              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs" role="radio" aria-checked="true" aria-controls="thumbnailView">
-                 <span data-l10n-id="thumbs_label">Thumbnails</span>
-              </button>
-              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline" role="radio" aria-checked="false" aria-controls="outlineView">
-                 <span data-l10n-id="document_outline_label">Document Outline</span>
-              </button>
-              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments" role="radio" aria-checked="false" aria-controls="attachmentsView">
-                 <span data-l10n-id="attachments_label">Attachments</span>
-              </button>
-              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers" role="radio" aria-checked="false" aria-controls="layersView">
-                 <span data-l10n-id="layers_label">Layers</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="toolbarSidebarRight">
-            <div id="outlineOptionsContainer" class="hidden">
-              <div class="verticalToolbarSeparator"></div>
-
-              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
-                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div id="sidebarContent">
-          <div id="thumbnailView">
-          </div>
-          <div id="outlineView" class="hidden">
-          </div>
-          <div id="attachmentsView" class="hidden">
-          </div>
-          <div id="layersView" class="hidden">
-          </div>
-        </div>
-        <div id="sidebarResizer"></div>
-      </div>  <!-- sidebarContainer -->
-
-      <div id="mainContainer">
-        <div class="findbar hidden doorHanger" id="findbar">
-          <div id="findbarInputContainer">
-            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input" aria-invalid="false">
-            <div class="splitToolbarButton">
-              <button id="findPrevious" class="toolbarButton" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
-                <span data-l10n-id="find_previous_label">Previous</span>
-              </button>
-              <div class="splitToolbarButtonSeparator"></div>
-              <button id="findNext" class="toolbarButton" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
-                <span data-l10n-id="find_next_label">Next</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="findbarOptionsOneContainer">
-            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
-            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight All</label>
-            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
-            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match Case</label>
-          </div>
-          <div id="findbarOptionsTwoContainer">
-            <input type="checkbox" id="findMatchDiacritics" class="toolbarField" tabindex="96">
-            <label for="findMatchDiacritics" class="toolbarLabel" data-l10n-id="find_match_diacritics_label">Match Diacritics</label>
-            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="97">
-            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole Words</label>
-          </div>
-
-          <div id="findbarMessageContainer" aria-live="polite">
-            <span id="findResultsCount" class="toolbarLabel"></span>
-            <span id="findMsg" class="toolbarLabel"></span>
-          </div>
-        </div>  <!-- findbar -->
-
-        <div class="editorParamsToolbar hidden doorHangerRight" id="editorFreeTextParamsToolbar">
-          <div class="editorParamsToolbarContainer">
-            <div class="editorParamsSetter">
-              <label for="editorFreeTextColor" class="editorParamsLabel" data-l10n-id="editor_free_text_color">Color</label>
-              <input type="color" id="editorFreeTextColor" class="editorParamsColor" tabindex="100">
-            </div>
-            <div class="editorParamsSetter">
-              <label for="editorFreeTextFontSize" class="editorParamsLabel" data-l10n-id="editor_free_text_size">Size</label>
-              <input type="range" id="editorFreeTextFontSize" class="editorParamsSlider" value="10" min="5" max="100" step="1" tabindex="101">
-            </div>
-          </div>
-        </div>
-
-        <div class="editorParamsToolbar hidden doorHangerRight" id="editorInkParamsToolbar">
-          <div class="editorParamsToolbarContainer">
-            <div class="editorParamsSetter">
-              <label for="editorInkColor" class="editorParamsLabel" data-l10n-id="editor_ink_color">Color</label>
-              <input type="color" id="editorInkColor" class="editorParamsColor" tabindex="102">
-            </div>
-            <div class="editorParamsSetter">
-              <label for="editorInkThickness" class="editorParamsLabel" data-l10n-id="editor_ink_thickness">Thickness</label>
-              <input type="range" id="editorInkThickness" class="editorParamsSlider" value="1" min="1" max="20" step="1" tabindex="103">
-            </div>
-            <div class="editorParamsSetter">
-              <label for="editorInkOpacity" class="editorParamsLabel" data-l10n-id="editor_ink_opacity">Opacity</label>
-              <input type="range" id="editorInkOpacity" class="editorParamsSlider" value="100" min="1" max="100" step="1" tabindex="104">
-            </div>
-          </div>
-        </div>
-
-        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
-          <div id="secondaryToolbarButtonContainer">
-            <button id="secondaryOpenFile" class="secondaryToolbarButton visibleLargeView" title="Open File" tabindex="51" data-l10n-id="open_file">
-              <span data-l10n-id="open_file_label">Open</span>
-            </button>
-
-            <button id="secondaryPrint" class="secondaryToolbarButton visibleMediumView" title="Print" tabindex="52" data-l10n-id="print">
-              <span data-l10n-id="print_label">Print</span>
-            </button>
-
-            <button id="secondaryDownload" class="secondaryToolbarButton visibleMediumView" title="Download" tabindex="53" data-l10n-id="download">
-              <span data-l10n-id="download_label">Download</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator visibleLargeView"></div>
-
-            <button id="presentationMode" class="secondaryToolbarButton" title="Switch to Presentation Mode" tabindex="54" data-l10n-id="presentation_mode">
-              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-            </button>
-
-            <a href="#" id="viewBookmark" class="secondaryToolbarButton" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
-              <span data-l10n-id="bookmark_label">Current View</span>
-            </a>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="firstPage" class="secondaryToolbarButton" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
-              <span data-l10n-id="first_page_label">Go to First Page</span>
-            </button>
-            <button id="lastPage" class="secondaryToolbarButton" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
-              <span data-l10n-id="last_page_label">Go to Last Page</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="pageRotateCw" class="secondaryToolbarButton" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
-              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
-            </button>
-            <button id="pageRotateCcw" class="secondaryToolbarButton" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
-              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <div id="cursorToolButtons" role="radiogroup">
-              <button id="cursorSelectTool" class="secondaryToolbarButton toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool" role="radio" aria-checked="true">
-                <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
-              </button>
-              <button id="cursorHandTool" class="secondaryToolbarButton" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool" role="radio" aria-checked="false">
-                <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
-              </button>
-            </div>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <div id="scrollModeButtons" role="radiogroup">
-              <button id="scrollPage" class="secondaryToolbarButton" title="Use Page Scrolling" tabindex="62" data-l10n-id="scroll_page" role="radio" aria-checked="false">
-                <span data-l10n-id="scroll_page_label">Page Scrolling</span>
-              </button>
-              <button id="scrollVertical" class="secondaryToolbarButton toggled" title="Use Vertical Scrolling" tabindex="63" data-l10n-id="scroll_vertical" role="radio" aria-checked="true">
-                <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
-              </button>
-              <button id="scrollHorizontal" class="secondaryToolbarButton" title="Use Horizontal Scrolling" tabindex="64" data-l10n-id="scroll_horizontal" role="radio" aria-checked="false">
-                <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
-              </button>
-              <button id="scrollWrapped" class="secondaryToolbarButton" title="Use Wrapped Scrolling" tabindex="65" data-l10n-id="scroll_wrapped" role="radio" aria-checked="false">
-                <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
-              </button>
-            </div>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <div id="spreadModeButtons" role="radiogroup">
-              <button id="spreadNone" class="secondaryToolbarButton toggled" title="Do not join page spreads" tabindex="66" data-l10n-id="spread_none" role="radio" aria-checked="true">
-                <span data-l10n-id="spread_none_label">No Spreads</span>
-              </button>
-              <button id="spreadOdd" class="secondaryToolbarButton" title="Join page spreads starting with odd-numbered pages" tabindex="67" data-l10n-id="spread_odd" role="radio" aria-checked="false">
-                <span data-l10n-id="spread_odd_label">Odd Spreads</span>
-              </button>
-              <button id="spreadEven" class="secondaryToolbarButton" title="Join page spreads starting with even-numbered pages" tabindex="68" data-l10n-id="spread_even" role="radio" aria-checked="false">
-                <span data-l10n-id="spread_even_label">Even Spreads</span>
-              </button>
-            </div>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="documentProperties" class="secondaryToolbarButton" title="Document Properties…" tabindex="69" data-l10n-id="document_properties" aria-controls="documentPropertiesDialog">
-              <span data-l10n-id="document_properties_label">Document Properties…</span>
-            </button>
-          </div>
-        </div>  <!-- secondaryToolbar -->
-
-        <div class="toolbar">
-          <div id="toolbarContainer">
-            <div id="toolbarViewer">
-              <div id="toolbarViewerLeft">
-                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
-                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
-                </button>
-                <div class="toolbarButtonSpacer"></div>
-                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
-                  <span data-l10n-id="findbar_label">Find</span>
-                </button>
-                <div class="splitToolbarButton hiddenSmallView">
-                  <button class="toolbarButton" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
-                    <span data-l10n-id="previous_label">Previous</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button class="toolbarButton" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
-                    <span data-l10n-id="next_label">Next</span>
-                  </button>
-                </div>
-                <input type="number" id="pageNumber" class="toolbarField" title="Page" value="1" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
-                <span id="numPages" class="toolbarLabel"></span>
-              </div>
-              <div id="toolbarViewerRight">
-                <button id="openFile" class="toolbarButton hiddenLargeView" title="Open File" tabindex="31" data-l10n-id="open_file">
-                  <span data-l10n-id="open_file_label">Open</span>
-                </button>
-
-                <button id="print" class="toolbarButton hiddenMediumView" title="Print" tabindex="32" data-l10n-id="print">
-                  <span data-l10n-id="print_label">Print</span>
-                </button>
-
-                <button id="download" class="toolbarButton hiddenMediumView" title="Download" tabindex="33" data-l10n-id="download">
-                  <span data-l10n-id="download_label">Download</span>
-                </button>
-
-                <div class="verticalToolbarSeparator hiddenMediumView"></div>
-
-                <div id="editorModeButtons" class="splitToolbarButton toggled" role="radiogroup">
-                  <button id="editorFreeText" class="toolbarButton" disabled="disabled" title="Text" role="radio" aria-checked="false" tabindex="34" data-l10n-id="editor_free_text2">
-                    <span data-l10n-id="editor_free_text2_label">Text</span>
-                  </button>
-                  <button id="editorInk" class="toolbarButton" disabled="disabled" title="Draw" role="radio" aria-checked="false" tabindex="35" data-l10n-id="editor_ink2">
-                    <span data-l10n-id="editor_ink2_label">Draw</span>
-                  </button>
-                </div>
-
-                <div id="editorModeSeparator" class="verticalToolbarSeparator"></div>
-
-                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="48" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
-                  <span data-l10n-id="tools_label">Tools</span>
-                </button>
-              </div>
-              <div id="toolbarViewerMiddle">
-                <div class="splitToolbarButton">
-                  <button id="zoomOut" class="toolbarButton" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
-                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button id="zoomIn" class="toolbarButton" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
-                    <span data-l10n-id="zoom_in_label">Zoom In</span>
-                   </button>
-                </div>
-                <span id="scaleSelectContainer" class="dropdownToolbarButton">
-                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
-                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
-                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
-                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
-                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
-                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
-                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 50 }">50%</option>
-                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 75 }">75%</option>
-                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 100 }">100%</option>
-                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 125 }">125%</option>
-                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 150 }">150%</option>
-                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 200 }">200%</option>
-                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 300 }">300%</option>
-                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 400 }">400%</option>
-                  </select>
-                </span>
-              </div>
-            </div>
-            <div id="loadingBar">
-              <div class="progress">
-                <div class="glimmer">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="viewerContainer" tabindex="0">
-          <div id="viewer" class="pdfViewer"></div>
-        </div>
-      </div> <!-- mainContainer -->
-
-      <div id="dialogContainer">
-        <dialog id="passwordDialog">
-          <div class="row">
-            <label for="password" id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</label>
-          </div>
-          <div class="row">
-            <input type="password" id="password" class="toolbarField">
-          </div>
-          <div class="buttonRow">
-            <button id="passwordCancel" class="dialogButton"><span data-l10n-id="password_cancel">Cancel</span></button>
-            <button id="passwordSubmit" class="dialogButton"><span data-l10n-id="password_ok">OK</span></button>
-          </div>
-        </dialog>
-        <dialog id="documentPropertiesDialog">
-          <div class="row">
-            <span id="fileNameLabel" data-l10n-id="document_properties_file_name">File name:</span>
-            <p id="fileNameField" aria-labelledby="fileNameLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="fileSizeLabel" data-l10n-id="document_properties_file_size">File size:</span>
-            <p id="fileSizeField" aria-labelledby="fileSizeLabel">-</p>
-          </div>
-          <div class="separator"></div>
-          <div class="row">
-            <span id="titleLabel" data-l10n-id="document_properties_title">Title:</span>
-            <p id="titleField" aria-labelledby="titleLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="authorLabel" data-l10n-id="document_properties_author">Author:</span>
-            <p id="authorField" aria-labelledby="authorLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="subjectLabel" data-l10n-id="document_properties_subject">Subject:</span>
-            <p id="subjectField" aria-labelledby="subjectLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="keywordsLabel" data-l10n-id="document_properties_keywords">Keywords:</span>
-            <p id="keywordsField" aria-labelledby="keywordsLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="creationDateLabel" data-l10n-id="document_properties_creation_date">Creation Date:</span>
-            <p id="creationDateField" aria-labelledby="creationDateLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="modificationDateLabel" data-l10n-id="document_properties_modification_date">Modification Date:</span>
-            <p id="modificationDateField" aria-labelledby="modificationDateLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="creatorLabel" data-l10n-id="document_properties_creator">Creator:</span>
-            <p id="creatorField" aria-labelledby="creatorLabel">-</p>
-          </div>
-          <div class="separator"></div>
-          <div class="row">
-            <span id="producerLabel" data-l10n-id="document_properties_producer">PDF Producer:</span>
-            <p id="producerField" aria-labelledby="producerLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="versionLabel" data-l10n-id="document_properties_version">PDF Version:</span>
-            <p id="versionField" aria-labelledby="versionLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="pageCountLabel" data-l10n-id="document_properties_page_count">Page Count:</span>
-            <p id="pageCountField" aria-labelledby="pageCountLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="pageSizeLabel" data-l10n-id="document_properties_page_size">Page Size:</span>
-            <p id="pageSizeField" aria-labelledby="pageSizeLabel">-</p>
-          </div>
-          <div class="separator"></div>
-          <div class="row">
-            <span id="linearizedLabel" data-l10n-id="document_properties_linearized">Fast Web View:</span>
-            <p id="linearizedField" aria-labelledby="linearizedLabel">-</p>
-          </div>
-          <div class="buttonRow">
-            <button id="documentPropertiesClose" class="dialogButton"><span data-l10n-id="document_properties_close">Close</span></button>
-          </div>
-        </dialog>
-        <dialog id="printServiceDialog" style="min-width: 200px;">
-          <div class="row">
-            <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
-          </div>
-          <div class="row">
-            <progress value="0" max="100"></progress>
-            <span data-l10n-id="print_progress_percent" data-l10n-args="{ &quot;progress&quot;: 0 }" class="relative-progress">0%</span>
-          </div>
-          <div class="buttonRow">
-            <button id="printCancel" class="dialogButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
-          </div>
-        </dialog>
-      </div>  <!-- dialogContainer -->
-
-    </div> <!-- outerContainer -->
-    <div id="printContainer"></div>
-
-    <input type="file" id="fileInput" class="hidden">
-  
-
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
     <url>/lib/pdf/web/viewer.css</url>
     <content><![CDATA[/* Copyright 2014 Mozilla Foundation
  *
@@ -24410,6 +24011,405 @@ dialog :link {
     display: none;
   }
 }
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/web/viewer.html</url>
+    <content><![CDATA[
+    <div id="outerContainer">
+
+      <div id="sidebarContainer">
+        <div id="toolbarSidebar">
+          <div id="toolbarSidebarLeft">
+            <div id="sidebarViewButtons" class="splitToolbarButton toggled" role="radiogroup">
+              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs" role="radio" aria-checked="true" aria-controls="thumbnailView">
+                 <span data-l10n-id="thumbs_label">Thumbnails</span>
+              </button>
+              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline" role="radio" aria-checked="false" aria-controls="outlineView">
+                 <span data-l10n-id="document_outline_label">Document Outline</span>
+              </button>
+              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments" role="radio" aria-checked="false" aria-controls="attachmentsView">
+                 <span data-l10n-id="attachments_label">Attachments</span>
+              </button>
+              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers" role="radio" aria-checked="false" aria-controls="layersView">
+                 <span data-l10n-id="layers_label">Layers</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="toolbarSidebarRight">
+            <div id="outlineOptionsContainer" class="hidden">
+              <div class="verticalToolbarSeparator"></div>
+
+              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
+                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="sidebarContent">
+          <div id="thumbnailView">
+          </div>
+          <div id="outlineView" class="hidden">
+          </div>
+          <div id="attachmentsView" class="hidden">
+          </div>
+          <div id="layersView" class="hidden">
+          </div>
+        </div>
+        <div id="sidebarResizer"></div>
+      </div>  <!-- sidebarContainer -->
+
+      <div id="mainContainer">
+        <div class="findbar hidden doorHanger" id="findbar">
+          <div id="findbarInputContainer">
+            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input" aria-invalid="false">
+            <div class="splitToolbarButton">
+              <button id="findPrevious" class="toolbarButton" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
+                <span data-l10n-id="find_previous_label">Previous</span>
+              </button>
+              <div class="splitToolbarButtonSeparator"></div>
+              <button id="findNext" class="toolbarButton" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
+                <span data-l10n-id="find_next_label">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="findbarOptionsOneContainer">
+            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight All</label>
+            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match Case</label>
+          </div>
+          <div id="findbarOptionsTwoContainer">
+            <input type="checkbox" id="findMatchDiacritics" class="toolbarField" tabindex="96">
+            <label for="findMatchDiacritics" class="toolbarLabel" data-l10n-id="find_match_diacritics_label">Match Diacritics</label>
+            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="97">
+            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole Words</label>
+          </div>
+
+          <div id="findbarMessageContainer" aria-live="polite">
+            <span id="findResultsCount" class="toolbarLabel"></span>
+            <span id="findMsg" class="toolbarLabel"></span>
+          </div>
+        </div>  <!-- findbar -->
+
+        <div class="editorParamsToolbar hidden doorHangerRight" id="editorFreeTextParamsToolbar">
+          <div class="editorParamsToolbarContainer">
+            <div class="editorParamsSetter">
+              <label for="editorFreeTextColor" class="editorParamsLabel" data-l10n-id="editor_free_text_color">Color</label>
+              <input type="color" id="editorFreeTextColor" class="editorParamsColor" tabindex="100">
+            </div>
+            <div class="editorParamsSetter">
+              <label for="editorFreeTextFontSize" class="editorParamsLabel" data-l10n-id="editor_free_text_size">Size</label>
+              <input type="range" id="editorFreeTextFontSize" class="editorParamsSlider" value="10" min="5" max="100" step="1" tabindex="101">
+            </div>
+          </div>
+        </div>
+
+        <div class="editorParamsToolbar hidden doorHangerRight" id="editorInkParamsToolbar">
+          <div class="editorParamsToolbarContainer">
+            <div class="editorParamsSetter">
+              <label for="editorInkColor" class="editorParamsLabel" data-l10n-id="editor_ink_color">Color</label>
+              <input type="color" id="editorInkColor" class="editorParamsColor" tabindex="102">
+            </div>
+            <div class="editorParamsSetter">
+              <label for="editorInkThickness" class="editorParamsLabel" data-l10n-id="editor_ink_thickness">Thickness</label>
+              <input type="range" id="editorInkThickness" class="editorParamsSlider" value="1" min="1" max="20" step="1" tabindex="103">
+            </div>
+            <div class="editorParamsSetter">
+              <label for="editorInkOpacity" class="editorParamsLabel" data-l10n-id="editor_ink_opacity">Opacity</label>
+              <input type="range" id="editorInkOpacity" class="editorParamsSlider" value="100" min="1" max="100" step="1" tabindex="104">
+            </div>
+          </div>
+        </div>
+
+        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
+          <div id="secondaryToolbarButtonContainer">
+            <button id="secondaryOpenFile" class="secondaryToolbarButton visibleLargeView" title="Open File" tabindex="51" data-l10n-id="open_file">
+              <span data-l10n-id="open_file_label">Open</span>
+            </button>
+
+            <button id="secondaryPrint" class="secondaryToolbarButton visibleMediumView" title="Print" tabindex="52" data-l10n-id="print">
+              <span data-l10n-id="print_label">Print</span>
+            </button>
+
+            <button id="secondaryDownload" class="secondaryToolbarButton visibleMediumView" title="Download" tabindex="53" data-l10n-id="download">
+              <span data-l10n-id="download_label">Download</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator visibleLargeView"></div>
+
+            <button id="presentationMode" class="secondaryToolbarButton" title="Switch to Presentation Mode" tabindex="54" data-l10n-id="presentation_mode">
+              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+            </button>
+
+            <a href="#" id="viewBookmark" class="secondaryToolbarButton" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
+              <span data-l10n-id="bookmark_label">Current View</span>
+            </a>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="firstPage" class="secondaryToolbarButton" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
+              <span data-l10n-id="first_page_label">Go to First Page</span>
+            </button>
+            <button id="lastPage" class="secondaryToolbarButton" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
+              <span data-l10n-id="last_page_label">Go to Last Page</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="pageRotateCw" class="secondaryToolbarButton" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
+              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
+            </button>
+            <button id="pageRotateCcw" class="secondaryToolbarButton" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
+              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <div id="cursorToolButtons" role="radiogroup">
+              <button id="cursorSelectTool" class="secondaryToolbarButton toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool" role="radio" aria-checked="true">
+                <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
+              </button>
+              <button id="cursorHandTool" class="secondaryToolbarButton" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool" role="radio" aria-checked="false">
+                <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
+              </button>
+            </div>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <div id="scrollModeButtons" role="radiogroup">
+              <button id="scrollPage" class="secondaryToolbarButton" title="Use Page Scrolling" tabindex="62" data-l10n-id="scroll_page" role="radio" aria-checked="false">
+                <span data-l10n-id="scroll_page_label">Page Scrolling</span>
+              </button>
+              <button id="scrollVertical" class="secondaryToolbarButton toggled" title="Use Vertical Scrolling" tabindex="63" data-l10n-id="scroll_vertical" role="radio" aria-checked="true">
+                <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
+              </button>
+              <button id="scrollHorizontal" class="secondaryToolbarButton" title="Use Horizontal Scrolling" tabindex="64" data-l10n-id="scroll_horizontal" role="radio" aria-checked="false">
+                <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
+              </button>
+              <button id="scrollWrapped" class="secondaryToolbarButton" title="Use Wrapped Scrolling" tabindex="65" data-l10n-id="scroll_wrapped" role="radio" aria-checked="false">
+                <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
+              </button>
+            </div>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <div id="spreadModeButtons" role="radiogroup">
+              <button id="spreadNone" class="secondaryToolbarButton toggled" title="Do not join page spreads" tabindex="66" data-l10n-id="spread_none" role="radio" aria-checked="true">
+                <span data-l10n-id="spread_none_label">No Spreads</span>
+              </button>
+              <button id="spreadOdd" class="secondaryToolbarButton" title="Join page spreads starting with odd-numbered pages" tabindex="67" data-l10n-id="spread_odd" role="radio" aria-checked="false">
+                <span data-l10n-id="spread_odd_label">Odd Spreads</span>
+              </button>
+              <button id="spreadEven" class="secondaryToolbarButton" title="Join page spreads starting with even-numbered pages" tabindex="68" data-l10n-id="spread_even" role="radio" aria-checked="false">
+                <span data-l10n-id="spread_even_label">Even Spreads</span>
+              </button>
+            </div>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="documentProperties" class="secondaryToolbarButton" title="Document Properties…" tabindex="69" data-l10n-id="document_properties" aria-controls="documentPropertiesDialog">
+              <span data-l10n-id="document_properties_label">Document Properties…</span>
+            </button>
+          </div>
+        </div>  <!-- secondaryToolbar -->
+
+        <div class="toolbar">
+          <div id="toolbarContainer">
+            <div id="toolbarViewer">
+              <div id="toolbarViewerLeft">
+                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
+                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+                </button>
+                <div class="toolbarButtonSpacer"></div>
+                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
+                  <span data-l10n-id="findbar_label">Find</span>
+                </button>
+                <div class="splitToolbarButton hiddenSmallView">
+                  <button class="toolbarButton" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
+                    <span data-l10n-id="previous_label">Previous</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button class="toolbarButton" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
+                    <span data-l10n-id="next_label">Next</span>
+                  </button>
+                </div>
+                <input type="number" id="pageNumber" class="toolbarField" title="Page" value="1" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
+                <span id="numPages" class="toolbarLabel"></span>
+              </div>
+              <div id="toolbarViewerRight">
+                <button id="openFile" class="toolbarButton hiddenLargeView" title="Open File" tabindex="31" data-l10n-id="open_file">
+                  <span data-l10n-id="open_file_label">Open</span>
+                </button>
+
+                <button id="print" class="toolbarButton hiddenMediumView" title="Print" tabindex="32" data-l10n-id="print">
+                  <span data-l10n-id="print_label">Print</span>
+                </button>
+
+                <button id="download" class="toolbarButton hiddenMediumView" title="Download" tabindex="33" data-l10n-id="download">
+                  <span data-l10n-id="download_label">Download</span>
+                </button>
+
+                <div class="verticalToolbarSeparator hiddenMediumView"></div>
+
+                <div id="editorModeButtons" class="splitToolbarButton toggled" role="radiogroup">
+                  <button id="editorFreeText" class="toolbarButton" disabled="disabled" title="Text" role="radio" aria-checked="false" tabindex="34" data-l10n-id="editor_free_text2">
+                    <span data-l10n-id="editor_free_text2_label">Text</span>
+                  </button>
+                  <button id="editorInk" class="toolbarButton" disabled="disabled" title="Draw" role="radio" aria-checked="false" tabindex="35" data-l10n-id="editor_ink2">
+                    <span data-l10n-id="editor_ink2_label">Draw</span>
+                  </button>
+                </div>
+
+                <div id="editorModeSeparator" class="verticalToolbarSeparator"></div>
+
+                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="48" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
+                  <span data-l10n-id="tools_label">Tools</span>
+                </button>
+              </div>
+              <div id="toolbarViewerMiddle">
+                <div class="splitToolbarButton">
+                  <button id="zoomOut" class="toolbarButton" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
+                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button id="zoomIn" class="toolbarButton" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
+                    <span data-l10n-id="zoom_in_label">Zoom In</span>
+                   </button>
+                </div>
+                <span id="scaleSelectContainer" class="dropdownToolbarButton">
+                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
+                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
+                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
+                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
+                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
+                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 50 }">50%</option>
+                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 75 }">75%</option>
+                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 100 }">100%</option>
+                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 125 }">125%</option>
+                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 150 }">150%</option>
+                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 200 }">200%</option>
+                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 300 }">300%</option>
+                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 400 }">400%</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            <div id="loadingBar">
+              <div class="progress">
+                <div class="glimmer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="viewerContainer" tabindex="0">
+          <div id="viewer" class="pdfViewer"></div>
+        </div>
+      </div> <!-- mainContainer -->
+
+      <div id="dialogContainer">
+        <dialog id="passwordDialog">
+          <div class="row">
+            <label for="password" id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</label>
+          </div>
+          <div class="row">
+            <input type="password" id="password" class="toolbarField">
+          </div>
+          <div class="buttonRow">
+            <button id="passwordCancel" class="dialogButton"><span data-l10n-id="password_cancel">Cancel</span></button>
+            <button id="passwordSubmit" class="dialogButton"><span data-l10n-id="password_ok">OK</span></button>
+          </div>
+        </dialog>
+        <dialog id="documentPropertiesDialog">
+          <div class="row">
+            <span id="fileNameLabel" data-l10n-id="document_properties_file_name">File name:</span>
+            <p id="fileNameField" aria-labelledby="fileNameLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="fileSizeLabel" data-l10n-id="document_properties_file_size">File size:</span>
+            <p id="fileSizeField" aria-labelledby="fileSizeLabel">-</p>
+          </div>
+          <div class="separator"></div>
+          <div class="row">
+            <span id="titleLabel" data-l10n-id="document_properties_title">Title:</span>
+            <p id="titleField" aria-labelledby="titleLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="authorLabel" data-l10n-id="document_properties_author">Author:</span>
+            <p id="authorField" aria-labelledby="authorLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="subjectLabel" data-l10n-id="document_properties_subject">Subject:</span>
+            <p id="subjectField" aria-labelledby="subjectLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="keywordsLabel" data-l10n-id="document_properties_keywords">Keywords:</span>
+            <p id="keywordsField" aria-labelledby="keywordsLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="creationDateLabel" data-l10n-id="document_properties_creation_date">Creation Date:</span>
+            <p id="creationDateField" aria-labelledby="creationDateLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="modificationDateLabel" data-l10n-id="document_properties_modification_date">Modification Date:</span>
+            <p id="modificationDateField" aria-labelledby="modificationDateLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="creatorLabel" data-l10n-id="document_properties_creator">Creator:</span>
+            <p id="creatorField" aria-labelledby="creatorLabel">-</p>
+          </div>
+          <div class="separator"></div>
+          <div class="row">
+            <span id="producerLabel" data-l10n-id="document_properties_producer">PDF Producer:</span>
+            <p id="producerField" aria-labelledby="producerLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="versionLabel" data-l10n-id="document_properties_version">PDF Version:</span>
+            <p id="versionField" aria-labelledby="versionLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="pageCountLabel" data-l10n-id="document_properties_page_count">Page Count:</span>
+            <p id="pageCountField" aria-labelledby="pageCountLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="pageSizeLabel" data-l10n-id="document_properties_page_size">Page Size:</span>
+            <p id="pageSizeField" aria-labelledby="pageSizeLabel">-</p>
+          </div>
+          <div class="separator"></div>
+          <div class="row">
+            <span id="linearizedLabel" data-l10n-id="document_properties_linearized">Fast Web View:</span>
+            <p id="linearizedField" aria-labelledby="linearizedLabel">-</p>
+          </div>
+          <div class="buttonRow">
+            <button id="documentPropertiesClose" class="dialogButton"><span data-l10n-id="document_properties_close">Close</span></button>
+          </div>
+        </dialog>
+        <dialog id="printServiceDialog" style="min-width: 200px;">
+          <div class="row">
+            <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
+          </div>
+          <div class="row">
+            <progress value="0" max="100"></progress>
+            <span data-l10n-id="print_progress_percent" data-l10n-args="{ &quot;progress&quot;: 0 }" class="relative-progress">0%</span>
+          </div>
+          <div class="buttonRow">
+            <button id="printCancel" class="dialogButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
+          </div>
+        </dialog>
+      </div>  <!-- dialogContainer -->
+
+    </div> <!-- outerContainer -->
+    <div id="printContainer"></div>
+
+    <input type="file" id="fileInput" class="hidden">
+  
+
 ]]></content>
   </entry>
   <entry>
