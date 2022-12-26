@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang=en>
+<html>
 <head>
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at my CV. Here’s how I did it: -&gt; If you">
+  <meta charset="utf-8">
+  
+  <title>LaTeX CV | Meng&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+  
+  <meta name="description" content="From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at my CV. Here’s how I did it: -&gt; If you">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTeX CV">
 <meta property="og:url" content="http://example.com/2022/10/29/Latex-CV/index.html">
@@ -17,162 +26,65 @@
 <meta property="article:modified_time" content="2022-12-22T05:08:28.925Z">
 <meta property="article:author" content="Han Meng">
 <meta property="article:tag" content="Latex">
-<meta name="twitter:card" content="summary">
-    
-    
-      
-        
-          <link rel="shortcut icon" href="/images/favicon.ico">
-        
-      
-      
-        
-          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        
-      
-    
-    <!-- title -->
-    <title>LaTeX CV</title>
-    <!-- styles -->
-    
-<link rel="stylesheet" href="/css/style.css">
-
-    <!-- persian styles -->
-    
-    <!-- rss -->
-    
-    
-	<!-- mathjax -->
-	
-		<script type="text/x-mathjax-config">
-		  MathJax.Hub.Config({
-			tex2jax: {
-			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-			  inlineMath: [['$','$']]
-			}
-		  });
-		</script>
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-	
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="twitter:card" content="summary"><meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
-<body class="max-width mx-auto px3 ltr">
+<body>
+  <div id="wrapper">
+    <header id="header">
+  <h1 id="title">
+    <a href="/">Meng&#39;s Blog</a>
+  </h1>
+  <nav>
     
-      <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-        <!--
-       --><li><a href="/">Home</a></li><!--
-     --><!--
-       --><li><a href="/about/">About</a></li><!--
-     --><!--
-       --><li><a href="/archives/">Writing</a></li><!--
-     --><!--
-       --><li><a href="/categories/">Categories</a></li><!--
-     --><!--
-       --><li><a href="/tags/">Tags</a></li><!--
-     -->
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" aria-label="Previous post" href="/2022/10/31/October-Summary/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" aria-label="Next post" href="/2022/10/26/Two-pointer/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/10/29/Latex-CV/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/10/29/Latex-CV/&text=LaTeX CV"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/10/29/Latex-CV/&title=LaTeX CV"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/10/29/Latex-CV/&is_video=false&description=LaTeX CV"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=LaTeX CV&body=Check out this article: http://example.com/2022/10/29/Latex-CV/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/10/29/Latex-CV/&title=LaTeX CV"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/10/29/Latex-CV/&title=LaTeX CV"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/10/29/Latex-CV/&title=LaTeX CV"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/10/29/Latex-CV/&title=LaTeX CV"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/10/29/Latex-CV/&name=LaTeX CV&description=&lt;p&gt;From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at &lt;a href=&#34;https://github.com/mengisok/Resume-CV/blob/master/resume.pdf&#34;&gt;my CV&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Here’s how I did it:&lt;/p&gt;
-&lt;p&gt;-&amp;gt; If you only use latex occasionally or a few times, an onilne editor &lt;a href=&#34;https://cn.overleaf.com/latex/templates&#34;&gt;Overleaf&lt;/a&gt; can save you lots of troubles. You can find templates, edit and compile them.&lt;br&gt;
--&amp;gt; If you want to do more things, use following steps:&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/10/29/Latex-CV/&t=LaTeX CV"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Download-MiKTeX-and-VSCode"><span class="toc-number">1.</span> <span class="toc-text">Download MiKTeX and VSCode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Find-a-template"><span class="toc-number">2.</span> <span class="toc-text">Find a template</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Edit-the-template"><span class="toc-number">3.</span> <span class="toc-text">Edit the template</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Share-your-template"><span class="toc-number">4.</span> <span class="toc-text">Share your template</span></a></li></ol>
-    </div>
-  </span>
-</div>
-
     
-    <div class="content index py4">
-        
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
+      
+      <a class="nav-link" href="/">Home</a>
     
-    <h1 class="posttitle" itemprop="name headline">
-        LaTeX CV
-    </h1>
-
-
-
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Han Meng</span>
-      </span>
       
-    <div class="postdate">
+        <span class="nav-spacer">×</span>
       
-        <time datetime="2022-10-29T07:18:48.000Z" itemprop="datePublished">2022-10-29</time>
+      <a class="nav-link" href="/about/">About</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" href="/archives">Archives</a>
+    
+      
+        <span class="nav-spacer">×</span>
+      
+      <a class="nav-link" target="_blank" rel="noopener" href="https://github.com/mengisok">Github</a>
+    
+    
+  </nav>
+</header>
+
+    <div id="content">
+      <article id="post-Latex-CV" class="article article-type-post" itemprop="blogPost" itemscope>
+  <div class="article-inner">
+    
+      <header class="article-header">
         
-      
-    </div>
-
-
-      
-    <div class="article-category">
-        <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/Job/">Job</a>
-    </div>
-
-
-      
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/Latex/" rel="tag">Latex</a>
-    </div>
-
-
-    </div>
-  </header>
+  
+    <h2 class="article-title" itemprop="headline name">
+      LaTeX CV
+    </h2>
   
 
-  <div class="content" itemprop="articleBody">
-    <p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a target="_blank" rel="noopener" href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
+
+        <div class="article-meta">
+          <time class="article-date" datetime="2022-10-29T07:18:48.000Z" itemprop="datePublished">October 29, 2022, 3:18 PM</time>
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+        <p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a target="_blank" rel="noopener" href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
 <p>Here’s how I did it:</p>
 <p>-&gt; If you only use latex occasionally or a few times, an onilne editor <a target="_blank" rel="noopener" href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
 -&gt; If you want to do more things, use following steps:</p>
@@ -211,167 +123,66 @@ git push -u origin master
 That’s where I found the original template for my CV! I think put templates there may help more people.</li>
 </ol>
 
+      
+    </div>
+    
+    
+    <div class="article-category">
+      
+        <b>Categories:</b>
+        <a class="article-category-link" href="/categories/Job/">Job</a>
+      
+      
+        <br/>
+      
+      
+        <b>Tags:</b>
+        <a class="article-tag-none-link" href="/tags/Latex/" rel="tag">Latex</a>
+      
+    </div>
+    
+    
   </div>
 </article>
 
-    <div class="blog-post-comments">
-        <div id="disqus_thread">
-            <noscript>Please enable JavaScript to view the comments.</noscript>
-        </div>
-    </div>
-
-
-
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/categories/">Categories</a></li>
-         
-          <li><a href="/tags/">Tags</a></li>
-        
-      </ul>
-    </div>
-
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Download-MiKTeX-and-VSCode"><span class="toc-number">1.</span> <span class="toc-text">Download MiKTeX and VSCode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Find-a-template"><span class="toc-number">2.</span> <span class="toc-text">Find a template</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Edit-the-template"><span class="toc-number">3.</span> <span class="toc-text">Edit the template</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Share-your-template"><span class="toc-number">4.</span> <span class="toc-text">Share your template</span></a></li></ol>
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2022/10/29/Latex-CV/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2022/10/29/Latex-CV/&text=LaTeX CV"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2022/10/29/Latex-CV/&title=LaTeX CV"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2022/10/29/Latex-CV/&is_video=false&description=LaTeX CV"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=LaTeX CV&body=Check out this article: http://example.com/2022/10/29/Latex-CV/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2022/10/29/Latex-CV/&title=LaTeX CV"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2022/10/29/Latex-CV/&title=LaTeX CV"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2022/10/29/Latex-CV/&title=LaTeX CV"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2022/10/29/Latex-CV/&title=LaTeX CV"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2022/10/29/Latex-CV/&name=LaTeX CV&description=&lt;p&gt;From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at &lt;a href=&#34;https://github.com/mengisok/Resume-CV/blob/master/resume.pdf&#34;&gt;my CV&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Here’s how I did it:&lt;/p&gt;
-&lt;p&gt;-&amp;gt; If you only use latex occasionally or a few times, an onilne editor &lt;a href=&#34;https://cn.overleaf.com/latex/templates&#34;&gt;Overleaf&lt;/a&gt; can save you lots of troubles. You can find templates, edit and compile them.&lt;br&gt;
--&amp;gt; If you want to do more things, use following steps:&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2022/10/29/Latex-CV/&t=LaTeX CV"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
-</div>
-
-        
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2022
-    Han Meng
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-        <!--
-       --><li><a href="/">Home</a></li><!--
-     --><!--
-       --><li><a href="/about/">About</a></li><!--
-     --><!--
-       --><li><a href="/archives/">Writing</a></li><!--
-     --><!--
-       --><li><a href="/categories/">Categories</a></li><!--
-     --><!--
-       --><li><a href="/tags/">Tags</a></li><!--
-     -->
-      </ul>
-    </nav>
-  </div>
-</footer>
-
-    </div>
-    <!-- styles -->
-
-
-
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
-
-
-    <!-- jquery -->
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
-
-
-
-
-<!-- clipboard -->
-
   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+<nav id="article-nav" class="article-nav">
   
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
-    btn += '<i class="far fa-clone"></i>';
-    btn += '</span>'; 
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
-    });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
-      e.clearSelection();
-    })
-  })
-  </script>
+    <a href="/2022/10/31/October-Summary/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          October Summary
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/10/26/Two-pointer/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          Two-pointer
+        
+      </div>
+    </a>
+  
+</nav>
 
 
-<script src="/js/main.js"></script>
 
-<!-- search -->
 
-<!-- Google Analytics -->
 
-<!-- Baidu Analytics -->
 
-<!-- Cloudflare Analytics -->
+    </div>
+  </div>
+  
 
-<!-- Umami Analytics -->
 
-<!-- Disqus Comments -->
 
-    <script type="text/javascript">
-        var disqus_shortname = 'mengisok';
 
-        (function(){
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        }());
-    </script>
 
-<!-- utterances Comments -->
+
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
 </html>
