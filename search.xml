@@ -1,6 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Adaptive Filters</title>
+    <url>/2022/11/19/Adaptive-Filters/</url>
+    <content><![CDATA[<p>I watched a well-organized and concise youtube video titled <a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a>, which is also a basic course I am taking this semester. I focused on the key points in my course and made a bit of notes.</p>
+<h2 id="Limitations-of-fixed-coefficient-digital-filters">Limitations of fixed-coefficient digital filters</h2>
+<ul>
+<li>Fixed-coefficient digital filters
+<ul>
+<li>FIR, IIR</li>
+<li>LP, HP, etc</li>
+</ul>
+</li>
+<li>Limitations
+<ul>
+<li>Time-varying noise-frequency</li>
+<li>Overlapping bands of signal and noise</li>
+</ul>
+</li>
+</ul>
+<span id="more"></span>
+<h2 id="Adaptive-filters">Adaptive filters</h2>
+<img src="/images/adaptive_filter.png" alt="adaptive_filter" title="adaptive_filter" width="400"> 
+<ul>
+<li>2 main components
+<ul>
+<li>Digital filter (with <strong>adjustable</strong> coefficients)</li>
+<li>Adaptive algorithm</li>
+</ul>
+</li>
+<li>2 input signals: $y_k$ and $x_k$
+<ul>
+<li>$y_k = s_k + n_k$</li>
+<li>$s_k$ = desired signal</li>
+<li>$n_k$ = noise</li>
+<li>$x_k$ = contaminating signal which is <strong>correlated with $n_k$</strong>, gives an estimate of $n_k$, i.e. $\hat{n_k}$</li>
+</ul>
+</li>
+<li>Goal: produce <strong>optimum</strong> $\hat{n_k}$
+<ul>
+<li>$e_k = \hat{s_k} = y_k - \hat{n_k} = s_k + n_k - \hat{n_k}$</li>
+</ul>
+</li>
+<li>Theorem: <strong>minimize $e_k$, maximize the signal-to-noise ratio</strong></li>
+</ul>
+<h2 id="LMS-algorithm">LMS algorithm</h2>
+<h3 id="Wiener-filter">Wiener filter</h3>
+<img src="/images/wiener_filter.png" alt="wiener_filter" title="wiener_filter" width="400"> 
+<ul>
+<li>An input signal&nbsp;<em>w(n)</em> is convolved w ith the Wiener filter&nbsp;<em>g(n)</em> and the result is compared to a reference signal&nbsp;<em>s(n)</em> to obtain the filtering error&nbsp;<em>e(n)</em></li>
+<li>Criterion: <strong>MMSE</strong> (Minimum Mean Square Error)
+<ul>
+<li>Minimize $J = E[e(n)^2] = E[(x(n) - s(n))^2] = E[(w(n) * g(n) - s(n))^2]$</li>
+<li><em>J</em> can be used to draw the <strong>Error-Performance surface</strong></li>
+</ul>
+</li>
+<li>The&nbsp;<a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">Least mean squares filter</a> converges to the&nbsp;<a href="https://en.wikipedia.org/wiki/Wiener_filter">Wiener filter</a></li>
+</ul>
+<h3 id="Wiener-Hopf-solution">Wiener-Hopf solution</h3>
+<p>Set gradient of <em>J</em> of <em>H</em> to zero, deduced that<br>
+$H_{opt} = R_{xx}^{-1} R_{xs}$</p>
+<p>where<br>
+$R_{xx} = E(X_k X_k^T)$<br>
+$R_{xs} = E(y_k X_k)$</p>
+<ul>
+<li>Requires knowledge of $R_{xx}, R_{xs}$</li>
+<li>Matrix inversion is expensive</li>
+<li>For non-stationary, $H_{opt}$ needs to be computed repeatedly</li>
+</ul>
+<h3 id="LMS-adaptive-algorithm">LMS adaptive algorithm</h3>
+<p>Version 1: $H(n+1) = H(n) + \mu (- \nabla(n))$<br>
+Version 2: $H(n+1) = H(n) + \frac{1}{2}\delta (- \nabla(n))$</p>
+<p>then<br>
+$H(n+1) = H(n) + 2\mu e(n)X(n)$<br>
+or $H(n+1) = H(n) + \delta e(n)X(n)$</p>
+<p>where<br>
+$e(n) = y(n) - H^T(n)X(n)$<br>
+$\mu$ and $\delta$ are step-sizes</p>
+<ul>
+<li>Based on the <strong>steepest descent algorithm</strong> (update H(n) along the opposite direction of the gradient):<br>
+$H(n+1) = H(n) + \mu (- \nabla(n))$</li>
+<li>Using <strong>instantaneous</strong> estimates <strong>instead of the means</strong> (unbiased):<br>
+$J = E[e(n)^2] = e(n)^2$<br>
+$\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
+<li>Step-size determines <strong>stablility</strong> and <strong>rate of convergence</strong>
+<ul>
+<li>If too large, too much fluctuation</li>
+<li>If too small, convergences too slow</li>
+</ul>
+</li>
+</ul>
+<h3 id="Limitations">Limitations</h3>
+<ul>
+<li>If the noise is non-stationary, the error-performance surface will change rapidly</li>
+<li>If $x(n)$ is proportional to $y(n)$, signal will be obliterated</li>
+<li>H(n) never reached the theoretical optimum (fluctuation)</li>
+</ul>
+<h2 id="Applications">Applications</h2>
+<ul>
+<li>Acoustic echo cancellation</li>
+<li>Cancelling EOG from contaminated EEG and get correct EEG</li>
+<li>Cancelling maternal ECG and get foetal ECG during labour</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Signal Processing</category>
+      </categories>
+      <tags>
+        <tag>Filter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Basic MATLAB</title>
     <url>/2022/11/20/Basic-MATLAB/</url>
     <content><![CDATA[<h2 id="General-concepts">General concepts</h2>
@@ -136,114 +247,161 @@
       </tags>
   </entry>
   <entry>
-    <title>Adaptive Filters</title>
-    <url>/2022/11/19/Adaptive-Filters/</url>
-    <content><![CDATA[<p>I watched a well-organized and concise youtube video titled <a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a>, which is also a basic course I am taking this semester. I focused on the key points in my course and made a bit of notes.</p>
-<h2 id="Limitations-of-fixed-coefficient-digital-filters">Limitations of fixed-coefficient digital filters</h2>
-<ul>
-<li>Fixed-coefficient digital filters
-<ul>
-<li>FIR, IIR</li>
-<li>LP, HP, etc</li>
-</ul>
-</li>
-<li>Limitations
-<ul>
-<li>Time-varying noise-frequency</li>
-<li>Overlapping bands of signal and noise</li>
-</ul>
-</li>
-</ul>
+    <title>Getting Started with Git &amp; Github</title>
+    <url>/2022/11/17/Getting-Started-with-Git-Github/</url>
+    <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>.</p>
+<p>By the way, I found it very convenient to make notes in Notion first and then export Mardown, modify it, copy and paste it into the Blog.</p>
+<h2 id="Start">Start</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"name"</span></span><br><span class="line">git config --global user.email <span class="string">"mail"</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></tbody></table></figure>
 <span id="more"></span>
-<h2 id="Adaptive-filters">Adaptive filters</h2>
-<img src="/images/adaptive_filter.png" alt="adaptive_filter" title="adaptive_filter" width="400"> 
+<h2 id="Staging-files">Staging files</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git add filename</span><br><span class="line">git add .</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git commit -m <span class="string">"message"</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Git-environments">Git environments</h2>
 <ul>
-<li>2 main components
+<li>Working</li>
+<li>Staging</li>
+<li>Commit</li>
+</ul>
+<h2 id="File-states">File states</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></tbody></table></figure>
 <ul>
-<li>Digital filter (with <strong>adjustable</strong> coefficients)</li>
-<li>Adaptive algorithm</li>
+<li>Tracked (after commit)
+<ul>
+<li>Unmodified</li>
+<li>Modified</li>
+<li>Staged</li>
 </ul>
 </li>
-<li>2 input signals: $y_k$ and $x_k$
+<li>Untracked</li>
+</ul>
+<h2 id="Restoring-files">Restoring files</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git restore filename</span><br><span class="line">git restore . </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Ignoring-files">Ignoring files</h2>
 <ul>
-<li>$y_k = s_k + n_k$</li>
-<li>$s_k$ = desired signal</li>
-<li>$n_k$ = noise</li>
-<li>$x_k$ = contaminating signal which is <strong>correlated with $n_k$</strong>, gives an estimate of $n_k$, i.e. $\hat{n_k}$</li>
+<li>Sensitive info</li>
+<li>Personal notes</li>
+<li>System files</li>
+</ul>
+<p>Use <strong>.gitignore</strong> file</p>
+<h2 id="Clearing-the-cache">Clearing the cache</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Deleting">Deleting</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git rm filename</span><br></pre></td></tr></tbody></table></figure>
+<p>Delete, and move to stage and ready to commit.</p>
+<h2 id="Renaming">Renaming</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git mv oldname newname </span><br></pre></td></tr></tbody></table></figure>
+<p>Move to stage too.</p>
+<h2 id="Showing-differences">Showing differences</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">got <span class="built_in">log</span> --oneline</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Amending">Amending</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git reset</span><br><span class="line">git reset --hard</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Rebasing">Rebasing</h2>
+<p>A time machine. Rewrite the history.</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git rebase </span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Branches">Branches</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></tbody></table></figure>
+<p>Copying a branch:</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="keyword">switch</span> -c NAME</span><br></pre></td></tr></tbody></table></figure>
+<p>Merging:</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>Deleting a branch:</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git branch --delete NAME</span><br></pre></td></tr></tbody></table></figure>
+<p>Git flow:</p>
+<ul>
+<li>Fix branch</li>
+<li>Make changes</li>
+<li>Merge to master</li>
+<li>Delete old branch</li>
+</ul>
+<h2 id="Merge-conflicts">Merge conflicts</h2>
+<p>Choose one.</p>
+<h2 id="Stashing">Stashing</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash <span class="built_in">list</span></span><br><span class="line">git stash apply</span><br><span class="line">git stash pop</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Git-clean">Git clean</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git clean -n</span><br><span class="line">git clean -d</span><br><span class="line">git clean -f</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Github">Github</h2>
+<ul>
+<li>Cloud repository</li>
+<li>Collaborative dev</li>
+<li>Projet management</li>
+</ul>
+<p>Working with github:</p>
+<ul>
+<li>Set up remote</li>
+<li>Push</li>
+<li>Fetch/pull</li>
+</ul>
+<h2 id="Pushing-to-github">Pushing to github</h2>
+<p>Remotes:</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git remote add NAME URL</span><br><span class="line">git remote remove NAME</span><br><span class="line">git rename OLDNAME NEWNAME</span><br><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
+<p>Git push:</p>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git push REMOTE BRANCH</span><br><span class="line">git push -u origin main</span><br><span class="line">git push --all</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Github-options">Github options</h2>
+<h3 id="Issues">Issues</h3>
+<p>Collaborate with people</p>
+<ul>
+<li>Write notes, like to-do items, for youself or others</li>
+<li>Assign to-do to individuals, and they can comment</li>
+</ul>
+<h3 id="Pull-requests">Pull requests</h3>
+<p>Change the repo</p>
+<ul>
+<li>Approve changes that somebody else has made</li>
+<li>Compare different branches</li>
+</ul>
+<h3 id="Actions">Actions</h3>
+<p>Manage the repo (advanced)</p>
+<ul>
+<li>Run tests</li>
+<li>Host code automatically</li>
+<li>Download other’s actions to use</li>
+</ul>
+<h3 id="Projects">Projects</h3>
+<p>Manage the repo</p>
+<ul>
+<li>Kanban board</li>
+</ul>
+<h3 id="Wiki">Wiki</h3>
+<p>Create documentation that is easy for people to look at (not really necessary)</p>
+<h3 id="Security">Security</h3>
+<p>Manage policies for security (advanced)</p>
+<h3 id="Insights">Insights</h3>
+<p>Know contributors, traffic, etc (private)</p>
+<h3 id="Settings">Settings</h3>
+<ul>
+<li>Convert this repo to be a template</li>
+<li>Github pages</li>
+</ul>
+<h2 id="Managing-projects">Managing projects</h2>
+<ul>
+<li>Contributors
+<ul>
+<li>Invite a collaborator</li>
 </ul>
 </li>
-<li>Goal: produce <strong>optimum</strong> $\hat{n_k}$
-<ul>
-<li>$e_k = \hat{s_k} = y_k - \hat{n_k} = s_k + n_k - \hat{n_k}$</li>
+<li>Issues</li>
+<li>Labels</li>
+<li>Miletones</li>
+<li>Projects</li>
 </ul>
-</li>
-<li>Theorem: <strong>minimize $e_k$, maximize the signal-to-noise ratio</strong></li>
-</ul>
-<h2 id="LMS-algorithm">LMS algorithm</h2>
-<h3 id="Wiener-filter">Wiener filter</h3>
-<img src="/images/wiener_filter.png" alt="wiener_filter" title="wiener_filter" width="400"> 
-<ul>
-<li>An input signal&nbsp;<em>w(n)</em> is convolved w ith the Wiener filter&nbsp;<em>g(n)</em> and the result is compared to a reference signal&nbsp;<em>s(n)</em> to obtain the filtering error&nbsp;<em>e(n)</em></li>
-<li>Criterion: <strong>MMSE</strong> (Minimum Mean Square Error)
-<ul>
-<li>Minimize $J = E[e(n)^2] = E[(x(n) - s(n))^2] = E[(w(n) * g(n) - s(n))^2]$</li>
-<li><em>J</em> can be used to draw the <strong>Error-Performance surface</strong></li>
-</ul>
-</li>
-<li>The&nbsp;<a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">Least mean squares filter</a> converges to the&nbsp;<a href="https://en.wikipedia.org/wiki/Wiener_filter">Wiener filter</a></li>
-</ul>
-<h3 id="Wiener-Hopf-solution">Wiener-Hopf solution</h3>
-<p>Set gradient of <em>J</em> of <em>H</em> to zero, deduced that<br>
-$H_{opt} = R_{xx}^{-1} R_{xs}$</p>
-<p>where<br>
-$R_{xx} = E(X_k X_k^T)$<br>
-$R_{xs} = E(y_k X_k)$</p>
-<ul>
-<li>Requires knowledge of $R_{xx}, R_{xs}$</li>
-<li>Matrix inversion is expensive</li>
-<li>For non-stationary, $H_{opt}$ needs to be computed repeatedly</li>
-</ul>
-<h3 id="LMS-adaptive-algorithm">LMS adaptive algorithm</h3>
-<p>Version 1: $H(n+1) = H(n) + \mu (- \nabla(n))$<br>
-Version 2: $H(n+1) = H(n) + \frac{1}{2}\delta (- \nabla(n))$</p>
-<p>then<br>
-$H(n+1) = H(n) + 2\mu e(n)X(n)$<br>
-or $H(n+1) = H(n) + \delta e(n)X(n)$</p>
-<p>where<br>
-$e(n) = y(n) - H^T(n)X(n)$<br>
-$\mu$ and $\delta$ are step-sizes</p>
-<ul>
-<li>Based on the <strong>steepest descent algorithm</strong> (update H(n) along the opposite direction of the gradient):<br>
-$H(n+1) = H(n) + \mu (- \nabla(n))$</li>
-<li>Using <strong>instantaneous</strong> estimates <strong>instead of the means</strong> (unbiased):<br>
-$J = E[e(n)^2] = e(n)^2$<br>
-$\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
-<li>Step-size determines <strong>stablility</strong> and <strong>rate of convergence</strong>
-<ul>
-<li>If too large, too much fluctuation</li>
-<li>If too small, convergences too slow</li>
-</ul>
-</li>
-</ul>
-<h3 id="Limitations">Limitations</h3>
-<ul>
-<li>If the noise is non-stationary, the error-performance surface will change rapidly</li>
-<li>If $x(n)$ is proportional to $y(n)$, signal will be obliterated</li>
-<li>H(n) never reached the theoretical optimum (fluctuation)</li>
-</ul>
-<h2 id="Applications">Applications</h2>
-<ul>
-<li>Acoustic echo cancellation</li>
-<li>Cancelling EOG from contaminated EEG and get correct EEG</li>
-<li>Cancelling maternal ECG and get foetal ECG during labour</li>
-</ul>
+<h2 id="Syncing">Syncing</h2>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git clone </span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git fetch</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></tbody></table></figure>
+<p>pull = fetch + merge</p>
 ]]></content>
       <categories>
         <category>Learning</category>
-        <category>Signal Processing</category>
+        <category>Software Development</category>
       </categories>
       <tags>
-        <tag>Filter</tag>
+        <tag>Git</tag>
+        <tag>Github</tag>
       </tags>
   </entry>
   <entry>
@@ -565,162 +723,10 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
-    <title>Getting Started with Git &amp; Github</title>
-    <url>/2022/11/17/Getting-Started-with-Git-Github/</url>
-    <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>.</p>
-<p>By the way, I found it very convenient to make notes in Notion first and then export Mardown, modify it, copy and paste it into the Blog.</p>
-<h2 id="Start">Start</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"name"</span></span><br><span class="line">git config --global user.email <span class="string">"mail"</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></tbody></table></figure>
-<span id="more"></span>
-<h2 id="Staging-files">Staging files</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git add filename</span><br><span class="line">git add .</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git commit -m <span class="string">"message"</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Git-environments">Git environments</h2>
-<ul>
-<li>Working</li>
-<li>Staging</li>
-<li>Commit</li>
-</ul>
-<h2 id="File-states">File states</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>Tracked (after commit)
-<ul>
-<li>Unmodified</li>
-<li>Modified</li>
-<li>Staged</li>
-</ul>
-</li>
-<li>Untracked</li>
-</ul>
-<h2 id="Restoring-files">Restoring files</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git restore filename</span><br><span class="line">git restore . </span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Ignoring-files">Ignoring files</h2>
-<ul>
-<li>Sensitive info</li>
-<li>Personal notes</li>
-<li>System files</li>
-</ul>
-<p>Use <strong>.gitignore</strong> file</p>
-<h2 id="Clearing-the-cache">Clearing the cache</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Deleting">Deleting</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git rm filename</span><br></pre></td></tr></tbody></table></figure>
-<p>Delete, and move to stage and ready to commit.</p>
-<h2 id="Renaming">Renaming</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git mv oldname newname </span><br></pre></td></tr></tbody></table></figure>
-<p>Move to stage too.</p>
-<h2 id="Showing-differences">Showing differences</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">got <span class="built_in">log</span> --oneline</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Amending">Amending</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git reset</span><br><span class="line">git reset --hard</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Rebasing">Rebasing</h2>
-<p>A time machine. Rewrite the history.</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git rebase </span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Branches">Branches</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></tbody></table></figure>
-<p>Copying a branch:</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="keyword">switch</span> -c NAME</span><br></pre></td></tr></tbody></table></figure>
-<p>Merging:</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>Deleting a branch:</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git branch --delete NAME</span><br></pre></td></tr></tbody></table></figure>
-<p>Git flow:</p>
-<ul>
-<li>Fix branch</li>
-<li>Make changes</li>
-<li>Merge to master</li>
-<li>Delete old branch</li>
-</ul>
-<h2 id="Merge-conflicts">Merge conflicts</h2>
-<p>Choose one.</p>
-<h2 id="Stashing">Stashing</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash <span class="built_in">list</span></span><br><span class="line">git stash apply</span><br><span class="line">git stash pop</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Git-clean">Git clean</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git clean -n</span><br><span class="line">git clean -d</span><br><span class="line">git clean -f</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Github">Github</h2>
-<ul>
-<li>Cloud repository</li>
-<li>Collaborative dev</li>
-<li>Projet management</li>
-</ul>
-<p>Working with github:</p>
-<ul>
-<li>Set up remote</li>
-<li>Push</li>
-<li>Fetch/pull</li>
-</ul>
-<h2 id="Pushing-to-github">Pushing to github</h2>
-<p>Remotes:</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git remote add NAME URL</span><br><span class="line">git remote remove NAME</span><br><span class="line">git rename OLDNAME NEWNAME</span><br><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
-<p>Git push:</p>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git push REMOTE BRANCH</span><br><span class="line">git push -u origin main</span><br><span class="line">git push --all</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Github-options">Github options</h2>
-<h3 id="Issues">Issues</h3>
-<p>Collaborate with people</p>
-<ul>
-<li>Write notes, like to-do items, for youself or others</li>
-<li>Assign to-do to individuals, and they can comment</li>
-</ul>
-<h3 id="Pull-requests">Pull requests</h3>
-<p>Change the repo</p>
-<ul>
-<li>Approve changes that somebody else has made</li>
-<li>Compare different branches</li>
-</ul>
-<h3 id="Actions">Actions</h3>
-<p>Manage the repo (advanced)</p>
-<ul>
-<li>Run tests</li>
-<li>Host code automatically</li>
-<li>Download other’s actions to use</li>
-</ul>
-<h3 id="Projects">Projects</h3>
-<p>Manage the repo</p>
-<ul>
-<li>Kanban board</li>
-</ul>
-<h3 id="Wiki">Wiki</h3>
-<p>Create documentation that is easy for people to look at (not really necessary)</p>
-<h3 id="Security">Security</h3>
-<p>Manage policies for security (advanced)</p>
-<h3 id="Insights">Insights</h3>
-<p>Know contributors, traffic, etc (private)</p>
-<h3 id="Settings">Settings</h3>
-<ul>
-<li>Convert this repo to be a template</li>
-<li>Github pages</li>
-</ul>
-<h2 id="Managing-projects">Managing projects</h2>
-<ul>
-<li>Contributors
-<ul>
-<li>Invite a collaborator</li>
-</ul>
-</li>
-<li>Issues</li>
-<li>Labels</li>
-<li>Miletones</li>
-<li>Projects</li>
-</ul>
-<h2 id="Syncing">Syncing</h2>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git clone </span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git fetch</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight c"><table><tbody><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></tbody></table></figure>
-<p>pull = fetch + merge</p>
+    <title>Hello World</title>
+    <url>/2022/09/18/Hello_World/</url>
+    <content><![CDATA[<p>I made it! 😃</p>
 ]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Software Development</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-        <tag>Github</tag>
-      </tags>
   </entry>
   <entry>
     <title>Java入门</title>
@@ -835,6 +841,93 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
+    <title>LaTeX CV</title>
+    <url>/2022/10/29/Latex-CV/</url>
+    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
+<p>Here’s how I did it:</p>
+<p>-&gt; If you only use latex occasionally or a few times, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
+-&gt; If you want to do more things, use following steps:</p>
+<span id="more"></span>
+<h2 id="Download-MiKTeX-and-VSCode">Download MiKTeX and VSCode</h2>
+<p><strong>MiKTeX</strong><br>
+You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
+Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.</p>
+<p><strong>VSCode</strong><br>
+Remember to download extension <em>latex workshop</em>.</p>
+<h2 id="Find-a-template">Find a template</h2>
+<p>On Overleaf or Github.<br>
+Here are my favorites:<br>
+<a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">新卒のためのLaTeX履歴書テンプレート</a><br>
+<a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>
+And mine:<br>
+<a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)</p>
+<h2 id="Edit-the-template">Edit the template</h2>
+<p>You may encounter many problems at this step, most of which require you to download <em>Packages</em> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</p>
+<h2 id="Share-your-template">Share your template</h2>
+<ol>
+<li>Git your template to github<br>
+(Already bound git and your github accounts and set SSH key)<br>
+-&gt; Create a new repository<br>
+-&gt; Git bash the folder which contains full files about your template<br>
+-&gt; Run the following code in Git:</li>
+</ol>
+<pre><code class="language-C">git init
+git add .
+git commit -m 'Description'
+git remote add origin https://...  (copy from github)
+git push -u origin master
+</code></pre>
+<ol start="2">
+<li>Submit to Overleaf<br>
+That’s where I found the original template for my CV! I think put templates there may help more people.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Job</category>
+      </categories>
+      <tags>
+        <tag>Latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>November Summary</title>
+    <url>/2022/12/02/November-Summary/</url>
+    <content><![CDATA[<h2 id="Leetcode">Leetcode</h2>
+<p>Solved <strong>64 problems</strong> on Leetcode till now.</p>
+<p>Finished the Explore <strong>Arrays 101</strong> (the remaining one was only available for Premium). It’s very easy even for beginners like me.</p>
+<img src="/images/arrays101.png" alt="arrays101" title="arrays101" width="250">
+<p>Got a <strong>badge</strong>!</p>
+<img src="/images/data_structure_badge.png" alt="data_structure_badge" title="data_structure_badge" width="500">  
+<p>To be honest, I didn’t quite understand all the data structures in the badge 🤕. I’m just familiar with arrays and strings… I plan to find time to digest the other structures, and make a sum-up.</p>
+<span id="more"></span>
+<h2 id="Jupyter-Notebook">Jupyter Notebook</h2>
+<p>Handed on it. I wrote a simple notebook about the process of using Logistic Regression model to classify some datas.</p>
+<h2 id="Github-Workflow">Github Workflow</h2>
+<p>Used <a href="https://github.com/lowlighter/metrics"><strong>Metrics</strong></a> in the homepage of my github account. It’s amazing for it can update automatically!</p>
+<h2 id="LinkedIn-Learning-Certificates">LinkedIn Learning Certificates</h2>
+<p>I will give my rating for that course under each certificate.</p>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="500">  
+<center>⭐⭐⭐⭐⭐</center>  
+<img src="/images/certificate_20221112.png" alt="certificate_20221112" title="certificate_20221112" width="500">  
+<center>⭐⭐</center>
+<img src="/images/certificate_20221113.png" alt="certificate_20221113" title="certificate_20221113" width="500">  
+<center>⭐⭐</center>
+<img src="/images/certificate_20221115.png" alt="certificate_20221115" title="certificate_20221115" width="500">  
+<center>⭐⭐⭐⭐</center>
+<img src="/images/certificate_20221120.png" alt="certificate_20221120" title="certificate_20221110" width="500">  
+<center>⭐⭐⭐</center>
+<h2 id="English">English</h2>
+<p>Preparing for the <strong>IELTS indicator exam</strong>.</p>
+<h2 id="Japanese">Japanese</h2>
+<p>Kept on learning Japanese on Duolinguo for <strong>42 days</strong>.</p>
+<p>I found out that there were only two Japanese language tests in China, JLPT and JTEST. JLPT is held only two times every year, and it’s often cancelled. JTEST is held more frequently, but it’s not as highly acknowledged as JLPT so I’m hesitant to prepare for it.</p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+        <category>Monthly Summary</category>
+      </categories>
+  </entry>
+  <entry>
     <title>My First LinkedIn Certificate!</title>
     <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
     <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
@@ -923,97 +1016,22 @@ It’s a fresh new concept to me. Sounds interesting that you can develop a web 
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/09/18/Hello_World/</url>
-    <content><![CDATA[<p>I made it! 😃</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>November Summary</title>
-    <url>/2022/12/02/November-Summary/</url>
-    <content><![CDATA[<h2 id="Leetcode">Leetcode</h2>
-<p>Solved <strong>64 problems</strong> on Leetcode till now.</p>
-<p>Finished the Explore <strong>Arrays 101</strong> (the remaining one was only available for Premium). It’s very easy even for beginners like me.</p>
-<img src="/images/arrays101.png" alt="arrays101" title="arrays101" width="250">
-<p>Got a <strong>badge</strong>!</p>
-<img src="/images/data_structure_badge.png" alt="data_structure_badge" title="data_structure_badge" width="500">  
-<p>To be honest, I didn’t quite understand all the data structures in the badge 🤕. I’m just familiar with arrays and strings… I plan to find time to digest the other structures, and make a sum-up.</p>
+    <title>October Summary</title>
+    <url>/2022/10/31/October-Summary/</url>
+    <content><![CDATA[<h2 id="Programming">Programming</h2>
+<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
+<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
 <span id="more"></span>
-<h2 id="Jupyter-Notebook">Jupyter Notebook</h2>
-<p>Handed on it. I wrote a simple notebook about the process of using Logistic Regression model to classify some datas.</p>
-<h2 id="Github-Workflow">Github Workflow</h2>
-<p>Used <a href="https://github.com/lowlighter/metrics"><strong>Metrics</strong></a> in the homepage of my github account. It’s amazing for it can update automatically!</p>
-<h2 id="LinkedIn-Learning-Certificates">LinkedIn Learning Certificates</h2>
-<p>I will give my rating for that course under each certificate.</p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="500">  
-<center>⭐⭐⭐⭐⭐</center>  
-<img src="/images/certificate_20221112.png" alt="certificate_20221112" title="certificate_20221112" width="500">  
-<center>⭐⭐</center>
-<img src="/images/certificate_20221113.png" alt="certificate_20221113" title="certificate_20221113" width="500">  
-<center>⭐⭐</center>
-<img src="/images/certificate_20221115.png" alt="certificate_20221115" title="certificate_20221115" width="500">  
-<center>⭐⭐⭐⭐</center>
-<img src="/images/certificate_20221120.png" alt="certificate_20221120" title="certificate_20221110" width="500">  
-<center>⭐⭐⭐</center>
-<h2 id="English">English</h2>
-<p>Preparing for the <strong>IELTS indicator exam</strong>.</p>
-<h2 id="Japanese">Japanese</h2>
-<p>Kept on learning Japanese on Duolinguo for <strong>42 days</strong>.</p>
-<p>I found out that there were only two Japanese language tests in China, JLPT and JTEST. JLPT is held only two times every year, and it’s often cancelled. JTEST is held more frequently, but it’s not as highly acknowledged as JLPT so I’m hesitant to prepare for it.</p>
+<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
+<h2 id="Language">Language</h2>
+<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
+<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
+<p>Bye for now! It’s midnight.</p>
 ]]></content>
       <categories>
         <category>Summary</category>
         <category>Monthly Summary</category>
       </categories>
-  </entry>
-  <entry>
-    <title>LaTeX CV</title>
-    <url>/2022/10/29/Latex-CV/</url>
-    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
-<p>Here’s how I did it:</p>
-<p>-&gt; If you only use latex occasionally or a few times, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
--&gt; If you want to do more things, use following steps:</p>
-<span id="more"></span>
-<h2 id="Download-MiKTeX-and-VSCode">Download MiKTeX and VSCode</h2>
-<p><strong>MiKTeX</strong><br>
-You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
-Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.</p>
-<p><strong>VSCode</strong><br>
-Remember to download extension <em>latex workshop</em>.</p>
-<h2 id="Find-a-template">Find a template</h2>
-<p>On Overleaf or Github.<br>
-Here are my favorites:<br>
-<a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">新卒のためのLaTeX履歴書テンプレート</a><br>
-<a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>
-And mine:<br>
-<a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)</p>
-<h2 id="Edit-the-template">Edit the template</h2>
-<p>You may encounter many problems at this step, most of which require you to download <em>Packages</em> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</p>
-<h2 id="Share-your-template">Share your template</h2>
-<ol>
-<li>Git your template to github<br>
-(Already bound git and your github accounts and set SSH key)<br>
--&gt; Create a new repository<br>
--&gt; Git bash the folder which contains full files about your template<br>
--&gt; Run the following code in Git:</li>
-</ol>
-<pre><code class="language-C">git init
-git add .
-git commit -m 'Description'
-git remote add origin https://...  (copy from github)
-git push -u origin master
-</code></pre>
-<ol start="2">
-<li>Submit to Overleaf<br>
-That’s where I found the original template for my CV! I think put templates there may help more people.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Job</category>
-      </categories>
-      <tags>
-        <tag>Latex</tag>
-      </tags>
   </entry>
   <entry>
     <title>Two-pointer</title>
@@ -1056,24 +1074,6 @@ Congrats to myself and keep it up! 💪🏻</p>
       <tags>
         <tag>Java</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>October Summary</title>
-    <url>/2022/10/31/October-Summary/</url>
-    <content><![CDATA[<h2 id="Programming">Programming</h2>
-<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
-<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
-<span id="more"></span>
-<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
-<h2 id="Language">Language</h2>
-<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
-<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
-<p>Bye for now! It’s midnight.</p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-        <category>Monthly Summary</category>
-      </categories>
   </entry>
   <entry>
     <title>面向对象</title>
@@ -1427,12 +1427,6 @@ Congrats to myself and keep it up! 💪🏻</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Codes</title>
-    <url>/codes/index.html</url>
-    <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Categories</title>
     <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
@@ -1448,15 +1442,21 @@ I’m currently studying for my master’s degree, majoring in Electronics.</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Schedule</title>
     <url>/schedule/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Codes</title>
+    <url>/codes/index.html</url>
+    <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Sitemap</title>
