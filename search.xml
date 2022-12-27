@@ -1,114 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Adaptive Filters</title>
-    <url>/2022/11/19/Adaptive-Filters/</url>
-    <content><![CDATA[<p>I watched a well-organized and concise youtube video titled <a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a>, which is also a basic course I am taking this semester. I focused on the key points in my course and made a bit of notes.</p>
-<h2 id="Limitations-of-fixed-coefficient-digital-filters">Limitations of fixed-coefficient digital filters</h2>
+    <title>Basic MATLAB</title>
+    <url>/2022/11/20/Basic-MATLAB/</url>
+    <content><![CDATA[<h2 id="General-concepts">General concepts</h2>
+<h3 id="Clear-commands">Clear commands</h3>
 <ul>
-<li>Fixed-coefficient digital filters
+<li>
+<p><code>clc</code>  clears the screen</p>
+</li>
+<li>
+<p><code>clear myVar</code>  deletes variable myVar</p>
+<p><code>clear all</code>  deletes all variables</p>
+</li>
+</ul>
+<h3 id="Create-variables">Create variables</h3>
 <ul>
-<li>FIR, IIR</li>
-<li>LP, HP, etc</li>
+<li>Creating a scalar: <code>myScalar = 10</code></li>
+<li>Creating a vector:
+<ul>
+<li>Row vector: <code>myVector = [4 5 6]</code></li>
+<li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
 </ul>
 </li>
-<li>Limitations
+<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code>
 <ul>
-<li>Time-varying noise-frequency</li>
-<li>Overlapping bands of signal and noise</li>
+<li><code>myMatrix(1, 2)</code>  gets 5</li>
+<li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
+<li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
 </ul>
 </li>
+<li>Using “;” at the end of command line means it will suppress (i.e. don’t show) the result</li>
 </ul>
 <span id="more"></span>
-<h2 id="Adaptive-filters">Adaptive filters</h2>
-<img src="/images/adaptive_filter.png" alt="adaptive_filter" title="adaptive_filter" width="400"> 
+<h3 id="Variable-classes">Variable classes</h3>
 <ul>
-<li>2 main components
+<li>double (default)</li>
+<li><code>format long</code>  changes double class to long class</li>
+<li>double, long, short, single, logical (boolean), etc</li>
+</ul>
+<h3 id="Cell-arrays">Cell arrays</h3>
+<p>A matrix which has different kinds of elements</p>
+<p><code>myCell = {[1 2 3] [4 5 6 7]; 'v1' 'v2'}</code></p>
+<p><code>myCell{1, 2}</code>  gets [4 5 6 7]</p>
+<h2 id="Core-syntax">Core syntax</h2>
+<h3 id="Script">Script</h3>
 <ul>
-<li>Digital filter (with <strong>adjustable</strong> coefficients)</li>
-<li>Adaptive algorithm</li>
+<li>“.m” file</li>
+<li>Comment: <code>%</code></li>
+<li><code>disp()</code>: display something</li>
+<li><code>randi()</code>: random integers</li>
+<li>To tanspose a matrix: <code>matrix'</code></li>
+</ul>
+<h3 id="Matrices">Matrices</h3>
+<ul>
+<li>
+<p>Create some standard matrices:</p>
+<p><code>zeros(m, n)</code></p>
+<p><code>ones(m, n)</code></p>
+<p><code>randi(m, n)</code></p>
+</li>
+<li>
+<p>Matrix multiplication</p>
+<ul>
+<li>Standard multiplication: <code>M1 * M2</code></li>
+<li>Element by element multiplication: <code>M1 .* M2</code></li>
 </ul>
 </li>
-<li>2 input signals: $y_k$ and $x_k$
+<li>
+<p>Division is alike</p>
 <ul>
-<li>$y_k = s_k + n_k$</li>
-<li>$s_k$ = desired signal</li>
-<li>$n_k$ = noise</li>
-<li>$x_k$ = contaminating signal which is <strong>correlated with $n_k$</strong>, gives an estimate of $n_k$, i.e. $\hat{n_k}$</li>
-</ul>
-</li>
-<li>Goal: produce <strong>optimum</strong> $\hat{n_k}$
-<ul>
-<li>$e_k = \hat{s_k} = y_k - \hat{n_k} = s_k + n_k - \hat{n_k}$</li>
-</ul>
-</li>
-<li>Theorem: <strong>minimize $e_k$, maximize the signal-to-noise ratio</strong></li>
-</ul>
-<h2 id="LMS-algorithm">LMS algorithm</h2>
-<h3 id="Wiener-filter">Wiener filter</h3>
-<img src="/images/wiener_filter.png" alt="wiener_filter" title="wiener_filter" width="400"> 
-<ul>
-<li>An input signal&nbsp;<em>w(n)</em> is convolved w ith the Wiener filter&nbsp;<em>g(n)</em> and the result is compared to a reference signal&nbsp;<em>s(n)</em> to obtain the filtering error&nbsp;<em>e(n)</em></li>
-<li>Criterion: <strong>MMSE</strong> (Minimum Mean Square Error)
-<ul>
-<li>Minimize $J = E[e(n)^2] = E[(x(n) - s(n))^2] = E[(w(n) * g(n) - s(n))^2]$</li>
-<li><em>J</em> can be used to draw the <strong>Error-Performance surface</strong></li>
-</ul>
-</li>
-<li>The&nbsp;<a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">Least mean squares filter</a> converges to the&nbsp;<a href="https://en.wikipedia.org/wiki/Wiener_filter">Wiener filter</a></li>
-</ul>
-<h3 id="Wiener-Hopf-solution">Wiener-Hopf solution</h3>
-<p>Set gradient of <em>J</em> of <em>H</em> to zero, deduced that<br>
-$H_{opt} = R_{xx}^{-1} R_{xs}$</p>
-<p>where<br>
-$R_{xx} = E(X_k X_k^T)$<br>
-$R_{xs} = E(y_k X_k)$</p>
-<ul>
-<li>Requires knowledge of $R_{xx}, R_{xs}$</li>
-<li>Matrix inversion is expensive</li>
-<li>For non-stationary, $H_{opt}$ needs to be computed repeatedly</li>
-</ul>
-<h3 id="LMS-adaptive-algorithm">LMS adaptive algorithm</h3>
-<p>Version 1: $H(n+1) = H(n) + \mu (- \nabla(n))$<br>
-Version 2: $H(n+1) = H(n) + \frac{1}{2}\delta (- \nabla(n))$</p>
-<p>then<br>
-$H(n+1) = H(n) + 2\mu e(n)X(n)$<br>
-or $H(n+1) = H(n) + \delta e(n)X(n)$</p>
-<p>where<br>
-$e(n) = y(n) - H^T(n)X(n)$<br>
-$\mu$ and $\delta$ are step-sizes</p>
-<ul>
-<li>Based on the <strong>steepest descent algorithm</strong> (update H(n) along the opposite direction of the gradient):<br>
-$H(n+1) = H(n) + \mu (- \nabla(n))$</li>
-<li>Using <strong>instantaneous</strong> estimates <strong>instead of the means</strong> (unbiased):<br>
-$J = E[e(n)^2] = e(n)^2$<br>
-$\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
-<li>Step-size determines <strong>stablility</strong> and <strong>rate of convergence</strong>
-<ul>
-<li>If too large, too much fluctuation</li>
-<li>If too small, convergences too slow</li>
+<li>Element by element division: <code>M1 ./ M2</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="Limitations">Limitations</h3>
+<h3 id="If-statements">If statements</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Switch-statements">Switch statements</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span> ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="For-loops">For loops</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% step = 1</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>: <span class="number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% step = 2</span></span><br><span class="line"><span class="comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% n =25;</span></span><br><span class="line"><span class="comment">% step = 5;</span></span><br><span class="line"><span class="comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="While-loops">While loops</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Programming">Programming</h2>
+<h3 id="Set-path">Set path</h3>
+<p>If MATLAB can’t find your scripts or functions or anything else, make sure you have added the path</p>
+<h3 id="Function">Function</h3>
 <ul>
-<li>If the noise is non-stationary, the error-performance surface will change rapidly</li>
-<li>If $x(n)$ is proportional to $y(n)$, signal will be obliterated</li>
-<li>H(n) never reached the theoretical optimum (fluctuation)</li>
+<li>Create a function from “Current Folder”, and it’s a .m file</li>
+<li>Edit the pattern and wirte your function</li>
 </ul>
-<h2 id="Applications">Applications</h2>
+<h3 id="Import-data">Import data</h3>
+<p>To import a CSV file:</p>
 <ul>
-<li>Acoustic echo cancellation</li>
-<li>Cancelling EOG from contaminated EEG and get correct EEG</li>
-<li>Cancelling maternal ECG and get foetal ECG during labour</li>
+<li>Copy and paste it to “Current Folder”</li>
+<li><code>csvread('sine.csv')</code></li>
 </ul>
+<h3 id="Debugging">Debugging</h3>
+<p>Set breakpoints at little dashes in the left of Editor</p>
+<h3 id="Performance">Performance</h3>
+<ul>
+<li>Preallocate some memory can speed large calculations</li>
+<li>Use “tik … tok” to count the time</li>
+</ul>
+<h2 id="Data-representations">Data representations</h2>
+<h3 id="Plot">Plot</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">figure</span></span><br><span class="line"><span class="comment">% figure(1)</span></span><br><span class="line"><span class="built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>Add a grid: <code>grid on</code></li>
+<li>Make the window fits perfectly to the plot: <code>axis tight</code></li>
+<li>Set limits to axis: <code>ylim([-1 1])</code></li>
+<li>Change the color: <code>plot(x, y, 'm') % magenta</code></li>
+<li>Change the marker: <code>plot(x, y, 'o') % circle, magenta</code></li>
+<li>Plot curves multiple times with different lines: <code>hold on</code>. To end it, use <code>hold off</code></li>
+<li>Add annotations: <code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
+<li>Use <code>close all</code> to close all figures</li>
+</ul>
+<h3 id="Image">Image</h3>
+<ul>
+<li>Use <code>imread()</code> to import the image file</li>
+<li>Use <code>image()</code> to plot the image (default square)</li>
+<li>Use <code>imshow()</code> to plot the image in the correct aspect ratio, and there’s no label on the axis</li>
+</ul>
+<h3 id="3D-plot">3D plot</h3>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="number">-2</span>*<span class="built_in">pi</span>:<span class="number">.5</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Simulink">Simulink</h2>
+<p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
 ]]></content>
       <categories>
         <category>Learning</category>
         <category>Signal Processing</category>
       </categories>
       <tags>
-        <tag>Filter</tag>
+        <tag>MATLAB</tag>
       </tags>
   </entry>
   <entry>
@@ -270,138 +294,114 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
-    <title>Basic MATLAB</title>
-    <url>/2022/11/20/Basic-MATLAB/</url>
-    <content><![CDATA[<h2 id="General-concepts">General concepts</h2>
-<h3 id="Clear-commands">Clear commands</h3>
+    <title>Adaptive Filters</title>
+    <url>/2022/11/19/Adaptive-Filters/</url>
+    <content><![CDATA[<p>I watched a well-organized and concise youtube video titled <a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a>, which is also a basic course I am taking this semester. I focused on the key points in my course and made a bit of notes.</p>
+<h2 id="Limitations-of-fixed-coefficient-digital-filters">Limitations of fixed-coefficient digital filters</h2>
 <ul>
-<li>
-<p><code>clc</code>  clears the screen</p>
-</li>
-<li>
-<p><code>clear myVar</code>  deletes variable myVar</p>
-<p><code>clear all</code>  deletes all variables</p>
-</li>
-</ul>
-<h3 id="Create-variables">Create variables</h3>
+<li>Fixed-coefficient digital filters
 <ul>
-<li>Creating a scalar: <code>myScalar = 10</code></li>
-<li>Creating a vector:
-<ul>
-<li>Row vector: <code>myVector = [4 5 6]</code></li>
-<li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
+<li>FIR, IIR</li>
+<li>LP, HP, etc</li>
 </ul>
 </li>
-<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code>
+<li>Limitations
 <ul>
-<li><code>myMatrix(1, 2)</code>  gets 5</li>
-<li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
-<li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
+<li>Time-varying noise-frequency</li>
+<li>Overlapping bands of signal and noise</li>
 </ul>
 </li>
-<li>Using “;” at the end of command line means it will suppress (i.e. don’t show) the result</li>
 </ul>
 <span id="more"></span>
-<h3 id="Variable-classes">Variable classes</h3>
+<h2 id="Adaptive-filters">Adaptive filters</h2>
+<img src="/images/adaptive_filter.png" alt="adaptive_filter" title="adaptive_filter" width="400"> 
 <ul>
-<li>double (default)</li>
-<li><code>format long</code>  changes double class to long class</li>
-<li>double, long, short, single, logical (boolean), etc</li>
-</ul>
-<h3 id="Cell-arrays">Cell arrays</h3>
-<p>A matrix which has different kinds of elements</p>
-<p><code>myCell = {[1 2 3] [4 5 6 7]; 'v1' 'v2'}</code></p>
-<p><code>myCell{1, 2}</code>  gets [4 5 6 7]</p>
-<h2 id="Core-syntax">Core syntax</h2>
-<h3 id="Script">Script</h3>
+<li>2 main components
 <ul>
-<li>“.m” file</li>
-<li>Comment: <code>%</code></li>
-<li><code>disp()</code>: display something</li>
-<li><code>randi()</code>: random integers</li>
-<li>To tanspose a matrix: <code>matrix'</code></li>
-</ul>
-<h3 id="Matrices">Matrices</h3>
-<ul>
-<li>
-<p>Create some standard matrices:</p>
-<p><code>zeros(m, n)</code></p>
-<p><code>ones(m, n)</code></p>
-<p><code>randi(m, n)</code></p>
-</li>
-<li>
-<p>Matrix multiplication</p>
-<ul>
-<li>Standard multiplication: <code>M1 * M2</code></li>
-<li>Element by element multiplication: <code>M1 .* M2</code></li>
+<li>Digital filter (with <strong>adjustable</strong> coefficients)</li>
+<li>Adaptive algorithm</li>
 </ul>
 </li>
-<li>
-<p>Division is alike</p>
+<li>2 input signals: $y_k$ and $x_k$
 <ul>
-<li>Element by element division: <code>M1 ./ M2</code></li>
+<li>$y_k = s_k + n_k$</li>
+<li>$s_k$ = desired signal</li>
+<li>$n_k$ = noise</li>
+<li>$x_k$ = contaminating signal which is <strong>correlated with $n_k$</strong>, gives an estimate of $n_k$, i.e. $\hat{n_k}$</li>
+</ul>
+</li>
+<li>Goal: produce <strong>optimum</strong> $\hat{n_k}$
+<ul>
+<li>$e_k = \hat{s_k} = y_k - \hat{n_k} = s_k + n_k - \hat{n_k}$</li>
+</ul>
+</li>
+<li>Theorem: <strong>minimize $e_k$, maximize the signal-to-noise ratio</strong></li>
+</ul>
+<h2 id="LMS-algorithm">LMS algorithm</h2>
+<h3 id="Wiener-filter">Wiener filter</h3>
+<img src="/images/wiener_filter.png" alt="wiener_filter" title="wiener_filter" width="400"> 
+<ul>
+<li>An input signal&nbsp;<em>w(n)</em> is convolved w ith the Wiener filter&nbsp;<em>g(n)</em> and the result is compared to a reference signal&nbsp;<em>s(n)</em> to obtain the filtering error&nbsp;<em>e(n)</em></li>
+<li>Criterion: <strong>MMSE</strong> (Minimum Mean Square Error)
+<ul>
+<li>Minimize $J = E[e(n)^2] = E[(x(n) - s(n))^2] = E[(w(n) * g(n) - s(n))^2]$</li>
+<li><em>J</em> can be used to draw the <strong>Error-Performance surface</strong></li>
+</ul>
+</li>
+<li>The&nbsp;<a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">Least mean squares filter</a> converges to the&nbsp;<a href="https://en.wikipedia.org/wiki/Wiener_filter">Wiener filter</a></li>
+</ul>
+<h3 id="Wiener-Hopf-solution">Wiener-Hopf solution</h3>
+<p>Set gradient of <em>J</em> of <em>H</em> to zero, deduced that<br>
+$H_{opt} = R_{xx}^{-1} R_{xs}$</p>
+<p>where<br>
+$R_{xx} = E(X_k X_k^T)$<br>
+$R_{xs} = E(y_k X_k)$</p>
+<ul>
+<li>Requires knowledge of $R_{xx}, R_{xs}$</li>
+<li>Matrix inversion is expensive</li>
+<li>For non-stationary, $H_{opt}$ needs to be computed repeatedly</li>
+</ul>
+<h3 id="LMS-adaptive-algorithm">LMS adaptive algorithm</h3>
+<p>Version 1: $H(n+1) = H(n) + \mu (- \nabla(n))$<br>
+Version 2: $H(n+1) = H(n) + \frac{1}{2}\delta (- \nabla(n))$</p>
+<p>then<br>
+$H(n+1) = H(n) + 2\mu e(n)X(n)$<br>
+or $H(n+1) = H(n) + \delta e(n)X(n)$</p>
+<p>where<br>
+$e(n) = y(n) - H^T(n)X(n)$<br>
+$\mu$ and $\delta$ are step-sizes</p>
+<ul>
+<li>Based on the <strong>steepest descent algorithm</strong> (update H(n) along the opposite direction of the gradient):<br>
+$H(n+1) = H(n) + \mu (- \nabla(n))$</li>
+<li>Using <strong>instantaneous</strong> estimates <strong>instead of the means</strong> (unbiased):<br>
+$J = E[e(n)^2] = e(n)^2$<br>
+$\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
+<li>Step-size determines <strong>stablility</strong> and <strong>rate of convergence</strong>
+<ul>
+<li>If too large, too much fluctuation</li>
+<li>If too small, convergences too slow</li>
 </ul>
 </li>
 </ul>
-<h3 id="If-statements">If statements</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Switch-statements">Switch statements</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span> ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="For-loops">For loops</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% step = 1</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>: <span class="number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% step = 2</span></span><br><span class="line"><span class="comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% n =25;</span></span><br><span class="line"><span class="comment">% step = 5;</span></span><br><span class="line"><span class="comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="While-loops">While loops</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Programming">Programming</h2>
-<h3 id="Set-path">Set path</h3>
-<p>If MATLAB can’t find your scripts or functions or anything else, make sure you have added the path</p>
-<h3 id="Function">Function</h3>
+<h3 id="Limitations">Limitations</h3>
 <ul>
-<li>Create a function from “Current Folder”, and it’s a .m file</li>
-<li>Edit the pattern and wirte your function</li>
+<li>If the noise is non-stationary, the error-performance surface will change rapidly</li>
+<li>If $x(n)$ is proportional to $y(n)$, signal will be obliterated</li>
+<li>H(n) never reached the theoretical optimum (fluctuation)</li>
 </ul>
-<h3 id="Import-data">Import data</h3>
-<p>To import a CSV file:</p>
+<h2 id="Applications">Applications</h2>
 <ul>
-<li>Copy and paste it to “Current Folder”</li>
-<li><code>csvread('sine.csv')</code></li>
+<li>Acoustic echo cancellation</li>
+<li>Cancelling EOG from contaminated EEG and get correct EEG</li>
+<li>Cancelling maternal ECG and get foetal ECG during labour</li>
 </ul>
-<h3 id="Debugging">Debugging</h3>
-<p>Set breakpoints at little dashes in the left of Editor</p>
-<h3 id="Performance">Performance</h3>
-<ul>
-<li>Preallocate some memory can speed large calculations</li>
-<li>Use “tik … tok” to count the time</li>
-</ul>
-<h2 id="Data-representations">Data representations</h2>
-<h3 id="Plot">Plot</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">figure</span></span><br><span class="line"><span class="comment">% figure(1)</span></span><br><span class="line"><span class="built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>Add a grid: <code>grid on</code></li>
-<li>Make the window fits perfectly to the plot: <code>axis tight</code></li>
-<li>Set limits to axis: <code>ylim([-1 1])</code></li>
-<li>Change the color: <code>plot(x, y, 'm') % magenta</code></li>
-<li>Change the marker: <code>plot(x, y, 'o') % circle, magenta</code></li>
-<li>Plot curves multiple times with different lines: <code>hold on</code>. To end it, use <code>hold off</code></li>
-<li>Add annotations: <code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
-<li>Use <code>close all</code> to close all figures</li>
-</ul>
-<h3 id="Image">Image</h3>
-<ul>
-<li>Use <code>imread()</code> to import the image file</li>
-<li>Use <code>image()</code> to plot the image (default square)</li>
-<li>Use <code>imshow()</code> to plot the image in the correct aspect ratio, and there’s no label on the axis</li>
-</ul>
-<h3 id="3D-plot">3D plot</h3>
-<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="number">-2</span>*<span class="built_in">pi</span>:<span class="number">.5</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Simulink">Simulink</h2>
-<p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
 ]]></content>
       <categories>
         <category>Learning</category>
         <category>Signal Processing</category>
       </categories>
       <tags>
-        <tag>MATLAB</tag>
+        <tag>Filter</tag>
       </tags>
   </entry>
   <entry>
@@ -723,94 +723,6 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
-    <title>My First LinkedIn Certificate!</title>
-    <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
-    <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
-<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> in your account settings to get a monthly free plan. Also you must use a <strong>visa</strong> credit card.)</p>
-<p>In a word, I had my first linkedin learning course:<br>
-<a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
-<span id="more"></span>
-<h2 id="Nice-course-span-class-emoji-alias-thumbsup-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f44d-png-v8-👍-span">Nice course <span class="emoji" alias="thumbsup" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8">👍</span></h2>
-<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br>
-<strong>Practical</strong>! The author introduced many useful websites for learning and developing.</p>
-<h2 id="What-I-have-learned">What I have learned</h2>
-<p><strong>Types of web development jobs</strong><br>
-For planning and prototyping:</p>
-<ul>
-<li>UX (User Experience)</li>
-<li>UI (User Interface)</li>
-</ul>
-<p>For coding and developing:</p>
-<ul>
-<li>Front-end Dev (Javascript, CSS, HTML; frameworks)</li>
-<li>Back-end Dev</li>
-</ul>
-<p><strong>Javascript, CSS, HTML</strong></p>
-<ul>
-<li>HTML identifies <strong>structural elements</strong>.</li>
-<li>CSS changes the <strong>appearance and style</strong>.</li>
-<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
-</ul>
-<p><strong>A little knowledge of Github</strong><br>
-That’s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I’ll hands on it lately.</p>
-<p><strong>No-code</strong><br>
-It’s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost – money? It’s limited anyway, especially when you know more and get greedy <span class="emoji" alias="smirk" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8">😏</span>.</p>
-<h2 id="Useful-tools">Useful tools</h2>
-<p>Prototying tools:</p>
-<ul>
-<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
-</ul>
-<p>Graphic design tools:</p>
-<ul>
-<li>Illustrator, Photoshop (professional)</li>
-<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)</li>
-<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
-</ul>
-<p>Coding editors:</p>
-<ul>
-<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)</li>
-<li><strong>VS Code</strong></li>
-<li><a href="https://atom.io/">Atom</a> (free, highly customizable)</li>
-<li><a href="https://brackets.io/">Brackets</a></li>
-</ul>
-<p>Web host:</p>
-<ul>
-<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
-</ul>
-<h2 id="No-code-tools">No-code tools</h2>
-<p>CMSs (Content Management System):</p>
-<ul>
-<li>Joomla!</li>
-<li>Drupal</li>
-<li><strong>Wordpress</strong></li>
-</ul>
-<p>Website buliders:</p>
-<ul>
-<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple)</li>
-<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
-</ul>
-<p>Databases:</p>
-<ul>
-<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a></li>
-<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
-</ul>
-<p>Apps:</p>
-<ul>
-<li><a href="https://bubble.io/">Bubble</a> (web)</li>
-<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)</li>
-<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
-</ul>
-<p>At last, here’s my certificate and I’d like to get more in the future 😻 ~</p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> ]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Web Development</category>
-      </categories>
-      <tags>
-        <tag>Front-end</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2022/09/18/Hello_World/</url>
     <content><![CDATA[<p>I made it! 😃</p>
@@ -929,6 +841,94 @@ It’s a fresh new concept to me. Sounds interesting that you can develop a web 
       </tags>
   </entry>
   <entry>
+    <title>My First LinkedIn Certificate!</title>
+    <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
+    <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
+<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> in your account settings to get a monthly free plan. Also you must use a <strong>visa</strong> credit card.)</p>
+<p>In a word, I had my first linkedin learning course:<br>
+<a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
+<span id="more"></span>
+<h2 id="Nice-course-span-class-emoji-alias-thumbsup-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f44d-png-v8-👍-span">Nice course <span class="emoji" alias="thumbsup" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8">👍</span></h2>
+<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br>
+<strong>Practical</strong>! The author introduced many useful websites for learning and developing.</p>
+<h2 id="What-I-have-learned">What I have learned</h2>
+<p><strong>Types of web development jobs</strong><br>
+For planning and prototyping:</p>
+<ul>
+<li>UX (User Experience)</li>
+<li>UI (User Interface)</li>
+</ul>
+<p>For coding and developing:</p>
+<ul>
+<li>Front-end Dev (Javascript, CSS, HTML; frameworks)</li>
+<li>Back-end Dev</li>
+</ul>
+<p><strong>Javascript, CSS, HTML</strong></p>
+<ul>
+<li>HTML identifies <strong>structural elements</strong>.</li>
+<li>CSS changes the <strong>appearance and style</strong>.</li>
+<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
+</ul>
+<p><strong>A little knowledge of Github</strong><br>
+That’s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I’ll hands on it lately.</p>
+<p><strong>No-code</strong><br>
+It’s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost – money? It’s limited anyway, especially when you know more and get greedy <span class="emoji" alias="smirk" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8">😏</span>.</p>
+<h2 id="Useful-tools">Useful tools</h2>
+<p>Prototying tools:</p>
+<ul>
+<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
+</ul>
+<p>Graphic design tools:</p>
+<ul>
+<li>Illustrator, Photoshop (professional)</li>
+<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)</li>
+<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
+</ul>
+<p>Coding editors:</p>
+<ul>
+<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)</li>
+<li><strong>VS Code</strong></li>
+<li><a href="https://atom.io/">Atom</a> (free, highly customizable)</li>
+<li><a href="https://brackets.io/">Brackets</a></li>
+</ul>
+<p>Web host:</p>
+<ul>
+<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
+</ul>
+<h2 id="No-code-tools">No-code tools</h2>
+<p>CMSs (Content Management System):</p>
+<ul>
+<li>Joomla!</li>
+<li>Drupal</li>
+<li><strong>Wordpress</strong></li>
+</ul>
+<p>Website buliders:</p>
+<ul>
+<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple)</li>
+<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
+</ul>
+<p>Databases:</p>
+<ul>
+<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a></li>
+<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
+</ul>
+<p>Apps:</p>
+<ul>
+<li><a href="https://bubble.io/">Bubble</a> (web)</li>
+<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)</li>
+<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
+</ul>
+<p>At last, here’s my certificate and I’d like to get more in the future 😻 ~</p>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> ]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Web Development</category>
+      </categories>
+      <tags>
+        <tag>Front-end</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LaTeX CV</title>
     <url>/2022/10/29/Latex-CV/</url>
     <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That’s very unfriendly for beginners 😢. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
@@ -978,24 +978,6 @@ That’s where I found the original template for my CV! I think put templates th
       </tags>
   </entry>
   <entry>
-    <title>October Summary</title>
-    <url>/2022/10/31/October-Summary/</url>
-    <content><![CDATA[<h2 id="Programming">Programming</h2>
-<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
-<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
-<span id="more"></span>
-<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
-<h2 id="Language">Language</h2>
-<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
-<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
-<p>Bye for now! It’s midnight.</p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-        <category>Monthly Summary</category>
-      </categories>
-  </entry>
-  <entry>
     <title>November Summary</title>
     <url>/2022/12/02/November-Summary/</url>
     <content><![CDATA[<h2 id="Leetcode">Leetcode</h2>
@@ -1027,6 +1009,24 @@ That’s where I found the original template for my CV! I think put templates th
 <h2 id="Japanese">Japanese</h2>
 <p>Kept on learning Japanese on Duolinguo for <strong>42 days</strong>.</p>
 <p>I found out that there were only two Japanese language tests in China, JLPT and JTEST. JLPT is held only two times every year, and it’s often cancelled. JTEST is held more frequently, but it’s not as highly acknowledged as JLPT so I’m hesitant to prepare for it.</p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+        <category>Monthly Summary</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>October Summary</title>
+    <url>/2022/10/31/October-Summary/</url>
+    <content><![CDATA[<h2 id="Programming">Programming</h2>
+<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
+<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
+<span id="more"></span>
+<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
+<h2 id="Language">Language</h2>
+<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
+<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
+<p>Bye for now! It’s midnight.</p>
 ]]></content>
       <categories>
         <category>Summary</category>
@@ -1076,6 +1076,348 @@ Congrats to myself and keep it up! 💪🏻</p>
       </tags>
   </entry>
   <entry>
+    <title>面向对象</title>
+    <url>/2022/12/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[<ul>
+<li>class是对象模板，instance是对象实例</li>
+<li>定义class（包含多个字段，<code>field</code>）</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> age;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>创建instance（指向<code>instance</code>的变量都是引用变量）</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">Person</span> <span class="variable">ming</span> <span class="operator">=</span> **<span class="keyword">new</span>** Person();</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>访问实例变量用<code>变量.字段</code></li>
+<li>一个Java源文件可以包含多个类的定义，但只能定义一个public类，且public类名必须与文件名一致。如果要定义多个public类，必须拆到多个Java源文件中</li>
+</ul>
+<span id="more"></span>
+<h2 id="方法">方法</h2>
+<ul>
+<li>动机：为了避免外部代码直接去访问<code>field</code>，我们可以用<code>private</code>修饰<code>field</code>，拒绝外部访问，然后使用<code>method</code>来让外部代码可以间接修改<code>field</code>
+<ul>
+<li>在方法内部，我们有机会检查参数对不对；而外部代码没有任何机会把字段设置成不合理的值</li>
+<li>一个类通过定义方法，可以给外部代码暴露一些操作的接口，同时保证内部逻辑一致性</li>
+<li>调用方法的语法是<code>实例变量.方法名(参数);</code></li>
+</ul>
+</li>
+<li>定义方法</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 修饰符 方法返回类型 方法名(方法参数列表) {</span></span><br><span class="line"><span class="comment">//     若干方法语句;</span></span><br><span class="line"><span class="comment">// return 方法返回值;</span></span><br><span class="line"><span class="comment">// }</span></span><br><span class="line"><span class="comment">// 如果没有返回值，返回类型设置为void，可以省略return</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> {</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.name;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>private方法：不允许外部调用，只有类的内部可以调用</li>
+<li>this变量：在方法内部，可以使用一个隐含的变量<code>this</code>，它始终指向当前实例。通过<code>this.field</code>就可以访问当前实例的字段
+<ul>
+<li>如果没有命名冲突，可以省略<code>this</code>；如果局部变量和字段重名，就必须加上<code>this</code></li>
+</ul>
+</li>
+<li>方法参数：0或任意个，用于接收传递给方法的变量值</li>
+<li>可变参数：<code>类型…</code>，相当于数组类型
+<ul>
+<li>可变参数可以保证无法传入<code>null</code></li>
+</ul>
+</li>
+<li>参数绑定
+<ul>
+<li>基本类型参数的传递，是调用方值的复制。双方各自的后续修改，互不影响</li>
+<li>引用类型参数的传递，调用方的变量和接收方的参数变量指向的是同一个对象。双方任意一方对这个对象的修改，都会影响对方（因为指向同一个对象）</li>
+</ul>
+</li>
+</ul>
+<h2 id="构造方法">构造方法</h2>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">"Xiao Ming"</span>, <span class="number">15</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, <span class="type">int</span> age)</span> {</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.name;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> {</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.age;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>实例在创建时通过<code>new</code>操作符会调用其对应的构造方法，构造方法用于初始化实例
+<ul>
+<li>创建实例实际上是通过构造方法来初始化实例的</li>
+<li>构造方法的名称就是类名</li>
+<li>构造方法的参数没有限制，在方法内部，也可以编写任意语句。但是，和普通方法相比，构造方法没有返回值（也没有<code>void</code>），调用构造方法，必须用<code>new</code></li>
+<li>没有定义构造方法时，编译器会自动创建一个默认的无参数构造方法</li>
+<li>没有在构造方法中初始化字段时，引用类型的字段默认是<code>null</code>，数值类型的字段用默认值，<code>int</code>类型默认值是<code>0</code><br>
+，布尔类型默认值是<code>false</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="多构造方法">多构造方法</h3>
+<ul>
+<li>可以定义多个构造方法，编译器根据参数自动判断</li>
+<li>可以在一个构造方法内部调用另一个构造方法，便于代码复用</li>
+</ul>
+<h2 id="方法重载">方法重载</h2>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// String类提供了多个重载方法indexof()</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">"Test string"</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n1</span> <span class="operator">=</span> s.indexOf(<span class="string">'t'</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">n2</span> <span class="operator">=</span> s.indexOf(<span class="string">"st"</span>);</span><br><span class="line">        <span class="type">int</span> <span class="variable">n3</span> <span class="operator">=</span> s.indexOf(<span class="string">"st"</span>, <span class="number">4</span>);</span><br><span class="line">        System.out.println(n1);</span><br><span class="line">        System.out.println(n2);</span><br><span class="line">        System.out.println(n3);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>含义：方法重载是指多个方法的方法名相同，但各自的参数不同</li>
+<li>作用：功能类似的方法使用同一名字，更容易记住，调用起来更简单</li>
+<li>方法重载的返回值类型通常是相同的</li>
+</ul>
+<h2 id="继承">继承</h2>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> {...}</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> {...}</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> {...}</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> {...}</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">extends</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="comment">// 不要重复name和age字段/方法,</span></span><br><span class="line">    <span class="comment">// 只需要定义新增score字段/方法:</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> score;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getScore</span><span class="params">()</span> { … }</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setScore</span><span class="params">(<span class="type">int</span> score)</span> { … }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>作用：复用代码</li>
+<li>使用<code>extends</code>关键字来实现继承</li>
+<li>继承树：没有明确写<code>extends</code>的类，编译器会自动加上<code>extends Object</code>
+<ul>
+<li>任何类，除了<code>Object</code>，都会继承自某个类</li>
+<li>一个类有且仅有一个父类。只有<code>Object</code>特殊，它没有父类</li>
+</ul>
+</li>
+<li>子类无法访问父类的<code>private</code>，可以访问父类的<code>protected</code></li>
+<li>如果父类没有默认的构造方法，子类就必须显式调用<code>super()</code>并给出参数以便让编译器定位到父类的一个合适的构造方法
+<ul>
+<li>子类<strong>不会继承</strong>任何父类的构造方法。子类默认的构造方法是编译器自动生成的，不是继承的</li>
+</ul>
+</li>
+</ul>
+<h3 id="阻止继承">阻止继承</h3>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title class_">Shape</span> permits Rect, Circle, Triangle {</span><br><span class="line">    ...</span><br><span class="line">}</span><br><span class="line"><span class="comment">// 上述Shape类只允许指定的3个类(Rect, Circle, Triangle)继承它</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>从Java15开始，使用<code>sealed</code>修饰class，并通过<code>permits</code>明确写出能够从该class继承的子类名称
+<ul>
+<li><code>sealed</code>目前是预览状态，要启用它，必须使用参数<code>--enable-preview</code>和<code>--source 15</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="向上转型（upcasting）">向上转型（upcasting）</h3>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>();</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>把一个子类型安全地变为更加抽象的父类型
+<ul>
+<li>例如，继承树是<code>Student &gt; Person &gt; Object</code>，那么可以把<code>Student</code>类型转型为<code>Person</code>，或者更高层次的<code>Object</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="向下转型（downcasting）">向下转型（downcasting）</h3>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>();</span><br><span class="line"><span class="keyword">if</span> (p <span class="keyword">instanceof</span> Student) {</span><br><span class="line">    <span class="comment">// 只有判断成功才会向下转型:</span></span><br><span class="line">    <span class="type">Student</span> <span class="variable">s</span> <span class="operator">=</span> (Student) p; <span class="comment">// 一定会成功</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>很可能会失败。为了避免出错，使用<code>instanceof</code>先判断一个实例究竟是不是某种类型</li>
+<li>从Java 14开始，判断<code>instanceof</code>后，可以直接转型为指定变量，直接使用，避免再次强制转型</li>
+</ul>
+<h3 id="继承-组合">继承&amp;组合</h3>
+<ul>
+<li>继承是is关系，组合是has关系</li>
+</ul>
+<h2 id="多态">多态</h2>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> { … }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">extends</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> { … }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Teacher</span> <span class="keyword">extends</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> { … }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>含义：针对某个类型的方法调用，其真正执行的方法取决于运行时期实际类型的方法</li>
+<li>作用：允许添加更多类型的子类实现功能扩展，却不需要修改基于父类的代码</li>
+</ul>
+<h3 id="Override">Override</h3>
+<ul>
+<li>子类可以覆写父类的方法（Override），覆写在子类中改变了父类方法的行为
+<ul>
+<li>加上<code>@Override</code>可以让编译器帮助检查是否进行了正确的覆写</li>
+</ul>
+</li>
+<li>在子类的覆写方法中，如果要调用父类的被覆写的方法，可以通过<code>super</code>来调用</li>
+<li><code>final</code>
+<ul>
+<li><code>final</code>修饰的方法可以阻止被覆写</li>
+<li><code>final</code>修饰的class可以阻止被继承</li>
+<li><code>final</code>修饰的field必须在创建对象时初始化，随后不可修改</li>
+</ul>
+</li>
+</ul>
+<h2 id="抽象类">抽象类</h2>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>动机：如果父类的方法本身不需要实现任何功能，仅仅是为了定义方法签名，目的是让子类去覆写它，那么可以把父类的方法声明为抽象方法，本身没有实现任何方法语句</li>
+<li>含义：如果一个<code>class</code>定义了方法，但没有具体执行代码，这个方法就是抽象方法，抽象方法用<code>abstract</code>修饰；因为无法执行抽象方法，所以这个类也必须申明为抽象类（abstract class）
+<ul>
+<li>抽象类无法实例化</li>
+</ul>
+</li>
+<li>作用：抽象类可以强迫子类实现其定义的抽象方法，否则编译会报错。相当于定义了“规范”</li>
+</ul>
+<h3 id="面向抽象编程">面向抽象编程</h3>
+<ul>
+<li>上层代码只定义规范</li>
+<li>不需要子类就可以实现业务逻辑（正常编译）</li>
+<li>具体的业务逻辑由不同的子类实现，调用者并不关心</li>
+</ul>
+<h2 id="接口">接口</h2>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span>;</span><br><span class="line">    String <span class="title function_">getName</span><span class="params">()</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>动机：如果一个抽象类没有字段，所有方法全部都是抽象方法，就可以把该抽象类改写为接口
+<ul>
+<li>接口是比抽象类还要抽象的纯抽象接口，因为它连字段都不能有</li>
+</ul>
+</li>
+<li>使用<code>interface</code>声明一个接口</li>
+<li>当一个具体的<code>class</code>去实现一个<code>interface</code>时，需要使用<code>implements</code>关键字；一个类可以实现多个<code>interface</code></li>
+<li>接口也是数据类型，适用于向上转型和向下转型</li>
+</ul>
+<h3 id="接口继承">接口继承</h3>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Hello</span> {</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">hello</span><span class="params">()</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Person</span> <span class="keyword">extends</span> <span class="title class_">Hello</span> {</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span>;</span><br><span class="line">    String <span class="title function_">getName</span><span class="params">()</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>使用<code>extends</code></li>
+<li>继承关系
+<ul>
+<li>公共逻辑适合放在<code>abstract class</code>中，具体逻辑放到各个子类，而接口层次代表抽象程度</li>
+<li>实例化的对象永远只能是某个具体的子类，但总是通过接口去引用它，因为接口比抽象类更抽象</li>
+</ul>
+</li>
+</ul>
+<h3 id="default方法">default方法</h3>
+<ul>
+<li>接口可以定义<code>default</code>方法</li>
+<li>动机：当我们需要给接口新增一个方法时，会涉及到修改全部子类。如果新增的是<code>default</code>方法，那么子类就不必全部修改，只需要在需要覆写的地方去覆写新增方法</li>
+<li><code>default</code>方法和抽象类的普通方法的区别：因为<code>interface</code>没有字段，所以<code>default</code>方法无法访问字段，而抽象类的普通方法可以访问实例字段</li>
+</ul>
+<h2 id="静态字段-静态方法">静态字段&amp;静态方法</h2>
+<h3 id="静态字段">静态字段</h3>
+<ul>
+<li>用<code>static</code>修饰的字段称为静态字段</li>
+<li>实例字段&amp;静态字段
+<ul>
+<li>实例字段在每个实例中都有自己的一个独立“空间”，各个实例的同名字段互不影响</li>
+<li>静态字段只有一个共享“空间”，所有实例都会共享该字段</li>
+</ul>
+</li>
+<li>不推荐用<code>实例变量.静态字段</code>去访问静态字段，推荐用类名来访问静态字段
+<ul>
+<li>可以把静态字段理解为描述<code>class</code>本身的字段（非实例字段）</li>
+</ul>
+</li>
+</ul>
+<h3 id="静态方法">静态方法</h3>
+<ul>
+<li>用<code>static</code>修饰的方法称为静态方法</li>
+<li>实例方法&amp;静态方法
+<ul>
+<li>调用实例方法必须通过一个实例变量</li>
+<li>调用静态方法则不需要实例变量，通过类名就可以调用。静态方法类似其它编程语言的函数</li>
+</ul>
+</li>
+<li>调用静态方法不需要实例，无法访问<code>this</code>，但可以访问静态字段和其他静态方法</li>
+<li>静态方法常用于工具类（如<code>Arrays.sort()</code>，<code>Math.random()</code> ）和辅助方法（如Java程序的入口<code>main()</code> 就是静态方法）</li>
+</ul>
+<h3 id="接口的静态字段">接口的静态字段</h3>
+<ul>
+<li><code>interface</code>可以有静态字段，并且静态字段必须为<code>final</code>类型</li>
+<li>因为<code>interface</code>的字段只能是<code>public static final</code>类型，所以可以去掉这些修饰符，简写</li>
+</ul>
+<h2 id="包">包</h2>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> ming; <span class="comment">// 申明包名ming</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> {</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>在定义<code>class</code>的时候，需要在第一行声明这个<code>class</code>属于哪个包</li>
+<li>一个类总是属于某个包（<code>package</code>），类名（比如<code>Person</code>）只是一个简写，真正的完整类名是<code>包名.类名</code>
+<ul>
+<li>只要包名不同，类就不同</li>
+<li>包可以是多层结构，用<code>.</code>隔开</li>
+<li>包没有继承关系</li>
+<li>没有定义包名的<code>class</code>使用的是默认包，非常容易引起名字冲突，不推荐不写包名的做法</li>
+</ul>
+</li>
+</ul>
+<h3 id="包作用域">包作用域</h3>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> hello;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="comment">// 包作用域:</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">hello</span><span class="params">()</span> {</span><br><span class="line">        System.out.println(<span class="string">"Hello!"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">Person</span> <span class="variable">p</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">        p.hello(); <span class="comment">// 可以调用，因为Main和Person在同一个包</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>位于同一个包的类，可以访问包作用域的字段和方法</li>
+<li>不用<code>public</code>、<code>protected</code>、<code>private</code>修饰的字段和方法就是包作用域</li>
+</ul>
+<h3 id="import">import</h3>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// Person.java</span></span><br><span class="line"><span class="keyword">package</span> ming;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导入完整类名:</span></span><br><span class="line"><span class="keyword">import</span> mr.jun.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> {</span><br><span class="line">        <span class="type">Arrays</span> <span class="variable">arrays</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Arrays</span>();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>JDK的核心类使用<code>java.lang</code>包，编译器会自动导入</li>
+<li>JDK的其它常用类定义在<code>java.util.*</code>，<code>java.math.*</code>，<code>java.text.*</code>，……</li>
+</ul>
+<h2 id="作用域">作用域</h2>
+<h3 id="public">public</h3>
+<ul>
+<li>定义为<code>public</code>的<code>class</code>、<code>interface</code>可以被其他任何类访问</li>
+<li>定义为<code>public</code>的<code>field</code>、<code>method</code>可以被其他类访问，前提是首先有访问<code>class</code>的权限</li>
+<li>如果不确定是否需要<code>public</code>，就不声明为<code>public</code>，即尽可能少地暴露对外的字段和方法</li>
+<li>一个<code>.java</code>文件只能包含一个<code>public</code>类，但可以包含多个非<code>public</code>类。如果有<code>public</code>类，文件名必须和<code>public</code>类的名字相同</li>
+</ul>
+<h3 id="private">private</h3>
+<ul>
+<li>定义为<code>private</code>的<code>field</code>、<code>method</code>无法被其他类访问</li>
+<li><code>private</code>访问权限被限定在<code>class</code>的内部，而且与方法声明顺序<strong>无关</strong>。推荐把<code>private</code>方法放到后面</li>
+<li>嵌套类（<code>nested class</code>）拥有访问<code>private</code>的权限</li>
+</ul>
+<h3 id="protected">protected</h3>
+<ul>
+<li>作用于继承关系。定义为<code>protected</code>的字段和方法可以被子类访问，以及子类的子类</li>
+</ul>
+<h3 id="pakage">pakage</h3>
+<ul>
+<li>包作用域是指一个类允许访问同一个<code>package</code>的没有<code>public</code>、<code>private</code>修饰的<code>class</code>，以及没有<code>public</code>、<code>protected</code>、<code>private</code>修饰的字段和方法</li>
+<li>把方法定义为<code>package</code>权限有助于测试</li>
+</ul>
+<h3 id="局部变量">局部变量</h3>
+<ul>
+<li>在方法内部定义的变量称为局部变量</li>
+<li>局部变量作用域从变量声明处开始到对应的块结束</li>
+<li>方法参数也是局部变量</li>
+<li>应该尽可能把局部变量的作用域缩小，尽可能延后声明局部变量</li>
+</ul>
+<h3 id="final">final</h3>
+<ul>
+<li>可以阻止被继承、阻止被子类覆写、阻止被重新赋值</li>
+</ul>
+<h2 id="内部类（Nested-Class）">内部类（Nested Class）</h2>
+<h3 id="Inner-Class">Inner Class</h3>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> {</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> {</span><br><span class="line">        <span class="type">Outer</span> <span class="variable">outer</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Outer</span>(<span class="string">"Nested"</span>); <span class="comment">// 实例化一个Outer</span></span><br><span class="line">        Outer.<span class="type">Inner</span> <span class="variable">inner</span> <span class="operator">=</span> outer.<span class="keyword">new</span> <span class="title class_">Inner</span>(); <span class="comment">// 实例化一个Inner</span></span><br><span class="line">        inner.hello();</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Outer</span> {</span><br><span class="line">		...</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Inner</span> {</span><br><span class="line">        <span class="comment">// 定义了一个Inner Class</span></span><br><span class="line">				...</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>Inner Class的实例不能单独存在，必须依附于一个Outer Class的实例
+<ul>
+<li>要实例化一个<code>Inner</code>，必须首先创建一个<code>Outer</code>的实例，然后，调用<code>Outer</code>实例的<code>new</code>来创建<code>Inner</code>实例</li>
+</ul>
+</li>
+<li>Inner Class可以修改Outer Class的<code>private</code>字段</li>
+<li><code>Outer</code>类被编译为<code>Outer.class</code>，而<code>Inner</code>类被编译为<code>Outer$Inner.class</code></li>
+</ul>
+<h3 id="Anonymous-Class">Anonymous Class</h3>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="type">Runnable</span> <span class="variable">r</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Runnable</span>() {</span><br><span class="line">    <span class="comment">// 实现必要的抽象方法...</span></span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>另一种定义Inner Class的方法。它不需要在Outer Class中明确地定义这个Class
+<ul>
+<li>动机：因为在这里我们不关心类名，比直接定义Inner Class可以少写很多代码</li>
+</ul>
+</li>
+<li>匿名类也可以访问Outer Class的<code>private</code>字段和方法</li>
+<li>匿名类被编译为<code>Outer$1.class</code>、<code>Outer$2.class</code>、<code>Outer$3.class</code> …</li>
+<li>除了接口外，匿名类也可以继承自普通类</li>
+<li>Inner Class和Anonymous Class本质上是相同的，都必须依附于Outer Class的实例，即隐含地持有<code>Outer.this</code>实例，并拥有Outer Class的<code>private</code>访问权限</li>
+</ul>
+<h3 id="Static-Nested-Class">Static Nested Class</h3>
+<ul>
+<li>不再依附于<code>Outer</code>的实例，而是一个完全独立的类，因此无法引用<code>Outer.this</code>，但可以访问<code>Outer</code>的<code>private</code>静态字段和静态方法</li>
+<li>Static Nested Class是独立类，但拥有Outer Class的<code>private</code>访问权限</li>
+</ul>
+<h2 id="classpath和jar">classpath和jar</h2>
+<ul>
+<li>JVM通过环境变量<code>classpath</code>决定搜索<code>class</code>的路径和顺序</li>
+<li>不推荐设置系统环境变量<code>classpath</code>，始终建议通过<code>-cp</code>命令传入</li>
+<li>jar包相当于目录，可以包含很多<code>.class</code>文件，方便下载和使用</li>
+</ul>
+<p>（没懂，以后需要时回顾）</p>
+<h2 id="class版本">class版本</h2>
+<ul>
+<li>高版本的JDK可编译输出低版本兼容的class文件，反之可能报错</li>
+<li>运行时使用哪个JDK版本，编译时就尽量使用同一版本编译源码</li>
+</ul>
+<p>（没懂，以后需要时回顾）</p>
+<h2 id="模块">模块</h2>
+<ul>
+<li><code>.class</code>文件是JVM看到的最小可执行文件，而一个大型程序需要编写很多Class，并生成一堆<code>.class</code>文件。<code>jar</code>文件就是<code>class</code>文件的容器，为了方便管理。它并不关心<code>class</code>之间的依赖</li>
+<li>从Java 9开始引入了模块（Module），自带“依赖关系”的class容器就是模块，模块以<code>.jmod</code>扩展名标识</li>
+<li>只有<code>java.base</code>模块不依赖任何模块，是“根模块”</li>
+<li>把一堆class封装为jar仅仅是一个打包的过程，而把一堆class封装为模块则不但需要打包，还需要写入依赖关系，并且可以包含二进制代码（通常是JNI扩展）、支持多版本</li>
+<li>模块的作用：声明并管理依赖关系；进一步隔离代码的访问权限</li>
+</ul>
+<p>（没懂，以后需要时回顾）</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Software Development</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Notes</title>
     <url>/Notes/index.html</url>
     <content><![CDATA[<h2 id="Course-Notes">Course Notes</h2>
@@ -1083,11 +1425,6 @@ Congrats to myself and keep it up! 💪🏻</p>
 <a href="https://mengisok.notion.site/5712822f24cd4e91899e356526a3e7c7">Combinatorial Mathematics 组合数学</a><br>
 <a href="https://mengisok.notion.site/2f4975a496874c25988f2681d02aa97a">Digital Image Analysis 数字图像分析</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>About</title>
@@ -1100,19 +1437,25 @@ I’m currently studying for my master’s degree, majoring in Electronics.</p>
 ]]></content>
   </entry>
   <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Codes</title>
     <url>/codes/index.html</url>
     <content><![CDATA[<p><span class="emoji" alias="calendar" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png?v8">📆</span> I’m on a <a href="https://www.notion.so/mengisok/Code-Journal-26c4c7f5b922426c82495a74f1766e19">code journal</a>…</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Sitemap</title>
     <url>/sitemap/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Schedule</title>
+    <url>/schedule/index.html</url>
     <content><![CDATA[<p>Test.</p>
 ]]></content>
   </entry>
@@ -1125,10 +1468,9 @@ I’m currently studying for my master’s degree, majoring in Electronics.</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Schedule</title>
-    <url>/schedule/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title></title>
@@ -1157,124 +1499,6 @@ I’m currently studying for my master’s degree, majoring in Electronics.</p>
 <p>Enjoy it!</p>
 <h2 id="Update">Update</h2>
 <figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo-site/source/lib/pdf</span><br><span class="line">$ git pull</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/debugger.css</url>
-    <content><![CDATA[/* Copyright 2014 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-#PDFBug,
-#PDFBug input,
-#PDFBug button,
-#PDFBug select {
-  font: message-box;
-}
-#PDFBug {
-  background-color: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(102, 102, 102, 1);
-  position: fixed;
-  top: 32px;
-  right: 0;
-  bottom: 0;
-  font-size: 10px;
-  padding: 0;
-  width: 300px;
-}
-#PDFBug .controls {
-  background: rgba(238, 238, 238, 1);
-  border-bottom: 1px solid rgba(102, 102, 102, 1);
-  padding: 3px;
-}
-#PDFBug .panels {
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  position: absolute;
-  right: 0;
-  top: 27px;
-}
-#PDFBug .panels &gt; div {
-  padding: 5px;
-}
-#PDFBug button.active {
-  font-weight: bold;
-}
-.debuggerShowText,
-.debuggerHideText:hover {
-  background-color: rgba(255, 255, 0, 1);
-}
-#PDFBug .stats {
-  font-family: courier;
-  font-size: 10px;
-  white-space: pre;
-}
-#PDFBug .stats .title {
-  font-weight: bold;
-}
-#PDFBug table {
-  font-size: 10px;
-  white-space: pre;
-}
-#PDFBug table.showText {
-  border-collapse: collapse;
-  text-align: center;
-}
-#PDFBug table.showText,
-#PDFBug table.showText tr,
-#PDFBug table.showText td {
-  border: 1px solid black;
-  padding: 1px;
-}
-#PDFBug table.showText td.advance {
-  color: grey;
-}
-
-#viewer.textLayer-visible .textLayer {
-  opacity: 1;
-}
-
-#viewer.textLayer-visible .canvasWrapper {
-  background-color: rgba(128, 255, 128, 1);
-}
-
-#viewer.textLayer-visible .canvasWrapper canvas {
-  mix-blend-mode: screen;
-}
-
-#viewer.textLayer-visible .textLayer span {
-  background-color: rgba(255, 255, 0, 0.1);
-  color: rgba(0, 0, 0, 1);
-  border: solid 1px rgba(255, 0, 0, 0.5);
-  box-sizing: border-box;
-}
-
-#viewer.textLayer-visible .textLayer span[aria-owns] {
-  background-color: rgba(255, 0, 0, 0.3);
-}
-
-#viewer.textLayer-hover .textLayer span:hover {
-  background-color: rgba(255, 255, 255, 1);
-  color: rgba(0, 0, 0, 1);
-}
-
-#viewer.textLayer-shadow .textLayer span {
-  background-color: rgba(255, 255, 255, 0.6);
-  color: rgba(0, 0, 0, 1);
-}
 ]]></content>
   </entry>
   <entry>
@@ -20485,6 +20709,1140 @@ const pdfjsBuild = '987062c';
   </entry>
   <entry>
     <title></title>
+    <url>/lib/pdf/web/debugger.js</url>
+    <content><![CDATA[/* Copyright 2012 Mozilla Foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+let opMap;
+
+const FontInspector = (function FontInspectorClosure() {
+  let fonts;
+  let active = false;
+  const fontAttribute = "data-font-name";
+  function removeSelection() {
+    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
+    for (const div of divs) {
+      div.className = "";
+    }
+  }
+  function resetSelection() {
+    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
+    for (const div of divs) {
+      div.className = "debuggerHideText";
+    }
+  }
+  function selectFont(fontName, show) {
+    const divs = document.querySelectorAll(
+      `span[${fontAttribute}=${fontName}]`
+    );
+    for (const div of divs) {
+      div.className = show ? "debuggerShowText" : "debuggerHideText";
+    }
+  }
+  function textLayerClick(e) {
+    if (
+      !e.target.dataset.fontName ||
+      e.target.tagName.toUpperCase() !== "SPAN"
+    ) {
+      return;
+    }
+    const fontName = e.target.dataset.fontName;
+    const selects = document.getElementsByTagName("input");
+    for (const select of selects) {
+      if (select.dataset.fontName !== fontName) {
+        continue;
+      }
+      select.checked = !select.checked;
+      selectFont(fontName, select.checked);
+      select.scrollIntoView();
+    }
+  }
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "FontInspector",
+    name: "Font Inspector",
+    panel: null,
+    manager: null,
+    init(pdfjsLib) {
+      const panel = this.panel;
+      const tmp = document.createElement("button");
+      tmp.addEventListener("click", resetSelection);
+      tmp.textContent = "Refresh";
+      panel.append(tmp);
+
+      fonts = document.createElement("div");
+      panel.append(fonts);
+    },
+    cleanup() {
+      fonts.textContent = "";
+    },
+    enabled: false,
+    get active() {
+      return active;
+    },
+    set active(value) {
+      active = value;
+      if (active) {
+        document.body.addEventListener("click", textLayerClick, true);
+        resetSelection();
+      } else {
+        document.body.removeEventListener("click", textLayerClick, true);
+        removeSelection();
+      }
+    },
+    // FontInspector specific functions.
+    fontAdded(fontObj, url) {
+      function properties(obj, list) {
+        const moreInfo = document.createElement("table");
+        for (const entry of list) {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          td1.textContent = entry;
+          tr.append(td1);
+          const td2 = document.createElement("td");
+          td2.textContent = obj[entry].toString();
+          tr.append(td2);
+          moreInfo.append(tr);
+        }
+        return moreInfo;
+      }
+      const moreInfo = properties(fontObj, ["name", "type"]);
+      const fontName = fontObj.loadedName;
+      const font = document.createElement("div");
+      const name = document.createElement("span");
+      name.textContent = fontName;
+      const download = document.createElement("a");
+      if (url) {
+        url = /url\(['"]?([^)"']+)/.exec(url);
+        download.href = url[1];
+      } else if (fontObj.data) {
+        download.href = URL.createObjectURL(
+          new Blob([fontObj.data], { type: fontObj.mimetype })
+        );
+      }
+      download.textContent = "Download";
+      const logIt = document.createElement("a");
+      logIt.href = "";
+      logIt.textContent = "Log";
+      logIt.addEventListener("click", function (event) {
+        event.preventDefault();
+        console.log(fontObj);
+      });
+      const select = document.createElement("input");
+      select.setAttribute("type", "checkbox");
+      select.dataset.fontName = fontName;
+      select.addEventListener("click", function () {
+        selectFont(fontName, select.checked);
+      });
+      font.append(select, name, " ", download, " ", logIt, moreInfo);
+      fonts.append(font);
+      // Somewhat of a hack, should probably add a hook for when the text layer
+      // is done rendering.
+      setTimeout(() =&gt; {
+        if (this.active) {
+          resetSelection();
+        }
+      }, 2000);
+    },
+  };
+})();
+
+// Manages all the page steppers.
+const StepperManager = (function StepperManagerClosure() {
+  let steppers = [];
+  let stepperDiv = null;
+  let stepperControls = null;
+  let stepperChooser = null;
+  let breakPoints = Object.create(null);
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "Stepper",
+    name: "Stepper",
+    panel: null,
+    manager: null,
+    init(pdfjsLib) {
+      const self = this;
+      stepperControls = document.createElement("div");
+      stepperChooser = document.createElement("select");
+      stepperChooser.addEventListener("change", function (event) {
+        self.selectStepper(this.value);
+      });
+      stepperControls.append(stepperChooser);
+      stepperDiv = document.createElement("div");
+      this.panel.append(stepperControls, stepperDiv);
+      if (sessionStorage.getItem("pdfjsBreakPoints")) {
+        breakPoints = JSON.parse(sessionStorage.getItem("pdfjsBreakPoints"));
+      }
+
+      opMap = Object.create(null);
+      for (const key in pdfjsLib.OPS) {
+        opMap[pdfjsLib.OPS[key]] = key;
+      }
+    },
+    cleanup() {
+      stepperChooser.textContent = "";
+      stepperDiv.textContent = "";
+      steppers = [];
+    },
+    enabled: false,
+    active: false,
+    // Stepper specific functions.
+    create(pageIndex) {
+      const debug = document.createElement("div");
+      debug.id = "stepper" + pageIndex;
+      debug.hidden = true;
+      debug.className = "stepper";
+      stepperDiv.append(debug);
+      const b = document.createElement("option");
+      b.textContent = "Page " + (pageIndex + 1);
+      b.value = pageIndex;
+      stepperChooser.append(b);
+      const initBreakPoints = breakPoints[pageIndex] || [];
+      const stepper = new Stepper(debug, pageIndex, initBreakPoints);
+      steppers.push(stepper);
+      if (steppers.length === 1) {
+        this.selectStepper(pageIndex, false);
+      }
+      return stepper;
+    },
+    selectStepper(pageIndex, selectPanel) {
+      pageIndex |= 0;
+      if (selectPanel) {
+        this.manager.selectPanel(this);
+      }
+      for (const stepper of steppers) {
+        stepper.panel.hidden = stepper.pageIndex !== pageIndex;
+      }
+      for (const option of stepperChooser.options) {
+        option.selected = (option.value | 0) === pageIndex;
+      }
+    },
+    saveBreakPoints(pageIndex, bps) {
+      breakPoints[pageIndex] = bps;
+      sessionStorage.setItem("pdfjsBreakPoints", JSON.stringify(breakPoints));
+    },
+  };
+})();
+
+// The stepper for each page's operatorList.
+const Stepper = (function StepperClosure() {
+  // Shorter way to create element and optionally set textContent.
+  function c(tag, textContent) {
+    const d = document.createElement(tag);
+    if (textContent) {
+      d.textContent = textContent;
+    }
+    return d;
+  }
+
+  function simplifyArgs(args) {
+    if (typeof args === "string") {
+      const MAX_STRING_LENGTH = 75;
+      return args.length &lt;= MAX_STRING_LENGTH
+        ? args
+        : args.substring(0, MAX_STRING_LENGTH) + "...";
+    }
+    if (typeof args !== "object" || args === null) {
+      return args;
+    }
+    if ("length" in args) {
+      // array
+      const MAX_ITEMS = 10,
+        simpleArgs = [];
+      let i, ii;
+      for (i = 0, ii = Math.min(MAX_ITEMS, args.length); i &lt; ii; i++) {
+        simpleArgs.push(simplifyArgs(args[i]));
+      }
+      if (i &lt; args.length) {
+        simpleArgs.push("...");
+      }
+      return simpleArgs;
+    }
+    const simpleObj = {};
+    for (const key in args) {
+      simpleObj[key] = simplifyArgs(args[key]);
+    }
+    return simpleObj;
+  }
+
+  // eslint-disable-next-line no-shadow
+  class Stepper {
+    constructor(panel, pageIndex, initialBreakPoints) {
+      this.panel = panel;
+      this.breakPoint = 0;
+      this.nextBreakPoint = null;
+      this.pageIndex = pageIndex;
+      this.breakPoints = initialBreakPoints;
+      this.currentIdx = -1;
+      this.operatorListIdx = 0;
+      this.indentLevel = 0;
+    }
+
+    init(operatorList) {
+      const panel = this.panel;
+      const content = c("div", "c=continue, s=step");
+      const table = c("table");
+      content.append(table);
+      table.cellSpacing = 0;
+      const headerRow = c("tr");
+      table.append(headerRow);
+      headerRow.append(
+        c("th", "Break"),
+        c("th", "Idx"),
+        c("th", "fn"),
+        c("th", "args")
+      );
+      panel.append(content);
+      this.table = table;
+      this.updateOperatorList(operatorList);
+    }
+
+    updateOperatorList(operatorList) {
+      const self = this;
+
+      function cboxOnClick() {
+        const x = +this.dataset.idx;
+        if (this.checked) {
+          self.breakPoints.push(x);
+        } else {
+          self.breakPoints.splice(self.breakPoints.indexOf(x), 1);
+        }
+        StepperManager.saveBreakPoints(self.pageIndex, self.breakPoints);
+      }
+
+      const MAX_OPERATORS_COUNT = 15000;
+      if (this.operatorListIdx &gt; MAX_OPERATORS_COUNT) {
+        return;
+      }
+
+      const chunk = document.createDocumentFragment();
+      const operatorsToDisplay = Math.min(
+        MAX_OPERATORS_COUNT,
+        operatorList.fnArray.length
+      );
+      for (let i = this.operatorListIdx; i &lt; operatorsToDisplay; i++) {
+        const line = c("tr");
+        line.className = "line";
+        line.dataset.idx = i;
+        chunk.append(line);
+        const checked = this.breakPoints.includes(i);
+        const args = operatorList.argsArray[i] || [];
+
+        const breakCell = c("td");
+        const cbox = c("input");
+        cbox.type = "checkbox";
+        cbox.className = "points";
+        cbox.checked = checked;
+        cbox.dataset.idx = i;
+        cbox.onclick = cboxOnClick;
+
+        breakCell.append(cbox);
+        line.append(breakCell, c("td", i.toString()));
+        const fn = opMap[operatorList.fnArray[i]];
+        let decArgs = args;
+        if (fn === "showText") {
+          const glyphs = args[0];
+          const charCodeRow = c("tr");
+          const fontCharRow = c("tr");
+          const unicodeRow = c("tr");
+          for (const glyph of glyphs) {
+            if (typeof glyph === "object" &amp;&amp; glyph !== null) {
+              charCodeRow.append(c("td", glyph.originalCharCode));
+              fontCharRow.append(c("td", glyph.fontChar));
+              unicodeRow.append(c("td", glyph.unicode));
+            } else {
+              // null or number
+              const advanceEl = c("td", glyph);
+              advanceEl.classList.add("advance");
+              charCodeRow.append(advanceEl);
+              fontCharRow.append(c("td"));
+              unicodeRow.append(c("td"));
+            }
+          }
+          decArgs = c("td");
+          const table = c("table");
+          table.classList.add("showText");
+          decArgs.append(table);
+          table.append(charCodeRow, fontCharRow, unicodeRow);
+        } else if (fn === "restore") {
+          this.indentLevel--;
+        }
+        line.append(c("td", " ".repeat(this.indentLevel * 2) + fn));
+        if (fn === "save") {
+          this.indentLevel++;
+        }
+
+        if (decArgs instanceof HTMLElement) {
+          line.append(decArgs);
+        } else {
+          line.append(c("td", JSON.stringify(simplifyArgs(decArgs))));
+        }
+      }
+      if (operatorsToDisplay &lt; operatorList.fnArray.length) {
+        const lastCell = c("td", "...");
+        lastCell.colspan = 4;
+        chunk.append(lastCell);
+      }
+      this.operatorListIdx = operatorList.fnArray.length;
+      this.table.append(chunk);
+    }
+
+    getNextBreakPoint() {
+      this.breakPoints.sort(function (a, b) {
+        return a - b;
+      });
+      for (const breakPoint of this.breakPoints) {
+        if (breakPoint &gt; this.currentIdx) {
+          return breakPoint;
+        }
+      }
+      return null;
+    }
+
+    breakIt(idx, callback) {
+      StepperManager.selectStepper(this.pageIndex, true);
+      this.currentIdx = idx;
+
+      const listener = evt =&gt; {
+        switch (evt.keyCode) {
+          case 83: // step
+            document.removeEventListener("keydown", listener);
+            this.nextBreakPoint = this.currentIdx + 1;
+            this.goTo(-1);
+            callback();
+            break;
+          case 67: // continue
+            document.removeEventListener("keydown", listener);
+            this.nextBreakPoint = this.getNextBreakPoint();
+            this.goTo(-1);
+            callback();
+            break;
+        }
+      };
+      document.addEventListener("keydown", listener);
+      this.goTo(idx);
+    }
+
+    goTo(idx) {
+      const allRows = this.panel.getElementsByClassName("line");
+      for (const row of allRows) {
+        if ((row.dataset.idx | 0) === idx) {
+          row.style.backgroundColor = "rgb(251,250,207)";
+          row.scrollIntoView();
+        } else {
+          row.style.backgroundColor = null;
+        }
+      }
+    }
+  }
+  return Stepper;
+})();
+
+const Stats = (function Stats() {
+  let stats = [];
+  function clear(node) {
+    node.textContent = ""; // Remove any `node` contents from the DOM.
+  }
+  function getStatIndex(pageNumber) {
+    for (const [i, stat] of stats.entries()) {
+      if (stat.pageNumber === pageNumber) {
+        return i;
+      }
+    }
+    return false;
+  }
+  return {
+    // Properties/functions needed by PDFBug.
+    id: "Stats",
+    name: "Stats",
+    panel: null,
+    manager: null,
+    init(pdfjsLib) {},
+    enabled: false,
+    active: false,
+    // Stats specific functions.
+    add(pageNumber, stat) {
+      if (!stat) {
+        return;
+      }
+      const statsIndex = getStatIndex(pageNumber);
+      if (statsIndex !== false) {
+        stats[statsIndex].div.remove();
+        stats.splice(statsIndex, 1);
+      }
+      const wrapper = document.createElement("div");
+      wrapper.className = "stats";
+      const title = document.createElement("div");
+      title.className = "title";
+      title.textContent = "Page: " + pageNumber;
+      const statsDiv = document.createElement("div");
+      statsDiv.textContent = stat.toString();
+      wrapper.append(title, statsDiv);
+      stats.push({ pageNumber, div: wrapper });
+      stats.sort(function (a, b) {
+        return a.pageNumber - b.pageNumber;
+      });
+      clear(this.panel);
+      for (const entry of stats) {
+        this.panel.append(entry.div);
+      }
+    },
+    cleanup() {
+      stats = [];
+      clear(this.panel);
+    },
+  };
+})();
+
+// Manages all the debugging tools.
+const PDFBug = (function PDFBugClosure() {
+  const panelWidth = 300;
+  const buttons = [];
+  let activePanel = null;
+
+  return {
+    tools: [FontInspector, StepperManager, Stats],
+    enable(ids) {
+      const all = ids.length === 1 &amp;&amp; ids[0] === "all";
+      const tools = this.tools;
+      for (const tool of tools) {
+        if (all || ids.includes(tool.id)) {
+          tool.enabled = true;
+        }
+      }
+      if (!all) {
+        // Sort the tools by the order they are enabled.
+        tools.sort(function (a, b) {
+          let indexA = ids.indexOf(a.id);
+          indexA = indexA &lt; 0 ? tools.length : indexA;
+          let indexB = ids.indexOf(b.id);
+          indexB = indexB &lt; 0 ? tools.length : indexB;
+          return indexA - indexB;
+        });
+      }
+    },
+    init(pdfjsLib, container, ids) {
+      this.loadCSS();
+      this.enable(ids);
+      /*
+       * Basic Layout:
+       * PDFBug
+       *  Controls
+       *  Panels
+       *    Panel
+       *    Panel
+       *    ...
+       */
+      const ui = document.createElement("div");
+      ui.id = "PDFBug";
+
+      const controls = document.createElement("div");
+      controls.setAttribute("class", "controls");
+      ui.append(controls);
+
+      const panels = document.createElement("div");
+      panels.setAttribute("class", "panels");
+      ui.append(panels);
+
+      container.append(ui);
+      container.style.right = panelWidth + "px";
+
+      // Initialize all the debugging tools.
+      for (const tool of this.tools) {
+        const panel = document.createElement("div");
+        const panelButton = document.createElement("button");
+        panelButton.textContent = tool.name;
+        panelButton.addEventListener("click", event =&gt; {
+          event.preventDefault();
+          this.selectPanel(tool);
+        });
+        controls.append(panelButton);
+        panels.append(panel);
+        tool.panel = panel;
+        tool.manager = this;
+        if (tool.enabled) {
+          tool.init(pdfjsLib);
+        } else {
+          panel.textContent =
+            `${tool.name} is disabled. To enable add "${tool.id}" to ` +
+            "the pdfBug parameter and refresh (separate multiple by commas).";
+        }
+        buttons.push(panelButton);
+      }
+      this.selectPanel(0);
+    },
+    loadCSS() {
+      const { url } = import.meta;
+
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = url.replace(/.js$/, ".css");
+
+      document.head.append(link);
+    },
+    cleanup() {
+      for (const tool of this.tools) {
+        if (tool.enabled) {
+          tool.cleanup();
+        }
+      }
+    },
+    selectPanel(index) {
+      if (typeof index !== "number") {
+        index = this.tools.indexOf(index);
+      }
+      if (index === activePanel) {
+        return;
+      }
+      activePanel = index;
+      for (const [j, tool] of this.tools.entries()) {
+        const isActive = j === index;
+        buttons[j].classList.toggle("active", isActive);
+        tool.active = isActive;
+        tool.panel.hidden = !isActive;
+      }
+    },
+  };
+})();
+
+globalThis.FontInspector = FontInspector;
+globalThis.StepperManager = StepperManager;
+globalThis.Stats = Stats;
+
+export { PDFBug };
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/web/debugger.css</url>
+    <content><![CDATA[/* Copyright 2014 Mozilla Foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#PDFBug,
+#PDFBug input,
+#PDFBug button,
+#PDFBug select {
+  font: message-box;
+}
+#PDFBug {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(102, 102, 102, 1);
+  position: fixed;
+  top: 32px;
+  right: 0;
+  bottom: 0;
+  font-size: 10px;
+  padding: 0;
+  width: 300px;
+}
+#PDFBug .controls {
+  background: rgba(238, 238, 238, 1);
+  border-bottom: 1px solid rgba(102, 102, 102, 1);
+  padding: 3px;
+}
+#PDFBug .panels {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 27px;
+}
+#PDFBug .panels &gt; div {
+  padding: 5px;
+}
+#PDFBug button.active {
+  font-weight: bold;
+}
+.debuggerShowText,
+.debuggerHideText:hover {
+  background-color: rgba(255, 255, 0, 1);
+}
+#PDFBug .stats {
+  font-family: courier;
+  font-size: 10px;
+  white-space: pre;
+}
+#PDFBug .stats .title {
+  font-weight: bold;
+}
+#PDFBug table {
+  font-size: 10px;
+  white-space: pre;
+}
+#PDFBug table.showText {
+  border-collapse: collapse;
+  text-align: center;
+}
+#PDFBug table.showText,
+#PDFBug table.showText tr,
+#PDFBug table.showText td {
+  border: 1px solid black;
+  padding: 1px;
+}
+#PDFBug table.showText td.advance {
+  color: grey;
+}
+
+#viewer.textLayer-visible .textLayer {
+  opacity: 1;
+}
+
+#viewer.textLayer-visible .canvasWrapper {
+  background-color: rgba(128, 255, 128, 1);
+}
+
+#viewer.textLayer-visible .canvasWrapper canvas {
+  mix-blend-mode: screen;
+}
+
+#viewer.textLayer-visible .textLayer span {
+  background-color: rgba(255, 255, 0, 0.1);
+  color: rgba(0, 0, 0, 1);
+  border: solid 1px rgba(255, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+#viewer.textLayer-visible .textLayer span[aria-owns] {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+#viewer.textLayer-hover .textLayer span:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+}
+
+#viewer.textLayer-shadow .textLayer span {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 1);
+}
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/lib/pdf/web/viewer.html</url>
+    <content><![CDATA[
+    <div id="outerContainer">
+
+      <div id="sidebarContainer">
+        <div id="toolbarSidebar">
+          <div id="toolbarSidebarLeft">
+            <div id="sidebarViewButtons" class="splitToolbarButton toggled" role="radiogroup">
+              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs" role="radio" aria-checked="true" aria-controls="thumbnailView">
+                 <span data-l10n-id="thumbs_label">Thumbnails</span>
+              </button>
+              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline" role="radio" aria-checked="false" aria-controls="outlineView">
+                 <span data-l10n-id="document_outline_label">Document Outline</span>
+              </button>
+              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments" role="radio" aria-checked="false" aria-controls="attachmentsView">
+                 <span data-l10n-id="attachments_label">Attachments</span>
+              </button>
+              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers" role="radio" aria-checked="false" aria-controls="layersView">
+                 <span data-l10n-id="layers_label">Layers</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="toolbarSidebarRight">
+            <div id="outlineOptionsContainer" class="hidden">
+              <div class="verticalToolbarSeparator"></div>
+
+              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
+                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="sidebarContent">
+          <div id="thumbnailView">
+          </div>
+          <div id="outlineView" class="hidden">
+          </div>
+          <div id="attachmentsView" class="hidden">
+          </div>
+          <div id="layersView" class="hidden">
+          </div>
+        </div>
+        <div id="sidebarResizer"></div>
+      </div>  <!-- sidebarContainer -->
+
+      <div id="mainContainer">
+        <div class="findbar hidden doorHanger" id="findbar">
+          <div id="findbarInputContainer">
+            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input" aria-invalid="false">
+            <div class="splitToolbarButton">
+              <button id="findPrevious" class="toolbarButton" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
+                <span data-l10n-id="find_previous_label">Previous</span>
+              </button>
+              <div class="splitToolbarButtonSeparator"></div>
+              <button id="findNext" class="toolbarButton" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
+                <span data-l10n-id="find_next_label">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="findbarOptionsOneContainer">
+            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
+            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight All</label>
+            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
+            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match Case</label>
+          </div>
+          <div id="findbarOptionsTwoContainer">
+            <input type="checkbox" id="findMatchDiacritics" class="toolbarField" tabindex="96">
+            <label for="findMatchDiacritics" class="toolbarLabel" data-l10n-id="find_match_diacritics_label">Match Diacritics</label>
+            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="97">
+            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole Words</label>
+          </div>
+
+          <div id="findbarMessageContainer" aria-live="polite">
+            <span id="findResultsCount" class="toolbarLabel"></span>
+            <span id="findMsg" class="toolbarLabel"></span>
+          </div>
+        </div>  <!-- findbar -->
+
+        <div class="editorParamsToolbar hidden doorHangerRight" id="editorFreeTextParamsToolbar">
+          <div class="editorParamsToolbarContainer">
+            <div class="editorParamsSetter">
+              <label for="editorFreeTextColor" class="editorParamsLabel" data-l10n-id="editor_free_text_color">Color</label>
+              <input type="color" id="editorFreeTextColor" class="editorParamsColor" tabindex="100">
+            </div>
+            <div class="editorParamsSetter">
+              <label for="editorFreeTextFontSize" class="editorParamsLabel" data-l10n-id="editor_free_text_size">Size</label>
+              <input type="range" id="editorFreeTextFontSize" class="editorParamsSlider" value="10" min="5" max="100" step="1" tabindex="101">
+            </div>
+          </div>
+        </div>
+
+        <div class="editorParamsToolbar hidden doorHangerRight" id="editorInkParamsToolbar">
+          <div class="editorParamsToolbarContainer">
+            <div class="editorParamsSetter">
+              <label for="editorInkColor" class="editorParamsLabel" data-l10n-id="editor_ink_color">Color</label>
+              <input type="color" id="editorInkColor" class="editorParamsColor" tabindex="102">
+            </div>
+            <div class="editorParamsSetter">
+              <label for="editorInkThickness" class="editorParamsLabel" data-l10n-id="editor_ink_thickness">Thickness</label>
+              <input type="range" id="editorInkThickness" class="editorParamsSlider" value="1" min="1" max="20" step="1" tabindex="103">
+            </div>
+            <div class="editorParamsSetter">
+              <label for="editorInkOpacity" class="editorParamsLabel" data-l10n-id="editor_ink_opacity">Opacity</label>
+              <input type="range" id="editorInkOpacity" class="editorParamsSlider" value="100" min="1" max="100" step="1" tabindex="104">
+            </div>
+          </div>
+        </div>
+
+        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
+          <div id="secondaryToolbarButtonContainer">
+            <button id="secondaryOpenFile" class="secondaryToolbarButton visibleLargeView" title="Open File" tabindex="51" data-l10n-id="open_file">
+              <span data-l10n-id="open_file_label">Open</span>
+            </button>
+
+            <button id="secondaryPrint" class="secondaryToolbarButton visibleMediumView" title="Print" tabindex="52" data-l10n-id="print">
+              <span data-l10n-id="print_label">Print</span>
+            </button>
+
+            <button id="secondaryDownload" class="secondaryToolbarButton visibleMediumView" title="Download" tabindex="53" data-l10n-id="download">
+              <span data-l10n-id="download_label">Download</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator visibleLargeView"></div>
+
+            <button id="presentationMode" class="secondaryToolbarButton" title="Switch to Presentation Mode" tabindex="54" data-l10n-id="presentation_mode">
+              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
+            </button>
+
+            <a href="#" id="viewBookmark" class="secondaryToolbarButton" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
+              <span data-l10n-id="bookmark_label">Current View</span>
+            </a>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="firstPage" class="secondaryToolbarButton" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
+              <span data-l10n-id="first_page_label">Go to First Page</span>
+            </button>
+            <button id="lastPage" class="secondaryToolbarButton" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
+              <span data-l10n-id="last_page_label">Go to Last Page</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="pageRotateCw" class="secondaryToolbarButton" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
+              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
+            </button>
+            <button id="pageRotateCcw" class="secondaryToolbarButton" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
+              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <div id="cursorToolButtons" role="radiogroup">
+              <button id="cursorSelectTool" class="secondaryToolbarButton toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool" role="radio" aria-checked="true">
+                <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
+              </button>
+              <button id="cursorHandTool" class="secondaryToolbarButton" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool" role="radio" aria-checked="false">
+                <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
+              </button>
+            </div>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <div id="scrollModeButtons" role="radiogroup">
+              <button id="scrollPage" class="secondaryToolbarButton" title="Use Page Scrolling" tabindex="62" data-l10n-id="scroll_page" role="radio" aria-checked="false">
+                <span data-l10n-id="scroll_page_label">Page Scrolling</span>
+              </button>
+              <button id="scrollVertical" class="secondaryToolbarButton toggled" title="Use Vertical Scrolling" tabindex="63" data-l10n-id="scroll_vertical" role="radio" aria-checked="true">
+                <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
+              </button>
+              <button id="scrollHorizontal" class="secondaryToolbarButton" title="Use Horizontal Scrolling" tabindex="64" data-l10n-id="scroll_horizontal" role="radio" aria-checked="false">
+                <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
+              </button>
+              <button id="scrollWrapped" class="secondaryToolbarButton" title="Use Wrapped Scrolling" tabindex="65" data-l10n-id="scroll_wrapped" role="radio" aria-checked="false">
+                <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
+              </button>
+            </div>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <div id="spreadModeButtons" role="radiogroup">
+              <button id="spreadNone" class="secondaryToolbarButton toggled" title="Do not join page spreads" tabindex="66" data-l10n-id="spread_none" role="radio" aria-checked="true">
+                <span data-l10n-id="spread_none_label">No Spreads</span>
+              </button>
+              <button id="spreadOdd" class="secondaryToolbarButton" title="Join page spreads starting with odd-numbered pages" tabindex="67" data-l10n-id="spread_odd" role="radio" aria-checked="false">
+                <span data-l10n-id="spread_odd_label">Odd Spreads</span>
+              </button>
+              <button id="spreadEven" class="secondaryToolbarButton" title="Join page spreads starting with even-numbered pages" tabindex="68" data-l10n-id="spread_even" role="radio" aria-checked="false">
+                <span data-l10n-id="spread_even_label">Even Spreads</span>
+              </button>
+            </div>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="documentProperties" class="secondaryToolbarButton" title="Document Properties…" tabindex="69" data-l10n-id="document_properties" aria-controls="documentPropertiesDialog">
+              <span data-l10n-id="document_properties_label">Document Properties…</span>
+            </button>
+          </div>
+        </div>  <!-- secondaryToolbar -->
+
+        <div class="toolbar">
+          <div id="toolbarContainer">
+            <div id="toolbarViewer">
+              <div id="toolbarViewerLeft">
+                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
+                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+                </button>
+                <div class="toolbarButtonSpacer"></div>
+                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
+                  <span data-l10n-id="findbar_label">Find</span>
+                </button>
+                <div class="splitToolbarButton hiddenSmallView">
+                  <button class="toolbarButton" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
+                    <span data-l10n-id="previous_label">Previous</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button class="toolbarButton" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
+                    <span data-l10n-id="next_label">Next</span>
+                  </button>
+                </div>
+                <input type="number" id="pageNumber" class="toolbarField" title="Page" value="1" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
+                <span id="numPages" class="toolbarLabel"></span>
+              </div>
+              <div id="toolbarViewerRight">
+                <button id="openFile" class="toolbarButton hiddenLargeView" title="Open File" tabindex="31" data-l10n-id="open_file">
+                  <span data-l10n-id="open_file_label">Open</span>
+                </button>
+
+                <button id="print" class="toolbarButton hiddenMediumView" title="Print" tabindex="32" data-l10n-id="print">
+                  <span data-l10n-id="print_label">Print</span>
+                </button>
+
+                <button id="download" class="toolbarButton hiddenMediumView" title="Download" tabindex="33" data-l10n-id="download">
+                  <span data-l10n-id="download_label">Download</span>
+                </button>
+
+                <div class="verticalToolbarSeparator hiddenMediumView"></div>
+
+                <div id="editorModeButtons" class="splitToolbarButton toggled" role="radiogroup">
+                  <button id="editorFreeText" class="toolbarButton" disabled="disabled" title="Text" role="radio" aria-checked="false" tabindex="34" data-l10n-id="editor_free_text2">
+                    <span data-l10n-id="editor_free_text2_label">Text</span>
+                  </button>
+                  <button id="editorInk" class="toolbarButton" disabled="disabled" title="Draw" role="radio" aria-checked="false" tabindex="35" data-l10n-id="editor_ink2">
+                    <span data-l10n-id="editor_ink2_label">Draw</span>
+                  </button>
+                </div>
+
+                <div id="editorModeSeparator" class="verticalToolbarSeparator"></div>
+
+                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="48" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
+                  <span data-l10n-id="tools_label">Tools</span>
+                </button>
+              </div>
+              <div id="toolbarViewerMiddle">
+                <div class="splitToolbarButton">
+                  <button id="zoomOut" class="toolbarButton" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
+                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                  </button>
+                  <div class="splitToolbarButtonSeparator"></div>
+                  <button id="zoomIn" class="toolbarButton" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
+                    <span data-l10n-id="zoom_in_label">Zoom In</span>
+                   </button>
+                </div>
+                <span id="scaleSelectContainer" class="dropdownToolbarButton">
+                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
+                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
+                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
+                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
+                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
+                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 50 }">50%</option>
+                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 75 }">75%</option>
+                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 100 }">100%</option>
+                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 125 }">125%</option>
+                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 150 }">150%</option>
+                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 200 }">200%</option>
+                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 300 }">300%</option>
+                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 400 }">400%</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            <div id="loadingBar">
+              <div class="progress">
+                <div class="glimmer">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="viewerContainer" tabindex="0">
+          <div id="viewer" class="pdfViewer"></div>
+        </div>
+      </div> <!-- mainContainer -->
+
+      <div id="dialogContainer">
+        <dialog id="passwordDialog">
+          <div class="row">
+            <label for="password" id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</label>
+          </div>
+          <div class="row">
+            <input type="password" id="password" class="toolbarField">
+          </div>
+          <div class="buttonRow">
+            <button id="passwordCancel" class="dialogButton"><span data-l10n-id="password_cancel">Cancel</span></button>
+            <button id="passwordSubmit" class="dialogButton"><span data-l10n-id="password_ok">OK</span></button>
+          </div>
+        </dialog>
+        <dialog id="documentPropertiesDialog">
+          <div class="row">
+            <span id="fileNameLabel" data-l10n-id="document_properties_file_name">File name:</span>
+            <p id="fileNameField" aria-labelledby="fileNameLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="fileSizeLabel" data-l10n-id="document_properties_file_size">File size:</span>
+            <p id="fileSizeField" aria-labelledby="fileSizeLabel">-</p>
+          </div>
+          <div class="separator"></div>
+          <div class="row">
+            <span id="titleLabel" data-l10n-id="document_properties_title">Title:</span>
+            <p id="titleField" aria-labelledby="titleLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="authorLabel" data-l10n-id="document_properties_author">Author:</span>
+            <p id="authorField" aria-labelledby="authorLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="subjectLabel" data-l10n-id="document_properties_subject">Subject:</span>
+            <p id="subjectField" aria-labelledby="subjectLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="keywordsLabel" data-l10n-id="document_properties_keywords">Keywords:</span>
+            <p id="keywordsField" aria-labelledby="keywordsLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="creationDateLabel" data-l10n-id="document_properties_creation_date">Creation Date:</span>
+            <p id="creationDateField" aria-labelledby="creationDateLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="modificationDateLabel" data-l10n-id="document_properties_modification_date">Modification Date:</span>
+            <p id="modificationDateField" aria-labelledby="modificationDateLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="creatorLabel" data-l10n-id="document_properties_creator">Creator:</span>
+            <p id="creatorField" aria-labelledby="creatorLabel">-</p>
+          </div>
+          <div class="separator"></div>
+          <div class="row">
+            <span id="producerLabel" data-l10n-id="document_properties_producer">PDF Producer:</span>
+            <p id="producerField" aria-labelledby="producerLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="versionLabel" data-l10n-id="document_properties_version">PDF Version:</span>
+            <p id="versionField" aria-labelledby="versionLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="pageCountLabel" data-l10n-id="document_properties_page_count">Page Count:</span>
+            <p id="pageCountField" aria-labelledby="pageCountLabel">-</p>
+          </div>
+          <div class="row">
+            <span id="pageSizeLabel" data-l10n-id="document_properties_page_size">Page Size:</span>
+            <p id="pageSizeField" aria-labelledby="pageSizeLabel">-</p>
+          </div>
+          <div class="separator"></div>
+          <div class="row">
+            <span id="linearizedLabel" data-l10n-id="document_properties_linearized">Fast Web View:</span>
+            <p id="linearizedField" aria-labelledby="linearizedLabel">-</p>
+          </div>
+          <div class="buttonRow">
+            <button id="documentPropertiesClose" class="dialogButton"><span data-l10n-id="document_properties_close">Close</span></button>
+          </div>
+        </dialog>
+        <dialog id="printServiceDialog" style="min-width: 200px;">
+          <div class="row">
+            <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
+          </div>
+          <div class="row">
+            <progress value="0" max="100"></progress>
+            <span data-l10n-id="print_progress_percent" data-l10n-args="{ &quot;progress&quot;: 0 }" class="relative-progress">0%</span>
+          </div>
+          <div class="buttonRow">
+            <button id="printCancel" class="dialogButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
+          </div>
+        </dialog>
+      </div>  <!-- dialogContainer -->
+
+    </div> <!-- outerContainer -->
+    <div id="printContainer"></div>
+
+    <input type="file" id="fileInput" class="hidden">
+  
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
     <url>/lib/pdf/web/viewer.css</url>
     <content><![CDATA[/* Copyright 2014 Mozilla Foundation
  *
@@ -23508,1022 +24866,6 @@ dialog :link {
     display: none;
   }
 }
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/debugger.js</url>
-    <content><![CDATA[/* Copyright 2012 Mozilla Foundation
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-let opMap;
-
-const FontInspector = (function FontInspectorClosure() {
-  let fonts;
-  let active = false;
-  const fontAttribute = "data-font-name";
-  function removeSelection() {
-    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
-    for (const div of divs) {
-      div.className = "";
-    }
-  }
-  function resetSelection() {
-    const divs = document.querySelectorAll(`span[${fontAttribute}]`);
-    for (const div of divs) {
-      div.className = "debuggerHideText";
-    }
-  }
-  function selectFont(fontName, show) {
-    const divs = document.querySelectorAll(
-      `span[${fontAttribute}=${fontName}]`
-    );
-    for (const div of divs) {
-      div.className = show ? "debuggerShowText" : "debuggerHideText";
-    }
-  }
-  function textLayerClick(e) {
-    if (
-      !e.target.dataset.fontName ||
-      e.target.tagName.toUpperCase() !== "SPAN"
-    ) {
-      return;
-    }
-    const fontName = e.target.dataset.fontName;
-    const selects = document.getElementsByTagName("input");
-    for (const select of selects) {
-      if (select.dataset.fontName !== fontName) {
-        continue;
-      }
-      select.checked = !select.checked;
-      selectFont(fontName, select.checked);
-      select.scrollIntoView();
-    }
-  }
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "FontInspector",
-    name: "Font Inspector",
-    panel: null,
-    manager: null,
-    init(pdfjsLib) {
-      const panel = this.panel;
-      const tmp = document.createElement("button");
-      tmp.addEventListener("click", resetSelection);
-      tmp.textContent = "Refresh";
-      panel.append(tmp);
-
-      fonts = document.createElement("div");
-      panel.append(fonts);
-    },
-    cleanup() {
-      fonts.textContent = "";
-    },
-    enabled: false,
-    get active() {
-      return active;
-    },
-    set active(value) {
-      active = value;
-      if (active) {
-        document.body.addEventListener("click", textLayerClick, true);
-        resetSelection();
-      } else {
-        document.body.removeEventListener("click", textLayerClick, true);
-        removeSelection();
-      }
-    },
-    // FontInspector specific functions.
-    fontAdded(fontObj, url) {
-      function properties(obj, list) {
-        const moreInfo = document.createElement("table");
-        for (const entry of list) {
-          const tr = document.createElement("tr");
-          const td1 = document.createElement("td");
-          td1.textContent = entry;
-          tr.append(td1);
-          const td2 = document.createElement("td");
-          td2.textContent = obj[entry].toString();
-          tr.append(td2);
-          moreInfo.append(tr);
-        }
-        return moreInfo;
-      }
-      const moreInfo = properties(fontObj, ["name", "type"]);
-      const fontName = fontObj.loadedName;
-      const font = document.createElement("div");
-      const name = document.createElement("span");
-      name.textContent = fontName;
-      const download = document.createElement("a");
-      if (url) {
-        url = /url\(['"]?([^)"']+)/.exec(url);
-        download.href = url[1];
-      } else if (fontObj.data) {
-        download.href = URL.createObjectURL(
-          new Blob([fontObj.data], { type: fontObj.mimetype })
-        );
-      }
-      download.textContent = "Download";
-      const logIt = document.createElement("a");
-      logIt.href = "";
-      logIt.textContent = "Log";
-      logIt.addEventListener("click", function (event) {
-        event.preventDefault();
-        console.log(fontObj);
-      });
-      const select = document.createElement("input");
-      select.setAttribute("type", "checkbox");
-      select.dataset.fontName = fontName;
-      select.addEventListener("click", function () {
-        selectFont(fontName, select.checked);
-      });
-      font.append(select, name, " ", download, " ", logIt, moreInfo);
-      fonts.append(font);
-      // Somewhat of a hack, should probably add a hook for when the text layer
-      // is done rendering.
-      setTimeout(() =&gt; {
-        if (this.active) {
-          resetSelection();
-        }
-      }, 2000);
-    },
-  };
-})();
-
-// Manages all the page steppers.
-const StepperManager = (function StepperManagerClosure() {
-  let steppers = [];
-  let stepperDiv = null;
-  let stepperControls = null;
-  let stepperChooser = null;
-  let breakPoints = Object.create(null);
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "Stepper",
-    name: "Stepper",
-    panel: null,
-    manager: null,
-    init(pdfjsLib) {
-      const self = this;
-      stepperControls = document.createElement("div");
-      stepperChooser = document.createElement("select");
-      stepperChooser.addEventListener("change", function (event) {
-        self.selectStepper(this.value);
-      });
-      stepperControls.append(stepperChooser);
-      stepperDiv = document.createElement("div");
-      this.panel.append(stepperControls, stepperDiv);
-      if (sessionStorage.getItem("pdfjsBreakPoints")) {
-        breakPoints = JSON.parse(sessionStorage.getItem("pdfjsBreakPoints"));
-      }
-
-      opMap = Object.create(null);
-      for (const key in pdfjsLib.OPS) {
-        opMap[pdfjsLib.OPS[key]] = key;
-      }
-    },
-    cleanup() {
-      stepperChooser.textContent = "";
-      stepperDiv.textContent = "";
-      steppers = [];
-    },
-    enabled: false,
-    active: false,
-    // Stepper specific functions.
-    create(pageIndex) {
-      const debug = document.createElement("div");
-      debug.id = "stepper" + pageIndex;
-      debug.hidden = true;
-      debug.className = "stepper";
-      stepperDiv.append(debug);
-      const b = document.createElement("option");
-      b.textContent = "Page " + (pageIndex + 1);
-      b.value = pageIndex;
-      stepperChooser.append(b);
-      const initBreakPoints = breakPoints[pageIndex] || [];
-      const stepper = new Stepper(debug, pageIndex, initBreakPoints);
-      steppers.push(stepper);
-      if (steppers.length === 1) {
-        this.selectStepper(pageIndex, false);
-      }
-      return stepper;
-    },
-    selectStepper(pageIndex, selectPanel) {
-      pageIndex |= 0;
-      if (selectPanel) {
-        this.manager.selectPanel(this);
-      }
-      for (const stepper of steppers) {
-        stepper.panel.hidden = stepper.pageIndex !== pageIndex;
-      }
-      for (const option of stepperChooser.options) {
-        option.selected = (option.value | 0) === pageIndex;
-      }
-    },
-    saveBreakPoints(pageIndex, bps) {
-      breakPoints[pageIndex] = bps;
-      sessionStorage.setItem("pdfjsBreakPoints", JSON.stringify(breakPoints));
-    },
-  };
-})();
-
-// The stepper for each page's operatorList.
-const Stepper = (function StepperClosure() {
-  // Shorter way to create element and optionally set textContent.
-  function c(tag, textContent) {
-    const d = document.createElement(tag);
-    if (textContent) {
-      d.textContent = textContent;
-    }
-    return d;
-  }
-
-  function simplifyArgs(args) {
-    if (typeof args === "string") {
-      const MAX_STRING_LENGTH = 75;
-      return args.length &lt;= MAX_STRING_LENGTH
-        ? args
-        : args.substring(0, MAX_STRING_LENGTH) + "...";
-    }
-    if (typeof args !== "object" || args === null) {
-      return args;
-    }
-    if ("length" in args) {
-      // array
-      const MAX_ITEMS = 10,
-        simpleArgs = [];
-      let i, ii;
-      for (i = 0, ii = Math.min(MAX_ITEMS, args.length); i &lt; ii; i++) {
-        simpleArgs.push(simplifyArgs(args[i]));
-      }
-      if (i &lt; args.length) {
-        simpleArgs.push("...");
-      }
-      return simpleArgs;
-    }
-    const simpleObj = {};
-    for (const key in args) {
-      simpleObj[key] = simplifyArgs(args[key]);
-    }
-    return simpleObj;
-  }
-
-  // eslint-disable-next-line no-shadow
-  class Stepper {
-    constructor(panel, pageIndex, initialBreakPoints) {
-      this.panel = panel;
-      this.breakPoint = 0;
-      this.nextBreakPoint = null;
-      this.pageIndex = pageIndex;
-      this.breakPoints = initialBreakPoints;
-      this.currentIdx = -1;
-      this.operatorListIdx = 0;
-      this.indentLevel = 0;
-    }
-
-    init(operatorList) {
-      const panel = this.panel;
-      const content = c("div", "c=continue, s=step");
-      const table = c("table");
-      content.append(table);
-      table.cellSpacing = 0;
-      const headerRow = c("tr");
-      table.append(headerRow);
-      headerRow.append(
-        c("th", "Break"),
-        c("th", "Idx"),
-        c("th", "fn"),
-        c("th", "args")
-      );
-      panel.append(content);
-      this.table = table;
-      this.updateOperatorList(operatorList);
-    }
-
-    updateOperatorList(operatorList) {
-      const self = this;
-
-      function cboxOnClick() {
-        const x = +this.dataset.idx;
-        if (this.checked) {
-          self.breakPoints.push(x);
-        } else {
-          self.breakPoints.splice(self.breakPoints.indexOf(x), 1);
-        }
-        StepperManager.saveBreakPoints(self.pageIndex, self.breakPoints);
-      }
-
-      const MAX_OPERATORS_COUNT = 15000;
-      if (this.operatorListIdx &gt; MAX_OPERATORS_COUNT) {
-        return;
-      }
-
-      const chunk = document.createDocumentFragment();
-      const operatorsToDisplay = Math.min(
-        MAX_OPERATORS_COUNT,
-        operatorList.fnArray.length
-      );
-      for (let i = this.operatorListIdx; i &lt; operatorsToDisplay; i++) {
-        const line = c("tr");
-        line.className = "line";
-        line.dataset.idx = i;
-        chunk.append(line);
-        const checked = this.breakPoints.includes(i);
-        const args = operatorList.argsArray[i] || [];
-
-        const breakCell = c("td");
-        const cbox = c("input");
-        cbox.type = "checkbox";
-        cbox.className = "points";
-        cbox.checked = checked;
-        cbox.dataset.idx = i;
-        cbox.onclick = cboxOnClick;
-
-        breakCell.append(cbox);
-        line.append(breakCell, c("td", i.toString()));
-        const fn = opMap[operatorList.fnArray[i]];
-        let decArgs = args;
-        if (fn === "showText") {
-          const glyphs = args[0];
-          const charCodeRow = c("tr");
-          const fontCharRow = c("tr");
-          const unicodeRow = c("tr");
-          for (const glyph of glyphs) {
-            if (typeof glyph === "object" &amp;&amp; glyph !== null) {
-              charCodeRow.append(c("td", glyph.originalCharCode));
-              fontCharRow.append(c("td", glyph.fontChar));
-              unicodeRow.append(c("td", glyph.unicode));
-            } else {
-              // null or number
-              const advanceEl = c("td", glyph);
-              advanceEl.classList.add("advance");
-              charCodeRow.append(advanceEl);
-              fontCharRow.append(c("td"));
-              unicodeRow.append(c("td"));
-            }
-          }
-          decArgs = c("td");
-          const table = c("table");
-          table.classList.add("showText");
-          decArgs.append(table);
-          table.append(charCodeRow, fontCharRow, unicodeRow);
-        } else if (fn === "restore") {
-          this.indentLevel--;
-        }
-        line.append(c("td", " ".repeat(this.indentLevel * 2) + fn));
-        if (fn === "save") {
-          this.indentLevel++;
-        }
-
-        if (decArgs instanceof HTMLElement) {
-          line.append(decArgs);
-        } else {
-          line.append(c("td", JSON.stringify(simplifyArgs(decArgs))));
-        }
-      }
-      if (operatorsToDisplay &lt; operatorList.fnArray.length) {
-        const lastCell = c("td", "...");
-        lastCell.colspan = 4;
-        chunk.append(lastCell);
-      }
-      this.operatorListIdx = operatorList.fnArray.length;
-      this.table.append(chunk);
-    }
-
-    getNextBreakPoint() {
-      this.breakPoints.sort(function (a, b) {
-        return a - b;
-      });
-      for (const breakPoint of this.breakPoints) {
-        if (breakPoint &gt; this.currentIdx) {
-          return breakPoint;
-        }
-      }
-      return null;
-    }
-
-    breakIt(idx, callback) {
-      StepperManager.selectStepper(this.pageIndex, true);
-      this.currentIdx = idx;
-
-      const listener = evt =&gt; {
-        switch (evt.keyCode) {
-          case 83: // step
-            document.removeEventListener("keydown", listener);
-            this.nextBreakPoint = this.currentIdx + 1;
-            this.goTo(-1);
-            callback();
-            break;
-          case 67: // continue
-            document.removeEventListener("keydown", listener);
-            this.nextBreakPoint = this.getNextBreakPoint();
-            this.goTo(-1);
-            callback();
-            break;
-        }
-      };
-      document.addEventListener("keydown", listener);
-      this.goTo(idx);
-    }
-
-    goTo(idx) {
-      const allRows = this.panel.getElementsByClassName("line");
-      for (const row of allRows) {
-        if ((row.dataset.idx | 0) === idx) {
-          row.style.backgroundColor = "rgb(251,250,207)";
-          row.scrollIntoView();
-        } else {
-          row.style.backgroundColor = null;
-        }
-      }
-    }
-  }
-  return Stepper;
-})();
-
-const Stats = (function Stats() {
-  let stats = [];
-  function clear(node) {
-    node.textContent = ""; // Remove any `node` contents from the DOM.
-  }
-  function getStatIndex(pageNumber) {
-    for (const [i, stat] of stats.entries()) {
-      if (stat.pageNumber === pageNumber) {
-        return i;
-      }
-    }
-    return false;
-  }
-  return {
-    // Properties/functions needed by PDFBug.
-    id: "Stats",
-    name: "Stats",
-    panel: null,
-    manager: null,
-    init(pdfjsLib) {},
-    enabled: false,
-    active: false,
-    // Stats specific functions.
-    add(pageNumber, stat) {
-      if (!stat) {
-        return;
-      }
-      const statsIndex = getStatIndex(pageNumber);
-      if (statsIndex !== false) {
-        stats[statsIndex].div.remove();
-        stats.splice(statsIndex, 1);
-      }
-      const wrapper = document.createElement("div");
-      wrapper.className = "stats";
-      const title = document.createElement("div");
-      title.className = "title";
-      title.textContent = "Page: " + pageNumber;
-      const statsDiv = document.createElement("div");
-      statsDiv.textContent = stat.toString();
-      wrapper.append(title, statsDiv);
-      stats.push({ pageNumber, div: wrapper });
-      stats.sort(function (a, b) {
-        return a.pageNumber - b.pageNumber;
-      });
-      clear(this.panel);
-      for (const entry of stats) {
-        this.panel.append(entry.div);
-      }
-    },
-    cleanup() {
-      stats = [];
-      clear(this.panel);
-    },
-  };
-})();
-
-// Manages all the debugging tools.
-const PDFBug = (function PDFBugClosure() {
-  const panelWidth = 300;
-  const buttons = [];
-  let activePanel = null;
-
-  return {
-    tools: [FontInspector, StepperManager, Stats],
-    enable(ids) {
-      const all = ids.length === 1 &amp;&amp; ids[0] === "all";
-      const tools = this.tools;
-      for (const tool of tools) {
-        if (all || ids.includes(tool.id)) {
-          tool.enabled = true;
-        }
-      }
-      if (!all) {
-        // Sort the tools by the order they are enabled.
-        tools.sort(function (a, b) {
-          let indexA = ids.indexOf(a.id);
-          indexA = indexA &lt; 0 ? tools.length : indexA;
-          let indexB = ids.indexOf(b.id);
-          indexB = indexB &lt; 0 ? tools.length : indexB;
-          return indexA - indexB;
-        });
-      }
-    },
-    init(pdfjsLib, container, ids) {
-      this.loadCSS();
-      this.enable(ids);
-      /*
-       * Basic Layout:
-       * PDFBug
-       *  Controls
-       *  Panels
-       *    Panel
-       *    Panel
-       *    ...
-       */
-      const ui = document.createElement("div");
-      ui.id = "PDFBug";
-
-      const controls = document.createElement("div");
-      controls.setAttribute("class", "controls");
-      ui.append(controls);
-
-      const panels = document.createElement("div");
-      panels.setAttribute("class", "panels");
-      ui.append(panels);
-
-      container.append(ui);
-      container.style.right = panelWidth + "px";
-
-      // Initialize all the debugging tools.
-      for (const tool of this.tools) {
-        const panel = document.createElement("div");
-        const panelButton = document.createElement("button");
-        panelButton.textContent = tool.name;
-        panelButton.addEventListener("click", event =&gt; {
-          event.preventDefault();
-          this.selectPanel(tool);
-        });
-        controls.append(panelButton);
-        panels.append(panel);
-        tool.panel = panel;
-        tool.manager = this;
-        if (tool.enabled) {
-          tool.init(pdfjsLib);
-        } else {
-          panel.textContent =
-            `${tool.name} is disabled. To enable add "${tool.id}" to ` +
-            "the pdfBug parameter and refresh (separate multiple by commas).";
-        }
-        buttons.push(panelButton);
-      }
-      this.selectPanel(0);
-    },
-    loadCSS() {
-      const { url } = import.meta;
-
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = url.replace(/.js$/, ".css");
-
-      document.head.append(link);
-    },
-    cleanup() {
-      for (const tool of this.tools) {
-        if (tool.enabled) {
-          tool.cleanup();
-        }
-      }
-    },
-    selectPanel(index) {
-      if (typeof index !== "number") {
-        index = this.tools.indexOf(index);
-      }
-      if (index === activePanel) {
-        return;
-      }
-      activePanel = index;
-      for (const [j, tool] of this.tools.entries()) {
-        const isActive = j === index;
-        buttons[j].classList.toggle("active", isActive);
-        tool.active = isActive;
-        tool.panel.hidden = !isActive;
-      }
-    },
-  };
-})();
-
-globalThis.FontInspector = FontInspector;
-globalThis.StepperManager = StepperManager;
-globalThis.Stats = Stats;
-
-export { PDFBug };
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/lib/pdf/web/viewer.html</url>
-    <content><![CDATA[
-    <div id="outerContainer">
-
-      <div id="sidebarContainer">
-        <div id="toolbarSidebar">
-          <div id="toolbarSidebarLeft">
-            <div id="sidebarViewButtons" class="splitToolbarButton toggled" role="radiogroup">
-              <button id="viewThumbnail" class="toolbarButton toggled" title="Show Thumbnails" tabindex="2" data-l10n-id="thumbs" role="radio" aria-checked="true" aria-controls="thumbnailView">
-                 <span data-l10n-id="thumbs_label">Thumbnails</span>
-              </button>
-              <button id="viewOutline" class="toolbarButton" title="Show Document Outline (double-click to expand/collapse all items)" tabindex="3" data-l10n-id="document_outline" role="radio" aria-checked="false" aria-controls="outlineView">
-                 <span data-l10n-id="document_outline_label">Document Outline</span>
-              </button>
-              <button id="viewAttachments" class="toolbarButton" title="Show Attachments" tabindex="4" data-l10n-id="attachments" role="radio" aria-checked="false" aria-controls="attachmentsView">
-                 <span data-l10n-id="attachments_label">Attachments</span>
-              </button>
-              <button id="viewLayers" class="toolbarButton" title="Show Layers (double-click to reset all layers to the default state)" tabindex="5" data-l10n-id="layers" role="radio" aria-checked="false" aria-controls="layersView">
-                 <span data-l10n-id="layers_label">Layers</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="toolbarSidebarRight">
-            <div id="outlineOptionsContainer" class="hidden">
-              <div class="verticalToolbarSeparator"></div>
-
-              <button id="currentOutlineItem" class="toolbarButton" disabled="disabled" title="Find Current Outline Item" tabindex="6" data-l10n-id="current_outline_item">
-                <span data-l10n-id="current_outline_item_label">Current Outline Item</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div id="sidebarContent">
-          <div id="thumbnailView">
-          </div>
-          <div id="outlineView" class="hidden">
-          </div>
-          <div id="attachmentsView" class="hidden">
-          </div>
-          <div id="layersView" class="hidden">
-          </div>
-        </div>
-        <div id="sidebarResizer"></div>
-      </div>  <!-- sidebarContainer -->
-
-      <div id="mainContainer">
-        <div class="findbar hidden doorHanger" id="findbar">
-          <div id="findbarInputContainer">
-            <input id="findInput" class="toolbarField" title="Find" placeholder="Find in document…" tabindex="91" data-l10n-id="find_input" aria-invalid="false">
-            <div class="splitToolbarButton">
-              <button id="findPrevious" class="toolbarButton" title="Find the previous occurrence of the phrase" tabindex="92" data-l10n-id="find_previous">
-                <span data-l10n-id="find_previous_label">Previous</span>
-              </button>
-              <div class="splitToolbarButtonSeparator"></div>
-              <button id="findNext" class="toolbarButton" title="Find the next occurrence of the phrase" tabindex="93" data-l10n-id="find_next">
-                <span data-l10n-id="find_next_label">Next</span>
-              </button>
-            </div>
-          </div>
-
-          <div id="findbarOptionsOneContainer">
-            <input type="checkbox" id="findHighlightAll" class="toolbarField" tabindex="94">
-            <label for="findHighlightAll" class="toolbarLabel" data-l10n-id="find_highlight">Highlight All</label>
-            <input type="checkbox" id="findMatchCase" class="toolbarField" tabindex="95">
-            <label for="findMatchCase" class="toolbarLabel" data-l10n-id="find_match_case_label">Match Case</label>
-          </div>
-          <div id="findbarOptionsTwoContainer">
-            <input type="checkbox" id="findMatchDiacritics" class="toolbarField" tabindex="96">
-            <label for="findMatchDiacritics" class="toolbarLabel" data-l10n-id="find_match_diacritics_label">Match Diacritics</label>
-            <input type="checkbox" id="findEntireWord" class="toolbarField" tabindex="97">
-            <label for="findEntireWord" class="toolbarLabel" data-l10n-id="find_entire_word_label">Whole Words</label>
-          </div>
-
-          <div id="findbarMessageContainer" aria-live="polite">
-            <span id="findResultsCount" class="toolbarLabel"></span>
-            <span id="findMsg" class="toolbarLabel"></span>
-          </div>
-        </div>  <!-- findbar -->
-
-        <div class="editorParamsToolbar hidden doorHangerRight" id="editorFreeTextParamsToolbar">
-          <div class="editorParamsToolbarContainer">
-            <div class="editorParamsSetter">
-              <label for="editorFreeTextColor" class="editorParamsLabel" data-l10n-id="editor_free_text_color">Color</label>
-              <input type="color" id="editorFreeTextColor" class="editorParamsColor" tabindex="100">
-            </div>
-            <div class="editorParamsSetter">
-              <label for="editorFreeTextFontSize" class="editorParamsLabel" data-l10n-id="editor_free_text_size">Size</label>
-              <input type="range" id="editorFreeTextFontSize" class="editorParamsSlider" value="10" min="5" max="100" step="1" tabindex="101">
-            </div>
-          </div>
-        </div>
-
-        <div class="editorParamsToolbar hidden doorHangerRight" id="editorInkParamsToolbar">
-          <div class="editorParamsToolbarContainer">
-            <div class="editorParamsSetter">
-              <label for="editorInkColor" class="editorParamsLabel" data-l10n-id="editor_ink_color">Color</label>
-              <input type="color" id="editorInkColor" class="editorParamsColor" tabindex="102">
-            </div>
-            <div class="editorParamsSetter">
-              <label for="editorInkThickness" class="editorParamsLabel" data-l10n-id="editor_ink_thickness">Thickness</label>
-              <input type="range" id="editorInkThickness" class="editorParamsSlider" value="1" min="1" max="20" step="1" tabindex="103">
-            </div>
-            <div class="editorParamsSetter">
-              <label for="editorInkOpacity" class="editorParamsLabel" data-l10n-id="editor_ink_opacity">Opacity</label>
-              <input type="range" id="editorInkOpacity" class="editorParamsSlider" value="100" min="1" max="100" step="1" tabindex="104">
-            </div>
-          </div>
-        </div>
-
-        <div id="secondaryToolbar" class="secondaryToolbar hidden doorHangerRight">
-          <div id="secondaryToolbarButtonContainer">
-            <button id="secondaryOpenFile" class="secondaryToolbarButton visibleLargeView" title="Open File" tabindex="51" data-l10n-id="open_file">
-              <span data-l10n-id="open_file_label">Open</span>
-            </button>
-
-            <button id="secondaryPrint" class="secondaryToolbarButton visibleMediumView" title="Print" tabindex="52" data-l10n-id="print">
-              <span data-l10n-id="print_label">Print</span>
-            </button>
-
-            <button id="secondaryDownload" class="secondaryToolbarButton visibleMediumView" title="Download" tabindex="53" data-l10n-id="download">
-              <span data-l10n-id="download_label">Download</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator visibleLargeView"></div>
-
-            <button id="presentationMode" class="secondaryToolbarButton" title="Switch to Presentation Mode" tabindex="54" data-l10n-id="presentation_mode">
-              <span data-l10n-id="presentation_mode_label">Presentation Mode</span>
-            </button>
-
-            <a href="#" id="viewBookmark" class="secondaryToolbarButton" title="Current view (copy or open in new window)" tabindex="55" data-l10n-id="bookmark">
-              <span data-l10n-id="bookmark_label">Current View</span>
-            </a>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="firstPage" class="secondaryToolbarButton" title="Go to First Page" tabindex="56" data-l10n-id="first_page">
-              <span data-l10n-id="first_page_label">Go to First Page</span>
-            </button>
-            <button id="lastPage" class="secondaryToolbarButton" title="Go to Last Page" tabindex="57" data-l10n-id="last_page">
-              <span data-l10n-id="last_page_label">Go to Last Page</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="pageRotateCw" class="secondaryToolbarButton" title="Rotate Clockwise" tabindex="58" data-l10n-id="page_rotate_cw">
-              <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
-            </button>
-            <button id="pageRotateCcw" class="secondaryToolbarButton" title="Rotate Counterclockwise" tabindex="59" data-l10n-id="page_rotate_ccw">
-              <span data-l10n-id="page_rotate_ccw_label">Rotate Counterclockwise</span>
-            </button>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <div id="cursorToolButtons" role="radiogroup">
-              <button id="cursorSelectTool" class="secondaryToolbarButton toggled" title="Enable Text Selection Tool" tabindex="60" data-l10n-id="cursor_text_select_tool" role="radio" aria-checked="true">
-                <span data-l10n-id="cursor_text_select_tool_label">Text Selection Tool</span>
-              </button>
-              <button id="cursorHandTool" class="secondaryToolbarButton" title="Enable Hand Tool" tabindex="61" data-l10n-id="cursor_hand_tool" role="radio" aria-checked="false">
-                <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
-              </button>
-            </div>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <div id="scrollModeButtons" role="radiogroup">
-              <button id="scrollPage" class="secondaryToolbarButton" title="Use Page Scrolling" tabindex="62" data-l10n-id="scroll_page" role="radio" aria-checked="false">
-                <span data-l10n-id="scroll_page_label">Page Scrolling</span>
-              </button>
-              <button id="scrollVertical" class="secondaryToolbarButton toggled" title="Use Vertical Scrolling" tabindex="63" data-l10n-id="scroll_vertical" role="radio" aria-checked="true">
-                <span data-l10n-id="scroll_vertical_label">Vertical Scrolling</span>
-              </button>
-              <button id="scrollHorizontal" class="secondaryToolbarButton" title="Use Horizontal Scrolling" tabindex="64" data-l10n-id="scroll_horizontal" role="radio" aria-checked="false">
-                <span data-l10n-id="scroll_horizontal_label">Horizontal Scrolling</span>
-              </button>
-              <button id="scrollWrapped" class="secondaryToolbarButton" title="Use Wrapped Scrolling" tabindex="65" data-l10n-id="scroll_wrapped" role="radio" aria-checked="false">
-                <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
-              </button>
-            </div>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <div id="spreadModeButtons" role="radiogroup">
-              <button id="spreadNone" class="secondaryToolbarButton toggled" title="Do not join page spreads" tabindex="66" data-l10n-id="spread_none" role="radio" aria-checked="true">
-                <span data-l10n-id="spread_none_label">No Spreads</span>
-              </button>
-              <button id="spreadOdd" class="secondaryToolbarButton" title="Join page spreads starting with odd-numbered pages" tabindex="67" data-l10n-id="spread_odd" role="radio" aria-checked="false">
-                <span data-l10n-id="spread_odd_label">Odd Spreads</span>
-              </button>
-              <button id="spreadEven" class="secondaryToolbarButton" title="Join page spreads starting with even-numbered pages" tabindex="68" data-l10n-id="spread_even" role="radio" aria-checked="false">
-                <span data-l10n-id="spread_even_label">Even Spreads</span>
-              </button>
-            </div>
-
-            <div class="horizontalToolbarSeparator"></div>
-
-            <button id="documentProperties" class="secondaryToolbarButton" title="Document Properties…" tabindex="69" data-l10n-id="document_properties" aria-controls="documentPropertiesDialog">
-              <span data-l10n-id="document_properties_label">Document Properties…</span>
-            </button>
-          </div>
-        </div>  <!-- secondaryToolbar -->
-
-        <div class="toolbar">
-          <div id="toolbarContainer">
-            <div id="toolbarViewer">
-              <div id="toolbarViewerLeft">
-                <button id="sidebarToggle" class="toolbarButton" title="Toggle Sidebar" tabindex="11" data-l10n-id="toggle_sidebar" aria-expanded="false" aria-controls="sidebarContainer">
-                  <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
-                </button>
-                <div class="toolbarButtonSpacer"></div>
-                <button id="viewFind" class="toolbarButton" title="Find in Document" tabindex="12" data-l10n-id="findbar" aria-expanded="false" aria-controls="findbar">
-                  <span data-l10n-id="findbar_label">Find</span>
-                </button>
-                <div class="splitToolbarButton hiddenSmallView">
-                  <button class="toolbarButton" title="Previous Page" id="previous" tabindex="13" data-l10n-id="previous">
-                    <span data-l10n-id="previous_label">Previous</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button class="toolbarButton" title="Next Page" id="next" tabindex="14" data-l10n-id="next">
-                    <span data-l10n-id="next_label">Next</span>
-                  </button>
-                </div>
-                <input type="number" id="pageNumber" class="toolbarField" title="Page" value="1" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
-                <span id="numPages" class="toolbarLabel"></span>
-              </div>
-              <div id="toolbarViewerRight">
-                <button id="openFile" class="toolbarButton hiddenLargeView" title="Open File" tabindex="31" data-l10n-id="open_file">
-                  <span data-l10n-id="open_file_label">Open</span>
-                </button>
-
-                <button id="print" class="toolbarButton hiddenMediumView" title="Print" tabindex="32" data-l10n-id="print">
-                  <span data-l10n-id="print_label">Print</span>
-                </button>
-
-                <button id="download" class="toolbarButton hiddenMediumView" title="Download" tabindex="33" data-l10n-id="download">
-                  <span data-l10n-id="download_label">Download</span>
-                </button>
-
-                <div class="verticalToolbarSeparator hiddenMediumView"></div>
-
-                <div id="editorModeButtons" class="splitToolbarButton toggled" role="radiogroup">
-                  <button id="editorFreeText" class="toolbarButton" disabled="disabled" title="Text" role="radio" aria-checked="false" tabindex="34" data-l10n-id="editor_free_text2">
-                    <span data-l10n-id="editor_free_text2_label">Text</span>
-                  </button>
-                  <button id="editorInk" class="toolbarButton" disabled="disabled" title="Draw" role="radio" aria-checked="false" tabindex="35" data-l10n-id="editor_ink2">
-                    <span data-l10n-id="editor_ink2_label">Draw</span>
-                  </button>
-                </div>
-
-                <div id="editorModeSeparator" class="verticalToolbarSeparator"></div>
-
-                <button id="secondaryToolbarToggle" class="toolbarButton" title="Tools" tabindex="48" data-l10n-id="tools" aria-expanded="false" aria-controls="secondaryToolbar">
-                  <span data-l10n-id="tools_label">Tools</span>
-                </button>
-              </div>
-              <div id="toolbarViewerMiddle">
-                <div class="splitToolbarButton">
-                  <button id="zoomOut" class="toolbarButton" title="Zoom Out" tabindex="21" data-l10n-id="zoom_out">
-                    <span data-l10n-id="zoom_out_label">Zoom Out</span>
-                  </button>
-                  <div class="splitToolbarButtonSeparator"></div>
-                  <button id="zoomIn" class="toolbarButton" title="Zoom In" tabindex="22" data-l10n-id="zoom_in">
-                    <span data-l10n-id="zoom_in_label">Zoom In</span>
-                   </button>
-                </div>
-                <span id="scaleSelectContainer" class="dropdownToolbarButton">
-                  <select id="scaleSelect" title="Zoom" tabindex="23" data-l10n-id="zoom">
-                    <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
-                    <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
-                    <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Page Fit</option>
-                    <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Page Width</option>
-                    <option id="customScaleOption" title="" value="custom" disabled="disabled" hidden="true"></option>
-                    <option title="" value="0.5" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 50 }">50%</option>
-                    <option title="" value="0.75" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 75 }">75%</option>
-                    <option title="" value="1" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 100 }">100%</option>
-                    <option title="" value="1.25" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 125 }">125%</option>
-                    <option title="" value="1.5" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 150 }">150%</option>
-                    <option title="" value="2" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 200 }">200%</option>
-                    <option title="" value="3" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 300 }">300%</option>
-                    <option title="" value="4" data-l10n-id="page_scale_percent" data-l10n-args="{ &quot;scale&quot;: 400 }">400%</option>
-                  </select>
-                </span>
-              </div>
-            </div>
-            <div id="loadingBar">
-              <div class="progress">
-                <div class="glimmer">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="viewerContainer" tabindex="0">
-          <div id="viewer" class="pdfViewer"></div>
-        </div>
-      </div> <!-- mainContainer -->
-
-      <div id="dialogContainer">
-        <dialog id="passwordDialog">
-          <div class="row">
-            <label for="password" id="passwordText" data-l10n-id="password_label">Enter the password to open this PDF file:</label>
-          </div>
-          <div class="row">
-            <input type="password" id="password" class="toolbarField">
-          </div>
-          <div class="buttonRow">
-            <button id="passwordCancel" class="dialogButton"><span data-l10n-id="password_cancel">Cancel</span></button>
-            <button id="passwordSubmit" class="dialogButton"><span data-l10n-id="password_ok">OK</span></button>
-          </div>
-        </dialog>
-        <dialog id="documentPropertiesDialog">
-          <div class="row">
-            <span id="fileNameLabel" data-l10n-id="document_properties_file_name">File name:</span>
-            <p id="fileNameField" aria-labelledby="fileNameLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="fileSizeLabel" data-l10n-id="document_properties_file_size">File size:</span>
-            <p id="fileSizeField" aria-labelledby="fileSizeLabel">-</p>
-          </div>
-          <div class="separator"></div>
-          <div class="row">
-            <span id="titleLabel" data-l10n-id="document_properties_title">Title:</span>
-            <p id="titleField" aria-labelledby="titleLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="authorLabel" data-l10n-id="document_properties_author">Author:</span>
-            <p id="authorField" aria-labelledby="authorLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="subjectLabel" data-l10n-id="document_properties_subject">Subject:</span>
-            <p id="subjectField" aria-labelledby="subjectLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="keywordsLabel" data-l10n-id="document_properties_keywords">Keywords:</span>
-            <p id="keywordsField" aria-labelledby="keywordsLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="creationDateLabel" data-l10n-id="document_properties_creation_date">Creation Date:</span>
-            <p id="creationDateField" aria-labelledby="creationDateLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="modificationDateLabel" data-l10n-id="document_properties_modification_date">Modification Date:</span>
-            <p id="modificationDateField" aria-labelledby="modificationDateLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="creatorLabel" data-l10n-id="document_properties_creator">Creator:</span>
-            <p id="creatorField" aria-labelledby="creatorLabel">-</p>
-          </div>
-          <div class="separator"></div>
-          <div class="row">
-            <span id="producerLabel" data-l10n-id="document_properties_producer">PDF Producer:</span>
-            <p id="producerField" aria-labelledby="producerLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="versionLabel" data-l10n-id="document_properties_version">PDF Version:</span>
-            <p id="versionField" aria-labelledby="versionLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="pageCountLabel" data-l10n-id="document_properties_page_count">Page Count:</span>
-            <p id="pageCountField" aria-labelledby="pageCountLabel">-</p>
-          </div>
-          <div class="row">
-            <span id="pageSizeLabel" data-l10n-id="document_properties_page_size">Page Size:</span>
-            <p id="pageSizeField" aria-labelledby="pageSizeLabel">-</p>
-          </div>
-          <div class="separator"></div>
-          <div class="row">
-            <span id="linearizedLabel" data-l10n-id="document_properties_linearized">Fast Web View:</span>
-            <p id="linearizedField" aria-labelledby="linearizedLabel">-</p>
-          </div>
-          <div class="buttonRow">
-            <button id="documentPropertiesClose" class="dialogButton"><span data-l10n-id="document_properties_close">Close</span></button>
-          </div>
-        </dialog>
-        <dialog id="printServiceDialog" style="min-width: 200px;">
-          <div class="row">
-            <span data-l10n-id="print_progress_message">Preparing document for printing…</span>
-          </div>
-          <div class="row">
-            <progress value="0" max="100"></progress>
-            <span data-l10n-id="print_progress_percent" data-l10n-args="{ &quot;progress&quot;: 0 }" class="relative-progress">0%</span>
-          </div>
-          <div class="buttonRow">
-            <button id="printCancel" class="dialogButton"><span data-l10n-id="print_progress_close">Cancel</span></button>
-          </div>
-        </dialog>
-      </div>  <!-- dialogContainer -->
-
-    </div> <!-- outerContainer -->
-    <div id="printContainer"></div>
-
-    <input type="file" id="fileInput" class="hidden">
-  
-
 ]]></content>
   </entry>
   <entry>
