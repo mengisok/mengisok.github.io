@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2022.12 Summary</title>
+    <url>/2023/01/01/2022-12-Summary/</url>
+    <content><![CDATA[<p>This month was supposed to be the month of exams, so I dedicated my time to reviewing the three main lessons in school: Digital Signal Processing, Digital Image Analysis and Combinatorics. I made some notes (all in Chinese).</p>
+<h2 id="复习笔记">复习笔记</h2>
+<blockquote>
+<p><a href="https://mengisok.notion.site/eb6f54749fb7464f8809ed94ec4c821b">DSP笔记 on Notion</a> or <a href="https://github.com/mengisok/DSP-review">on GitHub</a> (有一些不太好的MATLAB代码)</p>
+<p><a href="https://drive.google.com/drive/folders/1KqNqF0UKM6n2ePmovORoTPofqJL-QBt6?usp=sharing">DIA笔记 on Google Drive</a> (更新中…)</p>
+<p><a href="https://drive.google.com/drive/folders/1-0-R1W7jvLb9YrgUj_J1PrmkrNPaY_OM?usp=sharing">组合数学笔记 on Google Drive</a> (更新中…)</p>
+</blockquote>
+<p>Another thing worth mentioning is that this month <a href="https://en.wikipedia.org/wiki/ChatGPT"><strong>ChatGPT</strong></a> <strong>went viral!</strong> I also tried it. It’s amazing I have to say. Here are some interesting or useful links I saw about ChatGPT.</p>
+<span id="more"></span>
+<h2 id="Awesome-ChatGPT">Awesome ChatGPT</h2>
+<blockquote>
+<p><a href="https://openai.com/blog/chatgpt/">Official Introduction</a></p>
+<p><a href="https://github.com/Kamigami55/awesome-chatgpt">awesome-chatgpt</a><br>
+There are many trending repos related to ChatGPT recently.</p>
+<p><a href="https://chat.bygpt.com/">中国大陆可用的ChatGPT</a></p>
+<p><a href="https://readdevdocs.com/blog/makemoney/%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%B3%A8%E5%86%8COpenAI%E8%B4%A6%E5%8F%B7%E8%AF%95%E7%94%A8ChatGPT%E6%8C%87%E5%8D%97.html#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87">中国区注册OpenAI账号试用ChatGPT指南</a></p>
+<p><a href="https://sms-activate.org/cn">在线接受短信的虚拟号码</a></p>
+<p><a href="https://www.douban.com/group/topic/279710957/?_i=705681524967510&amp;dt_dapp=1">ChatGPT初体验：感觉到AI的未来真的已经来了</a></p>
+<p><a href="https://mp.weixin.qq.com/s/rzCYgddvdvWwv71_M_sC-Q">上线3天，下载4万，ChatGPT中文版VSCode插件来了</a></p>
+<p><a href="https://mp.weixin.qq.com/s/5zThHhpzBmx4EUIMvMV-vQ">这篇罕见的符号编程论文，让你在Jupyter Notebook中手绘草图并变成代码</a></p>
+</blockquote>
+<h2 id="Other-Awesome-Links">Other Awesome Links</h2>
+<blockquote>
+<p><a href="http://tingtalk.me/telegram/">Telegram指南</a></p>
+<p><a href="https://oi-wiki.org/">oi-wiki.org</a><br>
+编程竞赛相关知识wiki。</p>
+<p><a href="https://ctf-wiki.org/">ctf-wiki.org</a><br>
+网络安全竞赛wiki。</p>
+<p><a href="https://www.summerschoolsineurope.eu/">summerschoolsineurope.eu</a><br>
+Information about summerschool in Europe.</p>
+<p><a href="http://fernwanderweg.blogspot.com/">fernwanderweg.blogspot.com</a><br>
+He used Google blogger to bulid a blog. Looks good.</p>
+<p><a href="https://hdlbits.01xz.net/wiki/Main_Page">Digital Logic Online Learning Site: HDLbit</a>, and <a href="https://github.com/viduraakalanka/HDL-Bits-Solutions">solutions</a> to learn Verilog.</p>
+<p><a href="https://ossinsight.io/">OSS Insight</a><br>
+Real-time trends and statistics for github.</p>
+<p><a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>
+You can get some certificates after learning? I love it~</p>
+<p><a href="https://roadmap.sh/">Developer Roadmaps</a><br>
+Role-based programmer growth guide.</p>
+<p><a href="https://seeing-theory.brown.edu/index.html">Statistics Visualization Learning Site</a><br>
+Learn statistics in a visual way. That’s very clear and easy to understand!</p>
+</blockquote>
+<p>The above three are several top repositories with the great number of stars on GitHub. I was surprised to find that <a href="https://github.com/996icu/996.ICU">996.icu</a> was in top 3 😂.</p>
+<h2 id="Languages">Languages</h2>
+<p>Unfortunately I didn’t take the IELTS 😞. I wasn’t ready… I’ll do it later!<br>
+As for learning Japanese, I dont’t use Duolinguo anymore since it’s a bit simple. I found some YouTube videos to watch and learn, like <a href="https://www.youtube.com/@deguchi">出口日語</a>.</p>
+<h2 id="Blog">Blog</h2>
+<p>I changed the theme of my blog from <a href="https://github.com/probberechts/hexo-theme-cactus"><strong>Cactus</strong></a> to <a href="https://github.com/cjquines/hexo-theme-ascent"><strong>Ascent</strong></a>. By the way, here’s <a href="https://github.com/stars/mengisok/lists/blog-themes">my stars list</a> about blog themes.<br>
+I tried to edit a theme to fit my purpose but failed. Frontend is so difficult!</p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+        <category>Monthly Summary</category>
+      </categories>
+      <tags>
+        <tag>Notes</tag>
+        <tag>Links</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Adaptive Filters</title>
     <url>/2022/11/19/Adaptive-Filters/</url>
     <content><![CDATA[<p>I watched a well-organized and concise youtube video titled <a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a>, which is also a basic course I am taking this semester. I focused on the key points in my course and made a bit of notes.</p>
@@ -723,6 +785,94 @@ $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$</li>
       </tags>
   </entry>
   <entry>
+    <title>My First LinkedIn Certificate!</title>
+    <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
+    <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
+<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> in your account settings to get a monthly free plan. Also you must use a <strong>visa</strong> credit card.)</p>
+<p>In a word, I had my first linkedin learning course:<br>
+<a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
+<span id="more"></span>
+<h2 id="Nice-course-span-class-emoji-alias-thumbsup-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f44d-png-v8-👍-span">Nice course <span class="emoji" alias="thumbsup" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8">👍</span></h2>
+<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br>
+<strong>Practical</strong>! The author introduced many useful websites for learning and developing.</p>
+<h2 id="What-I-have-learned">What I have learned</h2>
+<p><strong>Types of web development jobs</strong><br>
+For planning and prototyping:</p>
+<ul>
+<li>UX (User Experience)</li>
+<li>UI (User Interface)</li>
+</ul>
+<p>For coding and developing:</p>
+<ul>
+<li>Front-end Dev (Javascript, CSS, HTML; frameworks)</li>
+<li>Back-end Dev</li>
+</ul>
+<p><strong>Javascript, CSS, HTML</strong></p>
+<ul>
+<li>HTML identifies <strong>structural elements</strong>.</li>
+<li>CSS changes the <strong>appearance and style</strong>.</li>
+<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
+</ul>
+<p><strong>A little knowledge of Github</strong><br>
+That’s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I’ll hands on it lately.</p>
+<p><strong>No-code</strong><br>
+It’s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost – money? It’s limited anyway, especially when you know more and get greedy <span class="emoji" alias="smirk" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8">😏</span>.</p>
+<h2 id="Useful-tools">Useful tools</h2>
+<p>Prototying tools:</p>
+<ul>
+<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
+</ul>
+<p>Graphic design tools:</p>
+<ul>
+<li>Illustrator, Photoshop (professional)</li>
+<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)</li>
+<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
+</ul>
+<p>Coding editors:</p>
+<ul>
+<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)</li>
+<li><strong>VS Code</strong></li>
+<li><a href="https://atom.io/">Atom</a> (free, highly customizable)</li>
+<li><a href="https://brackets.io/">Brackets</a></li>
+</ul>
+<p>Web host:</p>
+<ul>
+<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
+</ul>
+<h2 id="No-code-tools">No-code tools</h2>
+<p>CMSs (Content Management System):</p>
+<ul>
+<li>Joomla!</li>
+<li>Drupal</li>
+<li><strong>Wordpress</strong></li>
+</ul>
+<p>Website buliders:</p>
+<ul>
+<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple)</li>
+<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
+</ul>
+<p>Databases:</p>
+<ul>
+<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a></li>
+<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
+</ul>
+<p>Apps:</p>
+<ul>
+<li><a href="https://bubble.io/">Bubble</a> (web)</li>
+<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)</li>
+<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
+</ul>
+<p>At last, here’s my certificate and I’d like to get more in the future 😻 ~</p>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> ]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Web Development</category>
+      </categories>
+      <tags>
+        <tag>Front-end</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/09/18/Hello_World/</url>
     <content><![CDATA[<p>I made it! 😃</p>
@@ -890,6 +1040,24 @@ That’s where I found the original template for my CV! I think put templates th
       </tags>
   </entry>
   <entry>
+    <title>October Summary</title>
+    <url>/2022/10/31/October-Summary/</url>
+    <content><![CDATA[<h2 id="Programming">Programming</h2>
+<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
+<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
+<span id="more"></span>
+<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
+<h2 id="Language">Language</h2>
+<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
+<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
+<p>Bye for now! It’s midnight.</p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+        <category>Monthly Summary</category>
+      </categories>
+  </entry>
+  <entry>
     <title>November Summary</title>
     <url>/2022/12/02/November-Summary/</url>
     <content><![CDATA[<h2 id="Leetcode">Leetcode</h2>
@@ -921,112 +1089,6 @@ That’s where I found the original template for my CV! I think put templates th
 <h2 id="Japanese">Japanese</h2>
 <p>Kept on learning Japanese on Duolinguo for <strong>42 days</strong>.</p>
 <p>I found out that there were only two Japanese language tests in China, JLPT and JTEST. JLPT is held only two times every year, and it’s often cancelled. JTEST is held more frequently, but it’s not as highly acknowledged as JLPT so I’m hesitant to prepare for it.</p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-        <category>Monthly Summary</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>My First LinkedIn Certificate!</title>
-    <url>/2022/11/11/Got-my-first-LinkedIn-certificate/</url>
-    <content><![CDATA[<p>Yeah I got it 😆! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera’s free plan is a week, while linkedin’s is a month so I chose the latter.</p>
-<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> in your account settings to get a monthly free plan. Also you must use a <strong>visa</strong> credit card.)</p>
-<p>In a word, I had my first linkedin learning course:<br>
-<a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
-<span id="more"></span>
-<h2 id="Nice-course-span-class-emoji-alias-thumbsup-style-fallback-src-https-github-githubassets-com-images-icons-emoji-unicode-1f44d-png-v8-👍-span">Nice course <span class="emoji" alias="thumbsup" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png?v8">👍</span></h2>
-<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br>
-<strong>Practical</strong>! The author introduced many useful websites for learning and developing.</p>
-<h2 id="What-I-have-learned">What I have learned</h2>
-<p><strong>Types of web development jobs</strong><br>
-For planning and prototyping:</p>
-<ul>
-<li>UX (User Experience)</li>
-<li>UI (User Interface)</li>
-</ul>
-<p>For coding and developing:</p>
-<ul>
-<li>Front-end Dev (Javascript, CSS, HTML; frameworks)</li>
-<li>Back-end Dev</li>
-</ul>
-<p><strong>Javascript, CSS, HTML</strong></p>
-<ul>
-<li>HTML identifies <strong>structural elements</strong>.</li>
-<li>CSS changes the <strong>appearance and style</strong>.</li>
-<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
-</ul>
-<p><strong>A little knowledge of Github</strong><br>
-That’s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I’ll hands on it lately.</p>
-<p><strong>No-code</strong><br>
-It’s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost – money? It’s limited anyway, especially when you know more and get greedy <span class="emoji" alias="smirk" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f60f.png?v8">😏</span>.</p>
-<h2 id="Useful-tools">Useful tools</h2>
-<p>Prototying tools:</p>
-<ul>
-<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
-</ul>
-<p>Graphic design tools:</p>
-<ul>
-<li>Illustrator, Photoshop (professional)</li>
-<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)</li>
-<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
-</ul>
-<p>Coding editors:</p>
-<ul>
-<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)</li>
-<li><strong>VS Code</strong></li>
-<li><a href="https://atom.io/">Atom</a> (free, highly customizable)</li>
-<li><a href="https://brackets.io/">Brackets</a></li>
-</ul>
-<p>Web host:</p>
-<ul>
-<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
-</ul>
-<h2 id="No-code-tools">No-code tools</h2>
-<p>CMSs (Content Management System):</p>
-<ul>
-<li>Joomla!</li>
-<li>Drupal</li>
-<li><strong>Wordpress</strong></li>
-</ul>
-<p>Website buliders:</p>
-<ul>
-<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple)</li>
-<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
-</ul>
-<p>Databases:</p>
-<ul>
-<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a></li>
-<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
-</ul>
-<p>Apps:</p>
-<ul>
-<li><a href="https://bubble.io/">Bubble</a> (web)</li>
-<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)</li>
-<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
-</ul>
-<p>At last, here’s my certificate and I’d like to get more in the future 😻 ~</p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> ]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Web Development</category>
-      </categories>
-      <tags>
-        <tag>Front-end</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>October Summary</title>
-    <url>/2022/10/31/October-Summary/</url>
-    <content><![CDATA[<h2 id="Programming">Programming</h2>
-<p>I finished 27 problems on <strong>Leetcode</strong> till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I’m still doing arrays? I can’t wait to deal with something new.</p>
-<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, including HW 01, HW 02, Lab 00, Lab 01, and I’m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
-<span id="more"></span>
-<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng’s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 Inference: making predictions. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <em>Hands on Machine Learning</em>. That’s nice, and more codes and more difficult that the videos. However, I still didn’t understand ML well. It seems easy but to do it is really hard🤯. The good news was that I made a python program this afternoon finally… Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data…</p>
-<h2 id="Language">Language</h2>
-<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section “Briefing”. The gorgeous proses impressed me. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
-<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn’t know Japanese had tenses too.</p>
-<p>Bye for now! It’s midnight.</p>
 ]]></content>
       <categories>
         <category>Summary</category>
@@ -1427,11 +1489,6 @@ Congrats to myself and keep it up! 💪🏻</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>About</title>
     <url>/about/index.html</url>
     <content><![CDATA[<img src="/images/bin_cat.png" alt="bin_cat" title="bin_cat" width="350">  
@@ -1442,10 +1499,9 @@ I’m currently studying for my master’s degree, majoring in Electronics.</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Schedule</title>
-    <url>/schedule/index.html</url>
-    <content><![CDATA[<p>Test.</p>
-]]></content>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Codes</title>
@@ -1454,9 +1510,10 @@ I’m currently studying for my master’s degree, majoring in Electronics.</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
+    <title>Schedule</title>
+    <url>/schedule/index.html</url>
+    <content><![CDATA[<p>Test.</p>
+]]></content>
   </entry>
   <entry>
     <title>Sitemap</title>
@@ -1471,6 +1528,11 @@ I’m currently studying for my master’s degree, majoring in Electronics.</p>
 <li><a href="https://simplestark.com/archives/%E7%BB%8F%E9%AA%8C%E5%AE%9D%E5%AE%9Dfailedtoconnecttogithubcomport443operationtimedout">Failed to connect to github.com port 443</a></li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title></title>
