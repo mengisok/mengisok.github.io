@@ -1,13 +1,13 @@
 /* Copyright 2014 Mozilla Foundation
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -39,7 +39,7 @@
 }
 
 /* Only necessary in Google Chrome, see issue 14205, and most unfortunately
- * the problem doesn't show up in "text" reference tests. */
+ * the problem doesn&apos;t show up in &quot;text&quot; reference tests. */
 .textLayer span.markedContent {
   top: 0;
   height: 0;
@@ -110,7 +110,7 @@
 
 
 :root {
-  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width="1px" height="1px" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" style="fill:rgba(0, 54, 255, 0.13);"></rect></svg>");
+  --annotation-unfocused-field-background: url(&quot;data:image/svg+xml;charset=UTF-8,<svg width="1px" height="1px" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" style="fill:rgba(0, 54, 255, 0.13);"/></svg>&quot;);
   --input-focus-border-color: Highlight;
   --input-focus-outline: 1px solid Canvas;
   --input-unfocused-border-color: transparent;
@@ -268,7 +268,7 @@
 .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:after,
 .annotationLayer .buttonWidgetAnnotation.radioButton input:checked:before {
   background-color: CanvasText;
-  content: "";
+  content: &quot;&quot;;
   display: block;
   position: absolute;
 }
@@ -414,7 +414,7 @@
 
 
 :root {
-  --xfa-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width="1px" height="1px" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" style="fill:rgba(0, 54, 255, 0.13);"></rect></svg>");
+  --xfa-unfocused-field-background: url(&quot;data:image/svg+xml;charset=UTF-8,<svg width="1px" height="1px" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" style="fill:rgba(0, 54, 255, 0.13);"/></svg>&quot;);
   --xfa-focus-outline: auto;
 }
 
@@ -751,7 +751,7 @@
        -moz-appearance: none;
             appearance: none;
     text-indent: 1px;
-    text-overflow: "";
+    text-overflow: &quot;&quot;;
   }
 }
 
@@ -773,13 +773,13 @@
   }
 }
 
-[data-editor-rotation="90"] {
+[data-editor-rotation=&quot;90&quot;] {
   transform: rotate(90deg);
 }
-[data-editor-rotation="180"] {
+[data-editor-rotation=&quot;180&quot;] {
   transform: rotate(180deg);
 }
-[data-editor-rotation="270"] {
+[data-editor-rotation=&quot;270&quot;] {
   transform: rotate(270deg);
 }
 
@@ -915,13 +915,13 @@
   }
 }
 
-[data-main-rotation="90"] {
+[data-main-rotation=&quot;90&quot;] {
   transform: rotate(90deg) translateY(-100%);
 }
-[data-main-rotation="180"] {
+[data-main-rotation=&quot;180&quot;] {
   transform: rotate(180deg) translate(-100%, -100%);
 }
-[data-main-rotation="270"] {
+[data-main-rotation=&quot;270&quot;] {
   transform: rotate(270deg) translateX(-100%);
 }
 
@@ -1027,7 +1027,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: url("images/loading-icon.gif") center no-repeat;
+  background: url(&quot;images/loading-icon.gif&quot;) center no-repeat;
 }
 .pdfViewer .page .loadingIcon.notVisible {
   background: none;
@@ -1150,7 +1150,7 @@
   --secondaryToolbarButton-documentProperties-icon: url(images/secondaryToolbarButton-documentProperties.svg);
 }
 
-[dir="rtl"]:root {
+[dir=&quot;rtl&quot;]:root {
   --dir-factor: -1;
 }
 
@@ -1193,7 +1193,7 @@
     --dialog-button-hover-bg-color: rgba(115, 115, 115, 1);
 
     /* This image is used in <input> elements, which unfortunately means that
-     * the `mask-image` approach used with all of the other images doesn't work
+     * the `mask-image` approach used with all of the other images doesn&apos;t work
      * here; hence why we still have two versions of this particular image. */
     --loading-icon: url(images/loading-dark.svg);
   }
@@ -1298,27 +1298,27 @@ body {
   position: relative;
 }
 
-[dir="ltr"] #sidebarContainer {
+[dir=&quot;ltr&quot;] #sidebarContainer {
   left: calc(-1 * var(--sidebar-width));
 }
 
-[dir="rtl"] #sidebarContainer {
+[dir=&quot;rtl&quot;] #sidebarContainer {
   right: calc(-1 * var(--sidebar-width));
 }
 
-[dir="ltr"] #sidebarContainer {
+[dir=&quot;ltr&quot;] #sidebarContainer {
   border-right: var(--doorhanger-border-color-whcm);
 }
 
-[dir="rtl"] #sidebarContainer {
+[dir=&quot;rtl&quot;] #sidebarContainer {
   border-left: var(--doorhanger-border-color-whcm);
 }
 
-[dir="ltr"] #sidebarContainer {
+[dir=&quot;ltr&quot;] #sidebarContainer {
   transition-property: left;
 }
 
-[dir="rtl"] #sidebarContainer {
+[dir=&quot;rtl&quot;] #sidebarContainer {
   transition-property: right;
 }
 
@@ -1343,10 +1343,10 @@ body {
 #outerContainer.sidebarOpen #sidebarContainer {
   visibility: visible;
 }
-[dir="ltr"] #outerContainer.sidebarOpen #sidebarContainer {
+[dir=&quot;ltr&quot;] #outerContainer.sidebarOpen #sidebarContainer {
   left: 0;
 }
-[dir="rtl"] #outerContainer.sidebarOpen #sidebarContainer {
+[dir=&quot;rtl&quot;] #outerContainer.sidebarOpen #sidebarContainer {
   right: 0;
 }
 #outerContainer.sidebarOpen #sidebarContainer {
@@ -1362,11 +1362,11 @@ body {
   min-width: 350px;
 }
 
-[dir="ltr"] #sidebarContent {
+[dir=&quot;ltr&quot;] #sidebarContent {
   left: 0;
 }
 
-[dir="rtl"] #sidebarContent {
+[dir=&quot;rtl&quot;] #sidebarContent {
   right: 0;
 }
 
@@ -1395,19 +1395,19 @@ body {
   transition-timing-function: var(--sidebar-transition-timing-function);
 }
 
-[dir="ltr"] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentationMode) {
+[dir=&quot;ltr&quot;] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentationMode) {
   left: var(--sidebar-width);
 }
 
-[dir="rtl"] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentationMode) {
+[dir=&quot;rtl&quot;] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentationMode) {
   right: var(--sidebar-width);
 }
 
-[dir="ltr"] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentationMode) {
+[dir=&quot;ltr&quot;] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentationMode) {
   transition-property: left;
 }
 
-[dir="rtl"] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentationMode) {
+[dir=&quot;rtl&quot;] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentationMode) {
   transition-property: right;
 }
 
@@ -1456,11 +1456,11 @@ body {
   border-bottom: var(--toolbarSidebar-border-bottom);
 }
 
-[dir="ltr"] #sidebarResizer {
+[dir=&quot;ltr&quot;] #sidebarResizer {
   right: -6px;
 }
 
-[dir="rtl"] #sidebarResizer {
+[dir=&quot;rtl&quot;] #sidebarResizer {
   left: -6px;
 }
 
@@ -1489,21 +1489,21 @@ body {
   height: 32px;
 }
 
-[dir="ltr"] #loadingBar {
+[dir=&quot;ltr&quot;] #loadingBar {
   left: 0;
   right: var(--progressBar-end-offset);
 }
 
-[dir="rtl"] #loadingBar {
+[dir=&quot;rtl&quot;] #loadingBar {
   right: 0;
   left: var(--progressBar-end-offset);
 }
 
-[dir="ltr"] #loadingBar {
+[dir=&quot;ltr&quot;] #loadingBar {
   transition-property: left;
 }
 
-[dir="rtl"] #loadingBar {
+[dir=&quot;rtl&quot;] #loadingBar {
   transition-property: right;
 }
 
@@ -1518,11 +1518,11 @@ body {
   transition-timing-function: var(--sidebar-transition-timing-function);
 }
 
-[dir="ltr"] #outerContainer.sidebarOpen #loadingBar {
+[dir=&quot;ltr&quot;] #outerContainer.sidebarOpen #loadingBar {
   left: var(--sidebar-width);
 }
 
-[dir="rtl"] #outerContainer.sidebarOpen #loadingBar {
+[dir=&quot;rtl&quot;] #outerContainer.sidebarOpen #loadingBar {
   right: var(--sidebar-width);
 }
 
@@ -1599,11 +1599,11 @@ body {
   cursor: default;
 }
 
-[dir="ltr"] .findbar {
+[dir=&quot;ltr&quot;] .findbar {
   left: 64px;
 }
 
-[dir="rtl"] .findbar {
+[dir=&quot;rtl&quot;] .findbar {
   right: 64px;
 }
 
@@ -1615,10 +1615,10 @@ body {
 .findbar &gt; div {
   height: 32px;
 }
-[dir="ltr"] .findbar &gt; div#findbarInputContainer {
+[dir=&quot;ltr&quot;] .findbar &gt; div#findbarInputContainer {
   margin-right: 4px;
 }
-[dir="rtl"] .findbar &gt; div#findbarInputContainer {
+[dir=&quot;rtl&quot;] .findbar &gt; div#findbarInputContainer {
   margin-left: 4px;
 }
 .findbar &gt; div#findbarInputContainer {
@@ -1633,7 +1633,7 @@ body {
   height: auto;
 }
 
-.findbar input[type="checkbox"] {
+.findbar input[type=&quot;checkbox&quot;] {
   pointer-events: none;
 }
 
@@ -1649,7 +1649,7 @@ body {
   background-color: var(--button-hover-color);
 }
 
-.findbar .toolbarField[type="checkbox"]:checked + .toolbarLabel {
+.findbar .toolbarField[type=&quot;checkbox&quot;]:checked + .toolbarLabel {
   background-color: var(--toggled-btn-bg-color) !important;
   color: var(--toggled-btn-color);
 }
@@ -1663,21 +1663,21 @@ body {
 #findInput::placeholder {
   font-style: normal;
 }
-#findInput[data-status="pending"] {
+#findInput[data-status=&quot;pending&quot;] {
   background-image: var(--loading-icon);
   background-repeat: no-repeat;
   background-position: calc(50% + 48% * var(--dir-factor));
 }
-#findInput[data-status="notFound"] {
+#findInput[data-status=&quot;notFound&quot;] {
   background-color: rgba(255, 102, 102, 1);
 }
 
-[dir="ltr"] .secondaryToolbar,[dir="ltr"] 
+[dir=&quot;ltr&quot;] .secondaryToolbar,[dir=&quot;ltr&quot;] 
 .editorParamsToolbar {
   right: 4px;
 }
 
-[dir="rtl"] .secondaryToolbar,[dir="rtl"] 
+[dir=&quot;rtl&quot;] .secondaryToolbar,[dir=&quot;rtl&quot;] 
 .editorParamsToolbar {
   left: 4px;
 }
@@ -1705,11 +1705,11 @@ body {
   padding-inline: 10px;
 }
 
-[dir="ltr"] .editorParamsToolbarContainer .editorParamsLabel {
+[dir=&quot;ltr&quot;] .editorParamsToolbarContainer .editorParamsLabel {
   padding-right: 10px;
 }
 
-[dir="rtl"] .editorParamsToolbarContainer .editorParamsLabel {
+[dir=&quot;rtl&quot;] .editorParamsToolbarContainer .editorParamsLabel {
   padding-left: 10px;
 }
 
@@ -1754,11 +1754,11 @@ body {
   margin-bottom: -4px;
 }
 
-[dir="ltr"] #editorInkParamsToolbar {
+[dir=&quot;ltr&quot;] #editorInkParamsToolbar {
   right: 40px;
 }
 
-[dir="rtl"] #editorInkParamsToolbar {
+[dir=&quot;rtl&quot;] #editorInkParamsToolbar {
   left: 40px;
 }
 
@@ -1767,11 +1767,11 @@ body {
   background-color: var(--toolbar-bg-color);
 }
 
-[dir="ltr"] #editorFreeTextParamsToolbar {
+[dir=&quot;ltr&quot;] #editorFreeTextParamsToolbar {
   right: 68px;
 }
 
-[dir="rtl"] #editorFreeTextParamsToolbar {
+[dir=&quot;rtl&quot;] #editorFreeTextParamsToolbar {
   left: 68px;
 }
 
@@ -1793,23 +1793,23 @@ body {
 .doorHangerRight:before {
   bottom: 100%;
   border: 8px solid rgba(0, 0, 0, 0);
-  content: " ";
+  content: &quot; &quot;;
   height: 0;
   width: 0;
   position: absolute;
   pointer-events: none;
   opacity: var(--doorhanger-triangle-opacity-whcm);
 }
-[dir="ltr"] .doorHanger:after {
+[dir=&quot;ltr&quot;] .doorHanger:after {
   left: 10px;
 }
-[dir="rtl"] .doorHanger:after {
+[dir=&quot;rtl&quot;] .doorHanger:after {
   right: 10px;
 }
-[dir="ltr"] .doorHanger:after {
+[dir=&quot;ltr&quot;] .doorHanger:after {
   margin-left: -8px;
 }
-[dir="rtl"] .doorHanger:after {
+[dir=&quot;rtl&quot;] .doorHanger:after {
   margin-right: -8px;
 }
 .doorHanger:after {
@@ -1818,16 +1818,16 @@ body {
           margin-inline-start: -8px;
   border-bottom-color: var(--toolbar-bg-color);
 }
-[dir="ltr"] .doorHangerRight:after {
+[dir=&quot;ltr&quot;] .doorHangerRight:after {
   right: 10px;
 }
-[dir="rtl"] .doorHangerRight:after {
+[dir=&quot;rtl&quot;] .doorHangerRight:after {
   left: 10px;
 }
-[dir="ltr"] .doorHangerRight:after {
+[dir=&quot;ltr&quot;] .doorHangerRight:after {
   margin-right: -8px;
 }
-[dir="rtl"] .doorHangerRight:after {
+[dir=&quot;rtl&quot;] .doorHangerRight:after {
   margin-left: -8px;
 }
 .doorHangerRight:after {
@@ -1841,16 +1841,16 @@ body {
   border-bottom-color: var(--doorhanger-border-color);
   border-width: 9px;
 }
-[dir="ltr"] .doorHanger:before {
+[dir=&quot;ltr&quot;] .doorHanger:before {
   left: 10px;
 }
-[dir="rtl"] .doorHanger:before {
+[dir=&quot;rtl&quot;] .doorHanger:before {
   right: 10px;
 }
-[dir="ltr"] .doorHanger:before {
+[dir=&quot;ltr&quot;] .doorHanger:before {
   margin-left: -9px;
 }
-[dir="rtl"] .doorHanger:before {
+[dir=&quot;rtl&quot;] .doorHanger:before {
   margin-right: -9px;
 }
 .doorHanger:before {
@@ -1858,16 +1858,16 @@ body {
   -webkit-margin-start: -9px;
           margin-inline-start: -9px;
 }
-[dir="ltr"] .doorHangerRight:before {
+[dir=&quot;ltr&quot;] .doorHangerRight:before {
   right: 10px;
 }
-[dir="rtl"] .doorHangerRight:before {
+[dir=&quot;rtl&quot;] .doorHangerRight:before {
   left: 10px;
 }
-[dir="ltr"] .doorHangerRight:before {
+[dir=&quot;ltr&quot;] .doorHangerRight:before {
   margin-right: -9px;
 }
-[dir="rtl"] .doorHangerRight:before {
+[dir=&quot;rtl&quot;] .doorHangerRight:before {
   margin-left: -9px;
 }
 .doorHangerRight:before {
@@ -1899,12 +1899,12 @@ body {
   transform: translateX(-50%);
 }
 
-[dir="ltr"] #toolbarViewerLeft,[dir="ltr"] 
+[dir=&quot;ltr&quot;] #toolbarViewerLeft,[dir=&quot;ltr&quot;] 
 #toolbarSidebarLeft {
   float: left;
 }
 
-[dir="rtl"] #toolbarViewerLeft,[dir="rtl"] 
+[dir=&quot;rtl&quot;] #toolbarViewerLeft,[dir=&quot;rtl&quot;] 
 #toolbarSidebarLeft {
   float: right;
 }
@@ -1913,11 +1913,11 @@ body {
 #toolbarSidebarLeft {
   float: inline-start;
 }
-[dir="ltr"] #toolbarViewerRight,[dir="ltr"] 
+[dir=&quot;ltr&quot;] #toolbarViewerRight,[dir=&quot;ltr&quot;] 
 #toolbarSidebarRight {
   float: right;
 }
-[dir="rtl"] #toolbarViewerRight,[dir="rtl"] 
+[dir=&quot;rtl&quot;] #toolbarViewerRight,[dir=&quot;rtl&quot;] 
 #toolbarSidebarRight {
   float: left;
 }
@@ -1926,20 +1926,20 @@ body {
   float: inline-end;
 }
 
-[dir="ltr"] #toolbarViewerLeft &gt; *,[dir="ltr"] 
-#toolbarViewerMiddle &gt; *,[dir="ltr"] 
-#toolbarViewerRight &gt; *,[dir="ltr"] 
-#toolbarSidebarLeft *,[dir="ltr"] 
-#toolbarSidebarRight *,[dir="ltr"] 
+[dir=&quot;ltr&quot;] #toolbarViewerLeft &gt; *,[dir=&quot;ltr&quot;] 
+#toolbarViewerMiddle &gt; *,[dir=&quot;ltr&quot;] 
+#toolbarViewerRight &gt; *,[dir=&quot;ltr&quot;] 
+#toolbarSidebarLeft *,[dir=&quot;ltr&quot;] 
+#toolbarSidebarRight *,[dir=&quot;ltr&quot;] 
 .findbar * {
   float: left;
 }
 
-[dir="rtl"] #toolbarViewerLeft &gt; *,[dir="rtl"] 
-#toolbarViewerMiddle &gt; *,[dir="rtl"] 
-#toolbarViewerRight &gt; *,[dir="rtl"] 
-#toolbarSidebarLeft *,[dir="rtl"] 
-#toolbarSidebarRight *,[dir="rtl"] 
+[dir=&quot;rtl&quot;] #toolbarViewerLeft &gt; *,[dir=&quot;rtl&quot;] 
+#toolbarViewerMiddle &gt; *,[dir=&quot;rtl&quot;] 
+#toolbarViewerRight &gt; *,[dir=&quot;rtl&quot;] 
+#toolbarSidebarLeft *,[dir=&quot;rtl&quot;] 
+#toolbarSidebarRight *,[dir=&quot;rtl&quot;] 
 .findbar * {
   float: right;
 }
@@ -1954,11 +1954,11 @@ body {
   float: inline-start;
 }
 
-[dir="ltr"] #toolbarViewerLeft {
+[dir=&quot;ltr&quot;] #toolbarViewerLeft {
   padding-left: 1px;
 }
 
-[dir="rtl"] #toolbarViewerLeft {
+[dir=&quot;rtl&quot;] #toolbarViewerLeft {
   padding-right: 1px;
 }
 
@@ -1966,20 +1966,20 @@ body {
   -webkit-padding-start: 1px;
           padding-inline-start: 1px;
 }
-[dir="ltr"] #toolbarViewerRight {
+[dir=&quot;ltr&quot;] #toolbarViewerRight {
   padding-right: 1px;
 }
-[dir="rtl"] #toolbarViewerRight {
+[dir=&quot;rtl&quot;] #toolbarViewerRight {
   padding-left: 1px;
 }
 #toolbarViewerRight {
   -webkit-padding-end: 1px;
           padding-inline-end: 1px;
 }
-[dir="ltr"] #toolbarSidebarRight {
+[dir=&quot;ltr&quot;] #toolbarSidebarRight {
   padding-right: 2px;
 }
-[dir="rtl"] #toolbarSidebarRight {
+[dir=&quot;rtl&quot;] #toolbarSidebarRight {
   padding-left: 2px;
 }
 #toolbarSidebarRight {
@@ -1991,10 +1991,10 @@ body {
   margin: 2px;
   display: inline-block;
 }
-[dir="ltr"] .splitToolbarButton &gt; .toolbarButton {
+[dir=&quot;ltr&quot;] .splitToolbarButton &gt; .toolbarButton {
   float: left;
 }
-[dir="rtl"] .splitToolbarButton &gt; .toolbarButton {
+[dir=&quot;rtl&quot;] .splitToolbarButton &gt; .toolbarButton {
   float: right;
 }
 .splitToolbarButton &gt; .toolbarButton {
@@ -2043,10 +2043,10 @@ body {
   position: relative;
   margin: 0;
 }
-[dir="ltr"] #toolbarSidebar .splitToolbarButton &gt; .toolbarButton {
+[dir=&quot;ltr&quot;] #toolbarSidebar .splitToolbarButton &gt; .toolbarButton {
   margin-right: 2px;
 }
-[dir="rtl"] #toolbarSidebar .splitToolbarButton &gt; .toolbarButton {
+[dir=&quot;rtl&quot;] #toolbarSidebar .splitToolbarButton &gt; .toolbarButton {
   margin-left: 2px;
 }
 #toolbarSidebar .splitToolbarButton &gt; .toolbarButton {
@@ -2054,11 +2054,11 @@ body {
           margin-inline-end: 2px;
 }
 
-[dir="ltr"] .splitToolbarButtonSeparator {
+[dir=&quot;ltr&quot;] .splitToolbarButtonSeparator {
   float: left;
 }
 
-[dir="rtl"] .splitToolbarButtonSeparator {
+[dir=&quot;rtl&quot;] .splitToolbarButtonSeparator {
   float: right;
 }
 
@@ -2123,10 +2123,10 @@ body {
   background-color: var(--dropdown-btn-bg-color);
   border: var(--dropdown-btn-border);
 }
-[dir="ltr"] .dropdownToolbarButton::after {
+[dir=&quot;ltr&quot;] .dropdownToolbarButton::after {
   right: 6px;
 }
-[dir="rtl"] .dropdownToolbarButton::after {
+[dir=&quot;rtl&quot;] .dropdownToolbarButton::after {
   left: 6px;
 }
 .dropdownToolbarButton::after {
@@ -2137,11 +2137,11 @@ body {
           mask-image: var(--toolbarButton-menuArrow-icon);
 }
 
-[dir="ltr"] .dropdownToolbarButton &gt; select {
+[dir=&quot;ltr&quot;] .dropdownToolbarButton &gt; select {
   padding-left: 6px;
 }
 
-[dir="rtl"] .dropdownToolbarButton &gt; select {
+[dir=&quot;rtl&quot;] .dropdownToolbarButton &gt; select {
   padding-right: 6px;
 }
 
@@ -2187,7 +2187,7 @@ body {
   width: 16px;
   height: 16px;
 
-  content: "";
+  content: &quot;&quot;;
   background-color: var(--toolbar-icon-bg-color);
   -webkit-mask-size: cover;
           mask-size: cover;
@@ -2212,11 +2212,11 @@ body {
   background-color: var(--toolbar-icon-hover-bg-color);
 }
 
-[dir="ltr"] .secondaryToolbarButton::before {
+[dir=&quot;ltr&quot;] .secondaryToolbarButton::before {
   left: 12px;
 }
 
-[dir="rtl"] .secondaryToolbarButton::before {
+[dir=&quot;rtl&quot;] .secondaryToolbarButton::before {
   right: 12px;
 }
 
@@ -2305,8 +2305,8 @@ a.secondaryToolbarButton {
   padding-top: 6px;
   text-decoration: none;
 }
-a.toolbarButton[href="#"],
-a.secondaryToolbarButton[href="#"] {
+a.toolbarButton[href=&quot;#&quot;],
+a.secondaryToolbarButton[href=&quot;#&quot;] {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -2348,11 +2348,11 @@ a.secondaryToolbarButton[href="#"] {
           mask-image: var(--toolbarButton-search-icon);
 }
 
-[dir="ltr"] .pdfSidebarNotification::after {
+[dir=&quot;ltr&quot;] .pdfSidebarNotification::after {
   right: 2px;
 }
 
-[dir="rtl"] .pdfSidebarNotification::after {
+[dir=&quot;rtl&quot;] .pdfSidebarNotification::after {
   left: 2px;
 }
 
@@ -2362,26 +2362,26 @@ a.secondaryToolbarButton[href="#"] {
   top: 2px;
   inset-inline-end: 2px;
   /* Create a filled circle, with a diameter of 9 pixels, using only CSS: */
-  content: "";
+  content: &quot;&quot;;
   background-color: rgba(112, 219, 85, 1);
   height: 9px;
   width: 9px;
   border-radius: 50%;
 }
 
-[dir="ltr"] .secondaryToolbarButton {
+[dir=&quot;ltr&quot;] .secondaryToolbarButton {
   padding-left: 36px;
 }
 
-[dir="rtl"] .secondaryToolbarButton {
+[dir=&quot;rtl&quot;] .secondaryToolbarButton {
   padding-right: 36px;
 }
 
-[dir="ltr"] .secondaryToolbarButton {
+[dir=&quot;ltr&quot;] .secondaryToolbarButton {
   text-align: left;
 }
 
-[dir="rtl"] .secondaryToolbarButton {
+[dir=&quot;rtl&quot;] .secondaryToolbarButton {
   text-align: right;
 }
 
@@ -2401,10 +2401,10 @@ a.secondaryToolbarButton[href="#"] {
   box-sizing: border-box;
   display: inline-block;
 }
-[dir="ltr"] .secondaryToolbarButton &gt; span {
+[dir=&quot;ltr&quot;] .secondaryToolbarButton &gt; span {
   padding-right: 4px;
 }
-[dir="rtl"] .secondaryToolbarButton &gt; span {
+[dir=&quot;rtl&quot;] .secondaryToolbarButton &gt; span {
   padding-left: 4px;
 }
 .secondaryToolbarButton &gt; span {
@@ -2511,15 +2511,15 @@ a.secondaryToolbarButton[href="#"] {
   outline: none;
 }
 
-[dir="ltr"] .toolbarField[type="checkbox"] {
+[dir=&quot;ltr&quot;] .toolbarField[type=&quot;checkbox&quot;] {
   margin-left: 7px;
 }
 
-[dir="rtl"] .toolbarField[type="checkbox"] {
+[dir=&quot;rtl&quot;] .toolbarField[type=&quot;checkbox&quot;] {
   margin-right: 7px;
 }
 
-.toolbarField[type="checkbox"] {
+.toolbarField[type=&quot;checkbox&quot;] {
   opacity: 0;
   position: absolute !important;
   left: 0;
@@ -2561,11 +2561,11 @@ a.secondaryToolbarButton[href="#"] {
   cursor: default;
 }
 
-[dir="ltr"] #numPages.toolbarLabel {
+[dir=&quot;ltr&quot;] #numPages.toolbarLabel {
   padding-left: 3px;
 }
 
-[dir="rtl"] #numPages.toolbarLabel {
+[dir=&quot;rtl&quot;] #numPages.toolbarLabel {
   padding-right: 3px;
 }
 
@@ -2598,11 +2598,11 @@ a.secondaryToolbarButton[href="#"] {
   outline: 0;
 }
 
-[dir="ltr"] .thumbnail {
+[dir=&quot;ltr&quot;] .thumbnail {
   float: left;
 }
 
-[dir="rtl"] .thumbnail {
+[dir=&quot;rtl&quot;] .thumbnail {
   float: right;
 }
 
@@ -2659,12 +2659,12 @@ a:focus &gt; .thumbnail &gt; .thumbnailSelectionRing,
   color: rgba(255, 255, 255, 1);
 }
 
-[dir="ltr"] .treeWithDeepNesting &gt; .treeItem,[dir="ltr"] 
+[dir=&quot;ltr&quot;] .treeWithDeepNesting &gt; .treeItem,[dir=&quot;ltr&quot;] 
 .treeItem &gt; .treeItems {
   margin-left: 20px;
 }
 
-[dir="rtl"] .treeWithDeepNesting &gt; .treeItem,[dir="rtl"] 
+[dir=&quot;rtl&quot;] .treeWithDeepNesting &gt; .treeItem,[dir=&quot;rtl&quot;] 
 .treeItem &gt; .treeItems {
   margin-right: 20px;
 }
@@ -2675,11 +2675,11 @@ a:focus &gt; .thumbnail &gt; .thumbnailSelectionRing,
           margin-inline-start: 20px;
 }
 
-[dir="ltr"] .treeItem &gt; a {
+[dir=&quot;ltr&quot;] .treeItem &gt; a {
   padding-left: 4px;
 }
 
-[dir="rtl"] .treeItem &gt; a {
+[dir=&quot;rtl&quot;] .treeItem &gt; a {
   padding-right: 4px;
 }
 
@@ -2707,20 +2707,20 @@ a:focus &gt; .thumbnail &gt; .thumbnailSelectionRing,
 #layersView .treeItem &gt; a * {
   cursor: pointer;
 }
-[dir="ltr"] #layersView .treeItem &gt; a &gt; label {
+[dir=&quot;ltr&quot;] #layersView .treeItem &gt; a &gt; label {
   padding-left: 4px;
 }
-[dir="rtl"] #layersView .treeItem &gt; a &gt; label {
+[dir=&quot;rtl&quot;] #layersView .treeItem &gt; a &gt; label {
   padding-right: 4px;
 }
 #layersView .treeItem &gt; a &gt; label {
   -webkit-padding-start: 4px;
           padding-inline-start: 4px;
 }
-[dir="ltr"] #layersView .treeItem &gt; a &gt; label &gt; input {
+[dir=&quot;ltr&quot;] #layersView .treeItem &gt; a &gt; label &gt; input {
   float: left;
 }
-[dir="rtl"] #layersView .treeItem &gt; a &gt; label &gt; input {
+[dir=&quot;rtl&quot;] #layersView .treeItem &gt; a &gt; label &gt; input {
   float: right;
 }
 #layersView .treeItem &gt; a &gt; label &gt; input {
@@ -2728,11 +2728,11 @@ a:focus &gt; .thumbnail &gt; .thumbnailSelectionRing,
   margin-top: 1px;
 }
 
-[dir="ltr"] .treeItemToggler {
+[dir=&quot;ltr&quot;] .treeItemToggler {
   float: left;
 }
 
-[dir="rtl"] .treeItemToggler {
+[dir=&quot;rtl&quot;] .treeItemToggler {
   float: right;
 }
 
@@ -2743,10 +2743,10 @@ a:focus &gt; .thumbnail &gt; .thumbnailSelectionRing,
   width: 0;
   color: rgba(255, 255, 255, 0.5);
 }
-[dir="ltr"] .treeItemToggler::before {
+[dir=&quot;ltr&quot;] .treeItemToggler::before {
   right: 4px;
 }
-[dir="rtl"] .treeItemToggler::before {
+[dir=&quot;rtl&quot;] .treeItemToggler::before {
   left: 4px;
 }
 .treeItemToggler::before {
@@ -2846,10 +2846,10 @@ dialog :link {
 #documentPropertiesDialog {
   text-align: left;
 }
-[dir="ltr"] #documentPropertiesDialog .row &gt; * {
+[dir=&quot;ltr&quot;] #documentPropertiesDialog .row &gt; * {
   text-align: left;
 }
-[dir="rtl"] #documentPropertiesDialog .row &gt; * {
+[dir=&quot;rtl&quot;] #documentPropertiesDialog .row &gt; * {
   text-align: right;
 }
 #documentPropertiesDialog .row &gt; * {
@@ -2967,10 +2967,10 @@ dialog :link {
   #sidebarContainer {
     background-color: var(--sidebar-narrow-bg-color);
   }
-  [dir="ltr"] #outerContainer.sidebarOpen #viewerContainer {
+  [dir=&quot;ltr&quot;] #outerContainer.sidebarOpen #viewerContainer {
     left: 0 !important;
   }
-  [dir="rtl"] #outerContainer.sidebarOpen #viewerContainer {
+  [dir=&quot;rtl&quot;] #outerContainer.sidebarOpen #viewerContainer {
     right: 0 !important;
   }
   #outerContainer.sidebarOpen #viewerContainer {
@@ -3004,10 +3004,10 @@ dialog :link {
   .toolbarButtonSpacer {
     width: 0;
   }
-  [dir="ltr"] .findbar {
+  [dir=&quot;ltr&quot;] .findbar {
     left: 34px;
   }
-  [dir="rtl"] .findbar {
+  [dir=&quot;rtl&quot;] .findbar {
     right: 34px;
   }
   .findbar {
