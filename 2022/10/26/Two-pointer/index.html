@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://example.com/images/array_and_string.png">
 <meta property="og:image" content="http://example.com/images/leetcode_20221026.png">
 <meta property="article:published_time" content="2022-10-26T02:46:30.000Z">
-<meta property="article:modified_time" content="2023-01-06T10:37:10.631Z">
+<meta property="article:modified_time" content="2023-01-06T13:12:28.961Z">
 <meta property="article:author" content="Han Meng">
 <meta property="article:tag" content="Data Structure">
 <meta name="twitter:card" content="summary">
@@ -144,7 +144,7 @@
         <span class="column is-narrow">
             
             
-            4 minutes read (About 568 words)
+            4 minutes read (About 567 words)
         </span>
         
     </div>
@@ -155,8 +155,8 @@
 <img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
 
 <p>The biggest lesson for me is an amazing technique called <strong>Two-pointer</strong>. At first I thought it&#x2019;s nested two for-loops, but then I found it&#x2019;s actually much more flesxible and useful. So I&#x2019;d like to note it.  </p>
-<h2 id="Meaning"><a href="#Meaning" class="headerlink" title="Meaning"></a>Meaning</h2><p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
-<h2 id="Application-scenarios"><a href="#Application-scenarios" class="headerlink" title="Application scenarios"></a>Application scenarios</h2><ol>
+<h3 id="Meaning"><a href="#Meaning" class="headerlink" title="Meaning"></a>Meaning</h3><p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
+<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><ol>
 <li>When you want to iterate the array from <strong>two ends to the middle</strong>, you can use one pointer starts from the <strong>beginning</strong> while the other pointer starts from the <strong>end</strong>. They have <strong>same steps</strong>.</li>
 </ol>
 <figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">reverseString</span><span class="hljs-params">(<span class="hljs-type">char</span>[] s)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> s.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="hljs-type">char</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
