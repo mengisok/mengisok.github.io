@@ -16,12 +16,12 @@
 
 
 
-    <meta name="description" content="General conceptsClear commands clc  clears the screen  clear myVar  deletes variable myVar   clear all  deletes all variables   Create variables Creating a scalar: myScalar &#x3D; 10 Creating a vector: Row">
+    <meta name="description" content="General concepts Clear commands   clc  clears the screen   clear myVar  deletes variable myVar clear all  deletes all variables   Create variables  Creating a scalar: myScalar &#x3D; 10 Creating a vector:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Basic MATLAB">
 <meta property="og:url" content="http://example.com/2022/11/20/Basic-MATLAB/index.html">
 <meta property="og:site_name" content="Meng&#39;s Blog">
-<meta property="og:description" content="General conceptsClear commands clc  clears the screen  clear myVar  deletes variable myVar   clear all  deletes all variables   Create variables Creating a scalar: myScalar &#x3D; 10 Creating a vector: Row">
+<meta property="og:description" content="General concepts Clear commands   clc  clears the screen   clear myVar  deletes variable myVar clear all  deletes all variables   Create variables  Creating a scalar: myScalar &#x3D; 10 Creating a vector:">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-20T15:02:06.000Z">
 <meta property="article:modified_time" content="2022-12-26T11:22:54.697Z">
@@ -78,7 +78,7 @@
             <a class="navbar-item navbar-logo" href="/">
                 
                     
-                    Meng
+                    Meng&#39;s blog
                     
                 
             </a>
@@ -223,13 +223,6 @@
             </div>
             
             
-            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/mengisok">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-               
-            
         </div>
     </div>
 </nav>
@@ -264,86 +257,109 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <h2 id="General-concepts"><a href="#General-concepts" class="headerlink" title="General concepts"></a>General concepts</h2><h3 id="Clear-commands"><a href="#Clear-commands" class="headerlink" title="Clear commands"></a>Clear commands</h3><ul>
-<li><p><code>clc</code>  clears the screen</p>
+        <h2 id="General-concepts">General concepts</h2>
+<h3 id="Clear-commands">Clear commands</h3>
+<ul>
+<li>
+<p><code>clc</code>  clears the screen</p>
 </li>
-<li><p><code>clear myVar</code>  deletes variable myVar</p>
-<p>  <code>clear all</code>  deletes all variables</p>
+<li>
+<p><code>clear myVar</code>  deletes variable myVar</p>
+<p><code>clear all</code>  deletes all variables</p>
 </li>
 </ul>
-<h3 id="Create-variables"><a href="#Create-variables" class="headerlink" title="Create variables"></a>Create variables</h3><ul>
+<h3 id="Create-variables">Create variables</h3>
+<ul>
 <li>Creating a scalar: <code>myScalar = 10</code></li>
-<li>Creating a vector:<ul>
+<li>Creating a vector:
+<ul>
 <li>Row vector: <code>myVector = [4 5 6]</code></li>
 <li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
 </ul>
 </li>
-<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code><ul>
+<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code>
+<ul>
 <li><code>myMatrix(1, 2)</code>  gets 5</li>
 <li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
 <li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
 </ul>
 </li>
-<li>Using &#x201C;;&#x201D; at the end of command line means it will suppress (i.e. don&#x2019;t show) the result<span id="more"></span></li>
+<li>Using &#x201C;;&#x201D; at the end of command line means it will suppress (i.e. don&#x2019;t show) the result</li>
 </ul>
-<h3 id="Variable-classes"><a href="#Variable-classes" class="headerlink" title="Variable classes"></a>Variable classes</h3><ul>
+<span id="more"></span>
+<h3 id="Variable-classes">Variable classes</h3>
+<ul>
 <li>double (default)</li>
 <li><code>format long</code>  changes double class to long class</li>
 <li>double, long, short, single, logical (boolean), etc</li>
 </ul>
-<h3 id="Cell-arrays"><a href="#Cell-arrays" class="headerlink" title="Cell arrays"></a>Cell arrays</h3><p>A matrix which has different kinds of elements</p>
+<h3 id="Cell-arrays">Cell arrays</h3>
+<p>A matrix which has different kinds of elements</p>
 <p><code>myCell = {[1 2 3] [4 5 6 7]; &apos;v1&apos; &apos;v2&apos;}</code></p>
 <p><code>myCell{1, 2}</code>  gets [4 5 6 7]</p>
-<h2 id="Core-syntax"><a href="#Core-syntax" class="headerlink" title="Core syntax"></a>Core syntax</h2><h3 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h3><ul>
+<h2 id="Core-syntax">Core syntax</h2>
+<h3 id="Script">Script</h3>
+<ul>
 <li>&#x201C;.m&#x201D; file</li>
 <li>Comment: <code>%</code></li>
 <li><code>disp()</code>: display something</li>
 <li><code>randi()</code>: random integers</li>
 <li>To tanspose a matrix: <code>matrix&apos;</code></li>
 </ul>
-<h3 id="Matrices"><a href="#Matrices" class="headerlink" title="Matrices"></a>Matrices</h3><ul>
-<li><p>Create some standard matrices:</p>
-<p>  <code>zeros(m, n)</code></p>
-<p>  <code>ones(m, n)</code></p>
-<p>  <code>randi(m, n)</code></p>
+<h3 id="Matrices">Matrices</h3>
+<ul>
+<li>
+<p>Create some standard matrices:</p>
+<p><code>zeros(m, n)</code></p>
+<p><code>ones(m, n)</code></p>
+<p><code>randi(m, n)</code></p>
 </li>
-<li><p>Matrix multiplication</p>
+<li>
+<p>Matrix multiplication</p>
 <ul>
 <li>Standard multiplication: <code>M1 * M2</code></li>
 <li>Element by element multiplication: <code>M1 .* M2</code></li>
 </ul>
 </li>
-<li><p>Division is alike</p>
+<li>
+<p>Division is alike</p>
 <ul>
 <li>Element by element division: <code>M1 ./ M2</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="If-statements"><a href="#If-statements" class="headerlink" title="If statements"></a>If statements</h3><figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Switch-statements"><a href="#Switch-statements" class="headerlink" title="Switch statements"></a>Switch statements</h3><figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">switch</span> ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="For-loops"><a href="#For-loops" class="headerlink" title="For loops"></a>For loops</h3><figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">% step = 1</span></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = <span class="hljs-number">1</span>: <span class="hljs-number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% step = 2</span></span><br><span class="line"><span class="hljs-comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% n =25;</span></span><br><span class="line"><span class="hljs-comment">% step = 5;</span></span><br><span class="line"><span class="hljs-comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="While-loops"><a href="#While-loops" class="headerlink" title="While loops"></a>While loops</h3><figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h2><h3 id="Set-path"><a href="#Set-path" class="headerlink" title="Set path"></a>Set path</h3><p>If MATLAB can&#x2019;t find your scripts or functions or anything else, make sure you have added the path</p>
-<h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><ul>
+<h3 id="If-statements">If statements</h3>
+<figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Switch-statements">Switch statements</h3>
+<figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">switch</span> ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="For-loops">For loops</h3>
+<figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">% step = 1</span></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = <span class="hljs-number">1</span>: <span class="hljs-number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% step = 2</span></span><br><span class="line"><span class="hljs-comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% n =25;</span></span><br><span class="line"><span class="hljs-comment">% step = 5;</span></span><br><span class="line"><span class="hljs-comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="While-loops">While loops</h3>
+<figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Programming">Programming</h2>
+<h3 id="Set-path">Set path</h3>
+<p>If MATLAB can&#x2019;t find your scripts or functions or anything else, make sure you have added the path</p>
+<h3 id="Function">Function</h3>
+<ul>
 <li>Create a function from &#x201C;Current Folder&#x201D;, and it&#x2019;s a .m file</li>
 <li>Edit the pattern and wirte your function</li>
 </ul>
-<h3 id="Import-data"><a href="#Import-data" class="headerlink" title="Import data"></a>Import data</h3><p>To import a CSV file:</p>
+<h3 id="Import-data">Import data</h3>
+<p>To import a CSV file:</p>
 <ul>
 <li>Copy and paste it to &#x201C;Current Folder&#x201D;</li>
 <li><code>csvread(&apos;sine.csv&apos;)</code></li>
 </ul>
-<h3 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h3><p>Set breakpoints at little dashes in the left of Editor</p>
-<h3 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h3><ul>
+<h3 id="Debugging">Debugging</h3>
+<p>Set breakpoints at little dashes in the left of Editor</p>
+<h3 id="Performance">Performance</h3>
+<ul>
 <li>Preallocate some memory can speed large calculations</li>
 <li>Use &#x201C;tik &#x2026; tok&#x201D; to count the time</li>
 </ul>
-<h2 id="Data-representations"><a href="#Data-representations" class="headerlink" title="Data representations"></a>Data representations</h2><h3 id="Plot"><a href="#Plot" class="headerlink" title="Plot"></a>Plot</h3><figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line"><span class="hljs-comment">% figure(1)</span></span><br><span class="line"><span class="hljs-built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
-
+<h2 id="Data-representations">Data representations</h2>
+<h3 id="Plot">Plot</h3>
+<figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line"><span class="hljs-comment">% figure(1)</span></span><br><span class="line"><span class="hljs-built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>Add a grid: <code>grid on</code></li>
 <li>Make the window fits perfectly to the plot: <code>axis tight</code></li>
@@ -354,14 +370,16 @@
 <li>Add annotations: <code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
 <li>Use <code>close all</code> to close all figures</li>
 </ul>
-<h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><ul>
+<h3 id="Image">Image</h3>
+<ul>
 <li>Use <code>imread()</code> to import the image file</li>
 <li>Use <code>image()</code> to plot the image (default square)</li>
 <li>Use <code>imshow()</code> to plot the image in the correct aspect ratio, and there&#x2019;s no label on the axis</li>
 </ul>
-<h3 id="3D-plot"><a href="#3D-plot" class="headerlink" title="3D plot"></a>3D plot</h3><figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="hljs-number">-2</span>*<span class="hljs-built_in">pi</span>:<span class="hljs-number">.5</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="hljs-built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="hljs-built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="Simulink"><a href="#Simulink" class="headerlink" title="Simulink"></a>Simulink</h2><p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
+<h3 id="3D-plot">3D plot</h3>
+<figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="hljs-number">-2</span>*<span class="hljs-built_in">pi</span>:<span class="hljs-number">.5</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="hljs-built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="hljs-built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Simulink">Simulink</h2>
+<p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
 
     
     </div>

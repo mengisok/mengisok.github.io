@@ -75,7 +75,7 @@
             <a class="navbar-item navbar-logo" href="/">
                 
                     
-                    Meng
+                    Meng&#39;s blog
                     
                 
             </a>
@@ -109,13 +109,6 @@
             </a>
             
             
-            
-            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/mengisok">
-                
-                <i class="fab fa-github"></i>
-                
-            </a>
-               
             
         </div>
     </div>
@@ -159,27 +152,35 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <h2 id="General-concepts"><a href="#General-concepts" class="headerlink" title="General concepts"></a>General concepts</h2><h3 id="Clear-commands"><a href="#Clear-commands" class="headerlink" title="Clear commands"></a>Clear commands</h3><ul>
-<li><p><code>clc</code>  clears the screen</p>
+        <h2 id="General-concepts">General concepts</h2>
+<h3 id="Clear-commands">Clear commands</h3>
+<ul>
+<li>
+<p><code>clc</code>  clears the screen</p>
 </li>
-<li><p><code>clear myVar</code>  deletes variable myVar</p>
-<p>  <code>clear all</code>  deletes all variables</p>
+<li>
+<p><code>clear myVar</code>  deletes variable myVar</p>
+<p><code>clear all</code>  deletes all variables</p>
 </li>
 </ul>
-<h3 id="Create-variables"><a href="#Create-variables" class="headerlink" title="Create variables"></a>Create variables</h3><ul>
+<h3 id="Create-variables">Create variables</h3>
+<ul>
 <li>Creating a scalar: <code>myScalar = 10</code></li>
-<li>Creating a vector:<ul>
+<li>Creating a vector:
+<ul>
 <li>Row vector: <code>myVector = [4 5 6]</code></li>
 <li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
 </ul>
 </li>
-<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code><ul>
+<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code>
+<ul>
 <li><code>myMatrix(1, 2)</code>  gets 5</li>
 <li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
 <li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
 </ul>
 </li>
-<li>Using &#x201C;;&#x201D; at the end of command line means it will suppress (i.e. don&#x2019;t show) the result</li></ul>
+<li>Using &#x201C;;&#x201D; at the end of command line means it will suppress (i.e. don&#x2019;t show) the result</li>
+</ul>
         <p class="article-more-link">
             <a href="/2022/11/20/Basic-MATLAB/#more">Read More</a>
         </p>
@@ -221,16 +222,22 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>I watched a well-organized and concise youtube video titled <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a>, which is also a basic course I am taking this semester. I focused on the key points in my course and made a bit of notes.  </p>
-<h2 id="Limitations-of-fixed-coefficient-digital-filters"><a href="#Limitations-of-fixed-coefficient-digital-filters" class="headerlink" title="Limitations of fixed-coefficient digital filters"></a>Limitations of fixed-coefficient digital filters</h2><ul>
-<li>Fixed-coefficient digital filters<ul>
+        <p>I watched a well-organized and concise youtube video titled <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a>, which is also a basic course I am taking this semester. I focused on the key points in my course and made a bit of notes.</p>
+<h2 id="Limitations-of-fixed-coefficient-digital-filters">Limitations of fixed-coefficient digital filters</h2>
+<ul>
+<li>Fixed-coefficient digital filters
+<ul>
 <li>FIR, IIR</li>
 <li>LP, HP, etc</li>
 </ul>
 </li>
-<li>Limitations<ul>
+<li>Limitations
+<ul>
 <li>Time-varying noise-frequency</li>
-<li>Overlapping bands of signal and noise</li></ul></li></ul>
+<li>Overlapping bands of signal and noise</li>
+</ul>
+</li>
+</ul>
         <p class="article-more-link">
             <a href="/2022/11/19/Adaptive-Filters/#more">Read More</a>
         </p>
