@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>初识Linux - Meng&#39;s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+<link href="/Intro-to-Linux/" rel="alternate" hreflang="en" />
+    
+
+
+<meta name="description" content="Go forward. Don't look back. ">
+
+
+
+
+
+    <meta name="description" content="LUG @ USTC&amp;#x7684;Linux 101 - &amp;#x521D;&amp;#x8BC6;Linux&amp;#x7B14;&amp;#x8BB0;&amp;#x3002;&amp;#x5DF2;&amp;#x7ECF;&amp;#x6309;&amp;#x7167;&amp;#x6559;&amp;#x7A0B;&amp;#x6210;&amp;#x529F;&amp;#x5B89;&amp;#x88C5;&amp;#x7528;&amp;#x4E0A;&amp;#x4E86; Xubuntu &amp;#xFF01;&amp;#x8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识Linux">
+<meta property="og:url" content="https://mengisok.github.io/zh-cn/Intro-to-Linux/index.html">
+<meta property="og:site_name" content="Meng&#39;s Blog">
+<meta property="og:description" content="LUG @ USTC&amp;#x7684;Linux 101 - &amp;#x521D;&amp;#x8BC6;Linux&amp;#x7B14;&amp;#x8BB0;&amp;#x3002;&amp;#x5DF2;&amp;#x7ECF;&amp;#x6309;&amp;#x7167;&amp;#x6559;&amp;#x7A0B;&amp;#x6210;&amp;#x529F;&amp;#x5B89;&amp;#x88C5;&amp;#x7528;&amp;#x4E0A;&amp;#x4E86; Xubuntu &amp;#xFF01;&amp;#x8">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://mengisok.github.io/images/Xubuntu.png">
+<meta property="article:published_time" content="2023-01-07T07:14:10.000Z">
+<meta property="article:modified_time" content="2023-01-07T10:44:29.338Z">
+<meta property="article:author" content="Han Meng">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mengisok.github.io/images/Xubuntu.png">
+
+
+
+
+
+<link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/zh-cn">
+                
+                    
+                    Meng&#39;s blog
+                    
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/zh-cn/archives">归档</a>
+            
+            <a class="navbar-item "
+               href="/zh-cn/categories">分类</a>
+            
+            <a class="navbar-item "
+               href="/zh-cn/tags">标签</a>
+            
+            <a class="navbar-item "
+               href="/zh-cn/about">关于</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="搜索" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            
+            
+<div class="column is-narrow has-text-centered">
+    <div class="dropdown is-up is-right is-hoverable" style="margin-top: -0.2em;">
+        <div class="dropdown-trigger">
+            <button class="button is-small" aria-haspopup="true" aria-controls="dropdown-menu7">
+                <span class="icon">
+                    <i class="fas fa-globe"></i>
+                </span>
+                <span>简体中文</span>
+                <span class="icon is-small">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
+            </button>
+        </div>
+        <div class="dropdown-menu has-text-left" role="menu" style="top:100%">
+            <div class="dropdown-content">
+            
+                <a href="/Intro-to-Linux/" class="dropdown-item">
+                    English
+                </a>
+            
+                <a href="/zh-cn/Intro-to-Linux/" class="dropdown-item">
+                    简体中文
+                </a>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            初识Linux
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            
+                <span>1月 7 2023</span>
+            
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/zh-cn/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            10 分钟 读完 (约 1529 字)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <p><a target="_blank" rel="noopener" href="https://lug.ustc.edu.cn/">LUG @ USTC</a>&#x7684;<a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - &#x521D;&#x8BC6;Linux</a>&#x7B14;&#x8BB0;&#x3002;&#x5DF2;&#x7ECF;&#x6309;&#x7167;&#x6559;&#x7A0B;&#x6210;&#x529F;&#x5B89;&#x88C5;&#x7528;&#x4E0A;&#x4E86; Xubuntu &#xFF01;&#x8D5E;&#x7F8E;&#xFF01;  </p>
+<span id="more"></span>
+<hr>
+<h3 id="&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;"><a href="#&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;" class="headerlink" title="&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;"></a>&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;</h3><ul>
+<li>&#x6469;&#x5C14;&#x5B9A;&#x5F8B;&#xFF1A;&#x96C6;&#x6210;&#x7535;&#x8DEF;&#x4E0A;&#x53EF;&#x5BB9;&#x7EB3;&#x7684;&#x6676;&#x4F53;&#x7BA1;&#x6570;&#x76EE;&#x6BCF;&#x4E24;&#x5E74;&#x5C31;&#x4F1A;&#x7FFB;&#x4E00;&#x500D;/&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x6027;&#x80FD;&#x6BCF; 18 &#x4E2A;&#x6708;&#x63D0;&#x9AD8;&#x4E00;&#x500D;&#xFF08;Intel CEO David House&#xFF09;</li>
+<li>&#x91CF;&#x5B50;&#x7269;&#x7406;&#x7684;&#x9650;&#x5236;&#x4EE5;&#x53CA; CPU &#x529F;&#x8017;&#x548C;&#x6563;&#x70ED;&#x7684;&#x9650;&#x5236;&#x4F7F;&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7684;&#x63D0;&#x5347;&#x5F00;&#x59CB;&#x653E;&#x7F13;&#x3002;&#x591A;&#x4E2A; CPU &#x4E4B;&#x95F4;&#x7684;&#x8054;&#x5408;&#x534F;&#x4F5C;&#xFF08;&#x57FA;&#x4E8E;&#x591A;&#x6838;&#x7684;&#x5F00;&#x53D1;&#xFF09;&#x53D6;&#x4EE3;&#x8FFD;&#x6C42;&#x5355;&#x4E2A; CPU &#x6027;&#x80FD;&#x7684;&#x63D0;&#x5347;&#xFF0C;&#x6210;&#x4E3A;&#x4E86;&#x672A;&#x6765;&#x53D1;&#x5C55;&#x65B9;&#x5411;</li>
+</ul>
+<h3 id="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;"><a href="#&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;"></a>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</h3><ul>
+<li>&#x7528;&#x6237;&#x4E0E;&#x5E95;&#x5C42;&#x786C;&#x4EF6;&#x4EA4;&#x6D41;&#x7684;&#x6865;&#x6881;</li>
+<li>&#x529F;&#x80FD;<ul>
+<li>&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8C03;&#x5EA6;&#x8FDB;&#x7A0B;&#xFF0C;&#x4F7F;&#x8BB8;&#x591A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x5728;&#x51E0;&#x4E2A;&#x4E2D;&#x592E;&#x5904;&#x7406;&#x5668;&#x4E0A;&#x5E76;&#x53D1;&#x6267;&#x884C;</li>
+<li>&#x5185;&#x5B58;&#x7BA1;&#x7406;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5408;&#x7406;&#x5206;&#x914D;&#x548C;&#x56DE;&#x6536;&#x5185;&#x5B58;</li>
+<li>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5EFA;&#x7ACB;&#x5408;&#x9002;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6765;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x548C;&#x6570;&#x636E;</li>
+<li>&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5B9E;&#x73B0;&#x5404;&#x79CD;&#x5FC5;&#x9700;&#x7684;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#xFF08;&#x5982;TCP/IP&#xFF09;</li>
+<li>&#x5B89;&#x5168;&#x673A;&#x5236;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x914D;&#x5907;&#x5B89;&#x5168;&#x673A;&#x5236;&#x7528;&#x4E8E;&#x4FDD;&#x62A4;&#x6570;&#x636E;&#x4E0D;&#x88AB;&#x672A;&#x6388;&#x6743;&#x7684;&#x4EBA;&#x58EB;&#x83B7;&#x53D6;</li>
+<li>&#x7528;&#x6237;&#x754C;&#x9762;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x901A;&#x5E38;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x56FE;&#x5F62;&#x5316;&#x7684;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF0C;&#x65B9;&#x4FBF;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x673A;</li>
+<li>&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0E;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x5BF9;&#x63A5;&#x4EE5;&#x53D1;&#x6325;&#x786C;&#x4EF6;&#x7684;&#x529F;&#x80FD;</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-&#x8BDE;&#x751F;"><a href="#Linux-&#x8BDE;&#x751F;" class="headerlink" title="Linux &#x8BDE;&#x751F;"></a>Linux &#x8BDE;&#x751F;</h3><blockquote>
+<p>&#x9009;&#x62E9; Linux&#xFF0C;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x662F;&#x4E00;&#x79CD;&#x5BF9;&#x6781;&#x5BA2;&#x7CBE;&#x795E;&#x4E0E;&#x5F00;&#x6E90;&#x6587;&#x5316;&#x7684;&#x8BA4;&#x540C;&#x3002;</p>
+</blockquote>
+<blockquote>
+<p><em>&#x81EA;&#x7531;&#x8F6F;&#x4EF6;</em>&#x610F;&#x5473;&#x7740;&#x5176;&#x7528;&#x6237;&#x62E5;&#x6709;&#x81EA;&#x7531;&#x3002;&#xFF08;&#x8FD9;&#x65E0;&#x5173;&#x4EF7;&#x683C;&#x3002;&#xFF09;&#x6211;&#x4EEC;&#x5F00;&#x53D1;&#x4E86;GNU&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD9;&#x6837;&#x7528;&#x6237;&#x5C31;&#x6709;&#x4E86;&#x8BA1;&#x7B97;&#x7684;&#x81EA;&#x7531;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x7684;&#x7528;&#x6237;&#x62E5;&#x6709;&#x56DB;&#x9879;&#x57FA;&#x672C;&#x81EA;&#x7531;&#xFF1A;(0)&#x81EA;&#x7531;&#x8FD0;&#x884C;&#x8F6F;&#x4EF6;&#x3001;(1)&#x81EA;&#x7531;&#x5B66;&#x4E60;&#x548C;&#x4FEE;&#x6539;&#x8F6F;&#x4EF6;&#x6E90;&#x4EE3;&#x7801;&#x3001;(2)&#x81EA;&#x7531;&#x518D;&#x53D1;&#x5E03;&#x8F6F;&#x4EF6;&#x62F7;&#x8D1D;&#x4EE5;&#x53CA;(3)&#x81EA;&#x7531;&#x53D1;&#x5E03;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x8F6F;&#x4EF6;&#x7248;&#x672C;&#x3002;</p>
+<p>&#x8F6F;&#x4EF6;&#x4E0D;&#x540C;&#x4E8E;&#x751F;&#x6D3B;&#x4E2D;&#x7684;&#x4E8B;&#x7269; &#x2014; &#x5B83;&#x4E0D;&#x540C;&#x4E8E;&#x6905;&#x5B50;&#x3001;&#x4E09;&#x660E;&#x6CBB;&#x6216;&#x662F;&#x6C7D;&#x6CB9; &#x2014; &#x8F6F;&#x4EF6;&#x53EF;&#x4EE5;&#x66F4;&#x5BB9;&#x6613;&#x5730;&#x88AB;&#x590D;&#x5236;&#x6216;&#x4FEE;&#x6539;&#x3002;&#x6070;&#x6070;&#x662F;&#x8FD9;&#x4E00;&#x7279;&#x6027;&#xFF0C;&#x4F7F;&#x5F97;&#x8F6F;&#x4EF6;&#x66F4;&#x4E3A;&#x6709;&#x7528;&#x3002;&#x6211;&#x4EEC;&#x7531;&#x6B64;&#x575A;&#x4FE1;&#xFF0C;&#x8F6F;&#x4EF6;&#x7684;&#x8FD9;&#x4E00;&#x5929;&#x7136;&#x5C5E;&#x6027;&#x5E94;&#x8BE5;&#x88AB;&#x7528;&#x6237;&#x5229;&#x7528;&#x3002;<a href="#refer-anchor-1"><sup>1</sup></a> </p>
+</blockquote>
+<ul>
+<li>1983 &#x5E74;&#xFF0C;Richard Stallman &#x5728; MIT &#x53D1;&#x8D77;&#x4E86; GNU &#x8BA1;&#x5212;&#xFF1B;1991&#x5E74;&#xFF0C;Linus Torvalds &#x7F16;&#x5199;&#x5E76;&#x53D1;&#x5E03;&#x4E86;Linux &#x5185;&#x6838;&#xFF0C;&#x6210;&#x4E3A;&#x4E86;&#x540E;&#x6765;&#x5404;&#x7C7B; Linux &#x53D1;&#x884C;&#x7248;&#x7684;&#x57FA;&#x7840;</li>
+<li>GNU&#xFF1A;GNU &#x662F;&#x201C;<strong>G</strong>NU is&#xA0;<strong>N</strong>ot&#xA0;<strong>U</strong>nix&#x201D;&#x7684;&#x9012;&#x5F52;&#x7F29;&#x5199;&#xFF0C;&#x6307;&#x4E00;&#x5957;&#x7C7B;&#x4F3C; UNIX &#x4F46;&#x5B8C;&#x5168;&#x81EA;&#x7531;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
+<li>GNU &#x901A;&#x7528;&#x516C;&#x5171;&#x8BB8;&#x53EF;&#x8BC1;&#xFF08;GNU General Public License&#xFF0C;GNU GPL &#x6216; GPL&#xFF09;&#xFF1A;&#x628A;&#x4F7F;&#x7528;&#x8BE5;&#x8BB8;&#x53EF;&#x7684;&#x8F6F;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6743;&#x5229;&#x6388;&#x4E88;&#x4EFB;&#x4F55;&#x4F7F;&#x7528;&#x5B83;&#x7684;&#x4EBA;<ul>
+<li>&#x8FD9;&#x79CD;&#x6743;&#x5229;&#x53C8;&#x88AB;&#x79F0;&#x4E3A;&#x8457;&#x4F5C;&#x4F20;&#xFF08;Copyleft&#xFF09;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x901A;&#x5E38;&#x7684;&#x8457;&#x4F5C;&#x6743;&#xFF08;Copyright&#xFF09;</li>
+</ul>
+</li>
+<li>&#x6838;&#x5FC3;GNU&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x81F3;&#x4ECA;&#x6CA1;&#x6709;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x3002;&#x73B0;&#x5728;&#x5B9E;&#x9645;&#x4E0A;&#x7528;&#x7684;&#x662F; GNU/Linux &#xFF0C;Linux &#x5185;&#x6838;&#x662F;&#x529F;&#x80FD;&#x6838;&#x5FC3;&#xFF0C;&#x800C;GNU&#x7EC4;&#x4EF6;&#x662F;&#x5916;&#x8BBE;&#xFF0C;&#x4E5F;&#x662F;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x548C;&#x4F7F;&#x7528; Linux &#x5185;&#x6838;&#x7684;&#x5DE5;&#x5177;<ul>
+<li>&#x73B0;&#x5728;&#x667A;&#x80FD;&#x624B;&#x673A;&#x4E0A;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x7CFB;&#x7EDF;&#x662F; Android/Linux &#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; Linux &#x5185;&#x6838;&#x5F00;&#x53D1;&#x7684;&#x3001;&#x6CA1;&#x6709;&#x91C7;&#x7528; GNU &#x7EC4;&#x4EF6;&#x800C;&#x662F;&#x7528;&#x8C37;&#x6B4C;&#x81EA;&#x884C;&#x7814;&#x53D1;&#x7684;&#x53E6;&#x4E00;&#x5957; Android &#x4F53;&#x7CFB;&#x4F5C;&#x4E3A;&#x5DE5;&#x5177;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-&#x53D1;&#x884C;&#x7248;"><a href="#Linux-&#x53D1;&#x884C;&#x7248;" class="headerlink" title="Linux &#x53D1;&#x884C;&#x7248;"></a>Linux &#x53D1;&#x884C;&#x7248;</h3><ul>
+<li>Linux &#x53D1;&#x884C;&#x7248; = Linux &#x5185;&#x6838; + &#x4E00;&#x7CFB;&#x5217; GNU &#x5DE5;&#x5177;&#x548C;&#x5E93;&#x3001;&#x4E00;&#x4E9B;&#x9644;&#x5E26;&#x7684;&#x8F6F;&#x4EF6;&#x3001;&#x8BF4;&#x660E;&#x6587;&#x6863;&#x3001;&#x4E00;&#x4E2A;&#x684C;&#x9762;&#x7CFB;&#x7EDF;&#x3001;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x7BA1;&#x7406;&#x5668;&#x548C;&#x4E00;&#x4E2A;&#x684C;&#x9762;&#x73AF;&#x5883;</li>
+<li>&#x4E3B;&#x6D41;&#x7684;&#x53D1;&#x884C;&#x7248;&#x5206;&#x652F;<ul>
+<li><strong><strong>Debian &#x5206;&#x652F;</strong></strong>&#xFF1A;&#x6700;&#x8457;&#x540D;&#x7684;&#x662F; Ubuntu &#xFF0C;&#x4E00;&#x4E2A;&#x4E3B;&#x6253;&#x684C;&#x9762;&#x5E94;&#x7528;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x9002;&#x5408;&#x666E;&#x901A;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x3002;<strong>&#x63A8;&#x8350;&#x521D;&#x6B21;&#x63A5;&#x89E6; Linux &#x7684;&#x8BFB;&#x8005;&#x4F18;&#x5148;&#x91C7;&#x7528; Ubuntu &#x53D1;&#x884C;&#x7248;&#x6216;&#x8005;&#x5B83;&#x7684;&#x5B50;&#x53D1;&#x884C;&#x7248;&#xFF08;Lubuntu, Xubuntu &#x7B49;&#xFF09;</strong></li>
+<li><strong><strong>Red Hat &#x5206;&#x652F;</strong></strong>&#xFF1A;Fedora &#xFF0C;CentOS&#xFF08;&#x9002;&#x5408;&#x5728;&#x8981;&#x6C42;&#x9AD8;&#x5EA6;&#x7A33;&#x5B9A;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#xFF09;</li>
+<li><strong><strong>Arch Linux &#x5206;&#x652F;</strong></strong>&#xFF1A;&#x8981;&#x6C42;&#x4F7F;&#x7528;&#x8005;&#x81EA;&#x8EAB;&#x613F;&#x610F;&#x53BB;&#x4E86;&#x89E3;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x8FD0;&#x4F5C;&#x65B9;&#x5F0F;&#xFF0C;&#x5E76;&#x4E0D;&#x91C7;&#x53D6;&#x5C4F;&#x853D;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x964D;&#x4F4E;&#x4F7F;&#x7528;&#x95E8;&#x69DB;&#x3002;&#x53D8;&#x79CD; Manjaro &#x66F4;&#x6CE8;&#x91CD;&#x6613;&#x7528;&#xFF0C;&#x66F4;&#x9002;&#x5408;&#x4E00;&#x822C;&#x7528;&#x6237;</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-&#x5728;&#x8EAB;&#x8FB9;"><a href="#Linux-&#x5728;&#x8EAB;&#x8FB9;" class="headerlink" title="Linux &#x5728;&#x8EAB;&#x8FB9;"></a>Linux &#x5728;&#x8EAB;&#x8FB9;</h3><ul>
+<li>&#x667A;&#x80FD;&#x624B;&#x673A;&#xFF1A;Google &#x7814;&#x53D1;&#x7684; Android &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5C5E;&#x4E8E; Android/Linux &#x5206;&#x652F;&#xFF0C;&#x4E5F;&#x53EB; Android &#x539F;&#x751F;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B50;&#x53D1;&#x884C;&#x7248;&#x5F88;&#x591A;&#xFF0C;&#x5982;&#x534E;&#x4E3A; EMUI &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x548C;&#x5C0F;&#x7C73; MIUI &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7B49;</li>
+<li>&#x670D;&#x52A1;&#x5668;&#xFF1A;&#x7F51;&#x7AD9;&#x548C;&#x8F6F;&#x4EF6;&#x7684;&#x63D0;&#x4F9B;&#x5546;&#x90FD;&#x9700;&#x8981;&#x8BBE;&#x7ACB;&#x4ED6;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x6765;&#x5B8C;&#x6210;&#x8BA1;&#x7B97;&#x3001;&#x5B58;&#x50A8;&#x548C;&#x901A;&#x4FE1;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x79CD;&#x8BA1;&#x7B97;&#x673A;&#x5C31;&#x88AB;&#x79F0;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x3002;&#x670D;&#x52A1;&#x5668;&#x901A;&#x5E38;&#x4E0D;&#x7528; Windows &#x6216;&#x8005; macOS &#x8FD9;&#x79CD;&#x4E2A;&#x4EBA;&#x8BA1;&#x7B97;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x7528; Linux &#x53D1;&#x884C;&#x7248;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x754C;&#x9762;&#x7B80;&#x6D01;&#xFF0C;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;&#x800C;&#x4E14;&#x67D0;&#x4E9B;&#x53D1;&#x884C;&#x7248;&#x4E5F;&#x53D7;&#x5230;&#x4E13;&#x4E1A;&#x8BA1;&#x7B97;&#x673A;&#x4F01;&#x4E1A;&#x7684;&#x670D;&#x52A1;&#x652F;&#x6301;&#xFF08;&#x5982; RHEL&#xFF09;&#x3002;Debian &#x548C; Ubuntu Server &#x5F88;&#x6D41;&#x884C;</li>
+<li>&#x5D4C;&#x5165;&#x5F0F;&#x8BBE;&#x5907;&#xFF1A;Android/Linux &#x5206;&#x652F;&#x4E0B;&#x7684;&#x5404;&#x7C7B;&#x53D1;&#x884C;&#x7248;&#x662F;&#x4E3B;&#x6D41;&#x7684;&#x5D4C;&#x5165;&#x5F0F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5982; Google &#x4E3A;&#x6570;&#x5B57;&#x7535;&#x89C6;&#x4E13;&#x95E8;&#x63A8;&#x51FA;&#x7684; Android TV &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
+</ul>
+<h3 id="&#x4F7F;&#x7528;-Linux"><a href="#&#x4F7F;&#x7528;-Linux" class="headerlink" title="&#x4F7F;&#x7528; Linux"></a>&#x4F7F;&#x7528; Linux</h3><ul>
+<li><strong>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x5B89;&#x88C5;&#x5B8C;&#x6BD5;&#x7684; Linux &#x955C;&#x50CF;</strong></li>
+<li>&#x6B65;&#x9AA4;<ol>
+<li>&#x83B7;&#x53D6;&#x865A;&#x62DF;&#x673A;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#xFF0C;&#x63A8;&#x8350; <a target="_blank" rel="noopener" href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a></li>
+<li>&#x83B7;&#x53D6; <a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu &#x865A;&#x62DF;&#x673A;&#x955C;&#x50CF;</a>&#xFF08;Xubuntu &#x662F; Ubuntu &#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x53D1;&#x884C;&#x7248;&#xFF0C;&#x4E0E; Ubuntu &#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x4F53;&#x79EF;&#x66F4;&#x5C0F;&#xFF0C;&#x6027;&#x80FD;&#x9700;&#x6C42;&#x66F4;&#x5C11;&#xFF0C;&#x9002;&#x5408;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x6027;&#x80FD;&#x7684;&#x7535;&#x8111;&#x5B89;&#x88C5;&#x4F7F;&#x7528;&#xFF09;</li>
+<li>&#x53CC;&#x51FB;&#x6253;&#x5F00;&#x865A;&#x62DF;&#x673A;&#x955C;&#x50CF;&#xFF0C;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x4F1A;&#x6253;&#x5F00;&#x5E76;&#x5BFC;&#x5165;&#x8BE5;&#x955C;&#x50CF;&#xFF0C;&#x5BFC;&#x5165;&#x5B8C;&#x6BD5;&#x540E;&#x53EF;&#x76F4;&#x63A5;&#x70B9;&#x51FB;&#x5F00;&#x59CB;&#x6309;&#x94AE;&#x542F;&#x52A8;</li>
+</ol>
+</li>
+</ul>
+<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
+
+<p>&#x1F973; ~   </p>
+<hr>
+<p><strong>&#x5F15;&#x7528;&#x6765;&#x6E90;</strong>  </p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a target="_blank" rel="noopener" href="https://www.gnu.org/philosophy/philosophy.html">GNU &#x5DE5;&#x7A0B;&#x7684;&#x54F2;&#x5B66;</a></p>
+<p><strong>&#x63A8;&#x8350;&#x9605;&#x8BFB;</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">&#x4E3A;&#x4EC0;&#x4E48;&#x5F00;&#x6E90;&#x9519;&#x5931;&#x4E86;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x7684;&#x91CD;&#x70B9;</a></p>
+
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/zh-cn/tags/Linux/">#Linux</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/zh-cn/Dec-2022/">2022年12月</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+<div class="sharebox">
+    
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=63b7aca8a1c9f30019b28e79&amp;product=inline-share-buttons' async='async'></script>
+
+</div>
+
+
+
+<div class="comments">
+    <h3 class="title is-4">评论</h3>
+    
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://mengisok.github.io/zh-cn/Intro-to-Linux/';
+        this.page.identifier = 'zh-cn/Intro-to-Linux/';
+        
+        this.language = 'zh';
+        
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'mengisok' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                Go forward. Don&#39;t look back. &nbsp;
+                <!-- &copy; 2023 Han Meng&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a> -->
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+            
+            <!-- 
+<div class="column is-narrow has-text-centered">
+    <div class="dropdown is-up is-right is-hoverable" style="margin-top: -0.2em;">
+        <div class="dropdown-trigger">
+            <button class="button is-small" aria-haspopup="true" aria-controls="dropdown-menu7">
+                <span class="icon">
+                    <i class="fas fa-globe"></i>
+                </span>
+                <span>简体中文</span>
+                <span class="icon is-small">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
+            </button>
+        </div>
+        <div class="dropdown-menu has-text-left" role="menu" style="top:100%">
+            <div class="dropdown-content">
+            
+                <a href="/Intro-to-Linux/" class="dropdown-item">
+                    English
+                </a>
+            
+                <a href="/zh-cn/Intro-to-Linux/" class="dropdown-item">
+                    简体中文
+                </a>
+            
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("zh-CN");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery > p > .gallery-item').unwrap();
+                $('.justified-gallery').justifiedGallery();
+            }
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+    
+
+    
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="站内搜索" />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.zh-cn.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
