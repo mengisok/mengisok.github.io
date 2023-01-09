@@ -18,12 +18,12 @@
 
 
 
-    <meta name="description" content="&amp;#x6982;&amp;#x5FF5; &amp;#x6E05;&amp;#x9664;&amp;#x547D;&amp;#x4EE4;   clc  &amp;#x6E05;&amp;#x9664;&amp;#x5C4F;&amp;#x5E55;   clear myVar  &amp;#x5220;&amp;#x9664;&amp;#x53D8;&amp;#x91CF;myVar clear all  &amp;#x5220;&amp;#x9664;&amp;#x6240;&amp;#x6709;&amp;#x53D8;&amp;#x91C">
+    <meta name="description" content="&amp;#x6982;&amp;#x5FF5;&amp;#x6E05;&amp;#x9664;&amp;#x547D;&amp;#x4EE4; clc  &amp;#x6E05;&amp;#x9664;&amp;#x5C4F;&amp;#x5E55;  clear myVar  &amp;#x5220;&amp;#x9664;&amp;#x53D8;&amp;#x91CF;myVar   clear all  &amp;#x5220;&amp;#x9664;&amp;#x6240;&amp;#x6709;&amp;#x53D8;&amp;#x91CF;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MATLAB 基础（超基础）">
 <meta property="og:url" content="https://mengisok.github.io/zh-cn/Basic-MATLAB/index.html">
 <meta property="og:site_name" content="Meng&#39;s Blog">
-<meta property="og:description" content="&amp;#x6982;&amp;#x5FF5; &amp;#x6E05;&amp;#x9664;&amp;#x547D;&amp;#x4EE4;   clc  &amp;#x6E05;&amp;#x9664;&amp;#x5C4F;&amp;#x5E55;   clear myVar  &amp;#x5220;&amp;#x9664;&amp;#x53D8;&amp;#x91CF;myVar clear all  &amp;#x5220;&amp;#x9664;&amp;#x6240;&amp;#x6709;&amp;#x53D8;&amp;#x91C">
+<meta property="og:description" content="&amp;#x6982;&amp;#x5FF5;&amp;#x6E05;&amp;#x9664;&amp;#x547D;&amp;#x4EE4; clc  &amp;#x6E05;&amp;#x9664;&amp;#x5C4F;&amp;#x5E55;  clear myVar  &amp;#x5220;&amp;#x9664;&amp;#x53D8;&amp;#x91CF;myVar   clear all  &amp;#x5220;&amp;#x9664;&amp;#x6240;&amp;#x6709;&amp;#x53D8;&amp;#x91CF;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-20T15:02:06.000Z">
 <meta property="article:modified_time" content="2023-01-09T09:28:08.039Z">
@@ -187,109 +187,87 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <h3 id="&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</h3>
-<h4 id="&#x6E05;&#x9664;&#x547D;&#x4EE4;">&#x6E05;&#x9664;&#x547D;&#x4EE4;</h4>
-<ul>
-<li>
-<p><code>clc</code>  &#x6E05;&#x9664;&#x5C4F;&#x5E55;</p>
+        <h3 id="&#x6982;&#x5FF5;"><a href="#&#x6982;&#x5FF5;" class="headerlink" title="&#x6982;&#x5FF5;"></a>&#x6982;&#x5FF5;</h3><h4 id="&#x6E05;&#x9664;&#x547D;&#x4EE4;"><a href="#&#x6E05;&#x9664;&#x547D;&#x4EE4;" class="headerlink" title="&#x6E05;&#x9664;&#x547D;&#x4EE4;"></a>&#x6E05;&#x9664;&#x547D;&#x4EE4;</h4><ul>
+<li><p><code>clc</code>  &#x6E05;&#x9664;&#x5C4F;&#x5E55;</p>
 </li>
-<li>
-<p><code>clear myVar</code>  &#x5220;&#x9664;&#x53D8;&#x91CF;myVar</p>
-<p><code>clear all</code>  &#x5220;&#x9664;&#x6240;&#x6709;&#x53D8;&#x91CF;</p>
+<li><p><code>clear myVar</code>  &#x5220;&#x9664;&#x53D8;&#x91CF;myVar</p>
+<p>  <code>clear all</code>  &#x5220;&#x9664;&#x6240;&#x6709;&#x53D8;&#x91CF;</p>
 </li>
 </ul>
 <span id="more"></span>
-<h4 id="&#x521B;&#x5EFA;&#x53D8;&#x91CF;">&#x521B;&#x5EFA;&#x53D8;&#x91CF;</h4>
-<ul>
+<h4 id="&#x521B;&#x5EFA;&#x53D8;&#x91CF;"><a href="#&#x521B;&#x5EFA;&#x53D8;&#x91CF;" class="headerlink" title="&#x521B;&#x5EFA;&#x53D8;&#x91CF;"></a>&#x521B;&#x5EFA;&#x53D8;&#x91CF;</h4><ul>
 <li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6807;&#x91CF;&#xFF1A;<code>myScalar = 10</code></li>
-<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5411;&#x91CF;
-<ul>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5411;&#x91CF;<ul>
 <li>&#x884C;&#x5411;&#x91CF;&#xFF1A;<code>myVector = [4 5 6]</code></li>
 <li>&#x5217;&#x5411;&#x91CF;&#xFF1A;<code>myVectorCol = [7; 8; 9]</code></li>
 </ul>
 </li>
-<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#x3002;<code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code>
-<ul>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#x3002;<code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code><ul>
 <li><code>myMatrix(1, 2)</code>&#x5F97;&#x5230;5</li>
 <li><code>myMatrix(2, :)</code>&#x5F97;&#x5230;&#x6240;&#x6709;&#x5728;&#x7B2C;2&#x884C;&#x7684;&#x5217;</li>
 <li><code>myMatrix(3, 2:3)</code>&#x5F97;&#x5230;&#x7B2C;3&#x884C;&#x3001;&#x7B2C;2&#x5217;&#x548C;&#x7B2C;3&#x5217;&#x3002;</li>
 </ul>
 </li>
-<li>&#x5728;&#x547D;&#x4EE4;&#x884C;&#x7684;&#x672B;&#x5C3E;&#x4F7F;&#x7528;&quot;; &quot;&#x610F;&#x5473;&#x7740;&#x5B83;&#x5C06;&#x6291;&#x5236;&#xFF08;&#x5373;&#x4E0D;&#x663E;&#x793A;&#xFF09;&#x7ED3;&#x679C;</li>
+<li>&#x5728;&#x547D;&#x4EE4;&#x884C;&#x7684;&#x672B;&#x5C3E;&#x4F7F;&#x7528;&#x201D;; &#x201C;&#x610F;&#x5473;&#x7740;&#x5B83;&#x5C06;&#x6291;&#x5236;&#xFF08;&#x5373;&#x4E0D;&#x663E;&#x793A;&#xFF09;&#x7ED3;&#x679C;</li>
 </ul>
-<h4 id="&#x53D8;&#x91CF;&#x7C7B;&#x522B;">&#x53D8;&#x91CF;&#x7C7B;&#x522B;</h4>
-<ul>
+<h4 id="&#x53D8;&#x91CF;&#x7C7B;&#x522B;"><a href="#&#x53D8;&#x91CF;&#x7C7B;&#x522B;" class="headerlink" title="&#x53D8;&#x91CF;&#x7C7B;&#x522B;"></a>&#x53D8;&#x91CF;&#x7C7B;&#x522B;</h4><ul>
 <li>double (&#x9ED8;&#x8BA4;)</li>
 <li><code>format long</code>&#x5C06; double &#x7C7B;&#x6539;&#x4E3A; long &#x7C7B;</li>
 <li>double, long, short, single, logical (boolean)&#x7B49;&#x7B49;</li>
 </ul>
-<h4 id="&#x5143;&#x80DE;&#x6570;&#x7EC4;">&#x5143;&#x80DE;&#x6570;&#x7EC4;</h4>
-<p>&#x4E00;&#x4E2A;&#x6709;&#x4E0D;&#x540C;&#x79CD;&#x7C7B;&#x5143;&#x7D20;&#x7684;&#x77E9;&#x9635;</p>
+<h4 id="&#x5143;&#x80DE;&#x6570;&#x7EC4;"><a href="#&#x5143;&#x80DE;&#x6570;&#x7EC4;" class="headerlink" title="&#x5143;&#x80DE;&#x6570;&#x7EC4;"></a>&#x5143;&#x80DE;&#x6570;&#x7EC4;</h4><p>&#x4E00;&#x4E2A;&#x6709;&#x4E0D;&#x540C;&#x79CD;&#x7C7B;&#x5143;&#x7D20;&#x7684;&#x77E9;&#x9635;</p>
 <p><code>myCell = {[1 2 3] [4 5 6 7]; &apos;v1&apos; &apos;v2&apos;}</code></p>
 <p><code>myCell{1, 2}</code>&#x5F97;&#x5230;[4 5 6 7]</p>
-<h3 id="&#x6838;&#x5FC3;&#x8BED;&#x6CD5;">&#x6838;&#x5FC3;&#x8BED;&#x6CD5;</h3>
-<h4 id="&#x811A;&#x672C;">&#x811A;&#x672C;</h4>
-<ul>
-<li>&quot;.m &quot;&#x6587;&#x4EF6;</li>
+<h3 id="&#x6838;&#x5FC3;&#x8BED;&#x6CD5;"><a href="#&#x6838;&#x5FC3;&#x8BED;&#x6CD5;" class="headerlink" title="&#x6838;&#x5FC3;&#x8BED;&#x6CD5;"></a>&#x6838;&#x5FC3;&#x8BED;&#x6CD5;</h3><h4 id="&#x811A;&#x672C;"><a href="#&#x811A;&#x672C;" class="headerlink" title="&#x811A;&#x672C;"></a>&#x811A;&#x672C;</h4><ul>
+<li>&#x201C;.m &#x201C;&#x6587;&#x4EF6;</li>
 <li>&#x6CE8;&#x91CA;: <code>% </code></li>
 <li><code>disp()</code>: &#x663E;&#x793A;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;</li>
 <li><code>randi()</code>: &#x968F;&#x673A;&#x6574;&#x6570;</li>
 <li>&#x8981;&#x60F3;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#xFF1A;<code>matrix&apos;</code></li>
 </ul>
-<h4 id="&#x77E9;&#x9635;">&#x77E9;&#x9635;</h4>
-<ul>
-<li>
-<p>&#x521B;&#x5EFA;&#x4E00;&#x4E9B;&#x6807;&#x51C6;&#x77E9;&#x9635;</p>
-<p><code>zeros(m, n)</code></p>
-<p>`ones(m, n)&#x2019;</p>
-<p>`randi(m, n)&#x2019;</p>
+<h4 id="&#x77E9;&#x9635;"><a href="#&#x77E9;&#x9635;" class="headerlink" title="&#x77E9;&#x9635;"></a>&#x77E9;&#x9635;</h4><ul>
+<li><p>&#x521B;&#x5EFA;&#x4E00;&#x4E9B;&#x6807;&#x51C6;&#x77E9;&#x9635;</p>
+<p>  <code>zeros(m, n)</code></p>
+<p>  `ones(m, n)&#x2019;</p>
+<p>  `randi(m, n)&#x2019;</p>
 </li>
-<li>
-<p>&#x77E9;&#x9635;&#x4E58;&#x6CD5;</p>
+<li><p>&#x77E9;&#x9635;&#x4E58;&#x6CD5;</p>
 <ul>
 <li>&#x6807;&#x51C6;&#x4E58;&#x6CD5;&#xFF1A;<code>M1 * M2</code></li>
 <li>&#x5143;&#x7D20;&#x4E0E;&#x5143;&#x7D20;&#x7684;&#x4E58;&#x6CD5;&#xFF1A;<code>M1 .* M2</code></li>
 </ul>
 </li>
-<li>
-<p>&#x9664;&#x6CD5;&#x662F;&#x76F8;&#x4F3C;&#x7684;</p>
+<li><p>&#x9664;&#x6CD5;&#x662F;&#x76F8;&#x4F3C;&#x7684;</p>
 <ul>
 <li>&#x5143;&#x7D20;&#x4E0E;&#x5143;&#x7D20;&#x7684;&#x9664;&#x6CD5;&#xFF1A;<code>M1 ./ M2</code></li>
 </ul>
 </li>
 </ul>
-<h4 id="If-&#x8BED;&#x53E5;">If &#x8BED;&#x53E5;</h4>
-<figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="Switch-&#x8BED;&#x53E5;">Switch &#x8BED;&#x53E5;</h4>
-<figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">switch</span> ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="For-&#x5FAA;&#x73AF;">For &#x5FAA;&#x73AF;</h4>
-<figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">% step = 1</span></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = <span class="hljs-number">1</span>: <span class="hljs-number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% step = 2</span></span><br><span class="line"><span class="hljs-comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% n =25;</span></span><br><span class="line"><span class="hljs-comment">% step = 5;</span></span><br><span class="line"><span class="hljs-comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
-<h4 id="While-&#x5FAA;&#x73AF;">While &#x5FAA;&#x73AF;</h4>
-<figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="&#x7F16;&#x7A0B;">&#x7F16;&#x7A0B;</h3>
-<h4 id="&#x8BBE;&#x7F6E;&#x8DEF;&#x5F84;">&#x8BBE;&#x7F6E;&#x8DEF;&#x5F84;</h4>
-<p>&#x5982;&#x679C;MATLAB&#x627E;&#x4E0D;&#x5230;&#x4F60;&#x7684;&#x811A;&#x672C;&#x6216;&#x51FD;&#x6570;&#x6216;&#x5176;&#x4ED6;&#x4E1C;&#x897F;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x4F60;&#x5DF2;&#x7ECF;&#x6DFB;&#x52A0;&#x4E86;&#x8DEF;&#x5F84;</p>
-<h4 id="&#x51FD;&#x6570;">&#x51FD;&#x6570;</h4>
-<ul>
-<li>&#x4ECE; &quot;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5939; &quot;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;.m&#x6587;&#x4EF6;</li>
+<h4 id="If-&#x8BED;&#x53E5;"><a href="#If-&#x8BED;&#x53E5;" class="headerlink" title="If &#x8BED;&#x53E5;"></a>If &#x8BED;&#x53E5;</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="Switch-&#x8BED;&#x53E5;"><a href="#Switch-&#x8BED;&#x53E5;" class="headerlink" title="Switch &#x8BED;&#x53E5;"></a>Switch &#x8BED;&#x53E5;</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">switch</span> ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="For-&#x5FAA;&#x73AF;"><a href="#For-&#x5FAA;&#x73AF;" class="headerlink" title="For &#x5FAA;&#x73AF;"></a>For &#x5FAA;&#x73AF;</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">% step = 1</span></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = <span class="hljs-number">1</span>: <span class="hljs-number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% step = 2</span></span><br><span class="line"><span class="hljs-comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% n =25;</span></span><br><span class="line"><span class="hljs-comment">% step = 5;</span></span><br><span class="line"><span class="hljs-comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="While-&#x5FAA;&#x73AF;"><a href="#While-&#x5FAA;&#x73AF;" class="headerlink" title="While &#x5FAA;&#x73AF;"></a>While &#x5FAA;&#x73AF;</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="&#x7F16;&#x7A0B;"><a href="#&#x7F16;&#x7A0B;" class="headerlink" title="&#x7F16;&#x7A0B;"></a>&#x7F16;&#x7A0B;</h3><h4 id="&#x8BBE;&#x7F6E;&#x8DEF;&#x5F84;"><a href="#&#x8BBE;&#x7F6E;&#x8DEF;&#x5F84;" class="headerlink" title="&#x8BBE;&#x7F6E;&#x8DEF;&#x5F84;"></a>&#x8BBE;&#x7F6E;&#x8DEF;&#x5F84;</h4><p>&#x5982;&#x679C;MATLAB&#x627E;&#x4E0D;&#x5230;&#x4F60;&#x7684;&#x811A;&#x672C;&#x6216;&#x51FD;&#x6570;&#x6216;&#x5176;&#x4ED6;&#x4E1C;&#x897F;&#xFF0C;&#x8BF7;&#x786E;&#x4FDD;&#x4F60;&#x5DF2;&#x7ECF;&#x6DFB;&#x52A0;&#x4E86;&#x8DEF;&#x5F84;</p>
+<h4 id="&#x51FD;&#x6570;"><a href="#&#x51FD;&#x6570;" class="headerlink" title="&#x51FD;&#x6570;"></a>&#x51FD;&#x6570;</h4><ul>
+<li>&#x4ECE; &#x201C;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5939; &#x201C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;.m&#x6587;&#x4EF6;</li>
 <li>&#x7F16;&#x8F91;&#x6A21;&#x5F0F;&#xFF0C;&#x5E76;&#x7F16;&#x5199;&#x4F60;&#x7684;&#x51FD;&#x6570;</li>
 </ul>
-<h4 id="&#x5BFC;&#x5165;&#x6570;&#x636E;">&#x5BFC;&#x5165;&#x6570;&#x636E;</h4>
-<p>&#x8981;&#x5BFC;&#x5165;&#x4E00;&#x4E2A;CSV&#x6587;&#x4EF6;&#xFF1A;</p>
+<h4 id="&#x5BFC;&#x5165;&#x6570;&#x636E;"><a href="#&#x5BFC;&#x5165;&#x6570;&#x636E;" class="headerlink" title="&#x5BFC;&#x5165;&#x6570;&#x636E;"></a>&#x5BFC;&#x5165;&#x6570;&#x636E;</h4><p>&#x8981;&#x5BFC;&#x5165;&#x4E00;&#x4E2A;CSV&#x6587;&#x4EF6;&#xFF1A;</p>
 <ul>
 <li>&#x590D;&#x5236;&#x5E76;&#x7C98;&#x8D34;&#x5230; &#x201C;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5939;&#x201D;</li>
 <li><code>csvread(&apos;sine.csv&apos;)</code></li>
 </ul>
-<h4 id="&#x8C03;&#x8BD5;">&#x8C03;&#x8BD5;</h4>
-<p>&#x5728;&#x7F16;&#x8F91;&#x5668;&#x5DE6;&#x4FA7;&#x7684;&#x5C0F;&#x7834;&#x6298;&#x53F7;&#x5904;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;</p>
-<h4 id="&#x6027;&#x80FD;">&#x6027;&#x80FD;</h4>
-<ul>
+<h4 id="&#x8C03;&#x8BD5;"><a href="#&#x8C03;&#x8BD5;" class="headerlink" title="&#x8C03;&#x8BD5;"></a>&#x8C03;&#x8BD5;</h4><p>&#x5728;&#x7F16;&#x8F91;&#x5668;&#x5DE6;&#x4FA7;&#x7684;&#x5C0F;&#x7834;&#x6298;&#x53F7;&#x5904;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;</p>
+<h4 id="&#x6027;&#x80FD;"><a href="#&#x6027;&#x80FD;" class="headerlink" title="&#x6027;&#x80FD;"></a>&#x6027;&#x80FD;</h4><ul>
 <li>&#x9884;&#x5148;&#x5206;&#x914D;&#x4E00;&#x4E9B;&#x5185;&#x5B58;&#x53EF;&#x4EE5;&#x52A0;&#x5FEB;&#x5927;&#x578B;&#x8BA1;&#x7B97;&#x7684;&#x901F;&#x5EA6;</li>
-<li>&#x4F7F;&#x7528; &quot;tik &#x2026; tok &quot;&#x6765;&#x8BA1;&#x7B97;&#x65F6;&#x95F4;</li>
+<li>&#x4F7F;&#x7528; &#x201C;tik &#x2026; tok &#x201C;&#x6765;&#x8BA1;&#x7B97;&#x65F6;&#x95F4;</li>
 </ul>
-<h3 id="&#x6570;&#x636E;&#x8868;&#x793A;">&#x6570;&#x636E;&#x8868;&#x793A;</h3>
-<h4 id="&#x7ED8;&#x56FE;">&#x7ED8;&#x56FE;</h4>
-<figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line"><span class="hljs-comment">% figure(1)</span></span><br><span class="line"><span class="hljs-built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="&#x6570;&#x636E;&#x8868;&#x793A;"><a href="#&#x6570;&#x636E;&#x8868;&#x793A;" class="headerlink" title="&#x6570;&#x636E;&#x8868;&#x793A;"></a>&#x6570;&#x636E;&#x8868;&#x793A;</h3><h4 id="&#x7ED8;&#x56FE;"><a href="#&#x7ED8;&#x56FE;" class="headerlink" title="&#x7ED8;&#x56FE;"></a>&#x7ED8;&#x56FE;</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line"><span class="hljs-comment">% figure(1)</span></span><br><span class="line"><span class="hljs-built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
+
 <ul>
 <li>&#x6DFB;&#x52A0;&#x7F51;&#x683C;&#xFF1A;<code>grid on</code></li>
 <li>&#x4F7F;&#x7A97;&#x53E3;&#x4E0E;&#x7ED8;&#x56FE;&#x5B8C;&#x5168;&#x543B;&#x5408;&#xFF1A;<code>axis tight</code></li>
@@ -300,16 +278,14 @@
 <li>&#x6DFB;&#x52A0;&#x6CE8;&#x91CA;&#xFF1A;<code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
 <li>&#x4F7F;&#x7528;<code>close all</code>&#x6765;&#x5173;&#x95ED;&#x6240;&#x6709;&#x56FE;</li>
 </ul>
-<h4 id="&#x56FE;&#x7247;">&#x56FE;&#x7247;</h4>
-<ul>
+<h4 id="&#x56FE;&#x7247;"><a href="#&#x56FE;&#x7247;" class="headerlink" title="&#x56FE;&#x7247;"></a>&#x56FE;&#x7247;</h4><ul>
 <li>&#x4F7F;&#x7528;<code>imread()</code>&#x6765;&#x5BFC;&#x5165;&#x56FE;&#x50CF;&#x6587;&#x4EF6;</li>
 <li>&#x4F7F;&#x7528;<code>image()</code>&#x7ED8;&#x5236;&#x56FE;&#x50CF;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;&#x6B63;&#x65B9;&#x5F62;&#xFF09;</li>
 <li>&#x4F7F;&#x7528;<code>imshow()</code>&#x4EE5;&#x6B63;&#x786E;&#x7684;&#x957F;&#x5BBD;&#x6BD4;&#x7ED8;&#x5236;&#x56FE;&#x50CF;&#xFF0C;&#x8F74;&#x4E0A;&#x6CA1;&#x6709;&#x6807;&#x7B7E;</li>
 </ul>
-<h4 id="3D-&#x7ED8;&#x56FE;">3D &#x7ED8;&#x56FE;</h4>
-<figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="hljs-number">-2</span>*<span class="hljs-built_in">pi</span>:<span class="hljs-number">.5</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="hljs-built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="hljs-built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Simulink">Simulink</h3>
-<p>&#x4E00;&#x4E2A;&#x6846;&#x56FE;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x5EFA;&#x7ACB;&#x7CFB;&#x7EDF;&#x548C;&#x53CD;&#x9988;&#x56DE;&#x8DEF;&#xFF0C;&#x4E3A;FPGA&#x7B49;&#x786C;&#x4EF6;&#x751F;&#x6210;&#x4EE3;&#x7801;</p>
+<h4 id="3D-&#x7ED8;&#x56FE;"><a href="#3D-&#x7ED8;&#x56FE;" class="headerlink" title="3D &#x7ED8;&#x56FE;"></a>3D &#x7ED8;&#x56FE;</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="hljs-number">-2</span>*<span class="hljs-built_in">pi</span>:<span class="hljs-number">.5</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="hljs-built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="hljs-built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Simulink"><a href="#Simulink" class="headerlink" title="Simulink"></a>Simulink</h3><p>&#x4E00;&#x4E2A;&#x6846;&#x56FE;&#x5DE5;&#x5177;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x5EFA;&#x7ACB;&#x7CFB;&#x7EDF;&#x548C;&#x53CD;&#x9988;&#x56DE;&#x8DEF;&#xFF0C;&#x4E3A;FPGA&#x7B49;&#x786C;&#x4EF6;&#x751F;&#x6210;&#x4EE3;&#x7801;</p>
 
     
     </div>
