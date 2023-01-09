@@ -187,25 +187,43 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>From noon yesterday to noon today, I was working on latex to make a resume. That&#x2019;s very unfriendly for beginners &#x1F622;. Luckily I finished it now! Take a look at <a target="_blank" rel="noopener" href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.  </p>
+        <p>From noon yesterday to noon today, I was working on latex to make a resume. That&#x2019;s very unfriendly for beginners &#x1F622;. Luckily I finished it now! Take a look at <a target="_blank" rel="noopener" href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
 <span id="more"></span>
-<p>Here&#x2019;s how I did it:  </p>
-<p>-&gt; If you only use latex <strong>occasionally or a few times</strong>, an onilne editor <a target="_blank" rel="noopener" href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>-&gt; If you want to do <strong>more</strong> things, use following steps:  </p>
-<h3 id="Download-MiKTeX-and-VSCode"><a href="#Download-MiKTeX-and-VSCode" class="headerlink" title="Download MiKTeX and VSCode"></a>Download MiKTeX and VSCode</h3><p><strong>MiKTeX</strong><br>You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.  </p>
-<p><strong>VSCode</strong><br>Remember to download extension <em>latex workshop</em>.  </p>
-<h3 id="Find-a-template"><a href="#Find-a-template" class="headerlink" title="Find a template"></a>Find a template</h3><p>On Overleaf or Github.<br>Here are my favorites:<br><a target="_blank" rel="noopener" href="https://github.com/vinci7/Deedy-Resume-for-Japanese">&#x65B0;&#x5352;&#x306E;&#x305F;&#x3081;&#x306E;LaTeX&#x5C65;&#x6B74;&#x66F8;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;</a><br><a target="_blank" rel="noopener" href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>And mine:<br><a target="_blank" rel="noopener" href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)  </p>
-<h3 id="Edit-the-template"><a href="#Edit-the-template" class="headerlink" title="Edit the template"></a>Edit the template</h3><p>You may encounter many problems at this step, most of which require you to download <strong>Packages</strong> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.  </p>
-<h3 id="Share-your-template"><a href="#Share-your-template" class="headerlink" title="Share your template"></a>Share your template</h3><ol>
-<li>Git your template to github<br>(Already bound git and your github accounts and set SSH key)<br>-&gt; Create a new repository<br>-&gt; Git bash the folder which contains full files about your template<br>-&gt; Run the following code in Git:</li>
+<p>Here&#x2019;s how I did it:</p>
+<p>-&gt; If you only use latex <strong>occasionally or a few times</strong>, an onilne editor <a target="_blank" rel="noopener" href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
+-&gt; If you want to do <strong>more</strong> things, use following steps:</p>
+<h3 id="Download-MiKTeX-and-VSCode">Download MiKTeX and VSCode</h3>
+<p><strong>MiKTeX</strong><br>
+You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
+Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.</p>
+<p><strong>VSCode</strong><br>
+Remember to download extension <em>latex workshop</em>.</p>
+<h3 id="Find-a-template">Find a template</h3>
+<p>On Overleaf or Github.<br>
+Here are my favorites:<br>
+<a target="_blank" rel="noopener" href="https://github.com/vinci7/Deedy-Resume-for-Japanese">&#x65B0;&#x5352;&#x306E;&#x305F;&#x3081;&#x306E;LaTeX&#x5C65;&#x6B74;&#x66F8;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;</a><br>
+<a target="_blank" rel="noopener" href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>
+And mine:<br>
+<a target="_blank" rel="noopener" href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)</p>
+<h3 id="Edit-the-template">Edit the template</h3>
+<p>You may encounter many problems at this step, most of which require you to download <strong>Packages</strong> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</p>
+<h3 id="Share-your-template">Share your template</h3>
+<ol>
+<li>Git your template to github<br>
+(Already bound git and your github accounts and set SSH key)<br>
+-&gt; Create a new repository<br>
+-&gt; Git bash the folder which contains full files about your template<br>
+-&gt; Run the following code in Git:</li>
 </ol>
-<pre><code class="C">git init
+<pre><code class="language-C">git init
 git add .
 git commit -m &apos;Description&apos;
 git remote add origin https://...  (copy from github)
 git push -u origin master
 </code></pre>
 <ol start="2">
-<li>Submit to Overleaf<br>That&#x2019;s where I found the original template for my CV! I think put templates there may help more people.</li>
+<li>Submit to Overleaf<br>
+That&#x2019;s where I found the original template for my CV! I think put templates there may help more people.</li>
 </ol>
 
     
