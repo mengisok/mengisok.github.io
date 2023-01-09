@@ -197,47 +197,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Dec 2022</title>
-    <url>/Dec-2022/</url>
-    <content><![CDATA[<p>This month was supposed to be the month of exams, so I dedicated my time to reviewing the three main lessons in school: Digital Signal Processing, Digital Image Analysis and Combinatorial Mathematics. I made some notes (all in Chinese), and bookmarked some nice links.  </p>
-<span id="more"></span>
-<h3 id="Review-Notes"><a href="#Review-Notes" class="headerlink" title="Review Notes"></a>Review Notes</h3><blockquote>
-<p><a href="https://mengisok.notion.site/eb6f54749fb7464f8809ed94ec4c821b">DSP notes on Notion</a> or <a href="https://github.com/mengisok/DSP-review">on GitHub</a> (some MATLAB code)  </p>
-<p><a href="https://drive.google.com/drive/folders/1KqNqF0UKM6n2ePmovORoTPofqJL-QBt6?usp=sharing">DIA notes on Google Drive</a> (updating&#x2026;)  </p>
-<p><a href="https://drive.google.com/drive/folders/1-0-R1W7jvLb9YrgUj_J1PrmkrNPaY_OM?usp=sharing">Combinatorial Mathematics notes on Google Drive</a> (updating&#x2026;)  </p>
-</blockquote>
-<p>Another thing worth mentioning is that this month <a href="https://en.wikipedia.org/wiki/ChatGPT"><strong>ChatGPT</strong></a> <strong>went viral!</strong> I also tried it. It&#x2019;s amazing I have to say. Here are some interesting or useful links I saw about ChatGPT.  </p>
-<h3 id="Awesome-ChatGPT"><a href="#Awesome-ChatGPT" class="headerlink" title="Awesome ChatGPT"></a>Awesome ChatGPT</h3><blockquote>
-<p><a href="https://openai.com/blog/chatgpt/">Official Introduction</a>  </p>
-<p><a href="https://github.com/Kamigami55/awesome-chatgpt">awesome-chatgpt</a><br>There are many trending repos related to ChatGPT recently.  </p>
-<p><a href="https://chat.bygpt.com/">ChatGPT available in mainland China</a>  </p>
-<p><a href="https://readdevdocs.com/blog/makemoney/%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%B3%A8%E5%86%8COpenAI%E8%B4%A6%E5%8F%B7%E8%AF%95%E7%94%A8ChatGPT%E6%8C%87%E5%8D%97.html#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87">Guide to registering an OpenAI account in China to try ChatGPT</a>  </p>
-<p><a href="https://sms-activate.org/cn">Virtual number for receiving SMS online</a>  </p>
-<p><a href="https://www.douban.com/group/topic/279710957/?_i=705681524967510&amp;dt_dapp=1">First Experience of ChatGPT</a>    </p>
-<p><a href="https://mp.weixin.qq.com/s/rzCYgddvdvWwv71_M_sC-Q">ChatGPT Chinese VSCode plugin</a>  </p>
-<p><a href="https://mp.weixin.qq.com/s/5zThHhpzBmx4EUIMvMV-vQ">Hand sketching in Jupyter Notebook, and turning it into code</a>  </p>
-</blockquote>
-<h3 id="Other-Awesome-Links"><a href="#Other-Awesome-Links" class="headerlink" title="Other Awesome Links"></a>Other Awesome Links</h3><blockquote>
-<p><a href="http://tingtalk.me/telegram/">Telegram Guide</a></p>
-<p><a href="https://oi-wiki.org/">oi-wiki.org</a><br>Programming contest wiki.  </p>
-<p><a href="https://ctf-wiki.org/">ctf-wiki.org</a><br>Cybersecurity competition wiki.  </p>
-<p><a href="https://www.summerschoolsineurope.eu/">summerschoolsineurope.eu</a><br>Information about summerschool in Europe. </p>
-<p><a href="http://fernwanderweg.blogspot.com/">fernwanderweg.blogspot.com</a><br>He used Google blogger to bulid a blog. Looks good.  </p>
-<p><a href="https://hdlbits.01xz.net/wiki/Main_Page">Digital Logic Online Learning Site: HDLbit</a>, and <a href="https://github.com/viduraakalanka/HDL-Bits-Solutions">solutions</a> to learn Verilog.  </p>
-<p><a href="https://ossinsight.io/">OSS Insight</a><br>Real-time trends and statistics for github.  </p>
-<p><a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>You can get some certificates after learning? I love it~</p>
-<p><a href="https://roadmap.sh/">Developer Roadmaps</a><br>Role-based programmer growth guide.  </p>
-<p><a href="https://seeing-theory.brown.edu/index.html">Statistics Visualization Learning Site</a><br>Learn statistics in a visual way. That&#x2019;s very clear and easy to understand!  </p>
-</blockquote>
-<p>The last three are several top repositories with the great number of stars on GitHub. I was surprised to find that <a href="https://github.com/996icu/996.ICU">996.icu</a> was in top 3 &#x1F602;. </p>
-<h3 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h3><p>Unfortunately I didn&#x2019;t take the IELTS &#x1F61E;. I wasn&#x2019;t ready&#x2026; I&#x2019;ll do it later!<br>As for learning Japanese, I dont&#x2019;t use Duolinguo anymore since it&#x2019;s a bit simple. I found some YouTube videos to watch and learn, like <a href="https://www.youtube.com/@deguchi">&#x51FA;&#x53E3;&#x65E5;&#x8A9E;</a>.</p>
-<h3 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h3><p>I changed the theme of my blog from <a href="https://github.com/probberechts/hexo-theme-cactus"><strong>Cactus</strong></a> to <a href="https://github.com/cjquines/hexo-theme-ascent"><strong>Ascent</strong></a>. By the way, here&#x2019;s <a href="https://github.com/stars/mengisok/lists/blog-themes">my stars list</a> about blog themes.<br>I tried to edit a theme to fit my purpose but failed. Frontend is so difficult!  </p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Git Learning Notes</title>
     <url>/Git-Learning-Notes/</url>
     <content><![CDATA[<p>Notes of <a href="https://www.liaoxuefeng.com/wiki/896043488029600">Liao Xuefeng&#x2019;s Git course</a>.  </p>
@@ -513,6 +472,142 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Dec 2022</title>
+    <url>/Dec-2022/</url>
+    <content><![CDATA[<p>This month was supposed to be the month of exams, so I dedicated my time to reviewing the three main lessons in school: Digital Signal Processing, Digital Image Analysis and Combinatorial Mathematics. I made some notes (all in Chinese), and bookmarked some nice links.  </p>
+<span id="more"></span>
+<h3 id="Review-Notes"><a href="#Review-Notes" class="headerlink" title="Review Notes"></a>Review Notes</h3><blockquote>
+<p><a href="https://mengisok.notion.site/eb6f54749fb7464f8809ed94ec4c821b">DSP notes on Notion</a> or <a href="https://github.com/mengisok/DSP-review">on GitHub</a> (some MATLAB code)  </p>
+<p><a href="https://drive.google.com/drive/folders/1KqNqF0UKM6n2ePmovORoTPofqJL-QBt6?usp=sharing">DIA notes on Google Drive</a> (updating&#x2026;)  </p>
+<p><a href="https://drive.google.com/drive/folders/1-0-R1W7jvLb9YrgUj_J1PrmkrNPaY_OM?usp=sharing">Combinatorial Mathematics notes on Google Drive</a> (updating&#x2026;)  </p>
+</blockquote>
+<p>Another thing worth mentioning is that this month <a href="https://en.wikipedia.org/wiki/ChatGPT"><strong>ChatGPT</strong></a> <strong>went viral!</strong> I also tried it. It&#x2019;s amazing I have to say. Here are some interesting or useful links I saw about ChatGPT.  </p>
+<h3 id="Awesome-ChatGPT"><a href="#Awesome-ChatGPT" class="headerlink" title="Awesome ChatGPT"></a>Awesome ChatGPT</h3><blockquote>
+<p><a href="https://openai.com/blog/chatgpt/">Official Introduction</a>  </p>
+<p><a href="https://github.com/Kamigami55/awesome-chatgpt">awesome-chatgpt</a><br>There are many trending repos related to ChatGPT recently.  </p>
+<p><a href="https://chat.bygpt.com/">ChatGPT available in mainland China</a>  </p>
+<p><a href="https://readdevdocs.com/blog/makemoney/%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%B3%A8%E5%86%8COpenAI%E8%B4%A6%E5%8F%B7%E8%AF%95%E7%94%A8ChatGPT%E6%8C%87%E5%8D%97.html#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87">Guide to registering an OpenAI account in China to try ChatGPT</a>  </p>
+<p><a href="https://sms-activate.org/cn">Virtual number for receiving SMS online</a>  </p>
+<p><a href="https://www.douban.com/group/topic/279710957/?_i=705681524967510&amp;dt_dapp=1">First Experience of ChatGPT</a>    </p>
+<p><a href="https://mp.weixin.qq.com/s/rzCYgddvdvWwv71_M_sC-Q">ChatGPT Chinese VSCode plugin</a>  </p>
+<p><a href="https://mp.weixin.qq.com/s/5zThHhpzBmx4EUIMvMV-vQ">Hand sketching in Jupyter Notebook, and turning it into code</a>  </p>
+</blockquote>
+<h3 id="Other-Awesome-Links"><a href="#Other-Awesome-Links" class="headerlink" title="Other Awesome Links"></a>Other Awesome Links</h3><blockquote>
+<p><a href="http://tingtalk.me/telegram/">Telegram Guide</a></p>
+<p><a href="https://oi-wiki.org/">oi-wiki.org</a><br>Programming contest wiki.  </p>
+<p><a href="https://ctf-wiki.org/">ctf-wiki.org</a><br>Cybersecurity competition wiki.  </p>
+<p><a href="https://www.summerschoolsineurope.eu/">summerschoolsineurope.eu</a><br>Information about summerschool in Europe. </p>
+<p><a href="http://fernwanderweg.blogspot.com/">fernwanderweg.blogspot.com</a><br>He used Google blogger to bulid a blog. Looks good.  </p>
+<p><a href="https://hdlbits.01xz.net/wiki/Main_Page">Digital Logic Online Learning Site: HDLbit</a>, and <a href="https://github.com/viduraakalanka/HDL-Bits-Solutions">solutions</a> to learn Verilog.  </p>
+<p><a href="https://ossinsight.io/">OSS Insight</a><br>Real-time trends and statistics for github.  </p>
+<p><a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>You can get some certificates after learning? I love it~</p>
+<p><a href="https://roadmap.sh/">Developer Roadmaps</a><br>Role-based programmer growth guide.  </p>
+<p><a href="https://seeing-theory.brown.edu/index.html">Statistics Visualization Learning Site</a><br>Learn statistics in a visual way. That&#x2019;s very clear and easy to understand!  </p>
+</blockquote>
+<p>The last three are several top repositories with the great number of stars on GitHub. I was surprised to find that <a href="https://github.com/996icu/996.ICU">996.icu</a> was in top 3 &#x1F602;. </p>
+<h3 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h3><p>Unfortunately I didn&#x2019;t take the IELTS &#x1F61E;. I wasn&#x2019;t ready&#x2026; I&#x2019;ll do it later!<br>As for learning Japanese, I dont&#x2019;t use Duolinguo anymore since it&#x2019;s a bit simple. I found some YouTube videos to watch and learn, like <a href="https://www.youtube.com/@deguchi">&#x51FA;&#x53E3;&#x65E5;&#x8A9E;</a>.</p>
+<h3 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h3><p>I changed the theme of my blog from <a href="https://github.com/probberechts/hexo-theme-cactus"><strong>Cactus</strong></a> to <a href="https://github.com/cjquines/hexo-theme-ascent"><strong>Ascent</strong></a>. By the way, here&#x2019;s <a href="https://github.com/stars/mengisok/lists/blog-themes">my stars list</a> about blog themes.<br>I tried to edit a theme to fit my purpose but failed. Frontend is so difficult!  </p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Intro to Java</title>
+    <url>/Intro-to-Java/</url>
+    <content><![CDATA[<p>Notes of <a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255883772263712">Liao Xuefeng&#x2019;s Java course - Java Quick Start</a>.  </p>
+<span id="more"></span>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
+<li>Founder: James Gosling</li>
+<li>Java is somewhere between a compiled language and an interpreted language. It compiles code into a kind of &#x201C;bytecode&#x201D;, similar to abstract CPU instructions, and then writes virtual machines for different platforms, which are responsible for loading the bytecode and executing it, so that it can be &#x201C;written once and run everywhere&#x201D;.</li>
+<li>Java three versions<ul>
+<li>Java SE: Standard Edition, which contains the standard JVM and standard libraries, and is the core of the entire Java platform</li>
+<li>Java EE: Enterprise Edition, which is based on Java SE with a large number of APIs and libraries to facilitate the development of Web applications, databases, messaging services, etc.; the virtual machine of Java EE is exactly the same as Java SE; it is necessary for further learning of Web applications</li>
+<li>Java ME: Micro Edition, a &#x201C;thin version&#x201D; for embedded devices, the standard libraries of Java SE cannot be used on Java ME; the virtual machine of Java ME is also a &#x201C;thin version&#x201D;; not popular, not Recommended to learn</li>
+</ul>
+</li>
+<li>The recommended route to learn Java<ul>
+<li>First learn Java SE, master the Java language itself, Java core development techniques and the use of Java standard libraries.</li>
+<li>If you continue to learn Java EE, then the Spring Framework, database development, distributed architecture is required to learn.</li>
+<li>If one wants to learn big data development, then Hadoop, Spark, Flink, these big data platforms are what one needs to learn, they are all based on Java or Scala development.</li>
+<li>If you want to learn mobile development, then go deep into the Android platform and master Android App development.</li>
+</ul>
+</li>
+<li>JDK: Java Development Kit, in addition to containing the JRE, also provides a compiler, debugger and other development tools, used to compile Java source code into Java byte code</li>
+<li>JRE: Java Runtime Environment, is a virtual machine to run Java byte code</li>
+<li>JSR specification: Java Specification Request</li>
+<li>JCP Organization: Java Community Process</li>
+<li>RI: Reference Implementation, Reference Implementation</li>
+<li>TCK: Technology Compatibility Kit, compatibility test kit</li>
+</ul>
+<h3 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h3><h4 id="Basic-structure-of-the-program"><a href="#Basic-structure-of-the-program" class="headerlink" title="Basic structure of the program"></a>Basic structure of the program</h4><figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> { <span class="hljs-comment">// The class name is Hello</span></span><br><span class="line">    <span class="hljs-comment">// ...</span></span><br><span class="line">} <span class="hljs-comment">// End of class definition</span></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {<span class="hljs-comment">// The method name is main</span></span><br><span class="line"><span class="hljs-comment">// Method code...</span></span><br><span class="line">    }<span class="hljs-comment">// End of method definition</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>Class names must start with English letters (customary uppercase); method names must start with English letters (customary lowercase)</li>
+<li>Inside a <code>class</code>, several methods can be defined </li>
+<li><code>public</code> is an access modifier that indicates that the <code>class</code> is public. It will compile correctly without <code>public</code>, but the class will not be executed from the command line</li>
+<li>The method specified by the Java entry program must be a static method, the method name must be `main<br>and the arguments in parentheses must be String arrays</li>
+<li>Intelli IDEA code formatting: Ctrl + Alt + L</li>
+</ul>
+<h4 id="Variables-and-Data-Types"><a href="#Variables-and-Data-Types" class="headerlink" title="Variables and Data Types"></a>Variables and Data Types</h4><ul>
+<li>Two types of variables: basic types and reference types<ul>
+<li>Basic types are types that the CPU can perform operations on directly. They include integer, floating point, boolean, and character types</li>
+<li>The rest are reference types, which are similar to pointers in C. They store an internal &#x201C;address&#x201D; that points to the location of an object in memory. The most common type is String</li>
+<li>Variables of basic types &#x201C;hold&#x201D; a value, while those of reference types &#x201C;point&#x201D; to an object</li>
+</ul>
+</li>
+<li>Constants cannot be reassigned after initialization</li>
+<li>Abbreviating variable types, using the <code>var</code> keyword</li>
+</ul>
+<h4 id="Arithmetic"><a href="#Arithmetic" class="headerlink" title="Arithmetic"></a>Arithmetic</h4><ul>
+<li>Integer operations are always exact, floating point operations are often not</li>
+</ul>
+<h3 id="Process-control"><a href="#Process-control" class="headerlink" title="Process control"></a>Process control</h3><h4 id="Inputs-and-Outputs"><a href="#Inputs-and-Outputs" class="headerlink" title="Inputs and Outputs"></a>Inputs and Outputs</h4><ul>
+<li>Output<ul>
+<li><code>System.out.println()</code>, output with line feed</li>
+<li><code>System.out.print()</code>, output without line break</li>
+<li><code>System.out.printf()</code>, formatted output</li>
+</ul>
+</li>
+<li>Input (cannot be run online, must be read from the command line)</li>
+</ul>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Main</span> {publicstaticvoid <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {</span><br><span class="line">        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span><span class="hljs-keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="hljs-comment">// Creating a Scanner object</span></span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> scanner.nextLine();<span class="hljs-comment">// Read a line of input and get the string</span></span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> scanner.nextInt();<span class="hljs-comment">// Read a line of input and get the integer</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="If-condition-judgment"><a href="#If-condition-judgment" class="headerlink" title="If condition judgment"></a>If condition judgment</h4><ul>
+<li>It is not reliable to use <code>=</code> to determine the equality of floating point numbers, the correct way is to use the difference is less than a certain threshold value to determine</li>
+<li>To determine whether the contents of variables of reference types are equal, you must use the <code>equals()</code> method</li>
+</ul>
+<h4 id="Case-multiple-selection"><a href="#Case-multiple-selection" class="headerlink" title="Case multiple selection"></a>Case multiple selection</h4><ul>
+<li>Always write <code>default</code></li>
+<li>Starting from Java12, the new syntax uses <code>-&gt;</code> and if there are multiple statements, they need to be enclosed in <code>{}</code>. Don&#x2019;t write <code>break</code> statements, because the new syntax will only execute the matching statement, there is no penetration effect</li>
+<li>Inside a <code>switch</code> expression, use <code>yield</code> to return a value as the return value of the <code>switch</code> statement</li>
+</ul>
+<h4 id="While-loop"><a href="#While-loop" class="headerlink" title="While loop"></a>While loop</h4><ul>
+<li>Judgment first, then loop</li>
+<li>Possible loop 0 times</li>
+</ul>
+<h4 id="Do-while-loop"><a href="#Do-while-loop" class="headerlink" title="Do while loop"></a>Do while loop</h4><ul>
+<li>Loop first and judge later</li>
+<li>Loop at least once</li>
+</ul>
+<h4 id="For-loop"><a href="#For-loop" class="headerlink" title="For loop"></a>For loop</h4><ul>
+<li>May loop 0 times</li>
+</ul>
+<h4 id="Break-and-continue"><a href="#Break-and-continue" class="headerlink" title="Break and continue"></a>Break and continue</h4><ul>
+<li>In a multi-layer nested loop, both can only jump out of the loop they are in</li>
+</ul>
+<h3 id="Array-operations"><a href="#Array-operations" class="headerlink" title="Array operations"></a>Array operations</h3><p>Traversal, sorting, multidimensional arrays, command line arguments (omitted)</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Intro to Git &amp; GitHub</title>
     <url>/Intro-to-Git-GitHub/</url>
     <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>.  </p>
@@ -661,102 +756,6 @@
       </categories>
       <tags>
         <tag>Git</tag>
-        <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Intro to Java</title>
-    <url>/Intro-to-Java/</url>
-    <content><![CDATA[<p>Notes of <a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255883772263712">Liao Xuefeng&#x2019;s Java course - Java Quick Start</a>.  </p>
-<span id="more"></span>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
-<li>Founder: James Gosling</li>
-<li>Java is somewhere between a compiled language and an interpreted language. It compiles code into a kind of &#x201C;bytecode&#x201D;, similar to abstract CPU instructions, and then writes virtual machines for different platforms, which are responsible for loading the bytecode and executing it, so that it can be &#x201C;written once and run everywhere&#x201D;.</li>
-<li>Java three versions<ul>
-<li>Java SE: Standard Edition, which contains the standard JVM and standard libraries, and is the core of the entire Java platform</li>
-<li>Java EE: Enterprise Edition, which is based on Java SE with a large number of APIs and libraries to facilitate the development of Web applications, databases, messaging services, etc.; the virtual machine of Java EE is exactly the same as Java SE; it is necessary for further learning of Web applications</li>
-<li>Java ME: Micro Edition, a &#x201C;thin version&#x201D; for embedded devices, the standard libraries of Java SE cannot be used on Java ME; the virtual machine of Java ME is also a &#x201C;thin version&#x201D;; not popular, not Recommended to learn</li>
-</ul>
-</li>
-<li>The recommended route to learn Java<ul>
-<li>First learn Java SE, master the Java language itself, Java core development techniques and the use of Java standard libraries.</li>
-<li>If you continue to learn Java EE, then the Spring Framework, database development, distributed architecture is required to learn.</li>
-<li>If one wants to learn big data development, then Hadoop, Spark, Flink, these big data platforms are what one needs to learn, they are all based on Java or Scala development.</li>
-<li>If you want to learn mobile development, then go deep into the Android platform and master Android App development.</li>
-</ul>
-</li>
-<li>JDK: Java Development Kit, in addition to containing the JRE, also provides a compiler, debugger and other development tools, used to compile Java source code into Java byte code</li>
-<li>JRE: Java Runtime Environment, is a virtual machine to run Java byte code</li>
-<li>JSR specification: Java Specification Request</li>
-<li>JCP Organization: Java Community Process</li>
-<li>RI: Reference Implementation, Reference Implementation</li>
-<li>TCK: Technology Compatibility Kit, compatibility test kit</li>
-</ul>
-<h3 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h3><h4 id="Basic-structure-of-the-program"><a href="#Basic-structure-of-the-program" class="headerlink" title="Basic structure of the program"></a>Basic structure of the program</h4><figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> { <span class="hljs-comment">// The class name is Hello</span></span><br><span class="line">    <span class="hljs-comment">// ...</span></span><br><span class="line">} <span class="hljs-comment">// End of class definition</span></span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {<span class="hljs-comment">// The method name is main</span></span><br><span class="line"><span class="hljs-comment">// Method code...</span></span><br><span class="line">    }<span class="hljs-comment">// End of method definition</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>Class names must start with English letters (customary uppercase); method names must start with English letters (customary lowercase)</li>
-<li>Inside a <code>class</code>, several methods can be defined </li>
-<li><code>public</code> is an access modifier that indicates that the <code>class</code> is public. It will compile correctly without <code>public</code>, but the class will not be executed from the command line</li>
-<li>The method specified by the Java entry program must be a static method, the method name must be `main<br>and the arguments in parentheses must be String arrays</li>
-<li>Intelli IDEA code formatting: Ctrl + Alt + L</li>
-</ul>
-<h4 id="Variables-and-Data-Types"><a href="#Variables-and-Data-Types" class="headerlink" title="Variables and Data Types"></a>Variables and Data Types</h4><ul>
-<li>Two types of variables: basic types and reference types<ul>
-<li>Basic types are types that the CPU can perform operations on directly. They include integer, floating point, boolean, and character types</li>
-<li>The rest are reference types, which are similar to pointers in C. They store an internal &#x201C;address&#x201D; that points to the location of an object in memory. The most common type is String</li>
-<li>Variables of basic types &#x201C;hold&#x201D; a value, while those of reference types &#x201C;point&#x201D; to an object</li>
-</ul>
-</li>
-<li>Constants cannot be reassigned after initialization</li>
-<li>Abbreviating variable types, using the <code>var</code> keyword</li>
-</ul>
-<h4 id="Arithmetic"><a href="#Arithmetic" class="headerlink" title="Arithmetic"></a>Arithmetic</h4><ul>
-<li>Integer operations are always exact, floating point operations are often not</li>
-</ul>
-<h3 id="Process-control"><a href="#Process-control" class="headerlink" title="Process control"></a>Process control</h3><h4 id="Inputs-and-Outputs"><a href="#Inputs-and-Outputs" class="headerlink" title="Inputs and Outputs"></a>Inputs and Outputs</h4><ul>
-<li>Output<ul>
-<li><code>System.out.println()</code>, output with line feed</li>
-<li><code>System.out.print()</code>, output without line break</li>
-<li><code>System.out.printf()</code>, formatted output</li>
-</ul>
-</li>
-<li>Input (cannot be run online, must be read from the command line)</li>
-</ul>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Main</span> {publicstaticvoid <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {</span><br><span class="line">        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span><span class="hljs-keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="hljs-comment">// Creating a Scanner object</span></span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> scanner.nextLine();<span class="hljs-comment">// Read a line of input and get the string</span></span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> scanner.nextInt();<span class="hljs-comment">// Read a line of input and get the integer</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="If-condition-judgment"><a href="#If-condition-judgment" class="headerlink" title="If condition judgment"></a>If condition judgment</h4><ul>
-<li>It is not reliable to use <code>=</code> to determine the equality of floating point numbers, the correct way is to use the difference is less than a certain threshold value to determine</li>
-<li>To determine whether the contents of variables of reference types are equal, you must use the <code>equals()</code> method</li>
-</ul>
-<h4 id="Case-multiple-selection"><a href="#Case-multiple-selection" class="headerlink" title="Case multiple selection"></a>Case multiple selection</h4><ul>
-<li>Always write <code>default</code></li>
-<li>Starting from Java12, the new syntax uses <code>-&gt;</code> and if there are multiple statements, they need to be enclosed in <code>{}</code>. Don&#x2019;t write <code>break</code> statements, because the new syntax will only execute the matching statement, there is no penetration effect</li>
-<li>Inside a <code>switch</code> expression, use <code>yield</code> to return a value as the return value of the <code>switch</code> statement</li>
-</ul>
-<h4 id="While-loop"><a href="#While-loop" class="headerlink" title="While loop"></a>While loop</h4><ul>
-<li>Judgment first, then loop</li>
-<li>Possible loop 0 times</li>
-</ul>
-<h4 id="Do-while-loop"><a href="#Do-while-loop" class="headerlink" title="Do while loop"></a>Do while loop</h4><ul>
-<li>Loop first and judge later</li>
-<li>Loop at least once</li>
-</ul>
-<h4 id="For-loop"><a href="#For-loop" class="headerlink" title="For loop"></a>For loop</h4><ul>
-<li>May loop 0 times</li>
-</ul>
-<h4 id="Break-and-continue"><a href="#Break-and-continue" class="headerlink" title="Break and continue"></a>Break and continue</h4><ul>
-<li>In a multi-layer nested loop, both can only jump out of the loop they are in</li>
-</ul>
-<h3 id="Array-operations"><a href="#Array-operations" class="headerlink" title="Array operations"></a>Array operations</h3><p>Traversal, sorting, multidimensional arrays, command line arguments (omitted)</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -869,9 +868,6 @@ git push -u origin master
       <categories>
         <category>Job</category>
       </categories>
-      <tags>
-        <tag>LaTex</tag>
-      </tags>
   </entry>
   <entry>
     <title>My First LinkedIn Certificate!</title>
@@ -1310,21 +1306,6 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>Oct 2022</title>
-    <url>/Oct-2022/</url>
-    <content><![CDATA[<h3 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h3><p>I finished 27 problems on Leetcode till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I&#x2019;m still doing arrays? I can&#x2019;t wait to deal with something new.  </p>
-<span id="more"></span>
-<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, and did HW 01, HW 02, Lab 00, Lab 01, and I&#x2019;m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.  </p>
-<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng&#x2019;s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 &#x201C;Inference: making predictions&#x201D;. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <a href="https://github.com/ageron/handson-ml2">Hands on Machine Learning</a>. That&#x2019;s nice, and more codes and more difficult that the videos. However, I still didn&#x2019;t understand ML well. It seems easy but to do it is really hard&#x1F92F;. The good news was that I made a python program this afternoon finally&#x2026; Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data&#x2026;  </p>
-<h3 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h3><p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section &#x201C;Briefing&#x201D;. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!  </p>
-<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn&#x2019;t know Japanese had tenses too.   </p>
-<p>Bye for now! It&#x2019;s midnight. </p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Two-pointer</title>
     <url>/Two-pointer/</url>
     <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, it came to a not bad end: I finished the Explore <em>Array and String</em><a href="#refer-anchor-1"><sup>1</sup></a> in Leetcode.  </p>
@@ -1364,12 +1345,24 @@ git push -u origin master
 
 <p>[2] <a href="https://en.wikipedia.org/wiki/In-place_algorithm">Wikipedia: In-place algorithm</a></p>
 ]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
       <tags>
         <tag>Data Structure &amp; Algorithm</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Oct 2022</title>
+    <url>/Oct-2022/</url>
+    <content><![CDATA[<h3 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h3><p>I finished 27 problems on Leetcode till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I&#x2019;m still doing arrays? I can&#x2019;t wait to deal with something new.  </p>
+<span id="more"></span>
+<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, and did HW 01, HW 02, Lab 00, Lab 01, and I&#x2019;m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.  </p>
+<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng&#x2019;s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 &#x201C;Inference: making predictions&#x201D;. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <a href="https://github.com/ageron/handson-ml2">Hands on Machine Learning</a>. That&#x2019;s nice, and more codes and more difficult that the videos. However, I still didn&#x2019;t understand ML well. It seems easy but to do it is really hard&#x1F92F;. The good news was that I made a python program this afternoon finally&#x2026; Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data&#x2026;  </p>
+<h3 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h3><p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section &#x201C;Briefing&#x201D;. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!  </p>
+<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn&#x2019;t know Japanese had tenses too.   </p>
+<p>Bye for now! It&#x2019;s midnight. </p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+      </categories>
   </entry>
   <entry>
     <title>自适应滤波器</title>
@@ -2032,7 +2025,6 @@ git push -u origin master
       </categories>
       <tags>
         <tag>Git</tag>
-        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -2241,9 +2233,6 @@ git push -u origin master
       <categories>
         <category>工作</category>
       </categories>
-      <tags>
-        <tag>LaTex</tag>
-      </tags>
   </entry>
   <entry>
     <title>我的第一个领英学习证书！</title>
@@ -2736,9 +2725,6 @@ git push -u origin master
 
 <p>[2] <a href="https://zh.wikipedia.org/zh-cn/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">&#x7EF4;&#x57FA;&#x767E;&#x79D1;&#xFF1A;&#x539F;&#x5730;&#x7B97;&#x6CD5;</a></p>
 ]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
       <tags>
         <tag>数据结构与算法</tag>
       </tags>
