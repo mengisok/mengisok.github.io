@@ -466,12 +466,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/Hello-World/</url>
-    <content><![CDATA[<p>I made it! :)</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Dec 2022</title>
     <url>/Dec-2022/</url>
     <content><![CDATA[<p>This month was supposed to be the month of exams, so I dedicated my time to reviewing the three main lessons in school: Digital Signal Processing, Digital Image Analysis and Combinatorial Mathematics. I made some notes (all in Chinese), and bookmarked some nice links.  </p>
@@ -605,6 +599,126 @@
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<p>I made it! :)</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Intro to Linux</title>
+    <url>/Intro-to-Linux/</url>
+    <content><![CDATA[<p>Notes of <a href="https://lug.ustc.edu.cn/">LUG @ USTC</a>&#x2018;s <a href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - chap 1</a>. I have successfully installed and used Xubuntu according to the tutorial! Great!  </p>
+<span id="more"></span>
+<hr>
+<h3 id="Explosive-growth-in-computer-performance"><a href="#Explosive-growth-in-computer-performance" class="headerlink" title="Explosive growth in computer performance"></a>Explosive growth in computer performance</h3><ul>
+<li>Moore&#x2019;s Law: The number of transistors that can fit on an integrated circuit doubles every two years/computer performance doubles every 18 months (Intel CEO David House)</li>
+<li>The limits of quantum physics and the limitations of CPU power consumption and heat dissipation are starting to slow down the increase in computer performance. Joint collaboration between multiple CPUs (multi-core based development) is the way forward instead of pursuing individual CPU performance gains</li>
+</ul>
+<h3 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h3><ul>
+<li>The bridge between the user and the underlying hardware</li>
+<li>Functions<ul>
+<li>Process management: the operating system schedules processes so that many processes can execute concurrently on several central processors</li>
+<li>Memory management: the operating system allocates and reclaims memory appropriately</li>
+<li>File system: the operating system creates appropriate data structures to store files and data</li>
+<li>Network communication: the operating system implements various necessary network communication methods (e.g. TCP/IP)</li>
+<li>Security mechanisms: the operating system is equipped with security mechanisms to protect data from unauthorized access</li>
+<li>User Interface: Operating systems usually include a graphical user interface to facilitate the use of the computer by the user</li>
+<li>Drivers: The operating system interfaces with drivers to perform the functions of the hardware</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-was-born"><a href="#Linux-was-born" class="headerlink" title="Linux was born"></a>Linux was born</h3><blockquote>
+<p>The choice of Linux is largely a recognition of the geek spirit and open source culture.</p>
+</blockquote>
+<blockquote>
+<p>Free software means that the software&#x2019;s users have freedom. (The issue is not about price.) We developed the GNU operating system so that users can have freedom in their computing.</p>
+<p>Specifically, free software means users have the four essential freedoms: (0) to run the program, (1) to study and change the program in source code form, (2) to redistribute exact copies, and (3) to distribute modified versions.</p>
+<p>Software differs from material objects&#x2014;such as chairs, sandwiches, and gasoline&#x2014;in that it can be copied and changed much more easily. These facilities are why software is useful; we believe a program&#x2019;s users should be free to take advantage of them, not solely its developer.<a href="#refer-anchor-1"><sup>1</sup></a> </p>
+</blockquote>
+<ul>
+<li>In 1983, Richard Stallman launched the GNU Project at MIT; in 1991, Linus Torvalds wrote and released the Linux kernel, which became the basis for all subsequent Linux distributions</li>
+<li>GNU: GNU is a recursive abbreviation for &#x201C;<strong>G</strong>NU is <strong>N</strong>ot <strong>U</strong>nix&#x201D;, which refers to a UNIX-like but completely free operating system</li>
+<li>GNU General Public License (GNU GPL or GPL): grants all rights to use the software under this license to anyone who uses it<ul>
+<li>This right is also known as copyleft, as opposed to the usual copyright</li>
+</ul>
+</li>
+<li>The core GNU operating system has not been developed to date. What is actually used now is GNU/Linux, where the Linux kernel is the functional core and the GNU components are peripherals and tools for the user to operate and use the Linux kernel<ul>
+<li>A common system on smartphones today is Android/Linux, an operating system based on the Linux kernel that does not use GNU components, but rather a different Android system developed by Google as a tool</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-distributions"><a href="#Linux-distributions" class="headerlink" title="Linux distributions"></a>Linux distributions</h3><ul>
+<li>Linux distribution = Linux kernel + a set of GNU tools and libraries, some accompanying software, documentation, a desktop system, a window manager, and a desktop environment</li>
+<li>Mainstream distribution branches<ul>
+<li>****Debian branch ****: The most famous one is Ubuntu, an operating system that focuses on desktop applications and is suitable for general users. <strong>It is recommended that first-time Linux users give preference to the Ubuntu distribution or its sub-distributions (Lubuntu, Xubuntu, etc.)</strong></li>
+<li>****Red Hat branch ****: Fedora, CentOS (suitable for running on servers that require high stability)</li>
+<li>****Arch Linux branch ****: requires users to be willing to understand how the OS works themselves, and does not take the approach of shielding how it works to lower the barrier to use. Variant Manjaro is more focused on ease of use and more suitable for general users</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-on-the-side"><a href="#Linux-on-the-side" class="headerlink" title="Linux on the side"></a>Linux on the side</h3><ul>
+<li>Smartphones: The Android operating system developed by Google is part of the Android/Linux branch, also called Android native, with many sub-distributions, such as Huawei EMUI and Xiaomi MIUI, etc.</li>
+<li>Servers: Websites and software providers need to set up their own computers to perform computing, storage and communication functions, and such computers are called servers. Servers usually do not use personal computer operating systems like Windows or macOS, but mostly use Linux distributions because of their simple interfaces, powerful features, and the fact that some distributions are also supported by the services of professional computer companies (such as RHEL). debian and Ubuntu Server are very popular</li>
+<li>Embedded devices: Various distributions under the Android/Linux branch are the mainstream embedded operating systems, such as Google&#x2019;s Android TV operating system for digital TV</li>
+</ul>
+<h3 id="Using-Linux"><a href="#Using-Linux" class="headerlink" title="Using Linux"></a>Using Linux</h3><ul>
+<li><strong>It is recommended to use a virtual machine to run the installed Linux image</strong></li>
+<li>Steps<ol>
+<li>Get the virtual machine management software, <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a> is recommended</li>
+<li>Get <a href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu virtual machine image</a> (Xubuntu is a sub-distribution of Ubuntu, very similar to Ubuntu, but smaller and less performance intensive, suitable for computers with different performance) )<br>  Double click to open the virtual machine image, the management software will open and import the image, you can directly click the start button to start after the import is complete</li>
+</ol>
+</li>
+</ul>
+<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
+
+<p>&#x1F973; ~   </p>
+<hr>
+<p><strong>Citation</strong>  </p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a href="https://www.gnu.org/philosophy/philosophy.html">Philosophy of the GNU Project</a></p>
+<p><strong>Recommended Reading</strong></p>
+<p><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">Why Open Source Misses the Point of Free Software</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LaTeX CV</title>
+    <url>/Latex-CV/</url>
+    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That&#x2019;s very unfriendly for beginners &#x1F622;. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.  </p>
+<span id="more"></span>
+<p>Here&#x2019;s how I did it:  </p>
+<p>-&gt; If you only use latex <strong>occasionally or a few times</strong>, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>-&gt; If you want to do <strong>more</strong> things, use following steps:  </p>
+<h3 id="Download-MiKTeX-and-VSCode"><a href="#Download-MiKTeX-and-VSCode" class="headerlink" title="Download MiKTeX and VSCode"></a>Download MiKTeX and VSCode</h3><p><strong>MiKTeX</strong><br>You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.  </p>
+<p><strong>VSCode</strong><br>Remember to download extension <em>latex workshop</em>.  </p>
+<h3 id="Find-a-template"><a href="#Find-a-template" class="headerlink" title="Find a template"></a>Find a template</h3><p>On Overleaf or Github.<br>Here are my favorites:<br><a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">&#x65B0;&#x5352;&#x306E;&#x305F;&#x3081;&#x306E;LaTeX&#x5C65;&#x6B74;&#x66F8;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;</a><br><a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>And mine:<br><a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)  </p>
+<h3 id="Edit-the-template"><a href="#Edit-the-template" class="headerlink" title="Edit the template"></a>Edit the template</h3><p>You may encounter many problems at this step, most of which require you to download <strong>Packages</strong> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.  </p>
+<h3 id="Share-your-template"><a href="#Share-your-template" class="headerlink" title="Share your template"></a>Share your template</h3><ol>
+<li>Git your template to github<br>(Already bound git and your github accounts and set SSH key)<br>-&gt; Create a new repository<br>-&gt; Git bash the folder which contains full files about your template<br>-&gt; Run the following code in Git:</li>
+</ol>
+<pre><code class="C">git init
+git add .
+git commit -m &apos;Description&apos;
+git remote add origin https://...  (copy from github)
+git push -u origin master
+</code></pre>
+<ol start="2">
+<li>Submit to Overleaf<br>That&#x2019;s where I found the original template for my CV! I think put templates there may help more people.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Job</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
       </tags>
   </entry>
   <entry>
@@ -756,118 +870,8 @@
       </categories>
       <tags>
         <tag>Git</tag>
+        <tag>GitHub</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Intro to Linux</title>
-    <url>/Intro-to-Linux/</url>
-    <content><![CDATA[<p>Notes of <a href="https://lug.ustc.edu.cn/">LUG @ USTC</a>&#x2018;s <a href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - chap 1</a>. I have successfully installed and used Xubuntu according to the tutorial! Great!  </p>
-<span id="more"></span>
-<hr>
-<h3 id="Explosive-growth-in-computer-performance"><a href="#Explosive-growth-in-computer-performance" class="headerlink" title="Explosive growth in computer performance"></a>Explosive growth in computer performance</h3><ul>
-<li>Moore&#x2019;s Law: The number of transistors that can fit on an integrated circuit doubles every two years/computer performance doubles every 18 months (Intel CEO David House)</li>
-<li>The limits of quantum physics and the limitations of CPU power consumption and heat dissipation are starting to slow down the increase in computer performance. Joint collaboration between multiple CPUs (multi-core based development) is the way forward instead of pursuing individual CPU performance gains</li>
-</ul>
-<h3 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h3><ul>
-<li>The bridge between the user and the underlying hardware</li>
-<li>Functions<ul>
-<li>Process management: the operating system schedules processes so that many processes can execute concurrently on several central processors</li>
-<li>Memory management: the operating system allocates and reclaims memory appropriately</li>
-<li>File system: the operating system creates appropriate data structures to store files and data</li>
-<li>Network communication: the operating system implements various necessary network communication methods (e.g. TCP/IP)</li>
-<li>Security mechanisms: the operating system is equipped with security mechanisms to protect data from unauthorized access</li>
-<li>User Interface: Operating systems usually include a graphical user interface to facilitate the use of the computer by the user</li>
-<li>Drivers: The operating system interfaces with drivers to perform the functions of the hardware</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-was-born"><a href="#Linux-was-born" class="headerlink" title="Linux was born"></a>Linux was born</h3><blockquote>
-<p>The choice of Linux is largely a recognition of the geek spirit and open source culture.</p>
-</blockquote>
-<blockquote>
-<p>Free software means that the software&#x2019;s users have freedom. (The issue is not about price.) We developed the GNU operating system so that users can have freedom in their computing.</p>
-<p>Specifically, free software means users have the four essential freedoms: (0) to run the program, (1) to study and change the program in source code form, (2) to redistribute exact copies, and (3) to distribute modified versions.</p>
-<p>Software differs from material objects&#x2014;such as chairs, sandwiches, and gasoline&#x2014;in that it can be copied and changed much more easily. These facilities are why software is useful; we believe a program&#x2019;s users should be free to take advantage of them, not solely its developer.<a href="#refer-anchor-1"><sup>1</sup></a> </p>
-</blockquote>
-<ul>
-<li>In 1983, Richard Stallman launched the GNU Project at MIT; in 1991, Linus Torvalds wrote and released the Linux kernel, which became the basis for all subsequent Linux distributions</li>
-<li>GNU: GNU is a recursive abbreviation for &#x201C;<strong>G</strong>NU is <strong>N</strong>ot <strong>U</strong>nix&#x201D;, which refers to a UNIX-like but completely free operating system</li>
-<li>GNU General Public License (GNU GPL or GPL): grants all rights to use the software under this license to anyone who uses it<ul>
-<li>This right is also known as copyleft, as opposed to the usual copyright</li>
-</ul>
-</li>
-<li>The core GNU operating system has not been developed to date. What is actually used now is GNU/Linux, where the Linux kernel is the functional core and the GNU components are peripherals and tools for the user to operate and use the Linux kernel<ul>
-<li>A common system on smartphones today is Android/Linux, an operating system based on the Linux kernel that does not use GNU components, but rather a different Android system developed by Google as a tool</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-distributions"><a href="#Linux-distributions" class="headerlink" title="Linux distributions"></a>Linux distributions</h3><ul>
-<li>Linux distribution = Linux kernel + a set of GNU tools and libraries, some accompanying software, documentation, a desktop system, a window manager, and a desktop environment</li>
-<li>Mainstream distribution branches<ul>
-<li>****Debian branch ****: The most famous one is Ubuntu, an operating system that focuses on desktop applications and is suitable for general users. <strong>It is recommended that first-time Linux users give preference to the Ubuntu distribution or its sub-distributions (Lubuntu, Xubuntu, etc.)</strong></li>
-<li>****Red Hat branch ****: Fedora, CentOS (suitable for running on servers that require high stability)</li>
-<li>****Arch Linux branch ****: requires users to be willing to understand how the OS works themselves, and does not take the approach of shielding how it works to lower the barrier to use. Variant Manjaro is more focused on ease of use and more suitable for general users</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-on-the-side"><a href="#Linux-on-the-side" class="headerlink" title="Linux on the side"></a>Linux on the side</h3><ul>
-<li>Smartphones: The Android operating system developed by Google is part of the Android/Linux branch, also called Android native, with many sub-distributions, such as Huawei EMUI and Xiaomi MIUI, etc.</li>
-<li>Servers: Websites and software providers need to set up their own computers to perform computing, storage and communication functions, and such computers are called servers. Servers usually do not use personal computer operating systems like Windows or macOS, but mostly use Linux distributions because of their simple interfaces, powerful features, and the fact that some distributions are also supported by the services of professional computer companies (such as RHEL). debian and Ubuntu Server are very popular</li>
-<li>Embedded devices: Various distributions under the Android/Linux branch are the mainstream embedded operating systems, such as Google&#x2019;s Android TV operating system for digital TV</li>
-</ul>
-<h3 id="Using-Linux"><a href="#Using-Linux" class="headerlink" title="Using Linux"></a>Using Linux</h3><ul>
-<li><strong>It is recommended to use a virtual machine to run the installed Linux image</strong></li>
-<li>Steps<ol>
-<li>Get the virtual machine management software, <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a> is recommended</li>
-<li>Get <a href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu virtual machine image</a> (Xubuntu is a sub-distribution of Ubuntu, very similar to Ubuntu, but smaller and less performance intensive, suitable for computers with different performance) )<br>  Double click to open the virtual machine image, the management software will open and import the image, you can directly click the start button to start after the import is complete</li>
-</ol>
-</li>
-</ul>
-<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
-
-<p>&#x1F973; ~   </p>
-<hr>
-<p><strong>Citation</strong>  </p>
-<div id="refer-anchor-1"></div>
-
-<p>[1] <a href="https://www.gnu.org/philosophy/philosophy.html">Philosophy of the GNU Project</a></p>
-<p><strong>Recommended Reading</strong></p>
-<p><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">Why Open Source Misses the Point of Free Software</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LaTeX CV</title>
-    <url>/Latex-CV/</url>
-    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That&#x2019;s very unfriendly for beginners &#x1F622;. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.  </p>
-<span id="more"></span>
-<p>Here&#x2019;s how I did it:  </p>
-<p>-&gt; If you only use latex <strong>occasionally or a few times</strong>, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>-&gt; If you want to do <strong>more</strong> things, use following steps:  </p>
-<h3 id="Download-MiKTeX-and-VSCode"><a href="#Download-MiKTeX-and-VSCode" class="headerlink" title="Download MiKTeX and VSCode"></a>Download MiKTeX and VSCode</h3><p><strong>MiKTeX</strong><br>You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.  </p>
-<p><strong>VSCode</strong><br>Remember to download extension <em>latex workshop</em>.  </p>
-<h3 id="Find-a-template"><a href="#Find-a-template" class="headerlink" title="Find a template"></a>Find a template</h3><p>On Overleaf or Github.<br>Here are my favorites:<br><a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">&#x65B0;&#x5352;&#x306E;&#x305F;&#x3081;&#x306E;LaTeX&#x5C65;&#x6B74;&#x66F8;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;</a><br><a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>And mine:<br><a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)  </p>
-<h3 id="Edit-the-template"><a href="#Edit-the-template" class="headerlink" title="Edit the template"></a>Edit the template</h3><p>You may encounter many problems at this step, most of which require you to download <strong>Packages</strong> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.  </p>
-<h3 id="Share-your-template"><a href="#Share-your-template" class="headerlink" title="Share your template"></a>Share your template</h3><ol>
-<li>Git your template to github<br>(Already bound git and your github accounts and set SSH key)<br>-&gt; Create a new repository<br>-&gt; Git bash the folder which contains full files about your template<br>-&gt; Run the following code in Git:</li>
-</ol>
-<pre><code class="C">git init
-git add .
-git commit -m &apos;Description&apos;
-git remote add origin https://...  (copy from github)
-git push -u origin master
-</code></pre>
-<ol start="2">
-<li>Submit to Overleaf<br>That&#x2019;s where I found the original template for my CV! I think put templates there may help more people.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Job</category>
-      </categories>
   </entry>
   <entry>
     <title>My First LinkedIn Certificate!</title>
@@ -1306,6 +1310,21 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>Oct 2022</title>
+    <url>/Oct-2022/</url>
+    <content><![CDATA[<h3 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h3><p>I finished 27 problems on Leetcode till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I&#x2019;m still doing arrays? I can&#x2019;t wait to deal with something new.  </p>
+<span id="more"></span>
+<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, and did HW 01, HW 02, Lab 00, Lab 01, and I&#x2019;m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.  </p>
+<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng&#x2019;s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 &#x201C;Inference: making predictions&#x201D;. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <a href="https://github.com/ageron/handson-ml2">Hands on Machine Learning</a>. That&#x2019;s nice, and more codes and more difficult that the videos. However, I still didn&#x2019;t understand ML well. It seems easy but to do it is really hard&#x1F92F;. The good news was that I made a python program this afternoon finally&#x2026; Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data&#x2026;  </p>
+<h3 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h3><p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section &#x201C;Briefing&#x201D;. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!  </p>
+<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn&#x2019;t know Japanese had tenses too.   </p>
+<p>Bye for now! It&#x2019;s midnight. </p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Two-pointer</title>
     <url>/Two-pointer/</url>
     <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, it came to a not bad end: I finished the Explore <em>Array and String</em><a href="#refer-anchor-1"><sup>1</sup></a> in Leetcode.  </p>
@@ -1348,21 +1367,6 @@ git push -u origin master
       <tags>
         <tag>Data Structure &amp; Algorithm</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Oct 2022</title>
-    <url>/Oct-2022/</url>
-    <content><![CDATA[<h3 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h3><p>I finished 27 problems on Leetcode till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I&#x2019;m still doing arrays? I can&#x2019;t wait to deal with something new.  </p>
-<span id="more"></span>
-<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, and did HW 01, HW 02, Lab 00, Lab 01, and I&#x2019;m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.  </p>
-<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng&#x2019;s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 &#x201C;Inference: making predictions&#x201D;. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <a href="https://github.com/ageron/handson-ml2">Hands on Machine Learning</a>. That&#x2019;s nice, and more codes and more difficult that the videos. However, I still didn&#x2019;t understand ML well. It seems easy but to do it is really hard&#x1F92F;. The good news was that I made a python program this afternoon finally&#x2026; Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data&#x2026;  </p>
-<h3 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h3><p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section &#x201C;Briefing&#x201D;. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!  </p>
-<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn&#x2019;t know Japanese had tenses too.   </p>
-<p>Bye for now! It&#x2019;s midnight. </p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-      </categories>
   </entry>
   <entry>
     <title>自适应滤波器</title>
@@ -2025,6 +2029,7 @@ git push -u origin master
       </categories>
       <tags>
         <tag>Git</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -2233,6 +2238,9 @@ git push -u origin master
       <categories>
         <category>工作</category>
       </categories>
+      <tags>
+        <tag>LaTeX</tag>
+      </tags>
   </entry>
   <entry>
     <title>我的第一个领英学习证书！</title>
@@ -2725,6 +2733,9 @@ git push -u origin master
 
 <p>[2] <a href="https://zh.wikipedia.org/zh-cn/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">&#x7EF4;&#x57FA;&#x767E;&#x79D1;&#xFF1A;&#x539F;&#x5730;&#x7B97;&#x6CD5;</a></p>
 ]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
       <tags>
         <tag>数据结构与算法</tag>
       </tags>
