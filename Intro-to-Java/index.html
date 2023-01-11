@@ -18,15 +18,15 @@
 
 
 
-    <meta name="description" content="Notes of Liao Xuefeng&amp;#x2019;s Java course - Java Quick Start.">
+    <meta name="description" content="The sections on the background of Java&amp;#x2019;s birth, development history and version descriptions were very helpful to me.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Intro to Java">
 <meta property="og:url" content="https://mengisok.github.io/Intro-to-Java/index.html">
 <meta property="og:site_name" content="Meng&#39;s Blog">
-<meta property="og:description" content="Notes of Liao Xuefeng&amp;#x2019;s Java course - Java Quick Start.">
+<meta property="og:description" content="The sections on the background of Java&amp;#x2019;s birth, development history and version descriptions were very helpful to me.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-26T09:16:51.000Z">
-<meta property="article:modified_time" content="2023-01-07T09:45:39.492Z">
+<meta property="article:modified_time" content="2023-01-11T08:30:17.393Z">
 <meta property="article:author" content="Han Meng">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -181,15 +181,17 @@
         <span class="column is-narrow">
             
             
-            6 minutes read (About 839 words)
+            6 minutes read (About 858 words)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>Notes of <a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255883772263712">Liao Xuefeng&#x2019;s Java course - Java Quick Start</a>.  </p>
+        <p>The sections on the background of Java&#x2019;s birth, development history and version descriptions were very helpful to me.      </p>
 <span id="more"></span>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
+
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><hr>
+<ul>
 <li>Founder: James Gosling</li>
 <li>Java is somewhere between a compiled language and an interpreted language. It compiles code into a kind of &#x201C;bytecode&#x201D;, similar to abstract CPU instructions, and then writes virtual machines for different platforms, which are responsible for loading the bytecode and executing it, so that it can be &#x201C;written once and run everywhere&#x201D;.</li>
 <li>Java three versions<ul>
@@ -212,7 +214,8 @@
 <li>RI: Reference Implementation, Reference Implementation</li>
 <li>TCK: Technology Compatibility Kit, compatibility test kit</li>
 </ul>
-<h3 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h3><h4 id="Basic-structure-of-the-program"><a href="#Basic-structure-of-the-program" class="headerlink" title="Basic structure of the program"></a>Basic structure of the program</h4><figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> { <span class="hljs-comment">// The class name is Hello</span></span><br><span class="line">    <span class="hljs-comment">// ...</span></span><br><span class="line">} <span class="hljs-comment">// End of class definition</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h3><hr>
+<h4 id="Basic-structure-of-the-program"><a href="#Basic-structure-of-the-program" class="headerlink" title="Basic structure of the program"></a>Basic structure of the program</h4><figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> { <span class="hljs-comment">// The class name is Hello</span></span><br><span class="line">    <span class="hljs-comment">// ...</span></span><br><span class="line">} <span class="hljs-comment">// End of class definition</span></span><br></pre></td></tr></tbody></table></figure>
 
 <figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {<span class="hljs-comment">// The method name is main</span></span><br><span class="line"><span class="hljs-comment">// Method code...</span></span><br><span class="line">    }<span class="hljs-comment">// End of method definition</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
@@ -236,7 +239,8 @@
 <h4 id="Arithmetic"><a href="#Arithmetic" class="headerlink" title="Arithmetic"></a>Arithmetic</h4><ul>
 <li>Integer operations are always exact, floating point operations are often not</li>
 </ul>
-<h3 id="Process-control"><a href="#Process-control" class="headerlink" title="Process control"></a>Process control</h3><h4 id="Inputs-and-Outputs"><a href="#Inputs-and-Outputs" class="headerlink" title="Inputs and Outputs"></a>Inputs and Outputs</h4><ul>
+<h3 id="Process-control"><a href="#Process-control" class="headerlink" title="Process control"></a>Process control</h3><hr>
+<h4 id="Inputs-and-Outputs"><a href="#Inputs-and-Outputs" class="headerlink" title="Inputs and Outputs"></a>Inputs and Outputs</h4><ul>
 <li>Output<ul>
 <li><code>System.out.println()</code>, output with line feed</li>
 <li><code>System.out.print()</code>, output without line break</li>
@@ -270,7 +274,11 @@
 <h4 id="Break-and-continue"><a href="#Break-and-continue" class="headerlink" title="Break and continue"></a>Break and continue</h4><ul>
 <li>In a multi-layer nested loop, both can only jump out of the loop they are in</li>
 </ul>
-<h3 id="Array-operations"><a href="#Array-operations" class="headerlink" title="Array operations"></a>Array operations</h3><p>Traversal, sorting, multidimensional arrays, command line arguments (omitted)</p>
+<h3 id="Array-operations"><a href="#Array-operations" class="headerlink" title="Array operations"></a>Array operations</h3><hr>
+<p>Traversal, sorting, multidimensional arrays, command line arguments (omitted)</p>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>Tutorial</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255883772263712">Liao Xuefeng&#x2019;s Java course - Java Quick Start</a></p>
 
     
     </div>
