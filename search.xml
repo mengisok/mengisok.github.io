@@ -216,57 +216,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Dec 2022</title>
-    <url>/Dec-2022/</url>
-    <content><![CDATA[<p>This month was supposed to be the month of exams, so I dedicated my time to reviewing the three main lessons in school: Digital Signal Processing, Digital Image Analysis and Combinatorial Mathematics. I made some notes (all in Chinese), and bookmarked some nice links.  </p>
-<span id="more"></span>
-
-<h3 id="Review-Notes"><a href="#Review-Notes" class="headerlink" title="Review Notes"></a>Review Notes</h3><blockquote>
-<p><a href="https://mengisok.notion.site/eb6f54749fb7464f8809ed94ec4c821b">DSP notes on Notion</a> or <a href="https://github.com/mengisok/DSP-review">on GitHub</a> (some MATLAB code)  </p>
-<p><a href="https://drive.google.com/drive/folders/1KqNqF0UKM6n2ePmovORoTPofqJL-QBt6?usp=sharing">DIA notes on Google Drive</a> (updating&#x2026;)  </p>
-<p><a href="https://drive.google.com/drive/folders/1-0-R1W7jvLb9YrgUj_J1PrmkrNPaY_OM?usp=sharing">Combinatorial Mathematics notes on Google Drive</a> (updating&#x2026;)  </p>
-</blockquote>
-<p>Another thing worth mentioning is that this month <a href="https://en.wikipedia.org/wiki/ChatGPT"><strong>ChatGPT</strong></a> <strong>went viral!</strong> I also tried it. It&#x2019;s amazing I have to say. Here are some interesting or useful links I saw about ChatGPT.  </p>
-<h3 id="Awesome-ChatGPT"><a href="#Awesome-ChatGPT" class="headerlink" title="Awesome ChatGPT"></a>Awesome ChatGPT</h3><blockquote>
-<p><a href="https://openai.com/blog/chatgpt/">Official Introduction</a>  </p>
-<p><a href="https://github.com/Kamigami55/awesome-chatgpt">awesome-chatgpt</a><br>There are many trending repos related to ChatGPT recently.  </p>
-<p><a href="https://chat.bygpt.com/">ChatGPT available in mainland China</a>  </p>
-<p><a href="https://readdevdocs.com/blog/makemoney/%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%B3%A8%E5%86%8COpenAI%E8%B4%A6%E5%8F%B7%E8%AF%95%E7%94%A8ChatGPT%E6%8C%87%E5%8D%97.html#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87">Guide to registering an OpenAI account in China to try ChatGPT</a>  </p>
-<p><a href="https://sms-activate.org/cn">Virtual number for receiving SMS online</a>  </p>
-<p><a href="https://www.douban.com/group/topic/279710957/?_i=705681524967510&amp;dt_dapp=1">First Experience of ChatGPT</a>    </p>
-<p><a href="https://mp.weixin.qq.com/s/rzCYgddvdvWwv71_M_sC-Q">ChatGPT Chinese VSCode plugin</a>  </p>
-<p><a href="https://mp.weixin.qq.com/s/5zThHhpzBmx4EUIMvMV-vQ">Hand sketching in Jupyter Notebook, and turning it into code</a>  </p>
-</blockquote>
-<h3 id="Other-Awesome-Links"><a href="#Other-Awesome-Links" class="headerlink" title="Other Awesome Links"></a>Other Awesome Links</h3><blockquote>
-<p><a href="http://tingtalk.me/telegram/">Telegram Guide</a></p>
-<p><a href="https://oi-wiki.org/">oi-wiki.org</a><br>Programming contest wiki.  </p>
-<p><a href="https://ctf-wiki.org/">ctf-wiki.org</a><br>Cybersecurity competition wiki.  </p>
-<p><a href="https://www.summerschoolsineurope.eu/">summerschoolsineurope.eu</a><br>Information about summerschool in Europe. </p>
-<p><a href="http://fernwanderweg.blogspot.com/">fernwanderweg.blogspot.com</a><br>He used Google blogger to bulid a blog. Looks good.  </p>
-<p><a href="https://hdlbits.01xz.net/wiki/Main_Page">Digital Logic Online Learning Site: HDLbit</a>, and <a href="https://github.com/viduraakalanka/HDL-Bits-Solutions">solutions</a> to learn Verilog.  </p>
-<p><a href="https://ossinsight.io/">OSS Insight</a><br>Real-time trends and statistics for github.  </p>
-<p><a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>You can get some certificates after learning? I love it~</p>
-<p><a href="https://roadmap.sh/">Developer Roadmaps</a><br>Role-based programmer growth guide.  </p>
-<p><a href="https://seeing-theory.brown.edu/index.html">Statistics Visualization Learning Site</a><br>Learn statistics in a visual way. That&#x2019;s very clear and easy to understand!  </p>
-</blockquote>
-<p>The last three are several top repositories with the great number of stars on GitHub. I was surprised to find that <a href="https://github.com/996icu/996.ICU">996.icu</a> was in top 3 &#x1F602;. </p>
-<h3 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h3><p>Unfortunately I didn&#x2019;t take the IELTS &#x1F61E;. I wasn&#x2019;t ready&#x2026; I&#x2019;ll do it later!<br>As for learning Japanese, I dont&#x2019;t use Duolinguo anymore since it&#x2019;s a bit simple. I found some YouTube videos to watch and learn, like <a href="https://www.youtube.com/@deguchi">&#x51FA;&#x53E3;&#x65E5;&#x8A9E;</a>.</p>
-<h3 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h3><p>I changed the theme of my blog from <a href="https://github.com/probberechts/hexo-theme-cactus"><strong>Cactus</strong></a> to <a href="https://github.com/cjquines/hexo-theme-ascent"><strong>Ascent</strong></a>. By the way, here&#x2019;s <a href="https://github.com/stars/mengisok/lists/blog-themes">my stars list</a> about blog themes.<br>I tried to edit a theme to fit my purpose but failed. Frontend is so difficult!  </p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-      </categories>
-      <tags>
-        <tag>Useful Links</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/Hello-World/</url>
-    <content><![CDATA[<p>I made it! :)</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Git Learning Notes</title>
     <url>/Git-Learning-Notes/</url>
     <content><![CDATA[<p>I finally went through the tutorial. I learned Git because I wanted to be proficient with GitHub, but now I realize that Git is the core of the deepest mystery &#x1F602;  </p>
@@ -536,6 +485,57 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<p>I made it! :)</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Dec 2022</title>
+    <url>/Dec-2022/</url>
+    <content><![CDATA[<p>This month was supposed to be the month of exams, so I dedicated my time to reviewing the three main lessons in school: Digital Signal Processing, Digital Image Analysis and Combinatorial Mathematics. I made some notes (all in Chinese), and bookmarked some nice links.  </p>
+<span id="more"></span>
+
+<h3 id="Review-Notes"><a href="#Review-Notes" class="headerlink" title="Review Notes"></a>Review Notes</h3><blockquote>
+<p><a href="https://mengisok.notion.site/eb6f54749fb7464f8809ed94ec4c821b">DSP notes on Notion</a> or <a href="https://github.com/mengisok/DSP-review">on GitHub</a> (some MATLAB code)  </p>
+<p><a href="https://drive.google.com/drive/folders/1KqNqF0UKM6n2ePmovORoTPofqJL-QBt6?usp=sharing">DIA notes on Google Drive</a> (updating&#x2026;)  </p>
+<p><a href="https://drive.google.com/drive/folders/1-0-R1W7jvLb9YrgUj_J1PrmkrNPaY_OM?usp=sharing">Combinatorial Mathematics notes on Google Drive</a> (updating&#x2026;)  </p>
+</blockquote>
+<p>Another thing worth mentioning is that this month <a href="https://en.wikipedia.org/wiki/ChatGPT"><strong>ChatGPT</strong></a> <strong>went viral!</strong> I also tried it. It&#x2019;s amazing I have to say. Here are some interesting or useful links I saw about ChatGPT.  </p>
+<h3 id="Awesome-ChatGPT"><a href="#Awesome-ChatGPT" class="headerlink" title="Awesome ChatGPT"></a>Awesome ChatGPT</h3><blockquote>
+<p><a href="https://openai.com/blog/chatgpt/">Official Introduction</a>  </p>
+<p><a href="https://github.com/Kamigami55/awesome-chatgpt">awesome-chatgpt</a><br>There are many trending repos related to ChatGPT recently.  </p>
+<p><a href="https://chat.bygpt.com/">ChatGPT available in mainland China</a>  </p>
+<p><a href="https://readdevdocs.com/blog/makemoney/%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%B3%A8%E5%86%8COpenAI%E8%B4%A6%E5%8F%B7%E8%AF%95%E7%94%A8ChatGPT%E6%8C%87%E5%8D%97.html#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87">Guide to registering an OpenAI account in China to try ChatGPT</a>  </p>
+<p><a href="https://sms-activate.org/cn">Virtual number for receiving SMS online</a>  </p>
+<p><a href="https://www.douban.com/group/topic/279710957/?_i=705681524967510&amp;dt_dapp=1">First Experience of ChatGPT</a>    </p>
+<p><a href="https://mp.weixin.qq.com/s/rzCYgddvdvWwv71_M_sC-Q">ChatGPT Chinese VSCode plugin</a>  </p>
+<p><a href="https://mp.weixin.qq.com/s/5zThHhpzBmx4EUIMvMV-vQ">Hand sketching in Jupyter Notebook, and turning it into code</a>  </p>
+</blockquote>
+<h3 id="Other-Awesome-Links"><a href="#Other-Awesome-Links" class="headerlink" title="Other Awesome Links"></a>Other Awesome Links</h3><blockquote>
+<p><a href="http://tingtalk.me/telegram/">Telegram Guide</a></p>
+<p><a href="https://oi-wiki.org/">oi-wiki.org</a><br>Programming contest wiki.  </p>
+<p><a href="https://ctf-wiki.org/">ctf-wiki.org</a><br>Cybersecurity competition wiki.  </p>
+<p><a href="https://www.summerschoolsineurope.eu/">summerschoolsineurope.eu</a><br>Information about summerschool in Europe. </p>
+<p><a href="http://fernwanderweg.blogspot.com/">fernwanderweg.blogspot.com</a><br>He used Google blogger to bulid a blog. Looks good.  </p>
+<p><a href="https://hdlbits.01xz.net/wiki/Main_Page">Digital Logic Online Learning Site: HDLbit</a>, and <a href="https://github.com/viduraakalanka/HDL-Bits-Solutions">solutions</a> to learn Verilog.  </p>
+<p><a href="https://ossinsight.io/">OSS Insight</a><br>Real-time trends and statistics for github.  </p>
+<p><a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>You can get some certificates after learning? I love it~</p>
+<p><a href="https://roadmap.sh/">Developer Roadmaps</a><br>Role-based programmer growth guide.  </p>
+<p><a href="https://seeing-theory.brown.edu/index.html">Statistics Visualization Learning Site</a><br>Learn statistics in a visual way. That&#x2019;s very clear and easy to understand!  </p>
+</blockquote>
+<p>The last three are several top repositories with the great number of stars on GitHub. I was surprised to find that <a href="https://github.com/996icu/996.ICU">996.icu</a> was in top 3 &#x1F602;. </p>
+<h3 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h3><p>Unfortunately I didn&#x2019;t take the IELTS &#x1F61E;. I wasn&#x2019;t ready&#x2026; I&#x2019;ll do it later!<br>As for learning Japanese, I dont&#x2019;t use Duolinguo anymore since it&#x2019;s a bit simple. I found some YouTube videos to watch and learn, like <a href="https://www.youtube.com/@deguchi">&#x51FA;&#x53E3;&#x65E5;&#x8A9E;</a>.</p>
+<h3 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h3><p>I changed the theme of my blog from <a href="https://github.com/probberechts/hexo-theme-cactus"><strong>Cactus</strong></a> to <a href="https://github.com/cjquines/hexo-theme-ascent"><strong>Ascent</strong></a>. By the way, here&#x2019;s <a href="https://github.com/stars/mengisok/lists/blog-themes">my stars list</a> about blog themes.<br>I tried to edit a theme to fit my purpose but failed. Frontend is so difficult!  </p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+      </categories>
+      <tags>
+        <tag>Useful Links</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Intro to Git &amp; GitHub</title>
     <url>/Intro-to-Git-GitHub/</url>
     <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>. By the way, I found it very convenient to make notes in Notion first and then export Markdown, modify it, copy and paste it into the Blog.  </p>
@@ -688,97 +688,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Intro to Linux</title>
-    <url>/Intro-to-Linux/</url>
-    <content><![CDATA[<p>I have successfully installed and used Xubuntu according to the tutorial! Great!  </p>
-<span id="more"></span>
-
-<h3 id="Explosive-growth-in-computer-performance"><a href="#Explosive-growth-in-computer-performance" class="headerlink" title="Explosive growth in computer performance"></a>Explosive growth in computer performance</h3><hr>
-<ul>
-<li>Moore&#x2019;s Law: The number of transistors that can fit on an integrated circuit doubles every two years/computer performance doubles every 18 months (Intel CEO David House)</li>
-<li>The limits of quantum physics and the limitations of CPU power consumption and heat dissipation are starting to slow down the increase in computer performance. Joint collaboration between multiple CPUs (multi-core based development) is the way forward instead of pursuing individual CPU performance gains</li>
-</ul>
-<h3 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h3><hr>
-<ul>
-<li>The bridge between the user and the underlying hardware</li>
-<li>Functions<ul>
-<li>Process management: the operating system schedules processes so that many processes can execute concurrently on several central processors</li>
-<li>Memory management: the operating system allocates and reclaims memory appropriately</li>
-<li>File system: the operating system creates appropriate data structures to store files and data</li>
-<li>Network communication: the operating system implements various necessary network communication methods (e.g. TCP/IP)</li>
-<li>Security mechanisms: the operating system is equipped with security mechanisms to protect data from unauthorized access</li>
-<li>User Interface: Operating systems usually include a graphical user interface to facilitate the use of the computer by the user</li>
-<li>Drivers: The operating system interfaces with drivers to perform the functions of the hardware</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-was-born"><a href="#Linux-was-born" class="headerlink" title="Linux was born"></a>Linux was born</h3><hr>
-<blockquote>
-<p>The choice of Linux is largely a recognition of the geek spirit and open source culture.</p>
-</blockquote>
-<blockquote>
-<p>Free software means that the software&#x2019;s users have freedom. (The issue is not about price.) We developed the GNU operating system so that users can have freedom in their computing.</p>
-<p>Specifically, free software means users have the four essential freedoms: (0) to run the program, (1) to study and change the program in source code form, (2) to redistribute exact copies, and (3) to distribute modified versions.</p>
-<p>Software differs from material objects&#x2014;such as chairs, sandwiches, and gasoline&#x2014;in that it can be copied and changed much more easily. These facilities are why software is useful; we believe a program&#x2019;s users should be free to take advantage of them, not solely its developer.<a href="#refer-anchor-1"><sup>1</sup></a> </p>
-</blockquote>
-<ul>
-<li>In 1983, Richard Stallman launched the GNU Project at MIT; in 1991, Linus Torvalds wrote and released the Linux kernel, which became the basis for all subsequent Linux distributions</li>
-<li>GNU: GNU is a recursive abbreviation for &#x201C;<strong>G</strong>NU is <strong>N</strong>ot <strong>U</strong>nix&#x201D;, which refers to a UNIX-like but completely free operating system</li>
-<li>GNU General Public License (GNU GPL or GPL): grants all rights to use the software under this license to anyone who uses it<ul>
-<li>This right is also known as copyleft, as opposed to the usual copyright</li>
-</ul>
-</li>
-<li>The core GNU operating system has not been developed to date. What is actually used now is GNU/Linux, where the Linux kernel is the functional core and the GNU components are peripherals and tools for the user to operate and use the Linux kernel<ul>
-<li>A common system on smartphones today is Android/Linux, an operating system based on the Linux kernel that does not use GNU components, but rather a different Android system developed by Google as a tool</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-distributions"><a href="#Linux-distributions" class="headerlink" title="Linux distributions"></a>Linux distributions</h3><hr>
-<ul>
-<li>Linux distribution = Linux kernel + a set of GNU tools and libraries, some accompanying software, documentation, a desktop system, a window manager, and a desktop environment</li>
-<li>Mainstream distribution branches<ul>
-<li>****Debian branch ****: The most famous one is Ubuntu, an operating system that focuses on desktop applications and is suitable for general users. <strong>It is recommended that first-time Linux users give preference to the Ubuntu distribution or its sub-distributions (Lubuntu, Xubuntu, etc.)</strong></li>
-<li>****Red Hat branch ****: Fedora, CentOS (suitable for running on servers that require high stability)</li>
-<li>****Arch Linux branch ****: requires users to be willing to understand how the OS works themselves, and does not take the approach of shielding how it works to lower the barrier to use. Variant Manjaro is more focused on ease of use and more suitable for general users</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-on-the-side"><a href="#Linux-on-the-side" class="headerlink" title="Linux on the side"></a>Linux on the side</h3><hr>
-<ul>
-<li>Smartphones: The Android operating system developed by Google is part of the Android/Linux branch, also called Android native, with many sub-distributions, such as Huawei EMUI and Xiaomi MIUI, etc.</li>
-<li>Servers: Websites and software providers need to set up their own computers to perform computing, storage and communication functions, and such computers are called servers. Servers usually do not use personal computer operating systems like Windows or macOS, but mostly use Linux distributions because of their simple interfaces, powerful features, and the fact that some distributions are also supported by the services of professional computer companies (such as RHEL). debian and Ubuntu Server are very popular</li>
-<li>Embedded devices: Various distributions under the Android/Linux branch are the mainstream embedded operating systems, such as Google&#x2019;s Android TV operating system for digital TV</li>
-</ul>
-<h3 id="Using-Linux"><a href="#Using-Linux" class="headerlink" title="Using Linux"></a>Using Linux</h3><hr>
-<ul>
-<li><strong>It is recommended to use a virtual machine to run the installed Linux image</strong></li>
-<li>Steps<ol>
-<li>Get the virtual machine management software, <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a> is recommended</li>
-<li>Get <a href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu virtual machine image</a> (Xubuntu is a sub-distribution of Ubuntu, very similar to Ubuntu, but smaller and less performance intensive, suitable for computers with different performance) )<br>  Double click to open the virtual machine image, the management software will open and import the image, you can directly click the start button to start after the import is complete</li>
-</ol>
-</li>
-</ul>
-<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
-
-<p>&#x1F973; ~   </p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>Tutorial</strong></p>
-<p><a href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - Getting Started with Linux</a></p>
-<p><strong>Citation</strong>  </p>
-<div id="refer-anchor-1"></div>
-
-<p>[1] <a href="https://www.gnu.org/philosophy/philosophy.html">Philosophy of the GNU Project</a></p>
-<p><strong>Recommended Reading</strong></p>
-<p><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">Why Open Source Misses the Point of Free Software</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Intro to Java</title>
     <url>/Intro-to-Java/</url>
     <content><![CDATA[<p>The sections on the background of Java&#x2019;s birth, development history and version descriptions were very helpful to me.      </p>
@@ -879,6 +788,97 @@
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Intro to Linux</title>
+    <url>/Intro-to-Linux/</url>
+    <content><![CDATA[<p>I have successfully installed and used Xubuntu according to the tutorial! Great!  </p>
+<span id="more"></span>
+
+<h3 id="Explosive-growth-in-computer-performance"><a href="#Explosive-growth-in-computer-performance" class="headerlink" title="Explosive growth in computer performance"></a>Explosive growth in computer performance</h3><hr>
+<ul>
+<li>Moore&#x2019;s Law: The number of transistors that can fit on an integrated circuit doubles every two years/computer performance doubles every 18 months (Intel CEO David House)</li>
+<li>The limits of quantum physics and the limitations of CPU power consumption and heat dissipation are starting to slow down the increase in computer performance. Joint collaboration between multiple CPUs (multi-core based development) is the way forward instead of pursuing individual CPU performance gains</li>
+</ul>
+<h3 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h3><hr>
+<ul>
+<li>The bridge between the user and the underlying hardware</li>
+<li>Functions<ul>
+<li>Process management: the operating system schedules processes so that many processes can execute concurrently on several central processors</li>
+<li>Memory management: the operating system allocates and reclaims memory appropriately</li>
+<li>File system: the operating system creates appropriate data structures to store files and data</li>
+<li>Network communication: the operating system implements various necessary network communication methods (e.g. TCP/IP)</li>
+<li>Security mechanisms: the operating system is equipped with security mechanisms to protect data from unauthorized access</li>
+<li>User Interface: Operating systems usually include a graphical user interface to facilitate the use of the computer by the user</li>
+<li>Drivers: The operating system interfaces with drivers to perform the functions of the hardware</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-was-born"><a href="#Linux-was-born" class="headerlink" title="Linux was born"></a>Linux was born</h3><hr>
+<blockquote>
+<p>The choice of Linux is largely a recognition of the geek spirit and open source culture.</p>
+</blockquote>
+<blockquote>
+<p>Free software means that the software&#x2019;s users have freedom. (The issue is not about price.) We developed the GNU operating system so that users can have freedom in their computing.</p>
+<p>Specifically, free software means users have the four essential freedoms: (0) to run the program, (1) to study and change the program in source code form, (2) to redistribute exact copies, and (3) to distribute modified versions.</p>
+<p>Software differs from material objects&#x2014;such as chairs, sandwiches, and gasoline&#x2014;in that it can be copied and changed much more easily. These facilities are why software is useful; we believe a program&#x2019;s users should be free to take advantage of them, not solely its developer.<a href="#refer-anchor-1"><sup>1</sup></a> </p>
+</blockquote>
+<ul>
+<li>In 1983, Richard Stallman launched the GNU Project at MIT; in 1991, Linus Torvalds wrote and released the Linux kernel, which became the basis for all subsequent Linux distributions</li>
+<li>GNU: GNU is a recursive abbreviation for &#x201C;<strong>G</strong>NU is <strong>N</strong>ot <strong>U</strong>nix&#x201D;, which refers to a UNIX-like but completely free operating system</li>
+<li>GNU General Public License (GNU GPL or GPL): grants all rights to use the software under this license to anyone who uses it<ul>
+<li>This right is also known as copyleft, as opposed to the usual copyright</li>
+</ul>
+</li>
+<li>The core GNU operating system has not been developed to date. What is actually used now is GNU/Linux, where the Linux kernel is the functional core and the GNU components are peripherals and tools for the user to operate and use the Linux kernel<ul>
+<li>A common system on smartphones today is Android/Linux, an operating system based on the Linux kernel that does not use GNU components, but rather a different Android system developed by Google as a tool</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-distributions"><a href="#Linux-distributions" class="headerlink" title="Linux distributions"></a>Linux distributions</h3><hr>
+<ul>
+<li>Linux distribution = Linux kernel + a set of GNU tools and libraries, some accompanying software, documentation, a desktop system, a window manager, and a desktop environment</li>
+<li>Mainstream distribution branches<ul>
+<li>****Debian branch ****: The most famous one is Ubuntu, an operating system that focuses on desktop applications and is suitable for general users. <strong>It is recommended that first-time Linux users give preference to the Ubuntu distribution or its sub-distributions (Lubuntu, Xubuntu, etc.)</strong></li>
+<li>****Red Hat branch ****: Fedora, CentOS (suitable for running on servers that require high stability)</li>
+<li>****Arch Linux branch ****: requires users to be willing to understand how the OS works themselves, and does not take the approach of shielding how it works to lower the barrier to use. Variant Manjaro is more focused on ease of use and more suitable for general users</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-on-the-side"><a href="#Linux-on-the-side" class="headerlink" title="Linux on the side"></a>Linux on the side</h3><hr>
+<ul>
+<li>Smartphones: The Android operating system developed by Google is part of the Android/Linux branch, also called Android native, with many sub-distributions, such as Huawei EMUI and Xiaomi MIUI, etc.</li>
+<li>Servers: Websites and software providers need to set up their own computers to perform computing, storage and communication functions, and such computers are called servers. Servers usually do not use personal computer operating systems like Windows or macOS, but mostly use Linux distributions because of their simple interfaces, powerful features, and the fact that some distributions are also supported by the services of professional computer companies (such as RHEL). debian and Ubuntu Server are very popular</li>
+<li>Embedded devices: Various distributions under the Android/Linux branch are the mainstream embedded operating systems, such as Google&#x2019;s Android TV operating system for digital TV</li>
+</ul>
+<h3 id="Using-Linux"><a href="#Using-Linux" class="headerlink" title="Using Linux"></a>Using Linux</h3><hr>
+<ul>
+<li><strong>It is recommended to use a virtual machine to run the installed Linux image</strong></li>
+<li>Steps<ol>
+<li>Get the virtual machine management software, <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a> is recommended</li>
+<li>Get <a href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu virtual machine image</a> (Xubuntu is a sub-distribution of Ubuntu, very similar to Ubuntu, but smaller and less performance intensive, suitable for computers with different performance) )<br>  Double click to open the virtual machine image, the management software will open and import the image, you can directly click the start button to start after the import is complete</li>
+</ol>
+</li>
+</ul>
+<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
+
+<p>&#x1F973; ~   </p>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>Tutorial</strong></p>
+<p><a href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - Getting Started with Linux</a></p>
+<p><strong>Citation</strong>  </p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a href="https://www.gnu.org/philosophy/philosophy.html">Philosophy of the GNU Project</a></p>
+<p><strong>Recommended Reading</strong></p>
+<p><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">Why Open Source Misses the Point of Free Software</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1372,6 +1372,53 @@ git push -u origin master
       </categories>
   </entry>
   <entry>
+    <title>Two-pointer</title>
+    <url>/Two-pointer/</url>
+    <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, I finally finished my first &#x201C;Explore&#x201D;.  </p>
+<span id="more"></span>
+
+<img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
+
+<p>The biggest lesson for me is an amazing technique called <strong>Two-pointer</strong>. At first I thought it&#x2019;s nested two for-loops, but then I found it&#x2019;s actually much more flesxible and useful. So I&#x2019;d like to note it.  </p>
+<h3 id="Meaning"><a href="#Meaning" class="headerlink" title="Meaning"></a>Meaning</h3><hr>
+<p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
+<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><hr>
+<ol>
+<li>When you want to iterate the array from <strong>two ends to the middle</strong>, you can use one pointer starts from the <strong>beginning</strong> while the other pointer starts from the <strong>end</strong>. They have <strong>same steps</strong>.</li>
+</ol>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">reverseString</span><span class="hljs-params">(<span class="hljs-type">char</span>[] s)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> s.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="hljs-type">char</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="hljs-comment">// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] twoSum(<span class="hljs-type">int</span>[] numbers, <span class="hljs-type">int</span> target) {</span><br><span class="line">        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="title class_">int</span>[<span class="hljs-number">2</span>];</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">start</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> numbers.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="hljs-number">0</span>] = start + <span class="hljs-number">1</span>;</span><br><span class="line">        res[<span class="hljs-number">1</span>] = end + <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>When you want one <strong>slow-runner</strong> and one <strong>fast-runner</strong> at the same time, you can use one pointer for the <strong>iteration</strong> while another one for the <strong>special position</strong>. They have <strong>different steps</strong>.</li>
+</ol>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Element</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;k&quot; for the elements to remove</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> val)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Here an important concept is introduced: <strong>in-place.</strong>  </p>
+<blockquote>
+<p>An in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements.<a href="#refer-anchor-1"><sup>1</sup></a>  </p>
+</blockquote>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;max&quot; for finding the max number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                sum = <span class="hljs-number">0</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;j&quot; for the unique elements</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeDuplicates</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> j + <span class="hljs-number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Move Zeroes</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;k&quot; works on the non-zero elements</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">moveZeroes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                <span class="hljs-keyword">if</span> (k &lt; n-<span class="hljs-number">1</span>) {</span><br><span class="line">                    <span class="hljs-keyword">while</span> (nums[k] == <span class="hljs-number">0</span> &amp;&amp; k &lt; n-<span class="hljs-number">1</span>) {k++; } </span><br><span class="line">                    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>My current progress:<br><img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>Congrats to myself and keep it up! &#x1F4AA;&#x1F3FB; </p>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>LeetCode Explore</strong>  </p>
+<p><a href="https://leetcode.com/explore/learn/card/array-and-string/">Array and String</a>  </p>
+<p><strong>Citation</strong></p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a href="https://en.wikipedia.org/wiki/In-place_algorithm">Wikipedia: In-place algorithm</a></p>
+]]></content>
+      <tags>
+        <tag>Data Structure &amp; Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Shell</title>
     <url>/Shell/</url>
     <content><![CDATA[<p>The Matrix effect is so cool.  </p>
@@ -1435,53 +1482,6 @@ git push -u origin master
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Two-pointer</title>
-    <url>/Two-pointer/</url>
-    <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, I finally finished my first &#x201C;Explore&#x201D;.  </p>
-<span id="more"></span>
-
-<img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
-
-<p>The biggest lesson for me is an amazing technique called <strong>Two-pointer</strong>. At first I thought it&#x2019;s nested two for-loops, but then I found it&#x2019;s actually much more flesxible and useful. So I&#x2019;d like to note it.  </p>
-<h3 id="Meaning"><a href="#Meaning" class="headerlink" title="Meaning"></a>Meaning</h3><hr>
-<p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
-<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><hr>
-<ol>
-<li>When you want to iterate the array from <strong>two ends to the middle</strong>, you can use one pointer starts from the <strong>beginning</strong> while the other pointer starts from the <strong>end</strong>. They have <strong>same steps</strong>.</li>
-</ol>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">reverseString</span><span class="hljs-params">(<span class="hljs-type">char</span>[] s)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> s.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="hljs-type">char</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="hljs-comment">// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] twoSum(<span class="hljs-type">int</span>[] numbers, <span class="hljs-type">int</span> target) {</span><br><span class="line">        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="title class_">int</span>[<span class="hljs-number">2</span>];</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">start</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> numbers.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="hljs-number">0</span>] = start + <span class="hljs-number">1</span>;</span><br><span class="line">        res[<span class="hljs-number">1</span>] = end + <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ol start="2">
-<li>When you want one <strong>slow-runner</strong> and one <strong>fast-runner</strong> at the same time, you can use one pointer for the <strong>iteration</strong> while another one for the <strong>special position</strong>. They have <strong>different steps</strong>.</li>
-</ol>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Element</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;k&quot; for the elements to remove</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> val)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Here an important concept is introduced: <strong>in-place.</strong>  </p>
-<blockquote>
-<p>An in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements.<a href="#refer-anchor-1"><sup>1</sup></a>  </p>
-</blockquote>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;max&quot; for finding the max number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                sum = <span class="hljs-number">0</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;j&quot; for the unique elements</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeDuplicates</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> j + <span class="hljs-number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Move Zeroes</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;k&quot; works on the non-zero elements</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">moveZeroes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                <span class="hljs-keyword">if</span> (k &lt; n-<span class="hljs-number">1</span>) {</span><br><span class="line">                    <span class="hljs-keyword">while</span> (nums[k] == <span class="hljs-number">0</span> &amp;&amp; k &lt; n-<span class="hljs-number">1</span>) {k++; } </span><br><span class="line">                    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>My current progress:<br><img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>Congrats to myself and keep it up! &#x1F4AA;&#x1F3FB; </p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>LeetCode Explore</strong>  </p>
-<p><a href="https://leetcode.com/explore/learn/card/array-and-string/">Array and String</a>  </p>
-<p><strong>Citation</strong></p>
-<div id="refer-anchor-1"></div>
-
-<p>[1] <a href="https://en.wikipedia.org/wiki/In-place_algorithm">Wikipedia: In-place algorithm</a></p>
-]]></content>
-      <tags>
-        <tag>Data Structure &amp; Algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -3017,13 +3017,13 @@ git push -u origin master
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>链接</title>
-    <url>/zh-cn/links/index.html</url>
+    <title>Tags</title>
+    <url>/zh-cn/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>Tags</title>
-    <url>/zh-cn/tags/index.html</url>
+    <title>链接</title>
+    <url>/zh-cn/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
