@@ -3,7 +3,7 @@
   <entry>
     <title>Adaptive Filters</title>
     <url>/Adaptive-Filters/</url>
-    <content><![CDATA[<p>I watched a well-organized and concise YouTube video about Adaptive Filters, which is also an important course I am taking this semester. I focused on the key points in my course.  </p>
+    <content><![CDATA[<p>I watched a well organized and concise YouTube video about <em>adaptive filters</em>, which is the focus of an important course I am taking this semester, <em>Digital Signal Processing II</em>.   </p>
 <span id="more"></span>
 
 <h3 id="Limitations-of-fixed-coefficient-digital-filters"><a href="#Limitations-of-fixed-coefficient-digital-filters" class="headerlink" title="Limitations of fixed-coefficient digital filters"></a>Limitations of fixed-coefficient digital filters</h3><hr>
@@ -84,8 +84,10 @@
 <li>Cancelling maternal ECG and get foetal ECG during labour</li>
 </ul>
 <h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>YouTube Video Tutorial</strong></p>
+<p><strong>YouTube Video</strong></p>
 <p><a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a></p>
+<p><strong>Course Home Page</strong></p>
+<p><a href="http://home.ustc.edu.cn/~lzx2010/">Digital Signal Processing II</a></p>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -257,6 +259,12 @@
       <tags>
         <tag>Useful Links</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<p>I made it! :)</p>
+]]></content>
   </entry>
   <entry>
     <title>Git Learning Notes</title>
@@ -528,12 +536,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/Hello-World/</url>
-    <content><![CDATA[<p>I made it! :)</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Intro to Git &amp; GitHub</title>
     <url>/Intro-to-Git-GitHub/</url>
     <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>. By the way, I found it very convenient to make notes in Notion first and then export Markdown, modify it, copy and paste it into the Blog.  </p>
@@ -686,6 +688,97 @@
       </tags>
   </entry>
   <entry>
+    <title>Intro to Linux</title>
+    <url>/Intro-to-Linux/</url>
+    <content><![CDATA[<p>I have successfully installed and used Xubuntu according to the tutorial! Great!  </p>
+<span id="more"></span>
+
+<h3 id="Explosive-growth-in-computer-performance"><a href="#Explosive-growth-in-computer-performance" class="headerlink" title="Explosive growth in computer performance"></a>Explosive growth in computer performance</h3><hr>
+<ul>
+<li>Moore&#x2019;s Law: The number of transistors that can fit on an integrated circuit doubles every two years/computer performance doubles every 18 months (Intel CEO David House)</li>
+<li>The limits of quantum physics and the limitations of CPU power consumption and heat dissipation are starting to slow down the increase in computer performance. Joint collaboration between multiple CPUs (multi-core based development) is the way forward instead of pursuing individual CPU performance gains</li>
+</ul>
+<h3 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h3><hr>
+<ul>
+<li>The bridge between the user and the underlying hardware</li>
+<li>Functions<ul>
+<li>Process management: the operating system schedules processes so that many processes can execute concurrently on several central processors</li>
+<li>Memory management: the operating system allocates and reclaims memory appropriately</li>
+<li>File system: the operating system creates appropriate data structures to store files and data</li>
+<li>Network communication: the operating system implements various necessary network communication methods (e.g. TCP/IP)</li>
+<li>Security mechanisms: the operating system is equipped with security mechanisms to protect data from unauthorized access</li>
+<li>User Interface: Operating systems usually include a graphical user interface to facilitate the use of the computer by the user</li>
+<li>Drivers: The operating system interfaces with drivers to perform the functions of the hardware</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-was-born"><a href="#Linux-was-born" class="headerlink" title="Linux was born"></a>Linux was born</h3><hr>
+<blockquote>
+<p>The choice of Linux is largely a recognition of the geek spirit and open source culture.</p>
+</blockquote>
+<blockquote>
+<p>Free software means that the software&#x2019;s users have freedom. (The issue is not about price.) We developed the GNU operating system so that users can have freedom in their computing.</p>
+<p>Specifically, free software means users have the four essential freedoms: (0) to run the program, (1) to study and change the program in source code form, (2) to redistribute exact copies, and (3) to distribute modified versions.</p>
+<p>Software differs from material objects&#x2014;such as chairs, sandwiches, and gasoline&#x2014;in that it can be copied and changed much more easily. These facilities are why software is useful; we believe a program&#x2019;s users should be free to take advantage of them, not solely its developer.<a href="#refer-anchor-1"><sup>1</sup></a> </p>
+</blockquote>
+<ul>
+<li>In 1983, Richard Stallman launched the GNU Project at MIT; in 1991, Linus Torvalds wrote and released the Linux kernel, which became the basis for all subsequent Linux distributions</li>
+<li>GNU: GNU is a recursive abbreviation for &#x201C;<strong>G</strong>NU is <strong>N</strong>ot <strong>U</strong>nix&#x201D;, which refers to a UNIX-like but completely free operating system</li>
+<li>GNU General Public License (GNU GPL or GPL): grants all rights to use the software under this license to anyone who uses it<ul>
+<li>This right is also known as copyleft, as opposed to the usual copyright</li>
+</ul>
+</li>
+<li>The core GNU operating system has not been developed to date. What is actually used now is GNU/Linux, where the Linux kernel is the functional core and the GNU components are peripherals and tools for the user to operate and use the Linux kernel<ul>
+<li>A common system on smartphones today is Android/Linux, an operating system based on the Linux kernel that does not use GNU components, but rather a different Android system developed by Google as a tool</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-distributions"><a href="#Linux-distributions" class="headerlink" title="Linux distributions"></a>Linux distributions</h3><hr>
+<ul>
+<li>Linux distribution = Linux kernel + a set of GNU tools and libraries, some accompanying software, documentation, a desktop system, a window manager, and a desktop environment</li>
+<li>Mainstream distribution branches<ul>
+<li>****Debian branch ****: The most famous one is Ubuntu, an operating system that focuses on desktop applications and is suitable for general users. <strong>It is recommended that first-time Linux users give preference to the Ubuntu distribution or its sub-distributions (Lubuntu, Xubuntu, etc.)</strong></li>
+<li>****Red Hat branch ****: Fedora, CentOS (suitable for running on servers that require high stability)</li>
+<li>****Arch Linux branch ****: requires users to be willing to understand how the OS works themselves, and does not take the approach of shielding how it works to lower the barrier to use. Variant Manjaro is more focused on ease of use and more suitable for general users</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-on-the-side"><a href="#Linux-on-the-side" class="headerlink" title="Linux on the side"></a>Linux on the side</h3><hr>
+<ul>
+<li>Smartphones: The Android operating system developed by Google is part of the Android/Linux branch, also called Android native, with many sub-distributions, such as Huawei EMUI and Xiaomi MIUI, etc.</li>
+<li>Servers: Websites and software providers need to set up their own computers to perform computing, storage and communication functions, and such computers are called servers. Servers usually do not use personal computer operating systems like Windows or macOS, but mostly use Linux distributions because of their simple interfaces, powerful features, and the fact that some distributions are also supported by the services of professional computer companies (such as RHEL). debian and Ubuntu Server are very popular</li>
+<li>Embedded devices: Various distributions under the Android/Linux branch are the mainstream embedded operating systems, such as Google&#x2019;s Android TV operating system for digital TV</li>
+</ul>
+<h3 id="Using-Linux"><a href="#Using-Linux" class="headerlink" title="Using Linux"></a>Using Linux</h3><hr>
+<ul>
+<li><strong>It is recommended to use a virtual machine to run the installed Linux image</strong></li>
+<li>Steps<ol>
+<li>Get the virtual machine management software, <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a> is recommended</li>
+<li>Get <a href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu virtual machine image</a> (Xubuntu is a sub-distribution of Ubuntu, very similar to Ubuntu, but smaller and less performance intensive, suitable for computers with different performance) )<br>  Double click to open the virtual machine image, the management software will open and import the image, you can directly click the start button to start after the import is complete</li>
+</ol>
+</li>
+</ul>
+<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
+
+<p>&#x1F973; ~   </p>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>Tutorial</strong></p>
+<p><a href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - Getting Started with Linux</a></p>
+<p><strong>Citation</strong>  </p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a href="https://www.gnu.org/philosophy/philosophy.html">Philosophy of the GNU Project</a></p>
+<p><strong>Recommended Reading</strong></p>
+<p><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">Why Open Source Misses the Point of Free Software</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Intro to Java</title>
     <url>/Intro-to-Java/</url>
     <content><![CDATA[<p>The sections on the background of Java&#x2019;s birth, development history and version descriptions were very helpful to me.      </p>
@@ -786,97 +879,6 @@
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Intro to Linux</title>
-    <url>/Intro-to-Linux/</url>
-    <content><![CDATA[<p>I have successfully installed and used Xubuntu according to the tutorial! Great!  </p>
-<span id="more"></span>
-
-<h3 id="Explosive-growth-in-computer-performance"><a href="#Explosive-growth-in-computer-performance" class="headerlink" title="Explosive growth in computer performance"></a>Explosive growth in computer performance</h3><hr>
-<ul>
-<li>Moore&#x2019;s Law: The number of transistors that can fit on an integrated circuit doubles every two years/computer performance doubles every 18 months (Intel CEO David House)</li>
-<li>The limits of quantum physics and the limitations of CPU power consumption and heat dissipation are starting to slow down the increase in computer performance. Joint collaboration between multiple CPUs (multi-core based development) is the way forward instead of pursuing individual CPU performance gains</li>
-</ul>
-<h3 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h3><hr>
-<ul>
-<li>The bridge between the user and the underlying hardware</li>
-<li>Functions<ul>
-<li>Process management: the operating system schedules processes so that many processes can execute concurrently on several central processors</li>
-<li>Memory management: the operating system allocates and reclaims memory appropriately</li>
-<li>File system: the operating system creates appropriate data structures to store files and data</li>
-<li>Network communication: the operating system implements various necessary network communication methods (e.g. TCP/IP)</li>
-<li>Security mechanisms: the operating system is equipped with security mechanisms to protect data from unauthorized access</li>
-<li>User Interface: Operating systems usually include a graphical user interface to facilitate the use of the computer by the user</li>
-<li>Drivers: The operating system interfaces with drivers to perform the functions of the hardware</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-was-born"><a href="#Linux-was-born" class="headerlink" title="Linux was born"></a>Linux was born</h3><hr>
-<blockquote>
-<p>The choice of Linux is largely a recognition of the geek spirit and open source culture.</p>
-</blockquote>
-<blockquote>
-<p>Free software means that the software&#x2019;s users have freedom. (The issue is not about price.) We developed the GNU operating system so that users can have freedom in their computing.</p>
-<p>Specifically, free software means users have the four essential freedoms: (0) to run the program, (1) to study and change the program in source code form, (2) to redistribute exact copies, and (3) to distribute modified versions.</p>
-<p>Software differs from material objects&#x2014;such as chairs, sandwiches, and gasoline&#x2014;in that it can be copied and changed much more easily. These facilities are why software is useful; we believe a program&#x2019;s users should be free to take advantage of them, not solely its developer.<a href="#refer-anchor-1"><sup>1</sup></a> </p>
-</blockquote>
-<ul>
-<li>In 1983, Richard Stallman launched the GNU Project at MIT; in 1991, Linus Torvalds wrote and released the Linux kernel, which became the basis for all subsequent Linux distributions</li>
-<li>GNU: GNU is a recursive abbreviation for &#x201C;<strong>G</strong>NU is <strong>N</strong>ot <strong>U</strong>nix&#x201D;, which refers to a UNIX-like but completely free operating system</li>
-<li>GNU General Public License (GNU GPL or GPL): grants all rights to use the software under this license to anyone who uses it<ul>
-<li>This right is also known as copyleft, as opposed to the usual copyright</li>
-</ul>
-</li>
-<li>The core GNU operating system has not been developed to date. What is actually used now is GNU/Linux, where the Linux kernel is the functional core and the GNU components are peripherals and tools for the user to operate and use the Linux kernel<ul>
-<li>A common system on smartphones today is Android/Linux, an operating system based on the Linux kernel that does not use GNU components, but rather a different Android system developed by Google as a tool</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-distributions"><a href="#Linux-distributions" class="headerlink" title="Linux distributions"></a>Linux distributions</h3><hr>
-<ul>
-<li>Linux distribution = Linux kernel + a set of GNU tools and libraries, some accompanying software, documentation, a desktop system, a window manager, and a desktop environment</li>
-<li>Mainstream distribution branches<ul>
-<li>****Debian branch ****: The most famous one is Ubuntu, an operating system that focuses on desktop applications and is suitable for general users. <strong>It is recommended that first-time Linux users give preference to the Ubuntu distribution or its sub-distributions (Lubuntu, Xubuntu, etc.)</strong></li>
-<li>****Red Hat branch ****: Fedora, CentOS (suitable for running on servers that require high stability)</li>
-<li>****Arch Linux branch ****: requires users to be willing to understand how the OS works themselves, and does not take the approach of shielding how it works to lower the barrier to use. Variant Manjaro is more focused on ease of use and more suitable for general users</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-on-the-side"><a href="#Linux-on-the-side" class="headerlink" title="Linux on the side"></a>Linux on the side</h3><hr>
-<ul>
-<li>Smartphones: The Android operating system developed by Google is part of the Android/Linux branch, also called Android native, with many sub-distributions, such as Huawei EMUI and Xiaomi MIUI, etc.</li>
-<li>Servers: Websites and software providers need to set up their own computers to perform computing, storage and communication functions, and such computers are called servers. Servers usually do not use personal computer operating systems like Windows or macOS, but mostly use Linux distributions because of their simple interfaces, powerful features, and the fact that some distributions are also supported by the services of professional computer companies (such as RHEL). debian and Ubuntu Server are very popular</li>
-<li>Embedded devices: Various distributions under the Android/Linux branch are the mainstream embedded operating systems, such as Google&#x2019;s Android TV operating system for digital TV</li>
-</ul>
-<h3 id="Using-Linux"><a href="#Using-Linux" class="headerlink" title="Using Linux"></a>Using Linux</h3><hr>
-<ul>
-<li><strong>It is recommended to use a virtual machine to run the installed Linux image</strong></li>
-<li>Steps<ol>
-<li>Get the virtual machine management software, <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a> is recommended</li>
-<li>Get <a href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu virtual machine image</a> (Xubuntu is a sub-distribution of Ubuntu, very similar to Ubuntu, but smaller and less performance intensive, suitable for computers with different performance) )<br>  Double click to open the virtual machine image, the management software will open and import the image, you can directly click the start button to start after the import is complete</li>
-</ol>
-</li>
-</ul>
-<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
-
-<p>&#x1F973; ~   </p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>Tutorial</strong></p>
-<p><a href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - Getting Started with Linux</a></p>
-<p><strong>Citation</strong>  </p>
-<div id="refer-anchor-1"></div>
-
-<p>[1] <a href="https://www.gnu.org/philosophy/philosophy.html">Philosophy of the GNU Project</a></p>
-<p><strong>Recommended Reading</strong></p>
-<p><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">Why Open Source Misses the Point of Free Software</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1485,7 +1487,7 @@ git push -u origin master
   <entry>
     <title>自适应滤波器</title>
     <url>/zh-cn/Adaptive-Filters/</url>
-    <content><![CDATA[<p>&#x770B;&#x4E86;&#x4E00;&#x4E2A;&#x6761;&#x7406;&#x6E05;&#x6670;&#x3001;&#x7B80;&#x660E;&#x627C;&#x8981;&#x7684;&#x5173;&#x4E8E;&#x81EA;&#x9002;&#x5E94;&#x6EE4;&#x6CE2;&#x5668;&#x7684;YouTube&#x89C6;&#x9891;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x6211;&#x8FD9;&#x5B66;&#x671F;&#x4E0A;&#x7684;&#x4E00;&#x95E8;&#x57FA;&#x7840;&#x8BFE;&#x3002;&#x6211;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x4E86;&#x5B66;&#x6821;&#x8BFE;&#x7A0B;&#x4E2D;&#x7684;&#x5173;&#x952E;&#x77E5;&#x8BC6;&#x70B9;&#x3002;  </p>
+    <content><![CDATA[<p>&#x770B;&#x4E86;&#x4E00;&#x4E2A;&#x6761;&#x7406;&#x6E05;&#x6670;&#x3001;&#x7B80;&#x660E;&#x627C;&#x8981;&#x7684;&#x5173;&#x4E8E;<em>&#x81EA;&#x9002;&#x5E94;&#x6EE4;&#x6CE2;&#x5668;</em>&#x7684;YouTube&#x89C6;&#x9891;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x6211;&#x8FD9;&#x5B66;&#x671F;&#x4E0A;&#x7684;&#x4E00;&#x95E8;&#x57FA;&#x7840;&#x8BFE;&#x201C;<em>&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x2161;</em>&#x201D;&#x7684;&#x91CD;&#x70B9;&#x5185;&#x5BB9;&#x3002;  </p>
 <span id="more"></span>
 
 <h3 id="&#x56FA;&#x5B9A;&#x7CFB;&#x6570;&#x6570;&#x5B57;&#x6EE4;&#x6CE2;&#x5668;&#x7684;&#x5C40;&#x9650;&#x6027;"><a href="#&#x56FA;&#x5B9A;&#x7CFB;&#x6570;&#x6570;&#x5B57;&#x6EE4;&#x6CE2;&#x5668;&#x7684;&#x5C40;&#x9650;&#x6027;" class="headerlink" title="&#x56FA;&#x5B9A;&#x7CFB;&#x6570;&#x6570;&#x5B57;&#x6EE4;&#x6CE2;&#x5668;&#x7684;&#x5C40;&#x9650;&#x6027;"></a>&#x56FA;&#x5B9A;&#x7CFB;&#x6570;&#x6570;&#x5B57;&#x6EE4;&#x6CE2;&#x5668;&#x7684;&#x5C40;&#x9650;&#x6027;</h3><hr>
@@ -1566,8 +1568,10 @@ git push -u origin master
 <li>&#x5728;&#x5206;&#x5A29;&#x8FC7;&#x7A0B;&#x4E2D;&#x6D88;&#x9664;&#x6BCD;&#x4F53;&#x5FC3;&#x7535;&#x56FE;&#x4ECE;&#x800C;&#x83B7;&#x5F97;&#x80CE;&#x513F;&#x5FC3;&#x7535;&#x56FE;</li>
 </ul>
 <h3 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h3><hr>
-<p><strong>YouTube&#x89C6;&#x9891;&#x6559;&#x7A0B;</strong></p>
+<p><strong>YouTube&#x89C6;&#x9891;</strong></p>
 <p><a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a></p>
+<p><strong>&#x8BFE;&#x7A0B;&#x4E3B;&#x9875;</strong></p>
+<p><a href="http://home.ustc.edu.cn/~lzx2010/">&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406; II</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -1740,12 +1744,6 @@ git push -u origin master
       <tags>
         <tag>有用的链接</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/zh-cn/Hello-World/</url>
-    <content><![CDATA[<p>&#x6211;&#x6210;&#x529F;&#x4E86;&#xFF01; :)</p>
-]]></content>
   </entry>
   <entry>
     <title>Git 学习笔记</title>
@@ -2015,6 +2013,12 @@ git push -u origin master
       <tags>
         <tag>Git</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/zh-cn/Hello-World/</url>
+    <content><![CDATA[<p>&#x6211;&#x6210;&#x529F;&#x4E86;&#xFF01; :)</p>
+]]></content>
   </entry>
   <entry>
     <title>Git &amp; Github 入门</title>
@@ -2969,11 +2973,6 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>About</title>
     <url>/about/index.html</url>
     <content><![CDATA[<img src="/images/bin_cat.png" alt="bin_cat" title="bin_cat" width="350">  
@@ -2986,13 +2985,18 @@ git push -u origin master
 ]]></content>
   </entry>
   <entry>
-    <title>Links</title>
-    <url>/links/index.html</url>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Tags</title>
     <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Links</title>
+    <url>/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
