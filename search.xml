@@ -97,6 +97,51 @@
       </tags>
   </entry>
   <entry>
+    <title>Dec 2022</title>
+    <url>/Dec-2022/</url>
+    <content><![CDATA[<p>This month was supposed to be the month of exams, so I dedicated my time to reviewing the three main lessons in school: Digital Signal Processing, Digital Image Analysis and Combinatorial Mathematics. I made some notes (all in Chinese), and bookmarked some nice links.  </p>
+<span id="more"></span>
+
+<h3 id="Review-Notes"><a href="#Review-Notes" class="headerlink" title="Review Notes"></a>Review Notes</h3><blockquote>
+<p><a href="https://mengisok.notion.site/eb6f54749fb7464f8809ed94ec4c821b">DSP notes on Notion</a> or <a href="https://github.com/mengisok/DSP-review">on GitHub</a> (some MATLAB code)  </p>
+<p><a href="https://drive.google.com/drive/folders/1KqNqF0UKM6n2ePmovORoTPofqJL-QBt6?usp=sharing">DIA notes on Google Drive</a> (updating&#x2026;)  </p>
+<p><a href="https://drive.google.com/drive/folders/1-0-R1W7jvLb9YrgUj_J1PrmkrNPaY_OM?usp=sharing">Combinatorial Mathematics notes on Google Drive</a> (updating&#x2026;)  </p>
+</blockquote>
+<p>Another thing worth mentioning is that this month <a href="https://en.wikipedia.org/wiki/ChatGPT"><strong>ChatGPT</strong></a> <strong>went viral!</strong> I also tried it. It&#x2019;s amazing I have to say. Here are some interesting or useful links I saw about ChatGPT.  </p>
+<h3 id="Awesome-ChatGPT"><a href="#Awesome-ChatGPT" class="headerlink" title="Awesome ChatGPT"></a>Awesome ChatGPT</h3><blockquote>
+<p><a href="https://openai.com/blog/chatgpt/">Official Introduction</a>  </p>
+<p><a href="https://github.com/Kamigami55/awesome-chatgpt">awesome-chatgpt</a><br>There are many trending repos related to ChatGPT recently.  </p>
+<p><a href="https://chat.bygpt.com/">ChatGPT available in mainland China</a>  </p>
+<p><a href="https://readdevdocs.com/blog/makemoney/%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%B3%A8%E5%86%8COpenAI%E8%B4%A6%E5%8F%B7%E8%AF%95%E7%94%A8ChatGPT%E6%8C%87%E5%8D%97.html#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87">Guide to registering an OpenAI account in China to try ChatGPT</a>  </p>
+<p><a href="https://sms-activate.org/cn">Virtual number for receiving SMS online</a>  </p>
+<p><a href="https://www.douban.com/group/topic/279710957/?_i=705681524967510&amp;dt_dapp=1">First Experience of ChatGPT</a>    </p>
+<p><a href="https://mp.weixin.qq.com/s/rzCYgddvdvWwv71_M_sC-Q">ChatGPT Chinese VSCode plugin</a>  </p>
+<p><a href="https://mp.weixin.qq.com/s/5zThHhpzBmx4EUIMvMV-vQ">Hand sketching in Jupyter Notebook, and turning it into code</a>  </p>
+</blockquote>
+<h3 id="Other-Awesome-Links"><a href="#Other-Awesome-Links" class="headerlink" title="Other Awesome Links"></a>Other Awesome Links</h3><blockquote>
+<p><a href="http://tingtalk.me/telegram/">Telegram Guide</a></p>
+<p><a href="https://oi-wiki.org/">oi-wiki.org</a><br>Programming contest wiki.  </p>
+<p><a href="https://ctf-wiki.org/">ctf-wiki.org</a><br>Cybersecurity competition wiki.  </p>
+<p><a href="https://www.summerschoolsineurope.eu/">summerschoolsineurope.eu</a><br>Information about summerschool in Europe. </p>
+<p><a href="http://fernwanderweg.blogspot.com/">fernwanderweg.blogspot.com</a><br>He used Google blogger to bulid a blog. Looks good.  </p>
+<p><a href="https://hdlbits.01xz.net/wiki/Main_Page">Digital Logic Online Learning Site: HDLbit</a>, and <a href="https://github.com/viduraakalanka/HDL-Bits-Solutions">solutions</a> to learn Verilog.  </p>
+<p><a href="https://ossinsight.io/">OSS Insight</a><br>Real-time trends and statistics for github.  </p>
+<p><a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>You can get some certificates after learning? I love it~</p>
+<p><a href="https://roadmap.sh/">Developer Roadmaps</a><br>Role-based programmer growth guide.  </p>
+<p><a href="https://seeing-theory.brown.edu/index.html">Statistics Visualization Learning Site</a><br>Learn statistics in a visual way. That&#x2019;s very clear and easy to understand!  </p>
+</blockquote>
+<p>The last three are several top repositories with the great number of stars on GitHub. I was surprised to find that <a href="https://github.com/996icu/996.ICU">996.icu</a> was in top 3 &#x1F602;. </p>
+<h3 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h3><p>Unfortunately I didn&#x2019;t take the IELTS &#x1F61E;. I wasn&#x2019;t ready&#x2026; I&#x2019;ll do it later!<br>As for learning Japanese, I dont&#x2019;t use Duolinguo anymore since it&#x2019;s a bit simple. I found some YouTube videos to watch and learn, like <a href="https://www.youtube.com/@deguchi">&#x51FA;&#x53E3;&#x65E5;&#x8A9E;</a>.</p>
+<h3 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h3><p>I changed the theme of my blog from <a href="https://github.com/probberechts/hexo-theme-cactus"><strong>Cactus</strong></a> to <a href="https://github.com/cjquines/hexo-theme-ascent"><strong>Ascent</strong></a>. By the way, here&#x2019;s <a href="https://github.com/stars/mengisok/lists/blog-themes">my stars list</a> about blog themes.<br>I tried to edit a theme to fit my purpose but failed. Frontend is so difficult!  </p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+      </categories>
+      <tags>
+        <tag>Useful Links</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Basic MATLAB (very basic)</title>
     <url>/Basic-MATLAB/</url>
     <content><![CDATA[<p>I watched an introductory tutorial on LinkedIn Learning in order to write computer assignments in MATLAB (I really forgot it all after not using it for two or three years).</p>
@@ -214,6 +259,12 @@
       <tags>
         <tag>MATLAB</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<p>I made it! :)</p>
+]]></content>
   </entry>
   <entry>
     <title>Git Learning Notes</title>
@@ -482,57 +533,6 @@
       </categories>
       <tags>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/Hello-World/</url>
-    <content><![CDATA[<p>I made it! :)</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Dec 2022</title>
-    <url>/Dec-2022/</url>
-    <content><![CDATA[<p>This month was supposed to be the month of exams, so I dedicated my time to reviewing the three main lessons in school: Digital Signal Processing, Digital Image Analysis and Combinatorial Mathematics. I made some notes (all in Chinese), and bookmarked some nice links.  </p>
-<span id="more"></span>
-
-<h3 id="Review-Notes"><a href="#Review-Notes" class="headerlink" title="Review Notes"></a>Review Notes</h3><blockquote>
-<p><a href="https://mengisok.notion.site/eb6f54749fb7464f8809ed94ec4c821b">DSP notes on Notion</a> or <a href="https://github.com/mengisok/DSP-review">on GitHub</a> (some MATLAB code)  </p>
-<p><a href="https://drive.google.com/drive/folders/1KqNqF0UKM6n2ePmovORoTPofqJL-QBt6?usp=sharing">DIA notes on Google Drive</a> (updating&#x2026;)  </p>
-<p><a href="https://drive.google.com/drive/folders/1-0-R1W7jvLb9YrgUj_J1PrmkrNPaY_OM?usp=sharing">Combinatorial Mathematics notes on Google Drive</a> (updating&#x2026;)  </p>
-</blockquote>
-<p>Another thing worth mentioning is that this month <a href="https://en.wikipedia.org/wiki/ChatGPT"><strong>ChatGPT</strong></a> <strong>went viral!</strong> I also tried it. It&#x2019;s amazing I have to say. Here are some interesting or useful links I saw about ChatGPT.  </p>
-<h3 id="Awesome-ChatGPT"><a href="#Awesome-ChatGPT" class="headerlink" title="Awesome ChatGPT"></a>Awesome ChatGPT</h3><blockquote>
-<p><a href="https://openai.com/blog/chatgpt/">Official Introduction</a>  </p>
-<p><a href="https://github.com/Kamigami55/awesome-chatgpt">awesome-chatgpt</a><br>There are many trending repos related to ChatGPT recently.  </p>
-<p><a href="https://chat.bygpt.com/">ChatGPT available in mainland China</a>  </p>
-<p><a href="https://readdevdocs.com/blog/makemoney/%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%B3%A8%E5%86%8COpenAI%E8%B4%A6%E5%8F%B7%E8%AF%95%E7%94%A8ChatGPT%E6%8C%87%E5%8D%97.html#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87">Guide to registering an OpenAI account in China to try ChatGPT</a>  </p>
-<p><a href="https://sms-activate.org/cn">Virtual number for receiving SMS online</a>  </p>
-<p><a href="https://www.douban.com/group/topic/279710957/?_i=705681524967510&amp;dt_dapp=1">First Experience of ChatGPT</a>    </p>
-<p><a href="https://mp.weixin.qq.com/s/rzCYgddvdvWwv71_M_sC-Q">ChatGPT Chinese VSCode plugin</a>  </p>
-<p><a href="https://mp.weixin.qq.com/s/5zThHhpzBmx4EUIMvMV-vQ">Hand sketching in Jupyter Notebook, and turning it into code</a>  </p>
-</blockquote>
-<h3 id="Other-Awesome-Links"><a href="#Other-Awesome-Links" class="headerlink" title="Other Awesome Links"></a>Other Awesome Links</h3><blockquote>
-<p><a href="http://tingtalk.me/telegram/">Telegram Guide</a></p>
-<p><a href="https://oi-wiki.org/">oi-wiki.org</a><br>Programming contest wiki.  </p>
-<p><a href="https://ctf-wiki.org/">ctf-wiki.org</a><br>Cybersecurity competition wiki.  </p>
-<p><a href="https://www.summerschoolsineurope.eu/">summerschoolsineurope.eu</a><br>Information about summerschool in Europe. </p>
-<p><a href="http://fernwanderweg.blogspot.com/">fernwanderweg.blogspot.com</a><br>He used Google blogger to bulid a blog. Looks good.  </p>
-<p><a href="https://hdlbits.01xz.net/wiki/Main_Page">Digital Logic Online Learning Site: HDLbit</a>, and <a href="https://github.com/viduraakalanka/HDL-Bits-Solutions">solutions</a> to learn Verilog.  </p>
-<p><a href="https://ossinsight.io/">OSS Insight</a><br>Real-time trends and statistics for github.  </p>
-<p><a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>You can get some certificates after learning? I love it~</p>
-<p><a href="https://roadmap.sh/">Developer Roadmaps</a><br>Role-based programmer growth guide.  </p>
-<p><a href="https://seeing-theory.brown.edu/index.html">Statistics Visualization Learning Site</a><br>Learn statistics in a visual way. That&#x2019;s very clear and easy to understand!  </p>
-</blockquote>
-<p>The last three are several top repositories with the great number of stars on GitHub. I was surprised to find that <a href="https://github.com/996icu/996.ICU">996.icu</a> was in top 3 &#x1F602;. </p>
-<h3 id="Languages"><a href="#Languages" class="headerlink" title="Languages"></a>Languages</h3><p>Unfortunately I didn&#x2019;t take the IELTS &#x1F61E;. I wasn&#x2019;t ready&#x2026; I&#x2019;ll do it later!<br>As for learning Japanese, I dont&#x2019;t use Duolinguo anymore since it&#x2019;s a bit simple. I found some YouTube videos to watch and learn, like <a href="https://www.youtube.com/@deguchi">&#x51FA;&#x53E3;&#x65E5;&#x8A9E;</a>.</p>
-<h3 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h3><p>I changed the theme of my blog from <a href="https://github.com/probberechts/hexo-theme-cactus"><strong>Cactus</strong></a> to <a href="https://github.com/cjquines/hexo-theme-ascent"><strong>Ascent</strong></a>. By the way, here&#x2019;s <a href="https://github.com/stars/mengisok/lists/blog-themes">my stars list</a> about blog themes.<br>I tried to edit a theme to fit my purpose but failed. Frontend is so difficult!  </p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-      </categories>
-      <tags>
-        <tag>Useful Links</tag>
       </tags>
   </entry>
   <entry>
@@ -918,8 +918,7 @@ git push -u origin master
     <content><![CDATA[<p>Yeah I got it &#x1F606;! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera&#x2019;s free plan is a week, while linkedin&#x2019;s is a month so I chose the latter.  </p>
 <span id="more"></span>
 
-<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> in your account settings to get a monthly free plan. Also you must use a <strong>Visa</strong> credit card.)  </p>
-<p>See my first linkedin learning certificate:<br><a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a>  </p>
+<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> to <strong>Non-mainland China</strong> in your account settings to get a monthly free plan. Also you must use a <strong>Visa</strong> credit card.)    </p>
 <h3 id="Nice-course"><a href="#Nice-course" class="headerlink" title="Nice course"></a>Nice course</h3><hr>
 <p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br><strong>Practical</strong>! The author introduced many useful websites for learning and developing.  </p>
 <h3 id="What-I-have-learned"><a href="#What-I-have-learned" class="headerlink" title="What I have learned"></a>What I have learned</h3><hr>
@@ -987,7 +986,12 @@ git push -u origin master
 <li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
 </ul>
 <p>At last, here&#x2019;s my certificate and I&#x2019;d like to get more in the future &#x1F63B; ~  </p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> ]]></content>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> 
+
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>LinkedIn Learning Course</strong></p>
+<p><a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
+]]></content>
       <categories>
         <category>Learning</category>
       </categories>
@@ -2401,11 +2405,10 @@ git push -u origin master
   <entry>
     <title>我的第一个领英学习证书！</title>
     <url>/zh-cn/My-first-LinkedIn-certificate/</url>
-    <content><![CDATA[<p>&#x662F;&#x7684;&#xFF0C;&#x6211;&#x5F97;&#x5230;&#x4E86;&#x5B83;&#x1F606;! &#x6211;&#x4E00;&#x76F4;&#x68A6;&#x60F3;&#x7740;&#x83B7;&#x5F97;&#x5728;&#x7EBF;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;&#xFF0C;&#x6BD4;&#x5982;Coursera&#x548C;linkedin&#x3002;Coursera&#x7684;&#x514D;&#x8D39;&#x65B9;&#x6848;&#x662F;&#x4E00;&#x4E2A;&#x661F;&#x671F;&#xFF0C;&#x800C;LinkedIn&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x6708;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x9009;&#x62E9;&#x4E86;&#x540E;&#x8005;&#x3002; </p>
+    <content><![CDATA[<p>&#x662F;&#x7684;&#xFF0C;&#x6211;&#x5F97;&#x5230;&#x4E86;&#x1F606;! &#x6211;&#x4E00;&#x76F4;&#x60F3;&#x8981;&#x83B7;&#x5F97;&#x5728;&#x7EBF;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;&#xFF0C;&#x6BD4;&#x5982;Coursera&#x548C;LinkedIn&#x3002;Coursera&#x7684;&#x514D;&#x8D39;&#x65B9;&#x6848;&#x662F;&#x4E00;&#x4E2A;&#x661F;&#x671F;&#xFF0C;&#x800C;LinkedIn&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x6708;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x9009;&#x62E9;&#x4E86;&#x540E;&#x8005;&#x3002; </p>
 <span id="more"></span>
 
-<p>(&#x6CE8;&#x610F;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x7528;&#x6237;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x5728;&#x4F60;&#x7684;&#x8D26;&#x6237;&#x8BBE;&#x7F6E;&#x4E2D;&#x6539;&#x53D8;&#x4F60;&#x7684;<strong>&#x4F4D;&#x7F6E;</strong>&#xFF0C;&#x4EE5;&#x83B7;&#x5F97;&#x6BCF;&#x6708;&#x7684;&#x514D;&#x8D39;&#x8BA1;&#x5212;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x4F7F;&#x7528;<strong>Visa</strong>&#x7684;&#x4FE1;&#x7528;&#x5361;&#x3002;&#xFF09;  </p>
-<p>&#x770B;&#x770B;&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;&#xFF1A;<br><a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a>  </p>
+<p>(&#x6CE8;&#x610F;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x7528;&#x6237;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x5728;&#x8D26;&#x6237;&#x8BBE;&#x7F6E;&#x4E2D;&#x6539;&#x53D8;&#x4F60;&#x7684;<strong>&#x4F4D;&#x7F6E;</strong>&#x4E3A;<strong>&#x975E;&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x5730;&#x533A;</strong>&#xFF0C;&#x4EE5;&#x83B7;&#x5F97;&#x6BCF;&#x6708;&#x7684;&#x514D;&#x8D39;&#x8BA1;&#x5212;&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x4F60;&#x5FC5;&#x987B;&#x4F7F;&#x7528;<strong>Visa</strong>&#x7684;&#x4FE1;&#x7528;&#x5361;&#x3002;&#xFF09;  </p>
 <h3 id="&#x4E0D;&#x9519;&#x7684;&#x8BFE;&#x7A0B;"><a href="#&#x4E0D;&#x9519;&#x7684;&#x8BFE;&#x7A0B;" class="headerlink" title="&#x4E0D;&#x9519;&#x7684;&#x8BFE;&#x7A0B;"></a>&#x4E0D;&#x9519;&#x7684;&#x8BFE;&#x7A0B;</h3><hr>
 <p><strong>&#x7B80;&#x77ED;</strong>&#xFF0C;&#x4E0D;&#x5230;2&#x4E2A;&#x5C0F;&#x65F6;&#xFF0C;&#x5BF9;&#x65B0;&#x624B;&#x975E;&#x5E38;&#x53CB;&#x597D;<br><strong>&#x5B9E;&#x7528;</strong>&#xFF01;&#x4F5C;&#x8005;&#x4ECB;&#x7ECD;&#x4E86;&#x8BB8;&#x591A;&#x5B66;&#x4E60;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x7684;&#x6709;&#x7528;&#x7F51;&#x7AD9;  </p>
 <h3 id="&#x6211;&#x5B66;&#x5230;&#x4E86;&#x4EC0;&#x4E48;"><a href="#&#x6211;&#x5B66;&#x5230;&#x4E86;&#x4EC0;&#x4E48;" class="headerlink" title="&#x6211;&#x5B66;&#x5230;&#x4E86;&#x4EC0;&#x4E48;"></a>&#x6211;&#x5B66;&#x5230;&#x4E86;&#x4EC0;&#x4E48;</h3><hr>
@@ -2473,7 +2476,11 @@ git push -u origin master
 <li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
 </ul>
 <p>&#x6700;&#x540E;&#xFF0C;&#x8FD9;&#x662F;&#x6211;&#x7684;&#x8BC1;&#x4E66;&#xFF0C;&#x5E0C;&#x671B;&#x4ECA;&#x540E;&#x80FD;&#x5F97;&#x5230;&#x66F4;&#x591A;&#x7684;&#x8BC1;&#x4E66;  &#x1F63B; ~  </p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> ]]></content>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> 
+
+<h3 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h3><hr>
+<h2 id="&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BFE;&#x7A0B;"><a href="#&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BFE;&#x7A0B;" class="headerlink" title="&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BFE;&#x7A0B;"></a>&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BFE;&#x7A0B;</h2><p><a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
+]]></content>
       <categories>
         <category>学习</category>
       </categories>
@@ -2519,6 +2526,21 @@ git push -u origin master
 <h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x51C6;&#x5907;<strong>IELTS indicator &#x8003;&#x8BD5;</strong>&#x3002;  </p>
 <p>&#x575A;&#x6301;&#x5B66;&#x4E60;&#x4E86;<strong>42 days</strong>&#x7684;&#x591A;&#x90BB;&#x56FD;&#x65E5;&#x8BED;&#x3002;  </p>
 <p>&#x6211;&#x53D1;&#x73B0;&#xFF0C;&#x5728;&#x4E2D;&#x56FD;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x65E5;&#x8BED;&#x8003;&#x8BD5;&#xFF0C;&#x5373;JLPT&#x548C;JTEST&#x3002;JLPT&#x6BCF;&#x5E74;&#x53EA;&#x4E3E;&#x884C;&#x4E24;&#x6B21;&#xFF0C;&#x800C;&#x4E14;&#x7ECF;&#x5E38;&#x88AB;&#x53D6;&#x6D88;&#x3002;JTEST&#x7684;&#x4E3E;&#x529E;&#x9891;&#x7387;&#x66F4;&#x9AD8;&#xFF0C;&#x4F46;&#x5B83;&#x4E0D;&#x50CF;JLPT&#x90A3;&#x6837;&#x88AB;&#x9AD8;&#x5EA6;&#x8BA4;&#x53EF;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5F88;&#x7EA0;&#x7ED3;&#x3002;  </p>
+]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>2022年10月</title>
+    <url>/zh-cn/Oct-2022/</url>
+    <content><![CDATA[<h3 id="&#x7F16;&#x7A0B;"><a href="#&#x7F16;&#x7A0B;" class="headerlink" title="&#x7F16;&#x7A0B;"></a>&#x7F16;&#x7A0B;</h3><p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x5B8C;&#x6210;&#x4E86;Leetcode&#x4E0A;&#x7684;27&#x9053;&#x9898;&#xFF0C;&#x90FD;&#x662F;&#x7528;Java&#x3002;&#x4E0A;&#x4E00;&#x7AE0;&#x7684;&#x63A2;&#x7D22;<em>Array and String</em>&#x6709;&#x70B9;&#x96BE;&#xFF0C;&#x4F46;&#x73B0;&#x5728;&#x7684;<em>Arrays 101</em>&#x5C31;&#x5BB9;&#x6613;&#x591A;&#x4E86;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x8FD8;&#x5728;&#x505A;&#x6570;&#x7EC4;&#xFF1F;&#x6211;&#x7B49;&#x4E0D;&#x53CA;&#x5B66;&#x65B0;&#x7684;&#x4E1C;&#x897F;&#x4E86;&#x3002;  </p>
+<span id="more"></span>
+<p>&#x6211;&#x5B66;&#x4E86;&#x4E00;&#x70B9;&#x4E00;&#x4E2A;&#x8457;&#x540D;&#x7684;&#x8BFE;&#x7A0B;&#xFF0C;<a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>&#xFF0C;&#x505A;&#x4E86;HW 01&#xFF0C;HW 02&#xFF0C;Lab 00&#xFF0C;Lab 01&#xFF0C;&#x73B0;&#x5728;&#x5728;&#x505A;Lab 02&#x3002;&#x4E0A;&#x534A;&#x6708;&#x6211;&#x5B66;&#x4E60;&#x5F97;&#x6BD4;&#x8F83;&#x8BA4;&#x771F;&#xFF0C;&#x4E0B;&#x534A;&#x6708;&#x5C31;&#x61C8;&#x6020;&#x4E86;&#x3002;&#x5E0C;&#x671B;&#x6211;&#x80FD;&#x591F;&#x575A;&#x6301;&#x4E0B;&#x53BB;&#xFF0C;&#x5B8C;&#x6210;&#x8FD9;&#x95E8;&#x8BFE;&#x7A0B;&#x548C;CS61B&#x3002;OK&#x7CFB;&#x7EDF;&#x975E;&#x5E38;&#x6709;&#x8DA3;&#x3002;  </p>
+<p>&#x6211;&#x770B;&#x4E86;&#x4E00;&#x4E9B;<a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng&#x7684;<strong>&#x673A;&#x5668;&#x5B66;&#x4E60;</strong>&#x89C6;&#x9891;</a>&#xFF0C;&#x4ECE;&#x5F00;&#x59CB;&#x5230;P48&#x201C;&#x63A8;&#x7406;&#xFF1A;&#x505A;&#x9884;&#x6D4B;&#x201D;&#x3002;&#x6211;&#x7684;&#x5BFC;&#x5E08;&#x8981;&#x6C42;&#x6211;&#x5B66;&#x4E60;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x8BD5;&#x56FE;&#x5F00;&#x59CB;&#x5B66;&#x4E60;&#x3002;&#x6211;&#x8FD8;&#x8BFB;&#x4E86;&#x7ECF;&#x5178;&#x6559;&#x6750;&#x300A;<a href="https://wizardforcel.gitbooks.io/hands-on-ml-with-sklearn-and-tf/content/">&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5B9E;&#x6218;</a>&#x300B;&#x7684;&#x4E00;&#x4E9B;&#x90E8;&#x5206;&#x3002;&#x5F88;&#x4E0D;&#x9519;&#xFF0C;&#x800C;&#x4E14;&#x6BD4;&#x89C6;&#x9891;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x591A;&#xFF0C;&#x96BE;&#x5EA6;&#x66F4;&#x5927;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6211;&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x5F88;&#x597D;&#x5730;&#x7406;&#x89E3;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x3002;&#x5B83;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x5BB9;&#x6613;&#xFF0C;&#x4F46;&#x505A;&#x8D77;&#x6765;&#x771F;&#x7684;&#x5F88;&#x96BE;&#x1F92F;&#x3002;&#x597D;&#x6D88;&#x606F;&#x662F;&#xFF0C;&#x6211;&#x4ECA;&#x5929;&#x4E0B;&#x5348;&#x7EC8;&#x4E8E;&#x505A;&#x4E86;&#x4E00;&#x4E2A;python&#x7A0B;&#x5E8F;&#x2026;&#x2026; Matlab&#x770B;&#x8D77;&#x6765;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x5B83;&#x5BF9;&#x7535;&#x8111;&#x6027;&#x80FD;&#x8981;&#x6C42;&#x592A;&#x9AD8;&#xFF0C;&#x800C;&#x4E14;&#x6709;&#x70B9;&#x4E0D;&#x7A33;&#x5B9A;&#x3002;&#x6211;&#x5728;&#x60F3;&#xFF0C;&#x6570;&#x636E;&#x6709;&#x4EC0;&#x4E48;&#x7279;&#x70B9;&#x2026; </p>
+<h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x575A;&#x6301;&#x6BCF;&#x5929;&#x770B;&#x4E00;&#x90E8;<strong>&#x82F1;&#x8BED;</strong>&#x89C6;&#x9891;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x7ECF;&#x6D4E;&#x5B66;&#x4EBA;&#x7684;&#x6587;&#x7AE0;&#x3002;&#x6211;&#x8FD8;&#x5728;&#x201C;&#x7B80;&#x62A5;&#x201D;&#x680F;&#x76EE;&#x4E2D;&#x9605;&#x8BFB;&#x4E86;&#x4E00;&#x7BC7;&#x540D;&#x4E3A;&#x300A;&#x738B;&#x5B50;&#x300B;&#x7684;&#x6587;&#x7AE0;&#x3002;&#x51E0;&#x5929;&#x524D;&#xFF0C;&#x6211;&#x5F00;&#x59CB;&#x51C6;&#x5907;&#x591A;&#x90BB;&#x56FD;&#x82F1;&#x8BED;&#x6D4B;&#x8BD5;&#x3002;&#x6211;&#x7684;&#x7537;&#x670B;&#x53CB;&#x4E5F;&#x62A5;&#x540D;&#x53C2;&#x52A0;&#x4E86;&#x96C5;&#x601D;indicator&#x8003;&#x8BD5;&#x3002;&#x6211;&#x4EEC;&#x90FD;&#x662F;&#x4E0B;&#x5468;&#x8003;&#x3002;&#x5E0C;&#x671B;&#x6210;&#x529F;!  </p>
+<p>&#x6211;&#x4E5F;&#x5F00;&#x59CB;&#x4ECE;&#x591A;&#x90BB;&#x56FD;&#x548C;<a href="https://www.nhk.or.jp/lesson/zh/">NHK&#x7B80;&#x660E;&#x65E5;&#x8BED;</a>&#x5B66;&#x4E60;<strong>&#x65E5;&#x8BED;</strong>&#x4E86;&#x3002;&#x559C;&#x6B22;&#x8FD9;&#x4E2A;&#x7F51;&#x7AD9;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5F88;&#x7B80;&#x5355;&#x3002;&#x6211;&#x4EE5;&#x524D;&#x4E0D;&#x77E5;&#x9053;&#x65E5;&#x8BED;&#x4E5F;&#x6709;&#x65F6;&#x6001;&#x3002;  </p>
+<p>&#x6682;&#x65F6;&#x518D;&#x89C1;! &#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x534A;&#x591C;&#x4E86;&#x3002;</p>
 ]]></content>
       <categories>
         <category>总结</category>
@@ -2843,19 +2865,54 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>2022年10月</title>
-    <url>/zh-cn/Oct-2022/</url>
-    <content><![CDATA[<h3 id="&#x7F16;&#x7A0B;"><a href="#&#x7F16;&#x7A0B;" class="headerlink" title="&#x7F16;&#x7A0B;"></a>&#x7F16;&#x7A0B;</h3><p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x5B8C;&#x6210;&#x4E86;Leetcode&#x4E0A;&#x7684;27&#x9053;&#x9898;&#xFF0C;&#x90FD;&#x662F;&#x7528;Java&#x3002;&#x4E0A;&#x4E00;&#x7AE0;&#x7684;&#x63A2;&#x7D22;<em>Array and String</em>&#x6709;&#x70B9;&#x96BE;&#xFF0C;&#x4F46;&#x73B0;&#x5728;&#x7684;<em>Arrays 101</em>&#x5C31;&#x5BB9;&#x6613;&#x591A;&#x4E86;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x8FD8;&#x5728;&#x505A;&#x6570;&#x7EC4;&#xFF1F;&#x6211;&#x7B49;&#x4E0D;&#x53CA;&#x5B66;&#x65B0;&#x7684;&#x4E1C;&#x897F;&#x4E86;&#x3002;  </p>
+    <title>双指针</title>
+    <url>/zh-cn/Two-pointer/</url>
+    <content><![CDATA[<p>&#x8FD9;&#x4E2A;&#x5341;&#x6708;&#xFF0C;&#x6211;&#x5F3A;&#x8FEB;&#x81EA;&#x5DF1;&#x6BCF;&#x5929;&#x505A;&#x4E00;&#x9053;LeetCode&#x3002;&#x867D;&#x7136;&#x4E2D;&#x95F4;&#x6709;&#x51E0;&#x5929;&#x4E2D;&#x65AD;&#x4E86;&#xFF0C;&#x4F46;&#x6700;&#x540E;&#x8FD8;&#x662F;&#x5B8C;&#x6210;&#x4E86;&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x201C;&#x63A2;&#x7D22;&#x201D;&#x5355;&#x5143;&#x3002;    </p>
 <span id="more"></span>
-<p>&#x6211;&#x5B66;&#x4E86;&#x4E00;&#x70B9;&#x4E00;&#x4E2A;&#x8457;&#x540D;&#x7684;&#x8BFE;&#x7A0B;&#xFF0C;<a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>&#xFF0C;&#x505A;&#x4E86;HW 01&#xFF0C;HW 02&#xFF0C;Lab 00&#xFF0C;Lab 01&#xFF0C;&#x73B0;&#x5728;&#x5728;&#x505A;Lab 02&#x3002;&#x4E0A;&#x534A;&#x6708;&#x6211;&#x5B66;&#x4E60;&#x5F97;&#x6BD4;&#x8F83;&#x8BA4;&#x771F;&#xFF0C;&#x4E0B;&#x534A;&#x6708;&#x5C31;&#x61C8;&#x6020;&#x4E86;&#x3002;&#x5E0C;&#x671B;&#x6211;&#x80FD;&#x591F;&#x575A;&#x6301;&#x4E0B;&#x53BB;&#xFF0C;&#x5B8C;&#x6210;&#x8FD9;&#x95E8;&#x8BFE;&#x7A0B;&#x548C;CS61B&#x3002;OK&#x7CFB;&#x7EDF;&#x975E;&#x5E38;&#x6709;&#x8DA3;&#x3002;  </p>
-<p>&#x6211;&#x770B;&#x4E86;&#x4E00;&#x4E9B;<a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng&#x7684;<strong>&#x673A;&#x5668;&#x5B66;&#x4E60;</strong>&#x89C6;&#x9891;</a>&#xFF0C;&#x4ECE;&#x5F00;&#x59CB;&#x5230;P48&#x201C;&#x63A8;&#x7406;&#xFF1A;&#x505A;&#x9884;&#x6D4B;&#x201D;&#x3002;&#x6211;&#x7684;&#x5BFC;&#x5E08;&#x8981;&#x6C42;&#x6211;&#x5B66;&#x4E60;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x8BD5;&#x56FE;&#x5F00;&#x59CB;&#x5B66;&#x4E60;&#x3002;&#x6211;&#x8FD8;&#x8BFB;&#x4E86;&#x7ECF;&#x5178;&#x6559;&#x6750;&#x300A;<a href="https://wizardforcel.gitbooks.io/hands-on-ml-with-sklearn-and-tf/content/">&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5B9E;&#x6218;</a>&#x300B;&#x7684;&#x4E00;&#x4E9B;&#x90E8;&#x5206;&#x3002;&#x5F88;&#x4E0D;&#x9519;&#xFF0C;&#x800C;&#x4E14;&#x6BD4;&#x89C6;&#x9891;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x591A;&#xFF0C;&#x96BE;&#x5EA6;&#x66F4;&#x5927;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6211;&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x5F88;&#x597D;&#x5730;&#x7406;&#x89E3;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x3002;&#x5B83;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x5BB9;&#x6613;&#xFF0C;&#x4F46;&#x505A;&#x8D77;&#x6765;&#x771F;&#x7684;&#x5F88;&#x96BE;&#x1F92F;&#x3002;&#x597D;&#x6D88;&#x606F;&#x662F;&#xFF0C;&#x6211;&#x4ECA;&#x5929;&#x4E0B;&#x5348;&#x7EC8;&#x4E8E;&#x505A;&#x4E86;&#x4E00;&#x4E2A;python&#x7A0B;&#x5E8F;&#x2026;&#x2026; Matlab&#x770B;&#x8D77;&#x6765;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x5B83;&#x5BF9;&#x7535;&#x8111;&#x6027;&#x80FD;&#x8981;&#x6C42;&#x592A;&#x9AD8;&#xFF0C;&#x800C;&#x4E14;&#x6709;&#x70B9;&#x4E0D;&#x7A33;&#x5B9A;&#x3002;&#x6211;&#x5728;&#x60F3;&#xFF0C;&#x6570;&#x636E;&#x6709;&#x4EC0;&#x4E48;&#x7279;&#x70B9;&#x2026; </p>
-<h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x575A;&#x6301;&#x6BCF;&#x5929;&#x770B;&#x4E00;&#x90E8;<strong>&#x82F1;&#x8BED;</strong>&#x89C6;&#x9891;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x7ECF;&#x6D4E;&#x5B66;&#x4EBA;&#x7684;&#x6587;&#x7AE0;&#x3002;&#x6211;&#x8FD8;&#x5728;&#x201C;&#x7B80;&#x62A5;&#x201D;&#x680F;&#x76EE;&#x4E2D;&#x9605;&#x8BFB;&#x4E86;&#x4E00;&#x7BC7;&#x540D;&#x4E3A;&#x300A;&#x738B;&#x5B50;&#x300B;&#x7684;&#x6587;&#x7AE0;&#x3002;&#x51E0;&#x5929;&#x524D;&#xFF0C;&#x6211;&#x5F00;&#x59CB;&#x51C6;&#x5907;&#x591A;&#x90BB;&#x56FD;&#x82F1;&#x8BED;&#x6D4B;&#x8BD5;&#x3002;&#x6211;&#x7684;&#x7537;&#x670B;&#x53CB;&#x4E5F;&#x62A5;&#x540D;&#x53C2;&#x52A0;&#x4E86;&#x96C5;&#x601D;indicator&#x8003;&#x8BD5;&#x3002;&#x6211;&#x4EEC;&#x90FD;&#x662F;&#x4E0B;&#x5468;&#x8003;&#x3002;&#x5E0C;&#x671B;&#x6210;&#x529F;!  </p>
-<p>&#x6211;&#x4E5F;&#x5F00;&#x59CB;&#x4ECE;&#x591A;&#x90BB;&#x56FD;&#x548C;<a href="https://www.nhk.or.jp/lesson/zh/">NHK&#x7B80;&#x660E;&#x65E5;&#x8BED;</a>&#x5B66;&#x4E60;<strong>&#x65E5;&#x8BED;</strong>&#x4E86;&#x3002;&#x559C;&#x6B22;&#x8FD9;&#x4E2A;&#x7F51;&#x7AD9;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5F88;&#x7B80;&#x5355;&#x3002;&#x6211;&#x4EE5;&#x524D;&#x4E0D;&#x77E5;&#x9053;&#x65E5;&#x8BED;&#x4E5F;&#x6709;&#x65F6;&#x6001;&#x3002;  </p>
-<p>&#x6682;&#x65F6;&#x518D;&#x89C1;! &#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x534A;&#x591C;&#x4E86;&#x3002;</p>
+
+<img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
+
+<p>&#x5BF9;&#x6211;&#x6765;&#x8BF4;&#xFF0C;&#x6700;&#x6709;&#x7528;&#x7684;&#x4E00;&#x8BFE;&#x662F;&#x4E00;&#x79CD;&#x53EB;&#x505A;<strong>&#x53CC;&#x6307;&#x9488;</strong>&#x7684;&#x795E;&#x5947;&#x6280;&#x5DE7;&#x3002;&#x8D77;&#x521D;&#x6211;&#x4EE5;&#x4E3A;&#x5B83;&#x662F;&#x5D4C;&#x5957;&#x7684;&#x4E24;&#x4E2A;for&#x5FAA;&#x73AF;&#xFF0C;&#x4F46;&#x540E;&#x6765;&#x6211;&#x53D1;&#x73B0;&#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x66F4;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x66F4;&#x6709;&#x7528;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x60F3;&#x628A;&#x5B83;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x3002;  </p>
+<h3 id="&#x542B;&#x4E49;"><a href="#&#x542B;&#x4E49;" class="headerlink" title="&#x542B;&#x4E49;"></a>&#x542B;&#x4E49;</h3><hr>
+<p><strong>&#x540C;&#x65F6;</strong>&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#x6765;&#x505A;<strong>&#x8FED;&#x4EE3;</strong>&#x3002;</p>
+<h3 id="&#x5E94;&#x7528;"><a href="#&#x5E94;&#x7528;" class="headerlink" title="&#x5E94;&#x7528;"></a>&#x5E94;&#x7528;</h3><hr>
+<ol>
+<li>&#x5F53;&#x4F60;&#x60F3;&#x4ECE;<strong>&#x4E24;&#x7AEF;</strong>&#x5411;<strong>&#x4E2D;&#x95F4;</strong>&#x8FED;&#x4EE3;&#x6570;&#x7EC4;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x4ECE;<strong>&#x5934;</strong>&#x5F00;&#x59CB;&#xFF0C;&#x800C;&#x53E6;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x4ECE;<strong>&#x5C3E;</strong>&#x5F00;&#x59CB;&#x3002;&#x5B83;&#x4EEC;&#x6709;<strong>&#x76F8;&#x540C;&#x7684;&#x6B65;&#x957F;</strong>&#x3002;</li>
+</ol>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">reverseString</span><span class="hljs-params">(<span class="hljs-type">char</span>[] s)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> s.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="hljs-type">char</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="hljs-comment">// &#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x6309;&#x975E;&#x9012;&#x51CF;&#x987A;&#x5E8F;&#x6392;&#x5E8F;&#x7684;&#x7D22;&#x5F15;&#x5230;1&#x7684;&#x6574;&#x6570;&#x6570;&#x7EC4;&#xFF0C;&#x627E;&#x51FA;&#x4E24;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x4F7F;&#x5176;&#x76F8;&#x52A0;&#x7B49;&#x4E8E;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x76EE;&#x6807;&#x6570;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] twoSum(<span class="hljs-type">int</span>[] numbers, <span class="hljs-type">int</span> target) {</span><br><span class="line">        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="title class_">int</span>[<span class="hljs-number">2</span>];</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">start</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> numbers.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="hljs-number">0</span>] = start + <span class="hljs-number">1</span>;</span><br><span class="line">        res[<span class="hljs-number">1</span>] = end + <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>&#x5F53;&#x4F60;&#x60F3;&#x8981;&#x4E00;&#x4E2A;<strong>&#x6162;&#x901F;&#x6307;&#x9488;</strong>&#x548C;&#x4E00;&#x4E2A;<strong>&#x5FEB;&#x901F;&#x6307;&#x9488;</strong>&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x7528;&#x4E8E;<strong>&#x8FED;&#x4EE3;</strong>&#xFF0C;&#x800C;&#x53E6;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x7528;&#x4E8E;<strong>&#x6807;&#x8BB0;&#x7279;&#x6B8A;&#x4F4D;&#x7F6E;</strong>&#x3002;&#x5B83;&#x4EEC;&#x6709;<strong>&#x4E0D;&#x540C;&#x7684;&#x6B65;&#x957F;</strong>&#x3002;</li>
+</ol>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Element</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot;&#x7528;&#x4E8E;&#x8FED;&#x4EE3;&#xFF0C;&quot;k&quot;&#x7528;&#x4E8E;&#x6307;&#x793A;&#x8981;&#x79FB;&#x52A8;&#x7684;&#x5143;&#x7D20;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> val)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x8FD9;&#x91CC;&#x8FD8;&#x4ECB;&#x7ECD;&#x4E86;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x6982;&#x5FF5;&#xFF1A;<strong>&#x539F;&#x5730;&#x7B97;&#x6CD5;</strong>&#x3002;  </p>
+<blockquote>
+<p>&#x539F;&#x5730;&#x7B97;&#x6CD5;&#xFF08;in-place algorithm&#xFF0C;&#x4E5F;&#x79F0;&#x201C;&#x5C31;&#x5730;&#x7B97;&#x6CD5;&#x201D;&#xFF09;&#x662F;&#x57FA;&#x672C;&#x4E0A;&#x4E0D;&#x9700;&#x8981;&#x501F;&#x52A9;&#x989D;&#x5916;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5C31;&#x80FD;&#x5BF9;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x53D8;&#x6362;&#x7684;&#x7B97;&#x6CD5;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x5206;&#x914D;&#x5C11;&#x91CF;&#x7A7A;&#x95F4;&#x7ED9;&#x90E8;&#x5206;&#x8F85;&#x52A9;&#x53D8;&#x91CF;&#x662F;&#x88AB;&#x5141;&#x8BB8;&#x7684;&#x3002;&#x7B97;&#x6CD5;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x5F80;&#x5F80;&#x4F1A;&#x88AB;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x8986;&#x76D6;&#x3002;&#x539F;&#x5730;&#x7B97;&#x6CD5;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x66FF;&#x6362;&#x6216;&#x4EA4;&#x6362;&#x5143;&#x7D20;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x4FEE;&#x6539;&#x539F;&#x59CB;&#x7684;&#x8F93;&#x5165;&#x3002;<a href="#refer-anchor-1"><sup>1</sup></a>  </p>
+</blockquote>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot;&#x7528;&#x4E8E;&#x8FED;&#x4EE3;&#xFF0C;&quot;max&quot;&#x7528;&#x4E8E;&#x627E;&#x6700;&#x5927;&#x6570;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                sum = <span class="hljs-number">0</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot;&#x7528;&#x4E8E;&#x8FED;&#x4EE3;&#xFF0C;&quot;j&quot;&#x7528;&#x4E8E;&#x5BFB;&#x627E;&#x7279;&#x6B8A;&#x5143;&#x7D20;</span></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeDuplicates</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> j + <span class="hljs-number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Move Zeroes</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot;&#x7528;&#x4E8E;&#x8FED;&#x4EE3;&#xFF0C;&quot;k&quot;&#x7528;&#x4E8E;&#x6307;&#x793A;&#x975E;&#x96F6;&#x5143;&#x7D20;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">moveZeroes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                <span class="hljs-keyword">if</span> (k &lt; n-<span class="hljs-number">1</span>) {</span><br><span class="line">                    <span class="hljs-keyword">while</span> (nums[k] == <span class="hljs-number">0</span> &amp;&amp; k &lt; n-<span class="hljs-number">1</span>) {k++; } </span><br><span class="line">                    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x6211;&#x73B0;&#x5728;&#x7684;&#x8FDB;&#x5C55;&#xFF1A;<br><img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>&#x606D;&#x559C;&#x81EA;&#x5DF1;&#xFF0C;&#x518D;&#x63A5;&#x518D;&#x5389;&#xFF01; &#x1F4AA;&#x1F3FB; </p>
+<h3 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h3><hr>
+<p><strong>&#x9898;&#x5E93;</strong>  </p>
+<p><a href="https://leetcode.com/explore/learn/card/array-and-string/">LeetCode Explore&#xFF1A;Array and String</a>  </p>
+<p><strong>&#x5F15;&#x7528;</strong> </p>
+<div id="refer-anchor-1"></div>  
+
+<p>[1] <a href="https://zh.wikipedia.org/zh-cn/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">&#x7EF4;&#x57FA;&#x767E;&#x79D1;&#xFF1A;&#x539F;&#x5730;&#x7B97;&#x6CD5;</a></p>
 ]]></content>
       <categories>
-        <category>总结</category>
+        <category>LeetCode</category>
       </categories>
+      <tags>
+        <tag>数据结构与算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>命令行</title>
@@ -2923,56 +2980,6 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>双指针</title>
-    <url>/zh-cn/Two-pointer/</url>
-    <content><![CDATA[<p>&#x8FD9;&#x4E2A;&#x5341;&#x6708;&#xFF0C;&#x6211;&#x5F3A;&#x8FEB;&#x81EA;&#x5DF1;&#x6BCF;&#x5929;&#x505A;&#x4E00;&#x9053;LeetCode&#x3002;&#x867D;&#x7136;&#x4E2D;&#x95F4;&#x6709;&#x51E0;&#x5929;&#x4E2D;&#x65AD;&#x4E86;&#xFF0C;&#x4F46;&#x6700;&#x540E;&#x8FD8;&#x662F;&#x5B8C;&#x6210;&#x4E86;&#x6211;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x201C;&#x63A2;&#x7D22;&#x201D;&#x5355;&#x5143;&#x3002;    </p>
-<span id="more"></span>
-
-<img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
-
-<p>&#x5BF9;&#x6211;&#x6765;&#x8BF4;&#xFF0C;&#x6700;&#x6709;&#x7528;&#x7684;&#x4E00;&#x8BFE;&#x662F;&#x4E00;&#x79CD;&#x53EB;&#x505A;<strong>&#x53CC;&#x6307;&#x9488;</strong>&#x7684;&#x795E;&#x5947;&#x6280;&#x5DE7;&#x3002;&#x8D77;&#x521D;&#x6211;&#x4EE5;&#x4E3A;&#x5B83;&#x662F;&#x5D4C;&#x5957;&#x7684;&#x4E24;&#x4E2A;for&#x5FAA;&#x73AF;&#xFF0C;&#x4F46;&#x540E;&#x6765;&#x6211;&#x53D1;&#x73B0;&#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x66F4;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x66F4;&#x6709;&#x7528;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x60F3;&#x628A;&#x5B83;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x3002;  </p>
-<h3 id="&#x542B;&#x4E49;"><a href="#&#x542B;&#x4E49;" class="headerlink" title="&#x542B;&#x4E49;"></a>&#x542B;&#x4E49;</h3><hr>
-<p><strong>&#x540C;&#x65F6;</strong>&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#x6765;&#x505A;<strong>&#x8FED;&#x4EE3;</strong>&#x3002;</p>
-<h3 id="&#x5E94;&#x7528;"><a href="#&#x5E94;&#x7528;" class="headerlink" title="&#x5E94;&#x7528;"></a>&#x5E94;&#x7528;</h3><hr>
-<ol>
-<li>&#x5F53;&#x4F60;&#x60F3;&#x4ECE;<strong>&#x4E24;&#x7AEF;</strong>&#x5411;<strong>&#x4E2D;&#x95F4;</strong>&#x8FED;&#x4EE3;&#x6570;&#x7EC4;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x4ECE;<strong>&#x5934;</strong>&#x5F00;&#x59CB;&#xFF0C;&#x800C;&#x53E6;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x4ECE;<strong>&#x5C3E;</strong>&#x5F00;&#x59CB;&#x3002;&#x5B83;&#x4EEC;&#x6709;<strong>&#x76F8;&#x540C;&#x7684;&#x6B65;&#x957F;</strong>&#x3002;</li>
-</ol>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">reverseString</span><span class="hljs-params">(<span class="hljs-type">char</span>[] s)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> s.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="hljs-type">char</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="hljs-comment">// &#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x6309;&#x975E;&#x9012;&#x51CF;&#x987A;&#x5E8F;&#x6392;&#x5E8F;&#x7684;&#x7D22;&#x5F15;&#x5230;1&#x7684;&#x6574;&#x6570;&#x6570;&#x7EC4;&#xFF0C;&#x627E;&#x51FA;&#x4E24;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x4F7F;&#x5176;&#x76F8;&#x52A0;&#x7B49;&#x4E8E;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x76EE;&#x6807;&#x6570;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] twoSum(<span class="hljs-type">int</span>[] numbers, <span class="hljs-type">int</span> target) {</span><br><span class="line">        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="title class_">int</span>[<span class="hljs-number">2</span>];</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">start</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> numbers.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="hljs-number">0</span>] = start + <span class="hljs-number">1</span>;</span><br><span class="line">        res[<span class="hljs-number">1</span>] = end + <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ol start="2">
-<li>&#x5F53;&#x4F60;&#x60F3;&#x8981;&#x4E00;&#x4E2A;<strong>&#x6162;&#x901F;&#x6307;&#x9488;</strong>&#x548C;&#x4E00;&#x4E2A;<strong>&#x5FEB;&#x901F;&#x6307;&#x9488;</strong>&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x7528;&#x4E8E;<strong>&#x8FED;&#x4EE3;</strong>&#xFF0C;&#x800C;&#x53E6;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#x7528;&#x4E8E;<strong>&#x6807;&#x8BB0;&#x7279;&#x6B8A;&#x4F4D;&#x7F6E;</strong>&#x3002;&#x5B83;&#x4EEC;&#x6709;<strong>&#x4E0D;&#x540C;&#x7684;&#x6B65;&#x957F;</strong>&#x3002;</li>
-</ol>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Element</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot;&#x7528;&#x4E8E;&#x8FED;&#x4EE3;&#xFF0C;&quot;k&quot;&#x7528;&#x4E8E;&#x6307;&#x793A;&#x8981;&#x79FB;&#x52A8;&#x7684;&#x5143;&#x7D20;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> val)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x8FD9;&#x91CC;&#x8FD8;&#x4ECB;&#x7ECD;&#x4E86;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x6982;&#x5FF5;&#xFF1A;<strong>&#x539F;&#x5730;&#x7B97;&#x6CD5;</strong>&#x3002;  </p>
-<blockquote>
-<p>&#x539F;&#x5730;&#x7B97;&#x6CD5;&#xFF08;in-place algorithm&#xFF0C;&#x4E5F;&#x79F0;&#x201C;&#x5C31;&#x5730;&#x7B97;&#x6CD5;&#x201D;&#xFF09;&#x662F;&#x57FA;&#x672C;&#x4E0A;&#x4E0D;&#x9700;&#x8981;&#x501F;&#x52A9;&#x989D;&#x5916;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5C31;&#x80FD;&#x5BF9;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x53D8;&#x6362;&#x7684;&#x7B97;&#x6CD5;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x5206;&#x914D;&#x5C11;&#x91CF;&#x7A7A;&#x95F4;&#x7ED9;&#x90E8;&#x5206;&#x8F85;&#x52A9;&#x53D8;&#x91CF;&#x662F;&#x88AB;&#x5141;&#x8BB8;&#x7684;&#x3002;&#x7B97;&#x6CD5;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x5F80;&#x5F80;&#x4F1A;&#x88AB;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x8986;&#x76D6;&#x3002;&#x539F;&#x5730;&#x7B97;&#x6CD5;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x66FF;&#x6362;&#x6216;&#x4EA4;&#x6362;&#x5143;&#x7D20;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x4FEE;&#x6539;&#x539F;&#x59CB;&#x7684;&#x8F93;&#x5165;&#x3002;<a href="#refer-anchor-1"><sup>1</sup></a>  </p>
-</blockquote>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot;&#x7528;&#x4E8E;&#x8FED;&#x4EE3;&#xFF0C;&quot;max&quot;&#x7528;&#x4E8E;&#x627E;&#x6700;&#x5927;&#x6570;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                sum = <span class="hljs-number">0</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot;&#x7528;&#x4E8E;&#x8FED;&#x4EE3;&#xFF0C;&quot;j&quot;&#x7528;&#x4E8E;&#x5BFB;&#x627E;&#x7279;&#x6B8A;&#x5143;&#x7D20;</span></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeDuplicates</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> j + <span class="hljs-number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Move Zeroes</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot;&#x7528;&#x4E8E;&#x8FED;&#x4EE3;&#xFF0C;&quot;k&quot;&#x7528;&#x4E8E;&#x6307;&#x793A;&#x975E;&#x96F6;&#x5143;&#x7D20;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">moveZeroes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                <span class="hljs-keyword">if</span> (k &lt; n-<span class="hljs-number">1</span>) {</span><br><span class="line">                    <span class="hljs-keyword">while</span> (nums[k] == <span class="hljs-number">0</span> &amp;&amp; k &lt; n-<span class="hljs-number">1</span>) {k++; } </span><br><span class="line">                    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x6211;&#x73B0;&#x5728;&#x7684;&#x8FDB;&#x5C55;&#xFF1A;<br><img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>&#x606D;&#x559C;&#x81EA;&#x5DF1;&#xFF0C;&#x518D;&#x63A5;&#x518D;&#x5389;&#xFF01; &#x1F4AA;&#x1F3FB; </p>
-<h3 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h3><hr>
-<p><strong>&#x9898;&#x5E93;</strong>  </p>
-<p><a href="https://leetcode.com/explore/learn/card/array-and-string/">LeetCode Explore&#xFF1A;Array and String</a>  </p>
-<p><strong>&#x5F15;&#x7528;</strong> </p>
-<div id="refer-anchor-1"></div>  
-
-<p>[1] <a href="https://zh.wikipedia.org/zh-cn/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">&#x7EF4;&#x57FA;&#x767E;&#x79D1;&#xFF1A;&#x539F;&#x5730;&#x7B97;&#x6CD5;</a></p>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>数据结构与算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>About</title>
     <url>/about/index.html</url>
     <content><![CDATA[<img src="/images/bin_cat.png" alt="bin_cat" title="bin_cat" width="350">  
@@ -2990,13 +2997,18 @@ git push -u origin master
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>Links</title>
+    <url>/links/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Tags</title>
     <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>Links</title>
-    <url>/links/index.html</url>
+    <title>Categories</title>
+    <url>/zh-cn/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -3012,18 +3024,13 @@ git push -u origin master
 ]]></content>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/zh-cn/categories/index.html</url>
+    <title>链接</title>
+    <url>/zh-cn/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Tags</title>
     <url>/zh-cn/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>链接</title>
-    <url>/zh-cn/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
