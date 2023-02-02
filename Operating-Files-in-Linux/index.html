@@ -2,13 +2,13 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>Linux File Operations - Meng&#39;s Blog</title>
+<title>Operating Files in Linux - Meng&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
 
 
-<link href="/zh-cn/Linux-File-Operations/" rel="alternate" hreflang="zh-CN" />
+<link href="/zh-cn/Operating-Files-in-Linux/" rel="alternate" hreflang="zh-CN" />
     
 
 
@@ -20,13 +20,13 @@
 
     <meta name="description" content="Linux manipulates files via the command line, including viewing, editing, copying, moving, deleting, creating, searching, matching, compressing, and uncompressing files, and it&amp;#x2019;s important to l">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux File Operations">
-<meta property="og:url" content="https://mengisok.github.io/Linux-File-Operations/index.html">
+<meta property="og:title" content="Operating Files in Linux">
+<meta property="og:url" content="https://mengisok.github.io/Operating-Files-in-Linux/index.html">
 <meta property="og:site_name" content="Meng&#39;s Blog">
 <meta property="og:description" content="Linux manipulates files via the command line, including viewing, editing, copying, moving, deleting, creating, searching, matching, compressing, and uncompressing files, and it&amp;#x2019;s important to l">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-02T02:42:24.000Z">
-<meta property="article:modified_time" content="2023-02-02T04:05:48.607Z">
+<meta property="article:modified_time" content="2023-02-02T04:15:22.447Z">
 <meta property="article:author" content="Han Meng">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -125,11 +125,11 @@
         <div class="dropdown-menu has-text-left" role="menu" style="top:100%">
             <div class="dropdown-content">
             
-                <a href="/Linux-File-Operations/" class="dropdown-item">
+                <a href="/Operating-Files-in-Linux/" class="dropdown-item">
                     English
                 </a>
             
-                <a href="/zh-cn/Linux-File-Operations/" class="dropdown-item">
+                <a href="/zh-cn/Operating-Files-in-Linux/" class="dropdown-item">
                     简体中文
                 </a>
             
@@ -153,43 +153,43 @@
                     
                     
                     
-                    <a class="navbar-item" href="#View">1&nbsp;&nbsp;<b>View</b></a>
+                    <a class="navbar-item" href="#Viewing">1&nbsp;&nbsp;<b>Viewing</b></a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#Edit">2&nbsp;&nbsp;<b>Edit</b></a>
+                    <a class="navbar-item" href="#Editing">2&nbsp;&nbsp;<b>Editing</b></a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#Copy">3&nbsp;&nbsp;<b>Copy</b></a>
+                    <a class="navbar-item" href="#Copying">3&nbsp;&nbsp;<b>Copying</b></a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#Move">4&nbsp;&nbsp;<b>Move</b></a>
+                    <a class="navbar-item" href="#Moving">4&nbsp;&nbsp;<b>Moving</b></a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#Delete">5&nbsp;&nbsp;<b>Delete</b></a>
+                    <a class="navbar-item" href="#Deleting">5&nbsp;&nbsp;<b>Deleting</b></a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#Create">6&nbsp;&nbsp;<b>Create</b></a>
+                    <a class="navbar-item" href="#Creating">6&nbsp;&nbsp;<b>Creating</b></a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#Search">7&nbsp;&nbsp;<b>Search</b></a>
+                    <a class="navbar-item" href="#Searching">7&nbsp;&nbsp;<b>Searching</b></a>
                     
                     
                     <hr class="navbar-divider">
@@ -236,7 +236,7 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            Linux File Operations
+            Operating Files in Linux
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
@@ -264,7 +264,7 @@
         <p>Linux manipulates files via the command line, including viewing, editing, copying, moving, deleting, creating, searching, matching, compressing, and uncompressing files, and it&#x2019;s important to learn how to use the documentation.</p>
 <span id="more"></span>
 
-<h3 id="View"><a href="#View" class="headerlink" title="View"></a>View</h3><hr>
+<h3 id="Viewing"><a href="#Viewing" class="headerlink" title="Viewing"></a>Viewing</h3><hr>
 <p><strong>cat</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Output the entire contents of the FILE file</span></span><br><span class="line">$ <span class="hljs-built_in">cat</span> [OPTION] FILE</span><br></pre></td></tr></tbody></table></figure>
 
@@ -274,33 +274,33 @@
 
 <p><code>cat</code> prints the entire contents to the terminal at once and exits, while <code>less</code> displays one page at a time and supports forward/backward scrolling, searching, etc. If you want to find a part of a large file, <code>less</code> is usually much more convenient than <code>cat</code>.</p>
 <p>Similar commands to <code>less</code>: <code>more</code>, <code>most</code>.</p>
-<h3 id="Edit"><a href="#Edit" class="headerlink" title="Edit"></a>Edit</h3><hr>
+<h3 id="Editing"><a href="#Editing" class="headerlink" title="Editing"></a>Editing</h3><hr>
 <p><strong>Nano</strong> is a command-line text editor that comes with many machines and is more novice-friendly than vim and emacs.</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nano FILE <span class="hljs-comment"># Use nano to edit FILE files</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="Copy"><a href="#Copy" class="headerlink" title="Copy"></a>Copy</h3><hr>
+<h3 id="Copying"><a href="#Copying" class="headerlink" title="Copying"></a>Copying</h3><hr>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Copy the SOURCE file to the DEST file, the resulting file is DEST</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE DEST</span><br><span class="line">$ <span class="hljs-comment"># Copy the SOURCE file to the DIRECTORY directory, SOURCE can be more than one file</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE... DIRECTORY</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file3 <span class="hljs-comment"># Make a copy of file1 to the same directory as file3</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file2 . /file/ <span class="hljs-comment"># Copy file1, file2 files to the file directory in the same directory</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> -r file . /test/ <span class="hljs-comment"># Copy the file folder and all its subfiles to the test folder in the same directory</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong>Hard links and soft links</strong></p>
 <p>Hard links have the same inode as the source file and both point to the same location on disk. Deleting one of them does not affect the other.</p>
 <p>Soft links have a different inode than the source file. Soft links save the path to the source file, and when accessing a soft link, the accessed path is replaced with the path to the source file, so accessing a soft link is also equivalent to accessing the source file. However, if the source file is deleted, the path saved by the soft link is invalid, and the soft link is therefore invalid as well<a href="#refer-anchor-1"><sup>1</sup></a>.</p>
-<h3 id="Move"><a href="#Move" class="headerlink" title="Move"></a>Move</h3><hr>
+<h3 id="Moving"><a href="#Moving" class="headerlink" title="Moving"></a>Moving</h3><hr>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Move the SOURCE file to the DEST file</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE DEST</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># Move SOURCE file to DIRECTORY directory, SOURCE can be multiple files</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE... DIRECTORY</span><br></pre></td></tr></tbody></table></figure>
 
 <p>Similar to &#x201C;cut&#x201D; in Windows.</p>
-<h3 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h3><hr>
+<h3 id="Deleting"><a href="#Deleting" class="headerlink" title="Deleting"></a>Deleting</h3><hr>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Delete FILE files, FILE can be multiple files.</span></span><br><span class="line">$ <span class="hljs-comment"># If you need to delete a directory, you need to delete it recursively with the -r option</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> [OPTION] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> file1 <span class="hljs-comment"># Delete the file1 file</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -r <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># Delete the test directory and all files under it</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -rf test1/ test2/ file1.txt <span class="hljs-comment"># Delete the files, directories test1/, test2/, file1.txt. Among them, these files or directories may not exist, be write-protected, or not have permission to read or write</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="Create"><a href="#Create" class="headerlink" title="Create"></a>Create</h3><hr>
-<p><strong>Create directories</strong></p>
+<h3 id="Creating"><a href="#Creating" class="headerlink" title="Creating"></a>Creating</h3><hr>
+<p><strong>Creating directories</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Create a directory named DIR_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> [OPTION] DIR_NAME...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> test1 test2 <span class="hljs-comment"># Create two directories with the names test1, test2</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p test1/test2/test3/ <span class="hljs-comment"># Create path test1/test2/test3/</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p><strong>Create files</strong></p>
+<p><strong>Creating files</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Create a file named FILE_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">touch</span> FILE_NAME...</span><br></pre></td></tr></tbody></table></figure>
 
 <p>The <code>stat</code> command displays information about a file&#x2019;s attributes.</p>
 <p>What <code>touch</code> actually does is modify the access time (atime) and modification time (mtime) of the file, which can be treated as touching the file, causing its access and modification times to change. When the file does not exist, <code>touch</code> creates a new file.</p>
-<h3 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h3><hr>
+<h3 id="Searching"><a href="#Searching" class="headerlink" title="Searching"></a>Searching</h3><hr>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Search for files in PATH based on EXPRESSION</span></span><br><span class="line">$ find [OPTION] PATH [EXPRESSION]</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ find . -name <span class="hljs-string">&apos;report.pdf&apos;</span> <span class="hljs-comment"># Search for a file named report.pdf in the current directory</span></span><br><span class="line">$ find / -size +1G <span class="hljs-comment"># Search for files larger than 1G on the whole disk</span></span><br><span class="line">$ find ~/ -name <span class="hljs-string">&apos;node_modules&apos;</span> -<span class="hljs-built_in">type</span> d <span class="hljs-comment"># Search for all folders named node_modules in the user directory</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="Pattern-matching"><a href="#Pattern-matching" class="headerlink" title="Pattern matching"></a>Pattern matching</h3><hr>
@@ -309,7 +309,7 @@
 
 <p>Be sure to make sure you type correctly before using wildcards, otherwise serious consequences may occur (e.g. <code>rm -rf *</code> will delete all files in the current directory).</p>
 <h3 id="Compressing-and-uncompressing"><a href="#Compressing-and-uncompressing" class="headerlink" title="Compressing and uncompressing"></a>Compressing and uncompressing</h3><hr>
-<p><strong>Use tar to archive and compress files</strong></p>
+<p><strong>Using tar to archive and compress files</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># The command format is as follows, please refer to the following sample usage to understand how to use</span></span><br><span class="line">$ tar [OPTIONS] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ tar -c -f target.tar file1 file2 file3 <span class="hljs-comment"># Package file1, file2, file3 as target.tar</span></span><br><span class="line">$ tar -x -f target.tar -C <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># Extract the files in target.tar to the test directory</span></span><br><span class="line">$ tar -cz -f target.tar.gz file1 file2 file3 <span class="hljs-comment"># Pack file1, file2, file3 and compress them using gzip to get the compressed file target.tar.gz</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p>As with most Linux commands, the <code>tar</code> command can combine parameters. For example, the following command is equivalent:  </p>
@@ -375,8 +375,8 @@
     
 <script>
     var disqus_config = function () {
-        this.page.url = 'https://mengisok.github.io/Linux-File-Operations/';
-        this.page.identifier = 'Linux-File-Operations/';
+        this.page.url = 'https://mengisok.github.io/Operating-Files-in-Linux/';
+        this.page.identifier = 'Operating-Files-in-Linux/';
         
         this.language = 'en';
         
@@ -426,11 +426,11 @@
         <div class="dropdown-menu has-text-left" role="menu" style="top:100%">
             <div class="dropdown-content">
             
-                <a href="/Linux-File-Operations/" class="dropdown-item">
+                <a href="/Operating-Files-in-Linux/" class="dropdown-item">
                     English
                 </a>
             
-                <a href="/zh-cn/Linux-File-Operations/" class="dropdown-item">
+                <a href="/zh-cn/Operating-Files-in-Linux/" class="dropdown-item">
                     简体中文
                 </a>
             
