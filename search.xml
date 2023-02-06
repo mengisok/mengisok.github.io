@@ -1,102 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Adaptive Filters</title>
-    <url>/Adaptive-Filters/</url>
-    <content><![CDATA[<p>I watched a well organized and concise YouTube video about <em>adaptive filters</em>, which is the focus of an important course I am taking this semester, <em>Digital Signal Processing II</em>.   </p>
-<span id="more"></span>
-
-<h3 id="Limitations-of-fixed-coefficient-digital-filters"><a href="#Limitations-of-fixed-coefficient-digital-filters" class="headerlink" title="Limitations of fixed-coefficient digital filters"></a>Limitations of fixed-coefficient digital filters</h3><hr>
-<ul>
-<li>Fixed-coefficient digital filters<ul>
-<li>FIR, IIR</li>
-<li>LP, HP, etc</li>
-</ul>
-</li>
-<li>Limitations<ul>
-<li>Time-varying noise-frequency</li>
-<li>Overlapping bands of signal and noise</li>
-</ul>
-</li>
-</ul>
-<h3 id="Adaptive-filters"><a href="#Adaptive-filters" class="headerlink" title="Adaptive filters"></a>Adaptive filters</h3><hr>
-<img src="/images/adaptive_filter.png" alt="adaptive_filter" title="adaptive_filter" width="400"> 
-
-<ul>
-<li>2 main components<ul>
-<li>Digital filter (with <strong>adjustable</strong> coefficients)</li>
-<li>Adaptive algorithm</li>
-</ul>
-</li>
-<li>2 input signals: $y_k$ and $x_k$<ul>
-<li>$y_k = s_k + n_k$</li>
-<li>$s_k$ = desired signal</li>
-<li>$n_k$ = noise</li>
-<li>$x_k$ = contaminating signal which is <strong>correlated with $n_k$</strong>, gives an estimate of $n_k$, i.e. $\hat{n_k}$</li>
-</ul>
-</li>
-<li>Goal: produce <strong>optimum</strong> $\hat{n_k}$<ul>
-<li>$e_k = \hat{s_k} = y_k - \hat{n_k} = s_k + n_k - \hat{n_k}$</li>
-</ul>
-</li>
-<li>Theorem: <strong>minimize $e_k$, maximize the signal-to-noise ratio</strong></li>
-</ul>
-<h3 id="LMS-algorithm"><a href="#LMS-algorithm" class="headerlink" title="LMS algorithm"></a>LMS algorithm</h3><hr>
-<h4 id="Wiener-filter"><a href="#Wiener-filter" class="headerlink" title="Wiener filter"></a>Wiener filter</h4><img src="/images/wiener_filter.png" alt="wiener_filter" title="wiener_filter" width="400"> 
-
-<ul>
-<li>An input signal&#xA0;<em>w(n)</em> is convolved w ith the Wiener filter&#xA0;<em>g(n)</em> and the result is compared to a reference signal&#xA0;<em>s(n)</em> to obtain the filtering error&#xA0;<em>e(n)</em></li>
-<li>Criterion: <strong>MMSE</strong> (Minimum Mean Square Error)<ul>
-<li>Minimize $J = E[e(n)^2] = E[(x(n) - s(n))^2] = E[(w(n) * g(n) - s(n))^2]$</li>
-<li><em>J</em> can be used to draw the <strong>Error-Performance surface</strong></li>
-</ul>
-</li>
-<li>The&#xA0;<a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">Least mean squares filter</a> converges to the&#xA0;<a href="https://en.wikipedia.org/wiki/Wiener_filter">Wiener filter</a></li>
-</ul>
-<h4 id="Wiener-Hopf-solution"><a href="#Wiener-Hopf-solution" class="headerlink" title="Wiener-Hopf solution"></a>Wiener-Hopf solution</h4><p>Set gradient of <em>J</em> of <em>H</em> to zero, deduced that<br>$H_{opt} = R_{xx}^{-1} R_{xs}$ </p>
-<p>where<br>$R_{xx} = E(X_k X_k^T)$<br>$R_{xs} = E(y_k X_k)$ </p>
-<ul>
-<li>Requires knowledge of $R_{xx}, R_{xs}$</li>
-<li>Matrix inversion is expensive</li>
-<li>For non-stationary, $H_{opt}$ needs to be computed repeatedly</li>
-</ul>
-<h4 id="LMS-adaptive-algorithm"><a href="#LMS-adaptive-algorithm" class="headerlink" title="LMS adaptive algorithm"></a>LMS adaptive algorithm</h4><p>Version 1: $H(n+1) = H(n) + \mu (- \nabla(n))$<br>Version 2: $H(n+1) = H(n) + \frac{1}{2}\delta (- \nabla(n))$  </p>
-<p>then<br>$H(n+1) = H(n) + 2\mu e(n)X(n)$<br>or $H(n+1) = H(n) + \delta e(n)X(n)$  </p>
-<p>where<br>$e(n) = y(n) - H^T(n)X(n)$<br>$\mu$ and $\delta$ are step-sizes</p>
-<ul>
-<li>Based on the <strong>steepest descent algorithm</strong> (update H(n) along the opposite direction of the gradient):<br>  $H(n+1) = H(n) + \mu (- \nabla(n))$  </li>
-<li>Using <strong>instantaneous</strong> estimates <strong>instead of the means</strong> (unbiased):<br>  $J = E[e(n)^2] = e(n)^2$<br>  $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$  </li>
-<li>Step-size determines <strong>stablility</strong> and <strong>rate of convergence</strong>  <ul>
-<li>If too large, too much fluctuation</li>
-<li>If too small, convergences too slow</li>
-</ul>
-</li>
-</ul>
-<h4 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h4><ul>
-<li>If the noise is non-stationary, the error-performance surface will change rapidly</li>
-<li>If $x(n)$ is proportional to $y(n)$, signal will be obliterated</li>
-<li>H(n) never reached the theoretical optimum (fluctuation)</li>
-</ul>
-<h3 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h3><hr>
-<ul>
-<li>Acoustic echo cancellation</li>
-<li>Cancelling EOG from contaminated EEG and get correct EEG</li>
-<li>Cancelling maternal ECG and get foetal ECG during labour</li>
-</ul>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>YouTube Video</strong></p>
-<p><a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a></p>
-<p><strong>Course Home Page</strong></p>
-<p><a href="http://home.ustc.edu.cn/~lzx2010/">Digital Signal Processing II</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-      </categories>
-      <tags>
-        <tag>DSP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Basic MATLAB (very basic)</title>
     <url>/Basic-MATLAB/</url>
     <content><![CDATA[<p>I watched an introductory tutorial on LinkedIn Learning in order to write computer assignments in MATLAB (I really forgot it all after not using it for two or three years).</p>
@@ -213,6 +117,102 @@
       </categories>
       <tags>
         <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Adaptive Filters</title>
+    <url>/Adaptive-Filters/</url>
+    <content><![CDATA[<p>I watched a well organized and concise YouTube video about <em>adaptive filters</em>, which is the focus of an important course I am taking this semester, <em>Digital Signal Processing II</em>.   </p>
+<span id="more"></span>
+
+<h3 id="Limitations-of-fixed-coefficient-digital-filters"><a href="#Limitations-of-fixed-coefficient-digital-filters" class="headerlink" title="Limitations of fixed-coefficient digital filters"></a>Limitations of fixed-coefficient digital filters</h3><hr>
+<ul>
+<li>Fixed-coefficient digital filters<ul>
+<li>FIR, IIR</li>
+<li>LP, HP, etc</li>
+</ul>
+</li>
+<li>Limitations<ul>
+<li>Time-varying noise-frequency</li>
+<li>Overlapping bands of signal and noise</li>
+</ul>
+</li>
+</ul>
+<h3 id="Adaptive-filters"><a href="#Adaptive-filters" class="headerlink" title="Adaptive filters"></a>Adaptive filters</h3><hr>
+<img src="/images/adaptive_filter.png" alt="adaptive_filter" title="adaptive_filter" width="400"> 
+
+<ul>
+<li>2 main components<ul>
+<li>Digital filter (with <strong>adjustable</strong> coefficients)</li>
+<li>Adaptive algorithm</li>
+</ul>
+</li>
+<li>2 input signals: $y_k$ and $x_k$<ul>
+<li>$y_k = s_k + n_k$</li>
+<li>$s_k$ = desired signal</li>
+<li>$n_k$ = noise</li>
+<li>$x_k$ = contaminating signal which is <strong>correlated with $n_k$</strong>, gives an estimate of $n_k$, i.e. $\hat{n_k}$</li>
+</ul>
+</li>
+<li>Goal: produce <strong>optimum</strong> $\hat{n_k}$<ul>
+<li>$e_k = \hat{s_k} = y_k - \hat{n_k} = s_k + n_k - \hat{n_k}$</li>
+</ul>
+</li>
+<li>Theorem: <strong>minimize $e_k$, maximize the signal-to-noise ratio</strong></li>
+</ul>
+<h3 id="LMS-algorithm"><a href="#LMS-algorithm" class="headerlink" title="LMS algorithm"></a>LMS algorithm</h3><hr>
+<h4 id="Wiener-filter"><a href="#Wiener-filter" class="headerlink" title="Wiener filter"></a>Wiener filter</h4><img src="/images/wiener_filter.png" alt="wiener_filter" title="wiener_filter" width="400"> 
+
+<ul>
+<li>An input signal&#xA0;<em>w(n)</em> is convolved w ith the Wiener filter&#xA0;<em>g(n)</em> and the result is compared to a reference signal&#xA0;<em>s(n)</em> to obtain the filtering error&#xA0;<em>e(n)</em></li>
+<li>Criterion: <strong>MMSE</strong> (Minimum Mean Square Error)<ul>
+<li>Minimize $J = E[e(n)^2] = E[(x(n) - s(n))^2] = E[(w(n) * g(n) - s(n))^2]$</li>
+<li><em>J</em> can be used to draw the <strong>Error-Performance surface</strong></li>
+</ul>
+</li>
+<li>The&#xA0;<a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">Least mean squares filter</a> converges to the&#xA0;<a href="https://en.wikipedia.org/wiki/Wiener_filter">Wiener filter</a></li>
+</ul>
+<h4 id="Wiener-Hopf-solution"><a href="#Wiener-Hopf-solution" class="headerlink" title="Wiener-Hopf solution"></a>Wiener-Hopf solution</h4><p>Set gradient of <em>J</em> of <em>H</em> to zero, deduced that<br>$H_{opt} = R_{xx}^{-1} R_{xs}$ </p>
+<p>where<br>$R_{xx} = E(X_k X_k^T)$<br>$R_{xs} = E(y_k X_k)$ </p>
+<ul>
+<li>Requires knowledge of $R_{xx}, R_{xs}$</li>
+<li>Matrix inversion is expensive</li>
+<li>For non-stationary, $H_{opt}$ needs to be computed repeatedly</li>
+</ul>
+<h4 id="LMS-adaptive-algorithm"><a href="#LMS-adaptive-algorithm" class="headerlink" title="LMS adaptive algorithm"></a>LMS adaptive algorithm</h4><p>Version 1: $H(n+1) = H(n) + \mu (- \nabla(n))$<br>Version 2: $H(n+1) = H(n) + \frac{1}{2}\delta (- \nabla(n))$  </p>
+<p>then<br>$H(n+1) = H(n) + 2\mu e(n)X(n)$<br>or $H(n+1) = H(n) + \delta e(n)X(n)$  </p>
+<p>where<br>$e(n) = y(n) - H^T(n)X(n)$<br>$\mu$ and $\delta$ are step-sizes</p>
+<ul>
+<li>Based on the <strong>steepest descent algorithm</strong> (update H(n) along the opposite direction of the gradient):<br>  $H(n+1) = H(n) + \mu (- \nabla(n))$  </li>
+<li>Using <strong>instantaneous</strong> estimates <strong>instead of the means</strong> (unbiased):<br>  $J = E[e(n)^2] = e(n)^2$<br>  $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$  </li>
+<li>Step-size determines <strong>stablility</strong> and <strong>rate of convergence</strong>  <ul>
+<li>If too large, too much fluctuation</li>
+<li>If too small, convergences too slow</li>
+</ul>
+</li>
+</ul>
+<h4 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h4><ul>
+<li>If the noise is non-stationary, the error-performance surface will change rapidly</li>
+<li>If $x(n)$ is proportional to $y(n)$, signal will be obliterated</li>
+<li>H(n) never reached the theoretical optimum (fluctuation)</li>
+</ul>
+<h3 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h3><hr>
+<ul>
+<li>Acoustic echo cancellation</li>
+<li>Cancelling EOG from contaminated EEG and get correct EEG</li>
+<li>Cancelling maternal ECG and get foetal ECG during labour</li>
+</ul>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>YouTube Video</strong></p>
+<p><a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a></p>
+<p><strong>Course Home Page</strong></p>
+<p><a href="http://home.ustc.edu.cn/~lzx2010/">Digital Signal Processing II</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+      </categories>
+      <tags>
+        <tag>DSP</tag>
       </tags>
   </entry>
   <entry>
@@ -611,158 +611,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Intro to Git &amp; GitHub</title>
-    <url>/Intro-to-Git-GitHub/</url>
-    <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>. By the way, I found it very convenient to make notes in Notion first and then export Markdown, modify it, copy and paste it into the Blog.  </p>
-<span id="more"></span>
-
-<h3 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git config --global user.name <span class="hljs-string">&quot;name&quot;</span></span><br><span class="line">git config --global user.email <span class="hljs-string">&quot;mail&quot;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Staging-files"><a href="#Staging-files" class="headerlink" title="Staging files"></a>Staging files</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git add filename</span><br><span class="line">git add .</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git commit -m <span class="hljs-string">&quot;message&quot;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="hljs-built_in">log</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Git-environments"><a href="#Git-environments" class="headerlink" title="Git environments"></a>Git environments</h3><ul>
-<li>Working</li>
-<li>Staging</li>
-<li>Commit</li>
-</ul>
-<h3 id="File-states"><a href="#File-states" class="headerlink" title="File states"></a>File states</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>Tracked (after commit)<ul>
-<li>Unmodified</li>
-<li>Modified</li>
-<li>Staged</li>
-</ul>
-</li>
-<li>Untracked</li>
-</ul>
-<h3 id="Restoring-files"><a href="#Restoring-files" class="headerlink" title="Restoring files"></a>Restoring files</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git restore filename</span><br><span class="line">git restore . </span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Ignoring-files"><a href="#Ignoring-files" class="headerlink" title="Ignoring files"></a>Ignoring files</h3><ul>
-<li>Sensitive info</li>
-<li>Personal notes</li>
-<li>System files</li>
-</ul>
-<p>Use <strong>.gitignore</strong> file</p>
-<h3 id="Clearing-the-cache"><a href="#Clearing-the-cache" class="headerlink" title="Clearing the cache"></a>Clearing the cache</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Deleting"><a href="#Deleting" class="headerlink" title="Deleting"></a>Deleting</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git rm filename</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Delete, and move to stage and ready to commit.</p>
-<h3 id="Renaming"><a href="#Renaming" class="headerlink" title="Renaming"></a>Renaming</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git mv oldname newname </span><br></pre></td></tr></tbody></table></figure>
-
-<p>Move to stage too.</p>
-<h3 id="Showing-differences"><a href="#Showing-differences" class="headerlink" title="Showing differences"></a>Showing differences</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">got <span class="hljs-built_in">log</span> --oneline</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Amending"><a href="#Amending" class="headerlink" title="Amending"></a>Amending</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git reset</span><br><span class="line">git reset --hard</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Rebasing"><a href="#Rebasing" class="headerlink" title="Rebasing"></a>Rebasing</h3><p>A time machine. Rewrite the history.</p>
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git rebase </span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Branches"><a href="#Branches" class="headerlink" title="Branches"></a>Branches</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Copying a branch:</p>
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="hljs-keyword">switch</span> -c NAME</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Merging:</p>
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Deleting a branch:</p>
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git branch --delete NAME</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Git flow:</p>
-<ul>
-<li>Fix branch</li>
-<li>Make changes</li>
-<li>Merge to master</li>
-<li>Delete old branch</li>
-</ul>
-<h3 id="Merge-conflicts"><a href="#Merge-conflicts" class="headerlink" title="Merge conflicts"></a>Merge conflicts</h3><p>Choose one.</p>
-<h3 id="Stashing"><a href="#Stashing" class="headerlink" title="Stashing"></a>Stashing</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash <span class="hljs-built_in">list</span></span><br><span class="line">git stash apply</span><br><span class="line">git stash pop</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Git-clean"><a href="#Git-clean" class="headerlink" title="Git clean"></a>Git clean</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git clean -n</span><br><span class="line">git clean -d</span><br><span class="line">git clean -f</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><ul>
-<li>Cloud repository</li>
-<li>Collaborative dev</li>
-<li>Projet management</li>
-</ul>
-<p>Working with github:</p>
-<ul>
-<li>Set up remote</li>
-<li>Push</li>
-<li>Fetch/pull</li>
-</ul>
-<h3 id="Pushing-to-github"><a href="#Pushing-to-github" class="headerlink" title="Pushing to github"></a>Pushing to github</h3><p>Remotes:</p>
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git remote add NAME URL</span><br><span class="line">git remote remove NAME</span><br><span class="line">git rename OLDNAME NEWNAME</span><br><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Git push:</p>
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git push REMOTE BRANCH</span><br><span class="line">git push -u origin main</span><br><span class="line">git push --all</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Github-options"><a href="#Github-options" class="headerlink" title="Github options"></a>Github options</h3><h4 id="Issues"><a href="#Issues" class="headerlink" title="Issues"></a>Issues</h4><p>Collaborate with people</p>
-<ul>
-<li>Write notes, like to-do items, for youself or others</li>
-<li>Assign to-do to individuals, and they can comment</li>
-</ul>
-<h4 id="Pull-requests"><a href="#Pull-requests" class="headerlink" title="Pull requests"></a>Pull requests</h4><p>Change the repo</p>
-<ul>
-<li>Approve changes that somebody else has made</li>
-<li>Compare different branches</li>
-</ul>
-<h4 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h4><p>Manage the repo (advanced)</p>
-<ul>
-<li>Run tests</li>
-<li>Host code automatically</li>
-<li>Download other&#x2019;s actions to use</li>
-</ul>
-<h4 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h4><p>Manage the repo</p>
-<ul>
-<li>Kanban board</li>
-</ul>
-<h4 id="Wiki"><a href="#Wiki" class="headerlink" title="Wiki"></a>Wiki</h4><p>Create documentation that is easy for people to look at (not really necessary)</p>
-<h4 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h4><p>Manage policies for security (advanced)</p>
-<h4 id="Insights"><a href="#Insights" class="headerlink" title="Insights"></a>Insights</h4><p>Know contributors, traffic, etc (private)</p>
-<h4 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h4><ul>
-<li>Convert this repo to be a template</li>
-<li>Github pages</li>
-</ul>
-<h3 id="Managing-projects"><a href="#Managing-projects" class="headerlink" title="Managing projects"></a>Managing projects</h3><ul>
-<li>Contributors<ul>
-<li>Invite a collaborator</li>
-</ul>
-</li>
-<li>Issues</li>
-<li>Labels</li>
-<li>Milestones</li>
-<li>Projects</li>
-</ul>
-<h3 id="Syncing"><a href="#Syncing" class="headerlink" title="Syncing"></a>Syncing</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git clone </span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git fetch</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></tbody></table></figure>
-
-<p>pull = fetch + merge</p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-        <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Intro to Java</title>
     <url>/Intro-to-Java/</url>
     <content><![CDATA[<p>The sections on the background of Java&#x2019;s birth, development history and version descriptions were very helpful to me.      </p>
@@ -957,121 +805,182 @@
       </tags>
   </entry>
   <entry>
-    <title>LaTeX CV</title>
-    <url>/Latex-CV/</url>
-    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That&#x2019;s very unfriendly for beginners &#x1F622;. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.  </p>
+    <title>Jan 2023</title>
+    <url>/Jan-2023/</url>
+    <content><![CDATA[<p>In the first month of the new year, I was still organizing review notes at tortoise speed and feeling lazy. But I also learned something new.  </p>
 <span id="more"></span>
-<p>Here&#x2019;s how I did it:  </p>
-<p>-&gt; If you only use latex <strong>occasionally or a few times</strong>, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>-&gt; If you want to do <strong>more</strong> things, use following steps:  </p>
-<h3 id="Download-MiKTeX-and-VSCode"><a href="#Download-MiKTeX-and-VSCode" class="headerlink" title="Download MiKTeX and VSCode"></a>Download MiKTeX and VSCode</h3><p><strong>MiKTeX</strong><br>You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.  </p>
-<p><strong>VSCode</strong><br>Remember to download extension <em>latex workshop</em>.  </p>
-<h3 id="Find-a-template"><a href="#Find-a-template" class="headerlink" title="Find a template"></a>Find a template</h3><p>On Overleaf or Github.<br>Here are my favorites:<br><a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">&#x65B0;&#x5352;&#x306E;&#x305F;&#x3081;&#x306E;LaTeX&#x5C65;&#x6B74;&#x66F8;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;</a><br><a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>And mine:<br><a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)  </p>
-<h3 id="Edit-the-template"><a href="#Edit-the-template" class="headerlink" title="Edit the template"></a>Edit the template</h3><p>You may encounter many problems at this step, most of which require you to download <strong>Packages</strong> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.  </p>
-<h3 id="Share-your-template"><a href="#Share-your-template" class="headerlink" title="Share your template"></a>Share your template</h3><ol>
-<li>Git your template to github<br>(Already bound git and your github accounts and set SSH key)<br>-&gt; Create a new repository<br>-&gt; Git bash the folder which contains full files about your template<br>-&gt; Run the following code in Git:</li>
-</ol>
-<pre><code class="C">git init
-git add .
-git commit -m &apos;Description&apos;
-git remote add origin https://...  (copy from github)
-git push -u origin master
-</code></pre>
-<ol start="2">
-<li>Submit to Overleaf<br>That&#x2019;s where I found the original template for my CV! I think put templates there may help more people.</li>
-</ol>
+
+<h3 id="Changed-blog-theme-again"><a href="#Changed-blog-theme-again" class="headerlink" title="Changed blog theme again"></a>Changed blog theme again</h3><p>I changed blog theme to <a href="https://github.com/ppoffice/hexo-theme-minos">Minos</a> in order to add the English and Chinese language options, and finally succeeded after some tinkering! And for my own aesthetic, I slightly modified the appearance. Then I found that when I clicked on the cell phone to change the language, the drop-down menu was blocked by the navigation bar. I thought of various solutions, and finally the complete display was achieved by changing the layout, so I organized it into a <a href="https://github.com/mengisok/hexo-theme-minos-bilingual">GitHub repository</a> for Chinese users to use directly. .  </p>
+<p>Then I found a problem again: after opening the navigation bar for articles in the config, when you read articles, the English version displayed the subheadings normally, but the Chinese was garbled. This legacy problem has not been solved yet, so for the time being, I changed it to this: English version has the navigation bar, while no such thing in Chinese version &#x1F62C;.  </p>
+<h3 id="Using-Linux"><a href="#Using-Linux" class="headerlink" title="Using Linux"></a>Using Linux</h3><p>I found a great tutorial: <a href="https://101.lug.ustc.edu.cn/">Linux 101</a>, which was written by the Linux community at USTC. Successfully used Linux <del>and passionately sent an email to join the community and see the genius guys in it</del>! I currently finished learning the first three chapters.  </p>
+<h3 id="About-machine-learning"><a href="#About-machine-learning" class="headerlink" title="About machine learning"></a>About machine learning</h3><p>I went back to Andrew Ng&#x2019;s Machine Learning videos and left freecodecamp &#x1F923;. Freecodecamp&#x2019;s tutorials are very practical, knocking the code directly, but it&#x2019;s too fast, while Andrew Ng is just the opposite. Well, I think if you are not in a hurry, it&#x2019;s better to watch Andrew Ng&#x2019;s videos first to understand the principles. Currently I just finished &#x201C;P92 16.3 Integration&#x201D;.  </p>
+<p>When reviewing DIA, I found <a href="https://wiki.eecs.yorku.ca/course_archive/2011-12/F/4403/_media/backpropagation.pdf">an article that explains the BP algorithm</a>.  </p>
+<p>I saw <a href="https://www.1point3acres.com/bbs/thread-713903-1-1.html?mobile=2">a post on machine learning concepts</a>.  </p>
+<h3 id="Started-drawing-the-PCB"><a href="#Started-drawing-the-PCB" class="headerlink" title="Started drawing the PCB"></a>Started drawing the PCB</h3><p>To be precise, I just started to draw the schematic. I&#x2019;ve only used Altium Designer before, but now I need to use Cadence, and I checked the difference between the two, it seems that Altium Designer is easy to get started and has limited performance, while Cadence is more difficult and powerful.  </p>
+<p>I also saw a good blog: <a href="https://bonewp.github.io/2017/03/02/Cadence%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%94%BB%E6%9D%BF%E6%8A%80%E5%B7%A7%E7%9B%B8%E5%85%B3/">Cadence usage and drawing board skills related</a>.</p>
+<h3 id="Some-E-book-sites"><a href="#Some-E-book-sites" class="headerlink" title="Some E-book sites"></a>Some E-book sites</h3><p><a href="https://annas-archive.org/">Anna&#x2019;s Archive</a>  </p>
+<p><a href="http://libgen.is/">libgen</a></p>
+<p><a href="http://z-lib.to/?dt_dapp=1">zlibrary</a></p>
+<p><a href="https://search.zhelper.net/?%5B%7B%22name%22:%22zhelperV5%22,%22url%22:%22https://api.v5.zhelper.net%22,%22type%22:%22full%22,%22sensitive%22:false,%22detail%22:true%7D%5D&amp;dt_dapp=1">zhelper search</a></p>
+<h3 id="Didn&#x2019;t-learn-the-language"><a href="#Didn&#x2019;t-learn-the-language" class="headerlink" title="Didn&#x2019;t learn the language"></a>Didn&#x2019;t learn the language</h3><p>But I got a Japanese class for next semester! Nice&#x30FD;(&#x273F;&#xFF9F;&#x25BD;&#xFF9F;)&#x30CE;  </p>
 ]]></content>
       <categories>
-        <category>Job</category>
+        <category>Summary</category>
       </categories>
       <tags>
-        <tag>LaTeX</tag>
+        <tag>Useful Links</tag>
       </tags>
   </entry>
   <entry>
-    <title>My First LinkedIn Certificate!</title>
-    <url>/My-first-LinkedIn-certificate/</url>
-    <content><![CDATA[<p>Yeah I got it &#x1F606;! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera&#x2019;s free plan is a week, while linkedin&#x2019;s is a month so I chose the latter.  </p>
+    <title>Intro to Git &amp; GitHub</title>
+    <url>/Intro-to-Git-GitHub/</url>
+    <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>. By the way, I found it very convenient to make notes in Notion first and then export Markdown, modify it, copy and paste it into the Blog.  </p>
 <span id="more"></span>
 
-<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> to <strong>Non-mainland China</strong> in your account settings to get a monthly free plan. Also you must use a <strong>Visa</strong> credit card.)    </p>
-<h3 id="Nice-course"><a href="#Nice-course" class="headerlink" title="Nice course"></a>Nice course</h3><hr>
-<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br><strong>Practical</strong>! The author introduced many useful websites for learning and developing.  </p>
-<h3 id="What-I-have-learned"><a href="#What-I-have-learned" class="headerlink" title="What I have learned"></a>What I have learned</h3><hr>
-<p><strong>Types of web development jobs</strong><br>For planning and prototyping:  </p>
-<ul>
-<li>UX (User Experience)  </li>
-<li>UI (User Interface)</li>
-</ul>
-<p>For coding and developing:  </p>
-<ul>
-<li>Front-end Dev (Javascript, CSS, HTML; frameworks) </li>
-<li>Back-end Dev</li>
-</ul>
-<p><strong>Javascript, CSS, HTML</strong>  </p>
-<ul>
-<li>HTML identifies <strong>structural elements</strong>.  </li>
-<li>CSS changes the <strong>appearance and style</strong>.  </li>
-<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
-</ul>
-<p><strong>A little knowledge of Github</strong><br>That&#x2019;s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I&#x2019;ll hands on it lately.  </p>
-<p><strong>No-code</strong><br>It&#x2019;s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost &#x2013; money? But it&#x2019;s limited, especially when you know more and get greedy :p  </p>
-<h3 id="Useful-tools"><a href="#Useful-tools" class="headerlink" title="Useful tools"></a>Useful tools</h3><hr>
-<p>Prototying tools:  </p>
-<ul>
-<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
-</ul>
-<p>Graphic design tools:   </p>
-<ul>
-<li>Illustrator, Photoshop (professional)</li>
-<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)  </li>
-<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
-</ul>
-<p>Coding editors:  </p>
-<ul>
-<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)   </li>
-<li><strong>VS Code</strong></li>
-<li><a href="https://atom.io/">Atom</a> (free, highly customizable)  </li>
-<li><a href="https://brackets.io/">Brackets</a></li>
-</ul>
-<p>Web host:  </p>
-<ul>
-<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
-</ul>
-<h3 id="No-code-tools"><a href="#No-code-tools" class="headerlink" title="No-code tools"></a>No-code tools</h3><hr>
-<p>CMSs (Content Management System):   </p>
-<ul>
-<li>Joomla!  </li>
-<li>Drupal  </li>
-<li><strong>Wordpress</strong></li>
-</ul>
-<p>Website builders:  </p>
-<ul>
-<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple) </li>
-<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
-</ul>
-<p>Databases:  </p>
-<ul>
-<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a>  </li>
-<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
-</ul>
-<p>Apps:  </p>
-<ul>
-<li><a href="https://bubble.io/">Bubble</a> (web) </li>
-<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)  </li>
-<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
-</ul>
-<p>At last, here&#x2019;s my certificate and I&#x2019;d like to get more in the future &#x1F63B; ~  </p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> 
+<h3 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git config --global user.name <span class="hljs-string">&quot;name&quot;</span></span><br><span class="line">git config --global user.email <span class="hljs-string">&quot;mail&quot;</span></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>LinkedIn Learning Course</strong></p>
-<p><a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Staging-files"><a href="#Staging-files" class="headerlink" title="Staging files"></a>Staging files</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git add filename</span><br><span class="line">git add .</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git commit -m <span class="hljs-string">&quot;message&quot;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="hljs-built_in">log</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Git-environments"><a href="#Git-environments" class="headerlink" title="Git environments"></a>Git environments</h3><ul>
+<li>Working</li>
+<li>Staging</li>
+<li>Commit</li>
+</ul>
+<h3 id="File-states"><a href="#File-states" class="headerlink" title="File states"></a>File states</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>Tracked (after commit)<ul>
+<li>Unmodified</li>
+<li>Modified</li>
+<li>Staged</li>
+</ul>
+</li>
+<li>Untracked</li>
+</ul>
+<h3 id="Restoring-files"><a href="#Restoring-files" class="headerlink" title="Restoring files"></a>Restoring files</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git restore filename</span><br><span class="line">git restore . </span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Ignoring-files"><a href="#Ignoring-files" class="headerlink" title="Ignoring files"></a>Ignoring files</h3><ul>
+<li>Sensitive info</li>
+<li>Personal notes</li>
+<li>System files</li>
+</ul>
+<p>Use <strong>.gitignore</strong> file</p>
+<h3 id="Clearing-the-cache"><a href="#Clearing-the-cache" class="headerlink" title="Clearing the cache"></a>Clearing the cache</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Deleting"><a href="#Deleting" class="headerlink" title="Deleting"></a>Deleting</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git rm filename</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Delete, and move to stage and ready to commit.</p>
+<h3 id="Renaming"><a href="#Renaming" class="headerlink" title="Renaming"></a>Renaming</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git mv oldname newname </span><br></pre></td></tr></tbody></table></figure>
+
+<p>Move to stage too.</p>
+<h3 id="Showing-differences"><a href="#Showing-differences" class="headerlink" title="Showing differences"></a>Showing differences</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">got <span class="hljs-built_in">log</span> --oneline</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Amending"><a href="#Amending" class="headerlink" title="Amending"></a>Amending</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git reset</span><br><span class="line">git reset --hard</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Rebasing"><a href="#Rebasing" class="headerlink" title="Rebasing"></a>Rebasing</h3><p>A time machine. Rewrite the history.</p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git rebase </span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Branches"><a href="#Branches" class="headerlink" title="Branches"></a>Branches</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Copying a branch:</p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="hljs-keyword">switch</span> -c NAME</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Merging:</p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Deleting a branch:</p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git branch --delete NAME</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Git flow:</p>
+<ul>
+<li>Fix branch</li>
+<li>Make changes</li>
+<li>Merge to master</li>
+<li>Delete old branch</li>
+</ul>
+<h3 id="Merge-conflicts"><a href="#Merge-conflicts" class="headerlink" title="Merge conflicts"></a>Merge conflicts</h3><p>Choose one.</p>
+<h3 id="Stashing"><a href="#Stashing" class="headerlink" title="Stashing"></a>Stashing</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash <span class="hljs-built_in">list</span></span><br><span class="line">git stash apply</span><br><span class="line">git stash pop</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Git-clean"><a href="#Git-clean" class="headerlink" title="Git clean"></a>Git clean</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git clean -n</span><br><span class="line">git clean -d</span><br><span class="line">git clean -f</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><ul>
+<li>Cloud repository</li>
+<li>Collaborative dev</li>
+<li>Projet management</li>
+</ul>
+<p>Working with github:</p>
+<ul>
+<li>Set up remote</li>
+<li>Push</li>
+<li>Fetch/pull</li>
+</ul>
+<h3 id="Pushing-to-github"><a href="#Pushing-to-github" class="headerlink" title="Pushing to github"></a>Pushing to github</h3><p>Remotes:</p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git remote add NAME URL</span><br><span class="line">git remote remove NAME</span><br><span class="line">git rename OLDNAME NEWNAME</span><br><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Git push:</p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git push REMOTE BRANCH</span><br><span class="line">git push -u origin main</span><br><span class="line">git push --all</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Github-options"><a href="#Github-options" class="headerlink" title="Github options"></a>Github options</h3><h4 id="Issues"><a href="#Issues" class="headerlink" title="Issues"></a>Issues</h4><p>Collaborate with people</p>
+<ul>
+<li>Write notes, like to-do items, for youself or others</li>
+<li>Assign to-do to individuals, and they can comment</li>
+</ul>
+<h4 id="Pull-requests"><a href="#Pull-requests" class="headerlink" title="Pull requests"></a>Pull requests</h4><p>Change the repo</p>
+<ul>
+<li>Approve changes that somebody else has made</li>
+<li>Compare different branches</li>
+</ul>
+<h4 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h4><p>Manage the repo (advanced)</p>
+<ul>
+<li>Run tests</li>
+<li>Host code automatically</li>
+<li>Download other&#x2019;s actions to use</li>
+</ul>
+<h4 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h4><p>Manage the repo</p>
+<ul>
+<li>Kanban board</li>
+</ul>
+<h4 id="Wiki"><a href="#Wiki" class="headerlink" title="Wiki"></a>Wiki</h4><p>Create documentation that is easy for people to look at (not really necessary)</p>
+<h4 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h4><p>Manage policies for security (advanced)</p>
+<h4 id="Insights"><a href="#Insights" class="headerlink" title="Insights"></a>Insights</h4><p>Know contributors, traffic, etc (private)</p>
+<h4 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h4><ul>
+<li>Convert this repo to be a template</li>
+<li>Github pages</li>
+</ul>
+<h3 id="Managing-projects"><a href="#Managing-projects" class="headerlink" title="Managing projects"></a>Managing projects</h3><ul>
+<li>Contributors<ul>
+<li>Invite a collaborator</li>
+</ul>
+</li>
+<li>Issues</li>
+<li>Labels</li>
+<li>Milestones</li>
+<li>Projects</li>
+</ul>
+<h3 id="Syncing"><a href="#Syncing" class="headerlink" title="Syncing"></a>Syncing</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git clone </span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git fetch</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></tbody></table></figure>
+
+<p>pull = fetch + merge</p>
 ]]></content>
       <categories>
         <category>Learning</category>
       </categories>
       <tags>
-        <tag>Front-end</tag>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -1436,6 +1345,93 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>My First LinkedIn Certificate!</title>
+    <url>/My-first-LinkedIn-certificate/</url>
+    <content><![CDATA[<p>Yeah I got it &#x1F606;! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera&#x2019;s free plan is a week, while linkedin&#x2019;s is a month so I chose the latter.  </p>
+<span id="more"></span>
+
+<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> to <strong>Non-mainland China</strong> in your account settings to get a monthly free plan. Also you must use a <strong>Visa</strong> credit card.)    </p>
+<h3 id="Nice-course"><a href="#Nice-course" class="headerlink" title="Nice course"></a>Nice course</h3><hr>
+<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br><strong>Practical</strong>! The author introduced many useful websites for learning and developing.  </p>
+<h3 id="What-I-have-learned"><a href="#What-I-have-learned" class="headerlink" title="What I have learned"></a>What I have learned</h3><hr>
+<p><strong>Types of web development jobs</strong><br>For planning and prototyping:  </p>
+<ul>
+<li>UX (User Experience)  </li>
+<li>UI (User Interface)</li>
+</ul>
+<p>For coding and developing:  </p>
+<ul>
+<li>Front-end Dev (Javascript, CSS, HTML; frameworks) </li>
+<li>Back-end Dev</li>
+</ul>
+<p><strong>Javascript, CSS, HTML</strong>  </p>
+<ul>
+<li>HTML identifies <strong>structural elements</strong>.  </li>
+<li>CSS changes the <strong>appearance and style</strong>.  </li>
+<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
+</ul>
+<p><strong>A little knowledge of Github</strong><br>That&#x2019;s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I&#x2019;ll hands on it lately.  </p>
+<p><strong>No-code</strong><br>It&#x2019;s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost &#x2013; money? But it&#x2019;s limited, especially when you know more and get greedy :p  </p>
+<h3 id="Useful-tools"><a href="#Useful-tools" class="headerlink" title="Useful tools"></a>Useful tools</h3><hr>
+<p>Prototying tools:  </p>
+<ul>
+<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
+</ul>
+<p>Graphic design tools:   </p>
+<ul>
+<li>Illustrator, Photoshop (professional)</li>
+<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)  </li>
+<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
+</ul>
+<p>Coding editors:  </p>
+<ul>
+<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)   </li>
+<li><strong>VS Code</strong></li>
+<li><a href="https://atom.io/">Atom</a> (free, highly customizable)  </li>
+<li><a href="https://brackets.io/">Brackets</a></li>
+</ul>
+<p>Web host:  </p>
+<ul>
+<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
+</ul>
+<h3 id="No-code-tools"><a href="#No-code-tools" class="headerlink" title="No-code tools"></a>No-code tools</h3><hr>
+<p>CMSs (Content Management System):   </p>
+<ul>
+<li>Joomla!  </li>
+<li>Drupal  </li>
+<li><strong>Wordpress</strong></li>
+</ul>
+<p>Website builders:  </p>
+<ul>
+<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple) </li>
+<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
+</ul>
+<p>Databases:  </p>
+<ul>
+<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a>  </li>
+<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
+</ul>
+<p>Apps:  </p>
+<ul>
+<li><a href="https://bubble.io/">Bubble</a> (web) </li>
+<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)  </li>
+<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
+</ul>
+<p>At last, here&#x2019;s my certificate and I&#x2019;d like to get more in the future &#x1F63B; ~  </p>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> 
+
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>LinkedIn Learning Course</strong></p>
+<p><a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+      </categories>
+      <tags>
+        <tag>Front-end</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Oct 2022</title>
     <url>/Oct-2022/</url>
     <content><![CDATA[<h3 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h3><p>I finished 27 problems on Leetcode till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I&#x2019;m still doing arrays? I can&#x2019;t wait to deal with something new.  </p>
@@ -1653,6 +1649,37 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>LaTeX CV</title>
+    <url>/Latex-CV/</url>
+    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That&#x2019;s very unfriendly for beginners &#x1F622;. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.  </p>
+<span id="more"></span>
+<p>Here&#x2019;s how I did it:  </p>
+<p>-&gt; If you only use latex <strong>occasionally or a few times</strong>, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>-&gt; If you want to do <strong>more</strong> things, use following steps:  </p>
+<h3 id="Download-MiKTeX-and-VSCode"><a href="#Download-MiKTeX-and-VSCode" class="headerlink" title="Download MiKTeX and VSCode"></a>Download MiKTeX and VSCode</h3><p><strong>MiKTeX</strong><br>You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.  </p>
+<p><strong>VSCode</strong><br>Remember to download extension <em>latex workshop</em>.  </p>
+<h3 id="Find-a-template"><a href="#Find-a-template" class="headerlink" title="Find a template"></a>Find a template</h3><p>On Overleaf or Github.<br>Here are my favorites:<br><a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">&#x65B0;&#x5352;&#x306E;&#x305F;&#x3081;&#x306E;LaTeX&#x5C65;&#x6B74;&#x66F8;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;</a><br><a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>And mine:<br><a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)  </p>
+<h3 id="Edit-the-template"><a href="#Edit-the-template" class="headerlink" title="Edit the template"></a>Edit the template</h3><p>You may encounter many problems at this step, most of which require you to download <strong>Packages</strong> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.  </p>
+<h3 id="Share-your-template"><a href="#Share-your-template" class="headerlink" title="Share your template"></a>Share your template</h3><ol>
+<li>Git your template to github<br>(Already bound git and your github accounts and set SSH key)<br>-&gt; Create a new repository<br>-&gt; Git bash the folder which contains full files about your template<br>-&gt; Run the following code in Git:</li>
+</ol>
+<pre><code class="C">git init
+git add .
+git commit -m &apos;Description&apos;
+git remote add origin https://...  (copy from github)
+git push -u origin master
+</code></pre>
+<ol start="2">
+<li>Submit to Overleaf<br>That&#x2019;s where I found the original template for my CV! I think put templates there may help more people.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Job</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>自适应滤波器</title>
     <url>/zh-cn/Adaptive-Filters/</url>
     <content><![CDATA[<p>&#x770B;&#x4E86;&#x4E00;&#x4E2A;&#x6761;&#x7406;&#x6E05;&#x6670;&#x3001;&#x7B80;&#x660E;&#x627C;&#x8981;&#x7684;&#x5173;&#x4E8E;<em>&#x81EA;&#x9002;&#x5E94;&#x6EE4;&#x6CE2;&#x5668;</em>&#x7684;YouTube&#x89C6;&#x9891;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x6211;&#x8FD9;&#x5B66;&#x671F;&#x4E0A;&#x7684;&#x4E00;&#x95E8;&#x57FA;&#x7840;&#x8BFE;&#x201C;<em>&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x2161;</em>&#x201D;&#x7684;&#x91CD;&#x70B9;&#x5185;&#x5BB9;&#x3002;  </p>
@@ -1746,6 +1773,51 @@ git push -u origin master
       </categories>
       <tags>
         <tag>DSP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2022年12月</title>
+    <url>/zh-cn/Dec-2022/</url>
+    <content><![CDATA[<p>&#x8FD9;&#x4E2A;&#x6708;&#x672C;&#x6765;&#x662F;&#x8003;&#x8BD5;&#x6708;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4E3B;&#x8981;&#x82B1;&#x65F6;&#x95F4;&#x590D;&#x4E60;&#x4E86;&#x5B66;&#x6821;&#x7684;&#x4E09;&#x95E8;&#x4E3B;&#x8981;&#x8BFE;&#x7A0B;&#xFF1A;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x3001;&#x6570;&#x5B57;&#x56FE;&#x50CF;&#x5206;&#x6790;&#x548C;&#x7EC4;&#x5408;&#x6570;&#x5B66;&#x3002; <del>&#x7ED3;&#x679C;&#x8003;&#x8BD5;&#x7A81;&#x7136;&#x63A8;&#x8FDF;&#x5230;&#x4E0B;&#x5B66;&#x671F;&#x521D;&#xFF0C;&#x5BFC;&#x81F4;&#x6211;&#x6CA1;&#x590D;&#x4E60;&#x5B8C;&#x3002;</del> &#x6211;&#x505A;&#x4E86;&#x4E00;&#x4E9B;&#x7B14;&#x8BB0;&#xFF08;&#x90FD;&#x662F;&#x4E2D;&#x6587;&#xFF09;&#xFF0C;&#x8FD8;&#x6536;&#x85CF;&#x4E86;&#x4E00;&#x4E9B;&#x6709;&#x610F;&#x601D;&#x7684;&#x94FE;&#x63A5;&#x3002; </p>
+<span id="more"></span>
+
+<h3 id="&#x590D;&#x4E60;&#x7B14;&#x8BB0;"><a href="#&#x590D;&#x4E60;&#x7B14;&#x8BB0;" class="headerlink" title="&#x590D;&#x4E60;&#x7B14;&#x8BB0;"></a>&#x590D;&#x4E60;&#x7B14;&#x8BB0;</h3><blockquote>
+<p><a href="https://mengisok.notion.site/eb6f54749fb7464f8809ed94ec4c821b">Notion</a>&#x6216;<a href="https://github.com/mengisok/DSP-review">GitHub&#x4E0A;&#x7684;DSP&#x7B14;&#x8BB0;</a> (&#x6709;&#x4E00;&#x4E9B;MATLAB&#x4EE3;&#x7801;)  </p>
+<p><a href="https://drive.google.com/drive/folders/1KqNqF0UKM6n2ePmovORoTPofqJL-QBt6?usp=sharing">Google Drive&#x4E0A;&#x7684;DIA&#x7B14;&#x8BB0;</a> (&#x66F4;&#x65B0;&#x4E2D;&#x2026;)  </p>
+<p><a href="https://drive.google.com/drive/folders/1-0-R1W7jvLb9YrgUj_J1PrmkrNPaY_OM?usp=sharing">Google Drive&#x4E0A;&#x7684;&#x7EC4;&#x5408;&#x6570;&#x5B66;&#x7B14;&#x8BB0;</a> (&#x66F4;&#x65B0;&#x4E2D;&#x2026;)  </p>
+</blockquote>
+<p>&#x53E6;&#x4E00;&#x4EF6;&#x503C;&#x5F97;&#x4E00;&#x63D0;&#x7684;&#x4E8B;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A;&#x6708;<a href="https://en.wikipedia.org/wiki/ChatGPT"><strong>ChatGPT</strong></a><strong>&#x5F88;&#x706B;&#xFF01;</strong> &#x6211;&#x4E5F;&#x8BD5;&#x7528;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x786E;&#x5B9E;&#x5F88;&#x795E;&#x5947;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x6211;&#x770B;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x5173;&#x4E8E;ChatGPT&#x7684;&#x6709;&#x8DA3;&#x6216;&#x6709;&#x7528;&#x7684;&#x94FE;&#x63A5;&#x3002;  </p>
+<h3 id="ChatGPT"><a href="#ChatGPT" class="headerlink" title="ChatGPT"></a>ChatGPT</h3><blockquote>
+<p><a href="https://openai.com/blog/chatgpt/">&#x5B98;&#x65B9;&#x4ECB;&#x7ECD;</a>  </p>
+<p><a href="https://github.com/Kamigami55/awesome-chatgpt">awesome-chatgpt</a><br>There are many trending repos related to ChatGPT recently.  </p>
+<p><a href="https://chat.bygpt.com/">&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x53EF;&#x7528;&#x7684;ChatGPT</a>  </p>
+<p><a href="https://readdevdocs.com/blog/makemoney/%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%B3%A8%E5%86%8COpenAI%E8%B4%A6%E5%8F%B7%E8%AF%95%E7%94%A8ChatGPT%E6%8C%87%E5%8D%97.html#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87">&#x4E2D;&#x56FD;&#x533A;&#x6CE8;&#x518C;OpenAI&#x8D26;&#x53F7;&#x8BD5;&#x7528;ChatGPT&#x6307;&#x5357;</a>  </p>
+<p><a href="https://sms-activate.org/cn">&#x5728;&#x7EBF;&#x63A5;&#x53D7;&#x77ED;&#x4FE1;&#x7684;&#x865A;&#x62DF;&#x53F7;&#x7801;</a>  </p>
+<p><a href="https://www.douban.com/group/topic/279710957/?_i=705681524967510&amp;dt_dapp=1">ChatGPT&#x521D;&#x4F53;&#x9A8C;</a>    </p>
+<p><a href="https://mp.weixin.qq.com/s/rzCYgddvdvWwv71_M_sC-Q">ChatGPT&#x4E2D;&#x6587;&#x7248;VSCode&#x63D2;&#x4EF6;</a>  </p>
+<p><a href="https://mp.weixin.qq.com/s/5zThHhpzBmx4EUIMvMV-vQ">&#x5728;Jupyter Notebook&#x4E2D;&#x624B;&#x7ED8;&#x8349;&#x56FE;&#x5E76;&#x53D8;&#x6210;&#x4EE3;&#x7801;</a>  </p>
+</blockquote>
+<h3 id="&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;"><a href="#&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;" class="headerlink" title="&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;"></a>&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;</h3><blockquote>
+<p><a href="http://tingtalk.me/telegram/">Telegram&#x6307;&#x5357;</a></p>
+<p><a href="https://oi-wiki.org/">oi-wiki.org</a><br>&#x7F16;&#x7A0B;&#x7ADE;&#x8D5B;wiki&#x3002;  </p>
+<p><a href="https://ctf-wiki.org/">ctf-wiki.org</a><br>&#x7F51;&#x7EDC;&#x5B89;&#x5168;&#x7ADE;&#x8D5B;wiki&#x3002;  </p>
+<p><a href="https://www.summerschoolsineurope.eu/">summerschoolsineurope.eu</a><br>&#x6709;&#x5173;&#x6B27;&#x6D32;&#x6691;&#x671F;&#x5B66;&#x6821;&#x7684;&#x4FE1;&#x606F;&#x3002; </p>
+<p><a href="http://fernwanderweg.blogspot.com/">fernwanderweg.blogspot.com</a><br>&#x4ED6;&#x7528;&#x8C37;&#x6B4C;&#x535A;&#x5BA2;&#x5EFA;&#x7ACB;&#x4E86;&#x4E00;&#x4E2A;&#x535A;&#x5BA2;&#x3002;&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x9519;&#x3002;  </p>
+<p><a href="https://hdlbits.01xz.net/wiki/Main_Page">&#x6570;&#x5B57;&#x903B;&#x8F91;&#x5728;&#x7EBF;&#x5B66;&#x4E60;&#x7F51;&#x7AD9;: HDLbit</a>&#x548C; <a href="https://github.com/viduraakalanka/HDL-Bits-Solutions">&#x89E3;&#x51B3;&#x65B9;&#x6848;</a>&#xFF0C;&#x53EF;&#x4EE5;&#x5B66;&#x4E60;Verilog&#x3002;   </p>
+<p><a href="https://ossinsight.io/">OSS Insight</a><br>GitHub&#x7684;&#x5B9E;&#x65F6;&#x8D8B;&#x52BF;&#x548C;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x3002;  </p>
+<p><a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>&#x5B66;&#x5B8C;&#x540E;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x4E00;&#x4E9B;&#x8BC1;&#x4E66;&#xFF1F;&#x559C;&#x6B22;~</p>
+<p><a href="https://roadmap.sh/">Developer Roadmaps</a><br>&#x57FA;&#x4E8E;&#x89D2;&#x8272;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x6210;&#x957F;&#x6307;&#x5357;&#x3002;  </p>
+<p><a href="https://seeing-theory.brown.edu/index.html">Statistics Visualization Learning Site</a><br>&#x4EE5;&#x53EF;&#x89C6;&#x5316;&#x7684;&#x65B9;&#x5F0F;&#x5B66;&#x4E60;&#x7EDF;&#x8BA1;&#x3002;&#x975E;&#x5E38;&#x6E05;&#x6670;&#x6613;&#x61C2;!  </p>
+</blockquote>
+<p>&#x6700;&#x540E;&#x4E09;&#x4E2A;&#x662F;GitHub&#x4E0A;&#x62E5;&#x6709;&#x5927;&#x91CF;&#x661F;&#x661F;&#x7684;&#x51E0;&#x4E2A;&#x9876;&#x7EA7;&#x4ED3;&#x5E93;&#x3002;&#x6211;&#x53D1;&#x73B0;<a href="https://github.com/996icu/996.ICU">996.icu</a>&#x7ADF;&#x7136;&#x6392;&#x5728;&#x7B2C;&#x4E09; &#x1F602;</p>
+<h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x5F88;&#x9057;&#x61BE;&#xFF0C;&#x6211;&#x6CA1;&#x6709;&#x53C2;&#x52A0;&#x96C5;&#x601D;&#x8003;&#x8BD5;&#x1F61E;&#x3002;&#x8FD8;&#x6CA1;&#x51C6;&#x5907;&#x597D;&#x2026; &#x6211;&#x4F1A;&#x53BB;&#x8003;&#x7684;!<br>&#x81F3;&#x4E8E;&#x5B66;&#x4E60;&#x65E5;&#x8BED;&#xFF0C;&#x6211;&#x4E0D;&#x518D;&#x7528;&#x591A;&#x90BB;&#x56FD;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6709;&#x4E9B;&#x7B80;&#x5355;&#x3002;&#x6211;&#x627E;&#x4E86;&#x4E00;&#x4E9B;YouTube&#x89C6;&#x9891;&#x6765;&#x770B;&#xFF0C;&#x6BD4;&#x5982;<a href="https://www.youtube.com/@deguchi">&#x51FA;&#x53E3;&#x65E5;&#x8A9E;</a>&#x3002;</p>
+<h3 id="&#x535A;&#x5BA2;"><a href="#&#x535A;&#x5BA2;" class="headerlink" title="&#x535A;&#x5BA2;"></a>&#x535A;&#x5BA2;</h3><p>&#x6211;&#x628A;&#x535A;&#x5BA2;&#x4E3B;&#x9898;&#x4ECE;<a href="https://github.com/probberechts/hexo-theme-cactus"><strong>Cactus</strong></a>&#x6362;&#x5230;&#x4E86;<a href="https://github.com/cjquines/hexo-theme-ascent"><strong>Ascent</strong></a>&#x3002;Btw&#xFF0C;&#x8FD9;&#x662F;<a href="https://github.com/stars/mengisok/lists/blog-themes">&#x6211;&#x7684;&#x5173;&#x4E8E;&#x535A;&#x5BA2;&#x4E3B;&#x9898;&#x7684;&#x6536;&#x85CF;&#x5939;</a> &#x3002;<br>&#x6211;&#x8BD5;&#x56FE;&#x628A;&#x4E00;&#x4E2A;&#x4E3B;&#x9898;&#x6539;&#x6210;&#x6211;&#x60F3;&#x8981;&#x7684;&#x6837;&#x5B50;&#xFF0C;&#x4F46;&#x5931;&#x8D25;&#x4E86;&#x3002;&#x524D;&#x7AEF;&#x597D;&#x96BE;&#xFF01;  </p>
+]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+      <tags>
+        <tag>有用的链接</tag>
       </tags>
   </entry>
   <entry>
@@ -1867,6 +1939,12 @@ git push -u origin master
       <tags>
         <tag>MATLAB</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/zh-cn/Hello-World/</url>
+    <content><![CDATA[<p>&#x6211;&#x6210;&#x529F;&#x4E86;&#xFF01; :)</p>
+]]></content>
   </entry>
   <entry>
     <title>Git 学习笔记</title>
@@ -2136,57 +2214,6 @@ git push -u origin master
       <tags>
         <tag>Git</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>2022年12月</title>
-    <url>/zh-cn/Dec-2022/</url>
-    <content><![CDATA[<p>&#x8FD9;&#x4E2A;&#x6708;&#x672C;&#x6765;&#x662F;&#x8003;&#x8BD5;&#x6708;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4E3B;&#x8981;&#x82B1;&#x65F6;&#x95F4;&#x590D;&#x4E60;&#x4E86;&#x5B66;&#x6821;&#x7684;&#x4E09;&#x95E8;&#x4E3B;&#x8981;&#x8BFE;&#x7A0B;&#xFF1A;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x3001;&#x6570;&#x5B57;&#x56FE;&#x50CF;&#x5206;&#x6790;&#x548C;&#x7EC4;&#x5408;&#x6570;&#x5B66;&#x3002; <del>&#x7ED3;&#x679C;&#x8003;&#x8BD5;&#x7A81;&#x7136;&#x63A8;&#x8FDF;&#x5230;&#x4E0B;&#x5B66;&#x671F;&#x521D;&#xFF0C;&#x5BFC;&#x81F4;&#x6211;&#x6CA1;&#x590D;&#x4E60;&#x5B8C;&#x3002;</del> &#x6211;&#x505A;&#x4E86;&#x4E00;&#x4E9B;&#x7B14;&#x8BB0;&#xFF08;&#x90FD;&#x662F;&#x4E2D;&#x6587;&#xFF09;&#xFF0C;&#x8FD8;&#x6536;&#x85CF;&#x4E86;&#x4E00;&#x4E9B;&#x6709;&#x610F;&#x601D;&#x7684;&#x94FE;&#x63A5;&#x3002; </p>
-<span id="more"></span>
-
-<h3 id="&#x590D;&#x4E60;&#x7B14;&#x8BB0;"><a href="#&#x590D;&#x4E60;&#x7B14;&#x8BB0;" class="headerlink" title="&#x590D;&#x4E60;&#x7B14;&#x8BB0;"></a>&#x590D;&#x4E60;&#x7B14;&#x8BB0;</h3><blockquote>
-<p><a href="https://mengisok.notion.site/eb6f54749fb7464f8809ed94ec4c821b">Notion</a>&#x6216;<a href="https://github.com/mengisok/DSP-review">GitHub&#x4E0A;&#x7684;DSP&#x7B14;&#x8BB0;</a> (&#x6709;&#x4E00;&#x4E9B;MATLAB&#x4EE3;&#x7801;)  </p>
-<p><a href="https://drive.google.com/drive/folders/1KqNqF0UKM6n2ePmovORoTPofqJL-QBt6?usp=sharing">Google Drive&#x4E0A;&#x7684;DIA&#x7B14;&#x8BB0;</a> (&#x66F4;&#x65B0;&#x4E2D;&#x2026;)  </p>
-<p><a href="https://drive.google.com/drive/folders/1-0-R1W7jvLb9YrgUj_J1PrmkrNPaY_OM?usp=sharing">Google Drive&#x4E0A;&#x7684;&#x7EC4;&#x5408;&#x6570;&#x5B66;&#x7B14;&#x8BB0;</a> (&#x66F4;&#x65B0;&#x4E2D;&#x2026;)  </p>
-</blockquote>
-<p>&#x53E6;&#x4E00;&#x4EF6;&#x503C;&#x5F97;&#x4E00;&#x63D0;&#x7684;&#x4E8B;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A;&#x6708;<a href="https://en.wikipedia.org/wiki/ChatGPT"><strong>ChatGPT</strong></a><strong>&#x5F88;&#x706B;&#xFF01;</strong> &#x6211;&#x4E5F;&#x8BD5;&#x7528;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x786E;&#x5B9E;&#x5F88;&#x795E;&#x5947;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x6211;&#x770B;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x5173;&#x4E8E;ChatGPT&#x7684;&#x6709;&#x8DA3;&#x6216;&#x6709;&#x7528;&#x7684;&#x94FE;&#x63A5;&#x3002;  </p>
-<h3 id="ChatGPT"><a href="#ChatGPT" class="headerlink" title="ChatGPT"></a>ChatGPT</h3><blockquote>
-<p><a href="https://openai.com/blog/chatgpt/">&#x5B98;&#x65B9;&#x4ECB;&#x7ECD;</a>  </p>
-<p><a href="https://github.com/Kamigami55/awesome-chatgpt">awesome-chatgpt</a><br>There are many trending repos related to ChatGPT recently.  </p>
-<p><a href="https://chat.bygpt.com/">&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x53EF;&#x7528;&#x7684;ChatGPT</a>  </p>
-<p><a href="https://readdevdocs.com/blog/makemoney/%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%B3%A8%E5%86%8COpenAI%E8%B4%A6%E5%8F%B7%E8%AF%95%E7%94%A8ChatGPT%E6%8C%87%E5%8D%97.html#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87">&#x4E2D;&#x56FD;&#x533A;&#x6CE8;&#x518C;OpenAI&#x8D26;&#x53F7;&#x8BD5;&#x7528;ChatGPT&#x6307;&#x5357;</a>  </p>
-<p><a href="https://sms-activate.org/cn">&#x5728;&#x7EBF;&#x63A5;&#x53D7;&#x77ED;&#x4FE1;&#x7684;&#x865A;&#x62DF;&#x53F7;&#x7801;</a>  </p>
-<p><a href="https://www.douban.com/group/topic/279710957/?_i=705681524967510&amp;dt_dapp=1">ChatGPT&#x521D;&#x4F53;&#x9A8C;</a>    </p>
-<p><a href="https://mp.weixin.qq.com/s/rzCYgddvdvWwv71_M_sC-Q">ChatGPT&#x4E2D;&#x6587;&#x7248;VSCode&#x63D2;&#x4EF6;</a>  </p>
-<p><a href="https://mp.weixin.qq.com/s/5zThHhpzBmx4EUIMvMV-vQ">&#x5728;Jupyter Notebook&#x4E2D;&#x624B;&#x7ED8;&#x8349;&#x56FE;&#x5E76;&#x53D8;&#x6210;&#x4EE3;&#x7801;</a>  </p>
-</blockquote>
-<h3 id="&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;"><a href="#&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;" class="headerlink" title="&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;"></a>&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;</h3><blockquote>
-<p><a href="http://tingtalk.me/telegram/">Telegram&#x6307;&#x5357;</a></p>
-<p><a href="https://oi-wiki.org/">oi-wiki.org</a><br>&#x7F16;&#x7A0B;&#x7ADE;&#x8D5B;wiki&#x3002;  </p>
-<p><a href="https://ctf-wiki.org/">ctf-wiki.org</a><br>&#x7F51;&#x7EDC;&#x5B89;&#x5168;&#x7ADE;&#x8D5B;wiki&#x3002;  </p>
-<p><a href="https://www.summerschoolsineurope.eu/">summerschoolsineurope.eu</a><br>&#x6709;&#x5173;&#x6B27;&#x6D32;&#x6691;&#x671F;&#x5B66;&#x6821;&#x7684;&#x4FE1;&#x606F;&#x3002; </p>
-<p><a href="http://fernwanderweg.blogspot.com/">fernwanderweg.blogspot.com</a><br>&#x4ED6;&#x7528;&#x8C37;&#x6B4C;&#x535A;&#x5BA2;&#x5EFA;&#x7ACB;&#x4E86;&#x4E00;&#x4E2A;&#x535A;&#x5BA2;&#x3002;&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x9519;&#x3002;  </p>
-<p><a href="https://hdlbits.01xz.net/wiki/Main_Page">&#x6570;&#x5B57;&#x903B;&#x8F91;&#x5728;&#x7EBF;&#x5B66;&#x4E60;&#x7F51;&#x7AD9;: HDLbit</a>&#x548C; <a href="https://github.com/viduraakalanka/HDL-Bits-Solutions">&#x89E3;&#x51B3;&#x65B9;&#x6848;</a>&#xFF0C;&#x53EF;&#x4EE5;&#x5B66;&#x4E60;Verilog&#x3002;   </p>
-<p><a href="https://ossinsight.io/">OSS Insight</a><br>GitHub&#x7684;&#x5B9E;&#x65F6;&#x8D8B;&#x52BF;&#x548C;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x3002;  </p>
-<p><a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>&#x5B66;&#x5B8C;&#x540E;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x4E00;&#x4E9B;&#x8BC1;&#x4E66;&#xFF1F;&#x559C;&#x6B22;~</p>
-<p><a href="https://roadmap.sh/">Developer Roadmaps</a><br>&#x57FA;&#x4E8E;&#x89D2;&#x8272;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x6210;&#x957F;&#x6307;&#x5357;&#x3002;  </p>
-<p><a href="https://seeing-theory.brown.edu/index.html">Statistics Visualization Learning Site</a><br>&#x4EE5;&#x53EF;&#x89C6;&#x5316;&#x7684;&#x65B9;&#x5F0F;&#x5B66;&#x4E60;&#x7EDF;&#x8BA1;&#x3002;&#x975E;&#x5E38;&#x6E05;&#x6670;&#x6613;&#x61C2;!  </p>
-</blockquote>
-<p>&#x6700;&#x540E;&#x4E09;&#x4E2A;&#x662F;GitHub&#x4E0A;&#x62E5;&#x6709;&#x5927;&#x91CF;&#x661F;&#x661F;&#x7684;&#x51E0;&#x4E2A;&#x9876;&#x7EA7;&#x4ED3;&#x5E93;&#x3002;&#x6211;&#x53D1;&#x73B0;<a href="https://github.com/996icu/996.ICU">996.icu</a>&#x7ADF;&#x7136;&#x6392;&#x5728;&#x7B2C;&#x4E09; &#x1F602;</p>
-<h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x5F88;&#x9057;&#x61BE;&#xFF0C;&#x6211;&#x6CA1;&#x6709;&#x53C2;&#x52A0;&#x96C5;&#x601D;&#x8003;&#x8BD5;&#x1F61E;&#x3002;&#x8FD8;&#x6CA1;&#x51C6;&#x5907;&#x597D;&#x2026; &#x6211;&#x4F1A;&#x53BB;&#x8003;&#x7684;!<br>&#x81F3;&#x4E8E;&#x5B66;&#x4E60;&#x65E5;&#x8BED;&#xFF0C;&#x6211;&#x4E0D;&#x518D;&#x7528;&#x591A;&#x90BB;&#x56FD;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6709;&#x4E9B;&#x7B80;&#x5355;&#x3002;&#x6211;&#x627E;&#x4E86;&#x4E00;&#x4E9B;YouTube&#x89C6;&#x9891;&#x6765;&#x770B;&#xFF0C;&#x6BD4;&#x5982;<a href="https://www.youtube.com/@deguchi">&#x51FA;&#x53E3;&#x65E5;&#x8A9E;</a>&#x3002;</p>
-<h3 id="&#x535A;&#x5BA2;"><a href="#&#x535A;&#x5BA2;" class="headerlink" title="&#x535A;&#x5BA2;"></a>&#x535A;&#x5BA2;</h3><p>&#x6211;&#x628A;&#x535A;&#x5BA2;&#x4E3B;&#x9898;&#x4ECE;<a href="https://github.com/probberechts/hexo-theme-cactus"><strong>Cactus</strong></a>&#x6362;&#x5230;&#x4E86;<a href="https://github.com/cjquines/hexo-theme-ascent"><strong>Ascent</strong></a>&#x3002;Btw&#xFF0C;&#x8FD9;&#x662F;<a href="https://github.com/stars/mengisok/lists/blog-themes">&#x6211;&#x7684;&#x5173;&#x4E8E;&#x535A;&#x5BA2;&#x4E3B;&#x9898;&#x7684;&#x6536;&#x85CF;&#x5939;</a> &#x3002;<br>&#x6211;&#x8BD5;&#x56FE;&#x628A;&#x4E00;&#x4E2A;&#x4E3B;&#x9898;&#x6539;&#x6210;&#x6211;&#x60F3;&#x8981;&#x7684;&#x6837;&#x5B50;&#xFF0C;&#x4F46;&#x5931;&#x8D25;&#x4E86;&#x3002;&#x524D;&#x7AEF;&#x597D;&#x96BE;&#xFF01;  </p>
-]]></content>
-      <categories>
-        <category>总结</category>
-      </categories>
-      <tags>
-        <tag>有用的链接</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/zh-cn/Hello-World/</url>
-    <content><![CDATA[<p>&#x6211;&#x6210;&#x529F;&#x4E86;&#xFF01; :)</p>
-]]></content>
   </entry>
   <entry>
     <title>Linux 中的软件安装</title>
@@ -2611,6 +2638,33 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>2023年1月</title>
+    <url>/zh-cn/Jan-2023/</url>
+    <content><![CDATA[<p>&#x65B0;&#x5E74;&#x7B2C;&#x4E00;&#x4E2A;&#x6708;&#xFF0C;&#x4ECD;&#x5728;&#x9F9F;&#x901F;&#x6574;&#x7406;&#x590D;&#x4E60;&#x7B14;&#x8BB0;&#xFF0C;&#x6478;&#x9C7C;&#x6020;&#x60F0;&#x3002;&#x4E0D;&#x8FC7;&#x4E5F;&#x5B66;&#x5230;&#x4E86;&#x4E00;&#x4E9B;&#x65B0;&#x4E1C;&#x897F;&#x3002;  </p>
+<span id="more"></span>
+
+<h3 id="&#x53C8;&#x6362;&#x4E86;blog&#x4E3B;&#x9898;"><a href="#&#x53C8;&#x6362;&#x4E86;blog&#x4E3B;&#x9898;" class="headerlink" title="&#x53C8;&#x6362;&#x4E86;blog&#x4E3B;&#x9898;"></a>&#x53C8;&#x6362;&#x4E86;blog&#x4E3B;&#x9898;</h3><p>&#x4E3A;&#x4E86;&#x589E;&#x52A0;&#x4E2D;&#x82F1;&#x6587;&#x8BED;&#x8A00;&#x9009;&#x9879;&#x800C;&#x6362;&#x4E86;<a href="https://github.com/ppoffice/hexo-theme-minos">Minos</a>&#x4E3B;&#x9898;&#xFF0C;&#x4E00;&#x756A;&#x6363;&#x9F13;&#x540E;&#x7EC8;&#x4E8E;&#x6210;&#x529F;&#x4E86;&#xFF01;&#x5E76;&#x4E14;&#x51FA;&#x4E8E;&#x81EA;&#x5DF1;&#x7684;&#x5BA1;&#x7F8E;&#x800C;&#x7A0D;&#x505A;&#x4E86;&#x5916;&#x89C2;&#x4FEE;&#x6539;&#x3002;&#x7136;&#x540E;&#x53D1;&#x73B0;&#x5728;&#x624B;&#x673A;&#x7AEF;&#x70B9;&#x51FB;&#x66F4;&#x6362;&#x8BED;&#x8A00;&#x65F6;&#x4E0B;&#x62C9;&#x83DC;&#x5355;&#x88AB;&#x5BFC;&#x822A;&#x680F;&#x906E;&#x6321;&#xFF0C;&#x60F3;&#x4E86;&#x5404;&#x79CD;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#xFF0C;&#x6700;&#x540E;&#x901A;&#x8FC7;&#x66F4;&#x6539;&#x6392;&#x7248;&#x5B9E;&#x73B0;&#x4E86;&#x5B8C;&#x6574;&#x663E;&#x793A;&#xFF0C;&#x4E8E;&#x662F;&#x6574;&#x7406;&#x6210;&#x4E86;&#x4E00;&#x4E2A;<a href="https://github.com/mengisok/hexo-theme-minos-bilingual">&#x4ED3;&#x5E93;</a>&#xFF0C;&#x65B9;&#x4FBF;&#x4E2D;&#x56FD;&#x7528;&#x6237;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x3002;  </p>
+<p>&#x540E;&#x6765;&#x53C8;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x5728;config&#x4E2D;&#x5F00;&#x542F;&#x9605;&#x8BFB;&#x6587;&#x7AE0;&#x65F6;&#x7684;&#x5BFC;&#x822A;&#x680F;&#x540E;&#xFF0C;&#x82F1;&#x6587;&#x7248;&#x6B63;&#x5E38;&#x663E;&#x793A;&#x5C0F;&#x6807;&#x9898;&#xFF0C;&#x4E2D;&#x6587;&#x5374;&#x4E71;&#x7801;&#x4E86;&#x3002;&#x8FD9;&#x4E2A;&#x9057;&#x7559;&#x95EE;&#x9898;&#x5C1A;&#x672A;&#x89E3;&#x51B3;&#x6240;&#x4EE5;&#x6682;&#x4E14;&#x6539;&#x6210;&#xFF1A;&#x82F1;&#x6587;&#x7248;&#x5F00;&#x542F;&#x5BFC;&#x822A;&#x680F;&#xFF0C;&#x4E2D;&#x6587;&#x7248;&#x5173;&#x95ED;&#x1F62C;&#x3002; </p>
+<h3 id="&#x7528;&#x4E0A;&#x4E86;Linux"><a href="#&#x7528;&#x4E0A;&#x4E86;Linux" class="headerlink" title="&#x7528;&#x4E0A;&#x4E86;Linux"></a>&#x7528;&#x4E0A;&#x4E86;Linux</h3><p>&#x53D1;&#x73B0;&#x4E86;&#x4E00;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x6559;&#x7A0B;&#xFF1A;<a href="https://101.lug.ustc.edu.cn/">Linux 101</a>&#xFF0C;&#x662F;&#x4E2D;&#x79D1;&#x5927;Linux&#x793E;&#x56E2;&#x5199;&#x7684;&#x3002;&#x6210;&#x529F;&#x7528;&#x4E0A;Linux<del>&#x5E76;&#x6FC0;&#x60C5;&#x53D1;&#x90AE;&#x4EF6;&#x5165;&#x793E;&#x56F4;&#x89C2;&#x7FA4;&#x5185;&#x5927;&#x4F6C;</del>&#xFF01;&#x76EE;&#x524D;&#x5B66;&#x5B8C;&#x4E86;&#x524D;&#x4E09;&#x7AE0;&#x3002;  </p>
+<h3 id="&#x5173;&#x4E8E;&#x673A;&#x5668;&#x5B66;&#x4E60;"><a href="#&#x5173;&#x4E8E;&#x673A;&#x5668;&#x5B66;&#x4E60;" class="headerlink" title="&#x5173;&#x4E8E;&#x673A;&#x5668;&#x5B66;&#x4E60;"></a>&#x5173;&#x4E8E;&#x673A;&#x5668;&#x5B66;&#x4E60;</h3><p>&#x91CD;&#x62FE;&#x5434;&#x6069;&#x8FBE;&#xFF0C;&#x4E22;&#x4E0B;freecodecamp&#x1F923;&#x3002;freecodecamp&#x8BB2;&#x7684;&#x5F88;&#x5B9E;&#x7528;&#xFF0C;&#x76F4;&#x63A5;&#x6572;&#x4EE3;&#x7801;&#x6F14;&#x793A;&#xFF0C;&#x4F46;&#x8BED;&#x901F;&#x592A;&#x5FEB;&#x4E86;&#xFF0C;&#x5434;&#x6069;&#x8FBE;&#x5219;&#x53CD;&#x8FC7;&#x6765;&#x3002;&#x4E0D;&#x7740;&#x6025;&#x7684;&#x8BDD;&#x8FD8;&#x662F;&#x5148;&#x770B;&#x5434;&#x6069;&#x8FBE;&#x4E86;&#x89E3;&#x539F;&#x7406;&#x5427;&#x3002;&#x76EE;&#x524D;&#x770B;&#x5230;&#x201C;P92 16.3 &#x6574;&#x5408;&#x201D;&#x3002;  </p>
+<p>&#x590D;&#x4E60;DIA&#x65F6;&#x641C;&#x5230;&#x4E86;<a href="https://www.jiqizhixin.com/graph/technologies/7332347c-8073-4783-bfc1-1698a6257db3">&#x4E00;&#x7BC7;&#x5F88;&#x6E05;&#x6670;&#x5730;&#x8BB2;&#x89E3;&#x4E86;BP&#x7B97;&#x6CD5;&#x7684;&#x6587;&#x7AE0;</a>&#x3002;<a href="https://wiki.eecs.yorku.ca/course_archive/2011-12/F/4403/_media/backpropagation.pdf">&#x539F;&#x6587;</a>&#x5728;&#x8FD9;&#x91CC;&#x3002;  </p>
+<p>&#x5728;&#x4E00;&#x4EA9;&#x4E09;&#x5206;&#x5730;&#x770B;&#x5230;<a href="https://www.1point3acres.com/bbs/thread-713903-1-1.html?mobile=2">&#x4E00;&#x4E2A;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x516B;&#x80A1;&#x6587;&#x7684;&#x5E16;&#x5B50;</a>&#x3002;  </p>
+<h3 id="&#x5F00;&#x59CB;&#x753B;PCB&#x4E86;"><a href="#&#x5F00;&#x59CB;&#x753B;PCB&#x4E86;" class="headerlink" title="&#x5F00;&#x59CB;&#x753B;PCB&#x4E86;"></a>&#x5F00;&#x59CB;&#x753B;PCB&#x4E86;</h3><p>&#x51C6;&#x786E;&#x8BF4;&#x53EA;&#x662F;&#x521A;&#x5F00;&#x59CB;&#x753B;&#x539F;&#x7406;&#x56FE;&#xFF0C;&#x78E8;&#x53FD;&#x5230;&#x73B0;&#x5728;&#x8FD8;&#x6CA1;&#x6709;&#x753B;&#x5B8C;&#x3002;&#x4EE5;&#x524D;&#x53EA;&#x7528;&#x8FC7;Altium Designer&#xFF0C;&#x73B0;&#x5728;&#x9700;&#x8981;&#x7528;Cadence&#x3002;&#x9976;&#x6709;&#x5174;&#x8DA3;&#x5730;&#x67E5;&#x4E86;&#x4E00;&#x756A;&#x4E8C;&#x8005;&#x7684;&#x533A;&#x522B;&#xFF0C;&#x770B;&#x6765;Altium Designer&#x6613;&#x4E8E;&#x4E0A;&#x624B;&#x3001;&#x6027;&#x80FD;&#x6709;&#x9650;&#xFF0C;Cadence&#x66F4;&#x96BE;&#x4E5F;&#x66F4;&#x5F3A;&#x5927;&#x3002;  </p>
+<p>&#x770B;&#x5230;&#x4E00;&#x7BC7;&#x4E0D;&#x9519;&#x7684;blog&#xFF1A;<a href="https://bonewp.github.io/2017/03/02/Cadence%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%94%BB%E6%9D%BF%E6%8A%80%E5%B7%A7%E7%9B%B8%E5%85%B3/">Cadence&#x4F7F;&#x7528;&#x53CA;&#x753B;&#x677F;&#x6280;&#x5DE7;&#x76F8;&#x5173;</a>&#x3002;</p>
+<h3 id="&#x4E00;&#x4E9B;&#x7535;&#x5B50;&#x4E66;&#x7F51;&#x7AD9;"><a href="#&#x4E00;&#x4E9B;&#x7535;&#x5B50;&#x4E66;&#x7F51;&#x7AD9;" class="headerlink" title="&#x4E00;&#x4E9B;&#x7535;&#x5B50;&#x4E66;&#x7F51;&#x7AD9;"></a>&#x4E00;&#x4E9B;&#x7535;&#x5B50;&#x4E66;&#x7F51;&#x7AD9;</h3><p><a href="https://annas-archive.org/">Anna&#x2019;s Archive</a>  </p>
+<p><a href="http://libgen.is/">libgen</a></p>
+<p><a href="http://z-lib.to/?dt_dapp=1">zlibrary</a></p>
+<p><a href="https://search.zhelper.net/?%5B%7B%22name%22:%22zhelperV5%22,%22url%22:%22https://api.v5.zhelper.net%22,%22type%22:%22full%22,%22sensitive%22:false,%22detail%22:true%7D%5D&amp;dt_dapp=1">zhelper search</a></p>
+<h3 id="&#x6CA1;&#x6709;&#x5B66;&#x8BED;&#x8A00;"><a href="#&#x6CA1;&#x6709;&#x5B66;&#x8BED;&#x8A00;" class="headerlink" title="&#x6CA1;&#x6709;&#x5B66;&#x8BED;&#x8A00;"></a>&#x6CA1;&#x6709;&#x5B66;&#x8BED;&#x8A00;</h3><p>&#x4F46;&#x662F;&#x7ED9;&#x4E0B;&#x5B66;&#x671F;&#x9009;&#x4E86;&#x65E5;&#x8BED;&#x8BFE;&#xFF01;&#x597D;&#x8036;&#xFF0C;&#x9009;&#x5230;&#x5C31;&#x662F;&#x5B66;&#x5230;&#x30FD;(&#x273F;&#xFF9F;&#x25BD;&#xFF9F;)&#x30CE;</p>
+]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+      <tags>
+        <tag>有用的链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LaTeX 简历</title>
     <url>/zh-cn/Latex-CV/</url>
     <content><![CDATA[<p>&#x4ECE;&#x6628;&#x5929;&#x4E2D;&#x5348;&#x5230;&#x4ECA;&#x5929;&#x4E2D;&#x5348;&#xFF0C;&#x6211;&#x4E00;&#x76F4;&#x5728;&#x7528;latex&#x505A;&#x7B80;&#x5386;&#x3002;&#x8FD9;&#x5BF9;&#x521D;&#x5B66;&#x8005;&#x6765;&#x8BF4;&#x975E;&#x5E38;&#x4E0D;&#x53CB;&#x597D;&#x1F622;&#x3002;&#x5E78;&#x8FD0;&#x7684;&#x662F;&#xFF0C;&#x6211;&#x73B0;&#x5728;&#x505A;&#x5B8C;&#x4E86;&#xFF0C;&#x770B;&#x770B;<a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">&#x6211;&#x7684;&#x7B80;&#x5386;</a>.  </p>
@@ -2727,49 +2781,6 @@ git push -u origin master
       <tags>
         <tag>前端</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>2022年11月</title>
-    <url>/zh-cn/Nov-2022/</url>
-    <content><![CDATA[<h3 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h3><p>&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x5728;Leetcode&#x4E0A;&#x505A;&#x4E86;<strong>64&#x9053;&#x9898;</strong>&#x3002; </p>
-<span id="more"></span>
-<p>&#x5B8C;&#x6210;&#x4E86;<strong>Arrays 101</strong>&#xFF08;&#x5269;&#x4E0B;&#x4E00;&#x9898;&#x53EA;&#x6709;&#x4F1A;&#x5458;&#x624D;&#x80FD;&#x505A;&#xFF09;&#x3002;&#x662F;&#x5BF9;&#x50CF;&#x6211;&#x8FD9;&#x6837;&#x7684;&#x521D;&#x5B66;&#x8005;&#x6765;&#x8BF4;&#x4E5F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x4E00;&#x7AE0;&#xFF01; </p>
-<img src="/images/arrays101.png" alt="arrays101" title="arrays101" width="250">
-
-<p>&#x5F97;&#x5230;&#x4E00;&#x4E2A;<strong>&#x5FBD;&#x7AE0;</strong>!  </p>
-<img src="/images/data_structure_badge.png" alt="data_structure_badge" title="data_structure_badge" width="500">  
-
-<p>&#x8BF4;&#x5B9E;&#x8BDD;&#xFF0C;&#x6211;&#x4E0D;&#x592A;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x5FBD;&#x7AE0;&#x91CC;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x9898;&#x1F915;&#x3002;&#x6211;&#x53EA;&#x719F;&#x6089;&#x6570;&#x7EC4;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x2026;&#x2026; &#x6253;&#x7B97;&#x627E;&#x65F6;&#x95F4;&#x6D88;&#x5316;&#x4E00;&#x4E0B;&#x3002;  </p>
-<h3 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h3><p>&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E0B;&#x3002;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;Logistic Regression&#x6A21;&#x578B;&#x5BF9;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x7684;&#x7B14;&#x8BB0;&#x672C;&#x3002;  </p>
-<h3 id="Github-Workflow"><a href="#Github-Workflow" class="headerlink" title="Github Workflow"></a>Github Workflow</h3><p>&#x5728;&#x6211;&#x7684;GitHub&#x8D26;&#x6237;&#x4E3B;&#x9875;&#x4E0A;&#x4F7F;&#x7528;&#x4E86;<a href="https://github.com/lowlighter/metrics">Metrics</a>&#x3002;&#x5B83;&#x7684;&#x795E;&#x5947;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x66F4;&#x65B0;!  </p>
-<h3 id="&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;"><a href="#&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;" class="headerlink" title="&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;"></a>&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;</h3><p>&#x6BCF;&#x4E2A;&#x8BC1;&#x4E66;&#x4E0B;&#x662F;&#x6211;&#x5BF9;&#x8BE5;&#x8BFE;&#x7A0B;&#x7684;&#x8BC4;&#x5206;&#x3002;  </p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="500">  
-
-<center>&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</center>  
-
-<img src="/images/certificate_20221112.png" alt="certificate_20221112" title="certificate_20221112" width="500">  
-
-<center>&#x2B50;&#x2B50;</center>
-
-<img src="/images/certificate_20221113.png" alt="certificate_20221113" title="certificate_20221113" width="500">  
-
-<center>&#x2B50;&#x2B50;</center>
-
-<img src="/images/certificate_20221115.png" alt="certificate_20221115" title="certificate_20221115" width="500">  
-
-<center>&#x2B50;&#x2B50;&#x2B50;&#x2B50;</center>
-
-<img src="/images/certificate_20221120.png" alt="certificate_20221120" title="certificate_20221110" width="500">  
-
-<center>&#x2B50;&#x2B50;&#x2B50;</center>
-
-<h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x51C6;&#x5907;<strong>IELTS indicator &#x8003;&#x8BD5;</strong>&#x3002;  </p>
-<p>&#x575A;&#x6301;&#x5B66;&#x4E60;&#x4E86;<strong>42 days</strong>&#x7684;&#x591A;&#x90BB;&#x56FD;&#x65E5;&#x8BED;&#x3002;  </p>
-<p>&#x6211;&#x53D1;&#x73B0;&#xFF0C;&#x5728;&#x4E2D;&#x56FD;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x65E5;&#x8BED;&#x8003;&#x8BD5;&#xFF0C;&#x5373;JLPT&#x548C;JTEST&#x3002;JLPT&#x6BCF;&#x5E74;&#x53EA;&#x4E3E;&#x884C;&#x4E24;&#x6B21;&#xFF0C;&#x800C;&#x4E14;&#x7ECF;&#x5E38;&#x88AB;&#x53D6;&#x6D88;&#x3002;JTEST&#x7684;&#x4E3E;&#x529E;&#x9891;&#x7387;&#x66F4;&#x9AD8;&#xFF0C;&#x4F46;&#x5B83;&#x4E0D;&#x50CF;JLPT&#x90A3;&#x6837;&#x88AB;&#x9AD8;&#x5EA6;&#x8BA4;&#x53EF;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5F88;&#x7EA0;&#x7ED3;&#x3002;  </p>
-]]></content>
-      <categories>
-        <category>总结</category>
-      </categories>
   </entry>
   <entry>
     <title>面向对象</title>
@@ -3090,6 +3101,49 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>2022年11月</title>
+    <url>/zh-cn/Nov-2022/</url>
+    <content><![CDATA[<h3 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h3><p>&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x5728;Leetcode&#x4E0A;&#x505A;&#x4E86;<strong>64&#x9053;&#x9898;</strong>&#x3002; </p>
+<span id="more"></span>
+<p>&#x5B8C;&#x6210;&#x4E86;<strong>Arrays 101</strong>&#xFF08;&#x5269;&#x4E0B;&#x4E00;&#x9898;&#x53EA;&#x6709;&#x4F1A;&#x5458;&#x624D;&#x80FD;&#x505A;&#xFF09;&#x3002;&#x662F;&#x5BF9;&#x50CF;&#x6211;&#x8FD9;&#x6837;&#x7684;&#x521D;&#x5B66;&#x8005;&#x6765;&#x8BF4;&#x4E5F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x4E00;&#x7AE0;&#xFF01; </p>
+<img src="/images/arrays101.png" alt="arrays101" title="arrays101" width="250">
+
+<p>&#x5F97;&#x5230;&#x4E00;&#x4E2A;<strong>&#x5FBD;&#x7AE0;</strong>!  </p>
+<img src="/images/data_structure_badge.png" alt="data_structure_badge" title="data_structure_badge" width="500">  
+
+<p>&#x8BF4;&#x5B9E;&#x8BDD;&#xFF0C;&#x6211;&#x4E0D;&#x592A;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x5FBD;&#x7AE0;&#x91CC;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x9898;&#x1F915;&#x3002;&#x6211;&#x53EA;&#x719F;&#x6089;&#x6570;&#x7EC4;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x2026;&#x2026; &#x6253;&#x7B97;&#x627E;&#x65F6;&#x95F4;&#x6D88;&#x5316;&#x4E00;&#x4E0B;&#x3002;  </p>
+<h3 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h3><p>&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E0B;&#x3002;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;Logistic Regression&#x6A21;&#x578B;&#x5BF9;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x7684;&#x7B14;&#x8BB0;&#x672C;&#x3002;  </p>
+<h3 id="Github-Workflow"><a href="#Github-Workflow" class="headerlink" title="Github Workflow"></a>Github Workflow</h3><p>&#x5728;&#x6211;&#x7684;GitHub&#x8D26;&#x6237;&#x4E3B;&#x9875;&#x4E0A;&#x4F7F;&#x7528;&#x4E86;<a href="https://github.com/lowlighter/metrics">Metrics</a>&#x3002;&#x5B83;&#x7684;&#x795E;&#x5947;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x66F4;&#x65B0;!  </p>
+<h3 id="&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;"><a href="#&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;" class="headerlink" title="&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;"></a>&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;</h3><p>&#x6BCF;&#x4E2A;&#x8BC1;&#x4E66;&#x4E0B;&#x662F;&#x6211;&#x5BF9;&#x8BE5;&#x8BFE;&#x7A0B;&#x7684;&#x8BC4;&#x5206;&#x3002;  </p>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="500">  
+
+<center>&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</center>  
+
+<img src="/images/certificate_20221112.png" alt="certificate_20221112" title="certificate_20221112" width="500">  
+
+<center>&#x2B50;&#x2B50;</center>
+
+<img src="/images/certificate_20221113.png" alt="certificate_20221113" title="certificate_20221113" width="500">  
+
+<center>&#x2B50;&#x2B50;</center>
+
+<img src="/images/certificate_20221115.png" alt="certificate_20221115" title="certificate_20221115" width="500">  
+
+<center>&#x2B50;&#x2B50;&#x2B50;&#x2B50;</center>
+
+<img src="/images/certificate_20221120.png" alt="certificate_20221120" title="certificate_20221110" width="500">  
+
+<center>&#x2B50;&#x2B50;&#x2B50;</center>
+
+<h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x51C6;&#x5907;<strong>IELTS indicator &#x8003;&#x8BD5;</strong>&#x3002;  </p>
+<p>&#x575A;&#x6301;&#x5B66;&#x4E60;&#x4E86;<strong>42 days</strong>&#x7684;&#x591A;&#x90BB;&#x56FD;&#x65E5;&#x8BED;&#x3002;  </p>
+<p>&#x6211;&#x53D1;&#x73B0;&#xFF0C;&#x5728;&#x4E2D;&#x56FD;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x65E5;&#x8BED;&#x8003;&#x8BD5;&#xFF0C;&#x5373;JLPT&#x548C;JTEST&#x3002;JLPT&#x6BCF;&#x5E74;&#x53EA;&#x4E3E;&#x884C;&#x4E24;&#x6B21;&#xFF0C;&#x800C;&#x4E14;&#x7ECF;&#x5E38;&#x88AB;&#x53D6;&#x6D88;&#x3002;JTEST&#x7684;&#x4E3E;&#x529E;&#x9891;&#x7387;&#x66F4;&#x9AD8;&#xFF0C;&#x4F46;&#x5B83;&#x4E0D;&#x50CF;JLPT&#x90A3;&#x6837;&#x88AB;&#x9AD8;&#x5EA6;&#x8BA4;&#x53EF;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5F88;&#x7EA0;&#x7ED3;&#x3002;  </p>
+]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+  </entry>
+  <entry>
     <title>2022年10月</title>
     <url>/zh-cn/Oct-2022/</url>
     <content><![CDATA[<h3 id="&#x7F16;&#x7A0B;"><a href="#&#x7F16;&#x7A0B;" class="headerlink" title="&#x7F16;&#x7A0B;"></a>&#x7F16;&#x7A0B;</h3><p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x5B8C;&#x6210;&#x4E86;Leetcode&#x4E0A;&#x7684;27&#x9053;&#x9898;&#xFF0C;&#x90FD;&#x662F;&#x7528;Java&#x3002;&#x4E0A;&#x4E00;&#x7AE0;&#x7684;&#x63A2;&#x7D22;<em>Array and String</em>&#x6709;&#x70B9;&#x96BE;&#xFF0C;&#x4F46;&#x73B0;&#x5728;&#x7684;<em>Arrays 101</em>&#x5C31;&#x5BB9;&#x6613;&#x591A;&#x4E86;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x8FD8;&#x5728;&#x505A;&#x6570;&#x7EC4;&#xFF1F;&#x6211;&#x7B49;&#x4E0D;&#x53CA;&#x5B66;&#x65B0;&#x7684;&#x4E1C;&#x897F;&#x4E86;&#x3002;  </p>
@@ -3305,11 +3359,6 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>About</title>
     <url>/about/index.html</url>
     <content><![CDATA[<img src="/images/bin_cat.png" alt="bin_cat" title="bin_cat" width="350">  
@@ -3322,13 +3371,23 @@ git push -u origin master
 ]]></content>
   </entry>
   <entry>
+    <title>Links</title>
+    <url>/links/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Tags</title>
     <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>Links</title>
-    <url>/links/index.html</url>
+    <title>分类</title>
+    <url>/zh-cn/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -3342,11 +3401,6 @@ git push -u origin master
 <p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5E7F;&#x9614;&#x800C;&#x4E0D;&#x53EF;&#x9884;&#x77E5;&#x7684;&#x4E16;&#x754C;&#xFF0C;&#x5F88;&#x591A;&#x4E8B;&#x60C5;&#x90FD;&#x4EE4;&#x6211;&#x60CA;&#x5947;&#x2026;&#x2026; &#x65E0;&#x8BBA;&#x5982;&#x4F55;&#xFF0C;&#x6211;&#x4F1A;&#x6BEB;&#x4E0D;&#x72B9;&#x8C6B;&#x5730;&#x8BF4;&#xFF0C;<strong>&#x6211;&#x662F;&#x4E00;&#x4E2A;&#x5973;&#x6743;&#x4E3B;&#x4E49;&#x8005;&#xFF0C;&#x4E00;&#x4E2A;&#x6000;&#x7591;&#x8BBA;&#x8005;&#xFF0C;&#x4E00;&#x4E2A;&#x81EA;&#x7531;&#x4E3B;&#x4E49;&#x8005;&#xFF0C;&#x5E76;&#x4E14;&#x6B22;&#x8FCE;&#x6240;&#x6709;&#x7684;&#x5F02;&#x89C1;</strong>&#x3002;</p>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;<a href="https://github.com/mengisok">GitHub</a>, <a href="https://www.linkedin.com/in/mengisok/">&#x9886;&#x82F1;</a>&#x4E0A;&#x627E;&#x5230;&#x6211;&#xFF0C;&#x6216;&#x8005;<a href="mailto:hanmengisok@gmail.com">&#x7ED9;&#x6211;&#x53D1;&#x90AE;&#x4EF6;</a>&#x3002;</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/zh-cn/categories/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>链接</title>
