@@ -1,6 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Adaptive Filters</title>
+    <url>/Adaptive-Filters/</url>
+    <content><![CDATA[<p>I watched a well organized and concise YouTube video about <em>adaptive filters</em>, which is the focus of an important course I am taking this semester, <em>Digital Signal Processing II</em>.   </p>
+<span id="more"></span>
+
+<h3 id="Limitations-of-fixed-coefficient-digital-filters"><a href="#Limitations-of-fixed-coefficient-digital-filters" class="headerlink" title="Limitations of fixed-coefficient digital filters"></a>Limitations of fixed-coefficient digital filters</h3><hr>
+<ul>
+<li>Fixed-coefficient digital filters<ul>
+<li>FIR, IIR</li>
+<li>LP, HP, etc</li>
+</ul>
+</li>
+<li>Limitations<ul>
+<li>Time-varying noise-frequency</li>
+<li>Overlapping bands of signal and noise</li>
+</ul>
+</li>
+</ul>
+<h3 id="Adaptive-filters"><a href="#Adaptive-filters" class="headerlink" title="Adaptive filters"></a>Adaptive filters</h3><hr>
+<img src="/images/adaptive_filter.png" alt="adaptive_filter" title="adaptive_filter" width="400"> 
+
+<ul>
+<li>2 main components<ul>
+<li>Digital filter (with <strong>adjustable</strong> coefficients)</li>
+<li>Adaptive algorithm</li>
+</ul>
+</li>
+<li>2 input signals: $y_k$ and $x_k$<ul>
+<li>$y_k = s_k + n_k$</li>
+<li>$s_k$ = desired signal</li>
+<li>$n_k$ = noise</li>
+<li>$x_k$ = contaminating signal which is <strong>correlated with $n_k$</strong>, gives an estimate of $n_k$, i.e. $\hat{n_k}$</li>
+</ul>
+</li>
+<li>Goal: produce <strong>optimum</strong> $\hat{n_k}$<ul>
+<li>$e_k = \hat{s_k} = y_k - \hat{n_k} = s_k + n_k - \hat{n_k}$</li>
+</ul>
+</li>
+<li>Theorem: <strong>minimize $e_k$, maximize the signal-to-noise ratio</strong></li>
+</ul>
+<h3 id="LMS-algorithm"><a href="#LMS-algorithm" class="headerlink" title="LMS algorithm"></a>LMS algorithm</h3><hr>
+<h4 id="Wiener-filter"><a href="#Wiener-filter" class="headerlink" title="Wiener filter"></a>Wiener filter</h4><img src="/images/wiener_filter.png" alt="wiener_filter" title="wiener_filter" width="400"> 
+
+<ul>
+<li>An input signal&#xA0;<em>w(n)</em> is convolved w ith the Wiener filter&#xA0;<em>g(n)</em> and the result is compared to a reference signal&#xA0;<em>s(n)</em> to obtain the filtering error&#xA0;<em>e(n)</em></li>
+<li>Criterion: <strong>MMSE</strong> (Minimum Mean Square Error)<ul>
+<li>Minimize $J = E[e(n)^2] = E[(x(n) - s(n))^2] = E[(w(n) * g(n) - s(n))^2]$</li>
+<li><em>J</em> can be used to draw the <strong>Error-Performance surface</strong></li>
+</ul>
+</li>
+<li>The&#xA0;<a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">Least mean squares filter</a> converges to the&#xA0;<a href="https://en.wikipedia.org/wiki/Wiener_filter">Wiener filter</a></li>
+</ul>
+<h4 id="Wiener-Hopf-solution"><a href="#Wiener-Hopf-solution" class="headerlink" title="Wiener-Hopf solution"></a>Wiener-Hopf solution</h4><p>Set gradient of <em>J</em> of <em>H</em> to zero, deduced that<br>$H_{opt} = R_{xx}^{-1} R_{xs}$ </p>
+<p>where<br>$R_{xx} = E(X_k X_k^T)$<br>$R_{xs} = E(y_k X_k)$ </p>
+<ul>
+<li>Requires knowledge of $R_{xx}, R_{xs}$</li>
+<li>Matrix inversion is expensive</li>
+<li>For non-stationary, $H_{opt}$ needs to be computed repeatedly</li>
+</ul>
+<h4 id="LMS-adaptive-algorithm"><a href="#LMS-adaptive-algorithm" class="headerlink" title="LMS adaptive algorithm"></a>LMS adaptive algorithm</h4><p>Version 1: $H(n+1) = H(n) + \mu (- \nabla(n))$<br>Version 2: $H(n+1) = H(n) + \frac{1}{2}\delta (- \nabla(n))$  </p>
+<p>then<br>$H(n+1) = H(n) + 2\mu e(n)X(n)$<br>or $H(n+1) = H(n) + \delta e(n)X(n)$  </p>
+<p>where<br>$e(n) = y(n) - H^T(n)X(n)$<br>$\mu$ and $\delta$ are step-sizes</p>
+<ul>
+<li>Based on the <strong>steepest descent algorithm</strong> (update H(n) along the opposite direction of the gradient):<br>  $H(n+1) = H(n) + \mu (- \nabla(n))$  </li>
+<li>Using <strong>instantaneous</strong> estimates <strong>instead of the means</strong> (unbiased):<br>  $J = E[e(n)^2] = e(n)^2$<br>  $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$  </li>
+<li>Step-size determines <strong>stablility</strong> and <strong>rate of convergence</strong>  <ul>
+<li>If too large, too much fluctuation</li>
+<li>If too small, convergences too slow</li>
+</ul>
+</li>
+</ul>
+<h4 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h4><ul>
+<li>If the noise is non-stationary, the error-performance surface will change rapidly</li>
+<li>If $x(n)$ is proportional to $y(n)$, signal will be obliterated</li>
+<li>H(n) never reached the theoretical optimum (fluctuation)</li>
+</ul>
+<h3 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h3><hr>
+<ul>
+<li>Acoustic echo cancellation</li>
+<li>Cancelling EOG from contaminated EEG and get correct EEG</li>
+<li>Cancelling maternal ECG and get foetal ECG during labour</li>
+</ul>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>YouTube Video</strong></p>
+<p><a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a></p>
+<p><strong>Course Home Page</strong></p>
+<p><a href="http://home.ustc.edu.cn/~lzx2010/">Digital Signal Processing II</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+      </categories>
+      <tags>
+        <tag>DSP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Basic MATLAB (very basic)</title>
     <url>/Basic-MATLAB/</url>
     <content><![CDATA[<p>I watched an introductory tutorial on LinkedIn Learning in order to write computer assignments in MATLAB (I really forgot it all after not using it for two or three years).</p>
@@ -120,99 +216,129 @@
       </tags>
   </entry>
   <entry>
-    <title>Adaptive Filters</title>
-    <url>/Adaptive-Filters/</url>
-    <content><![CDATA[<p>I watched a well organized and concise YouTube video about <em>adaptive filters</em>, which is the focus of an important course I am taking this semester, <em>Digital Signal Processing II</em>.   </p>
+    <title>Drawing Schematics in OrCAD Capture CIS</title>
+    <url>/Drawing-Schematics-in-OrCAD-Capture-CIS/</url>
+    <content><![CDATA[<p>I started drawing PCBs for a project. Firstly, I&#x2019;m learning to draw schematics using OrCAD Capture CIS. Here are some basic concepts and operations.   </p>
 <span id="more"></span>
-
-<h3 id="Limitations-of-fixed-coefficient-digital-filters"><a href="#Limitations-of-fixed-coefficient-digital-filters" class="headerlink" title="Limitations of fixed-coefficient digital filters"></a>Limitations of fixed-coefficient digital filters</h3><hr>
-<ul>
-<li>Fixed-coefficient digital filters<ul>
-<li>FIR, IIR</li>
-<li>LP, HP, etc</li>
+<h2 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h2><ul>
+<li>Create new project</li>
+<li>Modify schematic preferences</li>
+<li>Modify schematic description</li>
+</ul>
+<h2 id="Library"><a href="#Library" class="headerlink" title="Library"></a>Library</h2><ul>
+<li>Create new library</li>
+<li>Modify library storage location</li>
+</ul>
+<h2 id="Part"><a href="#Part" class="headerlink" title="Part"></a>Part</h2><ul>
+<li>Create new part in library</li>
+<li>Place part</li>
+<li>Modify part properties</li>
+<li>Modify footprint</li>
+<li>View entire part</li>
+<li>Batch modify pin properties</li>
+<li>Snap to grid</li>
+</ul>
+<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><ul>
+<li>Homogeneous: each module of the composite package has the same function<ul>
+<li>Each module is distinguished by the letter after the question mark, such as &#x201C;U?A&#x201D; and &#x201C;U?B&#x201D;</li>
+<li>After drawing &#x201C;U?A&#x201D;, switch to the next part &#x201C;U?B&#x201D;, which has already been drawn automatically, only the pin numbers are left blank</li>
+<li>The shortcut for switching to the previous part is &#x201C;Ctrl+B&#x201D;, and the shortcut for switching to the next part is &#x201C;Ctrl+N&#x201D;</li>
+<li>For a part, if it can be represented by <strong>one diagram</strong>, then the part <strong>cannot have two pins with the same pin number and pin name</strong>. However, if the part is <strong>divided into many parts</strong> to draw, the pin numbers and pin names between the parts <strong>can be the same</strong>, and the pins with the same pin number and pin name are <strong>connected</strong></li>
 </ul>
 </li>
-<li>Limitations<ul>
-<li>Time-varying noise-frequency</li>
-<li>Overlapping bands of signal and noise</li>
+<li>Heterogeneous: each module of the composite package has a different function<ul>
+<li>After drawing &#x201C;U?A&#x201D;, switch to the next part &#x201C;U?B&#x201D;, which is blank</li>
 </ul>
 </li>
+<li>If there are two or more composite packages placed in a schematic to avoid errors when indexing with &#x201C;Annotate&#x201D;, a new attribute should be added to the part (the name cannot be &#x201C;group&#x201D;), and each part will be divided into different groups according to whether the value of the new attribute is the same. This can determine which parts are in the same chip.</li>
 </ul>
-<h3 id="Adaptive-filters"><a href="#Adaptive-filters" class="headerlink" title="Adaptive filters"></a>Adaptive filters</h3><hr>
-<img src="/images/adaptive_filter.png" alt="adaptive_filter" title="adaptive_filter" width="400"> 
-
-<ul>
-<li>2 main components<ul>
-<li>Digital filter (with <strong>adjustable</strong> coefficients)</li>
-<li>Adaptive algorithm</li>
+<h2 id="Adding-parts-to-schematic"><a href="#Adding-parts-to-schematic" class="headerlink" title="Adding parts to schematic"></a>Adding parts to schematic</h2><ul>
+<li>Rotate parts</li>
+<li>Parts not in the library: power, ground</li>
+<li>Cadence&#x2019;s built-in library: Cadence - SPB_16.6 - tools - capture - library</li>
+<li>Generally commonly used capacitors, resistors, inductors, transformers, etc. are in Discrete.olb</li>
+<li>Design Cache</li>
 </ul>
-</li>
-<li>2 input signals: $y_k$ and $x_k$<ul>
-<li>$y_k = s_k + n_k$</li>
-<li>$s_k$ = desired signal</li>
-<li>$n_k$ = noise</li>
-<li>$x_k$ = contaminating signal which is <strong>correlated with $n_k$</strong>, gives an estimate of $n_k$, i.e. $\hat{n_k}$</li>
+<h2 id="Pin-connection"><a href="#Pin-connection" class="headerlink" title="Pin connection"></a>Pin connection</h2><ul>
+<li>3 types of connections: wire, net alias, bus</li>
+<li>Wire shortcut key W</li>
+<li>The lines in the schematic are horizontal and vertical by default. To draw at any angle, press the Shift key and click the start and end points of the line at the same time</li>
+<li>When two lines intersect, if the intersection is an endpoint of one of the lines, the two lines are electrically connected and the electrical connection cannot be canceled. If the intersection is not an endpoint, there is no electrical connection by default</li>
+<li>Place junction to add electrical connection to the intersection</li>
+<li>Place net alias for interconnection within the same page</li>
+<li>Place off-page connector for interconnection between pages</li>
+<li>Place no connect for floating pins</li>
+<li><strong>Do not connect two pins of two parts directly</strong> (after connecting the two pins of the two parts, pull them apart, and a line will appear between the two pins)</li>
 </ul>
-</li>
-<li>Goal: produce <strong>optimum</strong> $\hat{n_k}$<ul>
-<li>$e_k = \hat{s_k} = y_k - \hat{n_k} = s_k + n_k - \hat{n_k}$</li>
-</ul>
-</li>
-<li>Theorem: <strong>minimize $e_k$, maximize the signal-to-noise ratio</strong></li>
-</ul>
-<h3 id="LMS-algorithm"><a href="#LMS-algorithm" class="headerlink" title="LMS algorithm"></a>LMS algorithm</h3><hr>
-<h4 id="Wiener-filter"><a href="#Wiener-filter" class="headerlink" title="Wiener filter"></a>Wiener filter</h4><img src="/images/wiener_filter.png" alt="wiener_filter" title="wiener_filter" width="400"> 
-
-<ul>
-<li>An input signal&#xA0;<em>w(n)</em> is convolved w ith the Wiener filter&#xA0;<em>g(n)</em> and the result is compared to a reference signal&#xA0;<em>s(n)</em> to obtain the filtering error&#xA0;<em>e(n)</em></li>
-<li>Criterion: <strong>MMSE</strong> (Minimum Mean Square Error)<ul>
-<li>Minimize $J = E[e(n)^2] = E[(x(n) - s(n))^2] = E[(w(n) * g(n) - s(n))^2]$</li>
-<li><em>J</em> can be used to draw the <strong>Error-Performance surface</strong></li>
+<h2 id="Bus-connection"><a href="#Bus-connection" class="headerlink" title="Bus connection"></a>Bus connection</h2><ul>
+<li>Bus naming BaseName[0:all]<ul>
+<li>There cannot be a space between BaseName and [</li>
+<li>32-bit bus ED is represented as ED[0:31]</li>
+<li>BaseName cannot end with a number</li>
+<li>The colon &#x201C;:&#x201D; in the brackets can be replaced with a hyphen &#x201C;-&#x201C; or two dots &#x201C;..&#x201D;</li>
 </ul>
 </li>
-<li>The&#xA0;<a href="https://en.wikipedia.org/wiki/Least_mean_squares_filter">Least mean squares filter</a> converges to the&#xA0;<a href="https://en.wikipedia.org/wiki/Wiener_filter">Wiener filter</a></li>
+<li>Bus entry naming BaseName0 BaseName1 BaseName2&#x2026;</li>
+<li>Interconnection between the bus and the signal line must be through the bus entry, and the naming must be consistent through net alias</li>
+<li>Shortcut key F4 for quick wiring</li>
 </ul>
-<h4 id="Wiener-Hopf-solution"><a href="#Wiener-Hopf-solution" class="headerlink" title="Wiener-Hopf solution"></a>Wiener-Hopf solution</h4><p>Set gradient of <em>J</em> of <em>H</em> to zero, deduced that<br>$H_{opt} = R_{xx}^{-1} R_{xs}$ </p>
-<p>where<br>$R_{xx} = E(X_k X_k^T)$<br>$R_{xs} = E(y_k X_k)$ </p>
-<ul>
-<li>Requires knowledge of $R_{xx}, R_{xs}$</li>
-<li>Matrix inversion is expensive</li>
-<li>For non-stationary, $H_{opt}$ needs to be computed repeatedly</li>
-</ul>
-<h4 id="LMS-adaptive-algorithm"><a href="#LMS-adaptive-algorithm" class="headerlink" title="LMS adaptive algorithm"></a>LMS adaptive algorithm</h4><p>Version 1: $H(n+1) = H(n) + \mu (- \nabla(n))$<br>Version 2: $H(n+1) = H(n) + \frac{1}{2}\delta (- \nabla(n))$  </p>
-<p>then<br>$H(n+1) = H(n) + 2\mu e(n)X(n)$<br>or $H(n+1) = H(n) + \delta e(n)X(n)$  </p>
-<p>where<br>$e(n) = y(n) - H^T(n)X(n)$<br>$\mu$ and $\delta$ are step-sizes</p>
-<ul>
-<li>Based on the <strong>steepest descent algorithm</strong> (update H(n) along the opposite direction of the gradient):<br>  $H(n+1) = H(n) + \mu (- \nabla(n))$  </li>
-<li>Using <strong>instantaneous</strong> estimates <strong>instead of the means</strong> (unbiased):<br>  $J = E[e(n)^2] = e(n)^2$<br>  $\nabla(n) = -2\mu E[e(n)X(n)] = -2\mu e(n)X(n)$  </li>
-<li>Step-size determines <strong>stablility</strong> and <strong>rate of convergence</strong>  <ul>
-<li>If too large, too much fluctuation</li>
-<li>If too small, convergences too slow</li>
+<h2 id="Browsing-and-searching"><a href="#Browsing-and-searching" class="headerlink" title="Browsing and searching"></a>Browsing and searching</h2><ul>
+<li>Browse parts<ul>
+<li>Reset all parts references to &#x201C;?&#x201D; and incremental reference update through Tools - Annotate - Packaging - Action</li>
 </ul>
 </li>
+<li>Browse nets</li>
+<li>Browse off-page connectors</li>
+<li>Browse DRC markers<ul>
+<li>If there are errors that have been corrected, the DRC markers need to be updated synchronously</li>
 </ul>
-<h4 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h4><ul>
-<li>If the noise is non-stationary, the error-performance surface will change rapidly</li>
-<li>If $x(n)$ is proportional to $y(n)$, signal will be obliterated</li>
-<li>H(n) never reached the theoretical optimum (fluctuation)</li>
+</li>
+<li>Individual schematic can also be browsed by selecting it</li>
+<li>Search</li>
 </ul>
-<h3 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h3><hr>
-<ul>
-<li>Acoustic echo cancellation</li>
-<li>Cancelling EOG from contaminated EEG and get correct EEG</li>
-<li>Cancelling maternal ECG and get foetal ECG during labour</li>
+<h2 id="Replacement-and-update"><a href="#Replacement-and-update" class="headerlink" title="Replacement and update"></a>Replacement and update</h2><ul>
+<li>Differences between the two<ul>
+<li>Replacement can <strong>change the connection relationship between the schematic and the library</strong>, that is, replace the part in the original library with the part in another library, while update cannot</li>
+<li>If the <strong>new part has a different packaging form from the original part</strong>, such as the original part&#x2019;s packaging form is &#x201C;Homogeneous&#x201D;, and the new part&#x2019;s packaging form is &#x201C;Heterogeneous&#x201D;, then to replace the new part&#x2019;s packaging form with the original part&#x2019;s packaging form, only replacement can be used, and &#x201C;Action&#x201D; must be selected as &#x201C;Replace schematic part properties&#x201D;:</li>
 </ul>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>YouTube Video</strong></p>
-<p><a href="https://www.youtube.com/watch?v=yDouldS2g38&amp;t=288s">Adaptive Filters</a></p>
-<p><strong>Course Home Page</strong></p>
-<p><a href="http://home.ustc.edu.cn/~lzx2010/">Digital Signal Processing II</a></p>
+</li>
+<li>Cleanup Cache to remove non-existent copies of parts</li>
+</ul>
+<h2 id="Operating-objects-in-schematic"><a href="#Operating-objects-in-schematic" class="headerlink" title="Operating objects in schematic"></a>Operating objects in schematic</h2><ul>
+<li>Select multiple objects at the same time</li>
+<li>Move object<ul>
+<li>The object can be directly dragged, and the connection relationship between the object and other objects remains unchanged</li>
+<li>Press and hold Alt while dragging, the connection relationship between the object and other objects will be disconnected</li>
+<li>After disconnection, can the object be reconnected through contact Options - Preferences - Miscellaneous - Wire Drag: Allow parts move with connectivity changes</li>
+</ul>
+</li>
+<li>Rotate object R</li>
+<li>Copy, paste, delete<ul>
+<li>Select the object, hold down the Ctrl key to drag, and the object dragged out is the copied object</li>
+</ul>
+</li>
+<li>Mirror object H V</li>
+</ul>
+<h2 id="Adding-footprints"><a href="#Adding-footprints" class="headerlink" title="Adding footprints"></a>Adding footprints</h2><ul>
+<li>Modify the package information of a single part in the schematic</li>
+<li>Modify the package information of a single part in thelibrary, update to the schematic - open the edit page of a part - Options - Package Properties - PCB Footprint - OK, and finally Replace (not Update)</li>
+<li>Batch modify part package information</li>
+<li>Batch modify the package information of all parts on a schematic page</li>
+<li>Check whether the part package information is missing</li>
+</ul>
+<h2 id="Generating-netlist"><a href="#Generating-netlist" class="headerlink" title="Generating netlist"></a>Generating netlist</h2><ul>
+<li>Check the logical function and electrical connection of the schematic before generating, re-index the entire project, and perform DRC check</li>
+</ul>
+<h2 id="Post-processing"><a href="#Post-processing" class="headerlink" title="Post-processing"></a>Post-processing</h2><ul>
+<li>Generate nestlist</li>
+<li>Print schematic</li>
+</ul>
 ]]></content>
       <categories>
         <category>Learning</category>
       </categories>
       <tags>
-        <tag>DSP</tag>
+        <tag>Cadence</tag>
       </tags>
   </entry>
   <entry>
@@ -530,12 +656,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/Hello-World/</url>
-    <content><![CDATA[<p>I made it! :)</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Installing Software in Linux</title>
     <url>/Installing-software-in-Linux/</url>
     <content><![CDATA[<p>There are 5 ways to install software in Linux.  </p>
@@ -608,6 +728,164 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<p>I made it! :)</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Intro to Git &amp; GitHub</title>
+    <url>/Intro-to-Git-GitHub/</url>
+    <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>. By the way, I found it very convenient to make notes in Notion first and then export Markdown, modify it, copy and paste it into the Blog.  </p>
+<span id="more"></span>
+
+<h3 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git config --global user.name <span class="hljs-string">&quot;name&quot;</span></span><br><span class="line">git config --global user.email <span class="hljs-string">&quot;mail&quot;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Staging-files"><a href="#Staging-files" class="headerlink" title="Staging files"></a>Staging files</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git add filename</span><br><span class="line">git add .</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git commit -m <span class="hljs-string">&quot;message&quot;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="hljs-built_in">log</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Git-environments"><a href="#Git-environments" class="headerlink" title="Git environments"></a>Git environments</h3><ul>
+<li>Working</li>
+<li>Staging</li>
+<li>Commit</li>
+</ul>
+<h3 id="File-states"><a href="#File-states" class="headerlink" title="File states"></a>File states</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>Tracked (after commit)<ul>
+<li>Unmodified</li>
+<li>Modified</li>
+<li>Staged</li>
+</ul>
+</li>
+<li>Untracked</li>
+</ul>
+<h3 id="Restoring-files"><a href="#Restoring-files" class="headerlink" title="Restoring files"></a>Restoring files</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git restore filename</span><br><span class="line">git restore . </span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Ignoring-files"><a href="#Ignoring-files" class="headerlink" title="Ignoring files"></a>Ignoring files</h3><ul>
+<li>Sensitive info</li>
+<li>Personal notes</li>
+<li>System files</li>
+</ul>
+<p>Use <strong>.gitignore</strong> file</p>
+<h3 id="Clearing-the-cache"><a href="#Clearing-the-cache" class="headerlink" title="Clearing the cache"></a>Clearing the cache</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Deleting"><a href="#Deleting" class="headerlink" title="Deleting"></a>Deleting</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git rm filename</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Delete, and move to stage and ready to commit.</p>
+<h3 id="Renaming"><a href="#Renaming" class="headerlink" title="Renaming"></a>Renaming</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git mv oldname newname </span><br></pre></td></tr></tbody></table></figure>
+
+<p>Move to stage too.</p>
+<h3 id="Showing-differences"><a href="#Showing-differences" class="headerlink" title="Showing differences"></a>Showing differences</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">got <span class="hljs-built_in">log</span> --oneline</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Amending"><a href="#Amending" class="headerlink" title="Amending"></a>Amending</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git reset</span><br><span class="line">git reset --hard</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Rebasing"><a href="#Rebasing" class="headerlink" title="Rebasing"></a>Rebasing</h3><p>A time machine. Rewrite the history.</p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git rebase </span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Branches"><a href="#Branches" class="headerlink" title="Branches"></a>Branches</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Copying a branch:</p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="hljs-keyword">switch</span> -c NAME</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Merging:</p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Deleting a branch:</p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git branch --delete NAME</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Git flow:</p>
+<ul>
+<li>Fix branch</li>
+<li>Make changes</li>
+<li>Merge to master</li>
+<li>Delete old branch</li>
+</ul>
+<h3 id="Merge-conflicts"><a href="#Merge-conflicts" class="headerlink" title="Merge conflicts"></a>Merge conflicts</h3><p>Choose one.</p>
+<h3 id="Stashing"><a href="#Stashing" class="headerlink" title="Stashing"></a>Stashing</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash <span class="hljs-built_in">list</span></span><br><span class="line">git stash apply</span><br><span class="line">git stash pop</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Git-clean"><a href="#Git-clean" class="headerlink" title="Git clean"></a>Git clean</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git clean -n</span><br><span class="line">git clean -d</span><br><span class="line">git clean -f</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><ul>
+<li>Cloud repository</li>
+<li>Collaborative dev</li>
+<li>Projet management</li>
+</ul>
+<p>Working with github:</p>
+<ul>
+<li>Set up remote</li>
+<li>Push</li>
+<li>Fetch/pull</li>
+</ul>
+<h3 id="Pushing-to-github"><a href="#Pushing-to-github" class="headerlink" title="Pushing to github"></a>Pushing to github</h3><p>Remotes:</p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git remote add NAME URL</span><br><span class="line">git remote remove NAME</span><br><span class="line">git rename OLDNAME NEWNAME</span><br><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Git push:</p>
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git push REMOTE BRANCH</span><br><span class="line">git push -u origin main</span><br><span class="line">git push --all</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Github-options"><a href="#Github-options" class="headerlink" title="Github options"></a>Github options</h3><h4 id="Issues"><a href="#Issues" class="headerlink" title="Issues"></a>Issues</h4><p>Collaborate with people</p>
+<ul>
+<li>Write notes, like to-do items, for youself or others</li>
+<li>Assign to-do to individuals, and they can comment</li>
+</ul>
+<h4 id="Pull-requests"><a href="#Pull-requests" class="headerlink" title="Pull requests"></a>Pull requests</h4><p>Change the repo</p>
+<ul>
+<li>Approve changes that somebody else has made</li>
+<li>Compare different branches</li>
+</ul>
+<h4 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h4><p>Manage the repo (advanced)</p>
+<ul>
+<li>Run tests</li>
+<li>Host code automatically</li>
+<li>Download other&#x2019;s actions to use</li>
+</ul>
+<h4 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h4><p>Manage the repo</p>
+<ul>
+<li>Kanban board</li>
+</ul>
+<h4 id="Wiki"><a href="#Wiki" class="headerlink" title="Wiki"></a>Wiki</h4><p>Create documentation that is easy for people to look at (not really necessary)</p>
+<h4 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h4><p>Manage policies for security (advanced)</p>
+<h4 id="Insights"><a href="#Insights" class="headerlink" title="Insights"></a>Insights</h4><p>Know contributors, traffic, etc (private)</p>
+<h4 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h4><ul>
+<li>Convert this repo to be a template</li>
+<li>Github pages</li>
+</ul>
+<h3 id="Managing-projects"><a href="#Managing-projects" class="headerlink" title="Managing projects"></a>Managing projects</h3><ul>
+<li>Contributors<ul>
+<li>Invite a collaborator</li>
+</ul>
+</li>
+<li>Issues</li>
+<li>Labels</li>
+<li>Milestones</li>
+<li>Projects</li>
+</ul>
+<h3 id="Syncing"><a href="#Syncing" class="headerlink" title="Syncing"></a>Syncing</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git clone </span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git fetch</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></tbody></table></figure>
+
+<p>pull = fetch + merge</p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+        <tag>GitHub</tag>
       </tags>
   </entry>
   <entry>
@@ -832,156 +1110,137 @@
       </tags>
   </entry>
   <entry>
-    <title>Intro to Git &amp; GitHub</title>
-    <url>/Intro-to-Git-GitHub/</url>
-    <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>. By the way, I found it very convenient to make notes in Notion first and then export Markdown, modify it, copy and paste it into the Blog.  </p>
+    <title>My First LinkedIn Certificate!</title>
+    <url>/My-first-LinkedIn-certificate/</url>
+    <content><![CDATA[<p>Yeah I got it &#x1F606;! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera&#x2019;s free plan is a week, while linkedin&#x2019;s is a month so I chose the latter.  </p>
 <span id="more"></span>
 
-<h3 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git config --global user.name <span class="hljs-string">&quot;name&quot;</span></span><br><span class="line">git config --global user.email <span class="hljs-string">&quot;mail&quot;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Staging-files"><a href="#Staging-files" class="headerlink" title="Staging files"></a>Staging files</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git add filename</span><br><span class="line">git add .</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git commit -m <span class="hljs-string">&quot;message&quot;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="hljs-built_in">log</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Git-environments"><a href="#Git-environments" class="headerlink" title="Git environments"></a>Git environments</h3><ul>
-<li>Working</li>
-<li>Staging</li>
-<li>Commit</li>
-</ul>
-<h3 id="File-states"><a href="#File-states" class="headerlink" title="File states"></a>File states</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></tbody></table></figure>
-
+<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> to <strong>Non-mainland China</strong> in your account settings to get a monthly free plan. Also you must use a <strong>Visa</strong> credit card.)    </p>
+<h3 id="Nice-course"><a href="#Nice-course" class="headerlink" title="Nice course"></a>Nice course</h3><hr>
+<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br><strong>Practical</strong>! The author introduced many useful websites for learning and developing.  </p>
+<h3 id="What-I-have-learned"><a href="#What-I-have-learned" class="headerlink" title="What I have learned"></a>What I have learned</h3><hr>
+<p><strong>Types of web development jobs</strong><br>For planning and prototyping:  </p>
 <ul>
-<li>Tracked (after commit)<ul>
-<li>Unmodified</li>
-<li>Modified</li>
-<li>Staged</li>
+<li>UX (User Experience)  </li>
+<li>UI (User Interface)</li>
 </ul>
-</li>
-<li>Untracked</li>
-</ul>
-<h3 id="Restoring-files"><a href="#Restoring-files" class="headerlink" title="Restoring files"></a>Restoring files</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git restore filename</span><br><span class="line">git restore . </span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Ignoring-files"><a href="#Ignoring-files" class="headerlink" title="Ignoring files"></a>Ignoring files</h3><ul>
-<li>Sensitive info</li>
-<li>Personal notes</li>
-<li>System files</li>
-</ul>
-<p>Use <strong>.gitignore</strong> file</p>
-<h3 id="Clearing-the-cache"><a href="#Clearing-the-cache" class="headerlink" title="Clearing the cache"></a>Clearing the cache</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Deleting"><a href="#Deleting" class="headerlink" title="Deleting"></a>Deleting</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git rm filename</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Delete, and move to stage and ready to commit.</p>
-<h3 id="Renaming"><a href="#Renaming" class="headerlink" title="Renaming"></a>Renaming</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git mv oldname newname </span><br></pre></td></tr></tbody></table></figure>
-
-<p>Move to stage too.</p>
-<h3 id="Showing-differences"><a href="#Showing-differences" class="headerlink" title="Showing differences"></a>Showing differences</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git diff</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">got <span class="hljs-built_in">log</span> --oneline</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Amending"><a href="#Amending" class="headerlink" title="Amending"></a>Amending</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git reset</span><br><span class="line">git reset --hard</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Rebasing"><a href="#Rebasing" class="headerlink" title="Rebasing"></a>Rebasing</h3><p>A time machine. Rewrite the history.</p>
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git rebase </span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Branches"><a href="#Branches" class="headerlink" title="Branches"></a>Branches</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Copying a branch:</p>
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="hljs-keyword">switch</span> -c NAME</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Merging:</p>
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Deleting a branch:</p>
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git branch --delete NAME</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Git flow:</p>
+<p>For coding and developing:  </p>
 <ul>
-<li>Fix branch</li>
-<li>Make changes</li>
-<li>Merge to master</li>
-<li>Delete old branch</li>
+<li>Front-end Dev (Javascript, CSS, HTML; frameworks) </li>
+<li>Back-end Dev</li>
 </ul>
-<h3 id="Merge-conflicts"><a href="#Merge-conflicts" class="headerlink" title="Merge conflicts"></a>Merge conflicts</h3><p>Choose one.</p>
-<h3 id="Stashing"><a href="#Stashing" class="headerlink" title="Stashing"></a>Stashing</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash <span class="hljs-built_in">list</span></span><br><span class="line">git stash apply</span><br><span class="line">git stash pop</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Git-clean"><a href="#Git-clean" class="headerlink" title="Git clean"></a>Git clean</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git clean -n</span><br><span class="line">git clean -d</span><br><span class="line">git clean -f</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><ul>
-<li>Cloud repository</li>
-<li>Collaborative dev</li>
-<li>Projet management</li>
-</ul>
-<p>Working with github:</p>
+<p><strong>Javascript, CSS, HTML</strong>  </p>
 <ul>
-<li>Set up remote</li>
-<li>Push</li>
-<li>Fetch/pull</li>
+<li>HTML identifies <strong>structural elements</strong>.  </li>
+<li>CSS changes the <strong>appearance and style</strong>.  </li>
+<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
 </ul>
-<h3 id="Pushing-to-github"><a href="#Pushing-to-github" class="headerlink" title="Pushing to github"></a>Pushing to github</h3><p>Remotes:</p>
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git remote add NAME URL</span><br><span class="line">git remote remove NAME</span><br><span class="line">git rename OLDNAME NEWNAME</span><br><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Git push:</p>
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git push REMOTE BRANCH</span><br><span class="line">git push -u origin main</span><br><span class="line">git push --all</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Github-options"><a href="#Github-options" class="headerlink" title="Github options"></a>Github options</h3><h4 id="Issues"><a href="#Issues" class="headerlink" title="Issues"></a>Issues</h4><p>Collaborate with people</p>
+<p><strong>A little knowledge of Github</strong><br>That&#x2019;s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I&#x2019;ll hands on it lately.  </p>
+<p><strong>No-code</strong><br>It&#x2019;s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost &#x2013; money? But it&#x2019;s limited, especially when you know more and get greedy :p  </p>
+<h3 id="Useful-tools"><a href="#Useful-tools" class="headerlink" title="Useful tools"></a>Useful tools</h3><hr>
+<p>Prototying tools:  </p>
 <ul>
-<li>Write notes, like to-do items, for youself or others</li>
-<li>Assign to-do to individuals, and they can comment</li>
+<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
 </ul>
-<h4 id="Pull-requests"><a href="#Pull-requests" class="headerlink" title="Pull requests"></a>Pull requests</h4><p>Change the repo</p>
+<p>Graphic design tools:   </p>
 <ul>
-<li>Approve changes that somebody else has made</li>
-<li>Compare different branches</li>
+<li>Illustrator, Photoshop (professional)</li>
+<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)  </li>
+<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
 </ul>
-<h4 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h4><p>Manage the repo (advanced)</p>
+<p>Coding editors:  </p>
 <ul>
-<li>Run tests</li>
-<li>Host code automatically</li>
-<li>Download other&#x2019;s actions to use</li>
+<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)   </li>
+<li><strong>VS Code</strong></li>
+<li><a href="https://atom.io/">Atom</a> (free, highly customizable)  </li>
+<li><a href="https://brackets.io/">Brackets</a></li>
 </ul>
-<h4 id="Projects"><a href="#Projects" class="headerlink" title="Projects"></a>Projects</h4><p>Manage the repo</p>
+<p>Web host:  </p>
 <ul>
-<li>Kanban board</li>
+<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
 </ul>
-<h4 id="Wiki"><a href="#Wiki" class="headerlink" title="Wiki"></a>Wiki</h4><p>Create documentation that is easy for people to look at (not really necessary)</p>
-<h4 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h4><p>Manage policies for security (advanced)</p>
-<h4 id="Insights"><a href="#Insights" class="headerlink" title="Insights"></a>Insights</h4><p>Know contributors, traffic, etc (private)</p>
-<h4 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h4><ul>
-<li>Convert this repo to be a template</li>
-<li>Github pages</li>
+<h3 id="No-code-tools"><a href="#No-code-tools" class="headerlink" title="No-code tools"></a>No-code tools</h3><hr>
+<p>CMSs (Content Management System):   </p>
+<ul>
+<li>Joomla!  </li>
+<li>Drupal  </li>
+<li><strong>Wordpress</strong></li>
 </ul>
-<h3 id="Managing-projects"><a href="#Managing-projects" class="headerlink" title="Managing projects"></a>Managing projects</h3><ul>
-<li>Contributors<ul>
-<li>Invite a collaborator</li>
+<p>Website builders:  </p>
+<ul>
+<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple) </li>
+<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
 </ul>
-</li>
-<li>Issues</li>
-<li>Labels</li>
-<li>Milestones</li>
-<li>Projects</li>
+<p>Databases:  </p>
+<ul>
+<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a>  </li>
+<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
 </ul>
-<h3 id="Syncing"><a href="#Syncing" class="headerlink" title="Syncing"></a>Syncing</h3><figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git clone </span><br></pre></td></tr></tbody></table></figure>
+<p>Apps:  </p>
+<ul>
+<li><a href="https://bubble.io/">Bubble</a> (web) </li>
+<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)  </li>
+<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
+</ul>
+<p>At last, here&#x2019;s my certificate and I&#x2019;d like to get more in the future &#x1F63B; ~  </p>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> 
 
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git fetch</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight c hljs"><table><tbody><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></tbody></table></figure>
-
-<p>pull = fetch + merge</p>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>LinkedIn Learning Course</strong></p>
+<p><a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
 ]]></content>
       <categories>
         <category>Learning</category>
       </categories>
       <tags>
-        <tag>Git</tag>
-        <tag>GitHub</tag>
+        <tag>Front-end</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>LaTeX CV</title>
+    <url>/Latex-CV/</url>
+    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That&#x2019;s very unfriendly for beginners &#x1F622;. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.  </p>
+<span id="more"></span>
+<p>Here&#x2019;s how I did it:  </p>
+<p>-&gt; If you only use latex <strong>occasionally or a few times</strong>, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>-&gt; If you want to do <strong>more</strong> things, use following steps:  </p>
+<h3 id="Download-MiKTeX-and-VSCode"><a href="#Download-MiKTeX-and-VSCode" class="headerlink" title="Download MiKTeX and VSCode"></a>Download MiKTeX and VSCode</h3><p><strong>MiKTeX</strong><br>You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.  </p>
+<p><strong>VSCode</strong><br>Remember to download extension <em>latex workshop</em>.  </p>
+<h3 id="Find-a-template"><a href="#Find-a-template" class="headerlink" title="Find a template"></a>Find a template</h3><p>On Overleaf or Github.<br>Here are my favorites:<br><a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">&#x65B0;&#x5352;&#x306E;&#x305F;&#x3081;&#x306E;LaTeX&#x5C65;&#x6B74;&#x66F8;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;</a><br><a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>And mine:<br><a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)  </p>
+<h3 id="Edit-the-template"><a href="#Edit-the-template" class="headerlink" title="Edit the template"></a>Edit the template</h3><p>You may encounter many problems at this step, most of which require you to download <strong>Packages</strong> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.  </p>
+<h3 id="Share-your-template"><a href="#Share-your-template" class="headerlink" title="Share your template"></a>Share your template</h3><ol>
+<li>Git your template to github<br>(Already bound git and your github accounts and set SSH key)<br>-&gt; Create a new repository<br>-&gt; Git bash the folder which contains full files about your template<br>-&gt; Run the following code in Git:</li>
+</ol>
+<pre><code class="C">git init
+git add .
+git commit -m &apos;Description&apos;
+git remote add origin https://...  (copy from github)
+git push -u origin master
+</code></pre>
+<ol start="2">
+<li>Submit to Overleaf<br>That&#x2019;s where I found the original template for my CV! I think put templates there may help more people.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Job</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Oct 2022</title>
+    <url>/Oct-2022/</url>
+    <content><![CDATA[<h3 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h3><p>I finished 27 problems on Leetcode till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I&#x2019;m still doing arrays? I can&#x2019;t wait to deal with something new.  </p>
+<span id="more"></span>
+<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, and did HW 01, HW 02, Lab 00, Lab 01, and I&#x2019;m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.  </p>
+<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng&#x2019;s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 &#x201C;Inference: making predictions&#x201D;. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <a href="https://github.com/ageron/handson-ml2">Hands on Machine Learning</a>. That&#x2019;s nice, and more codes and more difficult that the videos. However, I still didn&#x2019;t understand ML well. It seems easy but to do it is really hard&#x1F92F;. The good news was that I made a python program this afternoon finally&#x2026; Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data&#x2026;  </p>
+<h3 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h3><p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section &#x201C;Briefing&#x201D;. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!  </p>
+<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn&#x2019;t know Japanese had tenses too.   </p>
+<p>Bye for now! It&#x2019;s midnight. </p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+      </categories>
   </entry>
   <entry>
     <title>Nov 2022</title>
@@ -1345,108 +1604,6 @@
       </tags>
   </entry>
   <entry>
-    <title>My First LinkedIn Certificate!</title>
-    <url>/My-first-LinkedIn-certificate/</url>
-    <content><![CDATA[<p>Yeah I got it &#x1F606;! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera&#x2019;s free plan is a week, while linkedin&#x2019;s is a month so I chose the latter.  </p>
-<span id="more"></span>
-
-<p>(Note that for Chinese mainland users, you must change your <strong>location</strong> to <strong>Non-mainland China</strong> in your account settings to get a monthly free plan. Also you must use a <strong>Visa</strong> credit card.)    </p>
-<h3 id="Nice-course"><a href="#Nice-course" class="headerlink" title="Nice course"></a>Nice course</h3><hr>
-<p><strong>Short</strong>, less than 2 hours, which is very newbie-friendly.<br><strong>Practical</strong>! The author introduced many useful websites for learning and developing.  </p>
-<h3 id="What-I-have-learned"><a href="#What-I-have-learned" class="headerlink" title="What I have learned"></a>What I have learned</h3><hr>
-<p><strong>Types of web development jobs</strong><br>For planning and prototyping:  </p>
-<ul>
-<li>UX (User Experience)  </li>
-<li>UI (User Interface)</li>
-</ul>
-<p>For coding and developing:  </p>
-<ul>
-<li>Front-end Dev (Javascript, CSS, HTML; frameworks) </li>
-<li>Back-end Dev</li>
-</ul>
-<p><strong>Javascript, CSS, HTML</strong>  </p>
-<ul>
-<li>HTML identifies <strong>structural elements</strong>.  </li>
-<li>CSS changes the <strong>appearance and style</strong>.  </li>
-<li>JS handles the <strong>interactivity</strong>, like moving and animation.</li>
-</ul>
-<p><strong>A little knowledge of Github</strong><br>That&#x2019;s beyond my expectation, and just what I need! Looks like <a href="https://pages.github.com/">Github Pages Service</a> is a good (means free) start for small and simple web dev. I&#x2019;ll hands on it lately.  </p>
-<p><strong>No-code</strong><br>It&#x2019;s a fresh new concept to me. Sounds interesting that you can develop a web without coding. But maybe the price is, the real cost &#x2013; money? But it&#x2019;s limited, especially when you know more and get greedy :p  </p>
-<h3 id="Useful-tools"><a href="#Useful-tools" class="headerlink" title="Useful tools"></a>Useful tools</h3><hr>
-<p>Prototying tools:  </p>
-<ul>
-<li><a href="https://www.figma.com/"><strong>Figma</strong></a></li>
-</ul>
-<p>Graphic design tools:   </p>
-<ul>
-<li>Illustrator, Photoshop (professional)</li>
-<li><a href="https://affinity.serif.com/en-gb/">Affinity</a>, Figma (lighter)  </li>
-<li><a href="https://www.canva.com/zh_cn/"><strong>Canva</strong></a> (simplest, free plan, templates)</li>
-</ul>
-<p>Coding editors:  </p>
-<ul>
-<li><a href="https://codepen.io/"><strong>CodePen</strong></a> (online, free plan)   </li>
-<li><strong>VS Code</strong></li>
-<li><a href="https://atom.io/">Atom</a> (free, highly customizable)  </li>
-<li><a href="https://brackets.io/">Brackets</a></li>
-</ul>
-<p>Web host:  </p>
-<ul>
-<li><a href="https://pages.github.com/"><strong>Github Pages Service</strong></a> (simplest, free)</li>
-</ul>
-<h3 id="No-code-tools"><a href="#No-code-tools" class="headerlink" title="No-code tools"></a>No-code tools</h3><hr>
-<p>CMSs (Content Management System):   </p>
-<ul>
-<li>Joomla!  </li>
-<li>Drupal  </li>
-<li><strong>Wordpress</strong></li>
-</ul>
-<p>Website builders:  </p>
-<ul>
-<li><a href="https://www.squarespace.com/">Squarespace</a>, <a href="https://zh.wix.com/">Wix</a>, <a href="https://www.weebly.com/">Weebly</a> (simple) </li>
-<li><a href="https://webflow.com/">Webflow</a>, <a href="https://www.editorx.com/">Editor X</a> (complex)</li>
-</ul>
-<p>Databases:  </p>
-<ul>
-<li><a href="https://www.google.com/intl/zh-CN/sheets/about/">Google Sheets</a>  </li>
-<li><a href="https://www.airtable.com/home/built-for-you">Airtable</a></li>
-</ul>
-<p>Apps:  </p>
-<ul>
-<li><a href="https://bubble.io/">Bubble</a> (web) </li>
-<li><a href="https://appgyver.com/">AppGyver</a> (web, ios, android)  </li>
-<li><a href="https://www.adalo.com/">Adalo</a>, <a href="https://www.glideapps.com/">Glide</a> (ios, android)</li>
-</ul>
-<p>At last, here&#x2019;s my certificate and I&#x2019;d like to get more in the future &#x1F63B; ~  </p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="600"> 
-
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>LinkedIn Learning Course</strong></p>
-<p><a href="https://www.linkedin.com/learning/introduction-to-web-design-and-development-14628245/web-design-and-development-in-the-code-and-no-code-era?autoplay=true">Introducation to Web Design and Development</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-      </categories>
-      <tags>
-        <tag>Front-end</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Oct 2022</title>
-    <url>/Oct-2022/</url>
-    <content><![CDATA[<h3 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h3><p>I finished 27 problems on Leetcode till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I&#x2019;m still doing arrays? I can&#x2019;t wait to deal with something new.  </p>
-<span id="more"></span>
-<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, and did HW 01, HW 02, Lab 00, Lab 01, and I&#x2019;m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.  </p>
-<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng&#x2019;s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 &#x201C;Inference: making predictions&#x201D;. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <a href="https://github.com/ageron/handson-ml2">Hands on Machine Learning</a>. That&#x2019;s nice, and more codes and more difficult that the videos. However, I still didn&#x2019;t understand ML well. It seems easy but to do it is really hard&#x1F92F;. The good news was that I made a python program this afternoon finally&#x2026; Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data&#x2026;  </p>
-<h3 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h3><p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section &#x201C;Briefing&#x201D;. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!  </p>
-<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn&#x2019;t know Japanese had tenses too.   </p>
-<p>Bye for now! It&#x2019;s midnight. </p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Operating Files in Linux</title>
     <url>/Operating-Files-in-Linux/</url>
     <content><![CDATA[<p>Linux manipulates files via the command line, including viewing, editing, copying, moving, deleting, creating, searching, matching, compressing, and uncompressing files, and it&#x2019;s important to learn how to use the documentation.</p>
@@ -1649,37 +1806,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LaTeX CV</title>
-    <url>/Latex-CV/</url>
-    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That&#x2019;s very unfriendly for beginners &#x1F622;. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.  </p>
-<span id="more"></span>
-<p>Here&#x2019;s how I did it:  </p>
-<p>-&gt; If you only use latex <strong>occasionally or a few times</strong>, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>-&gt; If you want to do <strong>more</strong> things, use following steps:  </p>
-<h3 id="Download-MiKTeX-and-VSCode"><a href="#Download-MiKTeX-and-VSCode" class="headerlink" title="Download MiKTeX and VSCode"></a>Download MiKTeX and VSCode</h3><p><strong>MiKTeX</strong><br>You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.  </p>
-<p><strong>VSCode</strong><br>Remember to download extension <em>latex workshop</em>.  </p>
-<h3 id="Find-a-template"><a href="#Find-a-template" class="headerlink" title="Find a template"></a>Find a template</h3><p>On Overleaf or Github.<br>Here are my favorites:<br><a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">&#x65B0;&#x5352;&#x306E;&#x305F;&#x3081;&#x306E;LaTeX&#x5C65;&#x6B74;&#x66F8;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;</a><br><a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>And mine:<br><a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)  </p>
-<h3 id="Edit-the-template"><a href="#Edit-the-template" class="headerlink" title="Edit the template"></a>Edit the template</h3><p>You may encounter many problems at this step, most of which require you to download <strong>Packages</strong> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.  </p>
-<h3 id="Share-your-template"><a href="#Share-your-template" class="headerlink" title="Share your template"></a>Share your template</h3><ol>
-<li>Git your template to github<br>(Already bound git and your github accounts and set SSH key)<br>-&gt; Create a new repository<br>-&gt; Git bash the folder which contains full files about your template<br>-&gt; Run the following code in Git:</li>
-</ol>
-<pre><code class="C">git init
-git add .
-git commit -m &apos;Description&apos;
-git remote add origin https://...  (copy from github)
-git push -u origin master
-</code></pre>
-<ol start="2">
-<li>Submit to Overleaf<br>That&#x2019;s where I found the original template for my CV! I think put templates there may help more people.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Job</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>自适应滤波器</title>
     <url>/zh-cn/Adaptive-Filters/</url>
     <content><![CDATA[<p>&#x770B;&#x4E86;&#x4E00;&#x4E2A;&#x6761;&#x7406;&#x6E05;&#x6670;&#x3001;&#x7B80;&#x660E;&#x627C;&#x8981;&#x7684;&#x5173;&#x4E8E;<em>&#x81EA;&#x9002;&#x5E94;&#x6EE4;&#x6CE2;&#x5668;</em>&#x7684;YouTube&#x89C6;&#x9891;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x6211;&#x8FD9;&#x5B66;&#x671F;&#x4E0A;&#x7684;&#x4E00;&#x95E8;&#x57FA;&#x7840;&#x8BFE;&#x201C;<em>&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x2161;</em>&#x201D;&#x7684;&#x91CD;&#x70B9;&#x5185;&#x5BB9;&#x3002;  </p>
@@ -1773,51 +1899,6 @@ git push -u origin master
       </categories>
       <tags>
         <tag>DSP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2022年12月</title>
-    <url>/zh-cn/Dec-2022/</url>
-    <content><![CDATA[<p>&#x8FD9;&#x4E2A;&#x6708;&#x672C;&#x6765;&#x662F;&#x8003;&#x8BD5;&#x6708;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4E3B;&#x8981;&#x82B1;&#x65F6;&#x95F4;&#x590D;&#x4E60;&#x4E86;&#x5B66;&#x6821;&#x7684;&#x4E09;&#x95E8;&#x4E3B;&#x8981;&#x8BFE;&#x7A0B;&#xFF1A;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x3001;&#x6570;&#x5B57;&#x56FE;&#x50CF;&#x5206;&#x6790;&#x548C;&#x7EC4;&#x5408;&#x6570;&#x5B66;&#x3002; <del>&#x7ED3;&#x679C;&#x8003;&#x8BD5;&#x7A81;&#x7136;&#x63A8;&#x8FDF;&#x5230;&#x4E0B;&#x5B66;&#x671F;&#x521D;&#xFF0C;&#x5BFC;&#x81F4;&#x6211;&#x6CA1;&#x590D;&#x4E60;&#x5B8C;&#x3002;</del> &#x6211;&#x505A;&#x4E86;&#x4E00;&#x4E9B;&#x7B14;&#x8BB0;&#xFF08;&#x90FD;&#x662F;&#x4E2D;&#x6587;&#xFF09;&#xFF0C;&#x8FD8;&#x6536;&#x85CF;&#x4E86;&#x4E00;&#x4E9B;&#x6709;&#x610F;&#x601D;&#x7684;&#x94FE;&#x63A5;&#x3002; </p>
-<span id="more"></span>
-
-<h3 id="&#x590D;&#x4E60;&#x7B14;&#x8BB0;"><a href="#&#x590D;&#x4E60;&#x7B14;&#x8BB0;" class="headerlink" title="&#x590D;&#x4E60;&#x7B14;&#x8BB0;"></a>&#x590D;&#x4E60;&#x7B14;&#x8BB0;</h3><blockquote>
-<p><a href="https://mengisok.notion.site/eb6f54749fb7464f8809ed94ec4c821b">Notion</a>&#x6216;<a href="https://github.com/mengisok/DSP-review">GitHub&#x4E0A;&#x7684;DSP&#x7B14;&#x8BB0;</a> (&#x6709;&#x4E00;&#x4E9B;MATLAB&#x4EE3;&#x7801;)  </p>
-<p><a href="https://drive.google.com/drive/folders/1KqNqF0UKM6n2ePmovORoTPofqJL-QBt6?usp=sharing">Google Drive&#x4E0A;&#x7684;DIA&#x7B14;&#x8BB0;</a> (&#x66F4;&#x65B0;&#x4E2D;&#x2026;)  </p>
-<p><a href="https://drive.google.com/drive/folders/1-0-R1W7jvLb9YrgUj_J1PrmkrNPaY_OM?usp=sharing">Google Drive&#x4E0A;&#x7684;&#x7EC4;&#x5408;&#x6570;&#x5B66;&#x7B14;&#x8BB0;</a> (&#x66F4;&#x65B0;&#x4E2D;&#x2026;)  </p>
-</blockquote>
-<p>&#x53E6;&#x4E00;&#x4EF6;&#x503C;&#x5F97;&#x4E00;&#x63D0;&#x7684;&#x4E8B;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A;&#x6708;<a href="https://en.wikipedia.org/wiki/ChatGPT"><strong>ChatGPT</strong></a><strong>&#x5F88;&#x706B;&#xFF01;</strong> &#x6211;&#x4E5F;&#x8BD5;&#x7528;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x786E;&#x5B9E;&#x5F88;&#x795E;&#x5947;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x6211;&#x770B;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x5173;&#x4E8E;ChatGPT&#x7684;&#x6709;&#x8DA3;&#x6216;&#x6709;&#x7528;&#x7684;&#x94FE;&#x63A5;&#x3002;  </p>
-<h3 id="ChatGPT"><a href="#ChatGPT" class="headerlink" title="ChatGPT"></a>ChatGPT</h3><blockquote>
-<p><a href="https://openai.com/blog/chatgpt/">&#x5B98;&#x65B9;&#x4ECB;&#x7ECD;</a>  </p>
-<p><a href="https://github.com/Kamigami55/awesome-chatgpt">awesome-chatgpt</a><br>There are many trending repos related to ChatGPT recently.  </p>
-<p><a href="https://chat.bygpt.com/">&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x53EF;&#x7528;&#x7684;ChatGPT</a>  </p>
-<p><a href="https://readdevdocs.com/blog/makemoney/%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%B3%A8%E5%86%8COpenAI%E8%B4%A6%E5%8F%B7%E8%AF%95%E7%94%A8ChatGPT%E6%8C%87%E5%8D%97.html#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87">&#x4E2D;&#x56FD;&#x533A;&#x6CE8;&#x518C;OpenAI&#x8D26;&#x53F7;&#x8BD5;&#x7528;ChatGPT&#x6307;&#x5357;</a>  </p>
-<p><a href="https://sms-activate.org/cn">&#x5728;&#x7EBF;&#x63A5;&#x53D7;&#x77ED;&#x4FE1;&#x7684;&#x865A;&#x62DF;&#x53F7;&#x7801;</a>  </p>
-<p><a href="https://www.douban.com/group/topic/279710957/?_i=705681524967510&amp;dt_dapp=1">ChatGPT&#x521D;&#x4F53;&#x9A8C;</a>    </p>
-<p><a href="https://mp.weixin.qq.com/s/rzCYgddvdvWwv71_M_sC-Q">ChatGPT&#x4E2D;&#x6587;&#x7248;VSCode&#x63D2;&#x4EF6;</a>  </p>
-<p><a href="https://mp.weixin.qq.com/s/5zThHhpzBmx4EUIMvMV-vQ">&#x5728;Jupyter Notebook&#x4E2D;&#x624B;&#x7ED8;&#x8349;&#x56FE;&#x5E76;&#x53D8;&#x6210;&#x4EE3;&#x7801;</a>  </p>
-</blockquote>
-<h3 id="&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;"><a href="#&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;" class="headerlink" title="&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;"></a>&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;</h3><blockquote>
-<p><a href="http://tingtalk.me/telegram/">Telegram&#x6307;&#x5357;</a></p>
-<p><a href="https://oi-wiki.org/">oi-wiki.org</a><br>&#x7F16;&#x7A0B;&#x7ADE;&#x8D5B;wiki&#x3002;  </p>
-<p><a href="https://ctf-wiki.org/">ctf-wiki.org</a><br>&#x7F51;&#x7EDC;&#x5B89;&#x5168;&#x7ADE;&#x8D5B;wiki&#x3002;  </p>
-<p><a href="https://www.summerschoolsineurope.eu/">summerschoolsineurope.eu</a><br>&#x6709;&#x5173;&#x6B27;&#x6D32;&#x6691;&#x671F;&#x5B66;&#x6821;&#x7684;&#x4FE1;&#x606F;&#x3002; </p>
-<p><a href="http://fernwanderweg.blogspot.com/">fernwanderweg.blogspot.com</a><br>&#x4ED6;&#x7528;&#x8C37;&#x6B4C;&#x535A;&#x5BA2;&#x5EFA;&#x7ACB;&#x4E86;&#x4E00;&#x4E2A;&#x535A;&#x5BA2;&#x3002;&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x9519;&#x3002;  </p>
-<p><a href="https://hdlbits.01xz.net/wiki/Main_Page">&#x6570;&#x5B57;&#x903B;&#x8F91;&#x5728;&#x7EBF;&#x5B66;&#x4E60;&#x7F51;&#x7AD9;: HDLbit</a>&#x548C; <a href="https://github.com/viduraakalanka/HDL-Bits-Solutions">&#x89E3;&#x51B3;&#x65B9;&#x6848;</a>&#xFF0C;&#x53EF;&#x4EE5;&#x5B66;&#x4E60;Verilog&#x3002;   </p>
-<p><a href="https://ossinsight.io/">OSS Insight</a><br>GitHub&#x7684;&#x5B9E;&#x65F6;&#x8D8B;&#x52BF;&#x548C;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x3002;  </p>
-<p><a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>&#x5B66;&#x5B8C;&#x540E;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x4E00;&#x4E9B;&#x8BC1;&#x4E66;&#xFF1F;&#x559C;&#x6B22;~</p>
-<p><a href="https://roadmap.sh/">Developer Roadmaps</a><br>&#x57FA;&#x4E8E;&#x89D2;&#x8272;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x6210;&#x957F;&#x6307;&#x5357;&#x3002;  </p>
-<p><a href="https://seeing-theory.brown.edu/index.html">Statistics Visualization Learning Site</a><br>&#x4EE5;&#x53EF;&#x89C6;&#x5316;&#x7684;&#x65B9;&#x5F0F;&#x5B66;&#x4E60;&#x7EDF;&#x8BA1;&#x3002;&#x975E;&#x5E38;&#x6E05;&#x6670;&#x6613;&#x61C2;!  </p>
-</blockquote>
-<p>&#x6700;&#x540E;&#x4E09;&#x4E2A;&#x662F;GitHub&#x4E0A;&#x62E5;&#x6709;&#x5927;&#x91CF;&#x661F;&#x661F;&#x7684;&#x51E0;&#x4E2A;&#x9876;&#x7EA7;&#x4ED3;&#x5E93;&#x3002;&#x6211;&#x53D1;&#x73B0;<a href="https://github.com/996icu/996.ICU">996.icu</a>&#x7ADF;&#x7136;&#x6392;&#x5728;&#x7B2C;&#x4E09; &#x1F602;</p>
-<h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x5F88;&#x9057;&#x61BE;&#xFF0C;&#x6211;&#x6CA1;&#x6709;&#x53C2;&#x52A0;&#x96C5;&#x601D;&#x8003;&#x8BD5;&#x1F61E;&#x3002;&#x8FD8;&#x6CA1;&#x51C6;&#x5907;&#x597D;&#x2026; &#x6211;&#x4F1A;&#x53BB;&#x8003;&#x7684;!<br>&#x81F3;&#x4E8E;&#x5B66;&#x4E60;&#x65E5;&#x8BED;&#xFF0C;&#x6211;&#x4E0D;&#x518D;&#x7528;&#x591A;&#x90BB;&#x56FD;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6709;&#x4E9B;&#x7B80;&#x5355;&#x3002;&#x6211;&#x627E;&#x4E86;&#x4E00;&#x4E9B;YouTube&#x89C6;&#x9891;&#x6765;&#x770B;&#xFF0C;&#x6BD4;&#x5982;<a href="https://www.youtube.com/@deguchi">&#x51FA;&#x53E3;&#x65E5;&#x8A9E;</a>&#x3002;</p>
-<h3 id="&#x535A;&#x5BA2;"><a href="#&#x535A;&#x5BA2;" class="headerlink" title="&#x535A;&#x5BA2;"></a>&#x535A;&#x5BA2;</h3><p>&#x6211;&#x628A;&#x535A;&#x5BA2;&#x4E3B;&#x9898;&#x4ECE;<a href="https://github.com/probberechts/hexo-theme-cactus"><strong>Cactus</strong></a>&#x6362;&#x5230;&#x4E86;<a href="https://github.com/cjquines/hexo-theme-ascent"><strong>Ascent</strong></a>&#x3002;Btw&#xFF0C;&#x8FD9;&#x662F;<a href="https://github.com/stars/mengisok/lists/blog-themes">&#x6211;&#x7684;&#x5173;&#x4E8E;&#x535A;&#x5BA2;&#x4E3B;&#x9898;&#x7684;&#x6536;&#x85CF;&#x5939;</a> &#x3002;<br>&#x6211;&#x8BD5;&#x56FE;&#x628A;&#x4E00;&#x4E2A;&#x4E3B;&#x9898;&#x6539;&#x6210;&#x6211;&#x60F3;&#x8981;&#x7684;&#x6837;&#x5B50;&#xFF0C;&#x4F46;&#x5931;&#x8D25;&#x4E86;&#x3002;&#x524D;&#x7AEF;&#x597D;&#x96BE;&#xFF01;  </p>
-]]></content>
-      <categories>
-        <category>总结</category>
-      </categories>
-      <tags>
-        <tag>有用的链接</tag>
       </tags>
   </entry>
   <entry>
@@ -1941,10 +2022,176 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/zh-cn/Hello-World/</url>
-    <content><![CDATA[<p>&#x6211;&#x6210;&#x529F;&#x4E86;&#xFF01; :)</p>
+    <title>2022年12月</title>
+    <url>/zh-cn/Dec-2022/</url>
+    <content><![CDATA[<p>&#x8FD9;&#x4E2A;&#x6708;&#x672C;&#x6765;&#x662F;&#x8003;&#x8BD5;&#x6708;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4E3B;&#x8981;&#x82B1;&#x65F6;&#x95F4;&#x590D;&#x4E60;&#x4E86;&#x5B66;&#x6821;&#x7684;&#x4E09;&#x95E8;&#x4E3B;&#x8981;&#x8BFE;&#x7A0B;&#xFF1A;&#x6570;&#x5B57;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x3001;&#x6570;&#x5B57;&#x56FE;&#x50CF;&#x5206;&#x6790;&#x548C;&#x7EC4;&#x5408;&#x6570;&#x5B66;&#x3002; <del>&#x7ED3;&#x679C;&#x8003;&#x8BD5;&#x7A81;&#x7136;&#x63A8;&#x8FDF;&#x5230;&#x4E0B;&#x5B66;&#x671F;&#x521D;&#xFF0C;&#x5BFC;&#x81F4;&#x6211;&#x6CA1;&#x590D;&#x4E60;&#x5B8C;&#x3002;</del> &#x6211;&#x505A;&#x4E86;&#x4E00;&#x4E9B;&#x7B14;&#x8BB0;&#xFF08;&#x90FD;&#x662F;&#x4E2D;&#x6587;&#xFF09;&#xFF0C;&#x8FD8;&#x6536;&#x85CF;&#x4E86;&#x4E00;&#x4E9B;&#x6709;&#x610F;&#x601D;&#x7684;&#x94FE;&#x63A5;&#x3002; </p>
+<span id="more"></span>
+
+<h3 id="&#x590D;&#x4E60;&#x7B14;&#x8BB0;"><a href="#&#x590D;&#x4E60;&#x7B14;&#x8BB0;" class="headerlink" title="&#x590D;&#x4E60;&#x7B14;&#x8BB0;"></a>&#x590D;&#x4E60;&#x7B14;&#x8BB0;</h3><blockquote>
+<p><a href="https://mengisok.notion.site/eb6f54749fb7464f8809ed94ec4c821b">Notion</a>&#x6216;<a href="https://github.com/mengisok/DSP-review">GitHub&#x4E0A;&#x7684;DSP&#x7B14;&#x8BB0;</a> (&#x6709;&#x4E00;&#x4E9B;MATLAB&#x4EE3;&#x7801;)  </p>
+<p><a href="https://drive.google.com/drive/folders/1KqNqF0UKM6n2ePmovORoTPofqJL-QBt6?usp=sharing">Google Drive&#x4E0A;&#x7684;DIA&#x7B14;&#x8BB0;</a> (&#x66F4;&#x65B0;&#x4E2D;&#x2026;)  </p>
+<p><a href="https://drive.google.com/drive/folders/1-0-R1W7jvLb9YrgUj_J1PrmkrNPaY_OM?usp=sharing">Google Drive&#x4E0A;&#x7684;&#x7EC4;&#x5408;&#x6570;&#x5B66;&#x7B14;&#x8BB0;</a> (&#x66F4;&#x65B0;&#x4E2D;&#x2026;)  </p>
+</blockquote>
+<p>&#x53E6;&#x4E00;&#x4EF6;&#x503C;&#x5F97;&#x4E00;&#x63D0;&#x7684;&#x4E8B;&#x662F;&#xFF0C;&#x8FD9;&#x4E2A;&#x6708;<a href="https://en.wikipedia.org/wiki/ChatGPT"><strong>ChatGPT</strong></a><strong>&#x5F88;&#x706B;&#xFF01;</strong> &#x6211;&#x4E5F;&#x8BD5;&#x7528;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x786E;&#x5B9E;&#x5F88;&#x795E;&#x5947;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x6211;&#x770B;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x5173;&#x4E8E;ChatGPT&#x7684;&#x6709;&#x8DA3;&#x6216;&#x6709;&#x7528;&#x7684;&#x94FE;&#x63A5;&#x3002;  </p>
+<h3 id="ChatGPT"><a href="#ChatGPT" class="headerlink" title="ChatGPT"></a>ChatGPT</h3><blockquote>
+<p><a href="https://openai.com/blog/chatgpt/">&#x5B98;&#x65B9;&#x4ECB;&#x7ECD;</a>  </p>
+<p><a href="https://github.com/Kamigami55/awesome-chatgpt">awesome-chatgpt</a><br>There are many trending repos related to ChatGPT recently.  </p>
+<p><a href="https://chat.bygpt.com/">&#x4E2D;&#x56FD;&#x5927;&#x9646;&#x53EF;&#x7528;&#x7684;ChatGPT</a>  </p>
+<p><a href="https://readdevdocs.com/blog/makemoney/%E4%B8%AD%E5%9B%BD%E5%8C%BA%E6%B3%A8%E5%86%8COpenAI%E8%B4%A6%E5%8F%B7%E8%AF%95%E7%94%A8ChatGPT%E6%8C%87%E5%8D%97.html#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87">&#x4E2D;&#x56FD;&#x533A;&#x6CE8;&#x518C;OpenAI&#x8D26;&#x53F7;&#x8BD5;&#x7528;ChatGPT&#x6307;&#x5357;</a>  </p>
+<p><a href="https://sms-activate.org/cn">&#x5728;&#x7EBF;&#x63A5;&#x53D7;&#x77ED;&#x4FE1;&#x7684;&#x865A;&#x62DF;&#x53F7;&#x7801;</a>  </p>
+<p><a href="https://www.douban.com/group/topic/279710957/?_i=705681524967510&amp;dt_dapp=1">ChatGPT&#x521D;&#x4F53;&#x9A8C;</a>    </p>
+<p><a href="https://mp.weixin.qq.com/s/rzCYgddvdvWwv71_M_sC-Q">ChatGPT&#x4E2D;&#x6587;&#x7248;VSCode&#x63D2;&#x4EF6;</a>  </p>
+<p><a href="https://mp.weixin.qq.com/s/5zThHhpzBmx4EUIMvMV-vQ">&#x5728;Jupyter Notebook&#x4E2D;&#x624B;&#x7ED8;&#x8349;&#x56FE;&#x5E76;&#x53D8;&#x6210;&#x4EE3;&#x7801;</a>  </p>
+</blockquote>
+<h3 id="&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;"><a href="#&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;" class="headerlink" title="&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;"></a>&#x5176;&#x5B83;&#x6709;&#x8DA3;&#x7684;&#x94FE;&#x63A5;</h3><blockquote>
+<p><a href="http://tingtalk.me/telegram/">Telegram&#x6307;&#x5357;</a></p>
+<p><a href="https://oi-wiki.org/">oi-wiki.org</a><br>&#x7F16;&#x7A0B;&#x7ADE;&#x8D5B;wiki&#x3002;  </p>
+<p><a href="https://ctf-wiki.org/">ctf-wiki.org</a><br>&#x7F51;&#x7EDC;&#x5B89;&#x5168;&#x7ADE;&#x8D5B;wiki&#x3002;  </p>
+<p><a href="https://www.summerschoolsineurope.eu/">summerschoolsineurope.eu</a><br>&#x6709;&#x5173;&#x6B27;&#x6D32;&#x6691;&#x671F;&#x5B66;&#x6821;&#x7684;&#x4FE1;&#x606F;&#x3002; </p>
+<p><a href="http://fernwanderweg.blogspot.com/">fernwanderweg.blogspot.com</a><br>&#x4ED6;&#x7528;&#x8C37;&#x6B4C;&#x535A;&#x5BA2;&#x5EFA;&#x7ACB;&#x4E86;&#x4E00;&#x4E2A;&#x535A;&#x5BA2;&#x3002;&#x770B;&#x8D77;&#x6765;&#x4E0D;&#x9519;&#x3002;  </p>
+<p><a href="https://hdlbits.01xz.net/wiki/Main_Page">&#x6570;&#x5B57;&#x903B;&#x8F91;&#x5728;&#x7EBF;&#x5B66;&#x4E60;&#x7F51;&#x7AD9;: HDLbit</a>&#x548C; <a href="https://github.com/viduraakalanka/HDL-Bits-Solutions">&#x89E3;&#x51B3;&#x65B9;&#x6848;</a>&#xFF0C;&#x53EF;&#x4EE5;&#x5B66;&#x4E60;Verilog&#x3002;   </p>
+<p><a href="https://ossinsight.io/">OSS Insight</a><br>GitHub&#x7684;&#x5B9E;&#x65F6;&#x8D8B;&#x52BF;&#x548C;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x3002;  </p>
+<p><a href="https://www.freecodecamp.org/">FreeCodeCamp</a><br>&#x5B66;&#x5B8C;&#x540E;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x4E00;&#x4E9B;&#x8BC1;&#x4E66;&#xFF1F;&#x559C;&#x6B22;~</p>
+<p><a href="https://roadmap.sh/">Developer Roadmaps</a><br>&#x57FA;&#x4E8E;&#x89D2;&#x8272;&#x7684;&#x7A0B;&#x5E8F;&#x5458;&#x6210;&#x957F;&#x6307;&#x5357;&#x3002;  </p>
+<p><a href="https://seeing-theory.brown.edu/index.html">Statistics Visualization Learning Site</a><br>&#x4EE5;&#x53EF;&#x89C6;&#x5316;&#x7684;&#x65B9;&#x5F0F;&#x5B66;&#x4E60;&#x7EDF;&#x8BA1;&#x3002;&#x975E;&#x5E38;&#x6E05;&#x6670;&#x6613;&#x61C2;!  </p>
+</blockquote>
+<p>&#x6700;&#x540E;&#x4E09;&#x4E2A;&#x662F;GitHub&#x4E0A;&#x62E5;&#x6709;&#x5927;&#x91CF;&#x661F;&#x661F;&#x7684;&#x51E0;&#x4E2A;&#x9876;&#x7EA7;&#x4ED3;&#x5E93;&#x3002;&#x6211;&#x53D1;&#x73B0;<a href="https://github.com/996icu/996.ICU">996.icu</a>&#x7ADF;&#x7136;&#x6392;&#x5728;&#x7B2C;&#x4E09; &#x1F602;</p>
+<h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x5F88;&#x9057;&#x61BE;&#xFF0C;&#x6211;&#x6CA1;&#x6709;&#x53C2;&#x52A0;&#x96C5;&#x601D;&#x8003;&#x8BD5;&#x1F61E;&#x3002;&#x8FD8;&#x6CA1;&#x51C6;&#x5907;&#x597D;&#x2026; &#x6211;&#x4F1A;&#x53BB;&#x8003;&#x7684;!<br>&#x81F3;&#x4E8E;&#x5B66;&#x4E60;&#x65E5;&#x8BED;&#xFF0C;&#x6211;&#x4E0D;&#x518D;&#x7528;&#x591A;&#x90BB;&#x56FD;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6709;&#x4E9B;&#x7B80;&#x5355;&#x3002;&#x6211;&#x627E;&#x4E86;&#x4E00;&#x4E9B;YouTube&#x89C6;&#x9891;&#x6765;&#x770B;&#xFF0C;&#x6BD4;&#x5982;<a href="https://www.youtube.com/@deguchi">&#x51FA;&#x53E3;&#x65E5;&#x8A9E;</a>&#x3002;</p>
+<h3 id="&#x535A;&#x5BA2;"><a href="#&#x535A;&#x5BA2;" class="headerlink" title="&#x535A;&#x5BA2;"></a>&#x535A;&#x5BA2;</h3><p>&#x6211;&#x628A;&#x535A;&#x5BA2;&#x4E3B;&#x9898;&#x4ECE;<a href="https://github.com/probberechts/hexo-theme-cactus"><strong>Cactus</strong></a>&#x6362;&#x5230;&#x4E86;<a href="https://github.com/cjquines/hexo-theme-ascent"><strong>Ascent</strong></a>&#x3002;Btw&#xFF0C;&#x8FD9;&#x662F;<a href="https://github.com/stars/mengisok/lists/blog-themes">&#x6211;&#x7684;&#x5173;&#x4E8E;&#x535A;&#x5BA2;&#x4E3B;&#x9898;&#x7684;&#x6536;&#x85CF;&#x5939;</a> &#x3002;<br>&#x6211;&#x8BD5;&#x56FE;&#x628A;&#x4E00;&#x4E2A;&#x4E3B;&#x9898;&#x6539;&#x6210;&#x6211;&#x60F3;&#x8981;&#x7684;&#x6837;&#x5B50;&#xFF0C;&#x4F46;&#x5931;&#x8D25;&#x4E86;&#x3002;&#x524D;&#x7AEF;&#x597D;&#x96BE;&#xFF01;  </p>
 ]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+      <tags>
+        <tag>有用的链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用OrCAD Capture CIS画原理图</title>
+    <url>/zh-cn/Drawing-Schematics-in-OrCAD-Capture-CIS/</url>
+    <content><![CDATA[<p>&#x5F00;&#x59CB;&#x7ED9;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x753B;PCB&#x4E86;&#x3002;&#x9996;&#x5148;&#x5B66;&#x4E60;&#x4F7F;&#x7528;OrCAD Capture CIS&#x753B;&#x539F;&#x7406;&#x56FE;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x7684;&#x6982;&#x5FF5;&#x548C;&#x64CD;&#x4F5C;&#x3002;</p>
+<span id="more"></span>
+<h2 id="&#x5DE5;&#x7A0B;"><a href="#&#x5DE5;&#x7A0B;" class="headerlink" title="&#x5DE5;&#x7A0B;"></a>&#x5DE5;&#x7A0B;</h2><ul>
+<li>&#x65B0;&#x5EFA;&#x5DE5;&#x7A0B;</li>
+<li>&#x4FEE;&#x6539;&#x539F;&#x7406;&#x56FE;&#x504F;&#x597D;</li>
+<li>&#x4FEE;&#x6539;&#x539F;&#x7406;&#x56FE;&#x8BF4;&#x660E;</li>
+<li>&#x5143;&#x4EF6;&#x5E93;<ul>
+<li>&#x65B0;&#x5EFA;&#x5143;&#x4EF6;&#x5E93;</li>
+<li>&#x4FEE;&#x6539;&#x5143;&#x4EF6;&#x5E93;&#x5B58;&#x50A8;&#x4F4D;&#x7F6E;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x5143;&#x4EF6;"><a href="#&#x5143;&#x4EF6;" class="headerlink" title="&#x5143;&#x4EF6;"></a>&#x5143;&#x4EF6;</h2><ul>
+<li>&#x5728;&#x5143;&#x4EF6;&#x5E93;&#x4E2D;&#x65B0;&#x5EFA;&#x5143;&#x4EF6;</li>
+<li>&#x653E;&#x7F6E;&#x5143;&#x4EF6;</li>
+<li>&#x4FEE;&#x6539;&#x5143;&#x4EF6;&#x5C5E;&#x6027;</li>
+<li>&#x4FEE;&#x6539;Footprint</li>
+<li>&#x67E5;&#x770B;&#x6574;&#x4E2A;&#x5143;&#x4EF6;</li>
+<li>&#x6279;&#x91CF;&#x4FEE;&#x6539;&#x7BA1;&#x811A;&#x5C5E;&#x6027;</li>
+<li>Snap to grid</li>
+</ul>
+<h2 id="&#x590D;&#x5408;&#x5C01;&#x88C5;&#x5143;&#x4EF6;"><a href="#&#x590D;&#x5408;&#x5C01;&#x88C5;&#x5143;&#x4EF6;" class="headerlink" title="&#x590D;&#x5408;&#x5C01;&#x88C5;&#x5143;&#x4EF6;"></a>&#x590D;&#x5408;&#x5C01;&#x88C5;&#x5143;&#x4EF6;</h2><ul>
+<li>Homogeneous &#x7EC4;&#x6210;&#x5143;&#x4EF6;&#x7684;&#x5404;&#x6A21;&#x5757;&#x662F;&#x76F8;&#x540C;&#x529F;&#x80FD;&#x7684;<ul>
+<li>&#x5404;&#x6A21;&#x5757;&#x4EE5;&#x201C;&#xFF1F;&#x201D;&#x540E;&#x7684;A&#x3001;B&#x7B49;&#x6765;&#x533A;&#x5206;</li>
+<li>&#x753B;&#x5B8C;&#x201C; U?A&#x201D;&#x540E;&#x5207;&#x6362;&#x5230;&#x4E0B;&#x4E00;&#x90E8;&#x5206;&#x201C; U?B&#x201D;&#xFF0C;&#x5DF2;&#x81EA;&#x52A8;&#x753B;&#x597D;&#xFF0C;&#x53EA;&#x5269;&#x7BA1;&#x811A;&#x53F7;&#x7559;&#x7A7A;&#x4E86;</li>
+<li>&#x5207;&#x6362;&#x5230;&#x4E0A;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x5FEB;&#x6377;&#x952E;&#x4E3A;&#x201C;Ctrl+B&#x201D;&#xFF0C;&#x5207;&#x6362;&#x5230;&#x4E0B;&#x4E00;&#x90E8;&#x5206;&#x7684;&#x5FEB;&#x6377;&#x952E;&#x4E3A;&#x201C;Ctrl+N&#x201D;</li>
+<li>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x5143;&#x4EF6;&#xFF0C;&#x82E5;&#x53EA;&#x7528;<strong>&#x4E00;&#x5F20;&#x56FE;</strong>&#x8868;&#x793A;&#x51FA;&#x6765;&#xFF0C;&#x90A3;&#x4E48;&#x5143;&#x4EF6;<strong>&#x4E0D;&#x80FD;&#x6709;&#x4E24;&#x4E2A;&#x7BA1;&#x811A;&#x7684;&#x7BA1;&#x811A;&#x53F7;&#x548C;&#x7BA1;&#x811A;&#x540D;&#x90FD;&#x76F8;&#x540C;</strong>&#x3002;&#x4F46;&#x5982;&#x679C;&#x5C06;&#x5143;&#x4EF6;<strong>&#x5206;&#x6210;&#x5F88;&#x591A;&#x90E8;&#x5206;</strong>&#x6765;&#x753B;&#xFF0C;&#x90A3;&#x4E48;&#x5404;&#x4E2A;&#x90E8;&#x5206;&#x4E4B;&#x95F4;&#x7684;&#x7BA1;&#x811A;&#x7684;&#x7BA1;&#x811A;&#x53F7;&#x548C;&#x7BA1;&#x811A;&#x540D;<strong>&#x53EF;&#x4EE5;&#x76F8;&#x540C;</strong>&#xFF0C;&#x4E14;&#x7BA1;&#x811A;&#x53F7;&#x548C;&#x7BA1;&#x811A;&#x540D;&#x90FD;&#x76F8;&#x540C;&#x7684;&#x7BA1;&#x811A;&#x662F;<strong>&#x76F8;&#x8FDE;&#x7684;</strong></li>
+</ul>
+</li>
+<li>Heterogenous &#x7EC4;&#x6210;&#x5143;&#x4EF6;&#x7684;&#x5404;&#x6A21;&#x5757;&#x662F;&#x4E0D;&#x540C;&#x529F;&#x80FD;&#x7684;<ul>
+<li>&#x753B;&#x5B8C;&#x201C; U?A&#x201D;&#x540E;&#x5207;&#x6362;&#x5230;&#x4E0B;&#x4E00;&#x90E8;&#x5206;&#x201C; U?B&#x201D;&#xFF0C;&#x4E3A;&#x7A7A;&#x767D;</li>
+</ul>
+</li>
+<li>&#x5982;&#x679C;&#x5728;&#x4E00;&#x4E2A;&#x539F;&#x7406;&#x56FE;&#x4E2D;&#x653E;&#x7F6E;&#x4E86;&#x4E24;&#x4E2A;&#x53CA;&#x4EE5;&#x4E0A;&#x7684;&#x590D;&#x5408;&#x5C01;&#x88C5;&#x5143;&#x4EF6;&#xFF0C;&#x4E3A;&#x9632;&#x6B62;&#x4F7F;&#x7528;&#x201C;Annotate&#x201D;&#x8FDB;&#x884C;&#x7D22;&#x5F15;&#x7F16;&#x53F7;&#x65F6;&#x62A5;&#x9519;&#xFF0C;&#x5E94;&#x7ED9;&#x5143;&#x4EF6;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x65B0;&#x5C5E;&#x6027;&#xFF08;&#x540D;&#x5B57;&#x4E0D;&#x80FD;&#x662F;&#x201D;group&#x201C;&#xFF09;&#xFF0C;&#x5404;&#x90E8;&#x5206;&#x5C31;&#x4F1A;&#x6839;&#x636E;&#x65B0;&#x5C5E;&#x6027;&#x7684;&#x503C;&#x662F;&#x5426;&#x76F8;&#x540C;&#x5206;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x7EC4;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x54EA;&#x4E9B;&#x90E8;&#x5206;&#x662F;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x82AF;&#x7247;&#x4E2D;</li>
+</ul>
+<h2 id="&#x5728;&#x539F;&#x7406;&#x56FE;&#x4E2D;&#x6DFB;&#x52A0;&#x5143;&#x4EF6;"><a href="#&#x5728;&#x539F;&#x7406;&#x56FE;&#x4E2D;&#x6DFB;&#x52A0;&#x5143;&#x4EF6;" class="headerlink" title="&#x5728;&#x539F;&#x7406;&#x56FE;&#x4E2D;&#x6DFB;&#x52A0;&#x5143;&#x4EF6;"></a>&#x5728;&#x539F;&#x7406;&#x56FE;&#x4E2D;&#x6DFB;&#x52A0;&#x5143;&#x4EF6;</h2><ul>
+<li>&#x65CB;&#x8F6C;&#x5143;&#x4EF6;</li>
+<li>&#x4E0D;&#x5728;&#x5E93;&#x4E2D;&#x7684;&#x5143;&#x4EF6;&#xFF1A; &#x7535;&#x6E90;&#xFF0C;&#x5730;</li>
+<li>Cadence&#x81EA;&#x5E26;&#x5143;&#x4EF6;&#x5E93; Cadence - SPB_16.6 - tools - capture - library</li>
+<li>&#x4E00;&#x822C;&#x5E38;&#x7528;&#x7684;&#x7535;&#x5BB9;&#x3001;&#x7535;&#x963B;&#x3001;&#x7535;&#x611F;&#x3001;&#x53D8;&#x538B;&#x5668;&#x7B49;&#x5728;Discrete.olb</li>
+<li>Design Cache</li>
+</ul>
+<h2 id="&#x5F15;&#x811A;&#x7684;&#x8FDE;&#x63A5;"><a href="#&#x5F15;&#x811A;&#x7684;&#x8FDE;&#x63A5;" class="headerlink" title="&#x5F15;&#x811A;&#x7684;&#x8FDE;&#x63A5;"></a>&#x5F15;&#x811A;&#x7684;&#x8FDE;&#x63A5;</h2><ul>
+<li>3&#x79CD;&#x8FDE;&#x63A5;&#xFF1A;wire&#xFF0C;net alias&#xFF0C;&#x603B;&#x7EBF;</li>
+<li>wire &#x5FEB;&#x6377;&#x952E;W</li>
+<li>&#x539F;&#x7406;&#x56FE;&#x4E2D;&#x7684;&#x7EBF;&#x9ED8;&#x8BA4;&#x6A2A;&#x5E73;&#x7AD6;&#x76F4;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x753B;&#x4EFB;&#x610F;&#x89D2;&#x5EA6;&#xFF0C;&#x6309;Shift&#x952E;&#x540C;&#x65F6;&#x70B9;&#x51FB;&#x7EBF;&#x7684;&#x8D77;&#x70B9;&#x548C;&#x7EC8;&#x70B9;</li>
+<li>&#x4E24;&#x6839;&#x7EBF;&#x76F8;&#x4EA4;&#x65F6;&#xFF0C;&#x82E5;&#x4EA4;&#x70B9;&#x4E3A;&#x4E00;&#x6839;&#x7EBF;&#x7684;&#x7AEF;&#x70B9;&#xFF0C;&#x5219;&#x8868;&#x793A;&#x4E24;&#x6839;&#x7EBF;&#x662F;&#x6709;&#x7535;&#x6C14;&#x8FDE;&#x63A5;&#x7684;&#xFF0C;&#x4E14;&#x7535;&#x6C14;&#x8FDE;&#x63A5;&#x4E0D;&#x53EF;&#x53D6;&#x6D88;&#xFF1B;&#x82E5;&#x4EA4;&#x70B9;&#x4E0D;&#x662F;&#x7AEF;&#x70B9;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x65E0;&#x7535;&#x6C14;&#x8FDE;&#x63A5;</li>
+<li>&#x7ED9;&#x4EA4;&#x70B9;&#x6DFB;&#x52A0;&#x7535;&#x6C14;&#x8FDE;&#x63A5; Place junction</li>
+<li>&#x540C;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x5185;&#x7684;&#x4E92;&#x8FDE; Place net alias</li>
+<li>&#x9875;&#x9762;&#x4E4B;&#x95F4;&#x7684;&#x4E92;&#x8FDE; Place off-page connector</li>
+<li>&#x60AC;&#x7A7A;&#x5F15;&#x811A; Place no connect</li>
+<li><strong>&#x4E0D;&#x8981;&#x5C06;&#x4E24;&#x5143;&#x4EF6;&#x7684;&#x7BA1;&#x811A;&#x76F4;&#x63A5;&#x76F8;&#x8FDE;</strong>&#xFF08;&#x53EF;&#x4EE5;&#x5C06;&#x4E24;&#x4E2A;&#x5143;&#x4EF6;&#x7BA1;&#x811A;&#x76F4;&#x63A5;&#x8FDE;&#x4E0A;&#x540E;&#xFF0C;&#x518D;&#x62C9;&#x5F00;&#xFF0C;&#x4E24;&#x7BA1;&#x811A;&#x4E4B;&#x95F4;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E00;&#x6761;&#x8FDE;&#x7EBF;&#xFF09;</li>
+<li>&#x603B;&#x7EBF;&#x8FDE;&#x63A5;</li>
+<li>&#x603B;&#x7EBF;&#x547D;&#x540D; BaseName[0:all]<ul>
+<li>BaseName&#x548C;[&#x4E4B;&#x95F4;&#x4E0D;&#x80FD;&#x6709;&#x7A7A;&#x683C;</li>
+<li>32&#x4F4D;&#x603B;&#x7EBF;ED&#xFF0C;&#x4E3A;ED[0:31]</li>
+<li>BaseName&#x4E0D;&#x80FD;&#x4EE5;&#x6570;&#x5B57;&#x4F5C;&#x4E3A;&#x7ED3;&#x5C3E;</li>
+<li>&#x65B9;&#x62EC;&#x53F7;&#x5185;&#x7684;&#x5192;&#x53F7;&#x201C;:&#x201D;&#x53EF;&#x4EE5;&#x6362;&#x6210;&#x51CF;&#x53F7;&#x201C;-&#x201D;&#x6216;&#x4E24;&#x70B9;&#x201C;..&#x201D;</li>
+</ul>
+</li>
+<li>&#x603B;&#x7EBF;&#x5165;&#x53E3;&#x547D;&#x540D; BaseName0 BaseName1 BaseName2 &#x2026;</li>
+<li>&#x603B;&#x7EBF;&#x548C;&#x4FE1;&#x53F7;&#x7EBF;&#x7684;&#x8FDE;&#x63A5;&#x5FC5;&#x987B;&#x8981;&#x501F;&#x52A9;&#x603B;&#x7EBF;&#x5165;&#x53E3;&#xFF0C;&#x901A;&#x8FC7;net alias&#x65B9;&#x5F0F;&#xFF0C;&#x547D;&#x540D;&#x4FDD;&#x6301;&#x4E00;&#x81F4;</li>
+<li>&#x5FEB;&#x6377;&#x952E;F4&#x5FEB;&#x901F;&#x5E03;&#x7EBF;</li>
+</ul>
+<h2 id="&#x6D4F;&#x89C8;&#x3001;&#x641C;&#x7D22;"><a href="#&#x6D4F;&#x89C8;&#x3001;&#x641C;&#x7D22;" class="headerlink" title="&#x6D4F;&#x89C8;&#x3001;&#x641C;&#x7D22;"></a>&#x6D4F;&#x89C8;&#x3001;&#x641C;&#x7D22;</h2><ul>
+<li>&#x6D4F;&#x89C8;&#x5143;&#x4EF6;<ul>
+<li>&#x91CD;&#x65B0;&#x7F16;&#x53F7;&#x6240;&#x6709;&#x5143;&#x4EF6; Tools - Annotate - Packaging - Action: Reset part references to &#x201C;?&#x201D;, Incremental reference update</li>
+</ul>
+</li>
+<li>&#x6D4F;&#x89C8;Nets</li>
+<li>&#x6D4F;&#x89C8;Off-Page Connector</li>
+<li>&#x6D4F;&#x89C8;DRC Markers<ul>
+<li>&#x82E5;&#x6709;&#x9519;&#x8BEF;&#x4E14;&#x88AB;&#x4FEE;&#x6B63;&#x4E86;&#xFF0C;&#x9700;&#x5C06;DRC Markers&#x540C;&#x6B65;&#x66F4;&#x65B0;</li>
+</ul>
+</li>
+<li>&#x4E5F;&#x53EF;&#x4EE5;&#x9009;&#x4E2D;&#x5355;&#x4E2A;&#x539F;&#x7406;&#x56FE;&#x8FDB;&#x884C;&#x6D4F;&#x89C8;</li>
+<li>&#x641C;&#x7D22;</li>
+</ul>
+<h2 id="&#x5143;&#x4EF6;&#x7684;&#x66FF;&#x6362;&#x548C;&#x66F4;&#x65B0;"><a href="#&#x5143;&#x4EF6;&#x7684;&#x66FF;&#x6362;&#x548C;&#x66F4;&#x65B0;" class="headerlink" title="&#x5143;&#x4EF6;&#x7684;&#x66FF;&#x6362;&#x548C;&#x66F4;&#x65B0;"></a>&#x5143;&#x4EF6;&#x7684;&#x66FF;&#x6362;&#x548C;&#x66F4;&#x65B0;</h2><ul>
+<li>&#x4E8C;&#x8005;&#x533A;&#x522B;<ul>
+<li>&#x66FF;&#x6362;&#x53EF;&#x4EE5;<strong>&#x6539;&#x53D8;&#x539F;&#x7406;&#x56FE;&#x548C;&#x5143;&#x4EF6;&#x5E93;&#x7684;&#x8FDE;&#x63A5;&#x5173;&#x7CFB;</strong>&#xFF0C;&#x5373;&#x7528;&#x522B;&#x7684;&#x5143;&#x4EF6;&#x5E93;&#x7684;&#x5143;&#x4EF6;&#x66FF;&#x6362;&#x539F;&#x5143;&#x4EF6;&#x5E93;&#x7684;&#x5143;&#x4EF6;&#xFF0C;&#x800C;&#x66F4;&#x65B0;&#x4E0D;&#x80FD;</li>
+<li>&#x5982;&#x679C;<strong>&#x65B0;&#x5143;&#x4EF6;&#x7684;&#x5C01;&#x88C5;&#x5F62;&#x5F0F;&#x4E0E;&#x539F;&#x5143;&#x4EF6;&#x4E0D;&#x540C;</strong>&#xFF0C;&#x4F8B;&#x5982;&#x539F;&#x5143;&#x4EF6;&#x7684;&#x5C01;&#x88C5;&#x5F62;&#x5F0F;&#x4E3A;&#x201C; Homogeneous&#x201D;&#xFF0C;&#x800C;&#x65B0;&#x5143;&#x4EF6;&#x7684;&#x5C01;&#x88C5;&#x5F62;&#x5F0F;&#x4E3A;&#x201C;Heterogeneous&#x201D;&#xFF0C;&#x90A3;&#x4E48;&#x8981;&#x8BA9;&#x65B0;&#x5143;&#x4EF6;&#x7684;&#x5C01;&#x88C5;&#x5F62;&#x5F0F;&#x66FF;&#x6362;&#x539F;&#x5143;&#x4EF6;&#x7684;&#x5C01;&#x88C5;&#x5F62;&#x5F0F;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x66FF;&#x6362;&#xFF0C;&#x5E76;&#x4E14;&#x201C;Action&#x201D;&#x5FC5;&#x987B;&#x9009;&#x62E9;&#x201C;Replace schematic part properties&#x201D;&#xFF1A;</li>
+</ul>
+</li>
+<li>Cleanup Cache &#x6E05;&#x9664;&#x5DF2;&#x7ECF;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5143;&#x4EF6;&#x526F;&#x672C;</li>
+<li>&#x64CD;&#x4F5C;&#x539F;&#x7406;&#x56FE;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;<ul>
+<li>&#x540C;&#x65F6;&#x9009;&#x4E2D;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;</li>
+<li>&#x79FB;&#x52A8;&#x5BF9;&#x8C61;<ul>
+<li>&#x76F4;&#x63A5;&#x62D6;&#x52A8;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x4E0E;&#x5176;&#x5B83;&#x5BF9;&#x8C61;&#x7684;&#x8FDE;&#x63A5;&#x5173;&#x7CFB;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;</li>
+<li>&#x6309;&#x4F4F;Alt&#x62D6;&#x52A8;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x4E0E;&#x5176;&#x5B83;&#x5BF9;&#x8C61;&#x7684;&#x8FDE;&#x63A5;&#x5173;&#x7CFB;&#x4F1A;&#x65AD;&#x5F00;</li>
+<li>&#x65AD;&#x5F00;&#x540E;&#xFF0C;&#x80FD;&#x5426;&#x518D;&#x6B21;&#x901A;&#x8FC7;&#x63A5;&#x89E6;&#x800C;&#x8FDE;&#x63A5; Options - Preferences - Miscellaneous - Wire Drag: Allow component move with connectivity changes</li>
+</ul>
+</li>
+<li>&#x65CB;&#x8F6C;&#x5BF9;&#x8C61; R</li>
+<li>&#x590D;&#x5236;&#x3001;&#x7C98;&#x8D34;&#x3001;&#x5220;&#x9664;<ul>
+<li>&#x9009;&#x4E2D;&#x5BF9;&#x8C61;&#xFF0C;&#x6309;&#x4F4F;Ctrl&#x952E;&#x62D6;&#x52A8;&#xFF0C;&#x62D6;&#x51FA;&#x6765;&#x5BF9;&#x8C61;&#x5373;&#x4E3A;&#x590D;&#x5236;&#x51FA;&#x6765;&#x7684;&#x5BF9;&#x8C61;</li>
+</ul>
+</li>
+<li>&#x955C;&#x50CF;&#x7FFB;&#x8F6C;&#x5BF9;&#x8C61; H V</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x6DFB;&#x52A0;footprint&#x5C5E;&#x6027;"><a href="#&#x6DFB;&#x52A0;footprint&#x5C5E;&#x6027;" class="headerlink" title="&#x6DFB;&#x52A0;footprint&#x5C5E;&#x6027;"></a>&#x6DFB;&#x52A0;footprint&#x5C5E;&#x6027;</h2><ul>
+<li>&#x5728;&#x539F;&#x7406;&#x56FE;&#x4E2D;&#x4FEE;&#x6539;&#x5355;&#x4E2A;&#x5143;&#x4EF6;&#x5C01;&#x88C5;&#x4FE1;&#x606F;</li>
+<li>&#x5728;&#x5143;&#x4EF6;&#x5E93;&#x4E2D;&#x4FEE;&#x6539;&#x5355;&#x4E2A;&#x5143;&#x4EF6;&#x5C01;&#x88C5;&#x4FE1;&#x606F;&#xFF0C;&#x66F4;&#x65B0;&#x5230;&#x539F;&#x7406;&#x56FE; - &#x6253;&#x5F00;&#x67D0;&#x5143;&#x4EF6;&#x7684;&#x7F16;&#x8F91;&#x9875;&#x9762; - Options - Package Properties -  PCB Footprint - OK&#xFF0C;&#x6700;&#x540E;Replace&#xFF08;&#x4E0D;&#x8981;Update&#xFF09;</li>
+<li>&#x6279;&#x91CF;&#x4FEE;&#x6539;&#x5143;&#x4EF6;&#x5C01;&#x88C5;&#x4FE1;&#x606F;</li>
+<li>&#x6279;&#x91CF;&#x4FEE;&#x6539;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x539F;&#x7406;&#x56FE;&#x9875;&#x9762;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x4EF6;&#x7684;&#x5C01;&#x88C5;&#x4FE1;&#x606F;</li>
+<li>&#x68C0;&#x67E5;&#x5143;&#x4EF6;&#x5C01;&#x88C5;&#x4FE1;&#x606F;&#x662F;&#x5426;&#x9057;&#x6F0F;</li>
+</ul>
+<h2 id="&#x751F;&#x6210;&#x7F51;&#x8868;netlist"><a href="#&#x751F;&#x6210;&#x7F51;&#x8868;netlist" class="headerlink" title="&#x751F;&#x6210;&#x7F51;&#x8868;netlist"></a>&#x751F;&#x6210;&#x7F51;&#x8868;netlist</h2><ul>
+<li>&#x751F;&#x6210;&#x524D;&#x68C0;&#x67E5;&#x539F;&#x7406;&#x56FE;&#x7684;&#x903B;&#x8F91;&#x529F;&#x80FD;&#x3001;&#x7535;&#x6C14;&#x8FDE;&#x63A5;&#xFF0C;&#x5BF9;&#x6574;&#x4E2A;&#x5DE5;&#x7A0B;&#x91CD;&#x65B0;&#x7D22;&#x5F15;&#x7F16;&#x53F7;&#xFF0C;DRC&#x68C0;&#x67E5;</li>
+</ul>
+<h2 id="&#x540E;&#x5904;&#x7406;"><a href="#&#x540E;&#x5904;&#x7406;" class="headerlink" title="&#x540E;&#x5904;&#x7406;"></a>&#x540E;&#x5904;&#x7406;</h2><ul>
+<li>&#x751F;&#x6210;&#x5143;&#x4EF6;&#x6E05;&#x5355;</li>
+<li>&#x6253;&#x5370;&#x539F;&#x7406;&#x56FE;</li>
+</ul>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Cadence</tag>
+      </tags>
   </entry>
   <entry>
     <title>Git 学习笔记</title>
@@ -2216,6 +2463,12 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/zh-cn/Hello-World/</url>
+    <content><![CDATA[<p>&#x6211;&#x6210;&#x529F;&#x4E86;&#xFF01; :)</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Linux 中的软件安装</title>
     <url>/zh-cn/Installing-software-in-Linux/</url>
     <content><![CDATA[<p>&#x5728; Linux &#x4E2D;&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;&#x6709;5&#x79CD;&#x65B9;&#x6CD5;&#x3002;  </p>
@@ -2443,6 +2696,98 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>初识 Linux</title>
+    <url>/zh-cn/Intro-to-Linux/</url>
+    <content><![CDATA[<p>&#x6309;&#x7167;&#x6559;&#x7A0B;&#x6210;&#x529F;&#x5B89;&#x88C5;&#x7528;&#x4E0A;&#x4E86; Xubuntu &#xFF01;&#x8D5E;&#x7F8E;&#xFF01;  </p>
+<span id="more"></span>
+
+<h3 id="&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;"><a href="#&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;" class="headerlink" title="&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;"></a>&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;</h3><hr>
+<ul>
+<li>&#x6469;&#x5C14;&#x5B9A;&#x5F8B;&#xFF1A;&#x96C6;&#x6210;&#x7535;&#x8DEF;&#x4E0A;&#x53EF;&#x5BB9;&#x7EB3;&#x7684;&#x6676;&#x4F53;&#x7BA1;&#x6570;&#x76EE;&#x6BCF;&#x4E24;&#x5E74;&#x5C31;&#x4F1A;&#x7FFB;&#x4E00;&#x500D;/&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x6027;&#x80FD;&#x6BCF; 18 &#x4E2A;&#x6708;&#x63D0;&#x9AD8;&#x4E00;&#x500D;&#xFF08;Intel CEO David House&#xFF09;</li>
+<li>&#x91CF;&#x5B50;&#x7269;&#x7406;&#x7684;&#x9650;&#x5236;&#x4EE5;&#x53CA; CPU &#x529F;&#x8017;&#x548C;&#x6563;&#x70ED;&#x7684;&#x9650;&#x5236;&#x4F7F;&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7684;&#x63D0;&#x5347;&#x5F00;&#x59CB;&#x653E;&#x7F13;&#x3002;&#x591A;&#x4E2A; CPU &#x4E4B;&#x95F4;&#x7684;&#x8054;&#x5408;&#x534F;&#x4F5C;&#xFF08;&#x57FA;&#x4E8E;&#x591A;&#x6838;&#x7684;&#x5F00;&#x53D1;&#xFF09;&#x53D6;&#x4EE3;&#x8FFD;&#x6C42;&#x5355;&#x4E2A; CPU &#x6027;&#x80FD;&#x7684;&#x63D0;&#x5347;&#xFF0C;&#x6210;&#x4E3A;&#x4E86;&#x672A;&#x6765;&#x53D1;&#x5C55;&#x65B9;&#x5411;</li>
+</ul>
+<h3 id="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;"><a href="#&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;"></a>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</h3><hr>
+<ul>
+<li>&#x7528;&#x6237;&#x4E0E;&#x5E95;&#x5C42;&#x786C;&#x4EF6;&#x4EA4;&#x6D41;&#x7684;&#x6865;&#x6881;</li>
+<li>&#x529F;&#x80FD;<ul>
+<li>&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8C03;&#x5EA6;&#x8FDB;&#x7A0B;&#xFF0C;&#x4F7F;&#x8BB8;&#x591A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x5728;&#x51E0;&#x4E2A;&#x4E2D;&#x592E;&#x5904;&#x7406;&#x5668;&#x4E0A;&#x5E76;&#x53D1;&#x6267;&#x884C;</li>
+<li>&#x5185;&#x5B58;&#x7BA1;&#x7406;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5408;&#x7406;&#x5206;&#x914D;&#x548C;&#x56DE;&#x6536;&#x5185;&#x5B58;</li>
+<li>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5EFA;&#x7ACB;&#x5408;&#x9002;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6765;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x548C;&#x6570;&#x636E;</li>
+<li>&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5B9E;&#x73B0;&#x5404;&#x79CD;&#x5FC5;&#x9700;&#x7684;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#xFF08;&#x5982;TCP/IP&#xFF09;</li>
+<li>&#x5B89;&#x5168;&#x673A;&#x5236;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x914D;&#x5907;&#x5B89;&#x5168;&#x673A;&#x5236;&#x7528;&#x4E8E;&#x4FDD;&#x62A4;&#x6570;&#x636E;&#x4E0D;&#x88AB;&#x672A;&#x6388;&#x6743;&#x7684;&#x4EBA;&#x58EB;&#x83B7;&#x53D6;</li>
+<li>&#x7528;&#x6237;&#x754C;&#x9762;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x901A;&#x5E38;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x56FE;&#x5F62;&#x5316;&#x7684;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF0C;&#x65B9;&#x4FBF;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x673A;</li>
+<li>&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0E;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x5BF9;&#x63A5;&#x4EE5;&#x53D1;&#x6325;&#x786C;&#x4EF6;&#x7684;&#x529F;&#x80FD;</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-&#x8BDE;&#x751F;"><a href="#Linux-&#x8BDE;&#x751F;" class="headerlink" title="Linux &#x8BDE;&#x751F;"></a>Linux &#x8BDE;&#x751F;</h3><hr>
+<blockquote>
+<p>&#x9009;&#x62E9; Linux&#xFF0C;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x662F;&#x4E00;&#x79CD;&#x5BF9;&#x6781;&#x5BA2;&#x7CBE;&#x795E;&#x4E0E;&#x5F00;&#x6E90;&#x6587;&#x5316;&#x7684;&#x8BA4;&#x540C;&#x3002;</p>
+</blockquote>
+<blockquote>
+<p><em>&#x81EA;&#x7531;&#x8F6F;&#x4EF6;</em>&#x610F;&#x5473;&#x7740;&#x5176;&#x7528;&#x6237;&#x62E5;&#x6709;&#x81EA;&#x7531;&#x3002;&#xFF08;&#x8FD9;&#x65E0;&#x5173;&#x4EF7;&#x683C;&#x3002;&#xFF09;&#x6211;&#x4EEC;&#x5F00;&#x53D1;&#x4E86;GNU&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD9;&#x6837;&#x7528;&#x6237;&#x5C31;&#x6709;&#x4E86;&#x8BA1;&#x7B97;&#x7684;&#x81EA;&#x7531;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x7684;&#x7528;&#x6237;&#x62E5;&#x6709;&#x56DB;&#x9879;&#x57FA;&#x672C;&#x81EA;&#x7531;&#xFF1A;(0)&#x81EA;&#x7531;&#x8FD0;&#x884C;&#x8F6F;&#x4EF6;&#x3001;(1)&#x81EA;&#x7531;&#x5B66;&#x4E60;&#x548C;&#x4FEE;&#x6539;&#x8F6F;&#x4EF6;&#x6E90;&#x4EE3;&#x7801;&#x3001;(2)&#x81EA;&#x7531;&#x518D;&#x53D1;&#x5E03;&#x8F6F;&#x4EF6;&#x62F7;&#x8D1D;&#x4EE5;&#x53CA;(3)&#x81EA;&#x7531;&#x53D1;&#x5E03;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x8F6F;&#x4EF6;&#x7248;&#x672C;&#x3002;</p>
+<p>&#x8F6F;&#x4EF6;&#x4E0D;&#x540C;&#x4E8E;&#x751F;&#x6D3B;&#x4E2D;&#x7684;&#x4E8B;&#x7269; &#x2014; &#x5B83;&#x4E0D;&#x540C;&#x4E8E;&#x6905;&#x5B50;&#x3001;&#x4E09;&#x660E;&#x6CBB;&#x6216;&#x662F;&#x6C7D;&#x6CB9; &#x2014; &#x8F6F;&#x4EF6;&#x53EF;&#x4EE5;&#x66F4;&#x5BB9;&#x6613;&#x5730;&#x88AB;&#x590D;&#x5236;&#x6216;&#x4FEE;&#x6539;&#x3002;&#x6070;&#x6070;&#x662F;&#x8FD9;&#x4E00;&#x7279;&#x6027;&#xFF0C;&#x4F7F;&#x5F97;&#x8F6F;&#x4EF6;&#x66F4;&#x4E3A;&#x6709;&#x7528;&#x3002;&#x6211;&#x4EEC;&#x7531;&#x6B64;&#x575A;&#x4FE1;&#xFF0C;&#x8F6F;&#x4EF6;&#x7684;&#x8FD9;&#x4E00;&#x5929;&#x7136;&#x5C5E;&#x6027;&#x5E94;&#x8BE5;&#x88AB;&#x7528;&#x6237;&#x5229;&#x7528;&#x3002;<a href="#refer-anchor-1"><sup>1</sup></a> </p>
+</blockquote>
+<ul>
+<li>1983 &#x5E74;&#xFF0C;Richard Stallman &#x5728; MIT &#x53D1;&#x8D77;&#x4E86; GNU &#x8BA1;&#x5212;&#xFF1B;1991&#x5E74;&#xFF0C;Linus Torvalds &#x7F16;&#x5199;&#x5E76;&#x53D1;&#x5E03;&#x4E86;Linux &#x5185;&#x6838;&#xFF0C;&#x6210;&#x4E3A;&#x4E86;&#x540E;&#x6765;&#x5404;&#x7C7B; Linux &#x53D1;&#x884C;&#x7248;&#x7684;&#x57FA;&#x7840;</li>
+<li>GNU&#xFF1A;GNU &#x662F;&#x201C;<strong>G</strong>NU is&#xA0;<strong>N</strong>ot&#xA0;<strong>U</strong>nix&#x201D;&#x7684;&#x9012;&#x5F52;&#x7F29;&#x5199;&#xFF0C;&#x6307;&#x4E00;&#x5957;&#x7C7B;&#x4F3C; UNIX &#x4F46;&#x5B8C;&#x5168;&#x81EA;&#x7531;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
+<li>GNU &#x901A;&#x7528;&#x516C;&#x5171;&#x8BB8;&#x53EF;&#x8BC1;&#xFF08;GNU General Public License&#xFF0C;GNU GPL &#x6216; GPL&#xFF09;&#xFF1A;&#x628A;&#x4F7F;&#x7528;&#x8BE5;&#x8BB8;&#x53EF;&#x7684;&#x8F6F;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6743;&#x5229;&#x6388;&#x4E88;&#x4EFB;&#x4F55;&#x4F7F;&#x7528;&#x5B83;&#x7684;&#x4EBA;<ul>
+<li>&#x8FD9;&#x79CD;&#x6743;&#x5229;&#x53C8;&#x88AB;&#x79F0;&#x4E3A;&#x8457;&#x4F5C;&#x4F20;&#xFF08;Copyleft&#xFF09;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x901A;&#x5E38;&#x7684;&#x8457;&#x4F5C;&#x6743;&#xFF08;Copyright&#xFF09;</li>
+</ul>
+</li>
+<li>&#x6838;&#x5FC3;GNU&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x81F3;&#x4ECA;&#x6CA1;&#x6709;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x3002;&#x73B0;&#x5728;&#x5B9E;&#x9645;&#x4E0A;&#x7528;&#x7684;&#x662F; GNU/Linux &#xFF0C;Linux &#x5185;&#x6838;&#x662F;&#x529F;&#x80FD;&#x6838;&#x5FC3;&#xFF0C;&#x800C;GNU&#x7EC4;&#x4EF6;&#x662F;&#x5916;&#x8BBE;&#xFF0C;&#x4E5F;&#x662F;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x548C;&#x4F7F;&#x7528; Linux &#x5185;&#x6838;&#x7684;&#x5DE5;&#x5177;<ul>
+<li>&#x73B0;&#x5728;&#x667A;&#x80FD;&#x624B;&#x673A;&#x4E0A;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x7CFB;&#x7EDF;&#x662F; Android/Linux &#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; Linux &#x5185;&#x6838;&#x5F00;&#x53D1;&#x7684;&#x3001;&#x6CA1;&#x6709;&#x91C7;&#x7528; GNU &#x7EC4;&#x4EF6;&#x800C;&#x662F;&#x7528;&#x8C37;&#x6B4C;&#x81EA;&#x884C;&#x7814;&#x53D1;&#x7684;&#x53E6;&#x4E00;&#x5957; Android &#x4F53;&#x7CFB;&#x4F5C;&#x4E3A;&#x5DE5;&#x5177;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-&#x53D1;&#x884C;&#x7248;"><a href="#Linux-&#x53D1;&#x884C;&#x7248;" class="headerlink" title="Linux &#x53D1;&#x884C;&#x7248;"></a>Linux &#x53D1;&#x884C;&#x7248;</h3><hr>
+<ul>
+<li>Linux &#x53D1;&#x884C;&#x7248; = Linux &#x5185;&#x6838; + &#x4E00;&#x7CFB;&#x5217; GNU &#x5DE5;&#x5177;&#x548C;&#x5E93;&#x3001;&#x4E00;&#x4E9B;&#x9644;&#x5E26;&#x7684;&#x8F6F;&#x4EF6;&#x3001;&#x8BF4;&#x660E;&#x6587;&#x6863;&#x3001;&#x4E00;&#x4E2A;&#x684C;&#x9762;&#x7CFB;&#x7EDF;&#x3001;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x7BA1;&#x7406;&#x5668;&#x548C;&#x4E00;&#x4E2A;&#x684C;&#x9762;&#x73AF;&#x5883;</li>
+<li>&#x4E3B;&#x6D41;&#x7684;&#x53D1;&#x884C;&#x7248;&#x5206;&#x652F;<ul>
+<li><strong><strong>Debian &#x5206;&#x652F;</strong></strong>&#xFF1A;&#x6700;&#x8457;&#x540D;&#x7684;&#x662F; Ubuntu &#xFF0C;&#x4E00;&#x4E2A;&#x4E3B;&#x6253;&#x684C;&#x9762;&#x5E94;&#x7528;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x9002;&#x5408;&#x666E;&#x901A;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x3002;<strong>&#x63A8;&#x8350;&#x521D;&#x6B21;&#x63A5;&#x89E6; Linux &#x7684;&#x8BFB;&#x8005;&#x4F18;&#x5148;&#x91C7;&#x7528; Ubuntu &#x53D1;&#x884C;&#x7248;&#x6216;&#x8005;&#x5B83;&#x7684;&#x5B50;&#x53D1;&#x884C;&#x7248;&#xFF08;Lubuntu, Xubuntu &#x7B49;&#xFF09;</strong></li>
+<li><strong><strong>Red Hat &#x5206;&#x652F;</strong></strong>&#xFF1A;Fedora &#xFF0C;CentOS&#xFF08;&#x9002;&#x5408;&#x5728;&#x8981;&#x6C42;&#x9AD8;&#x5EA6;&#x7A33;&#x5B9A;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#xFF09;</li>
+<li><strong><strong>Arch Linux &#x5206;&#x652F;</strong></strong>&#xFF1A;&#x8981;&#x6C42;&#x4F7F;&#x7528;&#x8005;&#x81EA;&#x8EAB;&#x613F;&#x610F;&#x53BB;&#x4E86;&#x89E3;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x8FD0;&#x4F5C;&#x65B9;&#x5F0F;&#xFF0C;&#x5E76;&#x4E0D;&#x91C7;&#x53D6;&#x5C4F;&#x853D;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x964D;&#x4F4E;&#x4F7F;&#x7528;&#x95E8;&#x69DB;&#x3002;&#x53D8;&#x79CD; Manjaro &#x66F4;&#x6CE8;&#x91CD;&#x6613;&#x7528;&#xFF0C;&#x66F4;&#x9002;&#x5408;&#x4E00;&#x822C;&#x7528;&#x6237;</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-&#x5728;&#x8EAB;&#x8FB9;"><a href="#Linux-&#x5728;&#x8EAB;&#x8FB9;" class="headerlink" title="Linux &#x5728;&#x8EAB;&#x8FB9;"></a>Linux &#x5728;&#x8EAB;&#x8FB9;</h3><hr>
+<ul>
+<li>&#x667A;&#x80FD;&#x624B;&#x673A;&#xFF1A;Google &#x7814;&#x53D1;&#x7684; Android &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5C5E;&#x4E8E; Android/Linux &#x5206;&#x652F;&#xFF0C;&#x4E5F;&#x53EB; Android &#x539F;&#x751F;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B50;&#x53D1;&#x884C;&#x7248;&#x5F88;&#x591A;&#xFF0C;&#x5982;&#x534E;&#x4E3A; EMUI &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x548C;&#x5C0F;&#x7C73; MIUI &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7B49;</li>
+<li>&#x670D;&#x52A1;&#x5668;&#xFF1A;&#x7F51;&#x7AD9;&#x548C;&#x8F6F;&#x4EF6;&#x7684;&#x63D0;&#x4F9B;&#x5546;&#x90FD;&#x9700;&#x8981;&#x8BBE;&#x7ACB;&#x4ED6;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x6765;&#x5B8C;&#x6210;&#x8BA1;&#x7B97;&#x3001;&#x5B58;&#x50A8;&#x548C;&#x901A;&#x4FE1;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x79CD;&#x8BA1;&#x7B97;&#x673A;&#x5C31;&#x88AB;&#x79F0;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x3002;&#x670D;&#x52A1;&#x5668;&#x901A;&#x5E38;&#x4E0D;&#x7528; Windows &#x6216;&#x8005; macOS &#x8FD9;&#x79CD;&#x4E2A;&#x4EBA;&#x8BA1;&#x7B97;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x7528; Linux &#x53D1;&#x884C;&#x7248;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x754C;&#x9762;&#x7B80;&#x6D01;&#xFF0C;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;&#x800C;&#x4E14;&#x67D0;&#x4E9B;&#x53D1;&#x884C;&#x7248;&#x4E5F;&#x53D7;&#x5230;&#x4E13;&#x4E1A;&#x8BA1;&#x7B97;&#x673A;&#x4F01;&#x4E1A;&#x7684;&#x670D;&#x52A1;&#x652F;&#x6301;&#xFF08;&#x5982; RHEL&#xFF09;&#x3002;Debian &#x548C; Ubuntu Server &#x5F88;&#x6D41;&#x884C;</li>
+<li>&#x5D4C;&#x5165;&#x5F0F;&#x8BBE;&#x5907;&#xFF1A;Android/Linux &#x5206;&#x652F;&#x4E0B;&#x7684;&#x5404;&#x7C7B;&#x53D1;&#x884C;&#x7248;&#x662F;&#x4E3B;&#x6D41;&#x7684;&#x5D4C;&#x5165;&#x5F0F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5982; Google &#x4E3A;&#x6570;&#x5B57;&#x7535;&#x89C6;&#x4E13;&#x95E8;&#x63A8;&#x51FA;&#x7684; Android TV &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
+</ul>
+<h3 id="&#x4F7F;&#x7528;-Linux"><a href="#&#x4F7F;&#x7528;-Linux" class="headerlink" title="&#x4F7F;&#x7528; Linux"></a>&#x4F7F;&#x7528; Linux</h3><hr>
+<ul>
+<li><strong>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x5B89;&#x88C5;&#x5B8C;&#x6BD5;&#x7684; Linux &#x955C;&#x50CF;</strong></li>
+<li>&#x6B65;&#x9AA4;<ol>
+<li>&#x83B7;&#x53D6;&#x865A;&#x62DF;&#x673A;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#xFF0C;&#x63A8;&#x8350; <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a></li>
+<li>&#x83B7;&#x53D6; <a href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu &#x865A;&#x62DF;&#x673A;&#x955C;&#x50CF;</a>&#xFF08;Xubuntu &#x662F; Ubuntu &#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x53D1;&#x884C;&#x7248;&#xFF0C;&#x4E0E; Ubuntu &#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x4F53;&#x79EF;&#x66F4;&#x5C0F;&#xFF0C;&#x6027;&#x80FD;&#x9700;&#x6C42;&#x66F4;&#x5C11;&#xFF0C;&#x9002;&#x5408;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x6027;&#x80FD;&#x7684;&#x7535;&#x8111;&#x5B89;&#x88C5;&#x4F7F;&#x7528;&#xFF09;</li>
+<li>&#x53CC;&#x51FB;&#x6253;&#x5F00;&#x865A;&#x62DF;&#x673A;&#x955C;&#x50CF;&#xFF0C;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x4F1A;&#x6253;&#x5F00;&#x5E76;&#x5BFC;&#x5165;&#x8BE5;&#x955C;&#x50CF;&#xFF0C;&#x5BFC;&#x5165;&#x5B8C;&#x6BD5;&#x540E;&#x53EF;&#x76F4;&#x63A5;&#x70B9;&#x51FB;&#x5F00;&#x59CB;&#x6309;&#x94AE;&#x542F;&#x52A8;</li>
+</ol>
+</li>
+</ul>
+<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
+
+<p>&#x1F973; ~   </p>
+<h3 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h3><hr>
+<p><strong>&#x6559;&#x7A0B;</strong></p>
+<p><a href="https://lug.ustc.edu.cn/">LUG @ USTC</a>&#x7684;<a href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - &#x7B2C;&#x4E00;&#x7AE0;&#xFF1A;&#x521D;&#x8BC6;Linux</a></p>
+<p><strong>&#x5F15;&#x7528;</strong>  </p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a href="https://www.gnu.org/philosophy/philosophy.html">GNU &#x5DE5;&#x7A0B;&#x7684;&#x54F2;&#x5B66;</a></p>
+<p><strong>&#x63A8;&#x8350;&#x9605;&#x8BFB;</strong></p>
+<p><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">&#x4E3A;&#x4EC0;&#x4E48;&#x5F00;&#x6E90;&#x9519;&#x5931;&#x4E86;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x7684;&#x91CD;&#x70B9;</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java 入门</title>
     <url>/zh-cn/Intro-to-Java/</url>
     <content><![CDATA[<p>&#x5173;&#x4E8E;Java&#x7684;&#x8BDE;&#x751F;&#x80CC;&#x666F;&#x3001;&#x53D1;&#x5C55;&#x5386;&#x53F2;&#x548C;&#x7248;&#x672C;&#x8BF4;&#x660E;&#x90E8;&#x5206;&#x8BA9;&#x6211;&#x6536;&#x83B7;&#x8F83;&#x5927;&#x3002;  </p>
@@ -2543,98 +2888,6 @@ git push -u origin master
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初识 Linux</title>
-    <url>/zh-cn/Intro-to-Linux/</url>
-    <content><![CDATA[<p>&#x6309;&#x7167;&#x6559;&#x7A0B;&#x6210;&#x529F;&#x5B89;&#x88C5;&#x7528;&#x4E0A;&#x4E86; Xubuntu &#xFF01;&#x8D5E;&#x7F8E;&#xFF01;  </p>
-<span id="more"></span>
-
-<h3 id="&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;"><a href="#&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;" class="headerlink" title="&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;"></a>&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;</h3><hr>
-<ul>
-<li>&#x6469;&#x5C14;&#x5B9A;&#x5F8B;&#xFF1A;&#x96C6;&#x6210;&#x7535;&#x8DEF;&#x4E0A;&#x53EF;&#x5BB9;&#x7EB3;&#x7684;&#x6676;&#x4F53;&#x7BA1;&#x6570;&#x76EE;&#x6BCF;&#x4E24;&#x5E74;&#x5C31;&#x4F1A;&#x7FFB;&#x4E00;&#x500D;/&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x6027;&#x80FD;&#x6BCF; 18 &#x4E2A;&#x6708;&#x63D0;&#x9AD8;&#x4E00;&#x500D;&#xFF08;Intel CEO David House&#xFF09;</li>
-<li>&#x91CF;&#x5B50;&#x7269;&#x7406;&#x7684;&#x9650;&#x5236;&#x4EE5;&#x53CA; CPU &#x529F;&#x8017;&#x548C;&#x6563;&#x70ED;&#x7684;&#x9650;&#x5236;&#x4F7F;&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7684;&#x63D0;&#x5347;&#x5F00;&#x59CB;&#x653E;&#x7F13;&#x3002;&#x591A;&#x4E2A; CPU &#x4E4B;&#x95F4;&#x7684;&#x8054;&#x5408;&#x534F;&#x4F5C;&#xFF08;&#x57FA;&#x4E8E;&#x591A;&#x6838;&#x7684;&#x5F00;&#x53D1;&#xFF09;&#x53D6;&#x4EE3;&#x8FFD;&#x6C42;&#x5355;&#x4E2A; CPU &#x6027;&#x80FD;&#x7684;&#x63D0;&#x5347;&#xFF0C;&#x6210;&#x4E3A;&#x4E86;&#x672A;&#x6765;&#x53D1;&#x5C55;&#x65B9;&#x5411;</li>
-</ul>
-<h3 id="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;"><a href="#&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;"></a>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</h3><hr>
-<ul>
-<li>&#x7528;&#x6237;&#x4E0E;&#x5E95;&#x5C42;&#x786C;&#x4EF6;&#x4EA4;&#x6D41;&#x7684;&#x6865;&#x6881;</li>
-<li>&#x529F;&#x80FD;<ul>
-<li>&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8C03;&#x5EA6;&#x8FDB;&#x7A0B;&#xFF0C;&#x4F7F;&#x8BB8;&#x591A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x5728;&#x51E0;&#x4E2A;&#x4E2D;&#x592E;&#x5904;&#x7406;&#x5668;&#x4E0A;&#x5E76;&#x53D1;&#x6267;&#x884C;</li>
-<li>&#x5185;&#x5B58;&#x7BA1;&#x7406;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5408;&#x7406;&#x5206;&#x914D;&#x548C;&#x56DE;&#x6536;&#x5185;&#x5B58;</li>
-<li>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5EFA;&#x7ACB;&#x5408;&#x9002;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6765;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x548C;&#x6570;&#x636E;</li>
-<li>&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5B9E;&#x73B0;&#x5404;&#x79CD;&#x5FC5;&#x9700;&#x7684;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#xFF08;&#x5982;TCP/IP&#xFF09;</li>
-<li>&#x5B89;&#x5168;&#x673A;&#x5236;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x914D;&#x5907;&#x5B89;&#x5168;&#x673A;&#x5236;&#x7528;&#x4E8E;&#x4FDD;&#x62A4;&#x6570;&#x636E;&#x4E0D;&#x88AB;&#x672A;&#x6388;&#x6743;&#x7684;&#x4EBA;&#x58EB;&#x83B7;&#x53D6;</li>
-<li>&#x7528;&#x6237;&#x754C;&#x9762;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x901A;&#x5E38;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x56FE;&#x5F62;&#x5316;&#x7684;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF0C;&#x65B9;&#x4FBF;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x673A;</li>
-<li>&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0E;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x5BF9;&#x63A5;&#x4EE5;&#x53D1;&#x6325;&#x786C;&#x4EF6;&#x7684;&#x529F;&#x80FD;</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-&#x8BDE;&#x751F;"><a href="#Linux-&#x8BDE;&#x751F;" class="headerlink" title="Linux &#x8BDE;&#x751F;"></a>Linux &#x8BDE;&#x751F;</h3><hr>
-<blockquote>
-<p>&#x9009;&#x62E9; Linux&#xFF0C;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x662F;&#x4E00;&#x79CD;&#x5BF9;&#x6781;&#x5BA2;&#x7CBE;&#x795E;&#x4E0E;&#x5F00;&#x6E90;&#x6587;&#x5316;&#x7684;&#x8BA4;&#x540C;&#x3002;</p>
-</blockquote>
-<blockquote>
-<p><em>&#x81EA;&#x7531;&#x8F6F;&#x4EF6;</em>&#x610F;&#x5473;&#x7740;&#x5176;&#x7528;&#x6237;&#x62E5;&#x6709;&#x81EA;&#x7531;&#x3002;&#xFF08;&#x8FD9;&#x65E0;&#x5173;&#x4EF7;&#x683C;&#x3002;&#xFF09;&#x6211;&#x4EEC;&#x5F00;&#x53D1;&#x4E86;GNU&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD9;&#x6837;&#x7528;&#x6237;&#x5C31;&#x6709;&#x4E86;&#x8BA1;&#x7B97;&#x7684;&#x81EA;&#x7531;&#x3002;</p>
-<p>&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x7684;&#x7528;&#x6237;&#x62E5;&#x6709;&#x56DB;&#x9879;&#x57FA;&#x672C;&#x81EA;&#x7531;&#xFF1A;(0)&#x81EA;&#x7531;&#x8FD0;&#x884C;&#x8F6F;&#x4EF6;&#x3001;(1)&#x81EA;&#x7531;&#x5B66;&#x4E60;&#x548C;&#x4FEE;&#x6539;&#x8F6F;&#x4EF6;&#x6E90;&#x4EE3;&#x7801;&#x3001;(2)&#x81EA;&#x7531;&#x518D;&#x53D1;&#x5E03;&#x8F6F;&#x4EF6;&#x62F7;&#x8D1D;&#x4EE5;&#x53CA;(3)&#x81EA;&#x7531;&#x53D1;&#x5E03;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x8F6F;&#x4EF6;&#x7248;&#x672C;&#x3002;</p>
-<p>&#x8F6F;&#x4EF6;&#x4E0D;&#x540C;&#x4E8E;&#x751F;&#x6D3B;&#x4E2D;&#x7684;&#x4E8B;&#x7269; &#x2014; &#x5B83;&#x4E0D;&#x540C;&#x4E8E;&#x6905;&#x5B50;&#x3001;&#x4E09;&#x660E;&#x6CBB;&#x6216;&#x662F;&#x6C7D;&#x6CB9; &#x2014; &#x8F6F;&#x4EF6;&#x53EF;&#x4EE5;&#x66F4;&#x5BB9;&#x6613;&#x5730;&#x88AB;&#x590D;&#x5236;&#x6216;&#x4FEE;&#x6539;&#x3002;&#x6070;&#x6070;&#x662F;&#x8FD9;&#x4E00;&#x7279;&#x6027;&#xFF0C;&#x4F7F;&#x5F97;&#x8F6F;&#x4EF6;&#x66F4;&#x4E3A;&#x6709;&#x7528;&#x3002;&#x6211;&#x4EEC;&#x7531;&#x6B64;&#x575A;&#x4FE1;&#xFF0C;&#x8F6F;&#x4EF6;&#x7684;&#x8FD9;&#x4E00;&#x5929;&#x7136;&#x5C5E;&#x6027;&#x5E94;&#x8BE5;&#x88AB;&#x7528;&#x6237;&#x5229;&#x7528;&#x3002;<a href="#refer-anchor-1"><sup>1</sup></a> </p>
-</blockquote>
-<ul>
-<li>1983 &#x5E74;&#xFF0C;Richard Stallman &#x5728; MIT &#x53D1;&#x8D77;&#x4E86; GNU &#x8BA1;&#x5212;&#xFF1B;1991&#x5E74;&#xFF0C;Linus Torvalds &#x7F16;&#x5199;&#x5E76;&#x53D1;&#x5E03;&#x4E86;Linux &#x5185;&#x6838;&#xFF0C;&#x6210;&#x4E3A;&#x4E86;&#x540E;&#x6765;&#x5404;&#x7C7B; Linux &#x53D1;&#x884C;&#x7248;&#x7684;&#x57FA;&#x7840;</li>
-<li>GNU&#xFF1A;GNU &#x662F;&#x201C;<strong>G</strong>NU is&#xA0;<strong>N</strong>ot&#xA0;<strong>U</strong>nix&#x201D;&#x7684;&#x9012;&#x5F52;&#x7F29;&#x5199;&#xFF0C;&#x6307;&#x4E00;&#x5957;&#x7C7B;&#x4F3C; UNIX &#x4F46;&#x5B8C;&#x5168;&#x81EA;&#x7531;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
-<li>GNU &#x901A;&#x7528;&#x516C;&#x5171;&#x8BB8;&#x53EF;&#x8BC1;&#xFF08;GNU General Public License&#xFF0C;GNU GPL &#x6216; GPL&#xFF09;&#xFF1A;&#x628A;&#x4F7F;&#x7528;&#x8BE5;&#x8BB8;&#x53EF;&#x7684;&#x8F6F;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6743;&#x5229;&#x6388;&#x4E88;&#x4EFB;&#x4F55;&#x4F7F;&#x7528;&#x5B83;&#x7684;&#x4EBA;<ul>
-<li>&#x8FD9;&#x79CD;&#x6743;&#x5229;&#x53C8;&#x88AB;&#x79F0;&#x4E3A;&#x8457;&#x4F5C;&#x4F20;&#xFF08;Copyleft&#xFF09;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x901A;&#x5E38;&#x7684;&#x8457;&#x4F5C;&#x6743;&#xFF08;Copyright&#xFF09;</li>
-</ul>
-</li>
-<li>&#x6838;&#x5FC3;GNU&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x81F3;&#x4ECA;&#x6CA1;&#x6709;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x3002;&#x73B0;&#x5728;&#x5B9E;&#x9645;&#x4E0A;&#x7528;&#x7684;&#x662F; GNU/Linux &#xFF0C;Linux &#x5185;&#x6838;&#x662F;&#x529F;&#x80FD;&#x6838;&#x5FC3;&#xFF0C;&#x800C;GNU&#x7EC4;&#x4EF6;&#x662F;&#x5916;&#x8BBE;&#xFF0C;&#x4E5F;&#x662F;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x548C;&#x4F7F;&#x7528; Linux &#x5185;&#x6838;&#x7684;&#x5DE5;&#x5177;<ul>
-<li>&#x73B0;&#x5728;&#x667A;&#x80FD;&#x624B;&#x673A;&#x4E0A;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x7CFB;&#x7EDF;&#x662F; Android/Linux &#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; Linux &#x5185;&#x6838;&#x5F00;&#x53D1;&#x7684;&#x3001;&#x6CA1;&#x6709;&#x91C7;&#x7528; GNU &#x7EC4;&#x4EF6;&#x800C;&#x662F;&#x7528;&#x8C37;&#x6B4C;&#x81EA;&#x884C;&#x7814;&#x53D1;&#x7684;&#x53E6;&#x4E00;&#x5957; Android &#x4F53;&#x7CFB;&#x4F5C;&#x4E3A;&#x5DE5;&#x5177;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-&#x53D1;&#x884C;&#x7248;"><a href="#Linux-&#x53D1;&#x884C;&#x7248;" class="headerlink" title="Linux &#x53D1;&#x884C;&#x7248;"></a>Linux &#x53D1;&#x884C;&#x7248;</h3><hr>
-<ul>
-<li>Linux &#x53D1;&#x884C;&#x7248; = Linux &#x5185;&#x6838; + &#x4E00;&#x7CFB;&#x5217; GNU &#x5DE5;&#x5177;&#x548C;&#x5E93;&#x3001;&#x4E00;&#x4E9B;&#x9644;&#x5E26;&#x7684;&#x8F6F;&#x4EF6;&#x3001;&#x8BF4;&#x660E;&#x6587;&#x6863;&#x3001;&#x4E00;&#x4E2A;&#x684C;&#x9762;&#x7CFB;&#x7EDF;&#x3001;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x7BA1;&#x7406;&#x5668;&#x548C;&#x4E00;&#x4E2A;&#x684C;&#x9762;&#x73AF;&#x5883;</li>
-<li>&#x4E3B;&#x6D41;&#x7684;&#x53D1;&#x884C;&#x7248;&#x5206;&#x652F;<ul>
-<li><strong><strong>Debian &#x5206;&#x652F;</strong></strong>&#xFF1A;&#x6700;&#x8457;&#x540D;&#x7684;&#x662F; Ubuntu &#xFF0C;&#x4E00;&#x4E2A;&#x4E3B;&#x6253;&#x684C;&#x9762;&#x5E94;&#x7528;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x9002;&#x5408;&#x666E;&#x901A;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x3002;<strong>&#x63A8;&#x8350;&#x521D;&#x6B21;&#x63A5;&#x89E6; Linux &#x7684;&#x8BFB;&#x8005;&#x4F18;&#x5148;&#x91C7;&#x7528; Ubuntu &#x53D1;&#x884C;&#x7248;&#x6216;&#x8005;&#x5B83;&#x7684;&#x5B50;&#x53D1;&#x884C;&#x7248;&#xFF08;Lubuntu, Xubuntu &#x7B49;&#xFF09;</strong></li>
-<li><strong><strong>Red Hat &#x5206;&#x652F;</strong></strong>&#xFF1A;Fedora &#xFF0C;CentOS&#xFF08;&#x9002;&#x5408;&#x5728;&#x8981;&#x6C42;&#x9AD8;&#x5EA6;&#x7A33;&#x5B9A;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#xFF09;</li>
-<li><strong><strong>Arch Linux &#x5206;&#x652F;</strong></strong>&#xFF1A;&#x8981;&#x6C42;&#x4F7F;&#x7528;&#x8005;&#x81EA;&#x8EAB;&#x613F;&#x610F;&#x53BB;&#x4E86;&#x89E3;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x8FD0;&#x4F5C;&#x65B9;&#x5F0F;&#xFF0C;&#x5E76;&#x4E0D;&#x91C7;&#x53D6;&#x5C4F;&#x853D;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x964D;&#x4F4E;&#x4F7F;&#x7528;&#x95E8;&#x69DB;&#x3002;&#x53D8;&#x79CD; Manjaro &#x66F4;&#x6CE8;&#x91CD;&#x6613;&#x7528;&#xFF0C;&#x66F4;&#x9002;&#x5408;&#x4E00;&#x822C;&#x7528;&#x6237;</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-&#x5728;&#x8EAB;&#x8FB9;"><a href="#Linux-&#x5728;&#x8EAB;&#x8FB9;" class="headerlink" title="Linux &#x5728;&#x8EAB;&#x8FB9;"></a>Linux &#x5728;&#x8EAB;&#x8FB9;</h3><hr>
-<ul>
-<li>&#x667A;&#x80FD;&#x624B;&#x673A;&#xFF1A;Google &#x7814;&#x53D1;&#x7684; Android &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5C5E;&#x4E8E; Android/Linux &#x5206;&#x652F;&#xFF0C;&#x4E5F;&#x53EB; Android &#x539F;&#x751F;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B50;&#x53D1;&#x884C;&#x7248;&#x5F88;&#x591A;&#xFF0C;&#x5982;&#x534E;&#x4E3A; EMUI &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x548C;&#x5C0F;&#x7C73; MIUI &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7B49;</li>
-<li>&#x670D;&#x52A1;&#x5668;&#xFF1A;&#x7F51;&#x7AD9;&#x548C;&#x8F6F;&#x4EF6;&#x7684;&#x63D0;&#x4F9B;&#x5546;&#x90FD;&#x9700;&#x8981;&#x8BBE;&#x7ACB;&#x4ED6;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x6765;&#x5B8C;&#x6210;&#x8BA1;&#x7B97;&#x3001;&#x5B58;&#x50A8;&#x548C;&#x901A;&#x4FE1;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x79CD;&#x8BA1;&#x7B97;&#x673A;&#x5C31;&#x88AB;&#x79F0;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x3002;&#x670D;&#x52A1;&#x5668;&#x901A;&#x5E38;&#x4E0D;&#x7528; Windows &#x6216;&#x8005; macOS &#x8FD9;&#x79CD;&#x4E2A;&#x4EBA;&#x8BA1;&#x7B97;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x7528; Linux &#x53D1;&#x884C;&#x7248;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x754C;&#x9762;&#x7B80;&#x6D01;&#xFF0C;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;&#x800C;&#x4E14;&#x67D0;&#x4E9B;&#x53D1;&#x884C;&#x7248;&#x4E5F;&#x53D7;&#x5230;&#x4E13;&#x4E1A;&#x8BA1;&#x7B97;&#x673A;&#x4F01;&#x4E1A;&#x7684;&#x670D;&#x52A1;&#x652F;&#x6301;&#xFF08;&#x5982; RHEL&#xFF09;&#x3002;Debian &#x548C; Ubuntu Server &#x5F88;&#x6D41;&#x884C;</li>
-<li>&#x5D4C;&#x5165;&#x5F0F;&#x8BBE;&#x5907;&#xFF1A;Android/Linux &#x5206;&#x652F;&#x4E0B;&#x7684;&#x5404;&#x7C7B;&#x53D1;&#x884C;&#x7248;&#x662F;&#x4E3B;&#x6D41;&#x7684;&#x5D4C;&#x5165;&#x5F0F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5982; Google &#x4E3A;&#x6570;&#x5B57;&#x7535;&#x89C6;&#x4E13;&#x95E8;&#x63A8;&#x51FA;&#x7684; Android TV &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
-</ul>
-<h3 id="&#x4F7F;&#x7528;-Linux"><a href="#&#x4F7F;&#x7528;-Linux" class="headerlink" title="&#x4F7F;&#x7528; Linux"></a>&#x4F7F;&#x7528; Linux</h3><hr>
-<ul>
-<li><strong>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x5B89;&#x88C5;&#x5B8C;&#x6BD5;&#x7684; Linux &#x955C;&#x50CF;</strong></li>
-<li>&#x6B65;&#x9AA4;<ol>
-<li>&#x83B7;&#x53D6;&#x865A;&#x62DF;&#x673A;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#xFF0C;&#x63A8;&#x8350; <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a></li>
-<li>&#x83B7;&#x53D6; <a href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu &#x865A;&#x62DF;&#x673A;&#x955C;&#x50CF;</a>&#xFF08;Xubuntu &#x662F; Ubuntu &#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x53D1;&#x884C;&#x7248;&#xFF0C;&#x4E0E; Ubuntu &#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x4F53;&#x79EF;&#x66F4;&#x5C0F;&#xFF0C;&#x6027;&#x80FD;&#x9700;&#x6C42;&#x66F4;&#x5C11;&#xFF0C;&#x9002;&#x5408;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x6027;&#x80FD;&#x7684;&#x7535;&#x8111;&#x5B89;&#x88C5;&#x4F7F;&#x7528;&#xFF09;</li>
-<li>&#x53CC;&#x51FB;&#x6253;&#x5F00;&#x865A;&#x62DF;&#x673A;&#x955C;&#x50CF;&#xFF0C;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x4F1A;&#x6253;&#x5F00;&#x5E76;&#x5BFC;&#x5165;&#x8BE5;&#x955C;&#x50CF;&#xFF0C;&#x5BFC;&#x5165;&#x5B8C;&#x6BD5;&#x540E;&#x53EF;&#x76F4;&#x63A5;&#x70B9;&#x51FB;&#x5F00;&#x59CB;&#x6309;&#x94AE;&#x542F;&#x52A8;</li>
-</ol>
-</li>
-</ul>
-<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
-
-<p>&#x1F973; ~   </p>
-<h3 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h3><hr>
-<p><strong>&#x6559;&#x7A0B;</strong></p>
-<p><a href="https://lug.ustc.edu.cn/">LUG @ USTC</a>&#x7684;<a href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - &#x7B2C;&#x4E00;&#x7AE0;&#xFF1A;&#x521D;&#x8BC6;Linux</a></p>
-<p><strong>&#x5F15;&#x7528;</strong>  </p>
-<div id="refer-anchor-1"></div>
-
-<p>[1] <a href="https://www.gnu.org/philosophy/philosophy.html">GNU &#x5DE5;&#x7A0B;&#x7684;&#x54F2;&#x5B66;</a></p>
-<p><strong>&#x63A8;&#x8350;&#x9605;&#x8BFB;</strong></p>
-<p><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">&#x4E3A;&#x4EC0;&#x4E48;&#x5F00;&#x6E90;&#x9519;&#x5931;&#x4E86;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x7684;&#x91CD;&#x70B9;</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2781,6 +3034,49 @@ git push -u origin master
       <tags>
         <tag>前端</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>2022年11月</title>
+    <url>/zh-cn/Nov-2022/</url>
+    <content><![CDATA[<h3 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h3><p>&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x5728;Leetcode&#x4E0A;&#x505A;&#x4E86;<strong>64&#x9053;&#x9898;</strong>&#x3002; </p>
+<span id="more"></span>
+<p>&#x5B8C;&#x6210;&#x4E86;<strong>Arrays 101</strong>&#xFF08;&#x5269;&#x4E0B;&#x4E00;&#x9898;&#x53EA;&#x6709;&#x4F1A;&#x5458;&#x624D;&#x80FD;&#x505A;&#xFF09;&#x3002;&#x662F;&#x5BF9;&#x50CF;&#x6211;&#x8FD9;&#x6837;&#x7684;&#x521D;&#x5B66;&#x8005;&#x6765;&#x8BF4;&#x4E5F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x4E00;&#x7AE0;&#xFF01; </p>
+<img src="/images/arrays101.png" alt="arrays101" title="arrays101" width="250">
+
+<p>&#x5F97;&#x5230;&#x4E00;&#x4E2A;<strong>&#x5FBD;&#x7AE0;</strong>!  </p>
+<img src="/images/data_structure_badge.png" alt="data_structure_badge" title="data_structure_badge" width="500">  
+
+<p>&#x8BF4;&#x5B9E;&#x8BDD;&#xFF0C;&#x6211;&#x4E0D;&#x592A;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x5FBD;&#x7AE0;&#x91CC;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x9898;&#x1F915;&#x3002;&#x6211;&#x53EA;&#x719F;&#x6089;&#x6570;&#x7EC4;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x2026;&#x2026; &#x6253;&#x7B97;&#x627E;&#x65F6;&#x95F4;&#x6D88;&#x5316;&#x4E00;&#x4E0B;&#x3002;  </p>
+<h3 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h3><p>&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E0B;&#x3002;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;Logistic Regression&#x6A21;&#x578B;&#x5BF9;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x7684;&#x7B14;&#x8BB0;&#x672C;&#x3002;  </p>
+<h3 id="Github-Workflow"><a href="#Github-Workflow" class="headerlink" title="Github Workflow"></a>Github Workflow</h3><p>&#x5728;&#x6211;&#x7684;GitHub&#x8D26;&#x6237;&#x4E3B;&#x9875;&#x4E0A;&#x4F7F;&#x7528;&#x4E86;<a href="https://github.com/lowlighter/metrics">Metrics</a>&#x3002;&#x5B83;&#x7684;&#x795E;&#x5947;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x66F4;&#x65B0;!  </p>
+<h3 id="&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;"><a href="#&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;" class="headerlink" title="&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;"></a>&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;</h3><p>&#x6BCF;&#x4E2A;&#x8BC1;&#x4E66;&#x4E0B;&#x662F;&#x6211;&#x5BF9;&#x8BE5;&#x8BFE;&#x7A0B;&#x7684;&#x8BC4;&#x5206;&#x3002;  </p>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="500">  
+
+<center>&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</center>  
+
+<img src="/images/certificate_20221112.png" alt="certificate_20221112" title="certificate_20221112" width="500">  
+
+<center>&#x2B50;&#x2B50;</center>
+
+<img src="/images/certificate_20221113.png" alt="certificate_20221113" title="certificate_20221113" width="500">  
+
+<center>&#x2B50;&#x2B50;</center>
+
+<img src="/images/certificate_20221115.png" alt="certificate_20221115" title="certificate_20221115" width="500">  
+
+<center>&#x2B50;&#x2B50;&#x2B50;&#x2B50;</center>
+
+<img src="/images/certificate_20221120.png" alt="certificate_20221120" title="certificate_20221110" width="500">  
+
+<center>&#x2B50;&#x2B50;&#x2B50;</center>
+
+<h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x51C6;&#x5907;<strong>IELTS indicator &#x8003;&#x8BD5;</strong>&#x3002;  </p>
+<p>&#x575A;&#x6301;&#x5B66;&#x4E60;&#x4E86;<strong>42 days</strong>&#x7684;&#x591A;&#x90BB;&#x56FD;&#x65E5;&#x8BED;&#x3002;  </p>
+<p>&#x6211;&#x53D1;&#x73B0;&#xFF0C;&#x5728;&#x4E2D;&#x56FD;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x65E5;&#x8BED;&#x8003;&#x8BD5;&#xFF0C;&#x5373;JLPT&#x548C;JTEST&#x3002;JLPT&#x6BCF;&#x5E74;&#x53EA;&#x4E3E;&#x884C;&#x4E24;&#x6B21;&#xFF0C;&#x800C;&#x4E14;&#x7ECF;&#x5E38;&#x88AB;&#x53D6;&#x6D88;&#x3002;JTEST&#x7684;&#x4E3E;&#x529E;&#x9891;&#x7387;&#x66F4;&#x9AD8;&#xFF0C;&#x4F46;&#x5B83;&#x4E0D;&#x50CF;JLPT&#x90A3;&#x6837;&#x88AB;&#x9AD8;&#x5EA6;&#x8BA4;&#x53EF;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5F88;&#x7EA0;&#x7ED3;&#x3002;  </p>
+]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
   </entry>
   <entry>
     <title>面向对象</title>
@@ -3101,49 +3397,6 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>2022年11月</title>
-    <url>/zh-cn/Nov-2022/</url>
-    <content><![CDATA[<h3 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h3><p>&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x5728;Leetcode&#x4E0A;&#x505A;&#x4E86;<strong>64&#x9053;&#x9898;</strong>&#x3002; </p>
-<span id="more"></span>
-<p>&#x5B8C;&#x6210;&#x4E86;<strong>Arrays 101</strong>&#xFF08;&#x5269;&#x4E0B;&#x4E00;&#x9898;&#x53EA;&#x6709;&#x4F1A;&#x5458;&#x624D;&#x80FD;&#x505A;&#xFF09;&#x3002;&#x662F;&#x5BF9;&#x50CF;&#x6211;&#x8FD9;&#x6837;&#x7684;&#x521D;&#x5B66;&#x8005;&#x6765;&#x8BF4;&#x4E5F;&#x975E;&#x5E38;&#x7B80;&#x5355;&#x4E00;&#x7AE0;&#xFF01; </p>
-<img src="/images/arrays101.png" alt="arrays101" title="arrays101" width="250">
-
-<p>&#x5F97;&#x5230;&#x4E00;&#x4E2A;<strong>&#x5FBD;&#x7AE0;</strong>!  </p>
-<img src="/images/data_structure_badge.png" alt="data_structure_badge" title="data_structure_badge" width="500">  
-
-<p>&#x8BF4;&#x5B9E;&#x8BDD;&#xFF0C;&#x6211;&#x4E0D;&#x592A;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x5FBD;&#x7AE0;&#x91CC;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x9898;&#x1F915;&#x3002;&#x6211;&#x53EA;&#x719F;&#x6089;&#x6570;&#x7EC4;&#x548C;&#x5B57;&#x7B26;&#x4E32;&#x2026;&#x2026; &#x6253;&#x7B97;&#x627E;&#x65F6;&#x95F4;&#x6D88;&#x5316;&#x4E00;&#x4E0B;&#x3002;  </p>
-<h3 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h3><p>&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E0B;&#x3002;&#x5199;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;Logistic Regression&#x6A21;&#x578B;&#x5BF9;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x7684;&#x7B14;&#x8BB0;&#x672C;&#x3002;  </p>
-<h3 id="Github-Workflow"><a href="#Github-Workflow" class="headerlink" title="Github Workflow"></a>Github Workflow</h3><p>&#x5728;&#x6211;&#x7684;GitHub&#x8D26;&#x6237;&#x4E3B;&#x9875;&#x4E0A;&#x4F7F;&#x7528;&#x4E86;<a href="https://github.com/lowlighter/metrics">Metrics</a>&#x3002;&#x5B83;&#x7684;&#x795E;&#x5947;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x66F4;&#x65B0;!  </p>
-<h3 id="&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;"><a href="#&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;" class="headerlink" title="&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;"></a>&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x8BC1;&#x4E66;</h3><p>&#x6BCF;&#x4E2A;&#x8BC1;&#x4E66;&#x4E0B;&#x662F;&#x6211;&#x5BF9;&#x8BE5;&#x8BFE;&#x7A0B;&#x7684;&#x8BC4;&#x5206;&#x3002;  </p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="500">  
-
-<center>&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</center>  
-
-<img src="/images/certificate_20221112.png" alt="certificate_20221112" title="certificate_20221112" width="500">  
-
-<center>&#x2B50;&#x2B50;</center>
-
-<img src="/images/certificate_20221113.png" alt="certificate_20221113" title="certificate_20221113" width="500">  
-
-<center>&#x2B50;&#x2B50;</center>
-
-<img src="/images/certificate_20221115.png" alt="certificate_20221115" title="certificate_20221115" width="500">  
-
-<center>&#x2B50;&#x2B50;&#x2B50;&#x2B50;</center>
-
-<img src="/images/certificate_20221120.png" alt="certificate_20221120" title="certificate_20221110" width="500">  
-
-<center>&#x2B50;&#x2B50;&#x2B50;</center>
-
-<h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x51C6;&#x5907;<strong>IELTS indicator &#x8003;&#x8BD5;</strong>&#x3002;  </p>
-<p>&#x575A;&#x6301;&#x5B66;&#x4E60;&#x4E86;<strong>42 days</strong>&#x7684;&#x591A;&#x90BB;&#x56FD;&#x65E5;&#x8BED;&#x3002;  </p>
-<p>&#x6211;&#x53D1;&#x73B0;&#xFF0C;&#x5728;&#x4E2D;&#x56FD;&#x53EA;&#x6709;&#x4E24;&#x79CD;&#x65E5;&#x8BED;&#x8003;&#x8BD5;&#xFF0C;&#x5373;JLPT&#x548C;JTEST&#x3002;JLPT&#x6BCF;&#x5E74;&#x53EA;&#x4E3E;&#x884C;&#x4E24;&#x6B21;&#xFF0C;&#x800C;&#x4E14;&#x7ECF;&#x5E38;&#x88AB;&#x53D6;&#x6D88;&#x3002;JTEST&#x7684;&#x4E3E;&#x529E;&#x9891;&#x7387;&#x66F4;&#x9AD8;&#xFF0C;&#x4F46;&#x5B83;&#x4E0D;&#x50CF;JLPT&#x90A3;&#x6837;&#x88AB;&#x9AD8;&#x5EA6;&#x8BA4;&#x53EF;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x5F88;&#x7EA0;&#x7ED3;&#x3002;  </p>
-]]></content>
-      <categories>
-        <category>总结</category>
-      </categories>
-  </entry>
-  <entry>
     <title>2022年10月</title>
     <url>/zh-cn/Oct-2022/</url>
     <content><![CDATA[<h3 id="&#x7F16;&#x7A0B;"><a href="#&#x7F16;&#x7A0B;" class="headerlink" title="&#x7F16;&#x7A0B;"></a>&#x7F16;&#x7A0B;</h3><p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x5B8C;&#x6210;&#x4E86;Leetcode&#x4E0A;&#x7684;27&#x9053;&#x9898;&#xFF0C;&#x90FD;&#x662F;&#x7528;Java&#x3002;&#x4E0A;&#x4E00;&#x7AE0;&#x7684;&#x63A2;&#x7D22;<em>Array and String</em>&#x6709;&#x70B9;&#x96BE;&#xFF0C;&#x4F46;&#x73B0;&#x5728;&#x7684;<em>Arrays 101</em>&#x5C31;&#x5BB9;&#x6613;&#x591A;&#x4E86;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x8FD8;&#x5728;&#x505A;&#x6570;&#x7EC4;&#xFF1F;&#x6211;&#x7B49;&#x4E0D;&#x53CA;&#x5B66;&#x65B0;&#x7684;&#x4E1C;&#x897F;&#x4E86;&#x3002;  </p>
@@ -3359,35 +3612,8 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>About</title>
-    <url>/about/index.html</url>
-    <content><![CDATA[<img src="/images/bin_cat.png" alt="bin_cat" title="bin_cat" width="350">  
-
-
-<p>Hello, I&#x2019;m <a href="https://www.cakeresume.com/meng-han">Meng</a>.  </p>
-<p>I&#x2019;m currently studying for my master&#x2019;s degree, majoring in <em>Electronics</em>. However, I&#x2019;m more interested in self-study and thanks to the Internet I can do it &#x2013; I&#x2019;m learning everything related to <em>Computer Science</em>, from hardware to software. I also love art movies and all kinds of books that make me think.  </p>
-<p>It&#x2019;s a vast and unpredictable world, and many things amaze me&#x2026; Anyway, I would not hesitate to say that <strong>I am a feminist, a skeptic, a libertarian, and welcome all dissent</strong>.  </p>
-<p>Find me on <a href="https://github.com/mengisok">GitHub</a>, <a href="https://www.linkedin.com/in/mengisok/">LinkedIn</a> or <a href="mailto:hanmengisok@gmail.com">send me an e-mail</a>. </p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Links</title>
-    <url>/links/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Categories</title>
     <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/zh-cn/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -3403,13 +3629,40 @@ git push -u origin master
 ]]></content>
   </entry>
   <entry>
-    <title>链接</title>
-    <url>/zh-cn/links/index.html</url>
+    <title>About</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<img src="/images/bin_cat.png" alt="bin_cat" title="bin_cat" width="350">  
+
+
+<p>Hello, I&#x2019;m <a href="https://www.cakeresume.com/meng-han">Meng</a>.  </p>
+<p>I&#x2019;m currently studying for my master&#x2019;s degree, majoring in <em>Electronics</em>. However, I&#x2019;m more interested in self-study and thanks to the Internet I can do it &#x2013; I&#x2019;m learning everything related to <em>Computer Science</em>, from hardware to software. I also love art movies and all kinds of books that make me think.  </p>
+<p>It&#x2019;s a vast and unpredictable world, and many things amaze me&#x2026; Anyway, I would not hesitate to say that <strong>I am a feminist, a skeptic, a libertarian, and welcome all dissent</strong>.  </p>
+<p>Find me on <a href="https://github.com/mengisok">GitHub</a>, <a href="https://www.linkedin.com/in/mengisok/">LinkedIn</a> or <a href="mailto:hanmengisok@gmail.com">send me an e-mail</a>. </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/zh-cn/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Links</title>
+    <url>/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>标签</title>
     <url>/zh-cn/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>链接</title>
+    <url>/zh-cn/links/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
