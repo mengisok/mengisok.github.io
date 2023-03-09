@@ -307,6 +307,87 @@ I tried to edit a theme to fit my purpose but failed. Frontend is so difficult!<
       </categories>
   </entry>
   <entry>
+    <title>Feb 2023</title>
+    <url>/Feb-2023/</url>
+    <content><![CDATA[<p>School has started.</p>
+<span id="more"></span>
+<p>Although I finished organizing my notes before the exams, I still walked out of the exam room in pain. So far I only have a DSP score, 78, and I feel like I did worse on the remaining two classes that haven&#x2019;t come out yet, so I don&#x2019;t know how bad it will be &#x2026;</p>
+<img src="/images/idk.png" alt="idk" title="idk" width="350">  
+<h2 id="Discovery-this-month-&#x1F9D0;">Discovery this month &#x1F9D0;</h2>
+<ol>
+<li>
+<p>Wandering Douban<br>
+After being gravedigged, deleted and banned for a week by Douban for no reason, I angrily searched for alternative apps. Here are a few options.</p>
+<ul>
+<li>Tagging books, movies and music: <a href="https://neodb.social/">NeoDB</a><br>
+See <a href="https://m.cmx.im/@huaikong/107398452550319645">this post</a> for how to use it. Combined with <a href="https://github.com/doufen-org/tofu">Doufen</a>, you can migrate all the data over.You can also mark those banned entries on NeoDB.</li>
+<li>Tagging movies: <a href="https://letterboxd.com/">Letterboxed</a></li>
+<li>Tagging books: <a href="https://www.goodreads.com/">Goodreads</a></li>
+<li>This blog &#x201C;<a href="https://ulyc.github.io/2022/02/11/Douban-Escape-Plan/">Douban Escape Plan</a>&#x201D; talks about how to migrate data to <a href="https://www.notion.so/">Notion</a><br>
+I didn&#x2019;t try it, but it looks very detailed and feasible.</li>
+</ul>
+</li>
+<li>
+<p>Reviewing digital image analysis, I found two good pages.</p>
+<ul>
+<li><a href="https://www.gwylab.com/pdf/%E4%BC%A0%E7%BB%9FCV%E7%AE%97%E6%B3%95-%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B-%E6%95%99%E6%9D%90%E5%90%88%E8%BE%91.pdf">Traditional CV Algorithms - Edge Detection - Textbook Collection</a><br>
+A very comprehensive introduction.</li>
+<li><a href="https://www.zgbk.com/ecph/words?SiteID=1&amp;ID=192882&amp;SubID=81769">SUSAN operator</a><br>
+The author of the entry is actually my lecturer (&#xFF9F;o&#xFF9F;;;</li>
+</ul>
+</li>
+<li>
+<p>Looking through the LUG group chat logs, I found <a href="https://akaedu.github.io/book/index.html">Linux C Programming One-Stop Learning</a>.</p>
+</li>
+<li>
+<p>I also found a Tsinghua teacher&#x2019;s <a href="https://iot-book.github.io/0_%E5%89%8D%E8%A8%802/">Internet of Things tutorial</a> when I was reviewing.</p>
+</li>
+<li>
+<p>When I was surfing Twitter, I found a blogger&#x2019;s <a href="https://xxchan.github.io/this-week-in-risingwave/2023/03/04/twirw-3.html">weekly report on RisingWave</a>. I don&#x2019;t understand it but I like the weekly report.</p>
+</li>
+<li>
+<p>In Japanese class, the teacher recommended the website <a href="https://www.jpfbj.cn/mp/">Japanese Culture Center</a>.</p>
+</li>
+</ol>
+<h2 id="Progress-this-month-&#x1F3C6;">Progress this month &#x1F3C6;</h2>
+<p>I&#x2019;ve been watching and collecting internship information (but I haven&#x2019;t submitted my resume).</p>
+<p>I continued learning &#x201C;Linux 101&#x201D; and Andrew Ng&#x2019;s Machine Learning videos (other studies are still on hold).</p>
+<p>I did sports a few times.</p>
+<p>I started drawing PCB! It&#x2019;s hard! But it dose not annoying. Let&#x2019;s start with PCB just like Stephen Chow started with playing a small role!</p>
+<h2 id="Books-and-movies-&#x1F453;">Books and movies &#x1F453;</h2>
+<ul>
+<li>
+<p><a href="https://www.goodreads.com/book/show/62877014?from_search=true&amp;from_srp=true&amp;qid=WEQNzNXjk2&amp;rank=1">&#x59CB;&#x4E8E;&#x6781;&#x9650;&#xFF1A;&#x5973;&#x6027;&#x4E3B;&#x4E49;&#x5F80;&#x590D;&#x4E66;&#x7B80;</a><br>
+I have passionately recommended to quite a few people.</p>
+</li>
+<li>
+<p><a href="https://www.goodreads.com/book/show/33065667?from_search=true&amp;from_srp=true&amp;qid=rI6KSxjKtU&amp;rank=1">&#x6211;&#x7684;&#x9634;&#x9633;&#x4E24;&#x754C;</a><br>
+It helped me get through this somewhat difficult winter holiday. A novel that can be enjoyed is rare.</p>
+</li>
+</ul>
+<p>3 of the 11 movies I watched this month that I recommend the most &#x2014;</p>
+<ul>
+<li>
+<p><a href="https://letterboxd.com/film/the-passengers-of-the-night/">The Passengers of the Night</a><br>
+&#xC9;ric Rohmer&#x2019;s fans really love it!</p>
+</li>
+<li>
+<p><a href="https://letterboxd.com/film/the-time-to-live-and-the-time-to-die/">The time to live and the time to die</a><br>
+Poignant and true.</p>
+</li>
+<li>
+<p><a href="https://letterboxd.com/film/aftersun/">Aftersun</a><br>
+As many people have said, it&#x2019;s even more impressive after you watch it.</p>
+</li>
+</ul>
+<p>Finally, a cool screenshot of Chantal Akerman:</p>
+<img src="/images/Akerman.png" alt="Akerman" title="Akerman" width="400">  
+]]></content>
+      <categories>
+        <category>Summary</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Drawing Schematics in OrCAD Capture CIS</title>
     <url>/Drawing-Schematics-in-OrCAD-Capture-CIS/</url>
     <content><![CDATA[<p>I started drawing PCBs for a project. Firstly, I&#x2019;m learning to draw schematics using OrCAD Capture CIS. Here are some basic concepts and operations.</p>
@@ -452,87 +533,6 @@ I tried to edit a theme to fit my purpose but failed. Frontend is so difficult!<
       <tags>
         <tag>Cadence</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Feb 2023</title>
-    <url>/Feb-2023/</url>
-    <content><![CDATA[<p>School has started.</p>
-<span id="more"></span>
-<p>Although I finished organizing my notes before the exams, I still walked out of the exam room in pain. So far I only have a DSP score, 78, and I feel like I did worse on the remaining two classes that haven&#x2019;t come out yet, so I don&#x2019;t know how bad it will be &#x2026;</p>
-<img src="/images/idk.png" alt="idk" title="idk" width="350">  
-<h2 id="Discovery-this-month-&#x1F9D0;">Discovery this month &#x1F9D0;</h2>
-<ol>
-<li>
-<p>Wandering Douban<br>
-After being gravedigged, deleted and banned for a week by Douban for no reason, I angrily searched for alternative apps. Here are a few options.</p>
-<ul>
-<li>Tagging books, movies and music: <a href="https://neodb.social/">NeoDB</a><br>
-See <a href="https://m.cmx.im/@huaikong/107398452550319645">this post</a> for how to use it. Combined with <a href="https://github.com/doufen-org/tofu">Doufen</a>, you can migrate all the data over.You can also mark those banned entries on NeoDB.</li>
-<li>Tagging movies: <a href="https://letterboxd.com/">Letterboxed</a></li>
-<li>Tagging books: <a href="https://www.goodreads.com/">Goodreads</a></li>
-<li>This blog &#x201C;<a href="https://ulyc.github.io/2022/02/11/Douban-Escape-Plan/">Douban Escape Plan</a>&#x201D; talks about how to migrate data to <a href="https://www.notion.so/">Notion</a><br>
-I didn&#x2019;t try it, but it looks very detailed and feasible.</li>
-</ul>
-</li>
-<li>
-<p>Reviewing digital image analysis, I found two good pages.</p>
-<ul>
-<li><a href="https://www.gwylab.com/pdf/%E4%BC%A0%E7%BB%9FCV%E7%AE%97%E6%B3%95-%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B-%E6%95%99%E6%9D%90%E5%90%88%E8%BE%91.pdf">Traditional CV Algorithms - Edge Detection - Textbook Collection</a><br>
-A very comprehensive introduction.</li>
-<li><a href="https://www.zgbk.com/ecph/words?SiteID=1&amp;ID=192882&amp;SubID=81769">SUSAN operator</a><br>
-The author of the entry is actually my lecturer (&#xFF9F;o&#xFF9F;;;</li>
-</ul>
-</li>
-<li>
-<p>Looking through the LUG group chat logs, I found <a href="https://akaedu.github.io/book/index.html">Linux C Programming One-Stop Learning</a>.</p>
-</li>
-<li>
-<p>I also found a Tsinghua teacher&#x2019;s <a href="https://iot-book.github.io/0_%E5%89%8D%E8%A8%802/">Internet of Things tutorial</a> when I was reviewing.</p>
-</li>
-<li>
-<p>When I was surfing Twitter, I found a blogger&#x2019;s <a href="https://xxchan.github.io/this-week-in-risingwave/2023/03/04/twirw-3.html">weekly report on RisingWave</a>. I don&#x2019;t understand it but I like the weekly report.</p>
-</li>
-<li>
-<p>In Japanese class, the teacher recommended the website <a href="https://www.jpfbj.cn/mp/">Japanese Culture Center</a>.</p>
-</li>
-</ol>
-<h2 id="Progress-this-month-&#x1F3C6;">Progress this month &#x1F3C6;</h2>
-<p>I&#x2019;ve been watching and collecting internship information (but I haven&#x2019;t submitted my resume).</p>
-<p>I continued learning &#x201C;Linux 101&#x201D; and Andrew Ng&#x2019;s Machine Learning videos (other studies are still on hold).</p>
-<p>I did sports a few times.</p>
-<p>I started drawing PCB! It&#x2019;s hard! But it dose not annoying. Let&#x2019;s start with PCB just like Stephen Chow started with playing a small role!</p>
-<h2 id="Books-and-movies-&#x1F453;">Books and movies &#x1F453;</h2>
-<ul>
-<li>
-<p><a href="https://www.goodreads.com/book/show/62877014?from_search=true&amp;from_srp=true&amp;qid=WEQNzNXjk2&amp;rank=1">&#x59CB;&#x4E8E;&#x6781;&#x9650;&#xFF1A;&#x5973;&#x6027;&#x4E3B;&#x4E49;&#x5F80;&#x590D;&#x4E66;&#x7B80;</a><br>
-I have passionately recommended to quite a few people.</p>
-</li>
-<li>
-<p><a href="https://www.goodreads.com/book/show/33065667?from_search=true&amp;from_srp=true&amp;qid=rI6KSxjKtU&amp;rank=1">&#x6211;&#x7684;&#x9634;&#x9633;&#x4E24;&#x754C;</a><br>
-It helped me get through this somewhat difficult winter holiday. A novel that can be enjoyed is rare.</p>
-</li>
-</ul>
-<p>3 of the 11 movies I watched this month that I recommend the most &#x2014;</p>
-<ul>
-<li>
-<p><a href="https://letterboxd.com/film/the-passengers-of-the-night/">The Passengers of the Night</a><br>
-&#xC9;ric Rohmer&#x2019;s fans really love it!</p>
-</li>
-<li>
-<p><a href="https://letterboxd.com/film/the-time-to-live-and-the-time-to-die/">The time to live and the time to die</a><br>
-Poignant and true.</p>
-</li>
-<li>
-<p><a href="https://letterboxd.com/film/aftersun/">Aftersun</a><br>
-As many people have said, it&#x2019;s even more impressive after you watch it.</p>
-</li>
-</ul>
-<p>Finally, a cool screenshot of Chantal Akerman:</p>
-<img src="/images/Akerman.png" alt="Akerman" title="Akerman" width="400">  
-]]></content>
-      <categories>
-        <category>Summary</category>
-      </categories>
   </entry>
   <entry>
     <title>Git Learning Notes</title>
@@ -1222,6 +1222,55 @@ and the arguments in parentheses must be String arrays</li>
       </tags>
   </entry>
   <entry>
+    <title>LaTeX CV</title>
+    <url>/Latex-CV/</url>
+    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That&#x2019;s very unfriendly for beginners &#x1F622;. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
+<span id="more"></span>
+<p>Here&#x2019;s how I did it:</p>
+<p>-&gt; If you only use latex <strong>occasionally or a few times</strong>, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
+-&gt; If you want to do <strong>more</strong> things, use following steps:</p>
+<h3 id="Download-MiKTeX-and-VSCode">Download MiKTeX and VSCode</h3>
+<p><strong>MiKTeX</strong><br>
+You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
+Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.</p>
+<p><strong>VSCode</strong><br>
+Remember to download extension <em>latex workshop</em>.</p>
+<h3 id="Find-a-template">Find a template</h3>
+<p>On Overleaf or Github.<br>
+Here are my favorites:<br>
+<a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">&#x65B0;&#x5352;&#x306E;&#x305F;&#x3081;&#x306E;LaTeX&#x5C65;&#x6B74;&#x66F8;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;</a><br>
+<a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>
+And mine:<br>
+<a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)</p>
+<h3 id="Edit-the-template">Edit the template</h3>
+<p>You may encounter many problems at this step, most of which require you to download <strong>Packages</strong> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</p>
+<h3 id="Share-your-template">Share your template</h3>
+<ol>
+<li>Git your template to github<br>
+(Already bound git and your github accounts and set SSH key)<br>
+-&gt; Create a new repository<br>
+-&gt; Git bash the folder which contains full files about your template<br>
+-&gt; Run the following code in Git:</li>
+</ol>
+<pre><code class="language-C">git init
+git add .
+git commit -m &apos;Description&apos;
+git remote add origin https://...  (copy from github)
+git push -u origin master
+</code></pre>
+<ol start="2">
+<li>Submit to Overleaf<br>
+That&#x2019;s where I found the original template for my CV! I think put templates there may help more people.</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Job</category>
+      </categories>
+      <tags>
+        <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Intro to Linux</title>
     <url>/Intro-to-Linux/</url>
     <content><![CDATA[<p>I have successfully installed and used Xubuntu according to the tutorial! Great!</p>
@@ -1323,79 +1372,6 @@ Double click to open the virtual machine image, the management software will ope
       </tags>
   </entry>
   <entry>
-    <title>Jan 2023</title>
-    <url>/Jan-2023/</url>
-    <content><![CDATA[<p>In the first month of the new year, I was still organizing review notes at tortoise speed and feeling lazy. But I also learned something new.</p>
-<span id="more"></span>
-<h3 id="Changed-blog-theme-again">Changed blog theme again</h3>
-<p>I changed blog theme to <a href="https://github.com/ppoffice/hexo-theme-minos">Minos</a> in order to add the English and Chinese language options, and finally succeeded after some tinkering! And for my own aesthetic, I slightly modified the appearance. Then I found that when I clicked on the cell phone to change the language, the drop-down menu was blocked by the navigation bar. I thought of various solutions, and finally the complete display was achieved by changing the layout, so I organized it into a <a href="https://github.com/mengisok/hexo-theme-minos-bilingual">GitHub repository</a> for Chinese users to use directly. .</p>
-<p>Then I found a problem again: after opening the navigation bar for articles in the config, when you read articles, the English version displayed the subheadings normally, but the Chinese was garbled. This legacy problem has not been solved yet, so for the time being, I changed it to this: English version has the navigation bar, while no such thing in Chinese version &#x1F62C;.</p>
-<h3 id="Using-Linux">Using Linux</h3>
-<p>I found a great tutorial: <a href="https://101.lug.ustc.edu.cn/">Linux 101</a>, which was written by the Linux community at USTC. Successfully used Linux <s>and passionately sent an email to join the community and see the genius guys in it</s>! I currently finished learning the first three chapters.</p>
-<h3 id="About-machine-learning">About machine learning</h3>
-<p>I went back to Andrew Ng&#x2019;s Machine Learning videos and left freecodecamp &#x1F923;. Freecodecamp&#x2019;s tutorials are very practical, knocking the code directly, but it&#x2019;s too fast, while Andrew Ng is just the opposite. Well, I think if you are not in a hurry, it&#x2019;s better to watch Andrew Ng&#x2019;s videos first to understand the principles. Currently I just finished &#x201C;P92 16.3 Integration&#x201D;.</p>
-<p>When reviewing DIA, I found <a href="https://wiki.eecs.yorku.ca/course_archive/2011-12/F/4403/_media/backpropagation.pdf">an article that explains the BP algorithm</a>.</p>
-<p>I saw <a href="https://www.1point3acres.com/bbs/thread-713903-1-1.html?mobile=2">a post on machine learning concepts</a>.</p>
-<h3 id="Started-drawing-the-PCB">Started drawing the PCB</h3>
-<p>To be precise, I just started to draw the schematic. I&#x2019;ve only used Altium Designer before, but now I need to use Cadence, and I checked the difference between the two, it seems that Altium Designer is easy to get started and has limited performance, while Cadence is more difficult and powerful.</p>
-<p>I also saw a good blog: <a href="https://bonewp.github.io/2017/03/02/Cadence%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%94%BB%E6%9D%BF%E6%8A%80%E5%B7%A7%E7%9B%B8%E5%85%B3/">Cadence usage and drawing board skills related</a>.</p>
-<h3 id="Didn&#x2019;t-learn-the-language">Didn&#x2019;t learn the language</h3>
-<p>But I got a Japanese class for next semester! Nice&#x30FD;(&#x273F;&#xFF9F;&#x25BD;&#xFF9F;)&#x30CE;</p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>LaTeX CV</title>
-    <url>/Latex-CV/</url>
-    <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That&#x2019;s very unfriendly for beginners &#x1F622;. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.</p>
-<span id="more"></span>
-<p>Here&#x2019;s how I did it:</p>
-<p>-&gt; If you only use latex <strong>occasionally or a few times</strong>, an onilne editor <a href="https://cn.overleaf.com/latex/templates">Overleaf</a> can save you lots of troubles. You can find templates, edit and compile them.<br>
--&gt; If you want to do <strong>more</strong> things, use following steps:</p>
-<h3 id="Download-MiKTeX-and-VSCode">Download MiKTeX and VSCode</h3>
-<p><strong>MiKTeX</strong><br>
-You will get <em>MiKTeX Consle</em> and <em>TeXworks</em>. The latter is an editor but I prefer to use VSCode because it can preview pdf at another window (also because I already have VSCode).<br>
-Another choose is Tex Live. It comes with a full package pre-installed, but the download is too slow and often fails so I chose MiKTeX.</p>
-<p><strong>VSCode</strong><br>
-Remember to download extension <em>latex workshop</em>.</p>
-<h3 id="Find-a-template">Find a template</h3>
-<p>On Overleaf or Github.<br>
-Here are my favorites:<br>
-<a href="https://github.com/vinci7/Deedy-Resume-for-Japanese">&#x65B0;&#x5352;&#x306E;&#x305F;&#x3081;&#x306E;LaTeX&#x5C65;&#x6B74;&#x66F8;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;</a><br>
-<a href="https://github.com/gobborg/TLC-Resume-2021">TLC-Resume-2021</a><br>
-And mine:<br>
-<a href="https://github.com/mengisok/Resume-CV">Resume-CV</a> (based on TLC-Resume-2021)</p>
-<h3 id="Edit-the-template">Edit the template</h3>
-<p>You may encounter many problems at this step, most of which require you to download <strong>Packages</strong> in MiKTeX Console, or other stuff like Perl. Just install the missing items as stated in the error message.</p>
-<h3 id="Share-your-template">Share your template</h3>
-<ol>
-<li>Git your template to github<br>
-(Already bound git and your github accounts and set SSH key)<br>
--&gt; Create a new repository<br>
--&gt; Git bash the folder which contains full files about your template<br>
--&gt; Run the following code in Git:</li>
-</ol>
-<pre><code class="language-C">git init
-git add .
-git commit -m &apos;Description&apos;
-git remote add origin https://...  (copy from github)
-git push -u origin master
-</code></pre>
-<ol start="2">
-<li>Submit to Overleaf<br>
-That&#x2019;s where I found the original template for my CV! I think put templates there may help more people.</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Job</category>
-      </categories>
-      <tags>
-        <tag>LaTeX</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>My First LinkedIn Certificate!</title>
     <url>/My-first-LinkedIn-certificate/</url>
     <content><![CDATA[<p>Yeah I got it &#x1F606;! I have been dreaming of online learning certificates, like coursera and linkedin, for a long time. Coursera&#x2019;s free plan is a week, while linkedin&#x2019;s is a month so I chose the latter.</p>
@@ -1490,6 +1466,30 @@ It&#x2019;s a fresh new concept to me. Sounds interesting that you can develop a
       </tags>
   </entry>
   <entry>
+    <title>Jan 2023</title>
+    <url>/Jan-2023/</url>
+    <content><![CDATA[<p>In the first month of the new year, I was still organizing review notes at tortoise speed and feeling lazy. But I also learned something new.</p>
+<span id="more"></span>
+<h3 id="Changed-blog-theme-again">Changed blog theme again</h3>
+<p>I changed blog theme to <a href="https://github.com/ppoffice/hexo-theme-minos">Minos</a> in order to add the English and Chinese language options, and finally succeeded after some tinkering! And for my own aesthetic, I slightly modified the appearance. Then I found that when I clicked on the cell phone to change the language, the drop-down menu was blocked by the navigation bar. I thought of various solutions, and finally the complete display was achieved by changing the layout, so I organized it into a <a href="https://github.com/mengisok/hexo-theme-minos-bilingual">GitHub repository</a> for Chinese users to use directly. .</p>
+<p>Then I found a problem again: after opening the navigation bar for articles in the config, when you read articles, the English version displayed the subheadings normally, but the Chinese was garbled. This legacy problem has not been solved yet, so for the time being, I changed it to this: English version has the navigation bar, while no such thing in Chinese version &#x1F62C;.</p>
+<h3 id="Using-Linux">Using Linux</h3>
+<p>I found a great tutorial: <a href="https://101.lug.ustc.edu.cn/">Linux 101</a>, which was written by the Linux community at USTC. Successfully used Linux <s>and passionately sent an email to join the community and see the genius guys in it</s>! I currently finished learning the first three chapters.</p>
+<h3 id="About-machine-learning">About machine learning</h3>
+<p>I went back to Andrew Ng&#x2019;s Machine Learning videos and left freecodecamp &#x1F923;. Freecodecamp&#x2019;s tutorials are very practical, knocking the code directly, but it&#x2019;s too fast, while Andrew Ng is just the opposite. Well, I think if you are not in a hurry, it&#x2019;s better to watch Andrew Ng&#x2019;s videos first to understand the principles. Currently I just finished &#x201C;P92 16.3 Integration&#x201D;.</p>
+<p>When reviewing DIA, I found <a href="https://wiki.eecs.yorku.ca/course_archive/2011-12/F/4403/_media/backpropagation.pdf">an article that explains the BP algorithm</a>.</p>
+<p>I saw <a href="https://www.1point3acres.com/bbs/thread-713903-1-1.html?mobile=2">a post on machine learning concepts</a>.</p>
+<h3 id="Started-drawing-the-PCB">Started drawing the PCB</h3>
+<p>To be precise, I just started to draw the schematic. I&#x2019;ve only used Altium Designer before, but now I need to use Cadence, and I checked the difference between the two, it seems that Altium Designer is easy to get started and has limited performance, while Cadence is more difficult and powerful.</p>
+<p>I also saw a good blog: <a href="https://bonewp.github.io/2017/03/02/Cadence%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%94%BB%E6%9D%BF%E6%8A%80%E5%B7%A7%E7%9B%B8%E5%85%B3/">Cadence usage and drawing board skills related</a>.</p>
+<h3 id="Didn&#x2019;t-learn-the-language">Didn&#x2019;t learn the language</h3>
+<p>But I got a Japanese class for next semester! Nice&#x30FD;(&#x273F;&#xFF9F;&#x25BD;&#xFF9F;)&#x30CE;</p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Nov 2022</title>
     <url>/Nov-2022/</url>
     <content><![CDATA[<h3 id="Leetcode">Leetcode</h3>
@@ -1520,6 +1520,23 @@ It&#x2019;s a fresh new concept to me. Sounds interesting that you can develop a
 <p>Preparing for the <strong>IELTS indicator exam</strong>.</p>
 <p>Kept on learning Japanese on Duolinguo for <strong>42 days</strong>.</p>
 <p>I found out that there were only two Japanese language tests in China, JLPT and JTEST. JLPT is held only two times every year, and it&#x2019;s often cancelled. JTEST is held more frequently, but it&#x2019;s not as highly acknowledged as JLPT so I&#x2019;m hesitant to prepare for it.</p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Oct 2022</title>
+    <url>/Oct-2022/</url>
+    <content><![CDATA[<h3 id="Programming">Programming</h3>
+<p>I finished 27 problems on Leetcode till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I&#x2019;m still doing arrays? I can&#x2019;t wait to deal with something new.</p>
+<span id="more"></span>
+<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, and did HW 01, HW 02, Lab 00, Lab 01, and I&#x2019;m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
+<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng&#x2019;s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 &#x201C;Inference: making predictions&#x201D;. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <a href="https://github.com/ageron/handson-ml2">Hands on Machine Learning</a>. That&#x2019;s nice, and more codes and more difficult that the videos. However, I still didn&#x2019;t understand ML well. It seems easy but to do it is really hard&#x1F92F;. The good news was that I made a python program this afternoon finally&#x2026; Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data&#x2026;</p>
+<h3 id="Language">Language</h3>
+<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section &#x201C;Briefing&#x201D;. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
+<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn&#x2019;t know Japanese had tenses too.</p>
+<p>Bye for now! It&#x2019;s midnight.</p>
 ]]></content>
       <categories>
         <category>Summary</category>
@@ -1883,23 +1900,6 @@ and the default value for boolean types is <code>false</code>.</li>
       <tags>
         <tag>Java</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Oct 2022</title>
-    <url>/Oct-2022/</url>
-    <content><![CDATA[<h3 id="Programming">Programming</h3>
-<p>I finished 27 problems on Leetcode till now, and all used Java. The last explore chapter <em>Array and String</em> was a bit difficult, but the current one <em>Arrays 101</em> is much easier. Why I&#x2019;m still doing arrays? I can&#x2019;t wait to deal with something new.</p>
-<span id="more"></span>
-<p>I learnt a little of the famous course, <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>, and did HW 01, HW 02, Lab 00, Lab 01, and I&#x2019;m in Lab 02 now. I studied more seriously in the first half of the month, and slacked off in the second half. I hope I can persevere and finish this course and CS61B. The OK system is very interesting.</p>
-<p>I watched some <a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng&#x2019;s <strong>Machine Learning</strong> videos</a>, from the beginning to P48 &#x201C;Inference: making predictions&#x201D;. My mentor asked me to learn machine learning so I was trying to get started. I also read some parts of the the classic tutorial book, <a href="https://github.com/ageron/handson-ml2">Hands on Machine Learning</a>. That&#x2019;s nice, and more codes and more difficult that the videos. However, I still didn&#x2019;t understand ML well. It seems easy but to do it is really hard&#x1F92F;. The good news was that I made a python program this afternoon finally&#x2026; Matlab looked convenient, but it required too much computer performance and was a bit unstable. I was thinking of the characteristics of data&#x2026;</p>
-<h3 id="Language">Language</h3>
-<p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section &#x201C;Briefing&#x201D;. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!</p>
-<p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn&#x2019;t know Japanese had tenses too.</p>
-<p>Bye for now! It&#x2019;s midnight.</p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-      </categories>
   </entry>
   <entry>
     <title>Operating Files in Linux</title>
@@ -2545,93 +2545,6 @@ There are many trending repos related to ChatGPT recently.</p>
       </tags>
   </entry>
   <entry>
-    <title>2023年2月</title>
-    <url>/zh-cn/Feb-2023/</url>
-    <content><![CDATA[<p>&#x5F00;&#x5B66;&#x5566;&#x3002;</p>
-<span id="more"></span>
-<p>&#x8D76;&#x5728;&#x8003;&#x8BD5;&#x524D;&#x6574;&#x7406;&#x5B8C;&#x4E86;&#x7B14;&#x8BB0;&#xFF0C;&#x4F9D;&#x7136;&#x8FDE;&#x6EDA;&#x5E26;&#x722C;&#x5730;&#x51FA;&#x4E86;&#x8003;&#x573A;&#x3002;&#x76EE;&#x524D;&#x53EA;&#x51FA;&#x4E86;DSP&#x4E00;&#x95E8;&#x6210;&#x7EE9;&#xFF0C;78&#xFF0C;&#x5269;&#x4E0B;&#x4E24;&#x95E8;&#x611F;&#x89C9;&#x8003;&#x5F97;&#x66F4;&#x70C2;&#x4E0D;&#x77E5;&#x9053;&#x8FD8;&#x4F1A;&#x70C2;&#x5230;&#x54EA;&#x91CC;&#x2026;&#x2026;</p>
-<img src="/images/idk.png" alt="idk" title="idk" width="350">  
-<h2 id="&#x672C;&#x6708;&#x53D1;&#x73B0;-&#x1F9D0;">&#x672C;&#x6708;&#x53D1;&#x73B0; &#x1F9D0;</h2>
-<ol>
-<li>
-<p>&#x6D41;&#x6D6A;&#x8C46;&#x74E3;<br>
-&#x88AB;&#x8C46;&#x74E3;&#x65E0;&#x7AEF;&#x6316;&#x575F;&#x5220;&#x5E16;+&#x7981;&#x8A00;&#x4E00;&#x5468;&#x540E;&#xFF0C;&#x6012;&#x641C;&#x4E86;&#x4E00;&#x756A;&#x66FF;&#x4EE3;APP&#x3002;&#x4E0B;&#x9762;&#x662F;&#x51E0;&#x79CD;&#x65B9;&#x6848;&#xFF1A;</p>
-<ul>
-<li>&#x6807;&#x8BB0;&#x4E66;&#x5F71;&#x97F3;&#xFF1A;<a href="https://neodb.social/">NeoDB</a><br>
-&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x89C1;<a href="https://m.cmx.im/@huaikong/107398452550319645">&#x8FD9;&#x4E2A;&#x5E16;&#x5B50;</a> &#x3002;&#x7ED3;&#x5408;<a href="https://github.com/doufen-org/tofu">&#x8C46;&#x4F34;</a>&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x8C46;&#x74E3;&#x4E66;&#x5F71;&#x97F3;&#x6570;&#x636E;&#x5168;&#x90E8;&#x8FC1;&#x79FB;&#x8FC7;&#x6765;&#xFF0C;&#x800C;&#x4E14;NeoDB&#x4E0A;&#x53EF;&#x4EE5;&#x6807;&#x8BB0;&#x90A3;&#x4E9B;&#x88AB;&#x7981;&#x7684;&#x6761;&#x76EE;&#x3002;</li>
-<li>&#x6807;&#x8BB0;&#x7535;&#x5F71;&#xFF1A;<a href="https://letterboxd.com/">Letterboxed</a></li>
-<li>&#x6807;&#x8BB0;&#x4E66;&#x7C4D;&#xFF1A;<a href="https://www.goodreads.com/">Goodreads</a></li>
-<li>&#x8FD9;&#x7BC7;blog&#x201C;<a href="https://ulyc.github.io/2022/02/11/Douban-Escape-Plan/">&#x8C46;&#x74E3;&#x9003;&#x79BB;&#x8BA1;&#x5212;</a>&#x201D;&#x8BB2;&#x4E86;&#x5982;&#x4F55;&#x8FC1;&#x79FB;&#x6570;&#x636E;&#x5230;<a href="https://www.notion.so/">Notion</a><br>
-&#x6211;&#x6CA1;&#x6709;&#x5C1D;&#x8BD5;&#xFF0C;&#x4E0D;&#x8FC7;&#x770B;&#x8D77;&#x6765;&#x8BE6;&#x7EC6;&#x53EF;&#x884C;&#x3002;</li>
-</ul>
-</li>
-<li>
-<p>&#x590D;&#x4E60;&#x6570;&#x5B57;&#x56FE;&#x50CF;&#x5206;&#x6790;&#x65F6;&#x53D1;&#x73B0;&#x4E24;&#x4E2A;&#x4E0D;&#x9519;&#x7684;&#x7F51;&#x9875;&#xFF1A;</p>
-<ul>
-<li><a href="https://www.gwylab.com/pdf/%E4%BC%A0%E7%BB%9FCV%E7%AE%97%E6%B3%95-%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B-%E6%95%99%E6%9D%90%E5%90%88%E8%BE%91.pdf">&#x4F20;&#x7EDF;CV&#x7B97;&#x6CD5;-&#x8FB9;&#x7F18;&#x68C0;&#x6D4B;-&#x6559;&#x6750;&#x5408;&#x8F91;</a><br>
-&#x5F88;&#x5168;&#x9762;&#x7684;&#x4ECB;&#x7ECD;&#x3002;</li>
-<li><a href="https://www.zgbk.com/ecph/words?SiteID=1&amp;ID=192882&amp;SubID=81769">SUSAN&#x7B97;&#x5B50;</a><br>
-&#x6761;&#x76EE;&#x4F5C;&#x8005;&#x7ADF;&#x662F;&#x6211;&#x7684;&#x6388;&#x8BFE;&#x8001;&#x5E08; (&#xFF9F;o&#xFF9F;;;</li>
-</ul>
-</li>
-<li>
-<p>&#x7FFB;LUG&#x7FA4;&#x804A;&#x5929;&#x8BB0;&#x5F55;&#x53D1;&#x73B0;<a href="https://akaedu.github.io/book/index.html">Linux C&#x7F16;&#x7A0B;&#x4E00;&#x7AD9;&#x5F0F;&#x5B66;&#x4E60;</a>&#x3002;</p>
-</li>
-<li>
-<p>&#x4E5F;&#x662F;&#x590D;&#x4E60;&#x65F6;&#x67E5;&#x8D44;&#x6599;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x6E05;&#x534E;&#x8001;&#x5E08;&#x505A;&#x7684;<a href="https://iot-book.github.io/0_%E5%89%8D%E8%A8%802/">&#x7269;&#x8054;&#x7F51;&#x6559;&#x7A0B;</a>&#xFF0C;&#x611F;&#x89C9;&#x5F88;&#x5389;&#x5BB3;&#x7684;&#x6837;&#x5B50;&#x5148;&#x5B58;&#x8D77;&#x6765;&#x5427;qwq</p>
-</li>
-<li>
-<p>&#x63A8;&#x7279;&#x51B2;&#x6D6A;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;blogger&#x7684;<a href="https://xxchan.github.io/this-week-in-risingwave/2023/03/04/twirw-3.html">&#x5173;&#x4E8E;RisingWave&#x7684;&#x5468;&#x62A5;</a>&#xFF0C;&#x770B;&#x4E0D;&#x61C2;&#x4F46;&#x559C;&#x6B22;&#x5468;&#x62A5;&#x3002;</p>
-</li>
-<li>
-<p>&#x65E5;&#x8BED;&#x8BFE;&#x4E0A;&#xFF0C;&#x8001;&#x5E08;&#x63A8;&#x8350;&#x4E86;<a href="https://www.jpfbj.cn/mp/">&#x65E5;&#x672C;&#x6587;&#x5316;&#x4E2D;&#x5FC3;</a>&#x7F51;&#x7AD9;&#x3002;</p>
-</li>
-</ol>
-<h2 id="&#x672C;&#x6708;&#x8FDB;&#x5C55;-&#x1F3C6;">&#x672C;&#x6708;&#x8FDB;&#x5C55; &#x1F3C6;</h2>
-<p>&#x6709;&#x5728;&#x7559;&#x610F;&#x548C;&#x6536;&#x96C6;&#x5B9E;&#x4E60;&#x4FE1;&#x606F;&#xFF08;&#x4F46;&#x5E76;&#x6CA1;&#x6709;&#x6295;&#x7B80;&#x5386;&#xFF09;&#x3002;</p>
-<p>&#x6709;&#x7EE7;&#x7EED;&#x5728;&#x770B;Linux 101&#x548C;&#x5434;&#x6069;&#x8FBE;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF08;&#x5176;&#x5B83;&#x8FD8;&#x5728;&#x6401;&#x7F6E;&#xFF09;&#x3002;</p>
-<p>&#x6709;&#x5065;&#x51E0;&#x6B21;&#x8EAB;&#x3002;</p>
-<p>&#x5F00;&#x59CB;&#x753B;&#x677F;&#x5B50;&#x4E86;&#xFF01;&#x597D;&#x96BE;&#xFF01;&#x4E0D;&#x8FC7;&#x4E0D;&#x8BA8;&#x538C;&#x3002;&#x50CF;&#x5468;&#x661F;&#x9A70;&#x4ECE;&#x8DD1;&#x9F99;&#x5957;&#x5F00;&#x59CB;&#x4E00;&#x6837;&#x4ECE;PCB&#x6C11;&#x5DE5;&#x5F00;&#x59CB;&#x5427;&#xFF01;</p>
-<h2 id="&#x4E66;&#x4E0E;&#x5F71;-&#x1F453;">&#x4E66;&#x4E0E;&#x5F71; &#x1F453;</h2>
-<ul>
-<li>
-<p><a href="https://www.goodreads.com/book/show/62877014?from_search=true&amp;from_srp=true&amp;qid=WEQNzNXjk2&amp;rank=1">&#x59CB;&#x4E8E;&#x6781;&#x9650;&#xFF1A;&#x5973;&#x6027;&#x4E3B;&#x4E49;&#x5F80;&#x590D;&#x4E66;&#x7B80;</a><br>
-&#x6FC0;&#x60C5;&#x63A8;&#x8350;&#x7ED9;&#x4E86;&#x4E0D;&#x5C11;&#x4EBA;&#x3002;</p>
-</li>
-<li>
-<p><a href="https://www.goodreads.com/book/show/33065667?from_search=true&amp;from_srp=true&amp;qid=rI6KSxjKtU&amp;rank=1">&#x6211;&#x7684;&#x9634;&#x9633;&#x4E24;&#x754C;</a><br>
-&#x5E2E;&#x6211;&#x5EA6;&#x8FC7;&#x4E86;&#x6F2B;&#x957F;&#x5230;&#x6709;&#x70B9;&#x96BE;&#x71AC;&#x7684;&#x5BD2;&#x5047;&#x65F6;&#x5149;&#x3002;&#x4E00;&#x672C;&#x80FD;&#x8BA9;&#x4EBA;&#x5728;&#x751F;&#x6D3B;&#x4E4B;&#x4F59;&#x4EAB;&#x53D7;&#x800C;&#x4E0D;&#x662F;&#x500D;&#x52A0;&#x6298;&#x78E8;&#x7684;&#x5C0F;&#x8BF4;&#x662F;&#x5F88;&#x96BE;&#x5F97;&#x7684;&#x3002;</p>
-</li>
-</ul>
-<p>&#x672C;&#x6708;&#x770B;&#x7684;11&#x90E8;&#x7535;&#x5F71;&#x4E2D;&#xFF0C;&#x6700;&#x63A8;&#x8350;&#x7684;&#x4E09;&#x90E8;&#x7535;&#x5F71;&#xFF1A;</p>
-<ul>
-<li>
-<p><a href="https://letterboxd.com/film/the-passengers-of-the-night/">&#x5DF4;&#x9ECE;&#x591C;&#x65C5;&#x4EBA;</a><br>
-&#x4FAF;&#x9EA6;&#x5F71;&#x8FF7;&#x72C2;&#x559C;&#xFF01;</p>
-</li>
-<li>
-<p><a href="https://letterboxd.com/film/the-time-to-live-and-the-time-to-die/">&#x7AE5;&#x5E74;&#x5F80;&#x4E8B;</a><br>
-&#x6C89;&#x75DB;&#x800C;&#x771F;&#x5207;&#x3002;</p>
-</li>
-<li>
-<p><a href="https://letterboxd.com/film/aftersun/">&#x6652;&#x540E;&#x5047;&#x65E5;</a><br>
-&#x5982;&#x4E0D;&#x5C11;&#x4EBA;&#x6240;&#x8BF4;&#x7684;&#xFF0C;&#x201C;&#x540E;&#x52B2;&#x5341;&#x8DB3;&#x201D;&#x3002;</p>
-</li>
-</ul>
-<p>&#x6700;&#x540E;&#xFF0C;&#x4E00;&#x5F20;Chantal Akerman&#x7684;&#x5E05;&#x6C14;&#x622A;&#x56FE;&#xFF1A;</p>
-<img src="/images/Akerman.png" alt="Akerman" title="Akerman" width="400">    
-]]></content>
-      <categories>
-        <category>总结</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/zh-cn/Hello-World/</url>
-    <content><![CDATA[<p>&#x6211;&#x6210;&#x529F;&#x4E86;&#xFF01; &#x1F603;</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Git 学习笔记</title>
     <url>/zh-cn/Git-Learning-Notes/</url>
     <content><![CDATA[<p>&#x5B8C;&#x6574;&#x5730;&#x8FC7;&#x4E86;&#x4E00;&#x904D;&#x5ED6;&#x96EA;&#x5CF0;&#x7684;&#x6559;&#x7A0B;&#x3002;&#x6211;&#x5B66;Git&#x7684;&#x521D;&#x8877;&#x662F;&#x60F3;&#x719F;&#x7EC3;&#x7528;&#x4E0A;GitHub, &#x73B0;&#x5728;&#x53D1;&#x73B0;Git&#x624D;&#x662F;&#x90A3;&#x4E2A;&#x6DF1;&#x5965;&#x7684;&#x6838;&#x5FC3;&#x1F602;</p>
@@ -2961,6 +2874,93 @@ There are many trending repos related to ChatGPT recently.</p>
       </tags>
   </entry>
   <entry>
+    <title>2023年2月</title>
+    <url>/zh-cn/Feb-2023/</url>
+    <content><![CDATA[<p>&#x5F00;&#x5B66;&#x5566;&#x3002;</p>
+<span id="more"></span>
+<p>&#x8D76;&#x5728;&#x8003;&#x8BD5;&#x524D;&#x6574;&#x7406;&#x5B8C;&#x4E86;&#x7B14;&#x8BB0;&#xFF0C;&#x4F9D;&#x7136;&#x8FDE;&#x6EDA;&#x5E26;&#x722C;&#x5730;&#x51FA;&#x4E86;&#x8003;&#x573A;&#x3002;&#x76EE;&#x524D;&#x53EA;&#x51FA;&#x4E86;DSP&#x4E00;&#x95E8;&#x6210;&#x7EE9;&#xFF0C;78&#xFF0C;&#x5269;&#x4E0B;&#x4E24;&#x95E8;&#x611F;&#x89C9;&#x8003;&#x5F97;&#x66F4;&#x70C2;&#x4E0D;&#x77E5;&#x9053;&#x8FD8;&#x4F1A;&#x70C2;&#x5230;&#x54EA;&#x91CC;&#x2026;&#x2026;</p>
+<img src="/images/idk.png" alt="idk" title="idk" width="350">  
+<h2 id="&#x672C;&#x6708;&#x53D1;&#x73B0;-&#x1F9D0;">&#x672C;&#x6708;&#x53D1;&#x73B0; &#x1F9D0;</h2>
+<ol>
+<li>
+<p>&#x6D41;&#x6D6A;&#x8C46;&#x74E3;<br>
+&#x88AB;&#x8C46;&#x74E3;&#x65E0;&#x7AEF;&#x6316;&#x575F;&#x5220;&#x5E16;+&#x7981;&#x8A00;&#x4E00;&#x5468;&#x540E;&#xFF0C;&#x6012;&#x641C;&#x4E86;&#x4E00;&#x756A;&#x66FF;&#x4EE3;APP&#x3002;&#x4E0B;&#x9762;&#x662F;&#x51E0;&#x79CD;&#x65B9;&#x6848;&#xFF1A;</p>
+<ul>
+<li>&#x6807;&#x8BB0;&#x4E66;&#x5F71;&#x97F3;&#xFF1A;<a href="https://neodb.social/">NeoDB</a><br>
+&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x89C1;<a href="https://m.cmx.im/@huaikong/107398452550319645">&#x8FD9;&#x4E2A;&#x5E16;&#x5B50;</a> &#x3002;&#x7ED3;&#x5408;<a href="https://github.com/doufen-org/tofu">&#x8C46;&#x4F34;</a>&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x8C46;&#x74E3;&#x4E66;&#x5F71;&#x97F3;&#x6570;&#x636E;&#x5168;&#x90E8;&#x8FC1;&#x79FB;&#x8FC7;&#x6765;&#xFF0C;&#x800C;&#x4E14;NeoDB&#x4E0A;&#x53EF;&#x4EE5;&#x6807;&#x8BB0;&#x90A3;&#x4E9B;&#x88AB;&#x7981;&#x7684;&#x6761;&#x76EE;&#x3002;</li>
+<li>&#x6807;&#x8BB0;&#x7535;&#x5F71;&#xFF1A;<a href="https://letterboxd.com/">Letterboxed</a></li>
+<li>&#x6807;&#x8BB0;&#x4E66;&#x7C4D;&#xFF1A;<a href="https://www.goodreads.com/">Goodreads</a></li>
+<li>&#x8FD9;&#x7BC7;blog&#x201C;<a href="https://ulyc.github.io/2022/02/11/Douban-Escape-Plan/">&#x8C46;&#x74E3;&#x9003;&#x79BB;&#x8BA1;&#x5212;</a>&#x201D;&#x8BB2;&#x4E86;&#x5982;&#x4F55;&#x8FC1;&#x79FB;&#x6570;&#x636E;&#x5230;<a href="https://www.notion.so/">Notion</a><br>
+&#x6211;&#x6CA1;&#x6709;&#x5C1D;&#x8BD5;&#xFF0C;&#x4E0D;&#x8FC7;&#x770B;&#x8D77;&#x6765;&#x8BE6;&#x7EC6;&#x53EF;&#x884C;&#x3002;</li>
+</ul>
+</li>
+<li>
+<p>&#x590D;&#x4E60;&#x6570;&#x5B57;&#x56FE;&#x50CF;&#x5206;&#x6790;&#x65F6;&#x53D1;&#x73B0;&#x4E24;&#x4E2A;&#x4E0D;&#x9519;&#x7684;&#x7F51;&#x9875;&#xFF1A;</p>
+<ul>
+<li><a href="https://www.gwylab.com/pdf/%E4%BC%A0%E7%BB%9FCV%E7%AE%97%E6%B3%95-%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B-%E6%95%99%E6%9D%90%E5%90%88%E8%BE%91.pdf">&#x4F20;&#x7EDF;CV&#x7B97;&#x6CD5;-&#x8FB9;&#x7F18;&#x68C0;&#x6D4B;-&#x6559;&#x6750;&#x5408;&#x8F91;</a><br>
+&#x5F88;&#x5168;&#x9762;&#x7684;&#x4ECB;&#x7ECD;&#x3002;</li>
+<li><a href="https://www.zgbk.com/ecph/words?SiteID=1&amp;ID=192882&amp;SubID=81769">SUSAN&#x7B97;&#x5B50;</a><br>
+&#x6761;&#x76EE;&#x4F5C;&#x8005;&#x7ADF;&#x662F;&#x6211;&#x7684;&#x6388;&#x8BFE;&#x8001;&#x5E08; (&#xFF9F;o&#xFF9F;;;</li>
+</ul>
+</li>
+<li>
+<p>&#x7FFB;LUG&#x7FA4;&#x804A;&#x5929;&#x8BB0;&#x5F55;&#x53D1;&#x73B0;<a href="https://akaedu.github.io/book/index.html">Linux C&#x7F16;&#x7A0B;&#x4E00;&#x7AD9;&#x5F0F;&#x5B66;&#x4E60;</a>&#x3002;</p>
+</li>
+<li>
+<p>&#x4E5F;&#x662F;&#x590D;&#x4E60;&#x65F6;&#x67E5;&#x8D44;&#x6599;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x6E05;&#x534E;&#x8001;&#x5E08;&#x505A;&#x7684;<a href="https://iot-book.github.io/0_%E5%89%8D%E8%A8%802/">&#x7269;&#x8054;&#x7F51;&#x6559;&#x7A0B;</a>&#xFF0C;&#x611F;&#x89C9;&#x5F88;&#x5389;&#x5BB3;&#x7684;&#x6837;&#x5B50;&#x5148;&#x5B58;&#x8D77;&#x6765;&#x5427;qwq</p>
+</li>
+<li>
+<p>&#x63A8;&#x7279;&#x51B2;&#x6D6A;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;blogger&#x7684;<a href="https://xxchan.github.io/this-week-in-risingwave/2023/03/04/twirw-3.html">&#x5173;&#x4E8E;RisingWave&#x7684;&#x5468;&#x62A5;</a>&#xFF0C;&#x770B;&#x4E0D;&#x61C2;&#x4F46;&#x559C;&#x6B22;&#x5468;&#x62A5;&#x3002;</p>
+</li>
+<li>
+<p>&#x65E5;&#x8BED;&#x8BFE;&#x4E0A;&#xFF0C;&#x8001;&#x5E08;&#x63A8;&#x8350;&#x4E86;<a href="https://www.jpfbj.cn/mp/">&#x65E5;&#x672C;&#x6587;&#x5316;&#x4E2D;&#x5FC3;</a>&#x7F51;&#x7AD9;&#x3002;</p>
+</li>
+</ol>
+<h2 id="&#x672C;&#x6708;&#x8FDB;&#x5C55;-&#x1F3C6;">&#x672C;&#x6708;&#x8FDB;&#x5C55; &#x1F3C6;</h2>
+<p>&#x6709;&#x5728;&#x7559;&#x610F;&#x548C;&#x6536;&#x96C6;&#x5B9E;&#x4E60;&#x4FE1;&#x606F;&#xFF08;&#x4F46;&#x5E76;&#x6CA1;&#x6709;&#x6295;&#x7B80;&#x5386;&#xFF09;&#x3002;</p>
+<p>&#x6709;&#x7EE7;&#x7EED;&#x5728;&#x770B;Linux 101&#x548C;&#x5434;&#x6069;&#x8FBE;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF08;&#x5176;&#x5B83;&#x8FD8;&#x5728;&#x6401;&#x7F6E;&#xFF09;&#x3002;</p>
+<p>&#x6709;&#x5065;&#x51E0;&#x6B21;&#x8EAB;&#x3002;</p>
+<p>&#x5F00;&#x59CB;&#x753B;&#x677F;&#x5B50;&#x4E86;&#xFF01;&#x597D;&#x96BE;&#xFF01;&#x4E0D;&#x8FC7;&#x4E0D;&#x8BA8;&#x538C;&#x3002;&#x50CF;&#x5468;&#x661F;&#x9A70;&#x4ECE;&#x8DD1;&#x9F99;&#x5957;&#x5F00;&#x59CB;&#x4E00;&#x6837;&#x4ECE;PCB&#x6C11;&#x5DE5;&#x5F00;&#x59CB;&#x5427;&#xFF01;</p>
+<h2 id="&#x4E66;&#x4E0E;&#x5F71;-&#x1F453;">&#x4E66;&#x4E0E;&#x5F71; &#x1F453;</h2>
+<ul>
+<li>
+<p><a href="https://www.goodreads.com/book/show/62877014?from_search=true&amp;from_srp=true&amp;qid=WEQNzNXjk2&amp;rank=1">&#x59CB;&#x4E8E;&#x6781;&#x9650;&#xFF1A;&#x5973;&#x6027;&#x4E3B;&#x4E49;&#x5F80;&#x590D;&#x4E66;&#x7B80;</a><br>
+&#x6FC0;&#x60C5;&#x63A8;&#x8350;&#x7ED9;&#x4E86;&#x4E0D;&#x5C11;&#x4EBA;&#x3002;</p>
+</li>
+<li>
+<p><a href="https://www.goodreads.com/book/show/33065667?from_search=true&amp;from_srp=true&amp;qid=rI6KSxjKtU&amp;rank=1">&#x6211;&#x7684;&#x9634;&#x9633;&#x4E24;&#x754C;</a><br>
+&#x5E2E;&#x6211;&#x5EA6;&#x8FC7;&#x4E86;&#x6F2B;&#x957F;&#x5230;&#x6709;&#x70B9;&#x96BE;&#x71AC;&#x7684;&#x5BD2;&#x5047;&#x65F6;&#x5149;&#x3002;&#x4E00;&#x672C;&#x80FD;&#x8BA9;&#x4EBA;&#x5728;&#x751F;&#x6D3B;&#x4E4B;&#x4F59;&#x4EAB;&#x53D7;&#x800C;&#x4E0D;&#x662F;&#x500D;&#x52A0;&#x6298;&#x78E8;&#x7684;&#x5C0F;&#x8BF4;&#x662F;&#x5F88;&#x96BE;&#x5F97;&#x7684;&#x3002;</p>
+</li>
+</ul>
+<p>&#x672C;&#x6708;&#x770B;&#x7684;11&#x90E8;&#x7535;&#x5F71;&#x4E2D;&#xFF0C;&#x6700;&#x63A8;&#x8350;&#x7684;&#x4E09;&#x90E8;&#x7535;&#x5F71;&#xFF1A;</p>
+<ul>
+<li>
+<p><a href="https://letterboxd.com/film/the-passengers-of-the-night/">&#x5DF4;&#x9ECE;&#x591C;&#x65C5;&#x4EBA;</a><br>
+&#x4FAF;&#x9EA6;&#x5F71;&#x8FF7;&#x72C2;&#x559C;&#xFF01;</p>
+</li>
+<li>
+<p><a href="https://letterboxd.com/film/the-time-to-live-and-the-time-to-die/">&#x7AE5;&#x5E74;&#x5F80;&#x4E8B;</a><br>
+&#x6C89;&#x75DB;&#x800C;&#x771F;&#x5207;&#x3002;</p>
+</li>
+<li>
+<p><a href="https://letterboxd.com/film/aftersun/">&#x6652;&#x540E;&#x5047;&#x65E5;</a><br>
+&#x5982;&#x4E0D;&#x5C11;&#x4EBA;&#x6240;&#x8BF4;&#x7684;&#xFF0C;&#x201C;&#x540E;&#x52B2;&#x5341;&#x8DB3;&#x201D;&#x3002;</p>
+</li>
+</ul>
+<p>&#x6700;&#x540E;&#xFF0C;&#x4E00;&#x5F20;Chantal Akerman&#x7684;&#x5E05;&#x6C14;&#x622A;&#x56FE;&#xFF1A;</p>
+<img src="/images/Akerman.png" alt="Akerman" title="Akerman" width="400">    
+]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/zh-cn/Hello-World/</url>
+    <content><![CDATA[<p>&#x6211;&#x6210;&#x529F;&#x4E86;&#xFF01; &#x1F603;</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Linux 中的软件安装</title>
     <url>/zh-cn/Installing-software-in-Linux/</url>
     <content><![CDATA[<p>&#x5728; Linux &#x4E2D;&#x5B89;&#x88C5;&#x8F6F;&#x4EF6;&#x6709;5&#x79CD;&#x65B9;&#x6CD5;&#x3002;</p>
@@ -3035,125 +3035,6 @@ There are many trending repos related to ChatGPT recently.</p>
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java 入门</title>
-    <url>/zh-cn/Intro-to-Java/</url>
-    <content><![CDATA[<p>&#x5173;&#x4E8E;Java&#x7684;&#x8BDE;&#x751F;&#x80CC;&#x666F;&#x3001;&#x53D1;&#x5C55;&#x5386;&#x53F2;&#x548C;&#x7248;&#x672C;&#x8BF4;&#x660E;&#x90E8;&#x5206;&#x8BA9;&#x6211;&#x6536;&#x83B7;&#x8F83;&#x5927;&#x3002;</p>
-<span id="more"></span>
-<h3 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h3>
-<hr>
-<ul>
-<li>&#x521B;&#x59CB;&#x4EBA;&#xFF1A;James Gosling</li>
-<li>Java&#x4ECB;&#x4E8E;&#x7F16;&#x8BD1;&#x578B;&#x8BED;&#x8A00;&#x548C;&#x89E3;&#x91CA;&#x578B;&#x8BED;&#x8A00;&#x4E4B;&#x95F4;&#x3002;&#x5B83;&#x662F;&#x5C06;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x6210;&#x4E00;&#x79CD;&#x201C;&#x5B57;&#x8282;&#x7801;&#x201D;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x62BD;&#x8C61;&#x7684;CPU&#x6307;&#x4EE4;&#xFF0C;&#x7136;&#x540E;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x5E73;&#x53F0;&#x7F16;&#x5199;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x4E0D;&#x540C;&#x5E73;&#x53F0;&#x7684;&#x865A;&#x62DF;&#x673A;&#x8D1F;&#x8D23;&#x52A0;&#x8F7D;&#x5B57;&#x8282;&#x7801;&#x5E76;&#x6267;&#x884C;&#xFF0C;&#x5B9E;&#x73B0;&#x201C;&#x4E00;&#x6B21;&#x7F16;&#x5199;&#xFF0C;&#x5230;&#x5904;&#x8FD0;&#x884C;&#x201D;</li>
-<li>Java&#x4E09;&#x4E2A;&#x7248;&#x672C;
-<ul>
-<li>Java SE&#xFF1A;Standard Edition&#xFF0C;&#x6807;&#x51C6;&#x7248;&#xFF0C;&#x5305;&#x542B;&#x6807;&#x51C6;&#x7684;JVM&#x548C;&#x6807;&#x51C6;&#x5E93;&#xFF0C;&#x662F;&#x6574;&#x4E2A;Java&#x5E73;&#x53F0;&#x7684;&#x6838;&#x5FC3;</li>
-<li>Java EE&#xFF1A;Enterprise Edition&#xFF0C;&#x4F01;&#x4E1A;&#x7248;&#xFF0C;&#x5728;Java SE&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x52A0;&#x4E0A;&#x4E86;&#x5927;&#x91CF;&#x7684;API&#x548C;&#x5E93;&#xFF0C;&#x4EE5;&#x4FBF;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;Web&#x5E94;&#x7528;&#x3001;&#x6570;&#x636E;&#x5E93;&#x3001;&#x6D88;&#x606F;&#x670D;&#x52A1;&#x7B49;&#xFF1B;Java EE&#x7684;&#x7684;&#x865A;&#x62DF;&#x673A;&#x548C;Java SE&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF1B;&#x662F;&#x8FDB;&#x4E00;&#x6B65;&#x5B66;&#x4E60;Web&#x5E94;&#x7528;&#x6240;&#x5FC5;&#x987B;&#x7684;</li>
-<li>Java ME&#xFF1A;Micro Edition&#xFF0C;&#x9488;&#x5BF9;&#x5D4C;&#x5165;&#x5F0F;&#x8BBE;&#x5907;&#x7684;&#x201C;&#x7626;&#x8EAB;&#x7248;&#x201D;&#xFF0C;Java SE&#x7684;&#x6807;&#x51C6;&#x5E93;&#x65E0;&#x6CD5;&#x5728;Java ME&#x4E0A;&#x4F7F;&#x7528;&#xFF1B;Java ME&#x7684;&#x865A;&#x62DF;&#x673A;&#x4E5F;&#x662F;&#x201C;&#x7626;&#x8EAB;&#x7248;&#x201D;&#xFF1B;&#x4E0D;&#x6D41;&#x884C;&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&#x5B66;&#x4E60;</li>
-</ul>
-</li>
-<li>&#x63A8;&#x8350;&#x7684;Java&#x5B66;&#x4E60;&#x8DEF;&#x7EBF;
-<ul>
-<li>&#x9996;&#x5148;&#x8981;&#x5B66;&#x4E60;Java SE&#xFF0C;&#x638C;&#x63E1;Java&#x8BED;&#x8A00;&#x672C;&#x8EAB;&#x3001;Java&#x6838;&#x5FC3;&#x5F00;&#x53D1;&#x6280;&#x672F;&#x4EE5;&#x53CA;Java&#x6807;&#x51C6;&#x5E93;&#x7684;&#x4F7F;&#x7528;&#xFF1B;</li>
-<li>&#x5982;&#x679C;&#x7EE7;&#x7EED;&#x5B66;&#x4E60;Java EE&#xFF0C;&#x90A3;&#x4E48;Spring&#x6846;&#x67B6;&#x3001;&#x6570;&#x636E;&#x5E93;&#x5F00;&#x53D1;&#x3001;&#x5206;&#x5E03;&#x5F0F;&#x67B6;&#x6784;&#x5C31;&#x662F;&#x9700;&#x8981;&#x5B66;&#x4E60;&#x7684;&#xFF1B;</li>
-<li>&#x5982;&#x679C;&#x8981;&#x5B66;&#x4E60;&#x5927;&#x6570;&#x636E;&#x5F00;&#x53D1;&#xFF0C;&#x90A3;&#x4E48;Hadoop&#x3001;Spark&#x3001;Flink&#x8FD9;&#x4E9B;&#x5927;&#x6570;&#x636E;&#x5E73;&#x53F0;&#x5C31;&#x662F;&#x9700;&#x8981;&#x5B66;&#x4E60;&#x7684;&#xFF0C;&#x4ED6;&#x4EEC;&#x90FD;&#x57FA;&#x4E8E;Java&#x6216;Scala&#x5F00;&#x53D1;&#xFF1B;</li>
-<li>&#x5982;&#x679C;&#x60F3;&#x8981;&#x5B66;&#x4E60;&#x79FB;&#x52A8;&#x5F00;&#x53D1;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x6DF1;&#x5165;Android&#x5E73;&#x53F0;&#xFF0C;&#x638C;&#x63E1;Android App&#x5F00;&#x53D1;&#x3002;</li>
-</ul>
-</li>
-<li>JDK&#xFF1A;Java Development Kit&#xFF0C;&#x9664;&#x4E86;&#x5305;&#x542B;JRE&#xFF0C;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x7F16;&#x8BD1;&#x5668;&#x3001;&#x8C03;&#x8BD5;&#x5668;&#x7B49;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#xFF0C;&#x7528;&#x6765;&#x5C06;Java&#x6E90;&#x7801;&#x7F16;&#x8BD1;&#x6210;Java&#x5B57;&#x8282;&#x7801;</li>
-<li>JRE&#xFF1A;Java Runtime Environment&#xFF0C;&#x662F;&#x8FD0;&#x884C;Java&#x5B57;&#x8282;&#x7801;&#x7684;&#x865A;&#x62DF;&#x673A;</li>
-<li>JSR&#x89C4;&#x8303;&#xFF1A;Java Specification Request</li>
-<li>JCP&#x7EC4;&#x7EC7;&#xFF1A;Java Community Process</li>
-<li>RI&#xFF1A;Reference Implementation&#xFF0C;&#x53C2;&#x8003;&#x5B9E;&#x73B0;</li>
-<li>TCK&#xFF1A;Technology Compatibility Kit&#xFF0C;&#x517C;&#x5BB9;&#x6027;&#x6D4B;&#x8BD5;&#x5957;&#x4EF6;</li>
-</ul>
-<h3 id="&#x57FA;&#x7840;">&#x57FA;&#x7840;</h3>
-<hr>
-<h4 id="&#x7A0B;&#x5E8F;&#x57FA;&#x672C;&#x7ED3;&#x6784;">&#x7A0B;&#x5E8F;&#x57FA;&#x672C;&#x7ED3;&#x6784;</h4>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> { <span class="hljs-comment">// &#x7C7B;&#x540D;&#x662F;Hello</span></span><br><span class="line">    <span class="hljs-comment">// ...</span></span><br><span class="line">} <span class="hljs-comment">// class&#x5B9A;&#x4E49;&#x7ED3;&#x675F;</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {<span class="hljs-comment">// &#x65B9;&#x6CD5;&#x540D;&#x662F;main</span></span><br><span class="line"><span class="hljs-comment">// &#x65B9;&#x6CD5;&#x4EE3;&#x7801;...</span></span><br><span class="line">    }<span class="hljs-comment">// &#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x7ED3;&#x675F;</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>&#x7C7B;&#x540D;&#x5FC5;&#x987B;&#x4EE5;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#xFF08;&#x4E60;&#x60EF;&#x5927;&#x5199;&#xFF09;&#x5F00;&#x5934;&#xFF1B;&#x65B9;&#x6CD5;&#x540D;&#x5FC5;&#x987B;&#x4EE5;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#xFF08;&#x4E60;&#x60EF;&#x5C0F;&#x5199;&#xFF09;&#x5F00;&#x5934;</li>
-<li>&#x5728;<code>class</code>&#x5185;&#x90E8;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x82E5;&#x5E72;&#x65B9;&#x6CD5;&#xFF08;method&#xFF09;</li>
-<li><code>public</code>&#x662F;&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#xFF0C;&#x8868;&#x793A;&#x8BE5;<code>class</code>&#x662F;&#x516C;&#x5F00;&#x7684;&#x3002;&#x4E0D;&#x5199;<code>public</code>&#xFF0C;&#x4E5F;&#x80FD;&#x6B63;&#x786E;&#x7F16;&#x8BD1;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x7C7B;&#x5C06;&#x65E0;&#x6CD5;&#x4ECE;&#x547D;&#x4EE4;&#x884C;&#x6267;&#x884C;</li>
-<li>Java&#x5165;&#x53E3;&#x7A0B;&#x5E8F;&#x89C4;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x662F;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x65B9;&#x6CD5;&#x540D;&#x5FC5;&#x987B;&#x4E3A;<code>main</code><br>
-&#xFF0C;&#x62EC;&#x53F7;&#x5185;&#x7684;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;String&#x6570;&#x7EC4;</li>
-<li>Intelli IDEA&#x4EE3;&#x7801;&#x683C;&#x5F0F;&#x5316;&#xFF1A;Ctrl + Alt + L</li>
-</ul>
-<h4 id="&#x53D8;&#x91CF;&#x548C;&#x6570;&#x636E;&#x7C7B;&#x578B;">&#x53D8;&#x91CF;&#x548C;&#x6570;&#x636E;&#x7C7B;&#x578B;</h4>
-<ul>
-<li>&#x4E24;&#x79CD;&#x53D8;&#x91CF;&#x7C7B;&#x578B;&#xFF1A;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;
-<ul>
-<li>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x662F;CPU&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x5305;&#x62EC;&#x6574;&#x578B;&#xFF0C;&#x6D6E;&#x70B9;&#x578B;&#xFF0C;&#x5E03;&#x5C14;&#x578B;&#xFF0C;&#x5B57;&#x7B26;&#x578B;</li>
-<li>&#x5269;&#x4E0B;&#x7684;&#x90FD;&#x662F;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;C&#x8BED;&#x8A00;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x5B83;&#x5185;&#x90E8;&#x5B58;&#x50A8;&#x4E00;&#x4E2A;&#x201C;&#x5730;&#x5740;&#x201D;&#xFF0C;&#x6307;&#x5411;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x5185;&#x5B58;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x6700;&#x5E38;&#x7528;&#x7684;&#x662F;String</li>
-<li>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x662F;&#x201C;&#x6301;&#x6709;&#x201D;&#x67D0;&#x4E2A;&#x6570;&#x503C;&#xFF0C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x662F;&#x201C;&#x6307;&#x5411;&#x201D;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;</li>
-</ul>
-</li>
-<li>&#x5E38;&#x91CF;&#x5728;&#x521D;&#x59CB;&#x5316;&#x540E;&#x4E0D;&#x53EF;&#x91CD;&#x65B0;&#x8D4B;&#x503C;</li>
-<li>&#x7B80;&#x5199;&#x53D8;&#x91CF;&#x7C7B;&#x578B;&#xFF0C;&#x4F7F;&#x7528;<code>var</code>&#x5173;&#x952E;&#x5B57;</li>
-</ul>
-<h4 id="&#x8FD0;&#x7B97;">&#x8FD0;&#x7B97;</h4>
-<ul>
-<li>&#x6574;&#x6570;&#x8FD0;&#x7B97;&#x6C38;&#x8FDC;&#x662F;&#x7CBE;&#x786E;&#x7684;&#xFF0C;&#x6D6E;&#x70B9;&#x6570;&#x8FD0;&#x7B97;&#x5E38;&#x5E38;&#x65E0;&#x6CD5;&#x7CBE;&#x786E;&#x8868;&#x793A;</li>
-</ul>
-<h3 id="&#x6D41;&#x7A0B;&#x63A7;&#x5236;">&#x6D41;&#x7A0B;&#x63A7;&#x5236;</h3>
-<hr>
-<h4 id="&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;">&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;</h4>
-<ul>
-<li>&#x8F93;&#x51FA;
-<ul>
-<li><code>System.out.println()</code>&#xFF0C;&#x8F93;&#x51FA;&#x5E76;&#x6362;&#x884C;</li>
-<li><code>System.out.print()</code>&#xFF0C;&#x8F93;&#x51FA;&#x4E0D;&#x6362;&#x884C;</li>
-<li><code>System.out.printf()</code>&#xFF0C;&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;</li>
-</ul>
-</li>
-<li>&#x8F93;&#x5165;&#xFF08;&#x4E0D;&#x80FD;&#x5728;&#x7EBF;&#x8FD0;&#x884C;&#xFF0C;&#x5FC5;&#x987B;&#x4ECE;&#x547D;&#x4EE4;&#x884C;&#x8BFB;&#x53D6;&#xFF09;</li>
-</ul>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Main</span> {publicstaticvoid <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {</span><br><span class="line">        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span><span class="hljs-keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="hljs-comment">// &#x521B;&#x5EFA;Scanner&#x5BF9;&#x8C61;</span></span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> scanner.nextLine();<span class="hljs-comment">// &#x8BFB;&#x53D6;&#x4E00;&#x884C;&#x8F93;&#x5165;&#x5E76;&#x83B7;&#x53D6;&#x5B57;&#x7B26;&#x4E32;</span></span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> scanner.nextInt();<span class="hljs-comment">// &#x8BFB;&#x53D6;&#x4E00;&#x884C;&#x8F93;&#x5165;&#x5E76;&#x83B7;&#x53D6;&#x6574;&#x6570;</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h4 id="if&#x6761;&#x4EF6;&#x5224;&#x65AD;">if&#x6761;&#x4EF6;&#x5224;&#x65AD;</h4>
-<ul>
-<li>&#x5224;&#x65AD;&#x6D6E;&#x70B9;&#x6570;&#x76F8;&#x7B49;&#x7528;<code>==</code>&#x5224;&#x65AD;&#x4E0D;&#x9760;&#x8C31;&#xFF0C;&#x6B63;&#x786E;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5229;&#x7528;&#x5DEE;&#x503C;&#x5C0F;&#x4E8E;&#x67D0;&#x4E2A;&#x4E34;&#x754C;&#x503C;&#x6765;&#x5224;&#x65AD;</li>
-<li>&#x5224;&#x65AD;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x76F8;&#x7B49;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;<code>equals()</code>&#x65B9;&#x6CD5;</li>
-</ul>
-<h4 id="case&#x591A;&#x91CD;&#x9009;&#x62E9;">case&#x591A;&#x91CD;&#x9009;&#x62E9;</h4>
-<ul>
-<li>&#x603B;&#x662F;&#x5199;&#x4E0A;<code>default</code></li>
-<li>&#x4ECE;Java12&#x5F00;&#x59CB;&#xFF0C;&#x65B0;&#x8BED;&#x6CD5;&#x4F7F;&#x7528;<code>-&gt;</code>&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x6761;&#x8BED;&#x53E5;&#xFF0C;&#x9700;&#x8981;&#x7528;<code>{}</code>&#x62EC;&#x8D77;&#x6765;&#x3002;&#x4E0D;&#x8981;&#x5199;<code>break</code>&#x8BED;&#x53E5;&#xFF0C;&#x56E0;&#x4E3A;&#x65B0;&#x8BED;&#x6CD5;&#x53EA;&#x4F1A;&#x6267;&#x884C;&#x5339;&#x914D;&#x7684;&#x8BED;&#x53E5;&#xFF0C;&#x6CA1;&#x6709;&#x7A7F;&#x900F;&#x6548;&#x5E94;</li>
-<li>&#x5728;<code>switch</code>&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x90E8;&#xFF0C;&#x7528;<code>yield</code>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x503C;&#x4F5C;&#x4E3A;<code>switch</code>&#x8BED;&#x53E5;&#x7684;&#x8FD4;&#x56DE;&#x503C;</li>
-</ul>
-<h4 id="while&#x5FAA;&#x73AF;">while&#x5FAA;&#x73AF;</h4>
-<ul>
-<li>&#x5148;&#x5224;&#x65AD;&#x540E;&#x5FAA;&#x73AF;</li>
-<li>&#x53EF;&#x80FD;&#x5FAA;&#x73AF;0&#x6B21;</li>
-</ul>
-<h4 id="do-while&#x5FAA;&#x73AF;">do while&#x5FAA;&#x73AF;</h4>
-<ul>
-<li>&#x5148;&#x5FAA;&#x73AF;&#x540E;&#x5224;&#x65AD;</li>
-<li>&#x81F3;&#x5C11;&#x5FAA;&#x73AF;&#x4E00;&#x6B21;</li>
-</ul>
-<h4 id="for&#x5FAA;&#x73AF;">for&#x5FAA;&#x73AF;</h4>
-<ul>
-<li>&#x53EF;&#x80FD;&#x5FAA;&#x73AF;0&#x6B21;</li>
-</ul>
-<h4 id="break&#x548C;continue">break&#x548C;continue</h4>
-<ul>
-<li>&#x5728;&#x591A;&#x5C42;&#x5D4C;&#x5957;&#x7684;&#x5FAA;&#x73AF;&#x4E2D;&#xFF0C;&#x90FD;&#x53EA;&#x80FD;&#x8DF3;&#x51FA;&#x81EA;&#x5DF1;&#x6240;&#x5728;&#x7684;&#x90A3;&#x4E00;&#x5C42;&#x5FAA;&#x73AF;</li>
-</ul>
-<h3 id="&#x6570;&#x7EC4;&#x64CD;&#x4F5C;">&#x6570;&#x7EC4;&#x64CD;&#x4F5C;</h3>
-<hr>
-<p>&#x904D;&#x5386;&#x3001;&#x6392;&#x5E8F;&#x3001;&#x591A;&#x7EF4;&#x6570;&#x7EC4;&#x3001;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#xFF08;&#x7565;&#xFF09;</p>
-<h3 id="&#x9644;&#x5F55;">&#x9644;&#x5F55;</h3>
-<hr>
-<p><strong>&#x6559;&#x7A0B;</strong></p>
-<p><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255883772263712">&#x5ED6;&#x96EA;&#x5CF0;&#x7684;Java&#x6559;&#x7A0B;-Java&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -3310,6 +3191,125 @@ There are many trending repos related to ChatGPT recently.</p>
       <tags>
         <tag>Git</tag>
         <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java 入门</title>
+    <url>/zh-cn/Intro-to-Java/</url>
+    <content><![CDATA[<p>&#x5173;&#x4E8E;Java&#x7684;&#x8BDE;&#x751F;&#x80CC;&#x666F;&#x3001;&#x53D1;&#x5C55;&#x5386;&#x53F2;&#x548C;&#x7248;&#x672C;&#x8BF4;&#x660E;&#x90E8;&#x5206;&#x8BA9;&#x6211;&#x6536;&#x83B7;&#x8F83;&#x5927;&#x3002;</p>
+<span id="more"></span>
+<h3 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h3>
+<hr>
+<ul>
+<li>&#x521B;&#x59CB;&#x4EBA;&#xFF1A;James Gosling</li>
+<li>Java&#x4ECB;&#x4E8E;&#x7F16;&#x8BD1;&#x578B;&#x8BED;&#x8A00;&#x548C;&#x89E3;&#x91CA;&#x578B;&#x8BED;&#x8A00;&#x4E4B;&#x95F4;&#x3002;&#x5B83;&#x662F;&#x5C06;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#x6210;&#x4E00;&#x79CD;&#x201C;&#x5B57;&#x8282;&#x7801;&#x201D;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x62BD;&#x8C61;&#x7684;CPU&#x6307;&#x4EE4;&#xFF0C;&#x7136;&#x540E;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x5E73;&#x53F0;&#x7F16;&#x5199;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x4E0D;&#x540C;&#x5E73;&#x53F0;&#x7684;&#x865A;&#x62DF;&#x673A;&#x8D1F;&#x8D23;&#x52A0;&#x8F7D;&#x5B57;&#x8282;&#x7801;&#x5E76;&#x6267;&#x884C;&#xFF0C;&#x5B9E;&#x73B0;&#x201C;&#x4E00;&#x6B21;&#x7F16;&#x5199;&#xFF0C;&#x5230;&#x5904;&#x8FD0;&#x884C;&#x201D;</li>
+<li>Java&#x4E09;&#x4E2A;&#x7248;&#x672C;
+<ul>
+<li>Java SE&#xFF1A;Standard Edition&#xFF0C;&#x6807;&#x51C6;&#x7248;&#xFF0C;&#x5305;&#x542B;&#x6807;&#x51C6;&#x7684;JVM&#x548C;&#x6807;&#x51C6;&#x5E93;&#xFF0C;&#x662F;&#x6574;&#x4E2A;Java&#x5E73;&#x53F0;&#x7684;&#x6838;&#x5FC3;</li>
+<li>Java EE&#xFF1A;Enterprise Edition&#xFF0C;&#x4F01;&#x4E1A;&#x7248;&#xFF0C;&#x5728;Java SE&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x52A0;&#x4E0A;&#x4E86;&#x5927;&#x91CF;&#x7684;API&#x548C;&#x5E93;&#xFF0C;&#x4EE5;&#x4FBF;&#x65B9;&#x4FBF;&#x5F00;&#x53D1;Web&#x5E94;&#x7528;&#x3001;&#x6570;&#x636E;&#x5E93;&#x3001;&#x6D88;&#x606F;&#x670D;&#x52A1;&#x7B49;&#xFF1B;Java EE&#x7684;&#x7684;&#x865A;&#x62DF;&#x673A;&#x548C;Java SE&#x5B8C;&#x5168;&#x76F8;&#x540C;&#xFF1B;&#x662F;&#x8FDB;&#x4E00;&#x6B65;&#x5B66;&#x4E60;Web&#x5E94;&#x7528;&#x6240;&#x5FC5;&#x987B;&#x7684;</li>
+<li>Java ME&#xFF1A;Micro Edition&#xFF0C;&#x9488;&#x5BF9;&#x5D4C;&#x5165;&#x5F0F;&#x8BBE;&#x5907;&#x7684;&#x201C;&#x7626;&#x8EAB;&#x7248;&#x201D;&#xFF0C;Java SE&#x7684;&#x6807;&#x51C6;&#x5E93;&#x65E0;&#x6CD5;&#x5728;Java ME&#x4E0A;&#x4F7F;&#x7528;&#xFF1B;Java ME&#x7684;&#x865A;&#x62DF;&#x673A;&#x4E5F;&#x662F;&#x201C;&#x7626;&#x8EAB;&#x7248;&#x201D;&#xFF1B;&#x4E0D;&#x6D41;&#x884C;&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&#x5B66;&#x4E60;</li>
+</ul>
+</li>
+<li>&#x63A8;&#x8350;&#x7684;Java&#x5B66;&#x4E60;&#x8DEF;&#x7EBF;
+<ul>
+<li>&#x9996;&#x5148;&#x8981;&#x5B66;&#x4E60;Java SE&#xFF0C;&#x638C;&#x63E1;Java&#x8BED;&#x8A00;&#x672C;&#x8EAB;&#x3001;Java&#x6838;&#x5FC3;&#x5F00;&#x53D1;&#x6280;&#x672F;&#x4EE5;&#x53CA;Java&#x6807;&#x51C6;&#x5E93;&#x7684;&#x4F7F;&#x7528;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x7EE7;&#x7EED;&#x5B66;&#x4E60;Java EE&#xFF0C;&#x90A3;&#x4E48;Spring&#x6846;&#x67B6;&#x3001;&#x6570;&#x636E;&#x5E93;&#x5F00;&#x53D1;&#x3001;&#x5206;&#x5E03;&#x5F0F;&#x67B6;&#x6784;&#x5C31;&#x662F;&#x9700;&#x8981;&#x5B66;&#x4E60;&#x7684;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x8981;&#x5B66;&#x4E60;&#x5927;&#x6570;&#x636E;&#x5F00;&#x53D1;&#xFF0C;&#x90A3;&#x4E48;Hadoop&#x3001;Spark&#x3001;Flink&#x8FD9;&#x4E9B;&#x5927;&#x6570;&#x636E;&#x5E73;&#x53F0;&#x5C31;&#x662F;&#x9700;&#x8981;&#x5B66;&#x4E60;&#x7684;&#xFF0C;&#x4ED6;&#x4EEC;&#x90FD;&#x57FA;&#x4E8E;Java&#x6216;Scala&#x5F00;&#x53D1;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x60F3;&#x8981;&#x5B66;&#x4E60;&#x79FB;&#x52A8;&#x5F00;&#x53D1;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x6DF1;&#x5165;Android&#x5E73;&#x53F0;&#xFF0C;&#x638C;&#x63E1;Android App&#x5F00;&#x53D1;&#x3002;</li>
+</ul>
+</li>
+<li>JDK&#xFF1A;Java Development Kit&#xFF0C;&#x9664;&#x4E86;&#x5305;&#x542B;JRE&#xFF0C;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x7F16;&#x8BD1;&#x5668;&#x3001;&#x8C03;&#x8BD5;&#x5668;&#x7B49;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#xFF0C;&#x7528;&#x6765;&#x5C06;Java&#x6E90;&#x7801;&#x7F16;&#x8BD1;&#x6210;Java&#x5B57;&#x8282;&#x7801;</li>
+<li>JRE&#xFF1A;Java Runtime Environment&#xFF0C;&#x662F;&#x8FD0;&#x884C;Java&#x5B57;&#x8282;&#x7801;&#x7684;&#x865A;&#x62DF;&#x673A;</li>
+<li>JSR&#x89C4;&#x8303;&#xFF1A;Java Specification Request</li>
+<li>JCP&#x7EC4;&#x7EC7;&#xFF1A;Java Community Process</li>
+<li>RI&#xFF1A;Reference Implementation&#xFF0C;&#x53C2;&#x8003;&#x5B9E;&#x73B0;</li>
+<li>TCK&#xFF1A;Technology Compatibility Kit&#xFF0C;&#x517C;&#x5BB9;&#x6027;&#x6D4B;&#x8BD5;&#x5957;&#x4EF6;</li>
+</ul>
+<h3 id="&#x57FA;&#x7840;">&#x57FA;&#x7840;</h3>
+<hr>
+<h4 id="&#x7A0B;&#x5E8F;&#x57FA;&#x672C;&#x7ED3;&#x6784;">&#x7A0B;&#x5E8F;&#x57FA;&#x672C;&#x7ED3;&#x6784;</h4>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> { <span class="hljs-comment">// &#x7C7B;&#x540D;&#x662F;Hello</span></span><br><span class="line">    <span class="hljs-comment">// ...</span></span><br><span class="line">} <span class="hljs-comment">// class&#x5B9A;&#x4E49;&#x7ED3;&#x675F;</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {<span class="hljs-comment">// &#x65B9;&#x6CD5;&#x540D;&#x662F;main</span></span><br><span class="line"><span class="hljs-comment">// &#x65B9;&#x6CD5;&#x4EE3;&#x7801;...</span></span><br><span class="line">    }<span class="hljs-comment">// &#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x7ED3;&#x675F;</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>&#x7C7B;&#x540D;&#x5FC5;&#x987B;&#x4EE5;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#xFF08;&#x4E60;&#x60EF;&#x5927;&#x5199;&#xFF09;&#x5F00;&#x5934;&#xFF1B;&#x65B9;&#x6CD5;&#x540D;&#x5FC5;&#x987B;&#x4EE5;&#x82F1;&#x6587;&#x5B57;&#x6BCD;&#xFF08;&#x4E60;&#x60EF;&#x5C0F;&#x5199;&#xFF09;&#x5F00;&#x5934;</li>
+<li>&#x5728;<code>class</code>&#x5185;&#x90E8;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x82E5;&#x5E72;&#x65B9;&#x6CD5;&#xFF08;method&#xFF09;</li>
+<li><code>public</code>&#x662F;&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#xFF0C;&#x8868;&#x793A;&#x8BE5;<code>class</code>&#x662F;&#x516C;&#x5F00;&#x7684;&#x3002;&#x4E0D;&#x5199;<code>public</code>&#xFF0C;&#x4E5F;&#x80FD;&#x6B63;&#x786E;&#x7F16;&#x8BD1;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x7C7B;&#x5C06;&#x65E0;&#x6CD5;&#x4ECE;&#x547D;&#x4EE4;&#x884C;&#x6267;&#x884C;</li>
+<li>Java&#x5165;&#x53E3;&#x7A0B;&#x5E8F;&#x89C4;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x662F;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x65B9;&#x6CD5;&#x540D;&#x5FC5;&#x987B;&#x4E3A;<code>main</code><br>
+&#xFF0C;&#x62EC;&#x53F7;&#x5185;&#x7684;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;String&#x6570;&#x7EC4;</li>
+<li>Intelli IDEA&#x4EE3;&#x7801;&#x683C;&#x5F0F;&#x5316;&#xFF1A;Ctrl + Alt + L</li>
+</ul>
+<h4 id="&#x53D8;&#x91CF;&#x548C;&#x6570;&#x636E;&#x7C7B;&#x578B;">&#x53D8;&#x91CF;&#x548C;&#x6570;&#x636E;&#x7C7B;&#x578B;</h4>
+<ul>
+<li>&#x4E24;&#x79CD;&#x53D8;&#x91CF;&#x7C7B;&#x578B;&#xFF1A;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x548C;&#x5F15;&#x7528;&#x7C7B;&#x578B;
+<ul>
+<li>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x662F;CPU&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x5305;&#x62EC;&#x6574;&#x578B;&#xFF0C;&#x6D6E;&#x70B9;&#x578B;&#xFF0C;&#x5E03;&#x5C14;&#x578B;&#xFF0C;&#x5B57;&#x7B26;&#x578B;</li>
+<li>&#x5269;&#x4E0B;&#x7684;&#x90FD;&#x662F;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;C&#x8BED;&#x8A00;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x5B83;&#x5185;&#x90E8;&#x5B58;&#x50A8;&#x4E00;&#x4E2A;&#x201C;&#x5730;&#x5740;&#x201D;&#xFF0C;&#x6307;&#x5411;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x5185;&#x5B58;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x6700;&#x5E38;&#x7528;&#x7684;&#x662F;String</li>
+<li>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x662F;&#x201C;&#x6301;&#x6709;&#x201D;&#x67D0;&#x4E2A;&#x6570;&#x503C;&#xFF0C;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x662F;&#x201C;&#x6307;&#x5411;&#x201D;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;</li>
+</ul>
+</li>
+<li>&#x5E38;&#x91CF;&#x5728;&#x521D;&#x59CB;&#x5316;&#x540E;&#x4E0D;&#x53EF;&#x91CD;&#x65B0;&#x8D4B;&#x503C;</li>
+<li>&#x7B80;&#x5199;&#x53D8;&#x91CF;&#x7C7B;&#x578B;&#xFF0C;&#x4F7F;&#x7528;<code>var</code>&#x5173;&#x952E;&#x5B57;</li>
+</ul>
+<h4 id="&#x8FD0;&#x7B97;">&#x8FD0;&#x7B97;</h4>
+<ul>
+<li>&#x6574;&#x6570;&#x8FD0;&#x7B97;&#x6C38;&#x8FDC;&#x662F;&#x7CBE;&#x786E;&#x7684;&#xFF0C;&#x6D6E;&#x70B9;&#x6570;&#x8FD0;&#x7B97;&#x5E38;&#x5E38;&#x65E0;&#x6CD5;&#x7CBE;&#x786E;&#x8868;&#x793A;</li>
+</ul>
+<h3 id="&#x6D41;&#x7A0B;&#x63A7;&#x5236;">&#x6D41;&#x7A0B;&#x63A7;&#x5236;</h3>
+<hr>
+<h4 id="&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;">&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;</h4>
+<ul>
+<li>&#x8F93;&#x51FA;
+<ul>
+<li><code>System.out.println()</code>&#xFF0C;&#x8F93;&#x51FA;&#x5E76;&#x6362;&#x884C;</li>
+<li><code>System.out.print()</code>&#xFF0C;&#x8F93;&#x51FA;&#x4E0D;&#x6362;&#x884C;</li>
+<li><code>System.out.printf()</code>&#xFF0C;&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;</li>
+</ul>
+</li>
+<li>&#x8F93;&#x5165;&#xFF08;&#x4E0D;&#x80FD;&#x5728;&#x7EBF;&#x8FD0;&#x884C;&#xFF0C;&#x5FC5;&#x987B;&#x4ECE;&#x547D;&#x4EE4;&#x884C;&#x8BFB;&#x53D6;&#xFF09;</li>
+</ul>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Main</span> {publicstaticvoid <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {</span><br><span class="line">        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span><span class="hljs-keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="hljs-comment">// &#x521B;&#x5EFA;Scanner&#x5BF9;&#x8C61;</span></span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> scanner.nextLine();<span class="hljs-comment">// &#x8BFB;&#x53D6;&#x4E00;&#x884C;&#x8F93;&#x5165;&#x5E76;&#x83B7;&#x53D6;&#x5B57;&#x7B26;&#x4E32;</span></span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> scanner.nextInt();<span class="hljs-comment">// &#x8BFB;&#x53D6;&#x4E00;&#x884C;&#x8F93;&#x5165;&#x5E76;&#x83B7;&#x53D6;&#x6574;&#x6570;</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="if&#x6761;&#x4EF6;&#x5224;&#x65AD;">if&#x6761;&#x4EF6;&#x5224;&#x65AD;</h4>
+<ul>
+<li>&#x5224;&#x65AD;&#x6D6E;&#x70B9;&#x6570;&#x76F8;&#x7B49;&#x7528;<code>==</code>&#x5224;&#x65AD;&#x4E0D;&#x9760;&#x8C31;&#xFF0C;&#x6B63;&#x786E;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5229;&#x7528;&#x5DEE;&#x503C;&#x5C0F;&#x4E8E;&#x67D0;&#x4E2A;&#x4E34;&#x754C;&#x503C;&#x6765;&#x5224;&#x65AD;</li>
+<li>&#x5224;&#x65AD;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x76F8;&#x7B49;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;<code>equals()</code>&#x65B9;&#x6CD5;</li>
+</ul>
+<h4 id="case&#x591A;&#x91CD;&#x9009;&#x62E9;">case&#x591A;&#x91CD;&#x9009;&#x62E9;</h4>
+<ul>
+<li>&#x603B;&#x662F;&#x5199;&#x4E0A;<code>default</code></li>
+<li>&#x4ECE;Java12&#x5F00;&#x59CB;&#xFF0C;&#x65B0;&#x8BED;&#x6CD5;&#x4F7F;&#x7528;<code>-&gt;</code>&#xFF0C;&#x5982;&#x679C;&#x6709;&#x591A;&#x6761;&#x8BED;&#x53E5;&#xFF0C;&#x9700;&#x8981;&#x7528;<code>{}</code>&#x62EC;&#x8D77;&#x6765;&#x3002;&#x4E0D;&#x8981;&#x5199;<code>break</code>&#x8BED;&#x53E5;&#xFF0C;&#x56E0;&#x4E3A;&#x65B0;&#x8BED;&#x6CD5;&#x53EA;&#x4F1A;&#x6267;&#x884C;&#x5339;&#x914D;&#x7684;&#x8BED;&#x53E5;&#xFF0C;&#x6CA1;&#x6709;&#x7A7F;&#x900F;&#x6548;&#x5E94;</li>
+<li>&#x5728;<code>switch</code>&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x90E8;&#xFF0C;&#x7528;<code>yield</code>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x503C;&#x4F5C;&#x4E3A;<code>switch</code>&#x8BED;&#x53E5;&#x7684;&#x8FD4;&#x56DE;&#x503C;</li>
+</ul>
+<h4 id="while&#x5FAA;&#x73AF;">while&#x5FAA;&#x73AF;</h4>
+<ul>
+<li>&#x5148;&#x5224;&#x65AD;&#x540E;&#x5FAA;&#x73AF;</li>
+<li>&#x53EF;&#x80FD;&#x5FAA;&#x73AF;0&#x6B21;</li>
+</ul>
+<h4 id="do-while&#x5FAA;&#x73AF;">do while&#x5FAA;&#x73AF;</h4>
+<ul>
+<li>&#x5148;&#x5FAA;&#x73AF;&#x540E;&#x5224;&#x65AD;</li>
+<li>&#x81F3;&#x5C11;&#x5FAA;&#x73AF;&#x4E00;&#x6B21;</li>
+</ul>
+<h4 id="for&#x5FAA;&#x73AF;">for&#x5FAA;&#x73AF;</h4>
+<ul>
+<li>&#x53EF;&#x80FD;&#x5FAA;&#x73AF;0&#x6B21;</li>
+</ul>
+<h4 id="break&#x548C;continue">break&#x548C;continue</h4>
+<ul>
+<li>&#x5728;&#x591A;&#x5C42;&#x5D4C;&#x5957;&#x7684;&#x5FAA;&#x73AF;&#x4E2D;&#xFF0C;&#x90FD;&#x53EA;&#x80FD;&#x8DF3;&#x51FA;&#x81EA;&#x5DF1;&#x6240;&#x5728;&#x7684;&#x90A3;&#x4E00;&#x5C42;&#x5FAA;&#x73AF;</li>
+</ul>
+<h3 id="&#x6570;&#x7EC4;&#x64CD;&#x4F5C;">&#x6570;&#x7EC4;&#x64CD;&#x4F5C;</h3>
+<hr>
+<p>&#x904D;&#x5386;&#x3001;&#x6392;&#x5E8F;&#x3001;&#x591A;&#x7EF4;&#x6570;&#x7EC4;&#x3001;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#xFF08;&#x7565;&#xFF09;</p>
+<h3 id="&#x9644;&#x5F55;">&#x9644;&#x5F55;</h3>
+<hr>
+<p><strong>&#x6559;&#x7A0B;</strong></p>
+<p><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255883772263712">&#x5ED6;&#x96EA;&#x5CF0;&#x7684;Java&#x6559;&#x7A0B;-Java&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -4200,11 +4200,6 @@ git push -u origin master
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Links</title>
     <url>/links/index.html</url>
     <content><![CDATA[<h2 id="CS">CS</h2>
@@ -4234,8 +4229,8 @@ git push -u origin master
 ]]></content>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/zh-cn/categories/index.html</url>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -4244,11 +4239,21 @@ git push -u origin master
     <content><![CDATA[<img src="/images/bin_cat.png" alt="bin_cat" title="bin_cat" width="350">  
 <p>&#x4F60;&#x597D;&#xFF0C;&#x6211;&#x662F;<a href="https://www.cakeresume.com/meng-han">&#x97E9;&#x840C;</a>&#x3002;</p>
 <p>&#x6211;&#x6B63;&#x5728;&#x653B;&#x8BFB;&#x7855;&#x58EB;&#x5B66;&#x4F4D;&#xFF0C;&#x4E13;&#x4E1A;&#x662F;<strong>&#x7535;&#x5B50;&#x4FE1;&#x606F;&#x5DE5;&#x7A0B;</strong>&#x3002;&#x6211;&#x5BF9;&#x81EA;&#x5B66;&#x66F4;&#x611F;&#x5174;&#x8DA3;&#xFF0C;&#x611F;&#x8C22;&#x4E92;&#x8054;&#x7F51;&#x2014;&#x2014;&#x6211;&#x6B63;&#x5728;&#x5B66;&#x4E60;&#x4E0E;<strong>&#x8BA1;&#x7B97;&#x673A;&#x79D1;&#x5B66;</strong>&#x6709;&#x5173;&#x7684;&#x3001;&#x4ECE;&#x786C;&#x4EF6;&#x5230;&#x8F6F;&#x4EF6;&#x7684;&#x4E00;&#x5207;&#x3002;&#x6211;&#x4E5F;&#x559C;&#x6B22;&#x827A;&#x672F;&#x7535;&#x5F71;&#x548C;&#x5404;&#x79CD;&#x5E2E;&#x52A9;&#x6211;&#x601D;&#x8003;&#x7684;&#x4E66;&#x7C4D;&#x3002;</p>
-<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5E7F;&#x9614;&#x800C;&#x4E0D;&#x53EF;&#x9884;&#x77E5;&#x7684;&#x4E16;&#x754C;&#xFF0C;&#x5F88;&#x591A;&#x4E8B;&#x7269;&#x90FD;&#x4EE4;&#x6211;&#x60CA;&#x5947;&#x2026;&#x2026;&#x6211;&#x60F3;&#x77E5;&#x9053;&#xFF0C;**&#x4E16;&#x754C;&#x4E3A;&#x4F55;&#x771F;&#x5B9E;&#xFF1F;&#x5728;&#x89E6;&#x78B0;&#x81EA;&#x5DF1;&#x7684;&#x672A;&#x77E5;&#x533A;&#x57DF;&#x65F6;&#xFF0C;&#x58F0;&#x79F0;&#x5D07;&#x62DC;&#x81EA;&#x7531;&#x3001;&#x62E5;&#x62B1;&#x9769;&#x547D;&#x7684;&#x6211;&#xFF0C;&#x601D;&#x7EF4;&#x53C8;&#x5728;&#x600E;&#x6837;&#x53D8;&#x5316;&#xFF1F;**&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x5728;&#x535A;&#x5BA2;&#x91CC;&#x8BB0;&#x5F55;&#x5B66;&#x4E60;&#x548C;&#x611F;&#x609F;&#xFF0C;&#x4E5F;&#x5C06;&#x81EA;&#x6211;&#x5F90;&#x5F90;&#x5C55;&#x5F00;&#x3002;&#x6211;&#x89C9;&#x5F97;&#x535A;&#x5BA2;&#x597D;&#x50CF;&#x9762;&#x524D;&#x7684;&#x4E00;&#x6761;&#x6570;&#x5B57;&#x6CB3;&#x6D41;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x987A;&#x6D41;&#x800C;&#x884C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x56DE;&#x6EAF;&#x9014;&#x5F84;&#x4E4B;&#x5730;&#x3002;</p>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x5E7F;&#x9614;&#x800C;&#x4E0D;&#x53EF;&#x9884;&#x77E5;&#x7684;&#x4E16;&#x754C;&#xFF0C;&#x5F88;&#x591A;&#x4E8B;&#x7269;&#x90FD;&#x4EE4;&#x6211;&#x60CA;&#x5947;&#x2026;&#x2026;&#x6211;&#x60F3;&#x77E5;&#x9053;&#xFF0C;<strong>&#x4E16;&#x754C;&#x4E3A;&#x4F55;&#x771F;&#x5B9E;&#xFF1F;&#x5728;&#x89E6;&#x78B0;&#x81EA;&#x5DF1;&#x7684;&#x672A;&#x77E5;&#x533A;&#x57DF;&#x65F6;&#xFF0C;&#x58F0;&#x79F0;&#x5D07;&#x62DC;&#x81EA;&#x7531;&#x3001;&#x62E5;&#x62B1;&#x9769;&#x547D;&#x7684;&#x6211;&#xFF0C;&#x601D;&#x7EF4;&#x53C8;&#x5728;&#x600E;&#x6837;&#x53D8;&#x5316;&#xFF1F;</strong> &#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x5728;&#x535A;&#x5BA2;&#x91CC;&#x8BB0;&#x5F55;&#x5B66;&#x4E60;&#x548C;&#x611F;&#x609F;&#xFF0C;&#x4E5F;&#x5C06;&#x81EA;&#x6211;&#x5F90;&#x5F90;&#x5C55;&#x5F00;&#x3002;&#x6211;&#x89C9;&#x5F97;&#x535A;&#x5BA2;&#x597D;&#x50CF;&#x9762;&#x524D;&#x7684;&#x4E00;&#x6761;&#x6570;&#x5B57;&#x6CB3;&#x6D41;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x987A;&#x6D41;&#x800C;&#x884C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x56DE;&#x6EAF;&#x9014;&#x5F84;&#x4E4B;&#x5730;&#x3002;</p>
 <p>&#x73B0;&#x5728;&#x8FD8;&#x53EA;&#x662F;&#x4E00;&#x6761;&#x5C0F;&#x6EAA;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5E0C;&#x671B;&#x5B83;&#x957F;&#x4E45;&#x6D41;&#x6DCC;&#x3002;</p>
 <hr>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;<a href="https://github.com/mengisok">GitHub</a>, <a href="https://www.linkedin.com/in/mengisok/">&#x9886;&#x82F1;</a>&#x4E0A;&#x627E;&#x5230;&#x6211;&#xFF0C;&#x6216;&#x8005;<a href="mailto:hanmengisok@gmail.com">&#x7ED9;&#x6211;&#x53D1;&#x90AE;&#x4EF6;</a>&#x3002;</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/zh-cn/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/zh-cn/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>链接</title>
@@ -4278,10 +4283,5 @@ git push -u origin master
 <a href="http://z-lib.to/?dt_dapp=1">Zlibrary</a><br>
 <a href="https://search.zhelper.net/?%5B%7B%22name%22:%22zhelperV5%22,%22url%22:%22https://api.v5.zhelper.net%22,%22type%22:%22full%22,%22sensitive%22:false,%22detail%22:true%7D%5D&amp;dt_dapp=1">zhelper search</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>标签</title>
-    <url>/zh-cn/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
