@@ -266,78 +266,71 @@
     
         <p>Linux manipulates files via the command line, including viewing, editing, copying, moving, deleting, creating, searching, matching, compressing, and uncompressing files, and it&#x2019;s important to learn how to use the documentation.</p>
 <span id="more"></span>
-
-<h3 id="Viewing"><a href="#Viewing" class="headerlink" title="Viewing"></a>Viewing</h3><hr>
+<h3 id="Viewing">Viewing</h3>
+<hr>
 <p><strong>cat</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Output the entire contents of the FILE file</span></span><br><span class="line">$ <span class="hljs-built_in">cat</span> [OPTION] FILE</span><br></pre></td></tr></tbody></table></figure>
-
 <p><code>cat</code> is short for con<strong>cat</strong>*enate. The actual function of the <code>cat</code> utility is to concatenate multiple files and then output them. When there is only one file, <code>cat</code> will output that file directly, so the most common use of <code>cat</code> is to output a single file.</p>
 <p><strong>less</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Output the contents of a FILE file in an interactive window</span></span><br><span class="line">$ less FILE</span><br></pre></td></tr></tbody></table></figure>
-
 <p><code>cat</code> prints the entire contents to the terminal at once and exits, while <code>less</code> displays one page at a time and supports forward/backward scrolling, searching, etc. If you want to find a part of a large file, <code>less</code> is usually much more convenient than <code>cat</code>.</p>
 <p>Similar commands to <code>less</code>: <code>more</code>, <code>most</code>.</p>
-<h3 id="Editing"><a href="#Editing" class="headerlink" title="Editing"></a>Editing</h3><hr>
+<h3 id="Editing">Editing</h3>
+<hr>
 <p><strong>Nano</strong> is a command-line text editor that comes with many machines and is more novice-friendly than vim and emacs.</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nano FILE <span class="hljs-comment"># Use nano to edit FILE files</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Copying"><a href="#Copying" class="headerlink" title="Copying"></a>Copying</h3><hr>
+<h3 id="Copying">Copying</h3>
+<hr>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Copy the SOURCE file to the DEST file, the resulting file is DEST</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE DEST</span><br><span class="line">$ <span class="hljs-comment"># Copy the SOURCE file to the DIRECTORY directory, SOURCE can be more than one file</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE... DIRECTORY</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file3 <span class="hljs-comment"># Make a copy of file1 to the same directory as file3</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file2 . /file/ <span class="hljs-comment"># Copy file1, file2 files to the file directory in the same directory</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> -r file . /test/ <span class="hljs-comment"># Copy the file folder and all its subfiles to the test folder in the same directory</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>Hard links and soft links</strong></p>
 <p>Hard links have the same inode as the source file and both point to the same location on disk. Deleting one of them does not affect the other.</p>
 <p>Soft links have a different inode than the source file. Soft links save the path to the source file, and when accessing a soft link, the accessed path is replaced with the path to the source file, so accessing a soft link is also equivalent to accessing the source file. However, if the source file is deleted, the path saved by the soft link is invalid, and the soft link is therefore invalid as well<a href="#refer-anchor-1"><sup>1</sup></a>.</p>
-<h3 id="Moving"><a href="#Moving" class="headerlink" title="Moving"></a>Moving</h3><hr>
+<h3 id="Moving">Moving</h3>
+<hr>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Move the SOURCE file to the DEST file</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE DEST</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># Move SOURCE file to DIRECTORY directory, SOURCE can be multiple files</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE... DIRECTORY</span><br></pre></td></tr></tbody></table></figure>
-
 <p>Similar to &#x201C;cut&#x201D; in Windows.</p>
-<h3 id="Deleting"><a href="#Deleting" class="headerlink" title="Deleting"></a>Deleting</h3><hr>
+<h3 id="Deleting">Deleting</h3>
+<hr>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Delete FILE files, FILE can be multiple files.</span></span><br><span class="line">$ <span class="hljs-comment"># If you need to delete a directory, you need to delete it recursively with the -r option</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> [OPTION] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> file1 <span class="hljs-comment"># Delete the file1 file</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -r <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># Delete the test directory and all files under it</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -rf test1/ test2/ file1.txt <span class="hljs-comment"># Delete the files, directories test1/, test2/, file1.txt. Among them, these files or directories may not exist, be write-protected, or not have permission to read or write</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Creating"><a href="#Creating" class="headerlink" title="Creating"></a>Creating</h3><hr>
+<h3 id="Creating">Creating</h3>
+<hr>
 <p><strong>Creating directories</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Create a directory named DIR_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> [OPTION] DIR_NAME...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> test1 test2 <span class="hljs-comment"># Create two directories with the names test1, test2</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p test1/test2/test3/ <span class="hljs-comment"># Create path test1/test2/test3/</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p><strong>Creating files</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Create a file named FILE_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">touch</span> FILE_NAME...</span><br></pre></td></tr></tbody></table></figure>
-
 <p>The <code>stat</code> command displays information about a file&#x2019;s attributes.</p>
 <p>What <code>touch</code> actually does is modify the access time (atime) and modification time (mtime) of the file, which can be treated as touching the file, causing its access and modification times to change. When the file does not exist, <code>touch</code> creates a new file.</p>
-<h3 id="Searching"><a href="#Searching" class="headerlink" title="Searching"></a>Searching</h3><hr>
+<h3 id="Searching">Searching</h3>
+<hr>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Search for files in PATH based on EXPRESSION</span></span><br><span class="line">$ find [OPTION] PATH [EXPRESSION]</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ find . -name <span class="hljs-string">&apos;report.pdf&apos;</span> <span class="hljs-comment"># Search for a file named report.pdf in the current directory</span></span><br><span class="line">$ find / -size +1G <span class="hljs-comment"># Search for files larger than 1G on the whole disk</span></span><br><span class="line">$ find ~/ -name <span class="hljs-string">&apos;node_modules&apos;</span> -<span class="hljs-built_in">type</span> d <span class="hljs-comment"># Search for all folders named node_modules in the user directory</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Pattern-matching"><a href="#Pattern-matching" class="headerlink" title="Pattern matching"></a>Pattern matching</h3><hr>
+<h3 id="Pattern-matching">Pattern matching</h3>
+<hr>
 <p>The matching pattern for bash is called <a target="_blank" rel="noopener" href="https://mywiki.wooledge.org/glob">glob</a>.</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> *.tar.gz <span class="hljs-comment"># Remove all compressed files ending in tar.gz</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> -r *. [ch] /path <span class="hljs-comment"># Move all code ending in .c or .h in the current and subdirectories to /path</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>Be sure to make sure you type correctly before using wildcards, otherwise serious consequences may occur (e.g. <code>rm -rf *</code> will delete all files in the current directory).</p>
-<h3 id="Compressing-and-uncompressing"><a href="#Compressing-and-uncompressing" class="headerlink" title="Compressing and uncompressing"></a>Compressing and uncompressing</h3><hr>
+<h3 id="Compressing-and-uncompressing">Compressing and uncompressing</h3>
+<hr>
 <p><strong>Using tar to archive and compress files</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># The command format is as follows, please refer to the following sample usage to understand how to use</span></span><br><span class="line">$ tar [OPTIONS] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ tar -c -f target.tar file1 file2 file3 <span class="hljs-comment"># Package file1, file2, file3 as target.tar</span></span><br><span class="line">$ tar -x -f target.tar -C <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># Extract the files in target.tar to the test directory</span></span><br><span class="line">$ tar -cz -f target.tar.gz file1 file2 file3 <span class="hljs-comment"># Pack file1, file2, file3 and compress them using gzip to get the compressed file target.tar.gz</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>As with most Linux commands, the <code>tar</code> command can combine parameters. For example, the following command is equivalent:  </p>
+<p>As with most Linux commands, the <code>tar</code> command can combine parameters. For example, the following command is equivalent:</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ tar -c -z -v -f target.tar <span class="hljs-built_in">test</span>/</span><br><span class="line">$ tar -czvf target.tar <span class="hljs-built_in">test</span>/</span><br><span class="line">$ tar -f target.tar -czv <span class="hljs-built_in">test</span>/</span><br></pre></td></tr></tbody></table></figure>
-
-<p>The suffix name does not determine the file type, but it can help one to identify the possible file types of this file and thus choose the appropriate opening method.  </p>
-<h3 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h3><hr>
+<p>The suffix name does not determine the file type, but it can help one to identify the possible file types of this file and thus choose the appropriate opening method.</p>
+<h3 id="Documentation">Documentation</h3>
+<hr>
 <p><strong>man commands</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Call up the documentation for the tar and ls commands</span></span><br><span class="line">$ man tar</span><br><span class="line">$ man <span class="hljs-built_in">ls</span></span><br></pre></td></tr></tbody></table></figure>
-
 <p>It shows the meaning of each parameter of the software, the meaning of the exit value, the author, etc. It is large and comprehensive. But generally less with the use of sample, you need to splice the software parameters according to their own needs, not conducive to quickly get started.</p>
 <p><strong><a target="_blank" rel="noopener" href="https://github.com/tldr-pages/tldr">tldr</a></strong></p>
 <p>A few simple examples allow users to quickly understand how to use the software.</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tldr COMMAND</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Note that if this error is reported: </p>
+<p>Note that if this error is reported:</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">mkdir</span>:Unable to create directory <span class="hljs-string">&quot;/home/lzy/.tldr&quot;</span>: file already exists</span><br></pre></td></tr></tbody></table></figure>
-
 <p>The solution is:</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install tldr</span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p ~/.tldr/tldr</span><br><span class="line">$ sudo git <span class="hljs-built_in">clone</span> https://github.com/tldr-pages/tldr.git ~/.tldr/tldr</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<h3 id="Appendix">Appendix</h3>
+<hr>
 <p><a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch03/#operate-files-and-dirs">Linux 101 - chap 03: &#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x4E0E;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</a></p>
 <div id="refer-anchor-1"></div>
-
 <p>[1] <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2011/12/inode.html">&#x962E;&#x4E00;&#x5CF0;&#x7684;&#x7F51;&#x7EDC;&#x65E5;&#x5FD7; - &#x7406;&#x89E3;inode</a></p>
 
     
