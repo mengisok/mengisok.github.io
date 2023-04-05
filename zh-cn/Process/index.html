@@ -26,7 +26,7 @@
 <meta property="og:description" content="&amp;#x8FDB;&amp;#x7A0B;&amp;#x5C31;&amp;#x662F;&amp;#x6B63;&amp;#x5728;&amp;#x8FD0;&amp;#x884C;&amp;#x7684;&amp;#x7A0B;&amp;#x5E8F;&amp;#x3002;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-05T14:21:30.000Z">
-<meta property="article:modified_time" content="2023-04-05T15:40:27.643Z">
+<meta property="article:modified_time" content="2023-04-05T16:13:33.556Z">
 <meta property="article:author" content="Han Meng">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -197,8 +197,8 @@
 <h2 id="&#x8FDB;&#x7A0B;&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;"><a href="#&#x8FDB;&#x7A0B;&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;"></a>&#x8FDB;&#x7A0B;&#x7684;&#x57FA;&#x672C;&#x6982;&#x5FF5;</h2><hr>
 <h3 id="&#x67E5;&#x770B;&#x8FDB;&#x7A0B;"><a href="#&#x67E5;&#x770B;&#x8FDB;&#x7A0B;" class="headerlink" title="&#x67E5;&#x770B;&#x8FDB;&#x7A0B;"></a>&#x67E5;&#x770B;&#x8FDB;&#x7A0B;</h3><p><strong>htop</strong></p>
 <p><strong>ps (process status)</strong> </p>
-<p>&#xA0;<code>ps</code> &#x4EC5;&#x663E;&#x793A;&#x672C;&#x7EC8;&#x7AEF;&#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x76F8;&#x5173;&#x8FDB;&#x7A0B;&#x3002;</p>
-<p>&#xA0;<code>ps aux</code> &#x663E;&#x793A;&#x6240;&#x6709;&#x8FDB;&#x7A0B;&#x3002;</p>
+<p><code>ps</code> &#x4EC5;&#x663E;&#x793A;&#x672C;&#x7EC8;&#x7AEF;&#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x76F8;&#x5173;&#x8FDB;&#x7A0B;&#x3002;</p>
+<p><code>ps aux</code> &#x663E;&#x793A;&#x6240;&#x6709;&#x8FDB;&#x7A0B;&#x3002;</p>
 <h3 id="&#x8FDB;&#x7A0B;&#x6807;&#x8BC6;&#x7B26;-PID-process-identifier"><a href="#&#x8FDB;&#x7A0B;&#x6807;&#x8BC6;&#x7B26;-PID-process-identifier" class="headerlink" title="&#x8FDB;&#x7A0B;&#x6807;&#x8BC6;&#x7B26; PID (process identifier)"></a>&#x8FDB;&#x7A0B;&#x6807;&#x8BC6;&#x7B26; PID (process identifier)</h3><p>PID&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x662F;&#x8FDB;&#x7A0B;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x3002;</p>
 <p>&#x6302;&#x8D77;&#x3001;&#x7EE7;&#x7EED;&#x6216;&#x7EC8;&#x6B62;&#x8FDB;&#x7A0B;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; PID &#x4F5C;&#x4E3A;&#x7D22;&#x5F15;&#x3002;</p>
 <h3 id="&#x8FDB;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;"><a href="#&#x8FDB;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;"></a>&#x8FDB;&#x7A0B;&#x4F18;&#x5148;&#x7EA7;</h3><p><strong>NI (nice)</strong> </p>
@@ -206,7 +206,7 @@
 <p>&#x6307;&#x5B9A;&#x4F18;&#x5148;&#x7EA7;&#xFF1A;</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">nice</span> -n 10 vim <span class="hljs-comment"># &#x4EE5; 10 &#x4E3A; nice &#x503C;&#x8FD0;&#x884C; vim</span></span><br><span class="line">$ renice -n 10 -p 12345 <span class="hljs-comment"># &#x8BBE;&#x7F6E; PID &#x4E3A; 12345 &#x7684;&#x8FDB;&#x7A0B;&#x7684; nice &#x503C;&#x4E3A; 10</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>&#x8C03;&#x4F4E; nice &#x503C;&#x9700;&#x8981;&#xA0;<code>sudo</code>&#x3002;</p>
+<p>&#x8C03;&#x4F4E; nice &#x503C;&#x9700;&#x8981;?<code>sudo</code>&#x3002;</p>
 <p><strong>PRI (priority)</strong></p>
 <p>&#x901A;&#x5E38;PRI = nice + 20&#x3002;&#x82E5;PRI&#x503C;&#x662F; RT&#xFF0C;&#x6216;&#x8005;&#x662F;&#x8D1F;&#x6570;&#xFF0C;&#x8868;&#x660E;&#x5BF9;&#x5E94;&#x7684;&#x8FDB;&#x7A0B;&#x6709;&#x66F4;&#x9AD8;&#x7684;&#x5B9E;&#x65F6;&#x6027;&#x8981;&#x6C42;&#xFF08;&#x4F8B;&#x5982;&#x5185;&#x6838;&#x8FDB;&#x7A0B;&#x3001;&#x97F3;&#x9891;&#x76F8;&#x5173;&#x8FDB;&#x7A0B;&#x7B49;&#xFF09;&#x3002;</p>
 <h3 id="&#x8FDB;&#x7A0B;&#x72B6;&#x6001;"><a href="#&#x8FDB;&#x7A0B;&#x72B6;&#x6001;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x72B6;&#x6001;"></a>&#x8FDB;&#x7A0B;&#x72B6;&#x6001;</h3><p>&#x7C97;&#x7565;&#x5206;&#xFF1A;</p>
@@ -252,9 +252,9 @@
 </tbody></table>
 <h2 id="&#x8FDB;&#x7A0B;&#x63A7;&#x5236;"><a href="#&#x8FDB;&#x7A0B;&#x63A7;&#x5236;" class="headerlink" title="&#x8FDB;&#x7A0B;&#x63A7;&#x5236;"></a>&#x8FDB;&#x7A0B;&#x63A7;&#x5236;</h2><hr>
 <h3 id="&#x4FE1;&#x53F7;"><a href="#&#x4FE1;&#x53F7;" class="headerlink" title="&#x4FE1;&#x53F7;"></a>&#x4FE1;&#x53F7;</h3><p>&#x4FE1;&#x53F7;&#x662F; Unix &#x7CFB;&#x5217;&#x7CFB;&#x7EDF;&#x4E2D;&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x76F8;&#x4E92;&#x901A;&#x4FE1;&#x7684;&#x4E00;&#x79CD;&#x673A;&#x5236;&#x3002;</p>
-<p>&#x53D1;&#x9001;&#x4FE1;&#x53F7;&#x7684; Linux &#x547D;&#x4EE4;&#x53EB;&#x4F5C;&#xA0;<code>kill</code>&#x3002;</p>
-<p>&#x4F7F;&#x7528;&#xA0;<code>man 7 signal</code>&#xA0;&#x67E5;&#x770B;&#x4FE1;&#x53F7;&#x5217;&#x8868;&#x3002;</p>
-<h3 id="&#x524D;&#x540E;&#x53F0;&#x5207;&#x6362;"><a href="#&#x524D;&#x540E;&#x53F0;&#x5207;&#x6362;" class="headerlink" title="&#x524D;&#x540E;&#x53F0;&#x5207;&#x6362;"></a>&#x524D;&#x540E;&#x53F0;&#x5207;&#x6362;</h3><p>&#x9ED8;&#x8BA4;&#x5728; shell &#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x90FD;&#x5728;&#x524D;&#x53F0;&#x8FD0;&#x884C;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x547D;&#x4EE4;&#x6700;&#x540E;&#x52A0;&#x4E0A;&#xA0;<code>&amp;</code>&#x3002;</p>
+<p>&#x53D1;&#x9001;&#x4FE1;&#x53F7;&#x7684; Linux &#x547D;&#x4EE4;&#x53EB;&#x4F5C;?<code>kill</code>&#x3002;</p>
+<p>&#x4F7F;&#x7528;?<code>man 7 signal</code>?&#x67E5;&#x770B;&#x4FE1;&#x53F7;&#x5217;&#x8868;&#x3002;</p>
+<h3 id="&#x524D;&#x540E;&#x53F0;&#x5207;&#x6362;"><a href="#&#x524D;&#x540E;&#x53F0;&#x5207;&#x6362;" class="headerlink" title="&#x524D;&#x540E;&#x53F0;&#x5207;&#x6362;"></a>&#x524D;&#x540E;&#x53F0;&#x5207;&#x6362;</h3><p>&#x9ED8;&#x8BA4;&#x5728; shell &#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x90FD;&#x5728;&#x524D;&#x53F0;&#x8FD0;&#x884C;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x547D;&#x4EE4;&#x6700;&#x540E;&#x52A0;&#x4E0A;?<code>&amp;</code>&#x3002;</p>
 <p>&#x5982;&#x679C;&#x9700;&#x8981;&#x5C06;&#x524D;&#x53F0;&#x7A0B;&#x5E8F;&#x5207;&#x6362;&#x5230;&#x540E;&#x53F0;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x6309;&#x4E0B; Ctrl + Z &#x53D1;&#x9001; SIGTSTP &#x4F7F;&#x8FDB;&#x7A0B;&#x6302;&#x8D77;&#xFF0C;&#x63A7;&#x5236;&#x6743;&#x8FD8;&#x7ED9; shell&#x3002;</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">bg</span> %2 <span class="hljs-comment"># &#x5C06;2&#x53F7;&#x8FDB;&#x7A0B;&#x653E;&#x5165;&#x540E;&#x53F0;</span></span><br></pre></td></tr></tbody></table></figure>
 
@@ -320,12 +320,12 @@
 <td>&#x5217;&#x51FA;&#x6240;&#x6709; session</td>
 </tr>
 </tbody></table>
-<p>&#x5982;&#x679C;&#x6389;&#x7EBF;&#xFF0C;&#x518D;&#x6B21;&#x767B;&#x5F55;&#x65F6;&#x4F7F;&#x7528;&#xA0;<code>tmux attach [-t &#x7A97;&#x53E3;&#x540D;&#x79F0;]</code> &#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x7A97;&#x53E3;&#xFF0C;&#x4E0D;&#x52A0;&#xA0;<code>-t</code> &#x5219;&#x9ED8;&#x8BA4;&#x8FDE;&#x63A5;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x6253;&#x5F00;&#x7684;&#x7A97;&#x53E3;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6389;&#x7EBF;&#xFF0C;&#x518D;&#x6B21;&#x767B;&#x5F55;&#x65F6;&#x4F7F;&#x7528;?<code>tmux attach [-t &#x7A97;&#x53E3;&#x540D;&#x79F0;]</code> &#x91CD;&#x65B0;&#x8FDE;&#x63A5;&#x7A97;&#x53E3;&#xFF0C;&#x4E0D;&#x52A0;?<code>-t</code> &#x5219;&#x9ED8;&#x8BA4;&#x8FDE;&#x63A5;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x6253;&#x5F00;&#x7684;&#x7A97;&#x53E3;&#x3002;</p>
 <p><strong>&#x5B9A;&#x5236;tmux</strong></p>
 <h2 id="&#x670D;&#x52A1;"><a href="#&#x670D;&#x52A1;" class="headerlink" title="&#x670D;&#x52A1;"></a>&#x670D;&#x52A1;</h2><hr>
-<h3 id="&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;"><a href="#&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;" class="headerlink" title="&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;"></a>&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;</h3><p>&#x53EA;&#x6709;&#x542F;&#x52A8;&#x65F6;&#x8131;&#x79BB;&#x4F1A;&#x8BDD;&#x624D;&#x80FD;&#x907F;&#x514D;&#x56E0;&#x4E3A;&#x7EC8;&#x7AEF;&#x7684;&#x5173;&#x95ED;&#x800C;&#x6D88;&#x5931;&#x3002;&#x8FD9;&#x7C7B;&#x4E00;&#x76F4;&#x9ED8;&#x9ED8;&#x5DE5;&#x4F5C;&#x4E8E;&#x540E;&#x53F0;&#x7684;&#x8FDB;&#x7A0B;&#x88AB;&#x79F0;&#x4E3A;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;&#xA0;(daemon)&#x3002;</p>
-<h3 id="&#x670D;&#x52A1;&#x7BA1;&#x7406;"><a href="#&#x670D;&#x52A1;&#x7BA1;&#x7406;" class="headerlink" title="&#x670D;&#x52A1;&#x7BA1;&#x7406;"></a>&#x670D;&#x52A1;&#x7BA1;&#x7406;</h3><p>&#x7EDD;&#x5927;&#x591A;&#x6570; Linux &#x53D1;&#x884C;&#x7248;&#x7684; init &#x65B9;&#x6848;&#x662F; systemd&#xFF0C;&#x5176;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#x7684;&#x547D;&#x4EE4;&#x662F;&#xA0;<code>systemctl</code> &#x3002;</p>
-<p>&#x4F7F;&#x7528; <code>systemctl status</code>&#xA0;&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x7CFB;&#x7EDF;&#x4E2D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x670D;&#x52A1;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x4F7F;&#x7528; <code>systemctl list-units</code> &#x67E5;&#x770B;&#x6240;&#x6709; systemd &#x7BA1;&#x7406;&#x7684;&#x670D;&#x52A1;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<h3 id="&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;"><a href="#&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;" class="headerlink" title="&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;"></a>&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;</h3><p>&#x53EA;&#x6709;&#x542F;&#x52A8;&#x65F6;&#x8131;&#x79BB;&#x4F1A;&#x8BDD;&#x624D;&#x80FD;&#x907F;&#x514D;&#x56E0;&#x4E3A;&#x7EC8;&#x7AEF;&#x7684;&#x5173;&#x95ED;&#x800C;&#x6D88;&#x5931;&#x3002;&#x8FD9;&#x7C7B;&#x4E00;&#x76F4;&#x9ED8;&#x9ED8;&#x5DE5;&#x4F5C;&#x4E8E;&#x540E;&#x53F0;&#x7684;&#x8FDB;&#x7A0B;&#x88AB;&#x79F0;&#x4E3A;&#x5B88;&#x62A4;&#x8FDB;&#x7A0B;?(daemon)&#x3002;</p>
+<h3 id="&#x670D;&#x52A1;&#x7BA1;&#x7406;"><a href="#&#x670D;&#x52A1;&#x7BA1;&#x7406;" class="headerlink" title="&#x670D;&#x52A1;&#x7BA1;&#x7406;"></a>&#x670D;&#x52A1;&#x7BA1;&#x7406;</h3><p>&#x7EDD;&#x5927;&#x591A;&#x6570; Linux &#x53D1;&#x884C;&#x7248;&#x7684; init &#x65B9;&#x6848;&#x662F; systemd&#xFF0C;&#x5176;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#x7684;&#x547D;&#x4EE4;&#x662F;?<code>systemctl</code> &#x3002;</p>
+<p>&#x4F7F;&#x7528; <code>systemctl status</code>?&#x547D;&#x4EE4;&#x67E5;&#x770B;&#x7CFB;&#x7EDF;&#x4E2D;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x670D;&#x52A1;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x4F7F;&#x7528; <code>systemctl list-units</code> &#x67E5;&#x770B;&#x6240;&#x6709; systemd &#x7BA1;&#x7406;&#x7684;&#x670D;&#x52A1;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
 <p>&#x4F7F;&#x7528; <code>tldr</code> &#x67E5;&#x770B;&#x670D;&#x52A1;&#x7684;&#x542F;&#x52A8;&#x3001;&#x7EC8;&#x6B62;&#x3001;&#x91CD;&#x8F7D;&#x914D;&#x7F6E;&#x7B49;&#x547D;&#x4EE4;&#x3002;</p>
 <h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;"><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;" class="headerlink" title="&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;"></a>&#x81EA;&#x5B9A;&#x4E49;&#x670D;&#x52A1;</h3><p>&#x7F16;&#x5199; .service &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5E76;&#x8FD0;&#x884C;&#x3002;</p>
 <h3 id="&#x4F8B;&#x884C;&#x6027;&#x4EFB;&#x52A1;"><a href="#&#x4F8B;&#x884C;&#x6027;&#x4EFB;&#x52A1;" class="headerlink" title="&#x4F8B;&#x884C;&#x6027;&#x4EFB;&#x52A1;"></a>&#x4F8B;&#x884C;&#x6027;&#x4EFB;&#x52A1;</h3><p>&#x6307;&#x5B9E;&#x73B0;&#x5468;&#x671F;&#x6027;&#x7684;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x3002;&#x5728; Linux &#x4E2D;&#x4E3B;&#x8981;&#x6709; <code>at</code> &#x548C; <code>crontab</code> &#x3002;</p>
@@ -512,6 +512,19 @@
 
     
     
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        // ...options...
+    });
+});
+</script>
+
     
     
 <script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
