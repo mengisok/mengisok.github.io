@@ -2,13 +2,13 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>Shell - Meng&#39;s Blog</title>
+<title>Process - Meng&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
 
 
-<link href="/zh-cn/Shell/" rel="alternate" hreflang="zh-CN" />
+<link href="/zh-cn/Process/" rel="alternate" hreflang="zh-CN" />
     
 
 
@@ -18,20 +18,18 @@
 
 
 
-    <meta name="description" content="The Matrix effect is so cool.">
+    <meta name="description" content="A process is a program that is running.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shell">
-<meta property="og:url" content="https://mengisok.github.io/Shell/index.html">
+<meta property="og:title" content="Process">
+<meta property="og:url" content="https://mengisok.github.io/Process/index.html">
 <meta property="og:site_name" content="Meng&#39;s Blog">
-<meta property="og:description" content="The Matrix effect is so cool.">
+<meta property="og:description" content="A process is a program that is running.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://mengisok.github.io/images/cmatrix.png">
-<meta property="article:published_time" content="2023-01-11T06:23:41.000Z">
-<meta property="article:modified_time" content="2023-01-13T14:42:16.926Z">
+<meta property="article:published_time" content="2023-04-05T14:21:30.000Z">
+<meta property="article:modified_time" content="2023-04-05T15:10:36.676Z">
 <meta property="article:author" content="Han Meng">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://mengisok.github.io/images/cmatrix.png">
 
 
 
@@ -130,11 +128,11 @@
         <div class="dropdown-menu has-text-left" role="menu" style="top:100%">
             <div class="dropdown-content">
             
-                <a href="/Shell/" class="dropdown-item">
+                <a href="/Process/" class="dropdown-item">
                     English
                 </a>
             
-                <a href="/zh-cn/Shell/" class="dropdown-item">
+                <a href="/zh-cn/Process/" class="dropdown-item">
                     简体中文
                 </a>
             
@@ -158,25 +156,71 @@
                     
                     
                     
-                    <a class="navbar-item" href="#What-is-shell">1&nbsp;&nbsp;<b>What is shell</b></a>
+                    <a class="navbar-item" href="#Basic-concepts-of-Process">1&nbsp;&nbsp;<b>Basic concepts of Process</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Checking-processes">1.1&nbsp;&nbsp;Checking processes</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#PID-process-identifier">1.2&nbsp;&nbsp;PID (process identifier)</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Process-priority">1.3&nbsp;&nbsp;Process priority</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Process-status">1.4&nbsp;&nbsp;Process status</a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#Why-use-shell">2&nbsp;&nbsp;<b>Why use shell</b></a>
+                    <a class="navbar-item" href="#Process-Control">2&nbsp;&nbsp;<b>Process Control</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Signal">2.1&nbsp;&nbsp;Signal</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Switching-from-front-to-back">2.2&nbsp;&nbsp;Switching from front to back</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Terminating-a-process">2.3&nbsp;&nbsp;Terminating a process</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Get-out-of-the-terminal">2.4&nbsp;&nbsp;Get out of the terminal</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#tmux">2.5&nbsp;&nbsp;tmux</a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#Simple-shell-commands">3&nbsp;&nbsp;<b>Simple shell commands</b></a>
+                    <a class="navbar-item" href="#Service">3&nbsp;&nbsp;<b>Service</b></a>
                     
                     
-                    <hr class="navbar-divider">
+                    
+                    <a class="navbar-item" href="#Daemon">3.1&nbsp;&nbsp;Daemon</a>
                     
                     
-                    <a class="navbar-item" href="#Appendix">4&nbsp;&nbsp;<b>Appendix</b></a>
+                    
+                    <a class="navbar-item" href="#Service-management">3.2&nbsp;&nbsp;Service management</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Customizing-services">3.3&nbsp;&nbsp;Customizing services</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Routine-tasks">3.4&nbsp;&nbsp;Routine tasks</a>
                     
                 </div>
             </div>
@@ -199,13 +243,13 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            Shell
+            Process
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
             
-                <span>Jan 11 2023</span>
+                <span>Apr 5 2023</span>
             
         </span>
         
@@ -218,67 +262,172 @@
         <span class="column is-narrow">
             
             
-            3 minutes read (About 387 words)
+            6 minutes read (About 936 words)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>The Matrix effect is so cool.  </p>
+        <p>A process is a program that is running.  </p>
 <span id="more"></span>
 
-<h3 id="What-is-shell"><a href="#What-is-shell" class="headerlink" title="What is shell"></a>What is shell</h3><hr>
-<p>Shell is a program in Linux that accepts commands from the keyboard, hands them over to the system for execution, and returns the output of the command to the user</p>
-<p>Almost all Linux distributions provide a shell program called Bash, which is an &#x201C;enhanced&#x201D; version of the traditional shell</p>
-<p>Note that</p>
+<p>When you start a program, the operating system first reads the program file from the hard disk, then loads the program contents into memory, and finally the CPU executes the program. This is a process.  </p>
+<h2 id="Basic-concepts-of-Process"><a href="#Basic-concepts-of-Process" class="headerlink" title="Basic concepts of Process"></a>Basic concepts of Process</h2><hr>
+<h3 id="Checking-processes"><a href="#Checking-processes" class="headerlink" title="Checking processes"></a>Checking processes</h3><p><strong>htop</strong></p>
+<p><strong>ps (process status)</strong> </p>
+<p> <code>ps</code> shows only the relevant processes running in this terminal.</p>
+<p> <code>ps aux</code> shows all processes.</p>
+<h3 id="PID-process-identifier"><a href="#PID-process-identifier" class="headerlink" title="PID (process identifier)"></a>PID (process identifier)</h3><p>The PID is a number that uniquely identifies a process.</p>
+<p>The PID can be used as an index when hanging, continuing or terminating a process.</p>
+<h3 id="Process-priority"><a href="#Process-priority" class="headerlink" title="Process priority"></a>Process priority</h3><p><strong>NI (nice)</strong> </p>
+<p>The range of values is -20 to 19. Usually the NI value of the currently running process is 0. The higher the NI, the lower the priority.</p>
+<p>Specify the priority:</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">nice</span> -n 10 vim <span class="hljs-comment"># Run vim with a nice value of 10</span></span><br><span class="line">$ renice -n 10 -p 12345 <span class="hljs-comment"># Set the nice value of the process with PID 12345 to 10</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>To lower the nice value you need <code>sudo</code>.</p>
+<p><strong>PRI (priority)</strong></p>
+<p>Normally PRI = nice + 20. If the PRI value is RT, or if it is negative, the corresponding process has higher real-time requirements (e.g. kernel processes, audio-related processes, etc.).</p>
+<h3 id="Process-status"><a href="#Process-status" class="headerlink" title="Process status"></a>Process status</h3><p>Roughly divided into:</p>
 <ul>
-<li>Windows paths are separated by a backslash <code>\</code>; UNIX-like paths are separated by a forward slash <code>/</code>; UNIX-like systems also do not use the disk mechanism under Windows, but use a unified root directory</li>
-<li>Absolute paths &amp; relative paths</li>
+<li>Running</li>
+<li>Ready</li>
+<li>Blocked</li>
 </ul>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/bin/ls <span class="hljs-comment"># Absolute paths</span></span><br><span class="line">. /file.txt <span class="hljs-comment"># Relative path, file.txt file in current directory</span></span><br><span class="line">... /file.txt <span class="hljs-comment"># Relative path, file.txt file in the previous directory (parent directory)</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Detailed classification:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Abbreviation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Running</td>
+<td>R</td>
+<td>Running/ready to run immediately</td>
+</tr>
+<tr>
+<td>Sleeping</td>
+<td>S</td>
+<td>Interruptible sleep</td>
+</tr>
+<tr>
+<td>Disk Sleep</td>
+<td>D</td>
+<td>Non-interruptible sleep</td>
+</tr>
+<tr>
+<td>Traced / Stopped</td>
+<td>T</td>
+<td>Traced / Suspended processes</td>
+</tr>
+<tr>
+<td>Zombie</td>
+<td>Z</td>
+<td>Zombie processes</td>
+</tr>
+</tbody></table>
+<h2 id="Process-Control"><a href="#Process-Control" class="headerlink" title="Process Control"></a>Process Control</h2><hr>
+<h3 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h3><p>Signal is a mechanism for processes to communicate with each other on Unix family systems.</p>
+<p>The Linux command that sends signals is called <code>kill</code>.</p>
+<p>Use <code>man 7 signal</code> to see the list of signals.</p>
+<h3 id="Switching-from-front-to-back"><a href="#Switching-from-front-to-back" class="headerlink" title="Switching from front to back"></a>Switching from front to back</h3><p>By default, commands run in the shell are run in the foreground. If you need to run in the background, you need to add <code>&amp;</code> to the end of the command.</p>
+<p>If you need to switch the foreground program to the background, you need to press Ctrl + Z to send SIGTSTP to hang the process and return control to the shell.</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">bg</span> %2 <span class="hljs-comment"># Put process 2 into the background</span></span><br></pre></td></tr></tbody></table></figure>
 
+<h3 id="Terminating-a-process"><a href="#Terminating-a-process" class="headerlink" title="Terminating a process"></a>Terminating a process</h3><p>The standard signal to terminate a process is SIGTERM, which implies the natural death of a process.</p>
+<p><strong>Sending the signal in htop</strong></p>
+<p>Press K, select the desired signal in the left prompt bar and press enter to send it.</p>
+<p><strong>Kill</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">kill</span> -l <span class="hljs-comment"># Show all signals</span></span><br><span class="line">$ <span class="hljs-built_in">kill</span> -9 PID <span class="hljs-comment"># 9 for SIGKILL. End process PID immediately </span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>If you don&#x2019;t add any arguments, only PID, <code>kill</code> will automatically use 15 (SIGTERM) as signal argument.</p>
+<p><strong>Kill-like commands</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apropos <span class="hljs-built_in">kill</span> <span class="hljs-comment"># Show various other kill-like commands</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Get-out-of-the-terminal"><a href="#Get-out-of-the-terminal" class="headerlink" title="Get out of the terminal"></a>Get out of the terminal</h3><p><strong>nohup</strong></p>
+<p>Once a terminal is closed, it sends a SIGHUP (Signal Hangup) to each process in it, and the default action for SIGHUP is to quit the program running. By adding <code>nohup</code> before the program that needs to block SIGHUP, the runtime output will be redirected to <code>nohup.out</code> (which can also be customized).</p>
+<h3 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h3><p>&#x201C;tmux&#x201D; is a split-screen, command-line emulated terminal that runs on the command line. It can integrate multiple interactive processes in a single window and does not disappear when disconnected or temporarily logged out, but is stored in the background and can be restored immediately when logging in next time.</p>
+<p>&#x201C;tmux&#x201D; is divided into three parts:</p>
 <ul>
-<li><code>$</code> and <code>#</code><ul>
-<li><code>$</code> at the beginning of the command means that the command is run with <strong>normal user privileges</strong></li>
-<li><code>#</code> means that the command requires <strong>root privileges (the highest privilege)</strong>, which is generally equivalent to <code>$ sudo the command</code></li>
-<li><code>#</code> at the end of the command means that the symbol and its contents are <strong>comments</strong></li>
+<li>Session: to distinguish different jobs;</li>
+<li>Window: different pages of the session in terms of displays;</li>
+<li>Pane: different areas of the window divided by white lines.</li>
 </ul>
-</li>
-</ul>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ A <span class="hljs-built_in">command</span></span><br><span class="line">The output of the <span class="hljs-built_in">command</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Commands that require root privileges</span></span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># Comments</span></span><br></pre></td></tr></tbody></table></figure>
+<p>To install and open tmux:</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install tmux</span><br><span class="line">$ tmux</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="Why-use-shell"><a href="#Why-use-shell" class="headerlink" title="Why use shell"></a>Why use shell</h3><hr>
-<p><strong>Efficiency</strong></p>
-<p>Once you are familiar with the command line and have an auto-completion shell program, you can save a lot of time by using the command line</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">mv</span> ... /source/file.txt ... /dest/ <span class="hljs-comment"># Drag file.txt from the . /source/ folder to the . /dest/ folder</span></span><br></pre></td></tr></tbody></table></figure>
+<table>
+<thead>
+<tr>
+<th>Shortcut keys (Ctrl + B first)</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%</td>
+<td>Left/right split screen</td>
+</tr>
+<tr>
+<td>&#x201C;</td>
+<td>Up and down split screen</td>
+</tr>
+<tr>
+<td>&#x2191; &#x2193; &#x2190; &#x2192;</td>
+<td>The focus switches to the top, bottom, left, and right pane, and the pane being interacted with is selected in green.</td>
+</tr>
+<tr>
+<td>d (detach)</td>
+<td>Detach from tmux and return to the command line interface.</td>
+</tr>
+<tr>
+<td>z (zoom)</td>
+<td>Temporarily fullscreen the pane, and press again to restore it to its original state</td>
+</tr>
+<tr>
+<td>c</td>
+<td>Create a new window</td>
+</tr>
+<tr>
+<td>,</td>
+<td>Name the window</td>
+</tr>
+<tr>
+<td>s</td>
+<td>List all sessions</td>
+</tr>
+</tbody></table>
+<p>If you are disconnected, use <code>tmux attach [-t window name]</code> to reconnect the window when you log in again. Without <code>-t</code>, the last opened window will be connected by default.</p>
+<p><strong>Customizing tmux</strong></p>
+<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><hr>
+<h3 id="Daemon"><a href="#Daemon" class="headerlink" title="Daemon"></a>Daemon</h3><p>The only way to avoid disappearing due to terminal shutdown is to disconnect from the session at startup. Such processes, which work silently in the background, are called daemons.</p>
+<h3 id="Service-management"><a href="#Service-management" class="headerlink" title="Service management"></a>Service management</h3><p>The init scheme for most Linux distributions is systemd, whose command for managing system services is <code>systemctl</code>.</p>
+<p>Use the <code>systemctl status</code> command to see what services are running on the system. Use <code>systemctl list-units</code> to see the status of all systemd managed services.</p>
+<p>Use <code>tldr</code> to view the commands for starting, terminating, and reloading configuration of services.</p>
+<h3 id="Customizing-services"><a href="#Customizing-services" class="headerlink" title="Customizing services"></a>Customizing services</h3><p>Write a .service configuration file and run it.</p>
+<h3 id="Routine-tasks"><a href="#Routine-tasks" class="headerlink" title="Routine tasks"></a>Routine tasks</h3><p>Refers to the implementation of periodic scheduled tasks. The main ones in Linux are <code>at</code> and <code>crontab</code>.</p>
+<p><strong>at</strong></p>
+<p><code>at</code> is responsible for single scheduled tasks.</p>
+<p>Installation:</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install at</span><br></pre></td></tr></tbody></table></figure>
 
-<p><strong>Automation Scripts</strong></p>
-<p>Automates repetitive tasks</p>
-<p><strong>Save resources</strong></p>
-<p>The vast majority of servers do not use a graphical interface in order to save resources</p>
-<p><strong>Advanced system maintenance tasks</strong></p>
-<p>Some advanced systems do not have a graphical interface and maintenance tasks can only be done from the command line; or complex configuration files need to be written by hand</p>
-<p><strong>Looks cool!</strong> </p>
-<p>A simulation of The Matrix effects: </p>
-<ol>
-<li>Open the terminal emulator</li>
-<li>Install cmatrix</li>
-</ol>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install cmatrix</span><br></pre></td></tr></tbody></table></figure>
+<p>Use <code>tldr</code> to see how to use it.</p>
+<p><strong>crontab</strong></p>
+<p><code>crontab</code> is responsible for periodic tasks.</p>
+<p>Unlike <code>at</code>, <code>crontab</code> is mostly implemented through configuration files.</p>
+<p>To see the usage of crontab:</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ crontab --<span class="hljs-built_in">help</span></span><br></pre></td></tr></tbody></table></figure>
 
-<ol start="3">
-<li>Use the <code>cmatrix</code> command to see the effects</li>
-<li>Press the <code>q</code> key or Ctrl + C to exit</li>
-</ol>
-<img src="/images/cmatrix.png" alt="cmatrix" title="cmatrix" width="800"> 
-
-<h3 id="Simple-shell-commands"><a href="#Simple-shell-commands" class="headerlink" title="Simple shell commands"></a>Simple shell commands</h3><hr>
-<p><code>ls</code>: lists the contents of the (<strong>l</strong>i<strong>s</strong>t) directory</p>
-<p><code>cd</code>: change directory (<strong>c</strong>hange <strong>d</strong>irectory)</p>
-<p><code>pwd</code>: View the current directory (<strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory)</p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>Tutorial</strong></p>
-<p><a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch03/">Linux 101 - &#x7B2C;&#x4E8C;&#x7AE0;&#xFF1A;&#x4E2A;&#x6027;&#x5316;&#x914D;&#x7F6E;&#x4E0E;&#x5EFA;&#x7AD9;&#x4F53;&#x9A8C;</a> </p>
+<p>Configuration format: The first half of each line is the time, and the second half is the shell execution command.</p>
+<pre><code class="bash"># minutes hour day month week | command
+# Example
+* * * * * echo &quot;hello&quot; &gt;&gt; ~/count
+# Output hello every minute to count file in home directory
+0,15,30,45 0-6 * jan sun command
+# Do something randomly every Sunday in January every year for 15 minutes from 0:00 midnight to 6:00 am
+</code></pre>
+<p>The <a target="_blank" rel="noopener" href="https://crontab.guru/">crontab.guru</a> website can translate the configuration file into an easy-to-understand representation.</p>
 
     
     </div>
@@ -291,14 +440,12 @@
     
     
     <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/Installing-software-in-Linux/">Installing Software in Linux</a>
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-            <a href="/Intro-to-Linux/">Intro to Linux</a>
+            <a href="/Creating-Packages-in-Allegro-PCB-Editor/">Creating Packages in Allegro PCB Editor</a>
             
         </span>
     </div>
@@ -320,8 +467,8 @@
     
 <script>
     var disqus_config = function () {
-        this.page.url = 'https://mengisok.github.io/Shell/';
-        this.page.identifier = 'Shell/';
+        this.page.url = 'https://mengisok.github.io/Process/';
+        this.page.identifier = 'Process/';
         
         this.language = 'en';
         
@@ -371,11 +518,11 @@
         <div class="dropdown-menu has-text-left" role="menu" style="top:100%">
             <div class="dropdown-content">
             
-                <a href="/Shell/" class="dropdown-item">
+                <a href="/Process/" class="dropdown-item">
                     English
                 </a>
             
-                <a href="/zh-cn/Shell/" class="dropdown-item">
+                <a href="/zh-cn/Process/" class="dropdown-item">
                     简体中文
                 </a>
             
