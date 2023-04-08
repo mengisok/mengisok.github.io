@@ -178,7 +178,7 @@
                     
                     
                     
-                    <a class="navbar-item" href="#Using-source-code-5">1.5&nbsp;&nbsp;Using source code 5</a>
+                    <a class="navbar-item" href="#Using-source-code-sup-5-sup">1.5&nbsp;&nbsp;Using source code 5</a>
                     
                     
                     <hr class="navbar-divider">
@@ -238,13 +238,15 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>There are 5 ways to install software in Linux.  </p>
+        <p>There are 5 ways to install software in Linux.</p>
 <span id="more"></span>
-
-<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><hr>
-<h4 id="Using-the-APP-store"><a href="#Using-the-APP-store" class="headerlink" title="Using the APP store"></a><strong>Using the APP store</strong></h4><p>Available for distributions with APP store, such as Ubuntu, Manjaro, etc.</p>
-<p>In Xubuntu, the APP store is called &#x201C;Software&#x201D;, but it doesn&#x2019;t work well because it loads very slowly.  </p>
-<h4 id="Using-package-management-system"><a href="#Using-package-management-system" class="headerlink" title="Using package management system"></a><strong>Using package management system</strong></h4><p>A package management system is a collection of tools that automates the installation, update, configuration and removal of software.</p>
+<h3 id="Installation">Installation</h3>
+<hr>
+<h4 id="Using-the-APP-store"><strong>Using the APP store</strong></h4>
+<p>Available for distributions with APP store, such as Ubuntu, Manjaro, etc.</p>
+<p>In Xubuntu, the APP store is called &#x201C;Software&#x201D;, but it doesn&#x2019;t work well because it loads very slowly.</p>
+<h4 id="Using-package-management-system"><strong>Using package management system</strong></h4>
+<p>A package management system is a collection of tools that automates the installation, update, configuration and removal of software.</p>
 <p>In Linux, many software can be installed with a single command, elegantly and quickly.</p>
 <p>In contrast to the APP store, using the package manager requires that you know in advance the name of the package in the repository where you want to install the software.</p>
 <p>For example, <code>dpkg</code>, which manages Debian (.deb) packages, and its front-end <code>apt</code> (for Debian distributions).</p>
@@ -262,45 +264,45 @@
 <p><strong>Third-party sources</strong></p>
 <p>You can add third-party sources and install the software if it is not in the official sources.</p>
 <p>After adding third-party sources to <code>/etc/apt/sources.list</code>, you can get the list of third-party software and install the required third-party software with <code>apt install package-name</code>.</p>
-<p>For example, install Docker by adding the Docker sources <a href="#refer-anchor-1"><sup>1</sup></a>. </p>
-<h4 id="Installing-packages-manually-using-the-package-manager"><a href="#Installing-packages-manually-using-the-package-manager" class="headerlink" title="Installing packages manually using the package manager"></a><strong>Installing packages manually using the package manager</strong></h4><p>In addition to installing software from official and third-party repositories, you can also directly download and install binary packages such as <code>deb</code>, <code>rpm</code>, etc., packaged by the software vendor, and install them using shell. </p>
-<p>Try to use <code>apt</code> to install deb, avoid using <code>dpkg -i</code> , because installing deb directly via <code>dpkg</code> will <strong>not install the required dependencies</strong>. It will only report that the corresponding dependencies are missing, and you need to fix them manually with the following command: </p>
+<p>For example, install Docker by adding the Docker sources <a href="#refer-anchor-1"><sup>1</sup></a>.</p>
+<h4 id="Installing-packages-manually-using-the-package-manager"><strong>Installing packages manually using the package manager</strong></h4>
+<p>In addition to installing software from official and third-party repositories, you can also directly download and install binary packages such as <code>deb</code>, <code>rpm</code>, etc., packaged by the software vendor, and install them using shell.</p>
+<p>Try to use <code>apt</code> to install deb, avoid using <code>dpkg -i</code> , because installing deb directly via <code>dpkg</code> will <strong>not install the required dependencies</strong>. It will only report that the corresponding dependencies are missing, and you need to fix them manually with the following command:</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt -f install</span><br></pre></td></tr></tbody></table></figure>
-
-<p>For example, install VSCode <a href="#refer-anchor-2"><sup>2</sup></a>. </p>
-<p>I tried but failed.  </p>
-<p>First, my Linux distribution was too old to install with <code>apt</code>, so I used <code>dpkg -i</code> and made some errors;<br>Second, I seemed to have insufficient storage space to install the whole VSCode;<br>Finally, I made the mistake of powering off Linux, and when I booted it up again, there was no GUI, only a cursor flashing in the upper left corner.  </p>
+<p>For example, install VSCode <a href="#refer-anchor-2"><sup>2</sup></a>.</p>
+<p>I tried but failed.</p>
+<p>First, my Linux distribution was too old to install with <code>apt</code>, so I used <code>dpkg -i</code> and made some errors;<br>
+Second, I seemed to have insufficient storage space to install the whole VSCode;<br>
+Finally, I made the mistake of powering off Linux, and when I booted it up again, there was no GUI, only a cursor flashing in the upper left corner.</p>
 <p>I searched for these problems, but they were not successfully solved. I had no choice but to delete the original virtual machine and add a new one.</p>
 <p><strong>File transfer between host win10 and virtual machine ubuntu</strong></p>
-<p>Transferring files via <strong>SSH connection</strong> to the server <a href="#refer-anchor-3"><sup>3</sup></a>. I chose <a target="_blank" rel="noopener" href="https://mobaxterm.mobatek.net/">MobaXterm</a> and successfully transferred the files.  </p>
+<p>Transferring files via <strong>SSH connection</strong> to the server <a href="#refer-anchor-3"><sup>3</sup></a>. I chose <a target="_blank" rel="noopener" href="https://mobaxterm.mobatek.net/">MobaXterm</a> and successfully transferred the files.</p>
 <img src="/images/mobaxterm.png" alt="mobaxterm" title="mobaxterm" width="800">  
-
-<p>A few little penguins suddenly jumped out when the connection was disconnected ^_^</p>
-<h4 id="Installing-pre-compiled-executables"><a href="#Installing-pre-compiled-executables" class="headerlink" title="Installing pre-compiled executables"></a><strong>Installing pre-compiled executables</strong></h4><p>The software provider may also provide pre-compiled executables that can be run directly. </p>
+<p>A few little penguins suddenly jumped out when the connection was disconnected <sup>_</sup></p>
+<h4 id="Installing-pre-compiled-executables"><strong>Installing pre-compiled executables</strong></h4>
+<p>The software provider may also provide pre-compiled executables that can be run directly.</p>
 <p>For example, install a pre-compiled LLVM <a href="#refer-anchor-4"><sup>4</sup></a>.</p>
-<h4 id="Using-source-code-5"><a href="#Using-source-code-5" class="headerlink" title="Using source code 5"></a><strong>Using source code</strong> <a href="#refer-anchor-5"><sup>5</sup></a></h4><h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><hr>
+<h4 id="Using-source-code-sup-5-sup"><strong>Using source code</strong> <a href="#refer-anchor-5"><sup>5</sup></a></h4>
+<h3 id="Update">Update</h3>
+<hr>
 <p>Locally on the computer, the system maintains a list of packages that contains software information and package dependencies.</p>
 <p><strong>Update the software list</strong></p>
 <p>Use <code>apt update</code> to get the new software version and software dependencies.</p>
 <p><strong>Update the software</strong></p>
 <p>After getting the new software list, use <code>apt upgrade</code> to update the software.</p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<h3 id="Appendix">Appendix</h3>
+<hr>
 <p><strong>Tutorial</strong></p>
 <p><a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch03/">Linux 101 - chap 03: &#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x4E0E;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</a></p>
 <div id="refer-anchor-1"></div>
-
 <p>[1] <a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch03/#third-party-software-sources">Linux 101 - &#x7B2C;&#x4E09;&#x65B9;&#x8F6F;&#x4EF6;&#x6E90;</a></p>
 <div id="refer-anchor-2"></div>
-
 <p>[2] <a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/setup/linux">Visual Studio Code on Linux</a></p>
 <div id="refer-anchor-3"></div>
-
 <p>[3] <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/460471813">&#x5BBF;&#x4E3B;&#x673A;win10&#x4E0E;&#x865A;&#x62DF;&#x673A;ubuntu&#x4E4B;&#x95F4;&#x7684;&#x6587;&#x4EF6;&#x4F20;&#x8F93;&#x65B9;&#x6CD5;</a></p>
 <div id="refer-anchor-4"></div>
-
 <p>[4] <a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch03/#install-precompiled">Linux 101 - &#x5B89;&#x88C5;&#x9884;&#x7F16;&#x8BD1;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</a></p>
 <div id="refer-anchor-5"></div>
-
 <p>[5] <a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch03/supplement/#install-from-source">Linux 101 - &#x4F7F;&#x7528;&#x6E90;&#x4EE3;&#x7801;&#x5B89;&#x88C5;</a></p>
 
     
