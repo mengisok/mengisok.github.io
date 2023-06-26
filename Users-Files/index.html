@@ -2,13 +2,13 @@
 <html class="has-navbar-fixed-top">
 <head>
     <meta charset="utf-8">
-<title>Apr 2023 - Meng&#39;s Blog</title>
+<title>Users, Files - Meng&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
 
 
-<link href="/zh-cn/Apr-2023/" rel="alternate" hreflang="zh-CN" />
+<link href="/zh-cn/Users-Files/" rel="alternate" hreflang="zh-CN" />
     
 
 
@@ -18,19 +18,18 @@
 
 
 
-    <meta name="description" content="The two most important things this month: got a cat and my boyfriend received a phd offer from Germany (so I also started to pay attention to phd in German).">
+    <meta name="description" content="This is an introduction to &amp;#x201C;users&amp;#x201D; and &amp;#x201C;files&amp;#x201D; in Linux.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Apr 2023">
-<meta property="og:url" content="https://mengisok.github.io/Apr-2023/index.html">
+<meta property="og:title" content="Users, Files">
+<meta property="og:url" content="https://mengisok.github.io/Users-Files/index.html">
 <meta property="og:site_name" content="Meng&#39;s Blog">
-<meta property="og:description" content="The two most important things this month: got a cat and my boyfriend received a phd offer from Germany (so I also started to pay attention to phd in German).">
+<meta property="og:description" content="This is an introduction to &amp;#x201C;users&amp;#x201D; and &amp;#x201C;files&amp;#x201D; in Linux.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://mengisok.github.io/images/berber_playing.png">
-<meta property="article:published_time" content="2023-05-07T13:30:37.000Z">
-<meta property="article:modified_time" content="2023-05-14T10:31:55.534Z">
+<meta property="article:published_time" content="2023-06-26T05:20:58.000Z">
+<meta property="article:modified_time" content="2023-06-26T05:35:04.488Z">
 <meta property="article:author" content="Han Meng">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://mengisok.github.io/images/berber_playing.png">
 
 
 
@@ -129,11 +128,11 @@
         <div class="dropdown-menu has-text-left" role="menu" style="top:100%">
             <div class="dropdown-content">
             
-                <a href="/Apr-2023/" class="dropdown-item">
+                <a href="/Users-Files/" class="dropdown-item">
                     English
                 </a>
             
-                <a href="/zh-cn/Apr-2023/" class="dropdown-item">
+                <a href="/zh-cn/Users-Files/" class="dropdown-item">
                     简体中文
                 </a>
             
@@ -157,19 +156,55 @@
                     
                     
                     
-                    <a class="navbar-item" href="#Berber-arrived">1&nbsp;&nbsp;<b>Berber arrived!</b></a>
+                    <a class="navbar-item" href="#Users-in-Linux">1&nbsp;&nbsp;<b>Users in Linux</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Root-user">1.1&nbsp;&nbsp;Root user</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#System-users">1.2&nbsp;&nbsp;System users</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Normal-users">1.3&nbsp;&nbsp;Normal users</a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#My-boyfriend-received-an-offer">2&nbsp;&nbsp;<b>My boyfriend received an offer</b></a>
+                    <a class="navbar-item" href="#Switching-users">2&nbsp;&nbsp;<b>Switching users</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#sudo">2.1&nbsp;&nbsp;sudo</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#su">2.2&nbsp;&nbsp;su</a>
                     
                     
                     <hr class="navbar-divider">
                     
                     
-                    <a class="navbar-item" href="#PCB-progress">3&nbsp;&nbsp;<b>PCB progress</b></a>
+                    <a class="navbar-item" href="#User-group">3&nbsp;&nbsp;<b>User group</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#File-permissions">4&nbsp;&nbsp;<b>File permissions</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Execute-permissions">4.1&nbsp;&nbsp;Execute permissions</a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#File-system-hierarchy">5&nbsp;&nbsp;<b>File system hierarchy</b></a>
                     
                 </div>
             </div>
@@ -192,56 +227,88 @@
     <article class="article content gallery" itemscope itemprop="blogPost">
     <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
         
-            Apr 2023
+            Users, Files
         
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
         <span class="column is-narrow">
             
-                <span>May 7 2023</span>
+                <span>Jun 26 2023</span>
             
         </span>
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/%E6%80%BB%E7%BB%93/">Summary</a>
+            <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">Learning</a>
         </span>
         
         
         <span class="column is-narrow">
             
             
-            2 minutes read (About 267 words)
+            5 minutes read (About 740 words)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>The two most important things this month: got a cat and my boyfriend received a phd offer from Germany (so I also started to pay attention to phd in German).</p>
+        <p>This is an introduction to &#x201C;users&#x201D; and &#x201C;files&#x201D; in Linux.</p>
 <span id="more"></span>
 
-<h2 id="Berber-arrived"><a href="#Berber-arrived" class="headerlink" title="Berber arrived!"></a>Berber arrived!</h2><img src="/images/berber_playing.png" alt="berber_playing" title="berber_playing" width="300">   
+<p>Server administrators can create users for different users and assign different privileges to ensure the normal operation of the system. They can also create users for network services and limit the privileges to reduce the damage to the system security when the services are attacked.</p>
+<p>Modern operating systems generally distinguish between user &#x201C;user&#x201D; and &#x201C;system user&#x201D;, and divide the privileges to ensure that the integrity of the system will not be damaged by user&#x2019;s misuse or malicious programs.</p>
+<h2 id="Users-in-Linux"><a href="#Users-in-Linux" class="headerlink" title="Users in Linux"></a>Users in Linux</h2><hr>
+<p>You can see various user information in <code>/etc/passwd</code>.</p>
+<h3 id="Root-user"><a href="#Root-user" class="headerlink" title="Root user"></a>Root user</h3><p>The root user <code>/root</code> user has the <strong>highest privileges</strong> in the Linux operating system and can do anything to the system (including the <strong>extremely dangerous operation of deleting all system files</strong>). The <code>root</code> user&#x2019;s data is stored under <code>/root</code>.</p>
+<p>Use the <code>root</code> privilege carefully to execute commands (such as <code>sudo</code>), <strong>do not execute the following commands:</strong></p>
+<ul>
+<li><code>rm -rf /</code></li>
+<li><code>mkfs.ext4 /dev/sda</code></li>
+<li><code>dd if=/dev/urandom of=/dev/sda</code></li>
+<li><code>:(){ :|: &amp; };:</code></li>
+</ul>
+<h3 id="System-users"><a href="#System-users" class="headerlink" title="System users"></a>System users</h3><p>System users are created by the system or related programs to perform system tasks such as services, e.g. <code>nobody</code> , <code>www-data</code> and so on. <strong>Do not delete these users at random</strong>.</p>
+<h3 id="Normal-users"><a href="#Normal-users" class="headerlink" title="Normal users"></a>Normal users</h3><p>The normal user is located at <code>/home/username/</code> and <code>username</code> is the username. Normal users can log in to the system and operate on files in their home directory. They cannot directly modify the system configuration or install or uninstall software for the system environment.</p>
+<h2 id="Switching-users"><a href="#Switching-users" class="headerlink" title="Switching users"></a>Switching users</h2><hr>
+<h3 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h3><p><code>sudo</code> is used to execute the specified command as another user.</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo + <span class="hljs-built_in">command</span> <span class="hljs-comment"># Execute the command as the root user</span></span><br><span class="line">$ sudo !!! <span class="hljs-comment"># Execute the previous command as the root user</span></span><br><span class="line">$ sudo -u username <span class="hljs-built_in">command</span> <span class="hljs-comment"># Execute the command as a user other than root</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>On the night of April 10, I heard a cat barking outside my door, and when I opened it, it came in. I asked the neighbors in the neighborhood group if it was a lost cat, but no one claimed it, so I decided to keep it. Then, in the past month, I learned a lot about cat! It turned out to be such a complicated thing. My understanding of cats as creatures has also changed, this also good and evil, instinct first elf &#x2026;&#x2026;  </p>
-<h2 id="My-boyfriend-received-an-offer"><a href="#My-boyfriend-received-an-offer" class="headerlink" title="My boyfriend received an offer"></a>My boyfriend received an offer</h2><p>The dream came true! I am very happy for him! And I began to be anxious &#x2026;&#x2026; I decided to collect some information.</p>
-<p><a target="_blank" rel="noopener" href="https://m.douban.com/group/topic/267061547/?_i=8206742098bcfba&amp;dt_dapp=1">European phd job information</a>  </p>
-<p>Recruitment in research institutions:<br><a target="_blank" rel="noopener" href="https://careers.cern/">CERN</a><br><a target="_blank" rel="noopener" href="https://lhcb.web.cern.ch/lhcb_page/collaboration/jobs/default.html">LHCb</a><br><a target="_blank" rel="noopener" href="https://atlas.cern/Discover/Collaboration/Jobs">ATLAS</a><br><a target="_blank" rel="noopener" href="https://www.fz-juelich.de/en/zea/zea-2/career/current-vacancies">Juelich</a><br><a target="_blank" rel="noopener" href="https://www.fz-juelich.de/en/zea/zea-2/research/detector-systems">Juelich - Detector Systems</a>  </p>
-<p>University vacancies:<br><a target="_blank" rel="noopener" href="https://www.verw.tu-dresden.de/stellaus/stellen.asp?style=verw&amp;lang=en">TU Dresden</a><br><a target="_blank" rel="noopener" href="https://6g-life.de/">6G-Life</a><br><a target="_blank" rel="noopener" href="https://www.hi-mainz.de/opportunities/job-offers">Helmholtz-Institut Mainz</a>  </p>
-<h2 id="PCB-progress"><a href="#PCB-progress" class="headerlink" title="PCB progress"></a>PCB progress</h2><p>Making final changes now&#x2026; It should be done and tested this month, looking forward to it! (Don&#x2019;t make any mistakes!)</p>
+<h3 id="su"><a href="#su" class="headerlink" title="su"></a>su</h3><p><code>su</code> is used to switch users directly.</p>
+<p>Note that Linux distributions such as Ubuntu disable password login for the <code>root</code> user by default, so you can&#x2019;t use <code>su</code> directly and have to raise privileges with <code>sudo</code>.</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo su <span class="hljs-comment"># Switch to root </span></span><br><span class="line">$ su username <span class="hljs-comment"># Switch to another user</span></span><br></pre></td></tr></tbody></table></figure>
 
+<h2 id="User-group"><a href="#User-group" class="headerlink" title="User group"></a>User group</h2><hr>
+<p>A user group is a collection of users. User groups can set permissions for a group of users. User groups also have a number GID (Group ID).</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ group <span class="hljs-comment"># See which user group you belong to</span></span><br><span class="line"></span><br><span class="line">$ passwd username <span class="hljs-comment"># Change user username&apos;s password</span></span><br><span class="line">$ passwd <span class="hljs-comment"># Change your own password</span></span><br><span class="line"></span><br><span class="line">$ sudo adduser username <span class="hljs-comment"># Add user username</span></span><br><span class="line">$ sudo adduser --group groupname <span class="hljs-comment"># Add the user groupname</span></span><br><span class="line">$ sudo adduser username groupname <span class="hljs-comment"># Add user username to usergroup groupname</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="File-permissions"><a href="#File-permissions" class="headerlink" title="File permissions"></a>File permissions</h2><hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">ls</span> -l <span class="hljs-comment"># View the details of the files in the current directory</span></span><br><span class="line"><span class="hljs-comment">## eg. -rwxrw-r-- 1 ustc ustc 40 Feb 3 22:37 a_file</span></span><br><span class="line"><span class="hljs-comment">## a_file is a normal file (-); the permission of the user it belongs to is rwx, the permission of the user group it belongs to is rw-, the permission of others is r--; both the user and the user group it belongs to is ustc</span></span><br><span class="line"><span class="hljs-comment">## r for Read, w for Write, x for Execute, - for no corresponding permission</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Execute-permissions"><a href="#Execute-permissions" class="headerlink" title="Execute permissions"></a>Execute permissions</h3><p>For a file, execute permission means that it can be executed as program code by the operating system. If a program file does not have execute permissions, you can still view the program file itself and modify its contents, but you cannot execute it.</p>
+<p>For a directory, execute permission means that you can access the contents of the files in that directory. You can think of a directory as a &#x201C;file&#x201D;, which contains a list of files at the next level of the directory, &#x201C;read&#x201D; corresponds to the permission to read the list of files, &#x201C;write&#x201D; corresponds to the permission to modify the list of files (add, delete, rename files), and &#x201C;execute&#x201D; for actually accessing the files in the list, and <code>cd</code> for switching from the current directory to this directory.</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">chmod</span> <span class="hljs-comment"># change file mode bits to modify permissions</span></span><br><span class="line">$ <span class="hljs-built_in">chmod</span> +x program <span class="hljs-comment"># Add execute permissions to the file program (x)</span></span><br><span class="line"></span><br><span class="line">$ <span class="hljs-built_in">chown</span> <span class="hljs-comment"># change file owner Modify file owner</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="File-system-hierarchy"><a href="#File-system-hierarchy" class="headerlink" title="File system hierarchy"></a>File system hierarchy</h2><hr>
+<p>The entire UNIX family of systems starts with <code>/</code> (the root directory) as a tree; other partitions are &#x201C;mounted&#x201D; on this tree.</p>
+<p>The Filesystem Hierarchy Standard (FHS) defines the standard directory structure for Linux distributions and can be found at <a target="_blank" rel="noopener" href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html">Filesystem Hierarchy Standard</a>. You can also use <code>man hier</code> and <code>man file-hierarchy</code> to see the documentation on the filesystem hierarchy on your system.</p>
+
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Linux/">#Linux</a></span>
     
     </div>
     
     
     <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
-            
-            <a href="/Users-Files/">Users, Files</a>
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">
             
-            <a href="/Fundamentals-of-Electronics/">Fundamentals of Electronics</a>
+            <a href="/Apr-2023/">Apr 2023</a>
             
         </span>
     </div>
@@ -263,8 +330,8 @@
     
 <script>
     var disqus_config = function () {
-        this.page.url = 'https://mengisok.github.io/Apr-2023/';
-        this.page.identifier = 'Apr-2023/';
+        this.page.url = 'https://mengisok.github.io/Users-Files/';
+        this.page.identifier = 'Users-Files/';
         
         this.language = 'en';
         
@@ -314,11 +381,11 @@
         <div class="dropdown-menu has-text-left" role="menu" style="top:100%">
             <div class="dropdown-content">
             
-                <a href="/Apr-2023/" class="dropdown-item">
+                <a href="/Users-Files/" class="dropdown-item">
                     English
                 </a>
             
-                <a href="/zh-cn/Apr-2023/" class="dropdown-item">
+                <a href="/zh-cn/Users-Files/" class="dropdown-item">
                     简体中文
                 </a>
             
