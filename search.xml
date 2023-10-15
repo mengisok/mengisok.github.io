@@ -413,58 +413,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Basic Components of Particle Physics Experimental Electronics</title>
-    <url>/Basic-Components-of-Particle-Physics-Experimental-Electronics/</url>
-    <content><![CDATA[<p>The particle physics experimental electronics system consists of four main components: <strong>Front-End Electronics (FEE), Trigger System, Data Acquisition System (DAQ), and Slow Control</strong>. This note focuses on FEE.</p>
-<span id="more"></span>
-
-<h2 id="1-Front-End-Readout-Electronics"><a href="#1-Front-End-Readout-Electronics" class="headerlink" title="1 Front-End Readout Electronics"></a>1 Front-End Readout Electronics</h2><hr>
-<p>Front-end readout electronics carries out necessary pre-processing (e.g., amplification, digitization, etc.) of the weak electrical signal output from the detector and converts it into data reflecting the characteristics of the particle for use in the trigger selection system and DAQ system.</p>
-<p>Front-end readout electronics mainly has <strong>charge (energy) measurement, time measurement, and instance counting</strong> three functions.</p>
-<h3 id="1-1-Charge-measurement"><a href="#1-1-Charge-measurement" class="headerlink" title="1.1 Charge measurement"></a>1.1 Charge measurement</h3><p>Charge measurement is to measure the charge of the detector output signal. Particles passing through the detector is the process of ionization, excitation or photoelectric conversion of the detector, etc. The charge of the output signal is often proportional to the energy consumed by the particles in the detector.</p>
-<p>Structure: preamplifier + long cable + <strong>main amplifier + shaping circuit + ADC</strong> + data cache + readout interface</p>
-<h3 id="1-2-Time-measurement"><a href="#1-2-Time-measurement" class="headerlink" title="1.2 Time measurement"></a>1.2 Time measurement</h3><p>Time measurement is the measurement of the appearance time of the detector output signal (meaning the time interval against a certain reference signal t0). It requires the measurement of two data: the determination of the moment of appearance of the measured signal by the timing retort circuit; and the conversion of the time interval between the measured signal and the reference signal t0 into digital data by the time-to-digital conversion (TDC) circuit.</p>
-<p>Structure: Preamplifier + long cable + <strong>timing discriminator + TDC</strong> + data cache + readout interface</p>
-<p>The mainstream solution is full digital counter technology + time interpolation. The full digital counter technology is generally achieved by high-performance Gray code counters (i.e., digital counter-type TDC), using a reference clock frequency of several hundred megahertz to achieve a time resolution of a few ns. The time interpolation  is performed within a clock cycle to achieve sub-nanosecond (100 ps ~ 10ps) time resolution.</p>
-<h3 id="1-3-Incident-counting"><a href="#1-3-Incident-counting" class="headerlink" title="1.3 Incident counting"></a>1.3 Incident counting</h3><p>Incident counting is the necessary amplification and differentiation of the detector output signal to get a &#x201C;yes&#x201D; or &#x201C;no&#x201D; message and record it. Sometimes we only need to know if a particle has hit the corresponding position, not to measure the charge or time of the signal (as in the case of the BES III &#xB5;-detector).</p>
-<p>Structure: preamplifier + long cable + <strong>timing screening + register/counter</strong> + data cache + readout interface</p>
-<h3 id="1-4-Preamplifier"><a href="#1-4-Preamplifier" class="headerlink" title="1.4 Preamplifier"></a>1.4 Preamplifier</h3><h4 id="1-4-1-Classification"><a href="#1-4-1-Classification" class="headerlink" title="1.4.1 Classification"></a>1.4.1 Classification</h4><ul>
-<li>Integral type (charge-sensitive preamplifier, voltage-sensitive preamplifier): the output signal amplitude is proportional to the integral of the detector output current signal over time (i.e., the total charge of the detector output)</li>
-<li>Current type (current-sensitive preamplifier): the output signal waveform is consistent with the waveform of the detector output current signal</li>
-</ul>
-<h4 id="1-4-2-Three-main-types-of-preamplifiers"><a href="#1-4-2-Three-main-types-of-preamplifiers" class="headerlink" title="1.4.2 Three main types of preamplifiers"></a>1.4.2 Three main types of preamplifiers</h4><ul>
-<li><strong>Charge-sensitive preamplifier</strong></li>
-</ul>
-<p>More complex circuit, good performance, low noise, most commonly used.</p>
-<p>$V_{output}=-\frac{Q}{C_{feedback}}$</p>
-<ul>
-<li><strong>Voltage-sensitive preamplifier</strong></li>
-</ul>
-<p>Simpler circuit (actually a voltage amplifier), poorer performance, more noise than charge-sensitive preamplifier.</p>
-<p>$\frac{V_{output}}{V_{input}}=-\frac{R_{feedback}}{R_{series}}$</p>
-<ul>
-<li><strong>Current sensitive preamplifier</strong></li>
-</ul>
-<p>It is actually a current amplifier. It is generally used for obtaining accurate time information, intensity measurement systems in high count rate or high background cases, energy spectrum measurement systems, etc.</p>
-<h3 id="1-5-ADC"><a href="#1-5-ADC" class="headerlink" title="1.5 ADC"></a>1.5 ADC</h3><p>Linear discharge ADC, successive comparison ADC (SAR ADC), pipeline ADC (Pipeline ADC), flash ADC (Flash ADC).</p>
-<h2 id="2-Trigger-System"><a href="#2-Trigger-System" class="headerlink" title="2 Trigger System"></a>2 Trigger System</h2><hr>
-<p>Real-time analysis of data provided by the front-end electronics to select instances of physical interest from a large number of false instances (background) data, while discarding false instances (background) data.</p>
-<p>Components: Trigger subsystem (feature extraction), total trigger (determination classification), and clock system.</p>
-<h2 id="3-Data-Acquisition-System-DAQ"><a href="#3-Data-Acquisition-System-DAQ" class="headerlink" title="3 Data Acquisition System (DAQ)"></a>3 Data Acquisition System (DAQ)</h2><hr>
-<p>Screening of retained instance data of physical interest and collection and assembly into a complete instance data, recorded to be available to physicists for off-line analysis.</p>
-<h2 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h2><hr>
-<p><a href="http://bes.ihep.ac.cn/bes3/internal/workshop/06electronics/anqi.pdf">http://bes.ihep.ac.cn/bes3/internal/workshop/06electronics/anqi.pdf</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Hardware</category>
-        <category>Physical Electronics</category>
-      </categories>
-      <tags>
-        <tag>Readout Electronics</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Apr 2023</title>
     <url>/Apr-2023/</url>
     <content><![CDATA[<p>The two most important things this month: got a cat and my boyfriend received a phd offer from Germany (so I also started to pay attention to phd in German).</p>
@@ -483,125 +431,6 @@
         <category>Summary</category>
         <category>Monthly Summary</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Basic MATLAB (very basic)</title>
-    <url>/Basic-MATLAB/</url>
-    <content><![CDATA[<p>I watched an introductory tutorial on LinkedIn Learning in order to write computer assignments in MATLAB (I really forgot it all after not using it for two or three years).</p>
-<span id="more"></span>
-
-<h3 id="General-concepts"><a href="#General-concepts" class="headerlink" title="General concepts"></a>General concepts</h3><hr>
-<h4 id="Clear-commands"><a href="#Clear-commands" class="headerlink" title="Clear commands"></a>Clear commands</h4><ul>
-<li><p><code>clc</code>  clears the screen</p>
-</li>
-<li><p><code>clear myVar</code>  deletes variable myVar</p>
-<p>  <code>clear all</code>  deletes all variables</p>
-</li>
-</ul>
-<h4 id="Create-variables"><a href="#Create-variables" class="headerlink" title="Create variables"></a>Create variables</h4><ul>
-<li>Creating a scalar: <code>myScalar = 10</code></li>
-<li>Creating a vector:<ul>
-<li>Row vector: <code>myVector = [4 5 6]</code></li>
-<li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
-</ul>
-</li>
-<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code><ul>
-<li><code>myMatrix(1, 2)</code>  gets 5</li>
-<li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
-<li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
-</ul>
-</li>
-<li>Using &#x201C;;&#x201D; at the end of command line means it will suppress (i.e. don&#x2019;t show) the result</li>
-</ul>
-<h4 id="Variable-classes"><a href="#Variable-classes" class="headerlink" title="Variable classes"></a>Variable classes</h4><ul>
-<li>double (default)</li>
-<li><code>format long</code>  changes double class to long class</li>
-<li>double, long, short, single, logical (boolean), etc</li>
-</ul>
-<h4 id="Cell-arrays"><a href="#Cell-arrays" class="headerlink" title="Cell arrays"></a>Cell arrays</h4><p>A matrix which has different kinds of elements</p>
-<p><code>myCell = {[1 2 3] [4 5 6 7]; &apos;v1&apos; &apos;v2&apos;}</code></p>
-<p><code>myCell{1, 2}</code>  gets [4 5 6 7]</p>
-<h3 id="Core-syntax"><a href="#Core-syntax" class="headerlink" title="Core syntax"></a>Core syntax</h3><hr>
-<h4 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h4><ul>
-<li>&#x201C;.m&#x201D; file</li>
-<li>Comment: <code>%</code></li>
-<li><code>disp()</code>: display something</li>
-<li><code>randi()</code>: random integers</li>
-<li>To tanspose a matrix: <code>matrix&apos;</code></li>
-</ul>
-<h4 id="Matrices"><a href="#Matrices" class="headerlink" title="Matrices"></a>Matrices</h4><ul>
-<li><p>Create some standard matrices:</p>
-<p>  <code>zeros(m, n)</code></p>
-<p>  <code>ones(m, n)</code></p>
-<p>  <code>randi(m, n)</code></p>
-</li>
-<li><p>Matrix multiplication</p>
-<ul>
-<li>Standard multiplication: <code>M1 * M2</code></li>
-<li>Element by element multiplication: <code>M1 .* M2</code></li>
-</ul>
-</li>
-<li><p>Division is alike</p>
-<ul>
-<li>Element by element division: <code>M1 ./ M2</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="If-statements"><a href="#If-statements" class="headerlink" title="If statements"></a>If statements</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="Switch-statements"><a href="#Switch-statements" class="headerlink" title="Switch statements"></a>Switch statements</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">switch</span> ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="For-loops"><a href="#For-loops" class="headerlink" title="For loops"></a>For loops</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">% step = 1</span></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = <span class="hljs-number">1</span>: <span class="hljs-number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% step = 2</span></span><br><span class="line"><span class="hljs-comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% n =25;</span></span><br><span class="line"><span class="hljs-comment">% step = 5;</span></span><br><span class="line"><span class="hljs-comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="While-loops"><a href="#While-loops" class="headerlink" title="While loops"></a>While loops</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h3><hr>
-<h4 id="Set-path"><a href="#Set-path" class="headerlink" title="Set path"></a>Set path</h4><p>If MATLAB can&#x2019;t find your scripts or functions or anything else, make sure you have added the path</p>
-<h4 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h4><ul>
-<li>Create a function from &#x201C;Current Folder&#x201D;, and it&#x2019;s a .m file</li>
-<li>Edit the pattern and wirte your function</li>
-</ul>
-<h4 id="Import-data"><a href="#Import-data" class="headerlink" title="Import data"></a>Import data</h4><p>To import a CSV file:</p>
-<ul>
-<li>Copy and paste it to &#x201C;Current Folder&#x201D;</li>
-<li><code>csvread(&apos;sine.csv&apos;)</code></li>
-</ul>
-<h4 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h4><p>Set breakpoints at little dashes in the left of Editor</p>
-<h4 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h4><ul>
-<li>Preallocate some memory can speed large calculations</li>
-<li>Use &#x201C;tik &#x2026; tok&#x201D; to count the time</li>
-</ul>
-<h3 id="Data-representations"><a href="#Data-representations" class="headerlink" title="Data representations"></a>Data representations</h3><hr>
-<h4 id="Plot"><a href="#Plot" class="headerlink" title="Plot"></a>Plot</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line"><span class="hljs-comment">% figure(1)</span></span><br><span class="line"><span class="hljs-built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>Add a grid: <code>grid on</code></li>
-<li>Make the window fits perfectly to the plot: <code>axis tight</code></li>
-<li>Set limits to axis: <code>ylim([-1 1])</code></li>
-<li>Change the color: <code>plot(x, y, &apos;m&apos;) % magenta</code></li>
-<li>Change the marker: <code>plot(x, y, &apos;o&apos;) % circle, magenta</code></li>
-<li>Plot curves multiple times with different lines: <code>hold on</code>. To end it, use <code>hold off</code></li>
-<li>Add annotations: <code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
-<li>Use <code>close all</code> to close all figures</li>
-</ul>
-<h4 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h4><ul>
-<li>Use <code>imread()</code> to import the image file</li>
-<li>Use <code>image()</code> to plot the image (default square)</li>
-<li>Use <code>imshow()</code> to plot the image in the correct aspect ratio, and there&#x2019;s no label on the axis</li>
-</ul>
-<h4 id="3D-plot"><a href="#3D-plot" class="headerlink" title="3D plot"></a>3D plot</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="hljs-number">-2</span>*<span class="hljs-built_in">pi</span>:<span class="hljs-number">.5</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="hljs-built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="hljs-built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Simulink"><a href="#Simulink" class="headerlink" title="Simulink"></a>Simulink</h3><hr>
-<p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>Tutorial</strong><br><a href="https://www.linkedin.com/learning/learning-matlab-2/welcome?autoplay=true">Learning MATLAB</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-      </categories>
-      <tags>
-        <tag>MATLAB</tag>
-      </tags>
   </entry>
   <entry>
     <title>Creating Packages in Allegro PCB Editor</title>
@@ -730,6 +559,177 @@
       </categories>
       <tags>
         <tag>Cadence</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Basic Components of Particle Physics Experimental Electronics</title>
+    <url>/Basic-Components-of-Particle-Physics-Experimental-Electronics/</url>
+    <content><![CDATA[<p>The particle physics experimental electronics system consists of four main components: <strong>Front-End Electronics (FEE), Trigger System, Data Acquisition System (DAQ), and Slow Control</strong>. This note focuses on FEE.</p>
+<span id="more"></span>
+
+<h2 id="1-Front-End-Readout-Electronics"><a href="#1-Front-End-Readout-Electronics" class="headerlink" title="1 Front-End Readout Electronics"></a>1 Front-End Readout Electronics</h2><hr>
+<p>Front-end readout electronics carries out necessary pre-processing (e.g., amplification, digitization, etc.) of the weak electrical signal output from the detector and converts it into data reflecting the characteristics of the particle for use in the trigger selection system and DAQ system.</p>
+<p>Front-end readout electronics mainly has <strong>charge (energy) measurement, time measurement, and instance counting</strong> three functions.</p>
+<h3 id="1-1-Charge-measurement"><a href="#1-1-Charge-measurement" class="headerlink" title="1.1 Charge measurement"></a>1.1 Charge measurement</h3><p>Charge measurement is to measure the charge of the detector output signal. Particles passing through the detector is the process of ionization, excitation or photoelectric conversion of the detector, etc. The charge of the output signal is often proportional to the energy consumed by the particles in the detector.</p>
+<p>Structure: preamplifier + long cable + <strong>main amplifier + shaping circuit + ADC</strong> + data cache + readout interface</p>
+<h3 id="1-2-Time-measurement"><a href="#1-2-Time-measurement" class="headerlink" title="1.2 Time measurement"></a>1.2 Time measurement</h3><p>Time measurement is the measurement of the appearance time of the detector output signal (meaning the time interval against a certain reference signal t0). It requires the measurement of two data: the determination of the moment of appearance of the measured signal by the timing retort circuit; and the conversion of the time interval between the measured signal and the reference signal t0 into digital data by the time-to-digital conversion (TDC) circuit.</p>
+<p>Structure: Preamplifier + long cable + <strong>timing discriminator + TDC</strong> + data cache + readout interface</p>
+<p>The mainstream solution is full digital counter technology + time interpolation. The full digital counter technology is generally achieved by high-performance Gray code counters (i.e., digital counter-type TDC), using a reference clock frequency of several hundred megahertz to achieve a time resolution of a few ns. The time interpolation  is performed within a clock cycle to achieve sub-nanosecond (100 ps ~ 10ps) time resolution.</p>
+<h3 id="1-3-Incident-counting"><a href="#1-3-Incident-counting" class="headerlink" title="1.3 Incident counting"></a>1.3 Incident counting</h3><p>Incident counting is the necessary amplification and differentiation of the detector output signal to get a &#x201C;yes&#x201D; or &#x201C;no&#x201D; message and record it. Sometimes we only need to know if a particle has hit the corresponding position, not to measure the charge or time of the signal (as in the case of the BES III &#xB5;-detector).</p>
+<p>Structure: preamplifier + long cable + <strong>timing screening + register/counter</strong> + data cache + readout interface</p>
+<h3 id="1-4-Preamplifier"><a href="#1-4-Preamplifier" class="headerlink" title="1.4 Preamplifier"></a>1.4 Preamplifier</h3><h4 id="1-4-1-Classification"><a href="#1-4-1-Classification" class="headerlink" title="1.4.1 Classification"></a>1.4.1 Classification</h4><ul>
+<li>Integral type (charge-sensitive preamplifier, voltage-sensitive preamplifier): the output signal amplitude is proportional to the integral of the detector output current signal over time (i.e., the total charge of the detector output)</li>
+<li>Current type (current-sensitive preamplifier): the output signal waveform is consistent with the waveform of the detector output current signal</li>
+</ul>
+<h4 id="1-4-2-Three-main-types-of-preamplifiers"><a href="#1-4-2-Three-main-types-of-preamplifiers" class="headerlink" title="1.4.2 Three main types of preamplifiers"></a>1.4.2 Three main types of preamplifiers</h4><ul>
+<li><strong>Charge-sensitive preamplifier</strong></li>
+</ul>
+<p>More complex circuit, good performance, low noise, most commonly used.</p>
+<p>$V_{output}=-\frac{Q}{C_{feedback}}$</p>
+<ul>
+<li><strong>Voltage-sensitive preamplifier</strong></li>
+</ul>
+<p>Simpler circuit (actually a voltage amplifier), poorer performance, more noise than charge-sensitive preamplifier.</p>
+<p>$\frac{V_{output}}{V_{input}}=-\frac{R_{feedback}}{R_{series}}$</p>
+<ul>
+<li><strong>Current sensitive preamplifier</strong></li>
+</ul>
+<p>It is actually a current amplifier. It is generally used for obtaining accurate time information, intensity measurement systems in high count rate or high background cases, energy spectrum measurement systems, etc.</p>
+<h3 id="1-5-ADC"><a href="#1-5-ADC" class="headerlink" title="1.5 ADC"></a>1.5 ADC</h3><p>Linear discharge ADC, successive comparison ADC (SAR ADC), pipeline ADC (Pipeline ADC), flash ADC (Flash ADC).</p>
+<h2 id="2-Trigger-System"><a href="#2-Trigger-System" class="headerlink" title="2 Trigger System"></a>2 Trigger System</h2><hr>
+<p>Real-time analysis of data provided by the front-end electronics to select instances of physical interest from a large number of false instances (background) data, while discarding false instances (background) data.</p>
+<p>Components: Trigger subsystem (feature extraction), total trigger (determination classification), and clock system.</p>
+<h2 id="3-Data-Acquisition-System-DAQ"><a href="#3-Data-Acquisition-System-DAQ" class="headerlink" title="3 Data Acquisition System (DAQ)"></a>3 Data Acquisition System (DAQ)</h2><hr>
+<p>Screening of retained instance data of physical interest and collection and assembly into a complete instance data, recorded to be available to physicists for off-line analysis.</p>
+<h2 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h2><hr>
+<p><a href="http://bes.ihep.ac.cn/bes3/internal/workshop/06electronics/anqi.pdf">http://bes.ihep.ac.cn/bes3/internal/workshop/06electronics/anqi.pdf</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Hardware</category>
+        <category>Physical Electronics</category>
+      </categories>
+      <tags>
+        <tag>Readout Electronics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Basic MATLAB (very basic)</title>
+    <url>/Basic-MATLAB/</url>
+    <content><![CDATA[<p>I watched an introductory tutorial on LinkedIn Learning in order to write computer assignments in MATLAB (I really forgot it all after not using it for two or three years).</p>
+<span id="more"></span>
+
+<h3 id="General-concepts"><a href="#General-concepts" class="headerlink" title="General concepts"></a>General concepts</h3><hr>
+<h4 id="Clear-commands"><a href="#Clear-commands" class="headerlink" title="Clear commands"></a>Clear commands</h4><ul>
+<li><p><code>clc</code>  clears the screen</p>
+</li>
+<li><p><code>clear myVar</code>  deletes variable myVar</p>
+<p>  <code>clear all</code>  deletes all variables</p>
+</li>
+</ul>
+<h4 id="Create-variables"><a href="#Create-variables" class="headerlink" title="Create variables"></a>Create variables</h4><ul>
+<li>Creating a scalar: <code>myScalar = 10</code></li>
+<li>Creating a vector:<ul>
+<li>Row vector: <code>myVector = [4 5 6]</code></li>
+<li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
+</ul>
+</li>
+<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code><ul>
+<li><code>myMatrix(1, 2)</code>  gets 5</li>
+<li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
+<li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
+</ul>
+</li>
+<li>Using &#x201C;;&#x201D; at the end of command line means it will suppress (i.e. don&#x2019;t show) the result</li>
+</ul>
+<h4 id="Variable-classes"><a href="#Variable-classes" class="headerlink" title="Variable classes"></a>Variable classes</h4><ul>
+<li>double (default)</li>
+<li><code>format long</code>  changes double class to long class</li>
+<li>double, long, short, single, logical (boolean), etc</li>
+</ul>
+<h4 id="Cell-arrays"><a href="#Cell-arrays" class="headerlink" title="Cell arrays"></a>Cell arrays</h4><p>A matrix which has different kinds of elements</p>
+<p><code>myCell = {[1 2 3] [4 5 6 7]; &apos;v1&apos; &apos;v2&apos;}</code></p>
+<p><code>myCell{1, 2}</code>  gets [4 5 6 7]</p>
+<h3 id="Core-syntax"><a href="#Core-syntax" class="headerlink" title="Core syntax"></a>Core syntax</h3><hr>
+<h4 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h4><ul>
+<li>&#x201C;.m&#x201D; file</li>
+<li>Comment: <code>%</code></li>
+<li><code>disp()</code>: display something</li>
+<li><code>randi()</code>: random integers</li>
+<li>To tanspose a matrix: <code>matrix&apos;</code></li>
+</ul>
+<h4 id="Matrices"><a href="#Matrices" class="headerlink" title="Matrices"></a>Matrices</h4><ul>
+<li><p>Create some standard matrices:</p>
+<p>  <code>zeros(m, n)</code></p>
+<p>  <code>ones(m, n)</code></p>
+<p>  <code>randi(m, n)</code></p>
+</li>
+<li><p>Matrix multiplication</p>
+<ul>
+<li>Standard multiplication: <code>M1 * M2</code></li>
+<li>Element by element multiplication: <code>M1 .* M2</code></li>
+</ul>
+</li>
+<li><p>Division is alike</p>
+<ul>
+<li>Element by element division: <code>M1 ./ M2</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="If-statements"><a href="#If-statements" class="headerlink" title="If statements"></a>If statements</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="Switch-statements"><a href="#Switch-statements" class="headerlink" title="Switch statements"></a>Switch statements</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">switch</span> ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="For-loops"><a href="#For-loops" class="headerlink" title="For loops"></a>For loops</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">% step = 1</span></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = <span class="hljs-number">1</span>: <span class="hljs-number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% step = 2</span></span><br><span class="line"><span class="hljs-comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% n =25;</span></span><br><span class="line"><span class="hljs-comment">% step = 5;</span></span><br><span class="line"><span class="hljs-comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="While-loops"><a href="#While-loops" class="headerlink" title="While loops"></a>While loops</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h3><hr>
+<h4 id="Set-path"><a href="#Set-path" class="headerlink" title="Set path"></a>Set path</h4><p>If MATLAB can&#x2019;t find your scripts or functions or anything else, make sure you have added the path</p>
+<h4 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h4><ul>
+<li>Create a function from &#x201C;Current Folder&#x201D;, and it&#x2019;s a .m file</li>
+<li>Edit the pattern and wirte your function</li>
+</ul>
+<h4 id="Import-data"><a href="#Import-data" class="headerlink" title="Import data"></a>Import data</h4><p>To import a CSV file:</p>
+<ul>
+<li>Copy and paste it to &#x201C;Current Folder&#x201D;</li>
+<li><code>csvread(&apos;sine.csv&apos;)</code></li>
+</ul>
+<h4 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h4><p>Set breakpoints at little dashes in the left of Editor</p>
+<h4 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h4><ul>
+<li>Preallocate some memory can speed large calculations</li>
+<li>Use &#x201C;tik &#x2026; tok&#x201D; to count the time</li>
+</ul>
+<h3 id="Data-representations"><a href="#Data-representations" class="headerlink" title="Data representations"></a>Data representations</h3><hr>
+<h4 id="Plot"><a href="#Plot" class="headerlink" title="Plot"></a>Plot</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line"><span class="hljs-comment">% figure(1)</span></span><br><span class="line"><span class="hljs-built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>Add a grid: <code>grid on</code></li>
+<li>Make the window fits perfectly to the plot: <code>axis tight</code></li>
+<li>Set limits to axis: <code>ylim([-1 1])</code></li>
+<li>Change the color: <code>plot(x, y, &apos;m&apos;) % magenta</code></li>
+<li>Change the marker: <code>plot(x, y, &apos;o&apos;) % circle, magenta</code></li>
+<li>Plot curves multiple times with different lines: <code>hold on</code>. To end it, use <code>hold off</code></li>
+<li>Add annotations: <code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
+<li>Use <code>close all</code> to close all figures</li>
+</ul>
+<h4 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h4><ul>
+<li>Use <code>imread()</code> to import the image file</li>
+<li>Use <code>image()</code> to plot the image (default square)</li>
+<li>Use <code>imshow()</code> to plot the image in the correct aspect ratio, and there&#x2019;s no label on the axis</li>
+</ul>
+<h4 id="3D-plot"><a href="#3D-plot" class="headerlink" title="3D plot"></a>3D plot</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="hljs-number">-2</span>*<span class="hljs-built_in">pi</span>:<span class="hljs-number">.5</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="hljs-built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="hljs-built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Simulink"><a href="#Simulink" class="headerlink" title="Simulink"></a>Simulink</h3><hr>
+<p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>Tutorial</strong><br><a href="https://www.linkedin.com/learning/learning-matlab-2/welcome?autoplay=true">Learning MATLAB</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+      </categories>
+      <tags>
+        <tag>MATLAB</tag>
       </tags>
   </entry>
   <entry>
@@ -1336,6 +1336,12 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<p>I made it! :)</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Installing Software</title>
     <url>/Installing-software/</url>
     <content><![CDATA[<p>There are 5 ways to install software in Linux.  </p>
@@ -1402,105 +1408,6 @@
 <div id="refer-anchor-5"></div>
 
 <p>[5] <a href="https://101.lug.ustc.edu.cn/Ch03/supplement/#install-from-source">Linux 101 - &#x4F7F;&#x7528;&#x6E90;&#x4EE3;&#x7801;&#x5B89;&#x88C5;</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Software</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/Hello-World/</url>
-    <content><![CDATA[<p>I made it! :)</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Intro to Linux</title>
-    <url>/Intro-to-Linux/</url>
-    <content><![CDATA[<p>I have successfully installed and used Xubuntu according to the tutorial! Great!  </p>
-<span id="more"></span>
-
-<h3 id="Explosive-growth-in-computer-performance"><a href="#Explosive-growth-in-computer-performance" class="headerlink" title="Explosive growth in computer performance"></a>Explosive growth in computer performance</h3><hr>
-<ul>
-<li>Moore&#x2019;s Law: The number of transistors that can fit on an integrated circuit doubles every two years/computer performance doubles every 18 months (Intel CEO David House)</li>
-<li>The limits of quantum physics and the limitations of CPU power consumption and heat dissipation are starting to slow down the increase in computer performance. Joint collaboration between multiple CPUs (multi-core based development) is the way forward instead of pursuing individual CPU performance gains</li>
-</ul>
-<h3 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h3><hr>
-<ul>
-<li>The bridge between the user and the underlying hardware</li>
-<li>Functions<ul>
-<li>Process management: the operating system schedules processes so that many processes can execute concurrently on several central processors</li>
-<li>Memory management: the operating system allocates and reclaims memory appropriately</li>
-<li>File system: the operating system creates appropriate data structures to store files and data</li>
-<li>Network communication: the operating system implements various necessary network communication methods (e.g. TCP/IP)</li>
-<li>Security mechanisms: the operating system is equipped with security mechanisms to protect data from unauthorized access</li>
-<li>User Interface: Operating systems usually include a graphical user interface to facilitate the use of the computer by the user</li>
-<li>Drivers: The operating system interfaces with drivers to perform the functions of the hardware</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-was-born"><a href="#Linux-was-born" class="headerlink" title="Linux was born"></a>Linux was born</h3><hr>
-<blockquote>
-<p>The choice of Linux is largely a recognition of the geek spirit and open source culture.</p>
-</blockquote>
-<blockquote>
-<p>Free software means that the software&#x2019;s users have freedom. (The issue is not about price.) We developed the GNU operating system so that users can have freedom in their computing.</p>
-<p>Specifically, free software means users have the four essential freedoms: (0) to run the program, (1) to study and change the program in source code form, (2) to redistribute exact copies, and (3) to distribute modified versions.</p>
-<p>Software differs from material objects&#x2014;such as chairs, sandwiches, and gasoline&#x2014;in that it can be copied and changed much more easily. These facilities are why software is useful; we believe a program&#x2019;s users should be free to take advantage of them, not solely its developer.<a href="#refer-anchor-1"><sup>1</sup></a> </p>
-</blockquote>
-<ul>
-<li>In 1983, Richard Stallman launched the GNU Project at MIT; in 1991, Linus Torvalds wrote and released the Linux kernel, which became the basis for all subsequent Linux distributions</li>
-<li>GNU: GNU is a recursive abbreviation for &#x201C;<strong>G</strong>NU is <strong>N</strong>ot <strong>U</strong>nix&#x201D;, which refers to a UNIX-like but completely free operating system</li>
-<li>GNU General Public License (GNU GPL or GPL): grants all rights to use the software under this license to anyone who uses it<ul>
-<li>This right is also known as copyleft, as opposed to the usual copyright</li>
-</ul>
-</li>
-<li>The core GNU operating system has not been developed to date. What is actually used now is GNU/Linux, where the Linux kernel is the functional core and the GNU components are peripherals and tools for the user to operate and use the Linux kernel<ul>
-<li>A common system on smartphones today is Android/Linux, an operating system based on the Linux kernel that does not use GNU components, but rather a different Android system developed by Google as a tool</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-distributions"><a href="#Linux-distributions" class="headerlink" title="Linux distributions"></a>Linux distributions</h3><hr>
-<ul>
-<li>Linux distribution = Linux kernel + a set of GNU tools and libraries, some accompanying software, documentation, a desktop system, a window manager, and a desktop environment</li>
-<li>Mainstream distribution branches<ul>
-<li>****Debian branch ****: The most famous one is Ubuntu, an operating system that focuses on desktop applications and is suitable for general users. <strong>It is recommended that first-time Linux users give preference to the Ubuntu distribution or its sub-distributions (Lubuntu, Xubuntu, etc.)</strong></li>
-<li>****Red Hat branch ****: Fedora, CentOS (suitable for running on servers that require high stability)</li>
-<li>****Arch Linux branch ****: requires users to be willing to understand how the OS works themselves, and does not take the approach of shielding how it works to lower the barrier to use. Variant Manjaro is more focused on ease of use and more suitable for general users</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-on-the-side"><a href="#Linux-on-the-side" class="headerlink" title="Linux on the side"></a>Linux on the side</h3><hr>
-<ul>
-<li>Smartphones: The Android operating system developed by Google is part of the Android/Linux branch, also called Android native, with many sub-distributions, such as Huawei EMUI and Xiaomi MIUI, etc.</li>
-<li>Servers: Websites and software providers need to set up their own computers to perform computing, storage and communication functions, and such computers are called servers. Servers usually do not use personal computer operating systems like Windows or macOS, but mostly use Linux distributions because of their simple interfaces, powerful features, and the fact that some distributions are also supported by the services of professional computer companies (such as RHEL). debian and Ubuntu Server are very popular</li>
-<li>Embedded devices: Various distributions under the Android/Linux branch are the mainstream embedded operating systems, such as Google&#x2019;s Android TV operating system for digital TV</li>
-</ul>
-<h3 id="Using-Linux"><a href="#Using-Linux" class="headerlink" title="Using Linux"></a>Using Linux</h3><hr>
-<ul>
-<li><strong>It is recommended to use a virtual machine to run the installed Linux image</strong></li>
-<li>Steps<ol>
-<li>Get the virtual machine management software, <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a> is recommended</li>
-<li>Get <a href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu virtual machine image</a> (Xubuntu is a sub-distribution of Ubuntu, very similar to Ubuntu, but smaller and less performance intensive, suitable for computers with different performance) )<br>  Double click to open the virtual machine image, the management software will open and import the image, you can directly click the start button to start after the import is complete</li>
-</ol>
-</li>
-</ul>
-<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
-
-<p>&#x1F973; ~   </p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>Tutorial</strong></p>
-<p><a href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - chap 01: &#x521D;&#x8BC6; Linux</a></p>
-<p><strong>Citation</strong>  </p>
-<div id="refer-anchor-1"></div>
-
-<p>[1] <a href="https://www.gnu.org/philosophy/philosophy.html">Philosophy of the GNU Project</a></p>
-<p><strong>Recommended Reading</strong></p>
-<p><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">Why Open Source Misses the Point of Free Software</a></p>
 ]]></content>
       <categories>
         <category>Learning</category>
@@ -1771,6 +1678,99 @@
       </tags>
   </entry>
   <entry>
+    <title>Intro to Linux</title>
+    <url>/Intro-to-Linux/</url>
+    <content><![CDATA[<p>I have successfully installed and used Xubuntu according to the tutorial! Great!  </p>
+<span id="more"></span>
+
+<h3 id="Explosive-growth-in-computer-performance"><a href="#Explosive-growth-in-computer-performance" class="headerlink" title="Explosive growth in computer performance"></a>Explosive growth in computer performance</h3><hr>
+<ul>
+<li>Moore&#x2019;s Law: The number of transistors that can fit on an integrated circuit doubles every two years/computer performance doubles every 18 months (Intel CEO David House)</li>
+<li>The limits of quantum physics and the limitations of CPU power consumption and heat dissipation are starting to slow down the increase in computer performance. Joint collaboration between multiple CPUs (multi-core based development) is the way forward instead of pursuing individual CPU performance gains</li>
+</ul>
+<h3 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h3><hr>
+<ul>
+<li>The bridge between the user and the underlying hardware</li>
+<li>Functions<ul>
+<li>Process management: the operating system schedules processes so that many processes can execute concurrently on several central processors</li>
+<li>Memory management: the operating system allocates and reclaims memory appropriately</li>
+<li>File system: the operating system creates appropriate data structures to store files and data</li>
+<li>Network communication: the operating system implements various necessary network communication methods (e.g. TCP/IP)</li>
+<li>Security mechanisms: the operating system is equipped with security mechanisms to protect data from unauthorized access</li>
+<li>User Interface: Operating systems usually include a graphical user interface to facilitate the use of the computer by the user</li>
+<li>Drivers: The operating system interfaces with drivers to perform the functions of the hardware</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-was-born"><a href="#Linux-was-born" class="headerlink" title="Linux was born"></a>Linux was born</h3><hr>
+<blockquote>
+<p>The choice of Linux is largely a recognition of the geek spirit and open source culture.</p>
+</blockquote>
+<blockquote>
+<p>Free software means that the software&#x2019;s users have freedom. (The issue is not about price.) We developed the GNU operating system so that users can have freedom in their computing.</p>
+<p>Specifically, free software means users have the four essential freedoms: (0) to run the program, (1) to study and change the program in source code form, (2) to redistribute exact copies, and (3) to distribute modified versions.</p>
+<p>Software differs from material objects&#x2014;such as chairs, sandwiches, and gasoline&#x2014;in that it can be copied and changed much more easily. These facilities are why software is useful; we believe a program&#x2019;s users should be free to take advantage of them, not solely its developer.<a href="#refer-anchor-1"><sup>1</sup></a> </p>
+</blockquote>
+<ul>
+<li>In 1983, Richard Stallman launched the GNU Project at MIT; in 1991, Linus Torvalds wrote and released the Linux kernel, which became the basis for all subsequent Linux distributions</li>
+<li>GNU: GNU is a recursive abbreviation for &#x201C;<strong>G</strong>NU is <strong>N</strong>ot <strong>U</strong>nix&#x201D;, which refers to a UNIX-like but completely free operating system</li>
+<li>GNU General Public License (GNU GPL or GPL): grants all rights to use the software under this license to anyone who uses it<ul>
+<li>This right is also known as copyleft, as opposed to the usual copyright</li>
+</ul>
+</li>
+<li>The core GNU operating system has not been developed to date. What is actually used now is GNU/Linux, where the Linux kernel is the functional core and the GNU components are peripherals and tools for the user to operate and use the Linux kernel<ul>
+<li>A common system on smartphones today is Android/Linux, an operating system based on the Linux kernel that does not use GNU components, but rather a different Android system developed by Google as a tool</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-distributions"><a href="#Linux-distributions" class="headerlink" title="Linux distributions"></a>Linux distributions</h3><hr>
+<ul>
+<li>Linux distribution = Linux kernel + a set of GNU tools and libraries, some accompanying software, documentation, a desktop system, a window manager, and a desktop environment</li>
+<li>Mainstream distribution branches<ul>
+<li>****Debian branch ****: The most famous one is Ubuntu, an operating system that focuses on desktop applications and is suitable for general users. <strong>It is recommended that first-time Linux users give preference to the Ubuntu distribution or its sub-distributions (Lubuntu, Xubuntu, etc.)</strong></li>
+<li>****Red Hat branch ****: Fedora, CentOS (suitable for running on servers that require high stability)</li>
+<li>****Arch Linux branch ****: requires users to be willing to understand how the OS works themselves, and does not take the approach of shielding how it works to lower the barrier to use. Variant Manjaro is more focused on ease of use and more suitable for general users</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-on-the-side"><a href="#Linux-on-the-side" class="headerlink" title="Linux on the side"></a>Linux on the side</h3><hr>
+<ul>
+<li>Smartphones: The Android operating system developed by Google is part of the Android/Linux branch, also called Android native, with many sub-distributions, such as Huawei EMUI and Xiaomi MIUI, etc.</li>
+<li>Servers: Websites and software providers need to set up their own computers to perform computing, storage and communication functions, and such computers are called servers. Servers usually do not use personal computer operating systems like Windows or macOS, but mostly use Linux distributions because of their simple interfaces, powerful features, and the fact that some distributions are also supported by the services of professional computer companies (such as RHEL). debian and Ubuntu Server are very popular</li>
+<li>Embedded devices: Various distributions under the Android/Linux branch are the mainstream embedded operating systems, such as Google&#x2019;s Android TV operating system for digital TV</li>
+</ul>
+<h3 id="Using-Linux"><a href="#Using-Linux" class="headerlink" title="Using Linux"></a>Using Linux</h3><hr>
+<ul>
+<li><strong>It is recommended to use a virtual machine to run the installed Linux image</strong></li>
+<li>Steps<ol>
+<li>Get the virtual machine management software, <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a> is recommended</li>
+<li>Get <a href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu virtual machine image</a> (Xubuntu is a sub-distribution of Ubuntu, very similar to Ubuntu, but smaller and less performance intensive, suitable for computers with different performance) )<br>  Double click to open the virtual machine image, the management software will open and import the image, you can directly click the start button to start after the import is complete</li>
+</ol>
+</li>
+</ul>
+<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
+
+<p>&#x1F973; ~   </p>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>Tutorial</strong></p>
+<p><a href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - chap 01: &#x521D;&#x8BC6; Linux</a></p>
+<p><strong>Citation</strong>  </p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a href="https://www.gnu.org/philosophy/philosophy.html">Philosophy of the GNU Project</a></p>
+<p><strong>Recommended Reading</strong></p>
+<p><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">Why Open Source Misses the Point of Free Software</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Software</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LaTeX CV</title>
     <url>/Latex-CV/</url>
     <content><![CDATA[<p>From noon yesterday to noon today, I was working on latex to make a resume. That&#x2019;s very unfriendly for beginners &#x1F622;. Luckily I finished it now! Take a look at <a href="https://github.com/mengisok/Resume-CV/blob/master/resume.pdf">my CV</a>.  </p>
@@ -1802,27 +1802,6 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>Jan 2023</title>
-    <url>/Jan-2023/</url>
-    <content><![CDATA[<p>In the first month of the new year, I was still organizing review notes at tortoise speed and feeling lazy. But I also learned something new.  </p>
-<span id="more"></span>
-
-<h3 id="Changed-blog-theme-again"><a href="#Changed-blog-theme-again" class="headerlink" title="Changed blog theme again"></a>Changed blog theme again</h3><p>I changed blog theme to <a href="https://github.com/ppoffice/hexo-theme-minos">Minos</a> in order to add the English and Chinese language options, and finally succeeded after some tinkering! And for my own aesthetic, I slightly modified the appearance. Then I found that when I clicked on the cell phone to change the language, the drop-down menu was blocked by the navigation bar. I thought of various solutions, and finally the complete display was achieved by changing the layout, so I organized it into a <a href="https://github.com/mengisok/hexo-theme-minos-bilingual">GitHub repository</a> for Chinese users to use directly. .  </p>
-<p>Then I found a problem again: after opening the navigation bar for articles in the config, when you read articles, the English version displayed the subheadings normally, but the Chinese was garbled. This legacy problem has not been solved yet, so for the time being, I changed it to this: English version has the navigation bar, while no such thing in Chinese version &#x1F62C;.  </p>
-<h3 id="Using-Linux"><a href="#Using-Linux" class="headerlink" title="Using Linux"></a>Using Linux</h3><p>I found a great tutorial: <a href="https://101.lug.ustc.edu.cn/">Linux 101</a>, which was written by the Linux community at USTC. Successfully used Linux <del>and passionately sent an email to join the community and see the genius guys in it</del>! I currently finished learning the first three chapters.  </p>
-<h3 id="About-machine-learning"><a href="#About-machine-learning" class="headerlink" title="About machine learning"></a>About machine learning</h3><p>I went back to Andrew Ng&#x2019;s Machine Learning videos and left freecodecamp &#x1F923;. Freecodecamp&#x2019;s tutorials are very practical, knocking the code directly, but it&#x2019;s too fast, while Andrew Ng is just the opposite. Well, I think if you are not in a hurry, it&#x2019;s better to watch Andrew Ng&#x2019;s videos first to understand the principles. Currently I just finished &#x201C;P92 16.3 Integration&#x201D;.  </p>
-<p>When reviewing DIA, I found <a href="https://wiki.eecs.yorku.ca/course_archive/2011-12/F/4403/_media/backpropagation.pdf">an article that explains the BP algorithm</a>.  </p>
-<p>I saw <a href="https://www.1point3acres.com/bbs/thread-713903-1-1.html?mobile=2">a post on machine learning concepts</a>.  </p>
-<h3 id="Started-drawing-the-PCB"><a href="#Started-drawing-the-PCB" class="headerlink" title="Started drawing the PCB"></a>Started drawing the PCB</h3><p>To be precise, I just started to draw the schematic. I&#x2019;ve only used Altium Designer before, but now I need to use Cadence, and I checked the difference between the two, it seems that Altium Designer is easy to get started and has limited performance, while Cadence is more difficult and powerful.  </p>
-<p>I also saw a good blog: <a href="https://bonewp.github.io/2017/03/02/Cadence%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%94%BB%E6%9D%BF%E6%8A%80%E5%B7%A7%E7%9B%B8%E5%85%B3/">Cadence usage and drawing board skills related</a>.</p>
-<h3 id="Didn&#x2019;t-learn-the-language"><a href="#Didn&#x2019;t-learn-the-language" class="headerlink" title="Didn&#x2019;t learn the language"></a>Didn&#x2019;t learn the language</h3><p>But I got a Japanese class for next semester! Nice&#x30FD;(&#xFF9F;&#x25BD;&#xFF9F;)&#x30CE;  </p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-        <category>Monthly Summary</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Mar 2023</title>
     <url>/Mar-2023/</url>
     <content><![CDATA[<p><del>Play games often and study occasionally this month.</del>  </p>
@@ -1851,6 +1830,27 @@ git push -u origin master
 <h2 id="New-project-White-Rabbit-multi-port-node-development"><a href="#New-project-White-Rabbit-multi-port-node-development" class="headerlink" title="New project: White Rabbit multi-port node development"></a>New project: White Rabbit multi-port node development</h2><p>This is the second project I&#x2019;ve worked on recently, in collaboration with another student. We expect to design the PCB by the end of this year. White rabbit is really difficult &#x2026;&#x2026; Again, I will write a separate blog about it next time. I&#x2019;m still in a state of confusion at the moment.</p>
 <h2 id="Some-exam-results"><a href="#Some-exam-results" class="headerlink" title="Some exam results"></a>Some exam results</h2><p>The results of the final exams are almost all out, not bad &#x2026;&#x2026; The Software exam actually passed. JLPT really didn&#x2019;t pass, lol. I don&#x2019;t understand Japanese! </p>
 <p>(Very perfunctory summary of three months, but it&#x2019;s good to write~)</p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+        <category>Monthly Summary</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Jan 2023</title>
+    <url>/Jan-2023/</url>
+    <content><![CDATA[<p>In the first month of the new year, I was still organizing review notes at tortoise speed and feeling lazy. But I also learned something new.  </p>
+<span id="more"></span>
+
+<h3 id="Changed-blog-theme-again"><a href="#Changed-blog-theme-again" class="headerlink" title="Changed blog theme again"></a>Changed blog theme again</h3><p>I changed blog theme to <a href="https://github.com/ppoffice/hexo-theme-minos">Minos</a> in order to add the English and Chinese language options, and finally succeeded after some tinkering! And for my own aesthetic, I slightly modified the appearance. Then I found that when I clicked on the cell phone to change the language, the drop-down menu was blocked by the navigation bar. I thought of various solutions, and finally the complete display was achieved by changing the layout, so I organized it into a <a href="https://github.com/mengisok/hexo-theme-minos-bilingual">GitHub repository</a> for Chinese users to use directly. .  </p>
+<p>Then I found a problem again: after opening the navigation bar for articles in the config, when you read articles, the English version displayed the subheadings normally, but the Chinese was garbled. This legacy problem has not been solved yet, so for the time being, I changed it to this: English version has the navigation bar, while no such thing in Chinese version &#x1F62C;.  </p>
+<h3 id="Using-Linux"><a href="#Using-Linux" class="headerlink" title="Using Linux"></a>Using Linux</h3><p>I found a great tutorial: <a href="https://101.lug.ustc.edu.cn/">Linux 101</a>, which was written by the Linux community at USTC. Successfully used Linux <del>and passionately sent an email to join the community and see the genius guys in it</del>! I currently finished learning the first three chapters.  </p>
+<h3 id="About-machine-learning"><a href="#About-machine-learning" class="headerlink" title="About machine learning"></a>About machine learning</h3><p>I went back to Andrew Ng&#x2019;s Machine Learning videos and left freecodecamp &#x1F923;. Freecodecamp&#x2019;s tutorials are very practical, knocking the code directly, but it&#x2019;s too fast, while Andrew Ng is just the opposite. Well, I think if you are not in a hurry, it&#x2019;s better to watch Andrew Ng&#x2019;s videos first to understand the principles. Currently I just finished &#x201C;P92 16.3 Integration&#x201D;.  </p>
+<p>When reviewing DIA, I found <a href="https://wiki.eecs.yorku.ca/course_archive/2011-12/F/4403/_media/backpropagation.pdf">an article that explains the BP algorithm</a>.  </p>
+<p>I saw <a href="https://www.1point3acres.com/bbs/thread-713903-1-1.html?mobile=2">a post on machine learning concepts</a>.  </p>
+<h3 id="Started-drawing-the-PCB"><a href="#Started-drawing-the-PCB" class="headerlink" title="Started drawing the PCB"></a>Started drawing the PCB</h3><p>To be precise, I just started to draw the schematic. I&#x2019;ve only used Altium Designer before, but now I need to use Cadence, and I checked the difference between the two, it seems that Altium Designer is easy to get started and has limited performance, while Cadence is more difficult and powerful.  </p>
+<p>I also saw a good blog: <a href="https://bonewp.github.io/2017/03/02/Cadence%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%94%BB%E6%9D%BF%E6%8A%80%E5%B7%A7%E7%9B%B8%E5%85%B3/">Cadence usage and drawing board skills related</a>.</p>
+<h3 id="Didn&#x2019;t-learn-the-language"><a href="#Didn&#x2019;t-learn-the-language" class="headerlink" title="Didn&#x2019;t learn the language"></a>Didn&#x2019;t learn the language</h3><p>But I got a Japanese class for next semester! Nice&#x30FD;(&#xFF9F;&#x25BD;&#xFF9F;)&#x30CE;  </p>
 ]]></content>
       <categories>
         <category>Summary</category>
@@ -1944,6 +1944,50 @@ git push -u origin master
       <tags>
         <tag>Software Front-end</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Nov 2022</title>
+    <url>/Nov-2022/</url>
+    <content><![CDATA[<h3 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h3><p>Solved <strong>64 problems</strong> on Leetcode till now.  </p>
+<span id="more"></span>
+<p>Finished the Explore <strong>Arrays 101</strong> (the remaining one was only available for Premium). It&#x2019;s very easy even for beginners like me.  </p>
+<img src="/images/arrays101.png" alt="arrays101" title="arrays101" width="250">
+
+<p>Got a <strong>badge</strong>!  </p>
+<img src="/images/data_structure_badge.png" alt="data_structure_badge" title="data_structure_badge" width="500">  
+
+<p>To be honest, I didn&#x2019;t quite understand all the data structures in the badge &#x1F915;. I&#x2019;m just familiar with arrays and strings&#x2026; I plan to find time to digest the other structures, and make a sum-up.  </p>
+<h3 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h3><p>Handed on it. I wrote a simple notebook about the process of using Logistic Regression model to classify some datas.  </p>
+<h3 id="Github-Workflow"><a href="#Github-Workflow" class="headerlink" title="Github Workflow"></a>Github Workflow</h3><p>Used <a href="https://github.com/lowlighter/metrics"><strong>Metrics</strong></a> in the homepage of my github account. It&#x2019;s amazing for it can update automatically!  </p>
+<h3 id="LinkedIn-Learning-Certificates"><a href="#LinkedIn-Learning-Certificates" class="headerlink" title="LinkedIn Learning Certificates"></a>LinkedIn Learning Certificates</h3><p>I will give my rating for that course under each certificate.  </p>
+<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="500">  
+
+<center>&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</center>  
+
+<img src="/images/certificate_20221112.png" alt="certificate_20221112" title="certificate_20221112" width="500">  
+
+<center>&#x2B50;&#x2B50;</center>
+
+<img src="/images/certificate_20221113.png" alt="certificate_20221113" title="certificate_20221113" width="500">  
+
+<center>&#x2B50;&#x2B50;</center>
+
+<img src="/images/certificate_20221115.png" alt="certificate_20221115" title="certificate_20221115" width="500">  
+
+<center>&#x2B50;&#x2B50;&#x2B50;&#x2B50;</center>
+
+<img src="/images/certificate_20221120.png" alt="certificate_20221120" title="certificate_20221110" width="500">  
+
+<center>&#x2B50;&#x2B50;&#x2B50;</center>
+
+<h3 id="English"><a href="#English" class="headerlink" title="English"></a>English</h3><p>Preparing for the <strong>IELTS indicator exam</strong>.  </p>
+<p>Kept on learning Japanese on Duolinguo for <strong>42 days</strong>.  </p>
+<p>I found out that there were only two Japanese language tests in China, JLPT and JTEST. JLPT is held only two times every year, and it&#x2019;s often cancelled. JTEST is held more frequently, but it&#x2019;s not as highly acknowledged as JLPT so I&#x2019;m hesitant to prepare for it.   </p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+        <category>Monthly Summary</category>
+      </categories>
   </entry>
   <entry>
     <title>Object-oriented</title>
@@ -2266,50 +2310,6 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>Nov 2022</title>
-    <url>/Nov-2022/</url>
-    <content><![CDATA[<h3 id="Leetcode"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode</h3><p>Solved <strong>64 problems</strong> on Leetcode till now.  </p>
-<span id="more"></span>
-<p>Finished the Explore <strong>Arrays 101</strong> (the remaining one was only available for Premium). It&#x2019;s very easy even for beginners like me.  </p>
-<img src="/images/arrays101.png" alt="arrays101" title="arrays101" width="250">
-
-<p>Got a <strong>badge</strong>!  </p>
-<img src="/images/data_structure_badge.png" alt="data_structure_badge" title="data_structure_badge" width="500">  
-
-<p>To be honest, I didn&#x2019;t quite understand all the data structures in the badge &#x1F915;. I&#x2019;m just familiar with arrays and strings&#x2026; I plan to find time to digest the other structures, and make a sum-up.  </p>
-<h3 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h3><p>Handed on it. I wrote a simple notebook about the process of using Logistic Regression model to classify some datas.  </p>
-<h3 id="Github-Workflow"><a href="#Github-Workflow" class="headerlink" title="Github Workflow"></a>Github Workflow</h3><p>Used <a href="https://github.com/lowlighter/metrics"><strong>Metrics</strong></a> in the homepage of my github account. It&#x2019;s amazing for it can update automatically!  </p>
-<h3 id="LinkedIn-Learning-Certificates"><a href="#LinkedIn-Learning-Certificates" class="headerlink" title="LinkedIn Learning Certificates"></a>LinkedIn Learning Certificates</h3><p>I will give my rating for that course under each certificate.  </p>
-<img src="/images/certificate_20221110.png" alt="certificate_20221110" title="certificate_20221110" width="500">  
-
-<center>&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</center>  
-
-<img src="/images/certificate_20221112.png" alt="certificate_20221112" title="certificate_20221112" width="500">  
-
-<center>&#x2B50;&#x2B50;</center>
-
-<img src="/images/certificate_20221113.png" alt="certificate_20221113" title="certificate_20221113" width="500">  
-
-<center>&#x2B50;&#x2B50;</center>
-
-<img src="/images/certificate_20221115.png" alt="certificate_20221115" title="certificate_20221115" width="500">  
-
-<center>&#x2B50;&#x2B50;&#x2B50;&#x2B50;</center>
-
-<img src="/images/certificate_20221120.png" alt="certificate_20221120" title="certificate_20221110" width="500">  
-
-<center>&#x2B50;&#x2B50;&#x2B50;</center>
-
-<h3 id="English"><a href="#English" class="headerlink" title="English"></a>English</h3><p>Preparing for the <strong>IELTS indicator exam</strong>.  </p>
-<p>Kept on learning Japanese on Duolinguo for <strong>42 days</strong>.  </p>
-<p>I found out that there were only two Japanese language tests in China, JLPT and JTEST. JLPT is held only two times every year, and it&#x2019;s often cancelled. JTEST is held more frequently, but it&#x2019;s not as highly acknowledged as JLPT so I&#x2019;m hesitant to prepare for it.   </p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-        <category>Monthly Summary</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Operating Files</title>
     <url>/Operating-Files/</url>
     <content><![CDATA[<p>Linux manipulates files via the command line, including viewing, editing, copying, moving, deleting, creating, searching, matching, compressing, and uncompressing files, and it&#x2019;s important to learn how to use the documentation.</p>
@@ -2407,22 +2407,6 @@ git push -u origin master
 <h3 id="Language"><a href="#Language" class="headerlink" title="Language"></a>Language</h3><p>Insisted on watching one <strong>English</strong> video a day, especially <em>the Economist</em>. I also read an article named Prince in the section &#x201C;Briefing&#x201D;. And I began to preparing for Duolinguo English Test several days ago. My boyfriend signed up for IELTS(indicator). We all will take exams next week. Hope we all succeed!  </p>
 <p>I also began to lean <strong>Japanese</strong> from Duolinguo and <a href="https://www.nhk.or.jp/lesson/zh/">NHK Easy Japanese</a>. Love this website for its simpleness. I didn&#x2019;t know Japanese had tenses too.   </p>
 <p>Bye for now! It&#x2019;s midnight. </p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-        <category>Monthly Summary</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Sep 2023</title>
-    <url>/Sep-2023/</url>
-    <content><![CDATA[<p>I feels busier recently. So that&#x2019;s the second year of Master? </p>
-<span id="more"></span>
-
-<p>I don&#x2019;t have to take classes anymore, but the number of projects I&#x2019;m involved in has increased to three: the STCF readout electronics, the White rabbit device, and the trigger electronics for water lenses, which is my graduation project.</p>
-<p>Recently, I&#x2019;ve been working mainly on the WR project. The project is expected to be finished by the end of this year. It&#x2019;s quite stressful and difficult since there are only two of us working on it and we&#x2019;re both beginners. First of all, it&#x2019;s very hard to understand the principle of WR (I still don&#x2019;t understand it completely), and secondly, although there are some similar projects done by the labs, it&#x2019;s still very difficult to use it and design it by myself. The plan at first was for another student to draw the schematic and PCB for the multi-node module, and for me to write the FPGA code. However until he finished drawing, I was still at the stage of trying to understand the WRPC manual &#x2026;&#x2026; Now he is taking over the FPGA code part, and I am modifying the design based on his, and I am drawing a second board, the normal node module.</p>
-<p>The front-end amplifier plate for STCF will be taken by my colleague to the Institute of Modern Physics in Lanzhou next week for joint testing with the detector.</p>
-<p>Trigger electronics for water lenses is a topic I just finalized for my graduation project. I know almost nothing about it at the moment! </p>
 ]]></content>
       <categories>
         <category>Summary</category>
@@ -2678,6 +2662,72 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>Sep 2023</title>
+    <url>/Sep-2023/</url>
+    <content><![CDATA[<p>I feels busier recently. So that&#x2019;s the second year of Master? </p>
+<span id="more"></span>
+
+<p>I don&#x2019;t have to take classes anymore, but the number of projects I&#x2019;m involved in has increased to three: the STCF readout electronics, the White rabbit device, and the trigger electronics for water lenses, which is my graduation project.</p>
+<p>Recently, I&#x2019;ve been working mainly on the WR project. The project is expected to be finished by the end of this year. It&#x2019;s quite stressful and difficult since there are only two of us working on it and we&#x2019;re both beginners. First of all, it&#x2019;s very hard to understand the principle of WR (I still don&#x2019;t understand it completely), and secondly, although there are some similar projects done by the labs, it&#x2019;s still very difficult to use it and design it by myself. The plan at first was for another student to draw the schematic and PCB for the multi-node module, and for me to write the FPGA code. However until he finished drawing, I was still at the stage of trying to understand the WRPC manual &#x2026;&#x2026; Now he is taking over the FPGA code part, and I am modifying the design based on his, and I am drawing a second board, the normal node module.</p>
+<p>The front-end amplifier plate for STCF will be taken by my colleague to the Institute of Modern Physics in Lanzhou next week for joint testing with the detector.</p>
+<p>Trigger electronics for water lenses is a topic I just finalized for my graduation project. I know almost nothing about it at the moment! </p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+        <category>Monthly Summary</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Two-pointer</title>
+    <url>/Two-pointer/</url>
+    <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, I finally finished my first &#x201C;Explore&#x201D;.  </p>
+<span id="more"></span>
+
+<img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
+
+<p>The biggest lesson for me is an amazing technique called <strong>Two-pointer</strong>. At first I thought it&#x2019;s nested two for-loops, but then I found it&#x2019;s actually much more flesxible and useful. So I&#x2019;d like to note it.  </p>
+<h3 id="Meaning"><a href="#Meaning" class="headerlink" title="Meaning"></a>Meaning</h3><hr>
+<p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
+<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><hr>
+<ol>
+<li>When you want to iterate the array from <strong>two ends to the middle</strong>, you can use one pointer starts from the <strong>beginning</strong> while the other pointer starts from the <strong>end</strong>. They have <strong>same steps</strong>.</li>
+</ol>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">reverseString</span><span class="hljs-params">(<span class="hljs-type">char</span>[] s)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> s.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="hljs-type">char</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="hljs-comment">// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] twoSum(<span class="hljs-type">int</span>[] numbers, <span class="hljs-type">int</span> target) {</span><br><span class="line">        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="title class_">int</span>[<span class="hljs-number">2</span>];</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">start</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> numbers.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="hljs-number">0</span>] = start + <span class="hljs-number">1</span>;</span><br><span class="line">        res[<span class="hljs-number">1</span>] = end + <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>When you want one <strong>slow-runner</strong> and one <strong>fast-runner</strong> at the same time, you can use one pointer for the <strong>iteration</strong> while another one for the <strong>special position</strong>. They have <strong>different steps</strong>.</li>
+</ol>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Element</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;k&quot; for the elements to remove</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> val)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Here an important concept is introduced: <strong>in-place.</strong>  </p>
+<blockquote>
+<p>An in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements.<a href="#refer-anchor-1"><sup>1</sup></a>  </p>
+</blockquote>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;max&quot; for finding the max number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                sum = <span class="hljs-number">0</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;j&quot; for the unique elements</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeDuplicates</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> j + <span class="hljs-number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Move Zeroes</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;k&quot; works on the non-zero elements</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">moveZeroes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                <span class="hljs-keyword">if</span> (k &lt; n-<span class="hljs-number">1</span>) {</span><br><span class="line">                    <span class="hljs-keyword">while</span> (nums[k] == <span class="hljs-number">0</span> &amp;&amp; k &lt; n-<span class="hljs-number">1</span>) {k++; } </span><br><span class="line">                    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>My current progress:<br><img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>Congrats to myself and keep it up! &#x1F4AA;&#x1F3FB; </p>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>LeetCode Explore</strong>  </p>
+<p><a href="https://leetcode.com/explore/learn/card/array-and-string/">Array and String</a>  </p>
+<p><strong>Citation</strong></p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a href="https://en.wikipedia.org/wiki/In-place_algorithm">Wikipedia: In-place algorithm</a></p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Data Structure &amp; Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Users, Files</title>
     <url>/Users-Files/</url>
     <content><![CDATA[<p>This is an introduction to &#x201C;users&#x201D; and &#x201C;files&#x201D; in Linux.</p>
@@ -2729,56 +2779,6 @@ git push -u origin master
       </categories>
       <tags>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Two-pointer</title>
-    <url>/Two-pointer/</url>
-    <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, I finally finished my first &#x201C;Explore&#x201D;.  </p>
-<span id="more"></span>
-
-<img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
-
-<p>The biggest lesson for me is an amazing technique called <strong>Two-pointer</strong>. At first I thought it&#x2019;s nested two for-loops, but then I found it&#x2019;s actually much more flesxible and useful. So I&#x2019;d like to note it.  </p>
-<h3 id="Meaning"><a href="#Meaning" class="headerlink" title="Meaning"></a>Meaning</h3><hr>
-<p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
-<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><hr>
-<ol>
-<li>When you want to iterate the array from <strong>two ends to the middle</strong>, you can use one pointer starts from the <strong>beginning</strong> while the other pointer starts from the <strong>end</strong>. They have <strong>same steps</strong>.</li>
-</ol>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">reverseString</span><span class="hljs-params">(<span class="hljs-type">char</span>[] s)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> s.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="hljs-type">char</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="hljs-comment">// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] twoSum(<span class="hljs-type">int</span>[] numbers, <span class="hljs-type">int</span> target) {</span><br><span class="line">        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="title class_">int</span>[<span class="hljs-number">2</span>];</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">start</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> numbers.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="hljs-number">0</span>] = start + <span class="hljs-number">1</span>;</span><br><span class="line">        res[<span class="hljs-number">1</span>] = end + <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ol start="2">
-<li>When you want one <strong>slow-runner</strong> and one <strong>fast-runner</strong> at the same time, you can use one pointer for the <strong>iteration</strong> while another one for the <strong>special position</strong>. They have <strong>different steps</strong>.</li>
-</ol>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Element</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;k&quot; for the elements to remove</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> val)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Here an important concept is introduced: <strong>in-place.</strong>  </p>
-<blockquote>
-<p>An in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements.<a href="#refer-anchor-1"><sup>1</sup></a>  </p>
-</blockquote>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;max&quot; for finding the max number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                sum = <span class="hljs-number">0</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;j&quot; for the unique elements</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeDuplicates</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> j + <span class="hljs-number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Move Zeroes</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;k&quot; works on the non-zero elements</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">moveZeroes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                <span class="hljs-keyword">if</span> (k &lt; n-<span class="hljs-number">1</span>) {</span><br><span class="line">                    <span class="hljs-keyword">while</span> (nums[k] == <span class="hljs-number">0</span> &amp;&amp; k &lt; n-<span class="hljs-number">1</span>) {k++; } </span><br><span class="line">                    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>My current progress:<br><img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>Congrats to myself and keep it up! &#x1F4AA;&#x1F3FB; </p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>LeetCode Explore</strong>  </p>
-<p><a href="https://leetcode.com/explore/learn/card/array-and-string/">Array and String</a>  </p>
-<p><strong>Citation</strong></p>
-<div id="refer-anchor-1"></div>
-
-<p>[1] <a href="https://en.wikipedia.org/wiki/In-place_algorithm">Wikipedia: In-place algorithm</a></p>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Data Structure &amp; Algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -3211,58 +3211,6 @@ git push -u origin master
       </categories>
   </entry>
   <entry>
-    <title>粒子物理实验电子学系统的基本构成</title>
-    <url>/zh-cn/Basic-Components-of-Particle-Physics-Experimental-Electronics/</url>
-    <content><![CDATA[<p>&#x7C92;&#x5B50;&#x7269;&#x7406;&#x5B9E;&#x9A8C;&#x7535;&#x5B50;&#x5B66;&#x7CFB;&#x7EDF;&#x4E3B;&#x8981;&#x7531;&#x56DB;&#x4E2A;&#x90E8;&#x5206;&#x6784;&#x6210;&#xFF1A;<strong>&#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;&#xFF08;Front-End Readout Electronics, FEE&#xFF09;&#xFF0C;&#x89E6;&#x53D1;&#x5224;&#x9009;&#x7CFB;&#x7EDF;&#xFF08;Trigger System&#xFF09;&#xFF0C;&#x6570;&#x636E;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;&#xFF08;Data Acquisition System, DAQ&#xFF09;&#x548C;&#x6162;&#x63A7;&#x5236;&#xFF08;Slow Control&#xFF09;</strong>&#x3002;&#x8FD9;&#x7BC7;&#x7B14;&#x8BB0;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;FEE&#x3002;</p>
-<span id="more"></span>
-
-<h2 id="1-&#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;"><a href="#1-&#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;" class="headerlink" title="1 &#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;"></a>1 &#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;</h2><hr>
-<p>&#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;&#x5BF9;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x7684;&#x5FAE;&#x5F31;&#x7535;&#x4FE1;&#x53F7;&#x8FDB;&#x884C;&#x5FC5;&#x8981;&#x7684;&#x9884;&#x5904;&#x7406;&#xFF08;&#x5982;&#x653E;&#x5927;&#x3001;&#x6570;&#x5B57;&#x5316;&#x7B49;&#xFF09;&#xFF0C;&#x5C06;&#x5176;&#x8F6C;&#x5316;&#x4E3A;&#x80FD;&#x591F;&#x53CD;&#x6620;&#x7C92;&#x5B50;&#x7279;&#x6027;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F9B;&#x89E6;&#x53D1;&#x5224;&#x9009;&#x7CFB;&#x7EDF;&#x548C;DAQ&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;&#x3002;</p>
-<p>&#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;&#x4E3B;&#x8981;&#x6709;<strong>&#x7535;&#x8377;&#xFF08;&#x80FD;&#x91CF;&#xFF09;&#x6D4B;&#x91CF;&#x3001;&#x65F6;&#x95F4;&#x6D4B;&#x91CF;&#x3001;&#x4E8B;&#x4F8B;&#x8BA1;&#x6570;</strong>&#x4E09;&#x79CD;&#x529F;&#x80FD;&#x3002;</p>
-<h3 id="1-1-&#x7535;&#x8377;&#x6D4B;&#x91CF;"><a href="#1-1-&#x7535;&#x8377;&#x6D4B;&#x91CF;" class="headerlink" title="1.1 &#x7535;&#x8377;&#x6D4B;&#x91CF;"></a>1.1 &#x7535;&#x8377;&#x6D4B;&#x91CF;</h3><p>&#x7535;&#x8377;&#x6D4B;&#x91CF;&#x5C31;&#x662F;&#x6D4B;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x4FE1;&#x53F7;&#x7684;&#x7535;&#x8377;&#x91CF;&#x3002;&#x7C92;&#x5B50;&#x901A;&#x8FC7;&#x63A2;&#x6D4B;&#x5668;&#x65F6;&#x662F;&#x63A2;&#x6D4B;&#x5668;&#x4EA7;&#x751F;&#x7535;&#x79BB;&#x3001;&#x6FC0;&#x53D1;&#x6216;&#x5149;&#x7535;&#x8F6C;&#x6362;&#x7B49;&#x8FC7;&#x7A0B;&#xFF0C;&#x8F93;&#x51FA;&#x4FE1;&#x53F7;&#x7684;&#x7535;&#x8377;&#x91CF;&#x5F80;&#x5F80;&#x6B63;&#x6BD4;&#x4E8E;&#x7C92;&#x5B50;&#x5728;&#x63A2;&#x6D4B;&#x5668;&#x4E2D;&#x6D88;&#x8017;&#x6389;&#x7684;&#x80FD;&#x91CF;&#x3002;</p>
-<p>&#x7ED3;&#x6784;&#xFF1A;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;+&#x957F;&#x7535;&#x7F06;+<strong>&#x4E3B;&#x653E;&#x5927;&#x5668;+&#x6210;&#x5F62;&#x7535;&#x8DEF;+ADC</strong>+&#x6570;&#x636E;&#x7F13;&#x5B58;+&#x8BFB;&#x51FA;&#x63A5;&#x53E3;</p>
-<h3 id="1-2-&#x65F6;&#x95F4;&#x6D4B;&#x91CF;"><a href="#1-2-&#x65F6;&#x95F4;&#x6D4B;&#x91CF;" class="headerlink" title="1.2 &#x65F6;&#x95F4;&#x6D4B;&#x91CF;"></a>1.2 &#x65F6;&#x95F4;&#x6D4B;&#x91CF;</h3><p>&#x65F6;&#x95F4;&#x6D4B;&#x91CF;&#x5C31;&#x662F;&#x6D4B;&#x91CF;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x4FE1;&#x53F7;&#x7684;&#x51FA;&#x73B0;&#x65F6;&#x95F4;&#xFF08;&#x6307;&#x9488;&#x5BF9;&#x67D0;&#x4E00;&#x53C2;&#x8003;&#x4FE1;&#x53F7;t0&#x7684;&#x65F6;&#x95F4;&#x65F6;&#x9694;&#xFF09;&#x3002;&#x5B83;&#x9700;&#x8981;&#x6D4B;&#x91CF;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#xFF1A;&#x7531;&#x5B9A;&#x65F6;&#x7511;&#x522B;&#x5668;&#x7535;&#x8DEF;&#x786E;&#x5B9A;&#x88AB;&#x6D4B;&#x4FE1;&#x53F7;&#x7684;&#x51FA;&#x73B0;&#x65F6;&#x523B;&#xFF1B;&#x7531;&#x65F6;&#x95F4;&#xFF0D;&#x6570;&#x5B57;&#x53D8;&#x6362;&#xFF08;TDC&#xFF09;&#x7535;&#x8DEF;&#x5C06;&#x88AB;&#x6D4B;&#x4FE1;&#x53F7;&#x548C;&#x53C2;&#x8003;&#x4FE1;&#x53F7;t0&#x4E4B;&#x95F4;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x8F6C;&#x6362;&#x6210;&#x6570;&#x5B57;&#x6570;&#x636E;&#x3002;</p>
-<p>&#x7ED3;&#x6784;&#xFF1A;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;+&#x957F;&#x7535;&#x7F06;+<strong>&#x5B9A;&#x65F6;&#x7504;&#x522B;&#x5668;+TDC</strong>+&#x6570;&#x636E;&#x7F13;&#x5B58;+&#x8BFB;&#x51FA;&#x63A5;&#x53E3;</p>
-<p>&#x4E3B;&#x6D41;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x201C;&#x7C97;&#x201D;&#x8BA1;&#x6570;&#xFF08;Coarse Counting&#xFF09; +&#x201C;&#x7EC6;&#x201D;&#x65F6;&#x95F4;&#x6D4B;&#x91CF;&#xFF08;Fine Measurement&#xFF09;&#xFF0C;&#x5373;&#x5168;&#x6570;&#x5B57;&#x8BA1;&#x6570;&#x5668;&#x6280;&#x672F; + &#x65F6;&#x95F4;&#x5185;&#x63D2;&#x3002;&#x201C;&#x7C97;&#x201D;&#x8BA1;&#x6570;&#x4E00;&#x822C;&#x7531;&#x9AD8;&#x6027;&#x80FD;&#x7684;Gray&#x7801;&#x8BA1;&#x6570;&#x5668;&#xFF08;&#x5373;&#x6570;&#x5B57;&#x8BA1;&#x6570;&#x5668;&#x578B;TDC&#xFF09;&#x5B9E;&#x73B0;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x53C2;&#x8003;&#x65F6;&#x949F;&#x9891;&#x7387;&#x4E00;&#x822C;&#x5728;&#x6570;&#x767E;&#x5146;&#x8D6B;&#x5179;&#xFF0C;&#x5B9E;&#x73B0;&#x51E0;&#x4E2A;ns&#x7684;&#x65F6;&#x95F4;&#x5206;&#x8FA8;&#xFF1B;&#x201C;&#x7EC6;&#x201D;&#x65F6;&#x95F4;&#x6D4B;&#x91CF;&#x7684;&#x5B9E;&#x73B0;&#x5219;&#x4F9D;&#x9760;&#x65F6;&#x95F4;&#x5185;&#x63D2;&#x6280;&#x672F;&#xFF08;Time Interpolation&#xFF09;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x65F6;&#x949F;&#x5468;&#x671F;&#x5185;&#x8FDB;&#x884C;&#x65F6;&#x95F4;&#x5185;&#x63D2;&#xFF0C;&#x8FBE;&#x5230;&#x4E9A;&#x7EB3;&#x79D2;&#xFF08;100 ps ~ 10ps&#xFF09;&#x7684;&#x65F6;&#x95F4;&#x5206;&#x8FA8;&#x3002;</p>
-<h3 id="1-3-&#x4E8B;&#x4F8B;&#x8BA1;&#x6570;"><a href="#1-3-&#x4E8B;&#x4F8B;&#x8BA1;&#x6570;" class="headerlink" title="1.3 &#x4E8B;&#x4F8B;&#x8BA1;&#x6570;"></a>1.3 &#x4E8B;&#x4F8B;&#x8BA1;&#x6570;</h3><p>&#x4E8B;&#x4F8B;&#x8BA1;&#x6570;&#x5C31;&#x662F;&#x5BF9;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x7684;&#x4FE1;&#x53F7;&#x8FDB;&#x884C;&#x5FC5;&#x8981;&#x7684;&#x653E;&#x5927;&#x548C;&#x7511;&#x522B;&#xFF0C;&#x5F97;&#x5230;&#x201C;&#x662F;&#x201D;&#x6216;&#x201C;&#x5426;&#x201D;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x8BB0;&#x5F55;&#x3002;&#x56E0;&#x4E3A;&#x6709;&#x65F6;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x77E5;&#x9053;&#x662F;&#x5426;&#x6709;&#x7C92;&#x5B50;&#x51FB;&#x4E2D;&#x76F8;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x6D4B;&#x91CF;&#x4FE1;&#x53F7;&#x7684;&#x7535;&#x8377;&#x6216;&#x65F6;&#x95F4;&#xFF08;&#x5982;BES III&#x7684;&#xB5;&#x5B50;&#x63A2;&#x6D4B;&#x5668;&#xFF09;&#x3002;</p>
-<p>&#x7ED3;&#x6784;&#xFF1A;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;+&#x957F;&#x7535;&#x7F06;+<strong>&#x5B9A;&#x65F6;&#x7504;&#x522B;+&#x5BC4;&#x5B58;&#x5668;/&#x8BA1;&#x6570;&#x5668;</strong>+&#x6570;&#x636E;&#x7F13;&#x5B58;+&#x8BFB;&#x51FA;&#x63A5;&#x53E3;</p>
-<h3 id="1-4-&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;"><a href="#1-4-&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;" class="headerlink" title="1.4 &#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;"></a>1.4 &#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;</h3><h4 id="1-4-1-&#x5206;&#x7C7B;"><a href="#1-4-1-&#x5206;&#x7C7B;" class="headerlink" title="1.4.1 &#x5206;&#x7C7B;"></a>1.4.1 &#x5206;&#x7C7B;</h4><ul>
-<li>&#x79EF;&#x5206;&#x578B;&#xFF08;&#x7535;&#x8377;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;&#x3001;&#x7535;&#x538B;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;&#xFF09;&#xFF1A;&#x8F93;&#x51FA;&#x4FE1;&#x53F7;&#x5E45;&#x5EA6;&#x6B63;&#x6BD4;&#x4E8E;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x7535;&#x6D41;&#x4FE1;&#x53F7;&#x5BF9;&#x65F6;&#x95F4;&#x7684;&#x79EF;&#x5206;&#xFF08;&#x5373;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x7684;&#x603B;&#x7535;&#x8377;&#x91CF;&#xFF09;</li>
-<li>&#x7535;&#x6D41;&#x578B;&#xFF08;&#x7535;&#x6D41;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;&#xFF09;&#xFF1A;&#x8F93;&#x51FA;&#x4FE1;&#x53F7;&#x6CE2;&#x5F62;&#x4E0E;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x7535;&#x6D41;&#x4FE1;&#x53F7;&#x7684;&#x6CE2;&#x5F62;&#x4E00;&#x81F4;</li>
-</ul>
-<h4 id="1-4-2-&#x4E09;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;"><a href="#1-4-2-&#x4E09;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;" class="headerlink" title="1.4.2 &#x4E09;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;"></a>1.4.2 &#x4E09;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;</h4><ul>
-<li><strong>&#x7535;&#x8377;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;</strong></li>
-</ul>
-<p>&#x7535;&#x8DEF;&#x8F83;&#x590D;&#x6742;&#xFF0C;&#x6027;&#x80FD;&#x597D;&#xFF0C;&#x4F4E;&#x566A;&#x58F0;&#xFF0C;&#x6700;&#x5E38;&#x7528;&#x3002;</p>
-<p>$V_{output}=-\frac{Q}{C_{feedback}}$</p>
-<ul>
-<li><strong>&#x7535;&#x538B;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;</strong></li>
-</ul>
-<p>&#x7535;&#x8DEF;&#x8F83;&#x7B80;&#x5355;&#xFF08;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7535;&#x538B;&#x653E;&#x5927;&#x5668;&#xFF09;&#xFF0C;&#x6027;&#x80FD;&#x8F83;&#x5DEE;&#xFF0C;&#x566A;&#x58F0;&#x6BD4;&#x7535;&#x8377;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;&#x7684;&#x5927;&#x3002;</p>
-<p>$\frac{V_{output}}{V_{input}}=-\frac{R_{feedback}}{R_{series}}$</p>
-<ul>
-<li><strong>&#x7535;&#x6D41;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;</strong></li>
-</ul>
-<p>&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7535;&#x6D41;&#x653E;&#x5927;&#x5668;&#x3002;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x7CBE;&#x786E;&#x7684;&#x65F6;&#x95F4;&#x4FE1;&#x606F;&#x3001;&#x9AD8;&#x8BA1;&#x6570;&#x7387;&#x6216;&#x9AD8;&#x672C;&#x5E95;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x5F3A;&#x5EA6;&#x6D4B;&#x91CF;&#x7CFB;&#x7EDF;&#x3001;&#x80FD;&#x8C31;&#x6D4B;&#x91CF;&#x7CFB;&#x7EDF;&#x7B49;&#x3002;</p>
-<h3 id="1-5-ADC"><a href="#1-5-ADC" class="headerlink" title="1.5 ADC"></a>1.5 ADC</h3><p>&#x7EBF;&#x6027;&#x653E;&#x7535;&#x578B;ADC&#xFF0C;&#x9010;&#x6B21;&#x6BD4;&#x8F83;&#x578B;ADC&#xFF08;SAR ADC&#xFF09;&#xFF0C;&#x6D41;&#x6C34;&#x7EBF;&#x578B;ADC&#xFF08;Pipeline ADC&#xFF09;&#xFF0C;&#x95EA;&#x7535;&#x578B;ADC&#xFF08;Flash ADC&#xFF09;&#x3002;</p>
-<h2 id="2-&#x89E6;&#x53D1;&#x5224;&#x9009;&#x7CFB;&#x7EDF;"><a href="#2-&#x89E6;&#x53D1;&#x5224;&#x9009;&#x7CFB;&#x7EDF;" class="headerlink" title="2 &#x89E6;&#x53D1;&#x5224;&#x9009;&#x7CFB;&#x7EDF;"></a>2 &#x89E6;&#x53D1;&#x5224;&#x9009;&#x7CFB;&#x7EDF;</h2><hr>
-<p>&#x5BF9;&#x524D;&#x7AEF;&#x7535;&#x5B50;&#x5B66;&#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5B9E;&#x65F6;&#x5206;&#x6790;&#xFF0C;&#x4ECE;&#x5927;&#x91CF;&#x7684;&#x5047;&#x4E8B;&#x4F8B;&#xFF08;&#x672C;&#x5E95;&#xFF09;&#x6570;&#x636E;&#x4E2D;&#x6311;&#x9009;&#x51FA;&#x7269;&#x7406;&#x4E0A;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x4E8B;&#x4F8B;&#xFF0C;&#x800C;&#x5C06;&#x5047;&#x4E8B;&#x4F8B;&#xFF08;&#x672C;&#x5E95;&#xFF09;&#x6570;&#x636E;&#x820D;&#x5F03;&#x3002;</p>
-<p>&#x6784;&#x6210;&#xFF1A;&#x89E6;&#x53D1;&#x5B50;&#x7CFB;&#x7EDF;&#xFF08;&#x7279;&#x5F81;&#x62BD;&#x53D6;&#xFF09;&#x3001;&#x603B;&#x89E6;&#x53D1;&#xFF08;&#x5224;&#x5B9A;&#x5206;&#x7C7B;&#xFF09;&#x3001;&#x65F6;&#x949F;&#x7CFB;&#x7EDF;&#x3002;</p>
-<h2 id="3-&#x6570;&#x636E;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;"><a href="#3-&#x6570;&#x636E;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;" class="headerlink" title="3 &#x6570;&#x636E;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;"></a>3 &#x6570;&#x636E;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;</h2><hr>
-<p>&#x7B5B;&#x9009;&#x4FDD;&#x7559;&#x7684;&#x7269;&#x7406;&#x4E0A;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x4E8B;&#x4F8B;&#x6570;&#x636E;&#x5E76;&#x6536;&#x96C6;&#x3001;&#x88C5;&#x914D;&#x6210;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x4E8B;&#x4F8B;&#x6570;&#x636E;&#xFF0C;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x4EE5;&#x63D0;&#x4F9B;&#x7ED9;&#x7269;&#x7406;&#x5B66;&#x5BB6;&#x8FDB;&#x884C;&#x79BB;&#x7EBF;&#x5206;&#x6790;&#x3002;</p>
-<h2 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h2><hr>
-<p><a href="http://bes.ihep.ac.cn/bes3/internal/workshop/06electronics/anqi.pdf">http://bes.ihep.ac.cn/bes3/internal/workshop/06electronics/anqi.pdf</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>硬件</category>
-        <category>物理电子学</category>
-      </categories>
-      <tags>
-        <tag>读出电子学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MATLAB 基础（超基础）</title>
     <url>/zh-cn/Basic-MATLAB/</url>
     <content><![CDATA[<p>&#x4E3A;&#x4E86;&#x7528;MATLAB&#x5199;&#x8BA1;&#x7B97;&#x673A;&#x4F5C;&#x4E1A;&#x800C;&#x706B;&#x901F;&#x770B;&#x4E86;&#x4E00;&#x4E2A;&#x9886;&#x82F1;&#x5B66;&#x4E60;&#x4E0A;&#x7684;&#x5165;&#x95E8;&#x6559;&#x7A0B;&#xFF08;&#x4E24;&#x4E09;&#x5E74;&#x6CA1;&#x7528;&#x771F;&#x7684;&#x5FD8;&#x5149;&#x4E86;&#xFF09;&#x3002;</p>
@@ -3380,6 +3328,58 @@ git push -u origin master
       </categories>
       <tags>
         <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>粒子物理实验电子学系统的基本构成</title>
+    <url>/zh-cn/Basic-Components-of-Particle-Physics-Experimental-Electronics/</url>
+    <content><![CDATA[<p>&#x7C92;&#x5B50;&#x7269;&#x7406;&#x5B9E;&#x9A8C;&#x7535;&#x5B50;&#x5B66;&#x7CFB;&#x7EDF;&#x4E3B;&#x8981;&#x7531;&#x56DB;&#x4E2A;&#x90E8;&#x5206;&#x6784;&#x6210;&#xFF1A;<strong>&#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;&#xFF08;Front-End Readout Electronics, FEE&#xFF09;&#xFF0C;&#x89E6;&#x53D1;&#x5224;&#x9009;&#x7CFB;&#x7EDF;&#xFF08;Trigger System&#xFF09;&#xFF0C;&#x6570;&#x636E;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;&#xFF08;Data Acquisition System, DAQ&#xFF09;&#x548C;&#x6162;&#x63A7;&#x5236;&#xFF08;Slow Control&#xFF09;</strong>&#x3002;&#x8FD9;&#x7BC7;&#x7B14;&#x8BB0;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;FEE&#x3002;</p>
+<span id="more"></span>
+
+<h2 id="1-&#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;"><a href="#1-&#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;" class="headerlink" title="1 &#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;"></a>1 &#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;</h2><hr>
+<p>&#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;&#x5BF9;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x7684;&#x5FAE;&#x5F31;&#x7535;&#x4FE1;&#x53F7;&#x8FDB;&#x884C;&#x5FC5;&#x8981;&#x7684;&#x9884;&#x5904;&#x7406;&#xFF08;&#x5982;&#x653E;&#x5927;&#x3001;&#x6570;&#x5B57;&#x5316;&#x7B49;&#xFF09;&#xFF0C;&#x5C06;&#x5176;&#x8F6C;&#x5316;&#x4E3A;&#x80FD;&#x591F;&#x53CD;&#x6620;&#x7C92;&#x5B50;&#x7279;&#x6027;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F9B;&#x89E6;&#x53D1;&#x5224;&#x9009;&#x7CFB;&#x7EDF;&#x548C;DAQ&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x524D;&#x7AEF;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;&#x4E3B;&#x8981;&#x6709;<strong>&#x7535;&#x8377;&#xFF08;&#x80FD;&#x91CF;&#xFF09;&#x6D4B;&#x91CF;&#x3001;&#x65F6;&#x95F4;&#x6D4B;&#x91CF;&#x3001;&#x4E8B;&#x4F8B;&#x8BA1;&#x6570;</strong>&#x4E09;&#x79CD;&#x529F;&#x80FD;&#x3002;</p>
+<h3 id="1-1-&#x7535;&#x8377;&#x6D4B;&#x91CF;"><a href="#1-1-&#x7535;&#x8377;&#x6D4B;&#x91CF;" class="headerlink" title="1.1 &#x7535;&#x8377;&#x6D4B;&#x91CF;"></a>1.1 &#x7535;&#x8377;&#x6D4B;&#x91CF;</h3><p>&#x7535;&#x8377;&#x6D4B;&#x91CF;&#x5C31;&#x662F;&#x6D4B;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x4FE1;&#x53F7;&#x7684;&#x7535;&#x8377;&#x91CF;&#x3002;&#x7C92;&#x5B50;&#x901A;&#x8FC7;&#x63A2;&#x6D4B;&#x5668;&#x65F6;&#x662F;&#x63A2;&#x6D4B;&#x5668;&#x4EA7;&#x751F;&#x7535;&#x79BB;&#x3001;&#x6FC0;&#x53D1;&#x6216;&#x5149;&#x7535;&#x8F6C;&#x6362;&#x7B49;&#x8FC7;&#x7A0B;&#xFF0C;&#x8F93;&#x51FA;&#x4FE1;&#x53F7;&#x7684;&#x7535;&#x8377;&#x91CF;&#x5F80;&#x5F80;&#x6B63;&#x6BD4;&#x4E8E;&#x7C92;&#x5B50;&#x5728;&#x63A2;&#x6D4B;&#x5668;&#x4E2D;&#x6D88;&#x8017;&#x6389;&#x7684;&#x80FD;&#x91CF;&#x3002;</p>
+<p>&#x7ED3;&#x6784;&#xFF1A;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;+&#x957F;&#x7535;&#x7F06;+<strong>&#x4E3B;&#x653E;&#x5927;&#x5668;+&#x6210;&#x5F62;&#x7535;&#x8DEF;+ADC</strong>+&#x6570;&#x636E;&#x7F13;&#x5B58;+&#x8BFB;&#x51FA;&#x63A5;&#x53E3;</p>
+<h3 id="1-2-&#x65F6;&#x95F4;&#x6D4B;&#x91CF;"><a href="#1-2-&#x65F6;&#x95F4;&#x6D4B;&#x91CF;" class="headerlink" title="1.2 &#x65F6;&#x95F4;&#x6D4B;&#x91CF;"></a>1.2 &#x65F6;&#x95F4;&#x6D4B;&#x91CF;</h3><p>&#x65F6;&#x95F4;&#x6D4B;&#x91CF;&#x5C31;&#x662F;&#x6D4B;&#x91CF;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x4FE1;&#x53F7;&#x7684;&#x51FA;&#x73B0;&#x65F6;&#x95F4;&#xFF08;&#x6307;&#x9488;&#x5BF9;&#x67D0;&#x4E00;&#x53C2;&#x8003;&#x4FE1;&#x53F7;t0&#x7684;&#x65F6;&#x95F4;&#x65F6;&#x9694;&#xFF09;&#x3002;&#x5B83;&#x9700;&#x8981;&#x6D4B;&#x91CF;&#x4E24;&#x4E2A;&#x6570;&#x636E;&#xFF1A;&#x7531;&#x5B9A;&#x65F6;&#x7511;&#x522B;&#x5668;&#x7535;&#x8DEF;&#x786E;&#x5B9A;&#x88AB;&#x6D4B;&#x4FE1;&#x53F7;&#x7684;&#x51FA;&#x73B0;&#x65F6;&#x523B;&#xFF1B;&#x7531;&#x65F6;&#x95F4;&#xFF0D;&#x6570;&#x5B57;&#x53D8;&#x6362;&#xFF08;TDC&#xFF09;&#x7535;&#x8DEF;&#x5C06;&#x88AB;&#x6D4B;&#x4FE1;&#x53F7;&#x548C;&#x53C2;&#x8003;&#x4FE1;&#x53F7;t0&#x4E4B;&#x95F4;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x8F6C;&#x6362;&#x6210;&#x6570;&#x5B57;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x7ED3;&#x6784;&#xFF1A;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;+&#x957F;&#x7535;&#x7F06;+<strong>&#x5B9A;&#x65F6;&#x7504;&#x522B;&#x5668;+TDC</strong>+&#x6570;&#x636E;&#x7F13;&#x5B58;+&#x8BFB;&#x51FA;&#x63A5;&#x53E3;</p>
+<p>&#x4E3B;&#x6D41;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x662F;&#x201C;&#x7C97;&#x201D;&#x8BA1;&#x6570;&#xFF08;Coarse Counting&#xFF09; +&#x201C;&#x7EC6;&#x201D;&#x65F6;&#x95F4;&#x6D4B;&#x91CF;&#xFF08;Fine Measurement&#xFF09;&#xFF0C;&#x5373;&#x5168;&#x6570;&#x5B57;&#x8BA1;&#x6570;&#x5668;&#x6280;&#x672F; + &#x65F6;&#x95F4;&#x5185;&#x63D2;&#x3002;&#x201C;&#x7C97;&#x201D;&#x8BA1;&#x6570;&#x4E00;&#x822C;&#x7531;&#x9AD8;&#x6027;&#x80FD;&#x7684;Gray&#x7801;&#x8BA1;&#x6570;&#x5668;&#xFF08;&#x5373;&#x6570;&#x5B57;&#x8BA1;&#x6570;&#x5668;&#x578B;TDC&#xFF09;&#x5B9E;&#x73B0;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x53C2;&#x8003;&#x65F6;&#x949F;&#x9891;&#x7387;&#x4E00;&#x822C;&#x5728;&#x6570;&#x767E;&#x5146;&#x8D6B;&#x5179;&#xFF0C;&#x5B9E;&#x73B0;&#x51E0;&#x4E2A;ns&#x7684;&#x65F6;&#x95F4;&#x5206;&#x8FA8;&#xFF1B;&#x201C;&#x7EC6;&#x201D;&#x65F6;&#x95F4;&#x6D4B;&#x91CF;&#x7684;&#x5B9E;&#x73B0;&#x5219;&#x4F9D;&#x9760;&#x65F6;&#x95F4;&#x5185;&#x63D2;&#x6280;&#x672F;&#xFF08;Time Interpolation&#xFF09;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x65F6;&#x949F;&#x5468;&#x671F;&#x5185;&#x8FDB;&#x884C;&#x65F6;&#x95F4;&#x5185;&#x63D2;&#xFF0C;&#x8FBE;&#x5230;&#x4E9A;&#x7EB3;&#x79D2;&#xFF08;100 ps ~ 10ps&#xFF09;&#x7684;&#x65F6;&#x95F4;&#x5206;&#x8FA8;&#x3002;</p>
+<h3 id="1-3-&#x4E8B;&#x4F8B;&#x8BA1;&#x6570;"><a href="#1-3-&#x4E8B;&#x4F8B;&#x8BA1;&#x6570;" class="headerlink" title="1.3 &#x4E8B;&#x4F8B;&#x8BA1;&#x6570;"></a>1.3 &#x4E8B;&#x4F8B;&#x8BA1;&#x6570;</h3><p>&#x4E8B;&#x4F8B;&#x8BA1;&#x6570;&#x5C31;&#x662F;&#x5BF9;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x7684;&#x4FE1;&#x53F7;&#x8FDB;&#x884C;&#x5FC5;&#x8981;&#x7684;&#x653E;&#x5927;&#x548C;&#x7511;&#x522B;&#xFF0C;&#x5F97;&#x5230;&#x201C;&#x662F;&#x201D;&#x6216;&#x201C;&#x5426;&#x201D;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x8BB0;&#x5F55;&#x3002;&#x56E0;&#x4E3A;&#x6709;&#x65F6;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x77E5;&#x9053;&#x662F;&#x5426;&#x6709;&#x7C92;&#x5B50;&#x51FB;&#x4E2D;&#x76F8;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x6D4B;&#x91CF;&#x4FE1;&#x53F7;&#x7684;&#x7535;&#x8377;&#x6216;&#x65F6;&#x95F4;&#xFF08;&#x5982;BES III&#x7684;&#xB5;&#x5B50;&#x63A2;&#x6D4B;&#x5668;&#xFF09;&#x3002;</p>
+<p>&#x7ED3;&#x6784;&#xFF1A;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;+&#x957F;&#x7535;&#x7F06;+<strong>&#x5B9A;&#x65F6;&#x7504;&#x522B;+&#x5BC4;&#x5B58;&#x5668;/&#x8BA1;&#x6570;&#x5668;</strong>+&#x6570;&#x636E;&#x7F13;&#x5B58;+&#x8BFB;&#x51FA;&#x63A5;&#x53E3;</p>
+<h3 id="1-4-&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;"><a href="#1-4-&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;" class="headerlink" title="1.4 &#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;"></a>1.4 &#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;</h3><h4 id="1-4-1-&#x5206;&#x7C7B;"><a href="#1-4-1-&#x5206;&#x7C7B;" class="headerlink" title="1.4.1 &#x5206;&#x7C7B;"></a>1.4.1 &#x5206;&#x7C7B;</h4><ul>
+<li>&#x79EF;&#x5206;&#x578B;&#xFF08;&#x7535;&#x8377;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;&#x3001;&#x7535;&#x538B;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;&#xFF09;&#xFF1A;&#x8F93;&#x51FA;&#x4FE1;&#x53F7;&#x5E45;&#x5EA6;&#x6B63;&#x6BD4;&#x4E8E;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x7535;&#x6D41;&#x4FE1;&#x53F7;&#x5BF9;&#x65F6;&#x95F4;&#x7684;&#x79EF;&#x5206;&#xFF08;&#x5373;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x7684;&#x603B;&#x7535;&#x8377;&#x91CF;&#xFF09;</li>
+<li>&#x7535;&#x6D41;&#x578B;&#xFF08;&#x7535;&#x6D41;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;&#xFF09;&#xFF1A;&#x8F93;&#x51FA;&#x4FE1;&#x53F7;&#x6CE2;&#x5F62;&#x4E0E;&#x63A2;&#x6D4B;&#x5668;&#x8F93;&#x51FA;&#x7535;&#x6D41;&#x4FE1;&#x53F7;&#x7684;&#x6CE2;&#x5F62;&#x4E00;&#x81F4;</li>
+</ul>
+<h4 id="1-4-2-&#x4E09;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;"><a href="#1-4-2-&#x4E09;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;" class="headerlink" title="1.4.2 &#x4E09;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;"></a>1.4.2 &#x4E09;&#x79CD;&#x4E3B;&#x8981;&#x7684;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;</h4><ul>
+<li><strong>&#x7535;&#x8377;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;</strong></li>
+</ul>
+<p>&#x7535;&#x8DEF;&#x8F83;&#x590D;&#x6742;&#xFF0C;&#x6027;&#x80FD;&#x597D;&#xFF0C;&#x4F4E;&#x566A;&#x58F0;&#xFF0C;&#x6700;&#x5E38;&#x7528;&#x3002;</p>
+<p>$V_{output}=-\frac{Q}{C_{feedback}}$</p>
+<ul>
+<li><strong>&#x7535;&#x538B;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;</strong></li>
+</ul>
+<p>&#x7535;&#x8DEF;&#x8F83;&#x7B80;&#x5355;&#xFF08;&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7535;&#x538B;&#x653E;&#x5927;&#x5668;&#xFF09;&#xFF0C;&#x6027;&#x80FD;&#x8F83;&#x5DEE;&#xFF0C;&#x566A;&#x58F0;&#x6BD4;&#x7535;&#x8377;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;&#x7684;&#x5927;&#x3002;</p>
+<p>$\frac{V_{output}}{V_{input}}=-\frac{R_{feedback}}{R_{series}}$</p>
+<ul>
+<li><strong>&#x7535;&#x6D41;&#x7075;&#x654F;&#x524D;&#x7F6E;&#x653E;&#x5927;&#x5668;</strong></li>
+</ul>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7535;&#x6D41;&#x653E;&#x5927;&#x5668;&#x3002;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x7CBE;&#x786E;&#x7684;&#x65F6;&#x95F4;&#x4FE1;&#x606F;&#x3001;&#x9AD8;&#x8BA1;&#x6570;&#x7387;&#x6216;&#x9AD8;&#x672C;&#x5E95;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x5F3A;&#x5EA6;&#x6D4B;&#x91CF;&#x7CFB;&#x7EDF;&#x3001;&#x80FD;&#x8C31;&#x6D4B;&#x91CF;&#x7CFB;&#x7EDF;&#x7B49;&#x3002;</p>
+<h3 id="1-5-ADC"><a href="#1-5-ADC" class="headerlink" title="1.5 ADC"></a>1.5 ADC</h3><p>&#x7EBF;&#x6027;&#x653E;&#x7535;&#x578B;ADC&#xFF0C;&#x9010;&#x6B21;&#x6BD4;&#x8F83;&#x578B;ADC&#xFF08;SAR ADC&#xFF09;&#xFF0C;&#x6D41;&#x6C34;&#x7EBF;&#x578B;ADC&#xFF08;Pipeline ADC&#xFF09;&#xFF0C;&#x95EA;&#x7535;&#x578B;ADC&#xFF08;Flash ADC&#xFF09;&#x3002;</p>
+<h2 id="2-&#x89E6;&#x53D1;&#x5224;&#x9009;&#x7CFB;&#x7EDF;"><a href="#2-&#x89E6;&#x53D1;&#x5224;&#x9009;&#x7CFB;&#x7EDF;" class="headerlink" title="2 &#x89E6;&#x53D1;&#x5224;&#x9009;&#x7CFB;&#x7EDF;"></a>2 &#x89E6;&#x53D1;&#x5224;&#x9009;&#x7CFB;&#x7EDF;</h2><hr>
+<p>&#x5BF9;&#x524D;&#x7AEF;&#x7535;&#x5B50;&#x5B66;&#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5B9E;&#x65F6;&#x5206;&#x6790;&#xFF0C;&#x4ECE;&#x5927;&#x91CF;&#x7684;&#x5047;&#x4E8B;&#x4F8B;&#xFF08;&#x672C;&#x5E95;&#xFF09;&#x6570;&#x636E;&#x4E2D;&#x6311;&#x9009;&#x51FA;&#x7269;&#x7406;&#x4E0A;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x4E8B;&#x4F8B;&#xFF0C;&#x800C;&#x5C06;&#x5047;&#x4E8B;&#x4F8B;&#xFF08;&#x672C;&#x5E95;&#xFF09;&#x6570;&#x636E;&#x820D;&#x5F03;&#x3002;</p>
+<p>&#x6784;&#x6210;&#xFF1A;&#x89E6;&#x53D1;&#x5B50;&#x7CFB;&#x7EDF;&#xFF08;&#x7279;&#x5F81;&#x62BD;&#x53D6;&#xFF09;&#x3001;&#x603B;&#x89E6;&#x53D1;&#xFF08;&#x5224;&#x5B9A;&#x5206;&#x7C7B;&#xFF09;&#x3001;&#x65F6;&#x949F;&#x7CFB;&#x7EDF;&#x3002;</p>
+<h2 id="3-&#x6570;&#x636E;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;"><a href="#3-&#x6570;&#x636E;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;" class="headerlink" title="3 &#x6570;&#x636E;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;"></a>3 &#x6570;&#x636E;&#x83B7;&#x53D6;&#x7CFB;&#x7EDF;</h2><hr>
+<p>&#x7B5B;&#x9009;&#x4FDD;&#x7559;&#x7684;&#x7269;&#x7406;&#x4E0A;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x4E8B;&#x4F8B;&#x6570;&#x636E;&#x5E76;&#x6536;&#x96C6;&#x3001;&#x88C5;&#x914D;&#x6210;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x4E8B;&#x4F8B;&#x6570;&#x636E;&#xFF0C;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x4EE5;&#x63D0;&#x4F9B;&#x7ED9;&#x7269;&#x7406;&#x5B66;&#x5BB6;&#x8FDB;&#x884C;&#x79BB;&#x7EBF;&#x5206;&#x6790;&#x3002;</p>
+<h2 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h2><hr>
+<p><a href="http://bes.ihep.ac.cn/bes3/internal/workshop/06electronics/anqi.pdf">http://bes.ihep.ac.cn/bes3/internal/workshop/06electronics/anqi.pdf</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>硬件</category>
+        <category>物理电子学</category>
+      </categories>
+      <tags>
+        <tag>读出电子学</tag>
       </tags>
   </entry>
   <entry>
@@ -3785,9 +3785,6 @@ git push -u origin master
         <category>硬件</category>
         <category>模电</category>
       </categories>
-      <tags>
-        <tag>模电</tag>
-      </tags>
   </entry>
   <entry>
     <title>2023年2月</title>
@@ -5113,6 +5110,93 @@ git push -u origin master
       </categories>
   </entry>
   <entry>
+    <title>文件操作</title>
+    <url>/zh-cn/Operating-Files/</url>
+    <content><![CDATA[<p>Linux &#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;&#xFF0C;&#x5305;&#x62EC;&#x67E5;&#x770B;&#x3001;&#x7F16;&#x8F91;&#x3001;&#x590D;&#x5236;&#x3001;&#x79FB;&#x52A8;&#x3001;&#x5220;&#x9664;&#x3001;&#x521B;&#x5EFA;&#x3001;&#x641C;&#x7D22;&#x3001;&#x5339;&#x914D;&#x3001;&#x538B;&#x7F29;&#x3001;&#x89E3;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x3002;&#x5B66;&#x4F1A;&#x67E5;&#x770B;&#x4F7F;&#x7528;&#x6587;&#x6863;&#x4E5F;&#x5F88;&#x91CD;&#x8981;&#x3002;  </p>
+<span id="more"></span>
+
+<h3 id="&#x67E5;&#x770B;"><a href="#&#x67E5;&#x770B;" class="headerlink" title="&#x67E5;&#x770B;"></a>&#x67E5;&#x770B;</h3><hr>
+<p><strong>cat</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x8F93;&#x51FA; FILE &#x6587;&#x4EF6;&#x7684;&#x5168;&#x90E8;&#x5185;&#x5BB9;</span></span><br><span class="line">$ <span class="hljs-built_in">cat</span> [OPTION] FILE</span><br></pre></td></tr></tbody></table></figure>
+<p><code>cat</code> &#x662F; con<strong>cat</strong>enate&#xFF08;&#x8FDE;&#x63A5;&#xFF09;&#x7684;&#x7F29;&#x5199;&#x3002;<code>cat</code> &#x5DE5;&#x5177;&#x5B9E;&#x9645;&#x7684;&#x529F;&#x80FD;&#x662F;&#x8FDE;&#x63A5;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x8F93;&#x51FA;&#x3002;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;<code>cat</code> &#x5C31;&#x4F1A;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5; <code>cat</code> &#x6700;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x9014;&#x5C31;&#x662F;&#x8F93;&#x51FA;&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</p>
+<p><strong>less</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5728;&#x53EF;&#x4EA4;&#x4E92;&#x7684;&#x7A97;&#x53E3;&#x5185;&#x8F93;&#x51FA; FILE &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;</span></span><br><span class="line">$ less FILE</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>cat</code> &#x4F1A;&#x4E00;&#x6B21;&#x6027;&#x6253;&#x5370;&#x5168;&#x90E8;&#x5185;&#x5BB9;&#x5230;&#x7EC8;&#x7AEF;&#x4E2D;&#x5E76;&#x9000;&#x51FA;&#xFF0C;&#x800C; <code>less</code> &#x4E00;&#x6B21;&#x53EA;&#x663E;&#x793A;&#x4E00;&#x9875;&#xFF0C;&#x4E14;&#x652F;&#x6301;&#x5411;&#x524D;/&#x540E;&#x6EDA;&#x52A8;&#x3001;&#x641C;&#x7D22;&#x7B49;&#x529F;&#x80FD;&#x3002;&#x5982;&#x679C;&#x8981;&#x5728;&#x4E00;&#x4E2A;&#x5927;&#x6587;&#x4EF6;&#x4E2D;&#x67E5;&#x627E;&#x4E00;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#xFF0C;<code>less</code> &#x901A;&#x5E38;&#x8981;&#x6BD4; <code>cat</code> &#x65B9;&#x4FBF;&#x5F97;&#x591A;&#x3002;</p>
+<p>&#x548C; <code>less</code> &#x76F8;&#x4F3C;&#x7684;&#x6307;&#x4EE4;&#xFF1A;<code>more</code>, <code>most</code>&#x3002;</p>
+<h3 id="&#x7F16;&#x8F91;"><a href="#&#x7F16;&#x8F91;" class="headerlink" title="&#x7F16;&#x8F91;"></a>&#x7F16;&#x8F91;</h3><hr>
+<p><strong>Nano</strong> &#x662F;&#x5728;&#x5F88;&#x591A;&#x673A;&#x5668;&#x4E0A;&#x81EA;&#x5E26;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x6BD4; vim &#x548C; emacs &#x5BF9;&#x65B0;&#x624B;&#x66F4;&#x52A0;&#x53CB;&#x597D;&#x3002;</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ nano FILE  <span class="hljs-comment"># &#x4F7F;&#x7528; nano &#x7F16;&#x8F91; FILE &#x6587;&#x4EF6;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="&#x590D;&#x5236;"><a href="#&#x590D;&#x5236;" class="headerlink" title="&#x590D;&#x5236;"></a>&#x590D;&#x5236;</h3><hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230; DEST &#x6587;&#x4EF6;&#xFF0C;&#x62F7;&#x8D1D;&#x5F97;&#x5230;&#x7684;&#x6587;&#x4EF6;&#x5373;&#x4E3A; DEST</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE DEST</span><br><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230; DIRECTORY &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;SOURCE &#x53EF;&#x4EE5;&#x4E3A;&#x4E0D;&#x6B62;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE... DIRECTORY</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file3 <span class="hljs-comment"># &#x5C06; file1 &#x590D;&#x5236;&#x4E00;&#x4EFD;&#x5230;&#x540C;&#x76EE;&#x5F55;&#xFF0C;&#x547D;&#x540D;&#x4E3A; file3</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file2 ./file/ <span class="hljs-comment"># &#x5C06; file1&#x3001;file2 &#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x540C;&#x76EE;&#x5F55;&#x4E0B;&#x7684; file &#x76EE;&#x5F55;&#x4E2D;</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> -r file ./test/ <span class="hljs-comment"># &#x5C06; file &#x6587;&#x4EF6;&#x5939;&#x53CA;&#x5176;&#x6240;&#x6709;&#x5B50;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x540C;&#x76EE;&#x5F55;&#x4E0B;&#x7684; test &#x6587;&#x4EF6;&#x5939;&#x4E2D;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>&#x786C;&#x94FE;&#x63A5;&#x548C;&#x8F6F;&#x94FE;&#x63A5;</strong></p>
+<p>&#x786C;&#x94FE;&#x63A5;&#x4E0E;&#x6E90;&#x6587;&#x4EF6;&#x6709;&#x7740;&#x76F8;&#x540C;&#x7684; inode&#xFF0C;&#x90FD;&#x6307;&#x5411;&#x78C1;&#x76D8;&#x4E2D;&#x7684;&#x540C;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x3002;&#x5220;&#x9664;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#xFF0C;&#x5E76;&#x4E0D;&#x5F71;&#x54CD;&#x53E6;&#x4E00;&#x4E2A;&#x3002;</p>
+<p>&#x8F6F;&#x94FE;&#x63A5;&#x4E0E;&#x6E90;&#x6587;&#x4EF6;&#x7684; inode &#x4E0D;&#x540C;&#x3002;&#x8F6F;&#x94FE;&#x63A5;&#x4FDD;&#x5B58;&#x4E86;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x5728;&#x8BBF;&#x95EE;&#x8F6F;&#x94FE;&#x63A5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BBF;&#x95EE;&#x7684;&#x8DEF;&#x5F84;&#x88AB;&#x66FF;&#x6362;&#x4E3A;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x56E0;&#x6B64;&#x8BBF;&#x95EE;&#x8F6F;&#x94FE;&#x63A5;&#x4E5F;&#x7B49;&#x540C;&#x4E8E;&#x8BBF;&#x95EE;&#x6E90;&#x6587;&#x4EF6;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x5220;&#x9664;&#x4E86;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x8F6F;&#x94FE;&#x63A5;&#x6240;&#x4FDD;&#x5B58;&#x7684;&#x8DEF;&#x5F84;&#x4E5F;&#x5C31;&#x65E0;&#x6548;&#x4E86;&#xFF0C;&#x8F6F;&#x94FE;&#x63A5;&#x56E0;&#x6B64;&#x4E5F;&#x662F;&#x65E0;&#x6548;&#x7684;<a href="#refer-anchor-1"><sup>1</sup></a>&#x3002; </p>
+<h3 id="&#x79FB;&#x52A8;"><a href="#&#x79FB;&#x52A8;" class="headerlink" title="&#x79FB;&#x52A8;"></a>&#x79FB;&#x52A8;</h3><hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x79FB;&#x52A8;&#x5230; DEST &#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE DEST</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x79FB;&#x52A8;&#x5230; DIRECTORY &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;SOURCE &#x53EF;&#x4EE5;&#x4E3A;&#x591A;&#x4E2A;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE... DIRECTORY</span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x7C7B;&#x4F3C;&#x4E8E; Windows &#x4E0B;&#x7684;&#x526A;&#x5207;&#x3002;</p>
+<h3 id="&#x5220;&#x9664;"><a href="#&#x5220;&#x9664;" class="headerlink" title="&#x5220;&#x9664;"></a>&#x5220;&#x9664;</h3><hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5220;&#x9664; FILE &#x6587;&#x4EF6;&#xFF0C;FILE &#x53EF;&#x4EE5;&#x4E3A;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</span></span><br><span class="line">$ <span class="hljs-comment"># &#x5982;&#x679C;&#x9700;&#x8981;&#x5220;&#x9664;&#x76EE;&#x5F55;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7; -r &#x9009;&#x9879;&#x9012;&#x5F52;&#x5220;&#x9664;&#x76EE;&#x5F55;</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> [OPTION] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> file1 <span class="hljs-comment"># &#x5220;&#x9664; file1 &#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -r <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># &#x5220;&#x9664; test &#x76EE;&#x5F55;&#x53CA;&#x5176;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -rf test1/ test2/ file1.txt <span class="hljs-comment"># &#x5220;&#x9664; test1/&#x3001;test2/&#x3001;file1.txt &#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x5F55;&#x53EF;&#x80FD;&#x4E0D;&#x5B58;&#x5728;&#x3001;&#x5199;&#x4FDD;&#x62A4;&#x6216;&#x8005;&#x6CA1;&#x6709;&#x6743;&#x9650;&#x8BFB;&#x5199;</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="&#x521B;&#x5EFA;"><a href="#&#x521B;&#x5EFA;" class="headerlink" title="&#x521B;&#x5EFA;"></a>&#x521B;&#x5EFA;</h3><hr>
+<p><strong>&#x521B;&#x5EFA;&#x76EE;&#x5F55;</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x540D;&#x4E3A; DIR_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> [OPTION] DIR_NAME...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> test1 test2 <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x540D;&#x5B57;&#x5206;&#x522B;&#x4E3A; test1&#x3001;test2</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p test1/test2/test3/ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8DEF;&#x5F84; test1/test2/test3/</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>&#x521B;&#x5EFA;&#x6587;&#x4EF6;</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x540D;&#x4E3A; FILE_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">touch</span> FILE_NAME...</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>stat</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x7684;&#x5C5E;&#x6027;&#x4FE1;&#x606F;&#x3002;</p>
+<p><code>touch</code> &#x5B9E;&#x9645;&#x4E0A;&#x7684;&#x529F;&#x80FD;&#x662F;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#xFF08;access time, atime&#xFF09;&#x548C;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF08;modification time, mtime&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x5F53;&#x4F5C;&#x662F;&#x6478;&#xFF08;touch&#xFF09;&#x4E86;&#x4E00;&#x4E0B;&#x6587;&#x4EF6;&#xFF0C;&#x4F7F;&#x5F97;&#x5B83;&#x7684;&#x8BBF;&#x95EE;&#x4E0E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#x3002;&#x5F53;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;<code>touch</code> &#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x6587;&#x4EF6;&#x3002;</p>
+<h3 id="&#x641C;&#x7D22;"><a href="#&#x641C;&#x7D22;" class="headerlink" title="&#x641C;&#x7D22;"></a>&#x641C;&#x7D22;</h3><hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5728; PATH&#xFF08;&#x8DEF;&#x5F84;&#xFF09;&#x4E2D;&#x6839;&#x636E; EXPRESSION&#xFF08;&#x8868;&#x8FBE;&#x5F0F;&#xFF09;&#x641C;&#x7D22;&#x6587;&#x4EF6;</span></span><br><span class="line">$ find [OPTION] PATH [EXPRESSION]</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ find . -name <span class="hljs-string">&apos;report.pdf&apos;</span> <span class="hljs-comment"># &#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x641C;&#x7D22;&#x540D;&#x4E3A; report.pdf &#x7684;&#x6587;&#x4EF6;</span></span><br><span class="line">$ find / -size +1G <span class="hljs-comment"># &#x5168;&#x76D8;&#x641C;&#x7D22;&#x5927;&#x4E8E; 1G &#x7684;&#x6587;&#x4EF6;</span></span><br><span class="line">$ find ~/ -name <span class="hljs-string">&apos;node_modules&apos;</span> -<span class="hljs-built_in">type</span> d <span class="hljs-comment"># &#x5728;&#x7528;&#x6237;&#x76EE;&#x5F55;&#x641C;&#x7D22;&#x6240;&#x6709;&#x540D;&#x4E3A; node_modules &#x7684;&#x6587;&#x4EF6;&#x5939;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="&#x6A21;&#x5F0F;&#x5339;&#x914D;"><a href="#&#x6A21;&#x5F0F;&#x5339;&#x914D;" class="headerlink" title="&#x6A21;&#x5F0F;&#x5339;&#x914D;"></a>&#x6A21;&#x5F0F;&#x5339;&#x914D;</h3><hr>
+<p>bash &#x7684;&#x5339;&#x914D;&#x6A21;&#x5F0F;&#x88AB;&#x79F0;&#x4E3A;<a href="https://mywiki.wooledge.org/glob">glob</a>&#x3002;</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> *.tar.gz <span class="hljs-comment"># &#x5220;&#x9664;&#x6240;&#x6709;&#x4EE5; tar.gz &#x7ED3;&#x5C3E;&#x7684;&#x538B;&#x7F29;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> -r *.[ch] /path <span class="hljs-comment"># &#x5C06;&#x5F53;&#x524D;&#x53CA;&#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x4EE5; .c &#x6216; .h &#x7ED3;&#x5C3E;&#x7684;&#x4EE3;&#x7801;&#x79FB;&#x52A8;&#x5230; /path</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#x524D;&#x4E00;&#x5B9A;&#x8981;&#x786E;&#x8BA4;&#x8F93;&#x5165;&#x65E0;&#x8BEF;&#xFF0C;&#x5426;&#x5219;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x4E25;&#x91CD;&#x7684;&#x540E;&#x679C;&#xFF08;&#x5982;&#xA0;<code>rm -rf *</code> &#x4F1A;&#x5220;&#x6389;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF09;&#x3002;</p>
+<h3 id="&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;"><a href="#&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;" class="headerlink" title="&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;"></a>&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;</h3><hr>
+<p><strong>&#x4F7F;&#x7528; tar &#x64CD;&#x4F5C;&#x5B58;&#x6863;&#x3001;&#x538B;&#x7F29;&#x6587;&#x4EF6;</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x7684;&#x4F7F;&#x7528;&#x6837;&#x4F8B;&#x4E86;&#x89E3;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</span></span><br><span class="line">$ tar [OPTIONS] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ tar -c -f target.tar file1 file2 file3 <span class="hljs-comment"># &#x5C06;file1&#x3001;file2&#x3001;file3 &#x6253;&#x5305;&#x4E3A; target.tar</span></span><br><span class="line">$ tar -x -f target.tar -C <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># &#x5C06; target.tar &#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x63D0;&#x53D6;&#x5230; test &#x76EE;&#x5F55;&#x4E2D;</span></span><br><span class="line">$ tar -cz -f target.tar.gz file1 file2 file3 <span class="hljs-comment"># &#x5C06; file1&#x3001;file2&#x3001;file3 &#x6253;&#x5305;&#xFF0C;&#x5E76;&#x4F7F;&#x7528; gzip &#x7B97;&#x6CD5;&#x538B;&#x7F29;&#xFF0C;&#x5F97;&#x5230;&#x538B;&#x7F29;&#x6587;&#x4EF6; target.tar.gz</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x548C;&#x5927;&#x90E8;&#x5206; Linux &#x547D;&#x4EE4;&#x4E00;&#x6837;&#xFF0C;<code>tar</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x53C2;&#x6570;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x7B49;&#x4EF7;&#xFF1A;</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ tar -c -z -v -f target.tar <span class="hljs-built_in">test</span>/</span><br><span class="line">$ tar -czvf target.tar <span class="hljs-built_in">test</span>/</span><br><span class="line">$ tar -f target.tar -czv <span class="hljs-built_in">test</span>/</span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x540E;&#x7F00;&#x540D;&#x5E76;&#x4E0D;&#x80FD;&#x51B3;&#x5B9A;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4EBA;&#x4EEC;&#x8FA8;&#x8BA4;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x53EF;&#x80FD;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x4ECE;&#x800C;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x6253;&#x5F00;&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;"><a href="#&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;" class="headerlink" title="&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;"></a>&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;</h3><hr>
+<p><strong>man &#x547D;&#x4EE4;</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x8C03;&#x51FA; tar &#x547D;&#x4EE4;&#x548C; ls &#x547D;&#x4EE4;&#x7684;&#x6587;&#x6863;</span></span><br><span class="line">$ man tar</span><br><span class="line">$ man <span class="hljs-built_in">ls</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x4F1A;&#x663E;&#x793A;&#x8F6F;&#x4EF6;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x542B;&#x4E49;&#x3001;&#x9000;&#x51FA;&#x503C;&#x542B;&#x4E49;&#x3001;&#x4F5C;&#x8005;&#x7B49;&#x5185;&#x5BB9;&#xFF0C;&#x5927;&#x800C;&#x5168;&#x3002;&#x4F46;&#x4E00;&#x822C;&#x8F83;&#x5C11;&#x5E26;&#x6709;&#x4F7F;&#x7528;&#x6837;&#x4F8B;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x81EA;&#x8EAB;&#x9700;&#x8981;&#x62FC;&#x63A5;&#x8F6F;&#x4EF6;&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x5229;&#x4E8E;&#x5FEB;&#x901F;&#x4E0A;&#x624B;&#x3002;</p>
+<p><strong><a href="https://github.com/tldr-pages/tldr">tldr &#x8F6F;&#x4EF6;</a></strong></p>
+<p>&#x901A;&#x8FC7;&#x51E0;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x8BA9;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x4E86;&#x89E3;&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x3002;</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ tldr COMMAND</span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x62A5;&#x9519;&#xFF1A;</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-built_in">mkdir</span>:&#x65E0;&#x6CD5;&#x521B;&#x5EFA;&#x76EE;&#x5F55;<span class="hljs-string">&quot;/home/lzy/.tldr&quot;</span>&#xFF1A;&#x6587;&#x4EF6;&#x5DF2;&#x5B58;&#x5728;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#xFF1A;</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install tldr</span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p ~/.tldr/tldr</span><br><span class="line">$ sudo git <span class="hljs-built_in">clone</span> https://github.com/tldr-pages/tldr.git ~/.tldr/tldr</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h3><hr>
+<p><a href="https://101.lug.ustc.edu.cn/Ch03/#operate-files-and-dirs">Linux 101 - chap 03: &#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x4E0E;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</a></p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a href="https://www.ruanyifeng.com/blog/2011/12/inode.html">&#x962E;&#x4E00;&#x5CF0;&#x7684;&#x7F51;&#x7EDC;&#x65E5;&#x5FD7; - &#x7406;&#x89E3;inode</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>软件</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>进程</title>
     <url>/zh-cn/Process/</url>
     <content><![CDATA[<p>&#x8FDB;&#x7A0B;&#x5C31;&#x662F;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x7A0B;&#x5E8F;&#x3002;</p>
@@ -5277,93 +5361,6 @@ git push -u origin master
 <p><a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017627212385376">&#x8FDB;&#x7A0B;&#x548C;&#x7EBF;&#x7A0B; - &#x5ED6;&#x96EA;&#x5CF0;&#x7684;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;</a>  </p>
 <p><a href="https://xiaolincoding.com/os/4_process/process_base.html">&#x8FDB;&#x7A0B;&#x3001;&#x7EBF;&#x7A0B;&#x57FA;&#x7840;&#x77E5;&#x8BC6; - &#x5C0F;&#x6797;coding</a></p>
 <p><a href="https://lfool.gitbook.io/operating-system/di-er-zhang-jin-cheng-guan-li/1.-jin-cheng-de-gai-nian-zu-cheng-te-zheng">&#x8FDB;&#x7A0B;&#x7684;&#x6982;&#x5FF5; &amp; &#x7EC4;&#x6210; &amp; &#x7279;&#x5F81;</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>软件</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文件操作</title>
-    <url>/zh-cn/Operating-Files/</url>
-    <content><![CDATA[<p>Linux &#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;&#xFF0C;&#x5305;&#x62EC;&#x67E5;&#x770B;&#x3001;&#x7F16;&#x8F91;&#x3001;&#x590D;&#x5236;&#x3001;&#x79FB;&#x52A8;&#x3001;&#x5220;&#x9664;&#x3001;&#x521B;&#x5EFA;&#x3001;&#x641C;&#x7D22;&#x3001;&#x5339;&#x914D;&#x3001;&#x538B;&#x7F29;&#x3001;&#x89E3;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x3002;&#x5B66;&#x4F1A;&#x67E5;&#x770B;&#x4F7F;&#x7528;&#x6587;&#x6863;&#x4E5F;&#x5F88;&#x91CD;&#x8981;&#x3002;  </p>
-<span id="more"></span>
-
-<h3 id="&#x67E5;&#x770B;"><a href="#&#x67E5;&#x770B;" class="headerlink" title="&#x67E5;&#x770B;"></a>&#x67E5;&#x770B;</h3><hr>
-<p><strong>cat</strong></p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x8F93;&#x51FA; FILE &#x6587;&#x4EF6;&#x7684;&#x5168;&#x90E8;&#x5185;&#x5BB9;</span></span><br><span class="line">$ <span class="hljs-built_in">cat</span> [OPTION] FILE</span><br></pre></td></tr></tbody></table></figure>
-<p><code>cat</code> &#x662F; con<strong>cat</strong>enate&#xFF08;&#x8FDE;&#x63A5;&#xFF09;&#x7684;&#x7F29;&#x5199;&#x3002;<code>cat</code> &#x5DE5;&#x5177;&#x5B9E;&#x9645;&#x7684;&#x529F;&#x80FD;&#x662F;&#x8FDE;&#x63A5;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x8F93;&#x51FA;&#x3002;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;<code>cat</code> &#x5C31;&#x4F1A;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5; <code>cat</code> &#x6700;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x9014;&#x5C31;&#x662F;&#x8F93;&#x51FA;&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</p>
-<p><strong>less</strong></p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5728;&#x53EF;&#x4EA4;&#x4E92;&#x7684;&#x7A97;&#x53E3;&#x5185;&#x8F93;&#x51FA; FILE &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;</span></span><br><span class="line">$ less FILE</span><br></pre></td></tr></tbody></table></figure>
-
-<p><code>cat</code> &#x4F1A;&#x4E00;&#x6B21;&#x6027;&#x6253;&#x5370;&#x5168;&#x90E8;&#x5185;&#x5BB9;&#x5230;&#x7EC8;&#x7AEF;&#x4E2D;&#x5E76;&#x9000;&#x51FA;&#xFF0C;&#x800C; <code>less</code> &#x4E00;&#x6B21;&#x53EA;&#x663E;&#x793A;&#x4E00;&#x9875;&#xFF0C;&#x4E14;&#x652F;&#x6301;&#x5411;&#x524D;/&#x540E;&#x6EDA;&#x52A8;&#x3001;&#x641C;&#x7D22;&#x7B49;&#x529F;&#x80FD;&#x3002;&#x5982;&#x679C;&#x8981;&#x5728;&#x4E00;&#x4E2A;&#x5927;&#x6587;&#x4EF6;&#x4E2D;&#x67E5;&#x627E;&#x4E00;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#xFF0C;<code>less</code> &#x901A;&#x5E38;&#x8981;&#x6BD4; <code>cat</code> &#x65B9;&#x4FBF;&#x5F97;&#x591A;&#x3002;</p>
-<p>&#x548C; <code>less</code> &#x76F8;&#x4F3C;&#x7684;&#x6307;&#x4EE4;&#xFF1A;<code>more</code>, <code>most</code>&#x3002;</p>
-<h3 id="&#x7F16;&#x8F91;"><a href="#&#x7F16;&#x8F91;" class="headerlink" title="&#x7F16;&#x8F91;"></a>&#x7F16;&#x8F91;</h3><hr>
-<p><strong>Nano</strong> &#x662F;&#x5728;&#x5F88;&#x591A;&#x673A;&#x5668;&#x4E0A;&#x81EA;&#x5E26;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x6BD4; vim &#x548C; emacs &#x5BF9;&#x65B0;&#x624B;&#x66F4;&#x52A0;&#x53CB;&#x597D;&#x3002;</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ nano FILE  <span class="hljs-comment"># &#x4F7F;&#x7528; nano &#x7F16;&#x8F91; FILE &#x6587;&#x4EF6;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="&#x590D;&#x5236;"><a href="#&#x590D;&#x5236;" class="headerlink" title="&#x590D;&#x5236;"></a>&#x590D;&#x5236;</h3><hr>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230; DEST &#x6587;&#x4EF6;&#xFF0C;&#x62F7;&#x8D1D;&#x5F97;&#x5230;&#x7684;&#x6587;&#x4EF6;&#x5373;&#x4E3A; DEST</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE DEST</span><br><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230; DIRECTORY &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;SOURCE &#x53EF;&#x4EE5;&#x4E3A;&#x4E0D;&#x6B62;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE... DIRECTORY</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file3 <span class="hljs-comment"># &#x5C06; file1 &#x590D;&#x5236;&#x4E00;&#x4EFD;&#x5230;&#x540C;&#x76EE;&#x5F55;&#xFF0C;&#x547D;&#x540D;&#x4E3A; file3</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file2 ./file/ <span class="hljs-comment"># &#x5C06; file1&#x3001;file2 &#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x540C;&#x76EE;&#x5F55;&#x4E0B;&#x7684; file &#x76EE;&#x5F55;&#x4E2D;</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> -r file ./test/ <span class="hljs-comment"># &#x5C06; file &#x6587;&#x4EF6;&#x5939;&#x53CA;&#x5176;&#x6240;&#x6709;&#x5B50;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x540C;&#x76EE;&#x5F55;&#x4E0B;&#x7684; test &#x6587;&#x4EF6;&#x5939;&#x4E2D;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>&#x786C;&#x94FE;&#x63A5;&#x548C;&#x8F6F;&#x94FE;&#x63A5;</strong></p>
-<p>&#x786C;&#x94FE;&#x63A5;&#x4E0E;&#x6E90;&#x6587;&#x4EF6;&#x6709;&#x7740;&#x76F8;&#x540C;&#x7684; inode&#xFF0C;&#x90FD;&#x6307;&#x5411;&#x78C1;&#x76D8;&#x4E2D;&#x7684;&#x540C;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x3002;&#x5220;&#x9664;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#xFF0C;&#x5E76;&#x4E0D;&#x5F71;&#x54CD;&#x53E6;&#x4E00;&#x4E2A;&#x3002;</p>
-<p>&#x8F6F;&#x94FE;&#x63A5;&#x4E0E;&#x6E90;&#x6587;&#x4EF6;&#x7684; inode &#x4E0D;&#x540C;&#x3002;&#x8F6F;&#x94FE;&#x63A5;&#x4FDD;&#x5B58;&#x4E86;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x5728;&#x8BBF;&#x95EE;&#x8F6F;&#x94FE;&#x63A5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BBF;&#x95EE;&#x7684;&#x8DEF;&#x5F84;&#x88AB;&#x66FF;&#x6362;&#x4E3A;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x56E0;&#x6B64;&#x8BBF;&#x95EE;&#x8F6F;&#x94FE;&#x63A5;&#x4E5F;&#x7B49;&#x540C;&#x4E8E;&#x8BBF;&#x95EE;&#x6E90;&#x6587;&#x4EF6;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x5220;&#x9664;&#x4E86;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x8F6F;&#x94FE;&#x63A5;&#x6240;&#x4FDD;&#x5B58;&#x7684;&#x8DEF;&#x5F84;&#x4E5F;&#x5C31;&#x65E0;&#x6548;&#x4E86;&#xFF0C;&#x8F6F;&#x94FE;&#x63A5;&#x56E0;&#x6B64;&#x4E5F;&#x662F;&#x65E0;&#x6548;&#x7684;<a href="#refer-anchor-1"><sup>1</sup></a>&#x3002; </p>
-<h3 id="&#x79FB;&#x52A8;"><a href="#&#x79FB;&#x52A8;" class="headerlink" title="&#x79FB;&#x52A8;"></a>&#x79FB;&#x52A8;</h3><hr>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x79FB;&#x52A8;&#x5230; DEST &#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE DEST</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x79FB;&#x52A8;&#x5230; DIRECTORY &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;SOURCE &#x53EF;&#x4EE5;&#x4E3A;&#x591A;&#x4E2A;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE... DIRECTORY</span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x7C7B;&#x4F3C;&#x4E8E; Windows &#x4E0B;&#x7684;&#x526A;&#x5207;&#x3002;</p>
-<h3 id="&#x5220;&#x9664;"><a href="#&#x5220;&#x9664;" class="headerlink" title="&#x5220;&#x9664;"></a>&#x5220;&#x9664;</h3><hr>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5220;&#x9664; FILE &#x6587;&#x4EF6;&#xFF0C;FILE &#x53EF;&#x4EE5;&#x4E3A;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</span></span><br><span class="line">$ <span class="hljs-comment"># &#x5982;&#x679C;&#x9700;&#x8981;&#x5220;&#x9664;&#x76EE;&#x5F55;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7; -r &#x9009;&#x9879;&#x9012;&#x5F52;&#x5220;&#x9664;&#x76EE;&#x5F55;</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> [OPTION] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> file1 <span class="hljs-comment"># &#x5220;&#x9664; file1 &#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -r <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># &#x5220;&#x9664; test &#x76EE;&#x5F55;&#x53CA;&#x5176;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -rf test1/ test2/ file1.txt <span class="hljs-comment"># &#x5220;&#x9664; test1/&#x3001;test2/&#x3001;file1.txt &#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x5F55;&#x53EF;&#x80FD;&#x4E0D;&#x5B58;&#x5728;&#x3001;&#x5199;&#x4FDD;&#x62A4;&#x6216;&#x8005;&#x6CA1;&#x6709;&#x6743;&#x9650;&#x8BFB;&#x5199;</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="&#x521B;&#x5EFA;"><a href="#&#x521B;&#x5EFA;" class="headerlink" title="&#x521B;&#x5EFA;"></a>&#x521B;&#x5EFA;</h3><hr>
-<p><strong>&#x521B;&#x5EFA;&#x76EE;&#x5F55;</strong></p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x540D;&#x4E3A; DIR_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> [OPTION] DIR_NAME...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> test1 test2 <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x540D;&#x5B57;&#x5206;&#x522B;&#x4E3A; test1&#x3001;test2</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p test1/test2/test3/ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8DEF;&#x5F84; test1/test2/test3/</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>&#x521B;&#x5EFA;&#x6587;&#x4EF6;</strong></p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x540D;&#x4E3A; FILE_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">touch</span> FILE_NAME...</span><br></pre></td></tr></tbody></table></figure>
-
-<p><code>stat</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x7684;&#x5C5E;&#x6027;&#x4FE1;&#x606F;&#x3002;</p>
-<p><code>touch</code> &#x5B9E;&#x9645;&#x4E0A;&#x7684;&#x529F;&#x80FD;&#x662F;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#xFF08;access time, atime&#xFF09;&#x548C;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF08;modification time, mtime&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x5F53;&#x4F5C;&#x662F;&#x6478;&#xFF08;touch&#xFF09;&#x4E86;&#x4E00;&#x4E0B;&#x6587;&#x4EF6;&#xFF0C;&#x4F7F;&#x5F97;&#x5B83;&#x7684;&#x8BBF;&#x95EE;&#x4E0E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#x3002;&#x5F53;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;<code>touch</code> &#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x6587;&#x4EF6;&#x3002;</p>
-<h3 id="&#x641C;&#x7D22;"><a href="#&#x641C;&#x7D22;" class="headerlink" title="&#x641C;&#x7D22;"></a>&#x641C;&#x7D22;</h3><hr>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5728; PATH&#xFF08;&#x8DEF;&#x5F84;&#xFF09;&#x4E2D;&#x6839;&#x636E; EXPRESSION&#xFF08;&#x8868;&#x8FBE;&#x5F0F;&#xFF09;&#x641C;&#x7D22;&#x6587;&#x4EF6;</span></span><br><span class="line">$ find [OPTION] PATH [EXPRESSION]</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ find . -name <span class="hljs-string">&apos;report.pdf&apos;</span> <span class="hljs-comment"># &#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x641C;&#x7D22;&#x540D;&#x4E3A; report.pdf &#x7684;&#x6587;&#x4EF6;</span></span><br><span class="line">$ find / -size +1G <span class="hljs-comment"># &#x5168;&#x76D8;&#x641C;&#x7D22;&#x5927;&#x4E8E; 1G &#x7684;&#x6587;&#x4EF6;</span></span><br><span class="line">$ find ~/ -name <span class="hljs-string">&apos;node_modules&apos;</span> -<span class="hljs-built_in">type</span> d <span class="hljs-comment"># &#x5728;&#x7528;&#x6237;&#x76EE;&#x5F55;&#x641C;&#x7D22;&#x6240;&#x6709;&#x540D;&#x4E3A; node_modules &#x7684;&#x6587;&#x4EF6;&#x5939;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="&#x6A21;&#x5F0F;&#x5339;&#x914D;"><a href="#&#x6A21;&#x5F0F;&#x5339;&#x914D;" class="headerlink" title="&#x6A21;&#x5F0F;&#x5339;&#x914D;"></a>&#x6A21;&#x5F0F;&#x5339;&#x914D;</h3><hr>
-<p>bash &#x7684;&#x5339;&#x914D;&#x6A21;&#x5F0F;&#x88AB;&#x79F0;&#x4E3A;<a href="https://mywiki.wooledge.org/glob">glob</a>&#x3002;</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> *.tar.gz <span class="hljs-comment"># &#x5220;&#x9664;&#x6240;&#x6709;&#x4EE5; tar.gz &#x7ED3;&#x5C3E;&#x7684;&#x538B;&#x7F29;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> -r *.[ch] /path <span class="hljs-comment"># &#x5C06;&#x5F53;&#x524D;&#x53CA;&#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x4EE5; .c &#x6216; .h &#x7ED3;&#x5C3E;&#x7684;&#x4EE3;&#x7801;&#x79FB;&#x52A8;&#x5230; /path</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#x524D;&#x4E00;&#x5B9A;&#x8981;&#x786E;&#x8BA4;&#x8F93;&#x5165;&#x65E0;&#x8BEF;&#xFF0C;&#x5426;&#x5219;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x4E25;&#x91CD;&#x7684;&#x540E;&#x679C;&#xFF08;&#x5982;&#xA0;<code>rm -rf *</code> &#x4F1A;&#x5220;&#x6389;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF09;&#x3002;</p>
-<h3 id="&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;"><a href="#&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;" class="headerlink" title="&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;"></a>&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;</h3><hr>
-<p><strong>&#x4F7F;&#x7528; tar &#x64CD;&#x4F5C;&#x5B58;&#x6863;&#x3001;&#x538B;&#x7F29;&#x6587;&#x4EF6;</strong></p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x7684;&#x4F7F;&#x7528;&#x6837;&#x4F8B;&#x4E86;&#x89E3;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</span></span><br><span class="line">$ tar [OPTIONS] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ tar -c -f target.tar file1 file2 file3 <span class="hljs-comment"># &#x5C06;file1&#x3001;file2&#x3001;file3 &#x6253;&#x5305;&#x4E3A; target.tar</span></span><br><span class="line">$ tar -x -f target.tar -C <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># &#x5C06; target.tar &#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x63D0;&#x53D6;&#x5230; test &#x76EE;&#x5F55;&#x4E2D;</span></span><br><span class="line">$ tar -cz -f target.tar.gz file1 file2 file3 <span class="hljs-comment"># &#x5C06; file1&#x3001;file2&#x3001;file3 &#x6253;&#x5305;&#xFF0C;&#x5E76;&#x4F7F;&#x7528; gzip &#x7B97;&#x6CD5;&#x538B;&#x7F29;&#xFF0C;&#x5F97;&#x5230;&#x538B;&#x7F29;&#x6587;&#x4EF6; target.tar.gz</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x548C;&#x5927;&#x90E8;&#x5206; Linux &#x547D;&#x4EE4;&#x4E00;&#x6837;&#xFF0C;<code>tar</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x53C2;&#x6570;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x7B49;&#x4EF7;&#xFF1A;</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ tar -c -z -v -f target.tar <span class="hljs-built_in">test</span>/</span><br><span class="line">$ tar -czvf target.tar <span class="hljs-built_in">test</span>/</span><br><span class="line">$ tar -f target.tar -czv <span class="hljs-built_in">test</span>/</span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x540E;&#x7F00;&#x540D;&#x5E76;&#x4E0D;&#x80FD;&#x51B3;&#x5B9A;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4EBA;&#x4EEC;&#x8FA8;&#x8BA4;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x53EF;&#x80FD;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x4ECE;&#x800C;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x6253;&#x5F00;&#x65B9;&#x6CD5;&#x3002;</p>
-<h3 id="&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;"><a href="#&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;" class="headerlink" title="&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;"></a>&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;</h3><hr>
-<p><strong>man &#x547D;&#x4EE4;</strong></p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x8C03;&#x51FA; tar &#x547D;&#x4EE4;&#x548C; ls &#x547D;&#x4EE4;&#x7684;&#x6587;&#x6863;</span></span><br><span class="line">$ man tar</span><br><span class="line">$ man <span class="hljs-built_in">ls</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x4F1A;&#x663E;&#x793A;&#x8F6F;&#x4EF6;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x542B;&#x4E49;&#x3001;&#x9000;&#x51FA;&#x503C;&#x542B;&#x4E49;&#x3001;&#x4F5C;&#x8005;&#x7B49;&#x5185;&#x5BB9;&#xFF0C;&#x5927;&#x800C;&#x5168;&#x3002;&#x4F46;&#x4E00;&#x822C;&#x8F83;&#x5C11;&#x5E26;&#x6709;&#x4F7F;&#x7528;&#x6837;&#x4F8B;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x81EA;&#x8EAB;&#x9700;&#x8981;&#x62FC;&#x63A5;&#x8F6F;&#x4EF6;&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x5229;&#x4E8E;&#x5FEB;&#x901F;&#x4E0A;&#x624B;&#x3002;</p>
-<p><strong><a href="https://github.com/tldr-pages/tldr">tldr &#x8F6F;&#x4EF6;</a></strong></p>
-<p>&#x901A;&#x8FC7;&#x51E0;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x8BA9;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x4E86;&#x89E3;&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x3002;</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ tldr COMMAND</span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x62A5;&#x9519;&#xFF1A;</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-built_in">mkdir</span>:&#x65E0;&#x6CD5;&#x521B;&#x5EFA;&#x76EE;&#x5F55;<span class="hljs-string">&quot;/home/lzy/.tldr&quot;</span>&#xFF1A;&#x6587;&#x4EF6;&#x5DF2;&#x5B58;&#x5728;</span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#xFF1A;</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install tldr</span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p ~/.tldr/tldr</span><br><span class="line">$ sudo git <span class="hljs-built_in">clone</span> https://github.com/tldr-pages/tldr.git ~/.tldr/tldr</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h3><hr>
-<p><a href="https://101.lug.ustc.edu.cn/Ch03/#operate-files-and-dirs">Linux 101 - chap 03: &#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x4E0E;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</a></p>
-<div id="refer-anchor-1"></div>
-
-<p>[1] <a href="https://www.ruanyifeng.com/blog/2011/12/inode.html">&#x962E;&#x4E00;&#x5CF0;&#x7684;&#x7F51;&#x7EDC;&#x65E5;&#x5FD7; - &#x7406;&#x89E3;inode</a></p>
 ]]></content>
       <categories>
         <category>学习</category>
@@ -5619,11 +5616,6 @@ git push -u origin master
 ]]></content>
   </entry>
   <entry>
-    <title>分类</title>
-    <url>/zh-cn/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>链接</title>
     <url>/zh-cn/links/index.html</url>
     <content><![CDATA[<h2 id="CS"><a href="#CS" class="headerlink" title="CS"></a>CS</h2><hr>
@@ -5641,6 +5633,11 @@ git push -u origin master
 <h2 id="&#x6DA6;&#x5B66;"><a href="#&#x6DA6;&#x5B66;" class="headerlink" title="&#x6DA6;&#x5B66;"></a>&#x6DA6;&#x5B66;</h2><hr>
 <p><a href="https://run2.sg/">&#x6DA6;&#x53BB;&#x65B0;&#x52A0;&#x5761;</a>  </p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>分类</title>
+    <url>/zh-cn/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>标签</title>
