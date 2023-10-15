@@ -26,9 +26,9 @@
 <meta property="og:description" content="I started drawing PCBs for a project. Firstly, I&amp;#x2019;m learning to draw schematics using OrCAD Capture CIS. Here are some basic concepts and operations.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-06T15:02:05.000Z">
-<meta property="article:modified_time" content="2023-06-26T05:48:08.665Z">
+<meta property="article:modified_time" content="2023-10-15T16:40:07.249Z">
 <meta property="article:author" content="Han Meng">
-<meta property="article:tag" content="Cadence">
+<meta property="article:tag" content="Cadence Schematic Design">
 <meta name="twitter:card" content="summary">
 
 
@@ -263,7 +263,7 @@
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">Learning</a><span>></span><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/%E7%A1%AC%E4%BB%B6/">Hardware</a><span>></span><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/%E7%A1%AC%E4%BB%B6/PCB/">PCB</a>
+            <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">Learning</a><span>></span><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/%E7%94%B5%E5%AD%90%E5%AD%A6/">Electronics</a>
         </span>
         
         
@@ -276,18 +276,21 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>I started drawing PCBs for a project. Firstly, I&#x2019;m learning to draw schematics using OrCAD Capture CIS. Here are some basic concepts and operations.   </p>
+        <p>I started drawing PCBs for a project. Firstly, I&#x2019;m learning to draw schematics using OrCAD Capture CIS. Here are some basic concepts and operations.</p>
 <span id="more"></span>
-<h2 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h2><ul>
+<h2 id="Project">Project</h2>
+<ul>
 <li>Create new project</li>
 <li>Modify schematic preferences</li>
 <li>Modify schematic description</li>
 </ul>
-<h2 id="Library"><a href="#Library" class="headerlink" title="Library"></a>Library</h2><ul>
+<h2 id="Library">Library</h2>
+<ul>
 <li>Create new library</li>
 <li>Modify library storage location</li>
 </ul>
-<h2 id="Part"><a href="#Part" class="headerlink" title="Part"></a>Part</h2><ul>
+<h2 id="Part">Part</h2>
+<ul>
 <li>Create new part in library</li>
 <li>Place part</li>
 <li>Modify part properties</li>
@@ -296,28 +299,33 @@
 <li>Batch modify pin properties</li>
 <li>Snap to grid</li>
 </ul>
-<h2 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h2><ul>
-<li>Homogeneous: each module of the composite package has the same function<ul>
+<h2 id="Package">Package</h2>
+<ul>
+<li>Homogeneous: each module of the composite package has the same function
+<ul>
 <li>Each module is distinguished by the letter after the question mark, such as &#x201C;U?A&#x201D; and &#x201C;U?B&#x201D;</li>
 <li>After drawing &#x201C;U?A&#x201D;, switch to the next part &#x201C;U?B&#x201D;, which has already been drawn automatically, only the pin numbers are left blank</li>
 <li>The shortcut for switching to the previous part is &#x201C;Ctrl+B&#x201D;, and the shortcut for switching to the next part is &#x201C;Ctrl+N&#x201D;</li>
 <li>For a part, if it can be represented by <strong>one diagram</strong>, then the part <strong>cannot have two pins with the same pin number and pin name</strong>. However, if the part is <strong>divided into many parts</strong> to draw, the pin numbers and pin names between the parts <strong>can be the same</strong>, and the pins with the same pin number and pin name are <strong>connected</strong></li>
 </ul>
 </li>
-<li>Heterogeneous: each module of the composite package has a different function<ul>
+<li>Heterogeneous: each module of the composite package has a different function
+<ul>
 <li>After drawing &#x201C;U?A&#x201D;, switch to the next part &#x201C;U?B&#x201D;, which is blank</li>
 </ul>
 </li>
 <li>If there are two or more composite packages placed in a schematic to avoid errors when indexing with &#x201C;Annotate&#x201D;, a new attribute should be added to the part (the name cannot be &#x201C;group&#x201D;), and each part will be divided into different groups according to whether the value of the new attribute is the same. This can determine which parts are in the same chip.</li>
 </ul>
-<h2 id="Adding-parts-to-schematic"><a href="#Adding-parts-to-schematic" class="headerlink" title="Adding parts to schematic"></a>Adding parts to schematic</h2><ul>
+<h2 id="Adding-parts-to-schematic">Adding parts to schematic</h2>
+<ul>
 <li>Rotate parts</li>
 <li>Parts not in the library: power, ground</li>
 <li>Cadence&#x2019;s built-in library: Cadence - SPB_16.6 - tools - capture - library</li>
 <li>Generally commonly used capacitors, resistors, inductors, transformers, etc. are in Discrete.olb</li>
 <li>Design Cache</li>
 </ul>
-<h2 id="Pin-connection"><a href="#Pin-connection" class="headerlink" title="Pin connection"></a>Pin connection</h2><ul>
+<h2 id="Pin-connection">Pin connection</h2>
+<ul>
 <li>3 types of connections: wire, net alias, bus</li>
 <li>Wire shortcut key W</li>
 <li>The lines in the schematic are horizontal and vertical by default. To draw at any angle, press the Shift key and click the start and end points of the line at the same time</li>
@@ -328,66 +336,79 @@
 <li>Place no connect for floating pins</li>
 <li><strong>Do not connect two pins of two parts directly</strong> (after connecting the two pins of the two parts, pull them apart, and a line will appear between the two pins)</li>
 </ul>
-<h2 id="Bus-connection"><a href="#Bus-connection" class="headerlink" title="Bus connection"></a>Bus connection</h2><ul>
-<li>Bus naming BaseName[0:all]<ul>
+<h2 id="Bus-connection">Bus connection</h2>
+<ul>
+<li>Bus naming BaseName[0:all]
+<ul>
 <li>There cannot be a space between BaseName and [</li>
 <li>32-bit bus ED is represented as ED[0:31]</li>
 <li>BaseName cannot end with a number</li>
-<li>The colon &#x201C;:&#x201D; in the brackets can be replaced with a hyphen &#x201C;-&#x201C; or two dots &#x201C;..&#x201D;</li>
+<li>The colon &#x201C;:&#x201D; in the brackets can be replaced with a hyphen &#x201C;-&#x201D; or two dots &#x201C;&#x2026;&#x201D;</li>
 </ul>
 </li>
 <li>Bus entry naming BaseName0 BaseName1 BaseName2&#x2026;</li>
 <li>Interconnection between the bus and the signal line must be through the bus entry, and the naming must be consistent through net alias</li>
 <li>Shortcut key F4 for quick wiring</li>
 </ul>
-<h2 id="Browsing-and-searching"><a href="#Browsing-and-searching" class="headerlink" title="Browsing and searching"></a>Browsing and searching</h2><ul>
-<li>Browse parts<ul>
+<h2 id="Browsing-and-searching">Browsing and searching</h2>
+<ul>
+<li>Browse parts
+<ul>
 <li>Reset all parts references to &#x201C;?&#x201D; and incremental reference update through Tools - Annotate - Packaging - Action</li>
 </ul>
 </li>
 <li>Browse nets</li>
 <li>Browse off-page connectors</li>
-<li>Browse DRC markers<ul>
+<li>Browse DRC markers
+<ul>
 <li>If there are errors that have been corrected, the DRC markers need to be updated synchronously</li>
 </ul>
 </li>
 <li>Individual schematic can also be browsed by selecting it</li>
 <li>Search</li>
 </ul>
-<h2 id="Replacement-and-update"><a href="#Replacement-and-update" class="headerlink" title="Replacement and update"></a>Replacement and update</h2><ul>
-<li>Differences between the two<ul>
+<h2 id="Replacement-and-update">Replacement and update</h2>
+<ul>
+<li>Differences between the two
+<ul>
 <li>Replacement can <strong>change the connection relationship between the schematic and the library</strong>, that is, replace the part in the original library with the part in another library, while update cannot</li>
 <li>If the <strong>new part has a different packaging form from the original part</strong>, such as the original part&#x2019;s packaging form is &#x201C;Homogeneous&#x201D;, and the new part&#x2019;s packaging form is &#x201C;Heterogeneous&#x201D;, then to replace the new part&#x2019;s packaging form with the original part&#x2019;s packaging form, only replacement can be used, and &#x201C;Action&#x201D; must be selected as &#x201C;Replace schematic part properties&#x201D;:</li>
 </ul>
 </li>
 <li>Cleanup Cache to remove non-existent copies of parts</li>
 </ul>
-<h2 id="Operating-objects-in-schematic"><a href="#Operating-objects-in-schematic" class="headerlink" title="Operating objects in schematic"></a>Operating objects in schematic</h2><ul>
+<h2 id="Operating-objects-in-schematic">Operating objects in schematic</h2>
+<ul>
 <li>Select multiple objects at the same time</li>
-<li>Move object<ul>
+<li>Move object
+<ul>
 <li>The object can be directly dragged, and the connection relationship between the object and other objects remains unchanged</li>
 <li>Press and hold Alt while dragging, the connection relationship between the object and other objects will be disconnected</li>
 <li>After disconnection, can the object be reconnected through contact Options - Preferences - Miscellaneous - Wire Drag: Allow parts move with connectivity changes</li>
 </ul>
 </li>
 <li>Rotate object R</li>
-<li>Copy, paste, delete<ul>
+<li>Copy, paste, delete
+<ul>
 <li>Select the object, hold down the Ctrl key to drag, and the object dragged out is the copied object</li>
 </ul>
 </li>
 <li>Mirror object H V</li>
 </ul>
-<h2 id="Adding-footprints"><a href="#Adding-footprints" class="headerlink" title="Adding footprints"></a>Adding footprints</h2><ul>
+<h2 id="Adding-footprints">Adding footprints</h2>
+<ul>
 <li>Modify the package information of a single part in the schematic</li>
 <li>Modify the package information of a single part in thelibrary, update to the schematic - open the edit page of a part - Options - Package Properties - PCB Footprint - OK, and finally Replace (not Update)</li>
 <li>Batch modify part package information</li>
 <li>Batch modify the package information of all parts on a schematic page</li>
 <li>Check whether the part package information is missing</li>
 </ul>
-<h2 id="Generating-netlist"><a href="#Generating-netlist" class="headerlink" title="Generating netlist"></a>Generating netlist</h2><ul>
+<h2 id="Generating-netlist">Generating netlist</h2>
+<ul>
 <li>Check the logical function and electrical connection of the schematic before generating, re-index the entire project, and perform DRC check</li>
 </ul>
-<h2 id="Post-processing"><a href="#Post-processing" class="headerlink" title="Post-processing"></a>Post-processing</h2><ul>
+<h2 id="Post-processing">Post-processing</h2>
+<ul>
 <li>Generate nestlist</li>
 <li>Print schematic</li>
 </ul>
@@ -397,7 +418,7 @@
     
     <div class="columns is-variable is-1 is-multiline is-mobile">
     
-        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Cadence/">#Cadence</a></span>
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Cadence%E5%8E%9F%E7%90%86%E5%9B%BE%E8%AE%BE%E8%AE%A1/">#Cadence Schematic Design</a></span>
     
     </div>
     

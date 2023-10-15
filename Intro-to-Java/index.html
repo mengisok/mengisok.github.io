@@ -26,7 +26,7 @@
 <meta property="og:description" content="The sections on the background of Java&amp;#x2019;s birth, development history and version descriptions were very helpful to me.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-26T09:16:51.000Z">
-<meta property="article:modified_time" content="2023-06-26T05:52:45.614Z">
+<meta property="article:modified_time" content="2023-10-15T16:41:30.567Z">
 <meta property="article:author" content="Han Meng">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -255,7 +255,7 @@
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">Learning</a><span>></span><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/%E8%BD%AF%E4%BB%B6/">Software</a><span>></span><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/%E8%BD%AF%E4%BB%B6/Java/">Java</a>
+            <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">Learning</a><span>></span><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">Computer Science</a>
         </span>
         
         
@@ -268,20 +268,22 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>The sections on the background of Java&#x2019;s birth, development history and version descriptions were very helpful to me.      </p>
+        <p>The sections on the background of Java&#x2019;s birth, development history and version descriptions were very helpful to me.</p>
 <span id="more"></span>
-
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><hr>
+<h3 id="Introduction">Introduction</h3>
+<hr>
 <ul>
 <li>Founder: James Gosling</li>
 <li>Java is somewhere between a compiled language and an interpreted language. It compiles code into a kind of &#x201C;bytecode&#x201D;, similar to abstract CPU instructions, and then writes virtual machines for different platforms, which are responsible for loading the bytecode and executing it, so that it can be &#x201C;written once and run everywhere&#x201D;.</li>
-<li>Java three versions<ul>
+<li>Java three versions
+<ul>
 <li>Java SE: Standard Edition, which contains the standard JVM and standard libraries, and is the core of the entire Java platform</li>
 <li>Java EE: Enterprise Edition, which is based on Java SE with a large number of APIs and libraries to facilitate the development of Web applications, databases, messaging services, etc.; the virtual machine of Java EE is exactly the same as Java SE; it is necessary for further learning of Web applications</li>
 <li>Java ME: Micro Edition, a &#x201C;thin version&#x201D; for embedded devices, the standard libraries of Java SE cannot be used on Java ME; the virtual machine of Java ME is also a &#x201C;thin version&#x201D;; not popular, not Recommended to learn</li>
 </ul>
 </li>
-<li>The recommended route to learn Java<ul>
+<li>The recommended route to learn Java
+<ul>
 <li>First learn Java SE, master the Java language itself, Java core development techniques and the use of Java standard libraries.</li>
 <li>If you continue to learn Java EE, then the Spring Framework, database development, distributed architecture is required to learn.</li>
 <li>If one wants to learn big data development, then Hadoop, Spark, Flink, these big data platforms are what one needs to learn, they are all based on Java or Scala development.</li>
@@ -295,20 +297,23 @@
 <li>RI: Reference Implementation, Reference Implementation</li>
 <li>TCK: Technology Compatibility Kit, compatibility test kit</li>
 </ul>
-<h3 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h3><hr>
-<h4 id="Basic-structure-of-the-program"><a href="#Basic-structure-of-the-program" class="headerlink" title="Basic structure of the program"></a>Basic structure of the program</h4><figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> { <span class="hljs-comment">// The class name is Hello</span></span><br><span class="line">    <span class="hljs-comment">// ...</span></span><br><span class="line">} <span class="hljs-comment">// End of class definition</span></span><br></pre></td></tr></tbody></table></figure>
-
+<h3 id="Basics">Basics</h3>
+<hr>
+<h4 id="Basic-structure-of-the-program">Basic structure of the program</h4>
+<figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> { <span class="hljs-comment">// The class name is Hello</span></span><br><span class="line">    <span class="hljs-comment">// ...</span></span><br><span class="line">} <span class="hljs-comment">// End of class definition</span></span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {<span class="hljs-comment">// The method name is main</span></span><br><span class="line"><span class="hljs-comment">// Method code...</span></span><br><span class="line">    }<span class="hljs-comment">// End of method definition</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
 <ul>
 <li>Class names must start with English letters (customary uppercase); method names must start with English letters (customary lowercase)</li>
-<li>Inside a <code>class</code>, several methods can be defined </li>
+<li>Inside a <code>class</code>, several methods can be defined</li>
 <li><code>public</code> is an access modifier that indicates that the <code>class</code> is public. It will compile correctly without <code>public</code>, but the class will not be executed from the command line</li>
-<li>The method specified by the Java entry program must be a static method, the method name must be `main<br>and the arguments in parentheses must be String arrays</li>
+<li>The method specified by the Java entry program must be a static method, the method name must be `main<br>
+and the arguments in parentheses must be String arrays</li>
 <li>Intelli IDEA code formatting: Ctrl + Alt + L</li>
 </ul>
-<h4 id="Variables-and-Data-Types"><a href="#Variables-and-Data-Types" class="headerlink" title="Variables and Data Types"></a>Variables and Data Types</h4><ul>
-<li>Two types of variables: basic types and reference types<ul>
+<h4 id="Variables-and-Data-Types">Variables and Data Types</h4>
+<ul>
+<li>Two types of variables: basic types and reference types
+<ul>
 <li>Basic types are types that the CPU can perform operations on directly. They include integer, floating point, boolean, and character types</li>
 <li>The rest are reference types, which are similar to pointers in C. They store an internal &#x201C;address&#x201D; that points to the location of an object in memory. The most common type is String</li>
 <li>Variables of basic types &#x201C;hold&#x201D; a value, while those of reference types &#x201C;point&#x201D; to an object</li>
@@ -317,12 +322,16 @@
 <li>Constants cannot be reassigned after initialization</li>
 <li>Abbreviating variable types, using the <code>var</code> keyword</li>
 </ul>
-<h4 id="Arithmetic"><a href="#Arithmetic" class="headerlink" title="Arithmetic"></a>Arithmetic</h4><ul>
+<h4 id="Arithmetic">Arithmetic</h4>
+<ul>
 <li>Integer operations are always exact, floating point operations are often not</li>
 </ul>
-<h3 id="Process-control"><a href="#Process-control" class="headerlink" title="Process control"></a>Process control</h3><hr>
-<h4 id="Inputs-and-Outputs"><a href="#Inputs-and-Outputs" class="headerlink" title="Inputs and Outputs"></a>Inputs and Outputs</h4><ul>
-<li>Output<ul>
+<h3 id="Process-control">Process control</h3>
+<hr>
+<h4 id="Inputs-and-Outputs">Inputs and Outputs</h4>
+<ul>
+<li>Output
+<ul>
 <li><code>System.out.println()</code>, output with line feed</li>
 <li><code>System.out.print()</code>, output without line break</li>
 <li><code>System.out.printf()</code>, formatted output</li>
@@ -331,33 +340,40 @@
 <li>Input (cannot be run online, must be read from the command line)</li>
 </ul>
 <figure class="highlight java hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Main</span> {publicstaticvoid <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {</span><br><span class="line">        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span><span class="hljs-keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="hljs-comment">// Creating a Scanner object</span></span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> scanner.nextLine();<span class="hljs-comment">// Read a line of input and get the string</span></span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> scanner.nextInt();<span class="hljs-comment">// Read a line of input and get the integer</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="If-condition-judgment"><a href="#If-condition-judgment" class="headerlink" title="If condition judgment"></a>If condition judgment</h4><ul>
+<h4 id="If-condition-judgment">If condition judgment</h4>
+<ul>
 <li>It is not reliable to use <code>=</code> to determine the equality of floating point numbers, the correct way is to use the difference is less than a certain threshold value to determine</li>
 <li>To determine whether the contents of variables of reference types are equal, you must use the <code>equals()</code> method</li>
 </ul>
-<h4 id="Case-multiple-selection"><a href="#Case-multiple-selection" class="headerlink" title="Case multiple selection"></a>Case multiple selection</h4><ul>
+<h4 id="Case-multiple-selection">Case multiple selection</h4>
+<ul>
 <li>Always write <code>default</code></li>
 <li>Starting from Java12, the new syntax uses <code>-&gt;</code> and if there are multiple statements, they need to be enclosed in <code>{}</code>. Don&#x2019;t write <code>break</code> statements, because the new syntax will only execute the matching statement, there is no penetration effect</li>
 <li>Inside a <code>switch</code> expression, use <code>yield</code> to return a value as the return value of the <code>switch</code> statement</li>
 </ul>
-<h4 id="While-loop"><a href="#While-loop" class="headerlink" title="While loop"></a>While loop</h4><ul>
+<h4 id="While-loop">While loop</h4>
+<ul>
 <li>Judgment first, then loop</li>
 <li>Possible loop 0 times</li>
 </ul>
-<h4 id="Do-while-loop"><a href="#Do-while-loop" class="headerlink" title="Do while loop"></a>Do while loop</h4><ul>
+<h4 id="Do-while-loop">Do while loop</h4>
+<ul>
 <li>Loop first and judge later</li>
 <li>Loop at least once</li>
 </ul>
-<h4 id="For-loop"><a href="#For-loop" class="headerlink" title="For loop"></a>For loop</h4><ul>
+<h4 id="For-loop">For loop</h4>
+<ul>
 <li>May loop 0 times</li>
 </ul>
-<h4 id="Break-and-continue"><a href="#Break-and-continue" class="headerlink" title="Break and continue"></a>Break and continue</h4><ul>
+<h4 id="Break-and-continue">Break and continue</h4>
+<ul>
 <li>In a multi-layer nested loop, both can only jump out of the loop they are in</li>
 </ul>
-<h3 id="Array-operations"><a href="#Array-operations" class="headerlink" title="Array operations"></a>Array operations</h3><hr>
+<h3 id="Array-operations">Array operations</h3>
+<hr>
 <p>Traversal, sorting, multidimensional arrays, command line arguments (omitted)</p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<h3 id="Appendix">Appendix</h3>
+<hr>
 <p><strong>Tutorial</strong></p>
 <p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255883772263712">Liao Xuefeng&#x2019;s Java course - Java Quick Start</a></p>
 

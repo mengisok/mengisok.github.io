@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>Operating Files in Linux - Meng&#39;s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+<link href="/zh-cn/Operating-Files-in-Linux/" rel="alternate" hreflang="zh-CN" />
+    
+
+
+<meta name="description" content="Go forward. Don't look back. ">
+
+
+
+
+
+    <meta name="description" content="Linux manipulates files via the command line, including viewing, editing, copying, moving, deleting, creating, searching, matching, compressing, and uncompressing files, and it&amp;#x2019;s important to l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Operating Files in Linux">
+<meta property="og:url" content="https://mengisok.github.io/Operating-Files-in-Linux/index.html">
+<meta property="og:site_name" content="Meng&#39;s Blog">
+<meta property="og:description" content="Linux manipulates files via the command line, including viewing, editing, copying, moving, deleting, creating, searching, matching, compressing, and uncompressing files, and it&amp;#x2019;s important to l">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-02T02:42:24.000Z">
+<meta property="article:modified_time" content="2023-10-15T16:42:52.807Z">
+<meta property="article:author" content="Han Meng">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+<link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                    
+                    Meng&#39;s blog
+                    
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/archives">Archives</a>
+            
+            <a class="navbar-item "
+               href="/categories">Categories</a>
+            
+            <a class="navbar-item "
+               href="/tags">Tags</a>
+            
+            <a class="navbar-item "
+               href="/links">Links</a>
+            
+            <a class="navbar-item "
+               href="/about">About</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+<div class="column is-narrow has-text-centered">
+    <div class="dropdown is-up is-right is-hoverable" style="margin-top: -0.2em;">
+        <div class="dropdown-trigger">
+            <button class="button is-small" aria-haspopup="true" aria-controls="dropdown-menu7">
+                <span class="icon">
+                    <i class="fas fa-globe"></i>
+                </span>
+                <span>English</span>
+                <span class="icon is-small">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
+            </button>
+        </div>
+        <div class="dropdown-menu has-text-left" role="menu" style="top:100%">
+            <div class="dropdown-content">
+            
+                <a href="/Operating-Files-in-Linux/" class="dropdown-item">
+                    English
+                </a>
+            
+                <a href="/zh-cn/Operating-Files-in-Linux/" class="dropdown-item">
+                    简体中文
+                </a>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+            <a class="navbar-item search" title="Search" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            <div class="navbar-item is-hoverable has-dropdown is-hidden-mobile is-hidden-tablet-only toc">
+                <a class="navbar-item" title="Table of Contents">
+                    <i class="fa fa-list"></i>
+                </a>
+                <div class="navbar-dropdown is-right">
+                    
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Viewing">1&nbsp;&nbsp;<b>Viewing</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Editing">2&nbsp;&nbsp;<b>Editing</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Copying">3&nbsp;&nbsp;<b>Copying</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Moving">4&nbsp;&nbsp;<b>Moving</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Deleting">5&nbsp;&nbsp;<b>Deleting</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Creating">6&nbsp;&nbsp;<b>Creating</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Searching">7&nbsp;&nbsp;<b>Searching</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Pattern-matching">8&nbsp;&nbsp;<b>Pattern matching</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Compressing-and-uncompressing">9&nbsp;&nbsp;<b>Compressing and uncompressing</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Documentation">10&nbsp;&nbsp;<b>Documentation</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Appendix">11&nbsp;&nbsp;<b>Appendix</b></a>
+                    
+                </div>
+            </div>
+            
+            
+            <a class="navbar-item" title="GitHub" target="_blank" rel="noopener" href="https://github.com/mengisok">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+               
+            
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            Operating Files in Linux
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            
+                <span>Feb 2 2023</span>
+            
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">Learning</a><span>></span><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">Computer Science</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            7 minutes read (About 1090 words)
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <p>Linux manipulates files via the command line, including viewing, editing, copying, moving, deleting, creating, searching, matching, compressing, and uncompressing files, and it&#x2019;s important to learn how to use the documentation.</p>
+<span id="more"></span>
+<h3 id="Viewing">Viewing</h3>
+<hr>
+<p><strong>cat</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Output the entire contents of the FILE file</span></span><br><span class="line">$ <span class="hljs-built_in">cat</span> [OPTION] FILE</span><br></pre></td></tr></tbody></table></figure>
+<p><code>cat</code> is short for con<strong>cat</strong>*enate. The actual function of the <code>cat</code> utility is to concatenate multiple files and then output them. When there is only one file, <code>cat</code> will output that file directly, so the most common use of <code>cat</code> is to output a single file.</p>
+<p><strong>less</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Output the contents of a FILE file in an interactive window</span></span><br><span class="line">$ less FILE</span><br></pre></td></tr></tbody></table></figure>
+<p><code>cat</code> prints the entire contents to the terminal at once and exits, while <code>less</code> displays one page at a time and supports forward/backward scrolling, searching, etc. If you want to find a part of a large file, <code>less</code> is usually much more convenient than <code>cat</code>.</p>
+<p>Similar commands to <code>less</code>: <code>more</code>, <code>most</code>.</p>
+<h3 id="Editing">Editing</h3>
+<hr>
+<p><strong>Nano</strong> is a command-line text editor that comes with many machines and is more novice-friendly than vim and emacs.</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nano FILE <span class="hljs-comment"># Use nano to edit FILE files</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Copying">Copying</h3>
+<hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Copy the SOURCE file to the DEST file, the resulting file is DEST</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE DEST</span><br><span class="line">$ <span class="hljs-comment"># Copy the SOURCE file to the DIRECTORY directory, SOURCE can be more than one file</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE... DIRECTORY</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file3 <span class="hljs-comment"># Make a copy of file1 to the same directory as file3</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file2 . /file/ <span class="hljs-comment"># Copy file1, file2 files to the file directory in the same directory</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> -r file . /test/ <span class="hljs-comment"># Copy the file folder and all its subfiles to the test folder in the same directory</span></span><br></pre></td></tr></tbody></table></figure>
+<p><strong>Hard links and soft links</strong></p>
+<p>Hard links have the same inode as the source file and both point to the same location on disk. Deleting one of them does not affect the other.</p>
+<p>Soft links have a different inode than the source file. Soft links save the path to the source file, and when accessing a soft link, the accessed path is replaced with the path to the source file, so accessing a soft link is also equivalent to accessing the source file. However, if the source file is deleted, the path saved by the soft link is invalid, and the soft link is therefore invalid as well<a href="#refer-anchor-1"><sup>1</sup></a>.</p>
+<h3 id="Moving">Moving</h3>
+<hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Move the SOURCE file to the DEST file</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE DEST</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># Move SOURCE file to DIRECTORY directory, SOURCE can be multiple files</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE... DIRECTORY</span><br></pre></td></tr></tbody></table></figure>
+<p>Similar to &#x201C;cut&#x201D; in Windows.</p>
+<h3 id="Deleting">Deleting</h3>
+<hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Delete FILE files, FILE can be multiple files.</span></span><br><span class="line">$ <span class="hljs-comment"># If you need to delete a directory, you need to delete it recursively with the -r option</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> [OPTION] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> file1 <span class="hljs-comment"># Delete the file1 file</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -r <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># Delete the test directory and all files under it</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -rf test1/ test2/ file1.txt <span class="hljs-comment"># Delete the files, directories test1/, test2/, file1.txt. Among them, these files or directories may not exist, be write-protected, or not have permission to read or write</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Creating">Creating</h3>
+<hr>
+<p><strong>Creating directories</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Create a directory named DIR_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> [OPTION] DIR_NAME...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> test1 test2 <span class="hljs-comment"># Create two directories with the names test1, test2</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p test1/test2/test3/ <span class="hljs-comment"># Create path test1/test2/test3/</span></span><br></pre></td></tr></tbody></table></figure>
+<p><strong>Creating files</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Create a file named FILE_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">touch</span> FILE_NAME...</span><br></pre></td></tr></tbody></table></figure>
+<p>The <code>stat</code> command displays information about a file&#x2019;s attributes.</p>
+<p>What <code>touch</code> actually does is modify the access time (atime) and modification time (mtime) of the file, which can be treated as touching the file, causing its access and modification times to change. When the file does not exist, <code>touch</code> creates a new file.</p>
+<h3 id="Searching">Searching</h3>
+<hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Search for files in PATH based on EXPRESSION</span></span><br><span class="line">$ find [OPTION] PATH [EXPRESSION]</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ find . -name <span class="hljs-string">&apos;report.pdf&apos;</span> <span class="hljs-comment"># Search for a file named report.pdf in the current directory</span></span><br><span class="line">$ find / -size +1G <span class="hljs-comment"># Search for files larger than 1G on the whole disk</span></span><br><span class="line">$ find ~/ -name <span class="hljs-string">&apos;node_modules&apos;</span> -<span class="hljs-built_in">type</span> d <span class="hljs-comment"># Search for all folders named node_modules in the user directory</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Pattern-matching">Pattern matching</h3>
+<hr>
+<p>The matching pattern for bash is called <a target="_blank" rel="noopener" href="https://mywiki.wooledge.org/glob">glob</a>.</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> *.tar.gz <span class="hljs-comment"># Remove all compressed files ending in tar.gz</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> -r *. [ch] /path <span class="hljs-comment"># Move all code ending in .c or .h in the current and subdirectories to /path</span></span><br></pre></td></tr></tbody></table></figure>
+<p>Be sure to make sure you type correctly before using wildcards, otherwise serious consequences may occur (e.g. <code>rm -rf *</code> will delete all files in the current directory).</p>
+<h3 id="Compressing-and-uncompressing">Compressing and uncompressing</h3>
+<hr>
+<p><strong>Using tar to archive and compress files</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># The command format is as follows, please refer to the following sample usage to understand how to use</span></span><br><span class="line">$ tar [OPTIONS] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ tar -c -f target.tar file1 file2 file3 <span class="hljs-comment"># Package file1, file2, file3 as target.tar</span></span><br><span class="line">$ tar -x -f target.tar -C <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># Extract the files in target.tar to the test directory</span></span><br><span class="line">$ tar -cz -f target.tar.gz file1 file2 file3 <span class="hljs-comment"># Pack file1, file2, file3 and compress them using gzip to get the compressed file target.tar.gz</span></span><br></pre></td></tr></tbody></table></figure>
+<p>As with most Linux commands, the <code>tar</code> command can combine parameters. For example, the following command is equivalent:</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ tar -c -z -v -f target.tar <span class="hljs-built_in">test</span>/</span><br><span class="line">$ tar -czvf target.tar <span class="hljs-built_in">test</span>/</span><br><span class="line">$ tar -f target.tar -czv <span class="hljs-built_in">test</span>/</span><br></pre></td></tr></tbody></table></figure>
+<p>The suffix name does not determine the file type, but it can help one to identify the possible file types of this file and thus choose the appropriate opening method.</p>
+<h3 id="Documentation">Documentation</h3>
+<hr>
+<p><strong>man commands</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-comment"># Call up the documentation for the tar and ls commands</span></span><br><span class="line">$ man tar</span><br><span class="line">$ man <span class="hljs-built_in">ls</span></span><br></pre></td></tr></tbody></table></figure>
+<p>It shows the meaning of each parameter of the software, the meaning of the exit value, the author, etc. It is large and comprehensive. But generally less with the use of sample, you need to splice the software parameters according to their own needs, not conducive to quickly get started.</p>
+<p><strong><a target="_blank" rel="noopener" href="https://github.com/tldr-pages/tldr">tldr</a></strong></p>
+<p>A few simple examples allow users to quickly understand how to use the software.</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tldr COMMAND</span><br></pre></td></tr></tbody></table></figure>
+<p>Note that if this error is reported:</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">mkdir</span>:Unable to create directory <span class="hljs-string">&quot;/home/lzy/.tldr&quot;</span>: file already exists</span><br></pre></td></tr></tbody></table></figure>
+<p>The solution is:</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install tldr</span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p ~/.tldr/tldr</span><br><span class="line">$ sudo git <span class="hljs-built_in">clone</span> https://github.com/tldr-pages/tldr.git ~/.tldr/tldr</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Appendix">Appendix</h3>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch03/#operate-files-and-dirs">Linux 101 - chap 03: &#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x4E0E;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</a></p>
+<div id="refer-anchor-1"></div>
+<p>[1] <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2011/12/inode.html">&#x962E;&#x4E00;&#x5CF0;&#x7684;&#x7F51;&#x7EDC;&#x65E5;&#x5FD7; - &#x7406;&#x89E3;inode</a></p>
+
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Linux/">#Linux</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/Jan-2023/">Jan 2023</a>
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/Installing-software-in-Linux/">Installing Software in Linux</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+<div class="sharebox">
+    
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=63b7aca8a1c9f30019b28e79&amp;product=inline-share-buttons' async='async'></script>
+
+</div>
+
+
+
+<div class="comments">
+    <h3 class="title is-4">Comments</h3>
+    
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://mengisok.github.io/Operating-Files-in-Linux/';
+        this.page.identifier = 'Operating-Files-in-Linux/';
+        
+        this.language = 'en';
+        
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'mengisok' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                Go forward. Don&#39;t look back. &nbsp;
+                <!-- &copy; 2023 Han Meng&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a> -->
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+            
+            <!-- 
+<div class="column is-narrow has-text-centered">
+    <div class="dropdown is-up is-right is-hoverable" style="margin-top: -0.2em;">
+        <div class="dropdown-trigger">
+            <button class="button is-small" aria-haspopup="true" aria-controls="dropdown-menu7">
+                <span class="icon">
+                    <i class="fas fa-globe"></i>
+                </span>
+                <span>English</span>
+                <span class="icon is-small">
+            <i class="fas fa-angle-down" aria-hidden="true"></i>
+          </span>
+            </button>
+        </div>
+        <div class="dropdown-menu has-text-left" role="menu" style="top:100%">
+            <div class="dropdown-content">
+            
+                <a href="/Operating-Files-in-Linux/" class="dropdown-item">
+                    English
+                </a>
+            
+                <a href="/zh-cn/Operating-Files-in-Linux/" class="dropdown-item">
+                    简体中文
+                </a>
+            
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+        </div>
+    </div>
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("en-AU");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        // ...options...
+    });
+});
+</script>
+
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery > p > .gallery-item').unwrap();
+                $('.justified-gallery').justifiedGallery();
+            }
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+    
+
+    
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/hijiki.model.json"},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+</html>
