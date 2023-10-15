@@ -2671,6 +2671,56 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>Two-pointer</title>
+    <url>/Two-pointer/</url>
+    <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, I finally finished my first &#x201C;Explore&#x201D;.  </p>
+<span id="more"></span>
+
+<img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
+
+<p>The biggest lesson for me is an amazing technique called <strong>Two-pointer</strong>. At first I thought it&#x2019;s nested two for-loops, but then I found it&#x2019;s actually much more flesxible and useful. So I&#x2019;d like to note it.  </p>
+<h3 id="Meaning"><a href="#Meaning" class="headerlink" title="Meaning"></a>Meaning</h3><hr>
+<p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
+<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><hr>
+<ol>
+<li>When you want to iterate the array from <strong>two ends to the middle</strong>, you can use one pointer starts from the <strong>beginning</strong> while the other pointer starts from the <strong>end</strong>. They have <strong>same steps</strong>.</li>
+</ol>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">reverseString</span><span class="hljs-params">(<span class="hljs-type">char</span>[] s)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> s.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="hljs-type">char</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="hljs-comment">// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] twoSum(<span class="hljs-type">int</span>[] numbers, <span class="hljs-type">int</span> target) {</span><br><span class="line">        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="title class_">int</span>[<span class="hljs-number">2</span>];</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">start</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> numbers.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="hljs-number">0</span>] = start + <span class="hljs-number">1</span>;</span><br><span class="line">        res[<span class="hljs-number">1</span>] = end + <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>When you want one <strong>slow-runner</strong> and one <strong>fast-runner</strong> at the same time, you can use one pointer for the <strong>iteration</strong> while another one for the <strong>special position</strong>. They have <strong>different steps</strong>.</li>
+</ol>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Element</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;k&quot; for the elements to remove</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> val)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Here an important concept is introduced: <strong>in-place.</strong>  </p>
+<blockquote>
+<p>An in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements.<a href="#refer-anchor-1"><sup>1</sup></a>  </p>
+</blockquote>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;max&quot; for finding the max number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                sum = <span class="hljs-number">0</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;j&quot; for the unique elements</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeDuplicates</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> j + <span class="hljs-number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Move Zeroes</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;k&quot; works on the non-zero elements</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">moveZeroes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                <span class="hljs-keyword">if</span> (k &lt; n-<span class="hljs-number">1</span>) {</span><br><span class="line">                    <span class="hljs-keyword">while</span> (nums[k] == <span class="hljs-number">0</span> &amp;&amp; k &lt; n-<span class="hljs-number">1</span>) {k++; } </span><br><span class="line">                    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>My current progress:<br><img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>Congrats to myself and keep it up! &#x1F4AA;&#x1F3FB; </p>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>LeetCode Explore</strong>  </p>
+<p><a href="https://leetcode.com/explore/learn/card/array-and-string/">Array and String</a>  </p>
+<p><strong>Citation</strong></p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a href="https://en.wikipedia.org/wiki/In-place_algorithm">Wikipedia: In-place algorithm</a></p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Data Structure &amp; Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Users, Files</title>
     <url>/Users-Files/</url>
     <content><![CDATA[<p>This is an introduction to &#x201C;users&#x201D; and &#x201C;files&#x201D; in Linux.</p>
@@ -3326,56 +3376,6 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>Two-pointer</title>
-    <url>/Two-pointer/</url>
-    <content><![CDATA[<p>In this October, I was trying to force myself to do one Leetcode problem per day. Although I missed some days, I finally finished my first &#x201C;Explore&#x201D;.  </p>
-<span id="more"></span>
-
-<img src="/images/array_and_string.png" alt="array_and_string" title="array_and_string" width="250"> 
-
-<p>The biggest lesson for me is an amazing technique called <strong>Two-pointer</strong>. At first I thought it&#x2019;s nested two for-loops, but then I found it&#x2019;s actually much more flesxible and useful. So I&#x2019;d like to note it.  </p>
-<h3 id="Meaning"><a href="#Meaning" class="headerlink" title="Meaning"></a>Meaning</h3><hr>
-<p>Use two pointers <strong>at the same time</strong> to do the <strong>iteration</strong>.</p>
-<h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><hr>
-<ol>
-<li>When you want to iterate the array from <strong>two ends to the middle</strong>, you can use one pointer starts from the <strong>beginning</strong> while the other pointer starts from the <strong>end</strong>. They have <strong>same steps</strong>.</li>
-</ol>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Reverse String</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">reverseString</span><span class="hljs-params">(<span class="hljs-type">char</span>[] s)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> s.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (i &lt; j) {</span><br><span class="line">            <span class="hljs-type">char</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> s[i];</span><br><span class="line">            s[i] = s[j];</span><br><span class="line">            s[j] = temp;</span><br><span class="line">            i++;</span><br><span class="line">            j--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Two Sum II - Input array is sorted</span></span><br><span class="line"><span class="hljs-comment">// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] twoSum(<span class="hljs-type">int</span>[] numbers, <span class="hljs-type">int</span> target) {</span><br><span class="line">        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="title class_">int</span>[<span class="hljs-number">2</span>];</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">start</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">end</span> <span class="hljs-operator">=</span> numbers.length - <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span> (start &lt; end) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] == target) {</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (numbers[start] + numbers[end] &lt; target) {</span><br><span class="line">                start ++;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                end --;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        res[<span class="hljs-number">0</span>] = start + <span class="hljs-number">1</span>;</span><br><span class="line">        res[<span class="hljs-number">1</span>] = end + <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ol start="2">
-<li>When you want one <strong>slow-runner</strong> and one <strong>fast-runner</strong> at the same time, you can use one pointer for the <strong>iteration</strong> while another one for the <strong>special position</strong>. They have <strong>different steps</strong>.</li>
-</ol>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Element</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;k&quot; for the elements to remove</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> val)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] != val) {</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">                k++;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> k;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>Here an important concept is introduced: <strong>in-place.</strong>  </p>
-<blockquote>
-<p>An in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements.<a href="#refer-anchor-1"><sup>1</sup></a>  </p>
-</blockquote>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Max Consecutive Ones</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;max&quot; for finding the max number</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">findMaxConsecutiveOnes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">sum</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">            sum += nums[i];</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                sum = <span class="hljs-number">0</span>;</span><br><span class="line">            } <span class="hljs-keyword">else</span> {</span><br><span class="line">                max = Math.max(sum, max);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> max;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Remove Duplicates from Sorted Array</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;j&quot; for the unique elements</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="title function_">removeDuplicates</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) {</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[j] != nums[i]) {</span><br><span class="line">                j++;</span><br><span class="line">                nums[j] = nums[i];  </span><br><span class="line">            }  </span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-keyword">return</span> j + <span class="hljs-number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">// Move Zeroes</span></span><br><span class="line"><span class="hljs-comment">// &quot;i&quot; for iteration and &quot;k&quot; works on the non-zero elements</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="title function_">moveZeroes</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> {  </span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;</span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) {</span><br><span class="line">            k = i;</span><br><span class="line">            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {</span><br><span class="line">                <span class="hljs-keyword">if</span> (k &lt; n-<span class="hljs-number">1</span>) {</span><br><span class="line">                    <span class="hljs-keyword">while</span> (nums[k] == <span class="hljs-number">0</span> &amp;&amp; k &lt; n-<span class="hljs-number">1</span>) {k++; } </span><br><span class="line">                    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> nums[i];</span><br><span class="line">                    nums[i] = nums[k];</span><br><span class="line">                    nums[k] = temp;    </span><br><span class="line">                } </span><br><span class="line">            }</span><br><span class="line">        }  </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>My current progress:<br><img src="/images/leetcode_20221026.png" alt="leetcode_20221026" title="leetcode_20221026" width="500"><br>Congrats to myself and keep it up! &#x1F4AA;&#x1F3FB; </p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>LeetCode Explore</strong>  </p>
-<p><a href="https://leetcode.com/explore/learn/card/array-and-string/">Array and String</a>  </p>
-<p><strong>Citation</strong></p>
-<div id="refer-anchor-1"></div>
-
-<p>[1] <a href="https://en.wikipedia.org/wiki/In-place_algorithm">Wikipedia: In-place algorithm</a></p>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Data Structure &amp; Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用 Allegro PCB Editor 制作封装</title>
     <url>/zh-cn/Creating-Packages-in-Allegro-PCB-Editor/</url>
     <content><![CDATA[<p>&#x4EE5;&#x89C4;&#x5219;&#x5F62;&#x72B6;&#x7684; SMD&#xFF08;Surface Mounted Devices&#xFF0C;&#x8868;&#x8D34;&#x5668;&#x4EF6;&#xFF09;&#x7684;&#x5236;&#x4F5C;&#x4E3A;&#x4F8B;&#x3002;</p>
@@ -3667,6 +3667,65 @@ git push -u origin master
       <tags>
         <tag>Cadence</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>2023年2月</title>
+    <url>/zh-cn/Feb-2023/</url>
+    <content><![CDATA[<p>&#x5F00;&#x5B66;&#x5566;&#x3002;  </p>
+<span id="more"></span>
+<p>&#x8D76;&#x5728;&#x8003;&#x8BD5;&#x524D;&#x6574;&#x7406;&#x5B8C;&#x4E86;&#x7B14;&#x8BB0;&#xFF0C;&#x4F9D;&#x7136;&#x8FDE;&#x6EDA;&#x5E26;&#x722C;&#x5730;&#x51FA;&#x4E86;&#x8003;&#x573A;&#x3002;&#x76EE;&#x524D;&#x53EA;&#x51FA;&#x4E86;DSP&#x4E00;&#x95E8;&#x6210;&#x7EE9;&#xFF0C;78&#xFF0C;&#x5269;&#x4E0B;&#x4E24;&#x95E8;&#x611F;&#x89C9;&#x8003;&#x5F97;&#x66F4;&#x70C2;&#x4E0D;&#x77E5;&#x9053;&#x8FD8;&#x4F1A;&#x70C2;&#x5230;&#x54EA;&#x91CC;&#x2026;&#x2026;  </p>
+<img src="/images/idk.png" alt="idk" title="idk" width="350">  
+
+<h2 id="&#x672C;&#x6708;&#x53D1;&#x73B0;-&#x1F9D0;"><a href="#&#x672C;&#x6708;&#x53D1;&#x73B0;-&#x1F9D0;" class="headerlink" title="&#x672C;&#x6708;&#x53D1;&#x73B0; &#x1F9D0;"></a>&#x672C;&#x6708;&#x53D1;&#x73B0; &#x1F9D0;</h2><ol>
+<li><p>&#x6D41;&#x6D6A;&#x8C46;&#x74E3;<br>&#x88AB;&#x8C46;&#x74E3;&#x65E0;&#x7AEF;&#x6316;&#x575F;&#x5220;&#x5E16;+&#x7981;&#x8A00;&#x4E00;&#x5468;&#x540E;&#xFF0C;&#x6012;&#x641C;&#x4E86;&#x4E00;&#x756A;&#x66FF;&#x4EE3;APP&#x3002;&#x4E0B;&#x9762;&#x662F;&#x51E0;&#x79CD;&#x65B9;&#x6848;&#xFF1A;  </p>
+<ul>
+<li>&#x6807;&#x8BB0;&#x4E66;&#x5F71;&#x97F3;&#xFF1A;<a href="https://neodb.social/">NeoDB</a><br> &#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x89C1;<a href="https://m.cmx.im/@huaikong/107398452550319645">&#x8FD9;&#x4E2A;&#x5E16;&#x5B50;</a> &#x3002;&#x7ED3;&#x5408;<a href="https://github.com/doufen-org/tofu">&#x8C46;&#x4F34;</a>&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x8C46;&#x74E3;&#x4E66;&#x5F71;&#x97F3;&#x6570;&#x636E;&#x5168;&#x90E8;&#x8FC1;&#x79FB;&#x8FC7;&#x6765;&#xFF0C;&#x800C;&#x4E14;NeoDB&#x4E0A;&#x53EF;&#x4EE5;&#x6807;&#x8BB0;&#x90A3;&#x4E9B;&#x88AB;&#x7981;&#x7684;&#x6761;&#x76EE;&#x3002;  </li>
+<li>&#x6807;&#x8BB0;&#x7535;&#x5F71;&#xFF1A;<a href="https://letterboxd.com/">Letterboxed</a></li>
+<li>&#x6807;&#x8BB0;&#x4E66;&#x7C4D;&#xFF1A;<a href="https://www.goodreads.com/">Goodreads</a>  </li>
+<li>&#x8FD9;&#x7BC7;blog&#x201C;<a href="https://ulyc.github.io/2022/02/11/Douban-Escape-Plan/">&#x8C46;&#x74E3;&#x9003;&#x79BB;&#x8BA1;&#x5212;</a>&#x201D;&#x8BB2;&#x4E86;&#x5982;&#x4F55;&#x8FC1;&#x79FB;&#x6570;&#x636E;&#x5230;<a href="https://www.notion.so/">Notion</a><br> &#x6211;&#x6CA1;&#x6709;&#x5C1D;&#x8BD5;&#xFF0C;&#x4E0D;&#x8FC7;&#x770B;&#x8D77;&#x6765;&#x8BE6;&#x7EC6;&#x53EF;&#x884C;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x590D;&#x4E60;&#x6570;&#x5B57;&#x56FE;&#x50CF;&#x5206;&#x6790;&#x65F6;&#x53D1;&#x73B0;&#x4E24;&#x4E2A;&#x4E0D;&#x9519;&#x7684;&#x7F51;&#x9875;&#xFF1A;  </p>
+<ul>
+<li><a href="https://www.gwylab.com/pdf/%E4%BC%A0%E7%BB%9FCV%E7%AE%97%E6%B3%95-%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B-%E6%95%99%E6%9D%90%E5%90%88%E8%BE%91.pdf">&#x4F20;&#x7EDF;CV&#x7B97;&#x6CD5;-&#x8FB9;&#x7F18;&#x68C0;&#x6D4B;-&#x6559;&#x6750;&#x5408;&#x8F91;</a><br> &#x5F88;&#x5168;&#x9762;&#x7684;&#x4ECB;&#x7ECD;&#x3002;  </li>
+<li><a href="https://www.zgbk.com/ecph/words?SiteID=1&amp;ID=192882&amp;SubID=81769">SUSAN&#x7B97;&#x5B50;</a><br> &#x6761;&#x76EE;&#x4F5C;&#x8005;&#x7ADF;&#x662F;&#x6211;&#x7684;&#x6388;&#x8BFE;&#x8001;&#x5E08; (&#xFF9F;o&#xFF9F;;;</li>
+</ul>
+</li>
+<li><p>&#x7FFB;LUG&#x7FA4;&#x804A;&#x5929;&#x8BB0;&#x5F55;&#x53D1;&#x73B0;<a href="https://akaedu.github.io/book/index.html">Linux C&#x7F16;&#x7A0B;&#x4E00;&#x7AD9;&#x5F0F;&#x5B66;&#x4E60;</a>&#x3002;  </p>
+</li>
+<li><p>&#x4E5F;&#x662F;&#x590D;&#x4E60;&#x65F6;&#x67E5;&#x8D44;&#x6599;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x6E05;&#x534E;&#x8001;&#x5E08;&#x505A;&#x7684;<a href="https://iot-book.github.io/0_%E5%89%8D%E8%A8%802/">&#x7269;&#x8054;&#x7F51;&#x6559;&#x7A0B;</a>&#xFF0C;&#x611F;&#x89C9;&#x5F88;&#x5389;&#x5BB3;&#x7684;&#x6837;&#x5B50;&#x5148;&#x5B58;&#x8D77;&#x6765;&#x5427;qwq  </p>
+</li>
+<li><p>&#x63A8;&#x7279;&#x51B2;&#x6D6A;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;blogger&#x7684;<a href="https://xxchan.github.io/this-week-in-risingwave/2023/03/04/twirw-3.html">&#x5173;&#x4E8E;RisingWave&#x7684;&#x5468;&#x62A5;</a>&#xFF0C;&#x770B;&#x4E0D;&#x61C2;&#x4F46;&#x559C;&#x6B22;&#x5468;&#x62A5;&#x3002;  </p>
+</li>
+<li><p>&#x65E5;&#x8BED;&#x8BFE;&#x4E0A;&#xFF0C;&#x8001;&#x5E08;&#x63A8;&#x8350;&#x4E86;<a href="https://www.jpfbj.cn/mp/">&#x65E5;&#x672C;&#x6587;&#x5316;&#x4E2D;&#x5FC3;</a>&#x7F51;&#x7AD9;&#x3002;</p>
+</li>
+</ol>
+<h2 id="&#x672C;&#x6708;&#x8FDB;&#x5C55;-&#x1F3C6;"><a href="#&#x672C;&#x6708;&#x8FDB;&#x5C55;-&#x1F3C6;" class="headerlink" title="&#x672C;&#x6708;&#x8FDB;&#x5C55; &#x1F3C6;"></a>&#x672C;&#x6708;&#x8FDB;&#x5C55; &#x1F3C6;</h2><p>&#x6709;&#x5728;&#x7559;&#x610F;&#x548C;&#x6536;&#x96C6;&#x5B9E;&#x4E60;&#x4FE1;&#x606F;&#xFF08;&#x4F46;&#x5E76;&#x6CA1;&#x6709;&#x6295;&#x7B80;&#x5386;&#xFF09;&#x3002;    </p>
+<p>&#x6709;&#x7EE7;&#x7EED;&#x5728;&#x770B;Linux 101&#x548C;&#x5434;&#x6069;&#x8FBE;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF08;&#x5176;&#x5B83;&#x8FD8;&#x5728;&#x6401;&#x7F6E;&#xFF09;&#x3002;  </p>
+<p>&#x6709;&#x5065;&#x51E0;&#x6B21;&#x8EAB;&#x3002;  </p>
+<p>&#x5F00;&#x59CB;&#x753B;&#x677F;&#x5B50;&#x4E86;&#xFF01;&#x597D;&#x96BE;&#xFF01;&#x4E0D;&#x8FC7;&#x4E0D;&#x8BA8;&#x538C;&#x3002;&#x50CF;&#x5468;&#x661F;&#x9A70;&#x4ECE;&#x8DD1;&#x9F99;&#x5957;&#x5F00;&#x59CB;&#x4E00;&#x6837;&#x4ECE;PCB&#x6C11;&#x5DE5;&#x5F00;&#x59CB;&#x5427;&#xFF01;  </p>
+<h2 id="&#x4E66;&#x4E0E;&#x5F71;-&#x1F453;"><a href="#&#x4E66;&#x4E0E;&#x5F71;-&#x1F453;" class="headerlink" title="&#x4E66;&#x4E0E;&#x5F71; &#x1F453;"></a>&#x4E66;&#x4E0E;&#x5F71; &#x1F453;</h2><ul>
+<li><p><a href="https://www.goodreads.com/book/show/62877014?from_search=true&amp;from_srp=true&amp;qid=WEQNzNXjk2&amp;rank=1">&#x59CB;&#x4E8E;&#x6781;&#x9650;&#xFF1A;&#x5973;&#x6027;&#x4E3B;&#x4E49;&#x5F80;&#x590D;&#x4E66;&#x7B80;</a><br>&#x6FC0;&#x60C5;&#x63A8;&#x8350;&#x7ED9;&#x4E86;&#x4E0D;&#x5C11;&#x4EBA;&#x3002;  </p>
+</li>
+<li><p><a href="https://www.goodreads.com/book/show/33065667?from_search=true&amp;from_srp=true&amp;qid=rI6KSxjKtU&amp;rank=1">&#x6211;&#x7684;&#x9634;&#x9633;&#x4E24;&#x754C;</a><br>&#x5E2E;&#x6211;&#x5EA6;&#x8FC7;&#x4E86;&#x6F2B;&#x957F;&#x5230;&#x6709;&#x70B9;&#x96BE;&#x71AC;&#x7684;&#x5BD2;&#x5047;&#x65F6;&#x5149;&#x3002;&#x4E00;&#x672C;&#x80FD;&#x8BA9;&#x4EBA;&#x5728;&#x751F;&#x6D3B;&#x4E4B;&#x4F59;&#x4EAB;&#x53D7;&#x800C;&#x4E0D;&#x662F;&#x500D;&#x52A0;&#x6298;&#x78E8;&#x7684;&#x5C0F;&#x8BF4;&#x662F;&#x5F88;&#x96BE;&#x5F97;&#x7684;&#x3002;</p>
+</li>
+</ul>
+<p>&#x672C;&#x6708;&#x770B;&#x7684;11&#x90E8;&#x7535;&#x5F71;&#x4E2D;&#xFF0C;&#x6700;&#x63A8;&#x8350;&#x7684;&#x4E09;&#x90E8;&#x7535;&#x5F71;&#xFF1A;  </p>
+<ul>
+<li><p><a href="https://letterboxd.com/film/the-passengers-of-the-night/">&#x5DF4;&#x9ECE;&#x591C;&#x65C5;&#x4EBA;</a><br>&#x4FAF;&#x9EA6;&#x5F71;&#x8FF7;&#x72C2;&#x559C;&#xFF01;   </p>
+</li>
+<li><p><a href="https://letterboxd.com/film/the-time-to-live-and-the-time-to-die/">&#x7AE5;&#x5E74;&#x5F80;&#x4E8B;</a><br>&#x6C89;&#x75DB;&#x800C;&#x771F;&#x5207;&#x3002;  </p>
+</li>
+<li><p><a href="https://letterboxd.com/film/aftersun/">&#x6652;&#x540E;&#x5047;&#x65E5;</a><br>&#x5982;&#x4E0D;&#x5C11;&#x4EBA;&#x6240;&#x8BF4;&#x7684;&#xFF0C;&#x201C;&#x540E;&#x52B2;&#x5341;&#x8DB3;&#x201D;&#x3002;</p>
+</li>
+</ul>
+<p>&#x6700;&#x540E;&#xFF0C;&#x4E00;&#x5F20;Chantal Akerman&#x7684;&#x5E05;&#x6C14;&#x622A;&#x56FE;&#xFF1A;  </p>
+<img src="/images/Akerman.png" alt="Akerman" title="Akerman" width="400">    
+]]></content>
+      <categories>
+        <category>总结</category>
+        <category>月度总结</category>
+      </categories>
   </entry>
   <entry>
     <title>电子学基础</title>
@@ -4300,6 +4359,100 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>初识 Linux</title>
+    <url>/zh-cn/Intro-to-Linux/</url>
+    <content><![CDATA[<p>&#x6309;&#x7167;&#x6559;&#x7A0B;&#x6210;&#x529F;&#x5B89;&#x88C5;&#x7528;&#x4E0A;&#x4E86; Xubuntu &#xFF01;&#x8D5E;&#x7F8E;&#xFF01;  </p>
+<span id="more"></span>
+
+<h3 id="&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;"><a href="#&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;" class="headerlink" title="&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;"></a>&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;</h3><hr>
+<ul>
+<li>&#x6469;&#x5C14;&#x5B9A;&#x5F8B;&#xFF1A;&#x96C6;&#x6210;&#x7535;&#x8DEF;&#x4E0A;&#x53EF;&#x5BB9;&#x7EB3;&#x7684;&#x6676;&#x4F53;&#x7BA1;&#x6570;&#x76EE;&#x6BCF;&#x4E24;&#x5E74;&#x5C31;&#x4F1A;&#x7FFB;&#x4E00;&#x500D;/&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x6027;&#x80FD;&#x6BCF; 18 &#x4E2A;&#x6708;&#x63D0;&#x9AD8;&#x4E00;&#x500D;&#xFF08;Intel CEO David House&#xFF09;</li>
+<li>&#x91CF;&#x5B50;&#x7269;&#x7406;&#x7684;&#x9650;&#x5236;&#x4EE5;&#x53CA; CPU &#x529F;&#x8017;&#x548C;&#x6563;&#x70ED;&#x7684;&#x9650;&#x5236;&#x4F7F;&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7684;&#x63D0;&#x5347;&#x5F00;&#x59CB;&#x653E;&#x7F13;&#x3002;&#x591A;&#x4E2A; CPU &#x4E4B;&#x95F4;&#x7684;&#x8054;&#x5408;&#x534F;&#x4F5C;&#xFF08;&#x57FA;&#x4E8E;&#x591A;&#x6838;&#x7684;&#x5F00;&#x53D1;&#xFF09;&#x53D6;&#x4EE3;&#x8FFD;&#x6C42;&#x5355;&#x4E2A; CPU &#x6027;&#x80FD;&#x7684;&#x63D0;&#x5347;&#xFF0C;&#x6210;&#x4E3A;&#x4E86;&#x672A;&#x6765;&#x53D1;&#x5C55;&#x65B9;&#x5411;</li>
+</ul>
+<h3 id="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;"><a href="#&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;"></a>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</h3><hr>
+<ul>
+<li>&#x7528;&#x6237;&#x4E0E;&#x5E95;&#x5C42;&#x786C;&#x4EF6;&#x4EA4;&#x6D41;&#x7684;&#x6865;&#x6881;</li>
+<li>&#x529F;&#x80FD;<ul>
+<li>&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8C03;&#x5EA6;&#x8FDB;&#x7A0B;&#xFF0C;&#x4F7F;&#x8BB8;&#x591A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x5728;&#x51E0;&#x4E2A;&#x4E2D;&#x592E;&#x5904;&#x7406;&#x5668;&#x4E0A;&#x5E76;&#x53D1;&#x6267;&#x884C;</li>
+<li>&#x5185;&#x5B58;&#x7BA1;&#x7406;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5408;&#x7406;&#x5206;&#x914D;&#x548C;&#x56DE;&#x6536;&#x5185;&#x5B58;</li>
+<li>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5EFA;&#x7ACB;&#x5408;&#x9002;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6765;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x548C;&#x6570;&#x636E;</li>
+<li>&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5B9E;&#x73B0;&#x5404;&#x79CD;&#x5FC5;&#x9700;&#x7684;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#xFF08;&#x5982;TCP/IP&#xFF09;</li>
+<li>&#x5B89;&#x5168;&#x673A;&#x5236;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x914D;&#x5907;&#x5B89;&#x5168;&#x673A;&#x5236;&#x7528;&#x4E8E;&#x4FDD;&#x62A4;&#x6570;&#x636E;&#x4E0D;&#x88AB;&#x672A;&#x6388;&#x6743;&#x7684;&#x4EBA;&#x58EB;&#x83B7;&#x53D6;</li>
+<li>&#x7528;&#x6237;&#x754C;&#x9762;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x901A;&#x5E38;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x56FE;&#x5F62;&#x5316;&#x7684;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF0C;&#x65B9;&#x4FBF;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x673A;</li>
+<li>&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0E;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x5BF9;&#x63A5;&#x4EE5;&#x53D1;&#x6325;&#x786C;&#x4EF6;&#x7684;&#x529F;&#x80FD;</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-&#x8BDE;&#x751F;"><a href="#Linux-&#x8BDE;&#x751F;" class="headerlink" title="Linux &#x8BDE;&#x751F;"></a>Linux &#x8BDE;&#x751F;</h3><hr>
+<blockquote>
+<p>&#x9009;&#x62E9; Linux&#xFF0C;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x662F;&#x4E00;&#x79CD;&#x5BF9;&#x6781;&#x5BA2;&#x7CBE;&#x795E;&#x4E0E;&#x5F00;&#x6E90;&#x6587;&#x5316;&#x7684;&#x8BA4;&#x540C;&#x3002;</p>
+</blockquote>
+<blockquote>
+<p><em>&#x81EA;&#x7531;&#x8F6F;&#x4EF6;</em>&#x610F;&#x5473;&#x7740;&#x5176;&#x7528;&#x6237;&#x62E5;&#x6709;&#x81EA;&#x7531;&#x3002;&#xFF08;&#x8FD9;&#x65E0;&#x5173;&#x4EF7;&#x683C;&#x3002;&#xFF09;&#x6211;&#x4EEC;&#x5F00;&#x53D1;&#x4E86;GNU&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD9;&#x6837;&#x7528;&#x6237;&#x5C31;&#x6709;&#x4E86;&#x8BA1;&#x7B97;&#x7684;&#x81EA;&#x7531;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x7684;&#x7528;&#x6237;&#x62E5;&#x6709;&#x56DB;&#x9879;&#x57FA;&#x672C;&#x81EA;&#x7531;&#xFF1A;(0)&#x81EA;&#x7531;&#x8FD0;&#x884C;&#x8F6F;&#x4EF6;&#x3001;(1)&#x81EA;&#x7531;&#x5B66;&#x4E60;&#x548C;&#x4FEE;&#x6539;&#x8F6F;&#x4EF6;&#x6E90;&#x4EE3;&#x7801;&#x3001;(2)&#x81EA;&#x7531;&#x518D;&#x53D1;&#x5E03;&#x8F6F;&#x4EF6;&#x62F7;&#x8D1D;&#x4EE5;&#x53CA;(3)&#x81EA;&#x7531;&#x53D1;&#x5E03;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x8F6F;&#x4EF6;&#x7248;&#x672C;&#x3002;</p>
+<p>&#x8F6F;&#x4EF6;&#x4E0D;&#x540C;&#x4E8E;&#x751F;&#x6D3B;&#x4E2D;&#x7684;&#x4E8B;&#x7269; &#x2014; &#x5B83;&#x4E0D;&#x540C;&#x4E8E;&#x6905;&#x5B50;&#x3001;&#x4E09;&#x660E;&#x6CBB;&#x6216;&#x662F;&#x6C7D;&#x6CB9; &#x2014; &#x8F6F;&#x4EF6;&#x53EF;&#x4EE5;&#x66F4;&#x5BB9;&#x6613;&#x5730;&#x88AB;&#x590D;&#x5236;&#x6216;&#x4FEE;&#x6539;&#x3002;&#x6070;&#x6070;&#x662F;&#x8FD9;&#x4E00;&#x7279;&#x6027;&#xFF0C;&#x4F7F;&#x5F97;&#x8F6F;&#x4EF6;&#x66F4;&#x4E3A;&#x6709;&#x7528;&#x3002;&#x6211;&#x4EEC;&#x7531;&#x6B64;&#x575A;&#x4FE1;&#xFF0C;&#x8F6F;&#x4EF6;&#x7684;&#x8FD9;&#x4E00;&#x5929;&#x7136;&#x5C5E;&#x6027;&#x5E94;&#x8BE5;&#x88AB;&#x7528;&#x6237;&#x5229;&#x7528;&#x3002;<a href="#refer-anchor-1"><sup>1</sup></a> </p>
+</blockquote>
+<ul>
+<li>1983 &#x5E74;&#xFF0C;Richard Stallman &#x5728; MIT &#x53D1;&#x8D77;&#x4E86; GNU &#x8BA1;&#x5212;&#xFF1B;1991&#x5E74;&#xFF0C;Linus Torvalds &#x7F16;&#x5199;&#x5E76;&#x53D1;&#x5E03;&#x4E86;Linux &#x5185;&#x6838;&#xFF0C;&#x6210;&#x4E3A;&#x4E86;&#x540E;&#x6765;&#x5404;&#x7C7B; Linux &#x53D1;&#x884C;&#x7248;&#x7684;&#x57FA;&#x7840;</li>
+<li>GNU&#xFF1A;GNU &#x662F;&#x201C;<strong>G</strong>NU is&#xA0;<strong>N</strong>ot&#xA0;<strong>U</strong>nix&#x201D;&#x7684;&#x9012;&#x5F52;&#x7F29;&#x5199;&#xFF0C;&#x6307;&#x4E00;&#x5957;&#x7C7B;&#x4F3C; UNIX &#x4F46;&#x5B8C;&#x5168;&#x81EA;&#x7531;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
+<li>GNU &#x901A;&#x7528;&#x516C;&#x5171;&#x8BB8;&#x53EF;&#x8BC1;&#xFF08;GNU General Public License&#xFF0C;GNU GPL &#x6216; GPL&#xFF09;&#xFF1A;&#x628A;&#x4F7F;&#x7528;&#x8BE5;&#x8BB8;&#x53EF;&#x7684;&#x8F6F;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6743;&#x5229;&#x6388;&#x4E88;&#x4EFB;&#x4F55;&#x4F7F;&#x7528;&#x5B83;&#x7684;&#x4EBA;<ul>
+<li>&#x8FD9;&#x79CD;&#x6743;&#x5229;&#x53C8;&#x88AB;&#x79F0;&#x4E3A;&#x8457;&#x4F5C;&#x4F20;&#xFF08;Copyleft&#xFF09;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x901A;&#x5E38;&#x7684;&#x8457;&#x4F5C;&#x6743;&#xFF08;Copyright&#xFF09;</li>
+</ul>
+</li>
+<li>&#x6838;&#x5FC3;GNU&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x81F3;&#x4ECA;&#x6CA1;&#x6709;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x3002;&#x73B0;&#x5728;&#x5B9E;&#x9645;&#x4E0A;&#x7528;&#x7684;&#x662F; GNU/Linux &#xFF0C;Linux &#x5185;&#x6838;&#x662F;&#x529F;&#x80FD;&#x6838;&#x5FC3;&#xFF0C;&#x800C;GNU&#x7EC4;&#x4EF6;&#x662F;&#x5916;&#x8BBE;&#xFF0C;&#x4E5F;&#x662F;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x548C;&#x4F7F;&#x7528; Linux &#x5185;&#x6838;&#x7684;&#x5DE5;&#x5177;<ul>
+<li>&#x73B0;&#x5728;&#x667A;&#x80FD;&#x624B;&#x673A;&#x4E0A;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x7CFB;&#x7EDF;&#x662F; Android/Linux &#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; Linux &#x5185;&#x6838;&#x5F00;&#x53D1;&#x7684;&#x3001;&#x6CA1;&#x6709;&#x91C7;&#x7528; GNU &#x7EC4;&#x4EF6;&#x800C;&#x662F;&#x7528;&#x8C37;&#x6B4C;&#x81EA;&#x884C;&#x7814;&#x53D1;&#x7684;&#x53E6;&#x4E00;&#x5957; Android &#x4F53;&#x7CFB;&#x4F5C;&#x4E3A;&#x5DE5;&#x5177;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-&#x53D1;&#x884C;&#x7248;"><a href="#Linux-&#x53D1;&#x884C;&#x7248;" class="headerlink" title="Linux &#x53D1;&#x884C;&#x7248;"></a>Linux &#x53D1;&#x884C;&#x7248;</h3><hr>
+<ul>
+<li>Linux &#x53D1;&#x884C;&#x7248; = Linux &#x5185;&#x6838; + &#x4E00;&#x7CFB;&#x5217; GNU &#x5DE5;&#x5177;&#x548C;&#x5E93;&#x3001;&#x4E00;&#x4E9B;&#x9644;&#x5E26;&#x7684;&#x8F6F;&#x4EF6;&#x3001;&#x8BF4;&#x660E;&#x6587;&#x6863;&#x3001;&#x4E00;&#x4E2A;&#x684C;&#x9762;&#x7CFB;&#x7EDF;&#x3001;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x7BA1;&#x7406;&#x5668;&#x548C;&#x4E00;&#x4E2A;&#x684C;&#x9762;&#x73AF;&#x5883;</li>
+<li>&#x4E3B;&#x6D41;&#x7684;&#x53D1;&#x884C;&#x7248;&#x5206;&#x652F;<ul>
+<li><strong><strong>Debian &#x5206;&#x652F;</strong></strong>&#xFF1A;&#x6700;&#x8457;&#x540D;&#x7684;&#x662F; Ubuntu &#xFF0C;&#x4E00;&#x4E2A;&#x4E3B;&#x6253;&#x684C;&#x9762;&#x5E94;&#x7528;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x9002;&#x5408;&#x666E;&#x901A;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x3002;<strong>&#x63A8;&#x8350;&#x521D;&#x6B21;&#x63A5;&#x89E6; Linux &#x7684;&#x8BFB;&#x8005;&#x4F18;&#x5148;&#x91C7;&#x7528; Ubuntu &#x53D1;&#x884C;&#x7248;&#x6216;&#x8005;&#x5B83;&#x7684;&#x5B50;&#x53D1;&#x884C;&#x7248;&#xFF08;Lubuntu, Xubuntu &#x7B49;&#xFF09;</strong></li>
+<li><strong><strong>Red Hat &#x5206;&#x652F;</strong></strong>&#xFF1A;Fedora &#xFF0C;CentOS&#xFF08;&#x9002;&#x5408;&#x5728;&#x8981;&#x6C42;&#x9AD8;&#x5EA6;&#x7A33;&#x5B9A;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#xFF09;</li>
+<li><strong><strong>Arch Linux &#x5206;&#x652F;</strong></strong>&#xFF1A;&#x8981;&#x6C42;&#x4F7F;&#x7528;&#x8005;&#x81EA;&#x8EAB;&#x613F;&#x610F;&#x53BB;&#x4E86;&#x89E3;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x8FD0;&#x4F5C;&#x65B9;&#x5F0F;&#xFF0C;&#x5E76;&#x4E0D;&#x91C7;&#x53D6;&#x5C4F;&#x853D;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x964D;&#x4F4E;&#x4F7F;&#x7528;&#x95E8;&#x69DB;&#x3002;&#x53D8;&#x79CD; Manjaro &#x66F4;&#x6CE8;&#x91CD;&#x6613;&#x7528;&#xFF0C;&#x66F4;&#x9002;&#x5408;&#x4E00;&#x822C;&#x7528;&#x6237;</li>
+</ul>
+</li>
+</ul>
+<h3 id="Linux-&#x5728;&#x8EAB;&#x8FB9;"><a href="#Linux-&#x5728;&#x8EAB;&#x8FB9;" class="headerlink" title="Linux &#x5728;&#x8EAB;&#x8FB9;"></a>Linux &#x5728;&#x8EAB;&#x8FB9;</h3><hr>
+<ul>
+<li>&#x667A;&#x80FD;&#x624B;&#x673A;&#xFF1A;Google &#x7814;&#x53D1;&#x7684; Android &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5C5E;&#x4E8E; Android/Linux &#x5206;&#x652F;&#xFF0C;&#x4E5F;&#x53EB; Android &#x539F;&#x751F;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B50;&#x53D1;&#x884C;&#x7248;&#x5F88;&#x591A;&#xFF0C;&#x5982;&#x534E;&#x4E3A; EMUI &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x548C;&#x5C0F;&#x7C73; MIUI &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7B49;</li>
+<li>&#x670D;&#x52A1;&#x5668;&#xFF1A;&#x7F51;&#x7AD9;&#x548C;&#x8F6F;&#x4EF6;&#x7684;&#x63D0;&#x4F9B;&#x5546;&#x90FD;&#x9700;&#x8981;&#x8BBE;&#x7ACB;&#x4ED6;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x6765;&#x5B8C;&#x6210;&#x8BA1;&#x7B97;&#x3001;&#x5B58;&#x50A8;&#x548C;&#x901A;&#x4FE1;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x79CD;&#x8BA1;&#x7B97;&#x673A;&#x5C31;&#x88AB;&#x79F0;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x3002;&#x670D;&#x52A1;&#x5668;&#x901A;&#x5E38;&#x4E0D;&#x7528; Windows &#x6216;&#x8005; macOS &#x8FD9;&#x79CD;&#x4E2A;&#x4EBA;&#x8BA1;&#x7B97;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x7528; Linux &#x53D1;&#x884C;&#x7248;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x754C;&#x9762;&#x7B80;&#x6D01;&#xFF0C;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;&#x800C;&#x4E14;&#x67D0;&#x4E9B;&#x53D1;&#x884C;&#x7248;&#x4E5F;&#x53D7;&#x5230;&#x4E13;&#x4E1A;&#x8BA1;&#x7B97;&#x673A;&#x4F01;&#x4E1A;&#x7684;&#x670D;&#x52A1;&#x652F;&#x6301;&#xFF08;&#x5982; RHEL&#xFF09;&#x3002;Debian &#x548C; Ubuntu Server &#x5F88;&#x6D41;&#x884C;</li>
+<li>&#x5D4C;&#x5165;&#x5F0F;&#x8BBE;&#x5907;&#xFF1A;Android/Linux &#x5206;&#x652F;&#x4E0B;&#x7684;&#x5404;&#x7C7B;&#x53D1;&#x884C;&#x7248;&#x662F;&#x4E3B;&#x6D41;&#x7684;&#x5D4C;&#x5165;&#x5F0F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5982; Google &#x4E3A;&#x6570;&#x5B57;&#x7535;&#x89C6;&#x4E13;&#x95E8;&#x63A8;&#x51FA;&#x7684; Android TV &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
+</ul>
+<h3 id="&#x4F7F;&#x7528;-Linux"><a href="#&#x4F7F;&#x7528;-Linux" class="headerlink" title="&#x4F7F;&#x7528; Linux"></a>&#x4F7F;&#x7528; Linux</h3><hr>
+<ul>
+<li><strong>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x5B89;&#x88C5;&#x5B8C;&#x6BD5;&#x7684; Linux &#x955C;&#x50CF;</strong></li>
+<li>&#x6B65;&#x9AA4;<ol>
+<li>&#x83B7;&#x53D6;&#x865A;&#x62DF;&#x673A;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#xFF0C;&#x63A8;&#x8350; <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a></li>
+<li>&#x83B7;&#x53D6; <a href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu &#x865A;&#x62DF;&#x673A;&#x955C;&#x50CF;</a>&#xFF08;Xubuntu &#x662F; Ubuntu &#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x53D1;&#x884C;&#x7248;&#xFF0C;&#x4E0E; Ubuntu &#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x4F53;&#x79EF;&#x66F4;&#x5C0F;&#xFF0C;&#x6027;&#x80FD;&#x9700;&#x6C42;&#x66F4;&#x5C11;&#xFF0C;&#x9002;&#x5408;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x6027;&#x80FD;&#x7684;&#x7535;&#x8111;&#x5B89;&#x88C5;&#x4F7F;&#x7528;&#xFF09;</li>
+<li>&#x53CC;&#x51FB;&#x6253;&#x5F00;&#x865A;&#x62DF;&#x673A;&#x955C;&#x50CF;&#xFF0C;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x4F1A;&#x6253;&#x5F00;&#x5E76;&#x5BFC;&#x5165;&#x8BE5;&#x955C;&#x50CF;&#xFF0C;&#x5BFC;&#x5165;&#x5B8C;&#x6BD5;&#x540E;&#x53EF;&#x76F4;&#x63A5;&#x70B9;&#x51FB;&#x5F00;&#x59CB;&#x6309;&#x94AE;&#x542F;&#x52A8;</li>
+</ol>
+</li>
+</ul>
+<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
+
+<p>&#x1F973; ~   </p>
+<h3 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h3><hr>
+<p><strong>&#x6559;&#x7A0B;</strong></p>
+<p><a href="https://lug.ustc.edu.cn/">LUG @ USTC</a>&#x7684;<a href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - &#x7B2C;&#x4E00;&#x7AE0;&#xFF1A;&#x521D;&#x8BC6;Linux</a></p>
+<p><strong>&#x5F15;&#x7528;</strong>  </p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a href="https://www.gnu.org/philosophy/philosophy.html">GNU &#x5DE5;&#x7A0B;&#x7684;&#x54F2;&#x5B66;</a></p>
+<p><strong>&#x63A8;&#x8350;&#x9605;&#x8BFB;</strong></p>
+<p><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">&#x4E3A;&#x4EC0;&#x4E48;&#x5F00;&#x6E90;&#x9519;&#x5931;&#x4E86;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x7684;&#x91CD;&#x70B9;</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>软件</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java 入门</title>
     <url>/zh-cn/Intro-to-Java/</url>
     <content><![CDATA[<p>&#x5173;&#x4E8E;Java&#x7684;&#x8BDE;&#x751F;&#x80CC;&#x666F;&#x3001;&#x53D1;&#x5C55;&#x5386;&#x53F2;&#x548C;&#x7248;&#x672C;&#x8BF4;&#x660E;&#x90E8;&#x5206;&#x8BA9;&#x6211;&#x6536;&#x83B7;&#x8F83;&#x5927;&#x3002;  </p>
@@ -4402,100 +4555,6 @@ git push -u origin master
       </categories>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>初识 Linux</title>
-    <url>/zh-cn/Intro-to-Linux/</url>
-    <content><![CDATA[<p>&#x6309;&#x7167;&#x6559;&#x7A0B;&#x6210;&#x529F;&#x5B89;&#x88C5;&#x7528;&#x4E0A;&#x4E86; Xubuntu &#xFF01;&#x8D5E;&#x7F8E;&#xFF01;  </p>
-<span id="more"></span>
-
-<h3 id="&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;"><a href="#&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;" class="headerlink" title="&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;"></a>&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7206;&#x53D1;&#x589E;&#x957F;</h3><hr>
-<ul>
-<li>&#x6469;&#x5C14;&#x5B9A;&#x5F8B;&#xFF1A;&#x96C6;&#x6210;&#x7535;&#x8DEF;&#x4E0A;&#x53EF;&#x5BB9;&#x7EB3;&#x7684;&#x6676;&#x4F53;&#x7BA1;&#x6570;&#x76EE;&#x6BCF;&#x4E24;&#x5E74;&#x5C31;&#x4F1A;&#x7FFB;&#x4E00;&#x500D;/&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x6027;&#x80FD;&#x6BCF; 18 &#x4E2A;&#x6708;&#x63D0;&#x9AD8;&#x4E00;&#x500D;&#xFF08;Intel CEO David House&#xFF09;</li>
-<li>&#x91CF;&#x5B50;&#x7269;&#x7406;&#x7684;&#x9650;&#x5236;&#x4EE5;&#x53CA; CPU &#x529F;&#x8017;&#x548C;&#x6563;&#x70ED;&#x7684;&#x9650;&#x5236;&#x4F7F;&#x8BA1;&#x7B97;&#x673A;&#x6027;&#x80FD;&#x7684;&#x63D0;&#x5347;&#x5F00;&#x59CB;&#x653E;&#x7F13;&#x3002;&#x591A;&#x4E2A; CPU &#x4E4B;&#x95F4;&#x7684;&#x8054;&#x5408;&#x534F;&#x4F5C;&#xFF08;&#x57FA;&#x4E8E;&#x591A;&#x6838;&#x7684;&#x5F00;&#x53D1;&#xFF09;&#x53D6;&#x4EE3;&#x8FFD;&#x6C42;&#x5355;&#x4E2A; CPU &#x6027;&#x80FD;&#x7684;&#x63D0;&#x5347;&#xFF0C;&#x6210;&#x4E3A;&#x4E86;&#x672A;&#x6765;&#x53D1;&#x5C55;&#x65B9;&#x5411;</li>
-</ul>
-<h3 id="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;"><a href="#&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;" class="headerlink" title="&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;"></a>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</h3><hr>
-<ul>
-<li>&#x7528;&#x6237;&#x4E0E;&#x5E95;&#x5C42;&#x786C;&#x4EF6;&#x4EA4;&#x6D41;&#x7684;&#x6865;&#x6881;</li>
-<li>&#x529F;&#x80FD;<ul>
-<li>&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8C03;&#x5EA6;&#x8FDB;&#x7A0B;&#xFF0C;&#x4F7F;&#x8BB8;&#x591A;&#x8FDB;&#x7A0B;&#x53EF;&#x4EE5;&#x5728;&#x51E0;&#x4E2A;&#x4E2D;&#x592E;&#x5904;&#x7406;&#x5668;&#x4E0A;&#x5E76;&#x53D1;&#x6267;&#x884C;</li>
-<li>&#x5185;&#x5B58;&#x7BA1;&#x7406;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5408;&#x7406;&#x5206;&#x914D;&#x548C;&#x56DE;&#x6536;&#x5185;&#x5B58;</li>
-<li>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5EFA;&#x7ACB;&#x5408;&#x9002;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x6765;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x548C;&#x6570;&#x636E;</li>
-<li>&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5B9E;&#x73B0;&#x5404;&#x79CD;&#x5FC5;&#x9700;&#x7684;&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#xFF08;&#x5982;TCP/IP&#xFF09;</li>
-<li>&#x5B89;&#x5168;&#x673A;&#x5236;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x914D;&#x5907;&#x5B89;&#x5168;&#x673A;&#x5236;&#x7528;&#x4E8E;&#x4FDD;&#x62A4;&#x6570;&#x636E;&#x4E0D;&#x88AB;&#x672A;&#x6388;&#x6743;&#x7684;&#x4EBA;&#x58EB;&#x83B7;&#x53D6;</li>
-<li>&#x7528;&#x6237;&#x754C;&#x9762;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x901A;&#x5E38;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x56FE;&#x5F62;&#x5316;&#x7684;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF0C;&#x65B9;&#x4FBF;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x8BA1;&#x7B97;&#x673A;</li>
-<li>&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#xFF1A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0E;&#x9A71;&#x52A8;&#x7A0B;&#x5E8F;&#x5BF9;&#x63A5;&#x4EE5;&#x53D1;&#x6325;&#x786C;&#x4EF6;&#x7684;&#x529F;&#x80FD;</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-&#x8BDE;&#x751F;"><a href="#Linux-&#x8BDE;&#x751F;" class="headerlink" title="Linux &#x8BDE;&#x751F;"></a>Linux &#x8BDE;&#x751F;</h3><hr>
-<blockquote>
-<p>&#x9009;&#x62E9; Linux&#xFF0C;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x662F;&#x4E00;&#x79CD;&#x5BF9;&#x6781;&#x5BA2;&#x7CBE;&#x795E;&#x4E0E;&#x5F00;&#x6E90;&#x6587;&#x5316;&#x7684;&#x8BA4;&#x540C;&#x3002;</p>
-</blockquote>
-<blockquote>
-<p><em>&#x81EA;&#x7531;&#x8F6F;&#x4EF6;</em>&#x610F;&#x5473;&#x7740;&#x5176;&#x7528;&#x6237;&#x62E5;&#x6709;&#x81EA;&#x7531;&#x3002;&#xFF08;&#x8FD9;&#x65E0;&#x5173;&#x4EF7;&#x683C;&#x3002;&#xFF09;&#x6211;&#x4EEC;&#x5F00;&#x53D1;&#x4E86;GNU&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD9;&#x6837;&#x7528;&#x6237;&#x5C31;&#x6709;&#x4E86;&#x8BA1;&#x7B97;&#x7684;&#x81EA;&#x7531;&#x3002;</p>
-<p>&#x5177;&#x4F53;&#x6765;&#x8BF4;&#xFF0C;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x7684;&#x7528;&#x6237;&#x62E5;&#x6709;&#x56DB;&#x9879;&#x57FA;&#x672C;&#x81EA;&#x7531;&#xFF1A;(0)&#x81EA;&#x7531;&#x8FD0;&#x884C;&#x8F6F;&#x4EF6;&#x3001;(1)&#x81EA;&#x7531;&#x5B66;&#x4E60;&#x548C;&#x4FEE;&#x6539;&#x8F6F;&#x4EF6;&#x6E90;&#x4EE3;&#x7801;&#x3001;(2)&#x81EA;&#x7531;&#x518D;&#x53D1;&#x5E03;&#x8F6F;&#x4EF6;&#x62F7;&#x8D1D;&#x4EE5;&#x53CA;(3)&#x81EA;&#x7531;&#x53D1;&#x5E03;&#x4FEE;&#x6539;&#x540E;&#x7684;&#x8F6F;&#x4EF6;&#x7248;&#x672C;&#x3002;</p>
-<p>&#x8F6F;&#x4EF6;&#x4E0D;&#x540C;&#x4E8E;&#x751F;&#x6D3B;&#x4E2D;&#x7684;&#x4E8B;&#x7269; &#x2014; &#x5B83;&#x4E0D;&#x540C;&#x4E8E;&#x6905;&#x5B50;&#x3001;&#x4E09;&#x660E;&#x6CBB;&#x6216;&#x662F;&#x6C7D;&#x6CB9; &#x2014; &#x8F6F;&#x4EF6;&#x53EF;&#x4EE5;&#x66F4;&#x5BB9;&#x6613;&#x5730;&#x88AB;&#x590D;&#x5236;&#x6216;&#x4FEE;&#x6539;&#x3002;&#x6070;&#x6070;&#x662F;&#x8FD9;&#x4E00;&#x7279;&#x6027;&#xFF0C;&#x4F7F;&#x5F97;&#x8F6F;&#x4EF6;&#x66F4;&#x4E3A;&#x6709;&#x7528;&#x3002;&#x6211;&#x4EEC;&#x7531;&#x6B64;&#x575A;&#x4FE1;&#xFF0C;&#x8F6F;&#x4EF6;&#x7684;&#x8FD9;&#x4E00;&#x5929;&#x7136;&#x5C5E;&#x6027;&#x5E94;&#x8BE5;&#x88AB;&#x7528;&#x6237;&#x5229;&#x7528;&#x3002;<a href="#refer-anchor-1"><sup>1</sup></a> </p>
-</blockquote>
-<ul>
-<li>1983 &#x5E74;&#xFF0C;Richard Stallman &#x5728; MIT &#x53D1;&#x8D77;&#x4E86; GNU &#x8BA1;&#x5212;&#xFF1B;1991&#x5E74;&#xFF0C;Linus Torvalds &#x7F16;&#x5199;&#x5E76;&#x53D1;&#x5E03;&#x4E86;Linux &#x5185;&#x6838;&#xFF0C;&#x6210;&#x4E3A;&#x4E86;&#x540E;&#x6765;&#x5404;&#x7C7B; Linux &#x53D1;&#x884C;&#x7248;&#x7684;&#x57FA;&#x7840;</li>
-<li>GNU&#xFF1A;GNU &#x662F;&#x201C;<strong>G</strong>NU is&#xA0;<strong>N</strong>ot&#xA0;<strong>U</strong>nix&#x201D;&#x7684;&#x9012;&#x5F52;&#x7F29;&#x5199;&#xFF0C;&#x6307;&#x4E00;&#x5957;&#x7C7B;&#x4F3C; UNIX &#x4F46;&#x5B8C;&#x5168;&#x81EA;&#x7531;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
-<li>GNU &#x901A;&#x7528;&#x516C;&#x5171;&#x8BB8;&#x53EF;&#x8BC1;&#xFF08;GNU General Public License&#xFF0C;GNU GPL &#x6216; GPL&#xFF09;&#xFF1A;&#x628A;&#x4F7F;&#x7528;&#x8BE5;&#x8BB8;&#x53EF;&#x7684;&#x8F6F;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6743;&#x5229;&#x6388;&#x4E88;&#x4EFB;&#x4F55;&#x4F7F;&#x7528;&#x5B83;&#x7684;&#x4EBA;<ul>
-<li>&#x8FD9;&#x79CD;&#x6743;&#x5229;&#x53C8;&#x88AB;&#x79F0;&#x4E3A;&#x8457;&#x4F5C;&#x4F20;&#xFF08;Copyleft&#xFF09;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x901A;&#x5E38;&#x7684;&#x8457;&#x4F5C;&#x6743;&#xFF08;Copyright&#xFF09;</li>
-</ul>
-</li>
-<li>&#x6838;&#x5FC3;GNU&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x81F3;&#x4ECA;&#x6CA1;&#x6709;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x3002;&#x73B0;&#x5728;&#x5B9E;&#x9645;&#x4E0A;&#x7528;&#x7684;&#x662F; GNU/Linux &#xFF0C;Linux &#x5185;&#x6838;&#x662F;&#x529F;&#x80FD;&#x6838;&#x5FC3;&#xFF0C;&#x800C;GNU&#x7EC4;&#x4EF6;&#x662F;&#x5916;&#x8BBE;&#xFF0C;&#x4E5F;&#x662F;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x548C;&#x4F7F;&#x7528; Linux &#x5185;&#x6838;&#x7684;&#x5DE5;&#x5177;<ul>
-<li>&#x73B0;&#x5728;&#x667A;&#x80FD;&#x624B;&#x673A;&#x4E0A;&#x4E00;&#x4E2A;&#x5E38;&#x89C1;&#x7684;&#x7CFB;&#x7EDF;&#x662F; Android/Linux &#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; Linux &#x5185;&#x6838;&#x5F00;&#x53D1;&#x7684;&#x3001;&#x6CA1;&#x6709;&#x91C7;&#x7528; GNU &#x7EC4;&#x4EF6;&#x800C;&#x662F;&#x7528;&#x8C37;&#x6B4C;&#x81EA;&#x884C;&#x7814;&#x53D1;&#x7684;&#x53E6;&#x4E00;&#x5957; Android &#x4F53;&#x7CFB;&#x4F5C;&#x4E3A;&#x5DE5;&#x5177;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-&#x53D1;&#x884C;&#x7248;"><a href="#Linux-&#x53D1;&#x884C;&#x7248;" class="headerlink" title="Linux &#x53D1;&#x884C;&#x7248;"></a>Linux &#x53D1;&#x884C;&#x7248;</h3><hr>
-<ul>
-<li>Linux &#x53D1;&#x884C;&#x7248; = Linux &#x5185;&#x6838; + &#x4E00;&#x7CFB;&#x5217; GNU &#x5DE5;&#x5177;&#x548C;&#x5E93;&#x3001;&#x4E00;&#x4E9B;&#x9644;&#x5E26;&#x7684;&#x8F6F;&#x4EF6;&#x3001;&#x8BF4;&#x660E;&#x6587;&#x6863;&#x3001;&#x4E00;&#x4E2A;&#x684C;&#x9762;&#x7CFB;&#x7EDF;&#x3001;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x7BA1;&#x7406;&#x5668;&#x548C;&#x4E00;&#x4E2A;&#x684C;&#x9762;&#x73AF;&#x5883;</li>
-<li>&#x4E3B;&#x6D41;&#x7684;&#x53D1;&#x884C;&#x7248;&#x5206;&#x652F;<ul>
-<li><strong><strong>Debian &#x5206;&#x652F;</strong></strong>&#xFF1A;&#x6700;&#x8457;&#x540D;&#x7684;&#x662F; Ubuntu &#xFF0C;&#x4E00;&#x4E2A;&#x4E3B;&#x6253;&#x684C;&#x9762;&#x5E94;&#x7528;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x9002;&#x5408;&#x666E;&#x901A;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x3002;<strong>&#x63A8;&#x8350;&#x521D;&#x6B21;&#x63A5;&#x89E6; Linux &#x7684;&#x8BFB;&#x8005;&#x4F18;&#x5148;&#x91C7;&#x7528; Ubuntu &#x53D1;&#x884C;&#x7248;&#x6216;&#x8005;&#x5B83;&#x7684;&#x5B50;&#x53D1;&#x884C;&#x7248;&#xFF08;Lubuntu, Xubuntu &#x7B49;&#xFF09;</strong></li>
-<li><strong><strong>Red Hat &#x5206;&#x652F;</strong></strong>&#xFF1A;Fedora &#xFF0C;CentOS&#xFF08;&#x9002;&#x5408;&#x5728;&#x8981;&#x6C42;&#x9AD8;&#x5EA6;&#x7A33;&#x5B9A;&#x7684;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#xFF09;</li>
-<li><strong><strong>Arch Linux &#x5206;&#x652F;</strong></strong>&#xFF1A;&#x8981;&#x6C42;&#x4F7F;&#x7528;&#x8005;&#x81EA;&#x8EAB;&#x613F;&#x610F;&#x53BB;&#x4E86;&#x89E3;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x8FD0;&#x4F5C;&#x65B9;&#x5F0F;&#xFF0C;&#x5E76;&#x4E0D;&#x91C7;&#x53D6;&#x5C4F;&#x853D;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x964D;&#x4F4E;&#x4F7F;&#x7528;&#x95E8;&#x69DB;&#x3002;&#x53D8;&#x79CD; Manjaro &#x66F4;&#x6CE8;&#x91CD;&#x6613;&#x7528;&#xFF0C;&#x66F4;&#x9002;&#x5408;&#x4E00;&#x822C;&#x7528;&#x6237;</li>
-</ul>
-</li>
-</ul>
-<h3 id="Linux-&#x5728;&#x8EAB;&#x8FB9;"><a href="#Linux-&#x5728;&#x8EAB;&#x8FB9;" class="headerlink" title="Linux &#x5728;&#x8EAB;&#x8FB9;"></a>Linux &#x5728;&#x8EAB;&#x8FB9;</h3><hr>
-<ul>
-<li>&#x667A;&#x80FD;&#x624B;&#x673A;&#xFF1A;Google &#x7814;&#x53D1;&#x7684; Android &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5C5E;&#x4E8E; Android/Linux &#x5206;&#x652F;&#xFF0C;&#x4E5F;&#x53EB; Android &#x539F;&#x751F;&#x7CFB;&#x7EDF;&#xFF0C;&#x5B50;&#x53D1;&#x884C;&#x7248;&#x5F88;&#x591A;&#xFF0C;&#x5982;&#x534E;&#x4E3A; EMUI &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x548C;&#x5C0F;&#x7C73; MIUI &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7B49;</li>
-<li>&#x670D;&#x52A1;&#x5668;&#xFF1A;&#x7F51;&#x7AD9;&#x548C;&#x8F6F;&#x4EF6;&#x7684;&#x63D0;&#x4F9B;&#x5546;&#x90FD;&#x9700;&#x8981;&#x8BBE;&#x7ACB;&#x4ED6;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x6765;&#x5B8C;&#x6210;&#x8BA1;&#x7B97;&#x3001;&#x5B58;&#x50A8;&#x548C;&#x901A;&#x4FE1;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x79CD;&#x8BA1;&#x7B97;&#x673A;&#x5C31;&#x88AB;&#x79F0;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x3002;&#x670D;&#x52A1;&#x5668;&#x901A;&#x5E38;&#x4E0D;&#x7528; Windows &#x6216;&#x8005; macOS &#x8FD9;&#x79CD;&#x4E2A;&#x4EBA;&#x8BA1;&#x7B97;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x7528; Linux &#x53D1;&#x884C;&#x7248;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x754C;&#x9762;&#x7B80;&#x6D01;&#xFF0C;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;&#x800C;&#x4E14;&#x67D0;&#x4E9B;&#x53D1;&#x884C;&#x7248;&#x4E5F;&#x53D7;&#x5230;&#x4E13;&#x4E1A;&#x8BA1;&#x7B97;&#x673A;&#x4F01;&#x4E1A;&#x7684;&#x670D;&#x52A1;&#x652F;&#x6301;&#xFF08;&#x5982; RHEL&#xFF09;&#x3002;Debian &#x548C; Ubuntu Server &#x5F88;&#x6D41;&#x884C;</li>
-<li>&#x5D4C;&#x5165;&#x5F0F;&#x8BBE;&#x5907;&#xFF1A;Android/Linux &#x5206;&#x652F;&#x4E0B;&#x7684;&#x5404;&#x7C7B;&#x53D1;&#x884C;&#x7248;&#x662F;&#x4E3B;&#x6D41;&#x7684;&#x5D4C;&#x5165;&#x5F0F;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF0C;&#x5982; Google &#x4E3A;&#x6570;&#x5B57;&#x7535;&#x89C6;&#x4E13;&#x95E8;&#x63A8;&#x51FA;&#x7684; Android TV &#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</li>
-</ul>
-<h3 id="&#x4F7F;&#x7528;-Linux"><a href="#&#x4F7F;&#x7528;-Linux" class="headerlink" title="&#x4F7F;&#x7528; Linux"></a>&#x4F7F;&#x7528; Linux</h3><hr>
-<ul>
-<li><strong>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x5B89;&#x88C5;&#x5B8C;&#x6BD5;&#x7684; Linux &#x955C;&#x50CF;</strong></li>
-<li>&#x6B65;&#x9AA4;<ol>
-<li>&#x83B7;&#x53D6;&#x865A;&#x62DF;&#x673A;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#xFF0C;&#x63A8;&#x8350; <a href="https://www.vmware.com/cn/products/workstation-player/workstation-player-evaluation.html">VMware Workstation Player</a></li>
-<li>&#x83B7;&#x53D6; <a href="https://101.lug.ustc.edu.cn/Ch01/#get-vm-images">Xubuntu &#x865A;&#x62DF;&#x673A;&#x955C;&#x50CF;</a>&#xFF08;Xubuntu &#x662F; Ubuntu &#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x53D1;&#x884C;&#x7248;&#xFF0C;&#x4E0E; Ubuntu &#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x4F53;&#x79EF;&#x66F4;&#x5C0F;&#xFF0C;&#x6027;&#x80FD;&#x9700;&#x6C42;&#x66F4;&#x5C11;&#xFF0C;&#x9002;&#x5408;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x6027;&#x80FD;&#x7684;&#x7535;&#x8111;&#x5B89;&#x88C5;&#x4F7F;&#x7528;&#xFF09;</li>
-<li>&#x53CC;&#x51FB;&#x6253;&#x5F00;&#x865A;&#x62DF;&#x673A;&#x955C;&#x50CF;&#xFF0C;&#x7BA1;&#x7406;&#x8F6F;&#x4EF6;&#x4F1A;&#x6253;&#x5F00;&#x5E76;&#x5BFC;&#x5165;&#x8BE5;&#x955C;&#x50CF;&#xFF0C;&#x5BFC;&#x5165;&#x5B8C;&#x6BD5;&#x540E;&#x53EF;&#x76F4;&#x63A5;&#x70B9;&#x51FB;&#x5F00;&#x59CB;&#x6309;&#x94AE;&#x542F;&#x52A8;</li>
-</ol>
-</li>
-</ul>
-<img src="/images/Xubuntu.png" alt="Xubuntu" title="Xubuntu" width="500"> 
-
-<p>&#x1F973; ~   </p>
-<h3 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h3><hr>
-<p><strong>&#x6559;&#x7A0B;</strong></p>
-<p><a href="https://lug.ustc.edu.cn/">LUG @ USTC</a>&#x7684;<a href="https://101.lug.ustc.edu.cn/Ch01/">Linux 101 - &#x7B2C;&#x4E00;&#x7AE0;&#xFF1A;&#x521D;&#x8BC6;Linux</a></p>
-<p><strong>&#x5F15;&#x7528;</strong>  </p>
-<div id="refer-anchor-1"></div>
-
-<p>[1] <a href="https://www.gnu.org/philosophy/philosophy.html">GNU &#x5DE5;&#x7A0B;&#x7684;&#x54F2;&#x5B66;</a></p>
-<p><strong>&#x63A8;&#x8350;&#x9605;&#x8BFB;</strong></p>
-<p><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">&#x4E3A;&#x4EC0;&#x4E48;&#x5F00;&#x6E90;&#x9519;&#x5931;&#x4E86;&#x81EA;&#x7531;&#x8F6F;&#x4EF6;&#x7684;&#x91CD;&#x70B9;</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>软件</category>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -5040,6 +5099,22 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>2022年10月</title>
+    <url>/zh-cn/Oct-2022/</url>
+    <content><![CDATA[<h3 id="&#x7F16;&#x7A0B;"><a href="#&#x7F16;&#x7A0B;" class="headerlink" title="&#x7F16;&#x7A0B;"></a>&#x7F16;&#x7A0B;</h3><p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x5B8C;&#x6210;&#x4E86;Leetcode&#x4E0A;&#x7684;27&#x9053;&#x9898;&#xFF0C;&#x90FD;&#x662F;&#x7528;Java&#x3002;&#x4E0A;&#x4E00;&#x7AE0;&#x7684;&#x63A2;&#x7D22;<em>Array and String</em>&#x6709;&#x70B9;&#x96BE;&#xFF0C;&#x4F46;&#x73B0;&#x5728;&#x7684;<em>Arrays 101</em>&#x5C31;&#x5BB9;&#x6613;&#x591A;&#x4E86;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x8FD8;&#x5728;&#x505A;&#x6570;&#x7EC4;&#xFF1F;&#x6211;&#x7B49;&#x4E0D;&#x53CA;&#x5B66;&#x65B0;&#x7684;&#x4E1C;&#x897F;&#x4E86;&#x3002;  </p>
+<span id="more"></span>
+<p>&#x6211;&#x5B66;&#x4E86;&#x4E00;&#x70B9;&#x4E00;&#x4E2A;&#x8457;&#x540D;&#x7684;&#x8BFE;&#x7A0B;&#xFF0C;<a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>&#xFF0C;&#x505A;&#x4E86;HW 01&#xFF0C;HW 02&#xFF0C;Lab 00&#xFF0C;Lab 01&#xFF0C;&#x73B0;&#x5728;&#x5728;&#x505A;Lab 02&#x3002;&#x4E0A;&#x534A;&#x6708;&#x6211;&#x5B66;&#x4E60;&#x5F97;&#x6BD4;&#x8F83;&#x8BA4;&#x771F;&#xFF0C;&#x4E0B;&#x534A;&#x6708;&#x5C31;&#x61C8;&#x6020;&#x4E86;&#x3002;&#x5E0C;&#x671B;&#x6211;&#x80FD;&#x591F;&#x575A;&#x6301;&#x4E0B;&#x53BB;&#xFF0C;&#x5B8C;&#x6210;&#x8FD9;&#x95E8;&#x8BFE;&#x7A0B;&#x548C;CS61B&#x3002;OK&#x7CFB;&#x7EDF;&#x975E;&#x5E38;&#x6709;&#x8DA3;&#x3002;  </p>
+<p>&#x6211;&#x770B;&#x4E86;&#x4E00;&#x4E9B;<a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng&#x7684;<strong>&#x673A;&#x5668;&#x5B66;&#x4E60;</strong>&#x89C6;&#x9891;</a>&#xFF0C;&#x4ECE;&#x5F00;&#x59CB;&#x5230;P48&#x201C;&#x63A8;&#x7406;&#xFF1A;&#x505A;&#x9884;&#x6D4B;&#x201D;&#x3002;&#x6211;&#x7684;&#x5BFC;&#x5E08;&#x8981;&#x6C42;&#x6211;&#x5B66;&#x4E60;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x8BD5;&#x56FE;&#x5F00;&#x59CB;&#x5B66;&#x4E60;&#x3002;&#x6211;&#x8FD8;&#x8BFB;&#x4E86;&#x7ECF;&#x5178;&#x6559;&#x6750;&#x300A;<a href="https://wizardforcel.gitbooks.io/hands-on-ml-with-sklearn-and-tf/content/">&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5B9E;&#x6218;</a>&#x300B;&#x7684;&#x4E00;&#x4E9B;&#x90E8;&#x5206;&#x3002;&#x5F88;&#x4E0D;&#x9519;&#xFF0C;&#x800C;&#x4E14;&#x6BD4;&#x89C6;&#x9891;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x591A;&#xFF0C;&#x96BE;&#x5EA6;&#x66F4;&#x5927;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6211;&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x5F88;&#x597D;&#x5730;&#x7406;&#x89E3;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x3002;&#x5B83;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x5BB9;&#x6613;&#xFF0C;&#x4F46;&#x505A;&#x8D77;&#x6765;&#x771F;&#x7684;&#x5F88;&#x96BE;&#x1F92F;&#x3002;&#x597D;&#x6D88;&#x606F;&#x662F;&#xFF0C;&#x6211;&#x4ECA;&#x5929;&#x4E0B;&#x5348;&#x7EC8;&#x4E8E;&#x505A;&#x4E86;&#x4E00;&#x4E2A;python&#x7A0B;&#x5E8F;&#x2026;&#x2026; Matlab&#x770B;&#x8D77;&#x6765;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x5B83;&#x5BF9;&#x7535;&#x8111;&#x6027;&#x80FD;&#x8981;&#x6C42;&#x592A;&#x9AD8;&#xFF0C;&#x800C;&#x4E14;&#x6709;&#x70B9;&#x4E0D;&#x7A33;&#x5B9A;&#x3002;&#x6211;&#x5728;&#x60F3;&#xFF0C;&#x6570;&#x636E;&#x6709;&#x4EC0;&#x4E48;&#x7279;&#x70B9;&#x2026; </p>
+<h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x575A;&#x6301;&#x6BCF;&#x5929;&#x770B;&#x4E00;&#x90E8;<strong>&#x82F1;&#x8BED;</strong>&#x89C6;&#x9891;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x7ECF;&#x6D4E;&#x5B66;&#x4EBA;&#x7684;&#x6587;&#x7AE0;&#x3002;&#x6211;&#x8FD8;&#x5728;&#x201C;&#x7B80;&#x62A5;&#x201D;&#x680F;&#x76EE;&#x4E2D;&#x9605;&#x8BFB;&#x4E86;&#x4E00;&#x7BC7;&#x540D;&#x4E3A;&#x300A;&#x738B;&#x5B50;&#x300B;&#x7684;&#x6587;&#x7AE0;&#x3002;&#x51E0;&#x5929;&#x524D;&#xFF0C;&#x6211;&#x5F00;&#x59CB;&#x51C6;&#x5907;&#x591A;&#x90BB;&#x56FD;&#x82F1;&#x8BED;&#x6D4B;&#x8BD5;&#x3002;&#x6211;&#x7684;&#x7537;&#x670B;&#x53CB;&#x4E5F;&#x62A5;&#x540D;&#x53C2;&#x52A0;&#x4E86;&#x96C5;&#x601D;indicator&#x8003;&#x8BD5;&#x3002;&#x6211;&#x4EEC;&#x90FD;&#x662F;&#x4E0B;&#x5468;&#x8003;&#x3002;&#x5E0C;&#x671B;&#x6210;&#x529F;!  </p>
+<p>&#x6211;&#x4E5F;&#x5F00;&#x59CB;&#x4ECE;&#x591A;&#x90BB;&#x56FD;&#x548C;<a href="https://www.nhk.or.jp/lesson/zh/">NHK&#x7B80;&#x660E;&#x65E5;&#x8BED;</a>&#x5B66;&#x4E60;<strong>&#x65E5;&#x8BED;</strong>&#x4E86;&#x3002;&#x559C;&#x6B22;&#x8FD9;&#x4E2A;&#x7F51;&#x7AD9;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5F88;&#x7B80;&#x5355;&#x3002;&#x6211;&#x4EE5;&#x524D;&#x4E0D;&#x77E5;&#x9053;&#x65E5;&#x8BED;&#x4E5F;&#x6709;&#x65F6;&#x6001;&#x3002;  </p>
+<p>&#x6682;&#x65F6;&#x518D;&#x89C1;! &#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x534A;&#x591C;&#x4E86;&#x3002;</p>
+]]></content>
+      <categories>
+        <category>总结</category>
+        <category>月度总结</category>
+      </categories>
+  </entry>
+  <entry>
     <title>文件操作</title>
     <url>/zh-cn/Operating-Files/</url>
     <content><![CDATA[<p>Linux &#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;&#xFF0C;&#x5305;&#x62EC;&#x67E5;&#x770B;&#x3001;&#x7F16;&#x8F91;&#x3001;&#x590D;&#x5236;&#x3001;&#x79FB;&#x52A8;&#x3001;&#x5220;&#x9664;&#x3001;&#x521B;&#x5EFA;&#x3001;&#x641C;&#x7D22;&#x3001;&#x5339;&#x914D;&#x3001;&#x538B;&#x7F29;&#x3001;&#x89E3;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x3002;&#x5B66;&#x4F1A;&#x67E5;&#x770B;&#x4F7F;&#x7528;&#x6587;&#x6863;&#x4E5F;&#x5F88;&#x91CD;&#x8981;&#x3002;  </p>
@@ -5125,22 +5200,6 @@ git push -u origin master
       <tags>
         <tag>Linux</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>2022年10月</title>
-    <url>/zh-cn/Oct-2022/</url>
-    <content><![CDATA[<h3 id="&#x7F16;&#x7A0B;"><a href="#&#x7F16;&#x7A0B;" class="headerlink" title="&#x7F16;&#x7A0B;"></a>&#x7F16;&#x7A0B;</h3><p>&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x6211;&#x5B8C;&#x6210;&#x4E86;Leetcode&#x4E0A;&#x7684;27&#x9053;&#x9898;&#xFF0C;&#x90FD;&#x662F;&#x7528;Java&#x3002;&#x4E0A;&#x4E00;&#x7AE0;&#x7684;&#x63A2;&#x7D22;<em>Array and String</em>&#x6709;&#x70B9;&#x96BE;&#xFF0C;&#x4F46;&#x73B0;&#x5728;&#x7684;<em>Arrays 101</em>&#x5C31;&#x5BB9;&#x6613;&#x591A;&#x4E86;&#x3002;&#x4E3A;&#x4EC0;&#x4E48;&#x6211;&#x8FD8;&#x5728;&#x505A;&#x6570;&#x7EC4;&#xFF1F;&#x6211;&#x7B49;&#x4E0D;&#x53CA;&#x5B66;&#x65B0;&#x7684;&#x4E1C;&#x897F;&#x4E86;&#x3002;  </p>
-<span id="more"></span>
-<p>&#x6211;&#x5B66;&#x4E86;&#x4E00;&#x70B9;&#x4E00;&#x4E2A;&#x8457;&#x540D;&#x7684;&#x8BFE;&#x7A0B;&#xFF0C;<a href="https://inst.eecs.berkeley.edu/~cs61a/su20/"><strong>CS61A</strong></a>&#xFF0C;&#x505A;&#x4E86;HW 01&#xFF0C;HW 02&#xFF0C;Lab 00&#xFF0C;Lab 01&#xFF0C;&#x73B0;&#x5728;&#x5728;&#x505A;Lab 02&#x3002;&#x4E0A;&#x534A;&#x6708;&#x6211;&#x5B66;&#x4E60;&#x5F97;&#x6BD4;&#x8F83;&#x8BA4;&#x771F;&#xFF0C;&#x4E0B;&#x534A;&#x6708;&#x5C31;&#x61C8;&#x6020;&#x4E86;&#x3002;&#x5E0C;&#x671B;&#x6211;&#x80FD;&#x591F;&#x575A;&#x6301;&#x4E0B;&#x53BB;&#xFF0C;&#x5B8C;&#x6210;&#x8FD9;&#x95E8;&#x8BFE;&#x7A0B;&#x548C;CS61B&#x3002;OK&#x7CFB;&#x7EDF;&#x975E;&#x5E38;&#x6709;&#x8DA3;&#x3002;  </p>
-<p>&#x6211;&#x770B;&#x4E86;&#x4E00;&#x4E9B;<a href="https://www.bilibili.com/video/BV19B4y1W76i?p=1&amp;vd_source=341cbca8534b170a85c1b9255189d5b4">Andrew Ng&#x7684;<strong>&#x673A;&#x5668;&#x5B66;&#x4E60;</strong>&#x89C6;&#x9891;</a>&#xFF0C;&#x4ECE;&#x5F00;&#x59CB;&#x5230;P48&#x201C;&#x63A8;&#x7406;&#xFF1A;&#x505A;&#x9884;&#x6D4B;&#x201D;&#x3002;&#x6211;&#x7684;&#x5BFC;&#x5E08;&#x8981;&#x6C42;&#x6211;&#x5B66;&#x4E60;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x8BD5;&#x56FE;&#x5F00;&#x59CB;&#x5B66;&#x4E60;&#x3002;&#x6211;&#x8FD8;&#x8BFB;&#x4E86;&#x7ECF;&#x5178;&#x6559;&#x6750;&#x300A;<a href="https://wizardforcel.gitbooks.io/hands-on-ml-with-sklearn-and-tf/content/">&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5B9E;&#x6218;</a>&#x300B;&#x7684;&#x4E00;&#x4E9B;&#x90E8;&#x5206;&#x3002;&#x5F88;&#x4E0D;&#x9519;&#xFF0C;&#x800C;&#x4E14;&#x6BD4;&#x89C6;&#x9891;&#x4E2D;&#x7684;&#x4EE3;&#x7801;&#x66F4;&#x591A;&#xFF0C;&#x96BE;&#x5EA6;&#x66F4;&#x5927;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x6211;&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x5F88;&#x597D;&#x5730;&#x7406;&#x89E3;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x3002;&#x5B83;&#x770B;&#x8D77;&#x6765;&#x5F88;&#x5BB9;&#x6613;&#xFF0C;&#x4F46;&#x505A;&#x8D77;&#x6765;&#x771F;&#x7684;&#x5F88;&#x96BE;&#x1F92F;&#x3002;&#x597D;&#x6D88;&#x606F;&#x662F;&#xFF0C;&#x6211;&#x4ECA;&#x5929;&#x4E0B;&#x5348;&#x7EC8;&#x4E8E;&#x505A;&#x4E86;&#x4E00;&#x4E2A;python&#x7A0B;&#x5E8F;&#x2026;&#x2026; Matlab&#x770B;&#x8D77;&#x6765;&#x5F88;&#x65B9;&#x4FBF;&#xFF0C;&#x4F46;&#x5B83;&#x5BF9;&#x7535;&#x8111;&#x6027;&#x80FD;&#x8981;&#x6C42;&#x592A;&#x9AD8;&#xFF0C;&#x800C;&#x4E14;&#x6709;&#x70B9;&#x4E0D;&#x7A33;&#x5B9A;&#x3002;&#x6211;&#x5728;&#x60F3;&#xFF0C;&#x6570;&#x636E;&#x6709;&#x4EC0;&#x4E48;&#x7279;&#x70B9;&#x2026; </p>
-<h3 id="&#x8BED;&#x8A00;"><a href="#&#x8BED;&#x8A00;" class="headerlink" title="&#x8BED;&#x8A00;"></a>&#x8BED;&#x8A00;</h3><p>&#x575A;&#x6301;&#x6BCF;&#x5929;&#x770B;&#x4E00;&#x90E8;<strong>&#x82F1;&#x8BED;</strong>&#x89C6;&#x9891;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x7ECF;&#x6D4E;&#x5B66;&#x4EBA;&#x7684;&#x6587;&#x7AE0;&#x3002;&#x6211;&#x8FD8;&#x5728;&#x201C;&#x7B80;&#x62A5;&#x201D;&#x680F;&#x76EE;&#x4E2D;&#x9605;&#x8BFB;&#x4E86;&#x4E00;&#x7BC7;&#x540D;&#x4E3A;&#x300A;&#x738B;&#x5B50;&#x300B;&#x7684;&#x6587;&#x7AE0;&#x3002;&#x51E0;&#x5929;&#x524D;&#xFF0C;&#x6211;&#x5F00;&#x59CB;&#x51C6;&#x5907;&#x591A;&#x90BB;&#x56FD;&#x82F1;&#x8BED;&#x6D4B;&#x8BD5;&#x3002;&#x6211;&#x7684;&#x7537;&#x670B;&#x53CB;&#x4E5F;&#x62A5;&#x540D;&#x53C2;&#x52A0;&#x4E86;&#x96C5;&#x601D;indicator&#x8003;&#x8BD5;&#x3002;&#x6211;&#x4EEC;&#x90FD;&#x662F;&#x4E0B;&#x5468;&#x8003;&#x3002;&#x5E0C;&#x671B;&#x6210;&#x529F;!  </p>
-<p>&#x6211;&#x4E5F;&#x5F00;&#x59CB;&#x4ECE;&#x591A;&#x90BB;&#x56FD;&#x548C;<a href="https://www.nhk.or.jp/lesson/zh/">NHK&#x7B80;&#x660E;&#x65E5;&#x8BED;</a>&#x5B66;&#x4E60;<strong>&#x65E5;&#x8BED;</strong>&#x4E86;&#x3002;&#x559C;&#x6B22;&#x8FD9;&#x4E2A;&#x7F51;&#x7AD9;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x5F88;&#x7B80;&#x5355;&#x3002;&#x6211;&#x4EE5;&#x524D;&#x4E0D;&#x77E5;&#x9053;&#x65E5;&#x8BED;&#x4E5F;&#x6709;&#x65F6;&#x6001;&#x3002;  </p>
-<p>&#x6682;&#x65F6;&#x518D;&#x89C1;! &#x73B0;&#x5728;&#x5DF2;&#x7ECF;&#x534A;&#x591C;&#x4E86;&#x3002;</p>
-]]></content>
-      <categories>
-        <category>总结</category>
-        <category>月度总结</category>
-      </categories>
   </entry>
   <entry>
     <title>进程</title>
@@ -5318,65 +5377,6 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>2023年2月</title>
-    <url>/zh-cn/Feb-2023/</url>
-    <content><![CDATA[<p>&#x5F00;&#x5B66;&#x5566;&#x3002;  </p>
-<span id="more"></span>
-<p>&#x8D76;&#x5728;&#x8003;&#x8BD5;&#x524D;&#x6574;&#x7406;&#x5B8C;&#x4E86;&#x7B14;&#x8BB0;&#xFF0C;&#x4F9D;&#x7136;&#x8FDE;&#x6EDA;&#x5E26;&#x722C;&#x5730;&#x51FA;&#x4E86;&#x8003;&#x573A;&#x3002;&#x76EE;&#x524D;&#x53EA;&#x51FA;&#x4E86;DSP&#x4E00;&#x95E8;&#x6210;&#x7EE9;&#xFF0C;78&#xFF0C;&#x5269;&#x4E0B;&#x4E24;&#x95E8;&#x611F;&#x89C9;&#x8003;&#x5F97;&#x66F4;&#x70C2;&#x4E0D;&#x77E5;&#x9053;&#x8FD8;&#x4F1A;&#x70C2;&#x5230;&#x54EA;&#x91CC;&#x2026;&#x2026;  </p>
-<img src="/images/idk.png" alt="idk" title="idk" width="350">  
-
-<h2 id="&#x672C;&#x6708;&#x53D1;&#x73B0;-&#x1F9D0;"><a href="#&#x672C;&#x6708;&#x53D1;&#x73B0;-&#x1F9D0;" class="headerlink" title="&#x672C;&#x6708;&#x53D1;&#x73B0; &#x1F9D0;"></a>&#x672C;&#x6708;&#x53D1;&#x73B0; &#x1F9D0;</h2><ol>
-<li><p>&#x6D41;&#x6D6A;&#x8C46;&#x74E3;<br>&#x88AB;&#x8C46;&#x74E3;&#x65E0;&#x7AEF;&#x6316;&#x575F;&#x5220;&#x5E16;+&#x7981;&#x8A00;&#x4E00;&#x5468;&#x540E;&#xFF0C;&#x6012;&#x641C;&#x4E86;&#x4E00;&#x756A;&#x66FF;&#x4EE3;APP&#x3002;&#x4E0B;&#x9762;&#x662F;&#x51E0;&#x79CD;&#x65B9;&#x6848;&#xFF1A;  </p>
-<ul>
-<li>&#x6807;&#x8BB0;&#x4E66;&#x5F71;&#x97F3;&#xFF1A;<a href="https://neodb.social/">NeoDB</a><br> &#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x89C1;<a href="https://m.cmx.im/@huaikong/107398452550319645">&#x8FD9;&#x4E2A;&#x5E16;&#x5B50;</a> &#x3002;&#x7ED3;&#x5408;<a href="https://github.com/doufen-org/tofu">&#x8C46;&#x4F34;</a>&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x8C46;&#x74E3;&#x4E66;&#x5F71;&#x97F3;&#x6570;&#x636E;&#x5168;&#x90E8;&#x8FC1;&#x79FB;&#x8FC7;&#x6765;&#xFF0C;&#x800C;&#x4E14;NeoDB&#x4E0A;&#x53EF;&#x4EE5;&#x6807;&#x8BB0;&#x90A3;&#x4E9B;&#x88AB;&#x7981;&#x7684;&#x6761;&#x76EE;&#x3002;  </li>
-<li>&#x6807;&#x8BB0;&#x7535;&#x5F71;&#xFF1A;<a href="https://letterboxd.com/">Letterboxed</a></li>
-<li>&#x6807;&#x8BB0;&#x4E66;&#x7C4D;&#xFF1A;<a href="https://www.goodreads.com/">Goodreads</a>  </li>
-<li>&#x8FD9;&#x7BC7;blog&#x201C;<a href="https://ulyc.github.io/2022/02/11/Douban-Escape-Plan/">&#x8C46;&#x74E3;&#x9003;&#x79BB;&#x8BA1;&#x5212;</a>&#x201D;&#x8BB2;&#x4E86;&#x5982;&#x4F55;&#x8FC1;&#x79FB;&#x6570;&#x636E;&#x5230;<a href="https://www.notion.so/">Notion</a><br> &#x6211;&#x6CA1;&#x6709;&#x5C1D;&#x8BD5;&#xFF0C;&#x4E0D;&#x8FC7;&#x770B;&#x8D77;&#x6765;&#x8BE6;&#x7EC6;&#x53EF;&#x884C;&#x3002;</li>
-</ul>
-</li>
-<li><p>&#x590D;&#x4E60;&#x6570;&#x5B57;&#x56FE;&#x50CF;&#x5206;&#x6790;&#x65F6;&#x53D1;&#x73B0;&#x4E24;&#x4E2A;&#x4E0D;&#x9519;&#x7684;&#x7F51;&#x9875;&#xFF1A;  </p>
-<ul>
-<li><a href="https://www.gwylab.com/pdf/%E4%BC%A0%E7%BB%9FCV%E7%AE%97%E6%B3%95-%E8%BE%B9%E7%BC%98%E6%A3%80%E6%B5%8B-%E6%95%99%E6%9D%90%E5%90%88%E8%BE%91.pdf">&#x4F20;&#x7EDF;CV&#x7B97;&#x6CD5;-&#x8FB9;&#x7F18;&#x68C0;&#x6D4B;-&#x6559;&#x6750;&#x5408;&#x8F91;</a><br> &#x5F88;&#x5168;&#x9762;&#x7684;&#x4ECB;&#x7ECD;&#x3002;  </li>
-<li><a href="https://www.zgbk.com/ecph/words?SiteID=1&amp;ID=192882&amp;SubID=81769">SUSAN&#x7B97;&#x5B50;</a><br> &#x6761;&#x76EE;&#x4F5C;&#x8005;&#x7ADF;&#x662F;&#x6211;&#x7684;&#x6388;&#x8BFE;&#x8001;&#x5E08; (&#xFF9F;o&#xFF9F;;;</li>
-</ul>
-</li>
-<li><p>&#x7FFB;LUG&#x7FA4;&#x804A;&#x5929;&#x8BB0;&#x5F55;&#x53D1;&#x73B0;<a href="https://akaedu.github.io/book/index.html">Linux C&#x7F16;&#x7A0B;&#x4E00;&#x7AD9;&#x5F0F;&#x5B66;&#x4E60;</a>&#x3002;  </p>
-</li>
-<li><p>&#x4E5F;&#x662F;&#x590D;&#x4E60;&#x65F6;&#x67E5;&#x8D44;&#x6599;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x6E05;&#x534E;&#x8001;&#x5E08;&#x505A;&#x7684;<a href="https://iot-book.github.io/0_%E5%89%8D%E8%A8%802/">&#x7269;&#x8054;&#x7F51;&#x6559;&#x7A0B;</a>&#xFF0C;&#x611F;&#x89C9;&#x5F88;&#x5389;&#x5BB3;&#x7684;&#x6837;&#x5B50;&#x5148;&#x5B58;&#x8D77;&#x6765;&#x5427;qwq  </p>
-</li>
-<li><p>&#x63A8;&#x7279;&#x51B2;&#x6D6A;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;blogger&#x7684;<a href="https://xxchan.github.io/this-week-in-risingwave/2023/03/04/twirw-3.html">&#x5173;&#x4E8E;RisingWave&#x7684;&#x5468;&#x62A5;</a>&#xFF0C;&#x770B;&#x4E0D;&#x61C2;&#x4F46;&#x559C;&#x6B22;&#x5468;&#x62A5;&#x3002;  </p>
-</li>
-<li><p>&#x65E5;&#x8BED;&#x8BFE;&#x4E0A;&#xFF0C;&#x8001;&#x5E08;&#x63A8;&#x8350;&#x4E86;<a href="https://www.jpfbj.cn/mp/">&#x65E5;&#x672C;&#x6587;&#x5316;&#x4E2D;&#x5FC3;</a>&#x7F51;&#x7AD9;&#x3002;</p>
-</li>
-</ol>
-<h2 id="&#x672C;&#x6708;&#x8FDB;&#x5C55;-&#x1F3C6;"><a href="#&#x672C;&#x6708;&#x8FDB;&#x5C55;-&#x1F3C6;" class="headerlink" title="&#x672C;&#x6708;&#x8FDB;&#x5C55; &#x1F3C6;"></a>&#x672C;&#x6708;&#x8FDB;&#x5C55; &#x1F3C6;</h2><p>&#x6709;&#x5728;&#x7559;&#x610F;&#x548C;&#x6536;&#x96C6;&#x5B9E;&#x4E60;&#x4FE1;&#x606F;&#xFF08;&#x4F46;&#x5E76;&#x6CA1;&#x6709;&#x6295;&#x7B80;&#x5386;&#xFF09;&#x3002;    </p>
-<p>&#x6709;&#x7EE7;&#x7EED;&#x5728;&#x770B;Linux 101&#x548C;&#x5434;&#x6069;&#x8FBE;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF08;&#x5176;&#x5B83;&#x8FD8;&#x5728;&#x6401;&#x7F6E;&#xFF09;&#x3002;  </p>
-<p>&#x6709;&#x5065;&#x51E0;&#x6B21;&#x8EAB;&#x3002;  </p>
-<p>&#x5F00;&#x59CB;&#x753B;&#x677F;&#x5B50;&#x4E86;&#xFF01;&#x597D;&#x96BE;&#xFF01;&#x4E0D;&#x8FC7;&#x4E0D;&#x8BA8;&#x538C;&#x3002;&#x50CF;&#x5468;&#x661F;&#x9A70;&#x4ECE;&#x8DD1;&#x9F99;&#x5957;&#x5F00;&#x59CB;&#x4E00;&#x6837;&#x4ECE;PCB&#x6C11;&#x5DE5;&#x5F00;&#x59CB;&#x5427;&#xFF01;  </p>
-<h2 id="&#x4E66;&#x4E0E;&#x5F71;-&#x1F453;"><a href="#&#x4E66;&#x4E0E;&#x5F71;-&#x1F453;" class="headerlink" title="&#x4E66;&#x4E0E;&#x5F71; &#x1F453;"></a>&#x4E66;&#x4E0E;&#x5F71; &#x1F453;</h2><ul>
-<li><p><a href="https://www.goodreads.com/book/show/62877014?from_search=true&amp;from_srp=true&amp;qid=WEQNzNXjk2&amp;rank=1">&#x59CB;&#x4E8E;&#x6781;&#x9650;&#xFF1A;&#x5973;&#x6027;&#x4E3B;&#x4E49;&#x5F80;&#x590D;&#x4E66;&#x7B80;</a><br>&#x6FC0;&#x60C5;&#x63A8;&#x8350;&#x7ED9;&#x4E86;&#x4E0D;&#x5C11;&#x4EBA;&#x3002;  </p>
-</li>
-<li><p><a href="https://www.goodreads.com/book/show/33065667?from_search=true&amp;from_srp=true&amp;qid=rI6KSxjKtU&amp;rank=1">&#x6211;&#x7684;&#x9634;&#x9633;&#x4E24;&#x754C;</a><br>&#x5E2E;&#x6211;&#x5EA6;&#x8FC7;&#x4E86;&#x6F2B;&#x957F;&#x5230;&#x6709;&#x70B9;&#x96BE;&#x71AC;&#x7684;&#x5BD2;&#x5047;&#x65F6;&#x5149;&#x3002;&#x4E00;&#x672C;&#x80FD;&#x8BA9;&#x4EBA;&#x5728;&#x751F;&#x6D3B;&#x4E4B;&#x4F59;&#x4EAB;&#x53D7;&#x800C;&#x4E0D;&#x662F;&#x500D;&#x52A0;&#x6298;&#x78E8;&#x7684;&#x5C0F;&#x8BF4;&#x662F;&#x5F88;&#x96BE;&#x5F97;&#x7684;&#x3002;</p>
-</li>
-</ul>
-<p>&#x672C;&#x6708;&#x770B;&#x7684;11&#x90E8;&#x7535;&#x5F71;&#x4E2D;&#xFF0C;&#x6700;&#x63A8;&#x8350;&#x7684;&#x4E09;&#x90E8;&#x7535;&#x5F71;&#xFF1A;  </p>
-<ul>
-<li><p><a href="https://letterboxd.com/film/the-passengers-of-the-night/">&#x5DF4;&#x9ECE;&#x591C;&#x65C5;&#x4EBA;</a><br>&#x4FAF;&#x9EA6;&#x5F71;&#x8FF7;&#x72C2;&#x559C;&#xFF01;   </p>
-</li>
-<li><p><a href="https://letterboxd.com/film/the-time-to-live-and-the-time-to-die/">&#x7AE5;&#x5E74;&#x5F80;&#x4E8B;</a><br>&#x6C89;&#x75DB;&#x800C;&#x771F;&#x5207;&#x3002;  </p>
-</li>
-<li><p><a href="https://letterboxd.com/film/aftersun/">&#x6652;&#x540E;&#x5047;&#x65E5;</a><br>&#x5982;&#x4E0D;&#x5C11;&#x4EBA;&#x6240;&#x8BF4;&#x7684;&#xFF0C;&#x201C;&#x540E;&#x52B2;&#x5341;&#x8DB3;&#x201D;&#x3002;</p>
-</li>
-</ul>
-<p>&#x6700;&#x540E;&#xFF0C;&#x4E00;&#x5F20;Chantal Akerman&#x7684;&#x5E05;&#x6C14;&#x622A;&#x56FE;&#xFF1A;  </p>
-<img src="/images/Akerman.png" alt="Akerman" title="Akerman" width="400">    
-]]></content>
-      <categories>
-        <category>总结</category>
-        <category>月度总结</category>
-      </categories>
-  </entry>
-  <entry>
     <title>命令行</title>
     <url>/zh-cn/Shell/</url>
     <content><![CDATA[<p>&#x9ED1;&#x5BA2;&#x5E1D;&#x56FD;&#x7279;&#x6548;&#x597D;&#x9177;&#x3002;</p>
@@ -5548,6 +5548,11 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>About</title>
     <url>/about/index.html</url>
     <content><![CDATA[<img src="/images/bin_cat.png" alt="bin_cat" title="bin_cat" width="350">  
@@ -5560,11 +5565,6 @@ git push -u origin master
 <hr>
 <p>Find me on <a href="https://github.com/mengisok">GitHub</a>, <a href="https://www.linkedin.com/in/mengisok/">LinkedIn</a> or <a href="mailto:hanmengisok@gmail.com">send me an e-mail</a>. </p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Links</title>
@@ -5610,11 +5610,6 @@ git push -u origin master
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>标签</title>
-    <url>/zh-cn/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>链接</title>
     <url>/zh-cn/links/index.html</url>
     <content><![CDATA[<h2 id="CS"><a href="#CS" class="headerlink" title="CS"></a>CS</h2><hr>
@@ -5632,5 +5627,10 @@ git push -u origin master
 <h2 id="&#x6DA6;&#x5B66;"><a href="#&#x6DA6;&#x5B66;" class="headerlink" title="&#x6DA6;&#x5B66;"></a>&#x6DA6;&#x5B66;</h2><hr>
 <p><a href="https://run2.sg/">&#x6DA6;&#x53BB;&#x65B0;&#x52A0;&#x5761;</a>  </p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>标签</title>
+    <url>/zh-cn/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
