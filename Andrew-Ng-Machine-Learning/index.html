@@ -204,7 +204,7 @@
                     
                     
                     
-                    <a class="navbar-item" href="#Numpy-arrays-amp-Tensors">3.1.1&nbsp;&nbsp;Numpy arrays &amp;amp;amp; Tensors</a>
+                    <a class="navbar-item" href="#Numpy-arrays-Tensors">3.1.1&nbsp;&nbsp;Numpy arrays &amp;amp;amp; Tensors</a>
                     
                     
                     
@@ -240,7 +240,7 @@
                     
                     
                     
-                    <a class="navbar-item" href="#Bias-x2F-variance">3.1.10&nbsp;&nbsp;Bias / variance</a>
+                    <a class="navbar-item" href="#Bias-variance">3.1.10&nbsp;&nbsp;Bias / variance</a>
                     
                     
                     
@@ -436,7 +436,7 @@
 </li>
 </ul>
 <h1 id="2&#xFE0F;&#x20E3;-Neural-Network-in-TensorFlow"><a href="#2&#xFE0F;&#x20E3;-Neural-Network-in-TensorFlow" class="headerlink" title="2&#xFE0F;&#x20E3; Neural Network in TensorFlow"></a>2&#xFE0F;&#x20E3; Neural Network in TensorFlow</h1><hr>
-<h3 id="Numpy-arrays-amp-Tensors"><a href="#Numpy-arrays-amp-Tensors" class="headerlink" title="Numpy arrays &amp; Tensors"></a>Numpy arrays &amp; Tensors</h3><figure class="highlight python hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = np.array([<span class="hljs-number">200.0</span>, <span class="hljs-number">17.0</span>])</span><br><span class="line">layer_1 = Dense(units=<span class="hljs-number">3</span>, activation=<span class="hljs-string">&apos;sigmoid&apos;</span>)</span><br><span class="line">a1 = layer_1(x)</span><br><span class="line"><span class="hljs-comment"># print(a1)</span></span><br><span class="line"><span class="hljs-comment"># -&gt; tf.Tensor([[0.2 0.7 0.3]], shape=(1,3), dtype=float32</span></span><br><span class="line">a1.numpy()</span><br><span class="line"><span class="hljs-comment"># print(a1)</span></span><br><span class="line"><span class="hljs-comment"># -&gt; array(&#x2026;)</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Numpy-arrays-Tensors"><a href="#Numpy-arrays-Tensors" class="headerlink" title="Numpy arrays &amp; Tensors"></a>Numpy arrays &amp; Tensors</h3><figure class="highlight python hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x = np.array([<span class="hljs-number">200.0</span>, <span class="hljs-number">17.0</span>])</span><br><span class="line">layer_1 = Dense(units=<span class="hljs-number">3</span>, activation=<span class="hljs-string">&apos;sigmoid&apos;</span>)</span><br><span class="line">a1 = layer_1(x)</span><br><span class="line"><span class="hljs-comment"># print(a1)</span></span><br><span class="line"><span class="hljs-comment"># -&gt; tf.Tensor([[0.2 0.7 0.3]], shape=(1,3), dtype=float32</span></span><br><span class="line">a1.numpy()</span><br><span class="line"><span class="hljs-comment"># print(a1)</span></span><br><span class="line"><span class="hljs-comment"># -&gt; array(&#x2026;)</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h3 id="Building-a-neural-network-architecture"><a href="#Building-a-neural-network-architecture" class="headerlink" title="Building a neural network architecture"></a>Building a neural network architecture</h3><figure class="highlight python hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">model = Sequential([</span><br><span class="line">	Dense(units=<span class="hljs-number">25</span>, activation=<span class="hljs-string">&quot;sigmoid&quot;</span>),</span><br><span class="line">	Dense(units=<span class="hljs-number">15</span>, activation=<span class="hljs-string">&quot;sigmoid&quot;</span>),</span><br><span class="line">	Dense(units=<span class="hljs-number">1</span>, activation=<span class="hljs-string">&quot;sigmoid&quot;</span>)])</span><br><span class="line">x = np.array(...)</span><br><span class="line">y = np.array(...)</span><br><span class="line">model.<span class="hljs-built_in">compile</span>(...)</span><br><span class="line">model.fit(x, y)</span><br><span class="line">model.predict(x_new)</span><br></pre></td></tr></tbody></table></figure>
 
@@ -470,7 +470,7 @@
 <li>Test set</li>
 </ul>
 <p>When you&#x2019;re making decisions about the model, only use <strong>training set</strong> and <strong>dev set</strong>, and not look at the test set at all. After you decide the final model, evaluate it on the <strong>test set</strong> </p>
-<h3 id="Bias-x2F-variance"><a href="#Bias-x2F-variance" class="headerlink" title="Bias / variance"></a>Bias / variance</h3><p>Bias is the gap of training error and baseline</p>
+<h3 id="Bias-variance"><a href="#Bias-variance" class="headerlink" title="Bias / variance"></a>Bias / variance</h3><p>Bias is the gap of training error and baseline</p>
 <p>Variance is the gap of cross validation error and baseline</p>
 <h3 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h3><figure class="highlight python hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layer = Dense(units=<span class="hljs-number">25</span>, activation=<span class="hljs-string">&quot;relu&quot;</span>, kernel_regularizer=L2(<span class="hljs-number">0.01</span>))</span><br></pre></td></tr></tbody></table></figure>
 
