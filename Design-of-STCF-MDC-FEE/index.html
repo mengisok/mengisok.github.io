@@ -18,20 +18,26 @@
 
 
 
-    <meta name="description" content="(I&amp;#x2019;m working on it&amp;#x2026;)">
+    <meta name="description" content="This is one of my course papers, which details the design of the Front-End Electronics for the Main Drift Chamber of the Super Tau-Charm Facility.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Design of STCF MDC FEE">
 <meta property="og:url" content="https://mengisok.github.io/Design-of-STCF-MDC-FEE/index.html">
 <meta property="og:site_name" content="Meng&#39;s Blog">
-<meta property="og:description" content="(I&amp;#x2019;m working on it&amp;#x2026;)">
+<meta property="og:description" content="This is one of my course papers, which details the design of the Front-End Electronics for the Main Drift Chamber of the Super Tau-Charm Facility.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mengisok.github.io/images/overall_layout_of_STCF.png">
+<meta property="og:image" content="https://mengisok.github.io/images/components_of_STCF_detector.png">
+<meta property="og:image" content="https://mengisok.github.io/images/components_of_electronics_for_particle_physics_experiments.png">
+<meta property="og:image" content="https://mengisok.github.io/images/STCF_MDC_readout_electronics_system_architecture.png">
+<meta property="og:image" content="https://mengisok.github.io/images/structure_of_FEE.png">
 <meta property="article:published_time" content="2023-10-15T15:58:19.000Z">
-<meta property="article:modified_time" content="2023-10-19T15:57:52.849Z">
+<meta property="article:modified_time" content="2023-10-22T12:08:29.124Z">
 <meta property="article:author" content="Han Meng">
 <meta property="article:tag" content="Physical Electronics">
 <meta property="article:tag" content="Readout Electronics">
 <meta property="article:tag" content="STCF Project">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mengisok.github.io/images/overall_layout_of_STCF.png">
 
 
 
@@ -156,6 +162,30 @@
                 <div class="navbar-dropdown is-right">
                     
                     
+                    
+                    
+                    <a class="navbar-item" href="#Abstract">1&nbsp;&nbsp;<b>Abstract</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Background-and-Significance">2&nbsp;&nbsp;<b>Background and Significance</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Overall-System-Structure">3&nbsp;&nbsp;<b>Overall System Structure</b></a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#MDC-Readout-Electronics">3.1&nbsp;&nbsp;MDC Readout Electronics</a>
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Daughter-Mother-Structure-for-Validation-Boards">3.2&nbsp;&nbsp;Daughter-Mother Structure for Validation Boards</a>
+                    
                 </div>
             </div>
             
@@ -196,14 +226,50 @@
         <span class="column is-narrow">
             
             
-            a few seconds read (About 5 words)
+            12 minutes read (About 1810 words)
         </span>
         
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>(I&#x2019;m working on it&#x2026;)</p>
+        <p>This is one of my course papers, which details the design of the Front-End Electronics for the Main Drift Chamber of the Super Tau-Charm Facility.</p>
+<span id="more"></span>
 
+<p>(The following has been modified and formatted in an informal paper format to make it easier to read. )</p>
+<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><hr>
+<p>The <strong>Super Tau-Charm Facility (STCF)</strong> is a new-generation positron collider planned to be built in China, which is a continuation of the currently operating Beijing Electron Positron Collider II (BEPC II) and its companion Beijing Spectrometer III (BES III), which are dedicated to the physics of the &#x3C4;-charm region.</p>
+<p><strong>The Main Drift Chamber (MDC)</strong> is one of the main sub-detectors of the STCF detector, which is mainly used for final-state charged particle trajectory, momentum measurement and particle identification. The weak analog electrical signals output from the detector need to be configured with a set of <strong>Readout Electronics</strong> system to process them, amplify them and convert them into digital signals to form case data that can reflect the characteristics of the particles for the Data Acquisition System (DAQ) to rebuild and record the physical cases, which are provided to physicists for offline analysis.</p>
+<p>This paper describes the overall structure of the STCF MDC front-end readout electronics system prototype circuit verification board, as well as the preliminary design of the analog daughter board. The MDC readout electronics consists of the <strong>Front End Electronics (FEE) module</strong> and the <strong>Readout Unit (RU) module</strong>, corresponding to the analog daughter board and the digital mother board, respectively. The whole system is a 16-channel system with 2 channels on a single daughter board, and every 2 daughter boards are connected to 1 mother board. The daughter board contains 4 parts: TIA and ADC drivers circuit, calibration circuit, power supply circuit and main control circuit.</p>
+<p>For now, PCB layout, soldering and preliminary testing have been completed, and the joint test of electronics and detector  is underway to prepare for further electronics system design.</p>
+<h2 id="Background-and-Significance"><a href="#Background-and-Significance" class="headerlink" title="Background and Significance"></a>Background and Significance</h2><hr>
+<p>Particle physics studies the composition and interaction of matter at a deeper level than the atomic nucleus, which is closely related to the origin and evolution of the universe, leading the development of mankind&#x2019;s basic view of space and time, and is the science at the forefront of mankind&#x2019;s understanding of the world. At the same time, it has given rise to many new cross-disciplines, spawned the construction of specialized large-scale scientific devices (e.g. colliders and accelerators), and developed into a large-scale comprehensive platform for multidisciplinary cross-frontier research.</p>
+<p><strong>Accelerator-based particle physics experiments</strong> are one of the most effective means of studying the microscopic material world. Today&#x2019;s accelerator-based particle physics experimental research can be categorized into high-energy frontier and high-brightness frontier, two different frontiers that complement each other. As one of the important representatives of <strong>high-brightness</strong> frontier accelerator experiments, the Positron-Negative Electron Collider &#x2013; tau-charm facility operates in the tau-charm energy region (center of mass energy of 2-5 GeV) and has been one of the key focuses of attention in the field of particle physics research in the past 40 years. The Beijing Positron-Negative Electron Collider/Beijing Spectrometer (BEPCII/BESIII) experiments built under the auspices of China have historically made world-renowned physics achievements such as tau lepton mass measurements, R-value measurements, and the discovery of X (1835), laying the foundation of China&#x2019;s high-energy physics research.</p>
+<p>However, due to the constraints of geographic location and some infrastructural conditions, BEPCII/BESIII does not have the space and potential to further improve its performance significantly. In addition, with the aging of the detectors and the competition from other particle physics experiments (e.g., BELLE-II, LHCb, etc.), BEPCII/BESIII will complete its historical mission in 5-10 years. In view of the importance and needs of physics in the tau-charm energy region mentioned above, as well as the current status of experimental research in this energy region both at home and abroad, China has proposed to build a new generation <strong>ultra-high-brightness positron-negative electron collider &#x2013; Super Tau Charm Facility</strong> &#x2013; to continue to maintain its leading position in this research field.</p>
+<img title="overall_layout_of_STCF" src="/images/overall_layout_of_STCF.png" alt="overall_layout_of_STCF" width="450">
+
+<p>The overall layout of the STCF is shown above. It includes an accelerator facility with a brightness greater than 0.5 &#xD7; 1035 cm-2s-1, a center-of-mass energy of collisions covering 2-7 GeV, a multifunctional magnetic spectrometer capable of adapting to high-brightness environments to meet the needs of physics research, and related infrastructure.</p>
+<p><strong>The core technology of the STCF accelerator is how to break through the peak collisional brightness</strong>. In order to realize the ultra-high brightness, STCF will adopt the widely used flat symmetric positive and negative electron beams and double-ring structure. The STCF detector is a large-scale integrated detector consisting of a combination of multiple particle detectors for the detection and species identification of end-state particles (protons, &#x3C0;, K, electrons, muons, photons, etc.) produced by collisions of positive and negative electrons.</p>
+<img src="/images/components_of_STCF_detector.png" alt="components_of_STCF_detector" title="components_of_STCF_detector" width="500">
+
+<p>As shown in the figure above, the STCF detector consists of <strong>the Inner Tracker (ITK), the Outer Track Detector (i.e. MDC), the Particle Identification (PID), the Electromagnetic Calorimeter (EMC), the Superconducting Magnet, and the Muon Detector (MUD)</strong>.</p>
+<p>Among them, the Outer Track Detector is a large cylindrical precision drift chamber surrounding the ITK,<strong>which carries out the main functions of charged particle trajectory and momentum measurements, and is therefore also called the Main Drift Chamber (MDC)</strong>. The MDC also measures the loss of ionization energy of charged particles, and is used to identify low-momentum charged particles. The MDC is filled with gas, and has a large number of fine wires arranged axially, forming a large number of drift cells. By measuring the drift time of the ionized electrons generated by the charged particles in the cells, the corresponding drift distance can be obtained, which together with the position of the anode filaments can be used to obtain the position of the charged particle trajectory. The STCF MDC has a total of 48 filament layers, and the positional resolution of the individual filaments is 120 &#xB5;m.</p>
+<img src="/images/components_of_electronics_for_particle_physics_experiments.png" alt="components_of_electronics_for_particle_physics_experiments" title="components_of_electronics_for_particle_physics_experiments" width="400">
+
+<p>As shown in the figure above, <strong>the basic composition of the electronics system in particle physics experiments is the front-end readout electronics, the trigger system, the data acquisition system and the slow control system</strong> (you can see <a href="https://mengisok.github.io/Basic-Components-of-Electronics-of-Particle-Physics-Experiments/">Basic Components of Electronics of Particle Physics Experiments</a>). In order to acquire and process the output signals of the STCF MDC, it is necessary to design the electronics system that accompanies it.</p>
+<p><strong>The function of the Front-End Readout Electronics</strong> is to amplify the weak electrical signals from the detector outputs, digitize them, and convert them into data reflecting the properties of the particles for reconstruction of the physical instances and recordings by the data acquisition system. The front-end readout electronics can provide the trigger system with information on which parts of the detector have been struck by particles and the energy deposition of the particles in the detector after the initial processing of the detector output signals, as the original conditions for triggering. Front-end readout electronics also need to carry out the necessary pre-processing of the data, such as data compression, data normalization and so on.</p>
+<p><strong>The function of the trigger system</strong> is to analyze the data provided by the front-end electronics in real time, and to select physically interested instances from a large amount of instance data, while discarding the false instance data.</p>
+<p><strong>The function of the Data Acquisition System</strong> is to collect and assemble the data digitized by the readout electronics system into a complete instance data recorded in mass memory.</p>
+<h2 id="Overall-System-Structure"><a href="#Overall-System-Structure" class="headerlink" title="Overall System Structure"></a>Overall System Structure</h2><hr>
+<h3 id="MDC-Readout-Electronics"><a href="#MDC-Readout-Electronics" class="headerlink" title="MDC Readout Electronics"></a>MDC Readout Electronics</h3><p>In the preliminary conceptual design of the STCF MDC, the MDC contains 11,520 cells and the total number of readout electronics channels for the signals is also 11,520. The readout electronics are set up in endcaps, which are made of 15 mm thick aluminum plates for mechanical support. The results of the beam simulations show that the first (innermost) layer of the MDC is subjected to the highest background count rate (approximately 200 to 400 kHz), which can severely interfere with the measurement of the charged trajectories of the signal events. The results of the GARFIELD simulations show that, due to the uncertain distribution of the electrons by the distance from the particle trajectories to the wires, the signals in each cell last from 200 to 500 ns. Therefore, the MDC readout electronics system requires highly accurate time measurements (~0.5 ns RMS) and charge measurements (up to 1.8 pC amplitude of the input signal).</p>
+<img src="/images/STCF_MDC_readout_electronics_system_architecture.png" alt="STCF_MDC_readout_electronics_system_architecture" title="STCF_MDC_readout_electronics_system_architecture" width="550">
+
+<p>The STCF MDC readout electronics system architecture is shown in the figure above, <strong>consisting of the FEE modules and the RU modules</strong>. The readout electronics of the MDC needs to be synchronized with the system clock signal, which is received by the RU and then fanned out to the FEE. The output of the FEE is collected by the RU, which further aggregates this data and transmits the signals to the DAQ via fiber optics. The RU also receives the global trigger signal and it fans out to the FEE for trigger matching to read out valid data.</p>
+<img src="/images/structure_of_FEE.png" alt="structure_of_FEE" title="structure_of_FEE" width="600">
+
+<p>The circuit structure of the FEE is shown above. <strong>The FEE is responsible for the processing of analog signals, A/D conversion, and the measurement of time and charge information</strong>. The signal from the detector MDC is first amplified by the <strong>Trans-Impedance Amplifier (TIA)</strong> to ensure fast response for time measurement and to provide charge measurement. <u>The output signal of the TIA is then split into two: one is connected to the charge measurement circuit and the other is connected to the time measurement circuit.</u></p>
+<p><u> For time measurement</u>, the threshold of the <strong>Discriminator (Disc)</strong> is set to a low level considering the characteristic shape of the signal. In order to achieve high time accuracy, an <strong>Amplifier</strong> located before the Discriminator is used to increase the slew rate of the signal. In order to filter out noise crossing the low threshold, another high threshold discriminator is used after shaping. Then, a <strong>Time-to-Digital Converter (TDC)</strong> is used to digitize the leading edge time of the low threshold discriminator.</p>
+<p><u>The charge measurement circuit</u> uses a <strong>Shaper</strong> to improve the signal-to-noise ratio, and its output waveform is digitized by an <strong>Analog-to-Digital Converter (ADC)</strong> and sent to an <strong>FPGA</strong> for charge calculation. The output signal of the shaping circuit is fed into a discriminator with a high threshold. The output of this discriminator is used as a HIT flag to start the charge calculation process and as a &#x201C;valid&#x201D; condition for the time measurement of the low threshold discriminator output. In order to suppress the effects of <strong>Data Packaging</strong>, baseline recovery and digital processing on the digitized signal waveform are applied to the circuit design.</p>
+<h3 id="Daughter-Mother-Structure-for-Validation-Boards"><a href="#Daughter-Mother-Structure-for-Validation-Boards" class="headerlink" title="Daughter-Mother Structure for Validation Boards"></a>Daughter-Mother Structure for Validation Boards</h3>
     
     </div>
     
