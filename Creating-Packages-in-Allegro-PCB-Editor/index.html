@@ -244,119 +244,160 @@
     
         <p>Take the production of regular shaped SMD (Surface Mounted Devices) as an example.</p>
 <span id="more"></span>
-
-<h2 id="Making-pads"><a href="#Making-pads" class="headerlink" title="Making pads"></a>Making pads</h2><hr>
+<h2 id="Making-pads">Making pads</h2>
+<hr>
 <ol>
-<li><p>Check the package parameters in the datasheets;  </p>
+<li>
+<p>Check the package parameters in the datasheets;</p>
 </li>
-<li><p>Open <strong>Pad Designer</strong> and create a new pad file (.pad);  </p>
+<li>
+<p>Open <strong>Pad Designer</strong> and create a new pad file (.pad);</p>
 </li>
-<li><p>Set the pad parameters</p>
+<li>
+<p>Set the pad parameters</p>
 </li>
 </ol>
 <ul>
-<li><p>Parameters: Set &#x201C;Units&#x201D; and &#x201C;Decimal places&#x201D;. Generally, the maximum precision is 2 when the unit is &#x201C;mils&#x201D;, and 4 when the unit is &#x201C;millimeter&#x201D;.  </p>
+<li>
+<p>Parameters: Set &#x201C;Units&#x201D; and &#x201C;Decimal places&#x201D;. Generally, the maximum precision is 2 when the unit is &#x201C;mils&#x201D;, and 4 when the unit is &#x201C;millimeter&#x201D;.</p>
 </li>
-<li><p>Layers: To make surface pads, you need to check the &#x201C;Single layer mode&#x201D; and set three layers:  </p>
+<li>
+<p>Layers: To make surface pads, you need to check the &#x201C;Single layer mode&#x201D; and set three layers:</p>
 <ul>
-<li><strong>BEGIN_LAYER</strong>;  </li>
-<li><strong>SOLDERMASK_TOP</strong> (indicating that this part is not painted with green oil when making the board, thus giving the pads a window to ensure that the pads are exposed and are actually allowed to solder the area);  </li>
+<li><strong>BEGIN_LAYER</strong>;</li>
+<li><strong>SOLDERMASK_TOP</strong> (indicating that this part is not painted with green oil when making the board, thus giving the pads a window to ensure that the pads are exposed and are actually allowed to solder the area);</li>
 <li><strong>PASTEMASK_TOP</strong> (indicating that this area should be coated with solder when soldering) parameters.</li>
 </ul>
 </li>
 </ul>
-<p>Note that  </p>
+<p>Note that</p>
 <ul>
-<li><p>SMD does not need to fill in the &#x201C;Thermal Relief&#x201D; and &#x201C;Anti Pad&#x201D;.  </p>
+<li>
+<p>SMD does not need to fill in the &#x201C;Thermal Relief&#x201D; and &#x201C;Anti Pad&#x201D;.</p>
 </li>
-<li><p>Generally, the parameters of &#x201C;PASTEMASK_TOP&#x201D; are the same as &#x201C;BEGIN_LAYER&#x201D;, and &#x201C;SOLDERMASK_TOP&#x201D; is 0.1mm larger than the previous two.</p>
+<li>
+<p>Generally, the parameters of &#x201C;PASTEMASK_TOP&#x201D; are the same as &#x201C;BEGIN_LAYER&#x201D;, and &#x201C;SOLDERMASK_TOP&#x201D; is 0.1mm larger than the previous two.</p>
 </li>
 </ul>
-<h2 id="Making-packages"><a href="#Making-packages" class="headerlink" title="Making packages"></a>Making packages</h2><hr>
-<h3 id="Placing-pads"><a href="#Placing-pads" class="headerlink" title="Placing pads"></a>Placing pads</h3><ol>
-<li><p>Open <strong>PCB Editor</strong> and select &#x201C;Package symbol&#x201D; in &#x201C;Drawing Type&#x201D; then create a new package file (.dra);  </p>
+<h2 id="Making-packages">Making packages</h2>
+<hr>
+<h3 id="Placing-pads">Placing pads</h3>
+<ol>
+<li>
+<p>Open <strong>PCB Editor</strong> and select &#x201C;Package symbol&#x201D; in &#x201C;Drawing Type&#x201D; then create a new package file (.dra);</p>
 </li>
-<li><p>Modify the size of grids appropriately;  </p>
+<li>
+<p>Modify the size of grids appropriately;</p>
 </li>
-<li><p>Add the pad file directory: Setup - User Preferences - Catagories - Paths - Library - add the above pad directory to padpath, psmpath, devpath;  </p>
+<li>
+<p>Add the pad file directory: Setup - User Preferences - Catagories - Paths - Library - add the above pad directory to padpath, psmpath, devpath;</p>
 </li>
-<li><p>Add pad pins: Layout - Pins - Select Connect - Select pads from Padstack.</p>
+<li>
+<p>Add pad pins: Layout - Pins - Select Connect - Select pads from Padstack.</p>
 </li>
 </ol>
-<h3 id="Drawing-packages"><a href="#Drawing-packages" class="headerlink" title="Drawing packages"></a>Drawing packages</h3><p>The package includes (<strong>bolded red is mandatory</strong>, <em>italic is highly recommended</em>)</p>
+<h3 id="Drawing-packages">Drawing packages</h3>
+<p>The package includes (<strong>bolded red is mandatory</strong>, <em>italic is highly recommended</em>)</p>
 <ul>
-<li><p>At least one pin (i.e. <strong>pads</strong>);  </p>
+<li>
+<p>At least one pin (i.e. <strong>pads</strong>);</p>
 </li>
-<li><p>Graphic border (i.e. Assembly_Top subclass and <em>Silkscreen_Top subclass</em> of the Package Geometry class), indicating pin 1;  </p>
+<li>
+<p>Graphic border (i.e. Assembly_Top subclass and <em>Silkscreen_Top subclass</em> of the Package Geometry class), indicating pin 1;</p>
 </li>
-<li><p>Reference number (i.e. at least one subclass of the Ref Des class, usually using the <strong>Silkscreen_Top subclass</strong> and sometimes drawing the Assembly_Top subclass in passing), placed near the package;  </p>
+<li>
+<p>Reference number (i.e. at least one subclass of the Ref Des class, usually using the <strong>Silkscreen_Top subclass</strong> and sometimes drawing the Assembly_Top subclass in passing), placed near the package;</p>
 </li>
-<li><p>Installation Area (i.e. <em>Place_Bound_Top</em> subclass in the Package Geometry class).</p>
+<li>
+<p>Installation Area (i.e. <em>Place_Bound_Top</em> subclass in the Package Geometry class).</p>
 </li>
 </ul>
-<p>After saving the file, you will get </p>
+<p>After saving the file, you will get</p>
 <ul>
-<li><p>a .dra file (drawing file, which can be opened to edit the package);  </p>
+<li>
+<p>a .dra file (drawing file, which can be opened to edit the package);</p>
 </li>
-<li><p>a .psm file (data file, which cannot be edited directly, but is necessary when importing the netlist in the .brd file).</p>
+<li>
+<p>a .psm file (data file, which cannot be edited directly, but is necessary when importing the netlist in the .brd file).</p>
 </li>
 </ul>
 <p>Note that</p>
 <ul>
-<li><p>Draw the outer frame for assembly on &#x201C;Assembly_Top&#x201D;;  </p>
+<li>
+<p>Draw the outer frame for assembly on &#x201C;Assembly_Top&#x201D;;</p>
 </li>
-<li><p>Draw the silkscreen pattern on &#x201C;Silkscreen_Top&#x201D;;  </p>
+<li>
+<p>Draw the silkscreen pattern on &#x201C;Silkscreen_Top&#x201D;;</p>
 </li>
-<li><p>Draw the area without electrical rules to prevent overlapping of devices on &#x201C;Place_Bound_Top&#x201D;;  </p>
+<li>
+<p>Draw the area without electrical rules to prevent overlapping of devices on &#x201C;Place_Bound_Top&#x201D;;</p>
 </li>
-<li><p>It is highly recommended to put pads, vias and device package files (.dra and .psm) in the same folder.</p>
+<li>
+<p>It is highly recommended to put pads, vias and device package files (.dra and .psm) in the same folder.</p>
 </li>
 </ul>
-<h2 id="Importing"><a href="#Importing" class="headerlink" title="Importing"></a>Importing</h2><hr>
-<h3 id="Creating-a-board"><a href="#Creating-a-board" class="headerlink" title="Creating a board"></a>Creating a board</h3><ol>
-<li><p>Open <strong>PCB Editor</strong>, select &#x201C;Board&#x201D; in &#x201C;Drawing Type&#x201D;, create a new board file (.brd), and set the page size and grid point size;  </p>
+<h2 id="Importing">Importing</h2>
+<hr>
+<h3 id="Creating-a-board">Creating a board</h3>
+<ol>
+<li>
+<p>Open <strong>PCB Editor</strong>, select &#x201C;Board&#x201D; in &#x201C;Drawing Type&#x201D;, create a new board file (.brd), and set the page size and grid point size;</p>
 </li>
-<li><p>Draw the outer frame of the PCB: Add - Line, select &#x201C;Board Geometry&#x201D; in class, select &#x201C;Outline&#x201D; in subclass;  </p>
+<li>
+<p>Draw the outer frame of the PCB: Add - Line, select &#x201C;Board Geometry&#x201D; in class, select &#x201C;Outline&#x201D; in subclass;</p>
 </li>
-<li><p>Draw the allowed wiring areas &#x201C;Route Keepin&#x201D;: Setup - Areas - Route Keepin. It is recommended that it is 30~40mil from the outer frame;  </p>
+<li>
+<p>Draw the allowed wiring areas &#x201C;Route Keepin&#x201D;: Setup - Areas - Route Keepin. It is recommended that it is 30~40mil from the outer frame;</p>
 </li>
-<li><p>Draw the area &#x201C;Package Keepin&#x201D; where the device is allowed to be placed: Edit - Z-copy - Size: Contract - Offset: 1. Generally, indent the &#x201C;Package Keepin&#x201D; by 1mil than the &#x201C;Route Keepin&#x201D;;  </p>
+<li>
+<p>Draw the area &#x201C;Package Keepin&#x201D; where the device is allowed to be placed: Edit - Z-copy - Size: Contract - Offset: 1. Generally, indent the &#x201C;Package Keepin&#x201D; by 1mil than the &#x201C;Route Keepin&#x201D;;</p>
 </li>
-<li><p>Place the mounting holes and make them tangent to the frame of the &#x201C;Package Keepin&#x201D;.</p>
+<li>
+<p>Place the mounting holes and make them tangent to the frame of the &#x201C;Package Keepin&#x201D;.</p>
 </li>
 </ol>
-<h3 id="Setting-the-structure"><a href="#Setting-the-structure" class="headerlink" title="Setting the structure"></a>Setting the structure</h3><p>Take a 4-layer board as an example, from top to bottom are  </p>
+<h3 id="Setting-the-structure">Setting the structure</h3>
+<p>Take a 4-layer board as an example, from top to bottom are</p>
 <ul>
-<li>TOP (top alignment layer); </li>
-<li>GND (ground copper plane);  </li>
-<li>POWER (power layer copper plane);  </li>
+<li>TOP (top alignment layer);</li>
+<li>GND (ground copper plane);</li>
+<li>POWER (power layer copper plane);</li>
 <li>BOTTOM (bottom alignment layer).</li>
 </ul>
 <ol>
-<li><p>Setup - Cross-section - add the middle layer;  </p>
+<li>
+<p>Setup - Cross-section - add the middle layer;</p>
 </li>
-<li><p>Set the type of each layer (<em>CONDUCTOR for the alignment layer, DIELECTRIC for the media layer, PLANE for the copper plane of power layer and ground layer</em>);  </p>
+<li>
+<p>Set the type of each layer (<em>CONDUCTOR for the alignment layer, DIELECTRIC for the media layer, PLANE for the copper plane of power layer and ground layer</em>);</p>
 </li>
-<li><p>Name each layer;  </p>
+<li>
+<p>Name each layer;</p>
 </li>
-<li><p>Set the positive and negative piece (<em>the alignment layer is positive, that is, the drawing is the part to be kept; the copper plane is negative, that is, the drawing is the part to be discarded</em>).</p>
+<li>
+<p>Set the positive and negative piece (<em>the alignment layer is positive, that is, the drawing is the part to be kept; the copper plane is negative, that is, the drawing is the part to be discarded</em>).</p>
 </li>
 </ol>
 <img src="/images/TOP_GND_POWER_BOTTOM.png" alt="TOP_GND_POWER_BOTTOM" title="TOP_GND_POWER_BOTTOM" width="700">  
-
-<h3 id="Laying-copper-in-the-inner-electric-layers"><a href="#Laying-copper-in-the-inner-electric-layers" class="headerlink" title="Laying copper in the inner electric layers"></a>Laying copper in the inner electric layers</h3><p>With &#x201C;Route Keepin&#x201D; drawn, you can use Z-copy to lay copper on the inner layer. At this point, the copper laying of the inner electrical layer is only temporary, just in order to facilitate the subsequent wiring to see if the over-hole is too close. Like the adjustment of the outer frame of the board, the copper plane of the inner layer will be readjusted (i.e., copper re-laying) when the layout wiring is determined.</p>
+<h3 id="Laying-copper-in-the-inner-electric-layers">Laying copper in the inner electric layers</h3>
+<p>With &#x201C;Route Keepin&#x201D; drawn, you can use Z-copy to lay copper on the inner layer. At this point, the copper laying of the inner electrical layer is only temporary, just in order to facilitate the subsequent wiring to see if the over-hole is too close. Like the adjustment of the outer frame of the board, the copper plane of the inner layer will be readjusted (i.e., copper re-laying) when the layout wiring is determined.</p>
 <ol>
-<li><p>Select &#x201C;GND&#x201D; or &#x201C;POWER&#x201D; (respectively for the GND layer and POWER layer copper laying) in &#x201C;Options&#x201D;, select &#x201C;Create dynamic shape&#x201D; (to prevent short circuit);  </p>
+<li>
+<p>Select &#x201C;GND&#x201D; or &#x201C;POWER&#x201D; (respectively for the GND layer and POWER layer copper laying) in &#x201C;Options&#x201D;, select &#x201C;Create dynamic shape&#x201D; (to prevent short circuit);</p>
 </li>
-<li><p>Set GND layer &#x201C;Offset&#x201D; to 0, POWER layer &#x201C;Offset&#x201D; to 40mil (the power layer needs to be indented 40 mil from the ground layer to reduce the outward radiation from the edge of the plate);  </p>
+<li>
+<p>Set GND layer &#x201C;Offset&#x201D; to 0, POWER layer &#x201C;Offset&#x201D; to 40mil (the power layer needs to be indented 40 mil from the ground layer to reduce the outward radiation from the edge of the plate);</p>
 </li>
-<li><p>Select &#x201C;Shapes&#x201D; in &#x201C;Find&#x201D;;  </p>
+<li>
+<p>Select &#x201C;Shapes&#x201D; in &#x201C;Find&#x201D;;</p>
 </li>
-<li><p>Turn off the rest of the internal electrical layer display in &#x201C;Visibility&#x201D; (so that when laying copper, you can clearly see whether the copper laying is successful).</p>
+<li>
+<p>Turn off the rest of the internal electrical layer display in &#x201C;Visibility&#x201D; (so that when laying copper, you can clearly see whether the copper laying is successful).</p>
 </li>
 </ol>
 <p>You can also directly lay dynamic copper in the GND layer and POWER layer, and then merge and adjust the shape of copper.</p>
-<h3 id="Importing-the-netlist"><a href="#Importing-the-netlist" class="headerlink" title="Importing the netlist"></a>Importing the netlist</h3><p>File - Import - Logic - Design entry CIS (Capture) - Import directory - Import Cadence</p>
+<h3 id="Importing-the-netlist">Importing the netlist</h3>
+<p>File - Import - Logic - Design entry CIS (Capture) - Import directory - Import Cadence</p>
 <p>If a window pops up, modify it according to the error report and then re-import; no window pops up means the import is successful.</p>
 
     
