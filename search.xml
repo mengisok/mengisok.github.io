@@ -486,6 +486,125 @@
       </tags>
   </entry>
   <entry>
+    <title>Basic MATLAB (very basic)</title>
+    <url>/Basic-MATLAB/</url>
+    <content><![CDATA[<p>I watched an introductory tutorial on LinkedIn Learning in order to write computer assignments in MATLAB (I really forgot it all after not using it for two or three years).</p>
+<span id="more"></span>
+
+<h3 id="General-concepts"><a href="#General-concepts" class="headerlink" title="General concepts"></a>General concepts</h3><hr>
+<h4 id="Clear-commands"><a href="#Clear-commands" class="headerlink" title="Clear commands"></a>Clear commands</h4><ul>
+<li><p><code>clc</code>  clears the screen</p>
+</li>
+<li><p><code>clear myVar</code>  deletes variable myVar</p>
+<p>  <code>clear all</code>  deletes all variables</p>
+</li>
+</ul>
+<h4 id="Create-variables"><a href="#Create-variables" class="headerlink" title="Create variables"></a>Create variables</h4><ul>
+<li>Creating a scalar: <code>myScalar = 10</code></li>
+<li>Creating a vector:<ul>
+<li>Row vector: <code>myVector = [4 5 6]</code></li>
+<li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
+</ul>
+</li>
+<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code><ul>
+<li><code>myMatrix(1, 2)</code>  gets 5</li>
+<li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
+<li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
+</ul>
+</li>
+<li>Using &#x201C;;&#x201D; at the end of command line means it will suppress (i.e. don&#x2019;t show) the result</li>
+</ul>
+<h4 id="Variable-classes"><a href="#Variable-classes" class="headerlink" title="Variable classes"></a>Variable classes</h4><ul>
+<li>double (default)</li>
+<li><code>format long</code>  changes double class to long class</li>
+<li>double, long, short, single, logical (boolean), etc</li>
+</ul>
+<h4 id="Cell-arrays"><a href="#Cell-arrays" class="headerlink" title="Cell arrays"></a>Cell arrays</h4><p>A matrix which has different kinds of elements</p>
+<p><code>myCell = {[1 2 3] [4 5 6 7]; &apos;v1&apos; &apos;v2&apos;}</code></p>
+<p><code>myCell{1, 2}</code>  gets [4 5 6 7]</p>
+<h3 id="Core-syntax"><a href="#Core-syntax" class="headerlink" title="Core syntax"></a>Core syntax</h3><hr>
+<h4 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h4><ul>
+<li>&#x201C;.m&#x201D; file</li>
+<li>Comment: <code>%</code></li>
+<li><code>disp()</code>: display something</li>
+<li><code>randi()</code>: random integers</li>
+<li>To tanspose a matrix: <code>matrix&apos;</code></li>
+</ul>
+<h4 id="Matrices"><a href="#Matrices" class="headerlink" title="Matrices"></a>Matrices</h4><ul>
+<li><p>Create some standard matrices:</p>
+<p>  <code>zeros(m, n)</code></p>
+<p>  <code>ones(m, n)</code></p>
+<p>  <code>randi(m, n)</code></p>
+</li>
+<li><p>Matrix multiplication</p>
+<ul>
+<li>Standard multiplication: <code>M1 * M2</code></li>
+<li>Element by element multiplication: <code>M1 .* M2</code></li>
+</ul>
+</li>
+<li><p>Division is alike</p>
+<ul>
+<li>Element by element division: <code>M1 ./ M2</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="If-statements"><a href="#If-statements" class="headerlink" title="If statements"></a>If statements</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="Switch-statements"><a href="#Switch-statements" class="headerlink" title="Switch statements"></a>Switch statements</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">switch</span> ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="For-loops"><a href="#For-loops" class="headerlink" title="For loops"></a>For loops</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">% step = 1</span></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = <span class="hljs-number">1</span>: <span class="hljs-number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% step = 2</span></span><br><span class="line"><span class="hljs-comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% n =25;</span></span><br><span class="line"><span class="hljs-comment">% step = 5;</span></span><br><span class="line"><span class="hljs-comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="While-loops"><a href="#While-loops" class="headerlink" title="While loops"></a>While loops</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h3><hr>
+<h4 id="Set-path"><a href="#Set-path" class="headerlink" title="Set path"></a>Set path</h4><p>If MATLAB can&#x2019;t find your scripts or functions or anything else, make sure you have added the path</p>
+<h4 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h4><ul>
+<li>Create a function from &#x201C;Current Folder&#x201D;, and it&#x2019;s a .m file</li>
+<li>Edit the pattern and wirte your function</li>
+</ul>
+<h4 id="Import-data"><a href="#Import-data" class="headerlink" title="Import data"></a>Import data</h4><p>To import a CSV file:</p>
+<ul>
+<li>Copy and paste it to &#x201C;Current Folder&#x201D;</li>
+<li><code>csvread(&apos;sine.csv&apos;)</code></li>
+</ul>
+<h4 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h4><p>Set breakpoints at little dashes in the left of Editor</p>
+<h4 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h4><ul>
+<li>Preallocate some memory can speed large calculations</li>
+<li>Use &#x201C;tik &#x2026; tok&#x201D; to count the time</li>
+</ul>
+<h3 id="Data-representations"><a href="#Data-representations" class="headerlink" title="Data representations"></a>Data representations</h3><hr>
+<h4 id="Plot"><a href="#Plot" class="headerlink" title="Plot"></a>Plot</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line"><span class="hljs-comment">% figure(1)</span></span><br><span class="line"><span class="hljs-built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>Add a grid: <code>grid on</code></li>
+<li>Make the window fits perfectly to the plot: <code>axis tight</code></li>
+<li>Set limits to axis: <code>ylim([-1 1])</code></li>
+<li>Change the color: <code>plot(x, y, &apos;m&apos;) % magenta</code></li>
+<li>Change the marker: <code>plot(x, y, &apos;o&apos;) % circle, magenta</code></li>
+<li>Plot curves multiple times with different lines: <code>hold on</code>. To end it, use <code>hold off</code></li>
+<li>Add annotations: <code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
+<li>Use <code>close all</code> to close all figures</li>
+</ul>
+<h4 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h4><ul>
+<li>Use <code>imread()</code> to import the image file</li>
+<li>Use <code>image()</code> to plot the image (default square)</li>
+<li>Use <code>imshow()</code> to plot the image in the correct aspect ratio, and there&#x2019;s no label on the axis</li>
+</ul>
+<h4 id="3D-plot"><a href="#3D-plot" class="headerlink" title="3D plot"></a>3D plot</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="hljs-number">-2</span>*<span class="hljs-built_in">pi</span>:<span class="hljs-number">.5</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="hljs-built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="hljs-built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Simulink"><a href="#Simulink" class="headerlink" title="Simulink"></a>Simulink</h3><hr>
+<p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>Tutorial</strong><br><a href="https://www.linkedin.com/learning/learning-matlab-2/welcome?autoplay=true">Learning MATLAB</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+      </categories>
+      <tags>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Creating Packages in Allegro PCB Editor</title>
     <url>/Creating-Packages-in-Allegro-PCB-Editor/</url>
     <content><![CDATA[<p>Take the production of regular shaped SMD (Surface Mounted Devices) as an example.</p>
@@ -614,125 +733,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Basic MATLAB (very basic)</title>
-    <url>/Basic-MATLAB/</url>
-    <content><![CDATA[<p>I watched an introductory tutorial on LinkedIn Learning in order to write computer assignments in MATLAB (I really forgot it all after not using it for two or three years).</p>
-<span id="more"></span>
-
-<h3 id="General-concepts"><a href="#General-concepts" class="headerlink" title="General concepts"></a>General concepts</h3><hr>
-<h4 id="Clear-commands"><a href="#Clear-commands" class="headerlink" title="Clear commands"></a>Clear commands</h4><ul>
-<li><p><code>clc</code>  clears the screen</p>
-</li>
-<li><p><code>clear myVar</code>  deletes variable myVar</p>
-<p>  <code>clear all</code>  deletes all variables</p>
-</li>
-</ul>
-<h4 id="Create-variables"><a href="#Create-variables" class="headerlink" title="Create variables"></a>Create variables</h4><ul>
-<li>Creating a scalar: <code>myScalar = 10</code></li>
-<li>Creating a vector:<ul>
-<li>Row vector: <code>myVector = [4 5 6]</code></li>
-<li>Column vector: <code>myVectorCol = [7; 8; 9]</code></li>
-</ul>
-</li>
-<li>Creating a matrix: <code>myMatrix = [4 5 6; 7 8 9; 1 2 3]</code><ul>
-<li><code>myMatrix(1, 2)</code>  gets 5</li>
-<li><code>myMatrix(2, :)</code>  gets all columns which are in row 2</li>
-<li><code>myMatrix(3, 2:3)</code>  gets row 3, column 2 and 3</li>
-</ul>
-</li>
-<li>Using &#x201C;;&#x201D; at the end of command line means it will suppress (i.e. don&#x2019;t show) the result</li>
-</ul>
-<h4 id="Variable-classes"><a href="#Variable-classes" class="headerlink" title="Variable classes"></a>Variable classes</h4><ul>
-<li>double (default)</li>
-<li><code>format long</code>  changes double class to long class</li>
-<li>double, long, short, single, logical (boolean), etc</li>
-</ul>
-<h4 id="Cell-arrays"><a href="#Cell-arrays" class="headerlink" title="Cell arrays"></a>Cell arrays</h4><p>A matrix which has different kinds of elements</p>
-<p><code>myCell = {[1 2 3] [4 5 6 7]; &apos;v1&apos; &apos;v2&apos;}</code></p>
-<p><code>myCell{1, 2}</code>  gets [4 5 6 7]</p>
-<h3 id="Core-syntax"><a href="#Core-syntax" class="headerlink" title="Core syntax"></a>Core syntax</h3><hr>
-<h4 id="Script"><a href="#Script" class="headerlink" title="Script"></a>Script</h4><ul>
-<li>&#x201C;.m&#x201D; file</li>
-<li>Comment: <code>%</code></li>
-<li><code>disp()</code>: display something</li>
-<li><code>randi()</code>: random integers</li>
-<li>To tanspose a matrix: <code>matrix&apos;</code></li>
-</ul>
-<h4 id="Matrices"><a href="#Matrices" class="headerlink" title="Matrices"></a>Matrices</h4><ul>
-<li><p>Create some standard matrices:</p>
-<p>  <code>zeros(m, n)</code></p>
-<p>  <code>ones(m, n)</code></p>
-<p>  <code>randi(m, n)</code></p>
-</li>
-<li><p>Matrix multiplication</p>
-<ul>
-<li>Standard multiplication: <code>M1 * M2</code></li>
-<li>Element by element multiplication: <code>M1 .* M2</code></li>
-</ul>
-</li>
-<li><p>Division is alike</p>
-<ul>
-<li>Element by element division: <code>M1 ./ M2</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="If-statements"><a href="#If-statements" class="headerlink" title="If statements"></a>If statements</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">if</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">elseif</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">else</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="Switch-statements"><a href="#Switch-statements" class="headerlink" title="Switch statements"></a>Switch statements</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">switch</span> ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">case</span> ...</span><br><span class="line">        ...</span><br><span class="line">    <span class="hljs-keyword">otherwise</span></span><br><span class="line">        ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="For-loops"><a href="#For-loops" class="headerlink" title="For loops"></a>For loops</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-comment">% step = 1</span></span><br><span class="line"><span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = <span class="hljs-number">1</span>: <span class="hljs-number">10</span></span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% step = 2</span></span><br><span class="line"><span class="hljs-comment">% for i = 1: 2: 10</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">% n =25;</span></span><br><span class="line"><span class="hljs-comment">% step = 5;</span></span><br><span class="line"><span class="hljs-comment">% for i = 0: step: n</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="While-loops"><a href="#While-loops" class="headerlink" title="While loops"></a>While loops</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> ...</span><br><span class="line">    ...</span><br><span class="line"><span class="hljs-keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Programming"><a href="#Programming" class="headerlink" title="Programming"></a>Programming</h3><hr>
-<h4 id="Set-path"><a href="#Set-path" class="headerlink" title="Set path"></a>Set path</h4><p>If MATLAB can&#x2019;t find your scripts or functions or anything else, make sure you have added the path</p>
-<h4 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h4><ul>
-<li>Create a function from &#x201C;Current Folder&#x201D;, and it&#x2019;s a .m file</li>
-<li>Edit the pattern and wirte your function</li>
-</ul>
-<h4 id="Import-data"><a href="#Import-data" class="headerlink" title="Import data"></a>Import data</h4><p>To import a CSV file:</p>
-<ul>
-<li>Copy and paste it to &#x201C;Current Folder&#x201D;</li>
-<li><code>csvread(&apos;sine.csv&apos;)</code></li>
-</ul>
-<h4 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h4><p>Set breakpoints at little dashes in the left of Editor</p>
-<h4 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h4><ul>
-<li>Preallocate some memory can speed large calculations</li>
-<li>Use &#x201C;tik &#x2026; tok&#x201D; to count the time</li>
-</ul>
-<h3 id="Data-representations"><a href="#Data-representations" class="headerlink" title="Data representations"></a>Data representations</h3><hr>
-<h4 id="Plot"><a href="#Plot" class="headerlink" title="Plot"></a>Plot</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line"><span class="hljs-comment">% figure(1)</span></span><br><span class="line"><span class="hljs-built_in">plot</span>(x, y)</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>Add a grid: <code>grid on</code></li>
-<li>Make the window fits perfectly to the plot: <code>axis tight</code></li>
-<li>Set limits to axis: <code>ylim([-1 1])</code></li>
-<li>Change the color: <code>plot(x, y, &apos;m&apos;) % magenta</code></li>
-<li>Change the marker: <code>plot(x, y, &apos;o&apos;) % circle, magenta</code></li>
-<li>Plot curves multiple times with different lines: <code>hold on</code>. To end it, use <code>hold off</code></li>
-<li>Add annotations: <code>xlabel()</code>, <code>title()</code>, <code>legend()</code></li>
-<li>Use <code>close all</code> to close all figures</li>
-</ul>
-<h4 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h4><ul>
-<li>Use <code>imread()</code> to import the image file</li>
-<li>Use <code>image()</code> to plot the image (default square)</li>
-<li>Use <code>imshow()</code> to plot the image in the correct aspect ratio, and there&#x2019;s no label on the axis</li>
-</ul>
-<h4 id="3D-plot"><a href="#3D-plot" class="headerlink" title="3D plot"></a>3D plot</h4><figure class="highlight matlab hljs"><table><tbody><tr><td class="code"><pre><span class="line">x = <span class="hljs-number">-2</span>*<span class="hljs-built_in">pi</span>:<span class="hljs-number">.5</span>:<span class="hljs-number">2</span>*<span class="hljs-built_in">pi</span>;</span><br><span class="line">[X, Y] = <span class="hljs-built_in">meshgrid</span>(x);</span><br><span class="line">Z = sine(X) + <span class="hljs-built_in">cos</span>(Y);</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">figure</span></span><br><span class="line">surf(X, Y ,Z)</span><br><span class="line"></span><br><span class="line">colorbar</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Simulink"><a href="#Simulink" class="headerlink" title="Simulink"></a>Simulink</h3><hr>
-<p>A block diagram tool that can be used to build systems and feedback loops, generate code for hardware like FPGAs, etc</p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>Tutorial</strong><br><a href="https://www.linkedin.com/learning/learning-matlab-2/welcome?autoplay=true">Learning MATLAB</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-      </categories>
-      <tags>
-        <tag>MATLAB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Dec 2022</title>
     <url>/Dec-2022/</url>
     <content><![CDATA[<p>This month was supposed to be the month of exams, so I dedicated my time to reviewing the three main lessons in school: Digital Signal Processing, Digital Image Analysis and Combinatorial Mathematics. I made some notes (all in Chinese), and bookmarked some nice links.  </p>
@@ -766,6 +766,129 @@
         <category>Summary</category>
         <category>Monthly Summary</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Design of STCF MDC FEE</title>
+    <url>/Design-of-STCF-MDC-FEE/</url>
+    <content><![CDATA[<p>This is one of my course papers, which details the design of the Front-End Electronics for the Main Drift Chamber of the Super Tau-Charm Facility.</p>
+<span id="more"></span>
+
+<p>(The following has been modified and formatted in an informal paper format to make it easier to read. )</p>
+<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><hr>
+<p>The <strong>Super Tau-Charm Facility (STCF)</strong> is a new-generation positron collider planned to be built in China, which is a continuation of the currently operating Beijing Electron Positron Collider II (BEPC II) and its companion Beijing Spectrometer III (BES III), which are dedicated to the physics of the &#x3C4;-charm region.</p>
+<p><strong>The Main Drift Chamber (MDC)</strong> is one of the main sub-detectors of the STCF detector, which is mainly used for final-state charged particle trajectory, momentum measurement and particle identification. The weak analog electrical signals output from the detector need to be configured with a set of <strong>Readout Electronics</strong> system to process them, amplify them and convert them into digital signals to form case data that can reflect the characteristics of the particles for the Data Acquisition System (DAQ) to rebuild and record the physical cases, which are provided to physicists for offline analysis.</p>
+<p>This paper describes the overall structure of the STCF MDC front-end readout electronics system prototype circuit verification board, as well as the preliminary design of the analog daughter board. The MDC readout electronics consists of the <strong>Front End Electronics (FEE) module</strong> and the <strong>Readout Unit (RU) module</strong>, corresponding to the analog daughter board and the digital mother board, respectively. The whole system is a 16-channel system with 2 channels on a single daughter board, and every 2 daughter boards are connected to 1 mother board. The daughter board contains 4 parts: TIA and ADC drivers circuit, calibration circuit, power supply circuit and main control circuit.</p>
+<p>For now, PCB layout, soldering and preliminary testing have been completed, and the joint test of electronics and detector  is underway to prepare for further electronics system design.</p>
+<h2 id="Background-and-Significance"><a href="#Background-and-Significance" class="headerlink" title="Background and Significance"></a>Background and Significance</h2><hr>
+<p>Particle physics studies the composition and interaction of matter at a deeper level than the atomic nucleus, which is closely related to the origin and evolution of the universe, leading the development of mankind&#x2019;s basic view of space and time, and is the science at the forefront of mankind&#x2019;s understanding of the world. At the same time, it has given rise to many new cross-disciplines, spawned the construction of specialized large-scale scientific devices (e.g. colliders and accelerators), and developed into a large-scale comprehensive platform for multidisciplinary cross-frontier research.</p>
+<p><strong>Accelerator-based particle physics experiments</strong> are one of the most effective means of studying the microscopic material world. Today&#x2019;s accelerator-based particle physics experimental research can be categorized into high-energy frontier and high-brightness frontier, two different frontiers that complement each other. As one of the important representatives of <strong>high-brightness</strong> frontier accelerator experiments, the Positron-Negative Electron Collider &#x2013; tau-charm facility operates in the tau-charm energy region (center of mass energy of 2-5 GeV) and has been one of the key focuses of attention in the field of particle physics research in the past 40 years. The Beijing Positron-Negative Electron Collider/Beijing Spectrometer (BEPCII/BESIII) experiments built under the auspices of China have historically made world-renowned physics achievements such as tau lepton mass measurements, R-value measurements, and the discovery of X (1835), laying the foundation of China&#x2019;s high-energy physics research.</p>
+<p>However, due to the constraints of geographic location and some infrastructural conditions, BEPCII/BESIII does not have the space and potential to further improve its performance significantly. In addition, with the aging of the detectors and the competition from other particle physics experiments (e.g., BELLE-II, LHCb, etc.), BEPCII/BESIII will complete its historical mission in 5-10 years. In view of the importance and needs of physics in the tau-charm energy region mentioned above, as well as the current status of experimental research in this energy region both at home and abroad, China has proposed to build a new generation <strong>ultra-high-brightness positron-negative electron collider &#x2013; Super Tau Charm Facility</strong> &#x2013; to continue to maintain its leading position in this research field.</p>
+<img title="overall_layout_of_STCF" src="/images/overall_layout_of_STCF.png" alt="overall_layout_of_STCF" width="450">
+
+<p>The overall layout of the STCF is shown above. It includes an accelerator facility with a brightness greater than 0.5 &#xD7; 1035 cm-2s-1, a center-of-mass energy of collisions covering 2-7 GeV, a multifunctional magnetic spectrometer capable of adapting to high-brightness environments to meet the needs of physics research, and related infrastructure.</p>
+<p><strong>The core technology of the STCF accelerator is how to break through the peak collisional brightness</strong>. In order to realize the ultra-high brightness, STCF will adopt the widely used flat symmetric positive and negative electron beams and double-ring structure. The STCF detector is a large-scale integrated detector consisting of a combination of multiple particle detectors for the detection and species identification of end-state particles (protons, &#x3C0;, K, electrons, muons, photons, etc.) produced by collisions of positive and negative electrons.</p>
+<img src="/images/components_of_STCF_detector.png" alt="components_of_STCF_detector" title="components_of_STCF_detector" width="500">
+
+<p>As shown in the figure above, the STCF detector consists of <strong>the Inner Tracker (ITK), the Outer Track Detector (i.e. MDC), the Particle Identification (PID), the Electromagnetic Calorimeter (EMC), the Superconducting Magnet, and the Muon Detector (MUD)</strong>.</p>
+<p>Among them, the Outer Track Detector is a large cylindrical precision drift chamber surrounding the ITK,<strong>which carries out the main functions of charged particle trajectory and momentum measurements, and is therefore also called the Main Drift Chamber (MDC)</strong>. The MDC also measures the loss of ionization energy of charged particles, and is used to identify low-momentum charged particles. The MDC is filled with gas, and has a large number of fine wires arranged axially, forming a large number of drift cells. By measuring the drift time of the ionized electrons generated by the charged particles in the cells, the corresponding drift distance can be obtained, which together with the position of the anode filaments can be used to obtain the position of the charged particle trajectory. The STCF MDC has a total of 48 filament layers, and the positional resolution of the individual filaments is 120 &#xB5;m.</p>
+<img src="/images/components_of_electronics_for_particle_physics_experiments.png" alt="components_of_electronics_for_particle_physics_experiments" title="components_of_electronics_for_particle_physics_experiments" width="400">
+
+<p>As shown in the figure above, <strong>the basic composition of the electronics system in particle physics experiments is the front-end readout electronics, the trigger system, the data acquisition system and the slow control system</strong> (you can see <a href="https://mengisok.github.io/Basic-Components-of-Electronics-of-Particle-Physics-Experiments/">Basic Components of Electronics of Particle Physics Experiments</a>). In order to acquire and process the output signals of the STCF MDC, it is necessary to design the electronics system that accompanies it.</p>
+<p><strong>The function of the Front-End Readout Electronics</strong> is to amplify the weak electrical signals from the detector outputs, digitize them, and convert them into data reflecting the properties of the particles for reconstruction of the physical instances and recordings by the data acquisition system. The front-end readout electronics can provide the trigger system with information on which parts of the detector have been struck by particles and the energy deposition of the particles in the detector after the initial processing of the detector output signals, as the original conditions for triggering. Front-end readout electronics also need to carry out the necessary pre-processing of the data, such as data compression, data normalization and so on.</p>
+<p><strong>The function of the trigger system</strong> is to analyze the data provided by the front-end electronics in real time, and to select physically interested instances from a large amount of instance data, while discarding the false instance data.</p>
+<p><strong>The function of the Data Acquisition System</strong> is to collect and assemble the data digitized by the readout electronics system into a complete instance data recorded in mass memory.</p>
+<h2 id="Overall-System-Structure"><a href="#Overall-System-Structure" class="headerlink" title="Overall System Structure"></a>Overall System Structure</h2><hr>
+<h3 id="MDC-Readout-Electronics"><a href="#MDC-Readout-Electronics" class="headerlink" title="MDC Readout Electronics"></a>MDC Readout Electronics</h3><p>In the preliminary conceptual design of the STCF MDC, the MDC contains 11,520 cells and the total number of readout electronics channels for the signals is also 11,520. The readout electronics are set up in endcaps, which are made of 15 mm thick aluminum plates for mechanical support. The results of the beam simulations show that the first (innermost) layer of the MDC is subjected to the highest background count rate (approximately 200 to 400 kHz), which can severely interfere with the measurement of the charged trajectories of the signal events. The results of the GARFIELD simulations show that, due to the uncertain distribution of the electrons by the distance from the particle trajectories to the wires, the signals in each cell last from 200 to 500 ns. Therefore, the MDC readout electronics system requires highly accurate time measurements (~0.5 ns RMS) and charge measurements (up to 1.8 pC amplitude of the input signal).</p>
+<img src="/images/STCF_MDC_readout_electronics_system_architecture.png" alt="STCF_MDC_readout_electronics_system_architecture" title="STCF_MDC_readout_electronics_system_architecture" width="550">
+
+<p>The STCF MDC readout electronics system architecture is shown in the figure above, <strong>consisting of the FEE modules and the RU modules</strong>. The readout electronics of the MDC needs to be synchronized with the system clock signal, which is received by the RU and then fanned out to the FEE. The output of the FEE is collected by the RU, which further aggregates this data and transmits the signals to the DAQ via fiber optics. The RU also receives the global trigger signal and it fans out to the FEE for trigger matching to read out valid data.</p>
+<img src="/images/structure_of_FEE.png" alt="structure_of_FEE" title="structure_of_FEE" width="600">
+
+<p>The circuit structure of the FEE is shown above. <strong>The FEE is responsible for the processing of analog signals, A/D conversion, and the measurement of time and charge information</strong>. The signal from the detector MDC is first amplified by the <strong>Trans-Impedance Amplifier (TIA)</strong> to ensure fast response for time measurement and to provide charge measurement. <u>The output signal of the TIA is then split into two: one is connected to the charge measurement circuit and the other is connected to the time measurement circuit.</u></p>
+<p><u> For time measurement</u>, the threshold of the <strong>Discriminator (Disc)</strong> is set to a low level considering the characteristic shape of the signal. In order to achieve high time accuracy, an <strong>Amplifier</strong> located before the Discriminator is used to increase the slew rate of the signal. In order to filter out noise crossing the low threshold, another high threshold discriminator is used after shaping. Then, a <strong>Time-to-Digital Converter (TDC)</strong> is used to digitize the leading edge time of the low threshold discriminator.</p>
+<p><u>The charge measurement circuit</u> uses a <strong>Shaper</strong> to improve the signal-to-noise ratio, and its output waveform is digitized by an <strong>Analog-to-Digital Converter (ADC)</strong> and sent to an <strong>FPGA</strong> for charge calculation. The output signal of the shaping circuit is fed into a discriminator with a high threshold. The output of this discriminator is used as a HIT flag to start the charge calculation process and as a &#x201C;valid&#x201D; condition for the time measurement of the low threshold discriminator output. In order to suppress the effects of <strong>Data Packaging</strong>, baseline recovery and digital processing on the digitized signal waveform are applied to the circuit design.</p>
+<h3 id="Daughter-Mother-Structure-for-Validation-Boards"><a href="#Daughter-Mother-Structure-for-Validation-Boards" class="headerlink" title="Daughter-Mother Structure for Validation Boards"></a>Daughter-Mother Structure for Validation Boards</h3><img src="/images/circuit_model_in_LTspice.png" alt="circuit_model_in_LTspice" title="circuit_model_in_LTspice" width="1000">
+
+<p>The above figure shows the circuit model and simulation performed in LTspice software. In order to further ensure the principle correctness and application feasibility of the scheme, as well as to obtain a preliminary practical test result, a verification board needs to be designed.</p>
+<img src="/images/daughterboard_and_motherboard_structure_for_FEE.png" alt="daughterboard_and_motherboard_structure_for_FEE" title="daughterboard_and_motherboard_structure_for_FEE" width="500">
+
+<p>In terms of hardware structure, the verification board is designed as a <strong>flexible daughter-mother board</strong> as shown in the figure above, i.e., a combination of an analog daughter board and a digital mother board. <strong>The analog daughter board receives and conditions the analog signals</strong> from the MDC and inputs the signals to the digital mother board via differential LEMO connectors. <strong>The Digital mother board performs analog-to-digital conversion of the signals, and processes and calculates the digital signals in the FPGA</strong>, and finally outputs the desired data results to the PC through the connector. It is more difficult to use high-speed ADC to realize 32-channel signal readout, so the number of channels of a single verification board system is set at 16. 2 channels are available on a single daughter board, and a single mother board can be connected to 2 daughter boards, so a single verification board system contains 8 daughter boards and 4 mother boards.</p>
+<p><strong>The daughter boards mainly contain the TIA as well as the ADC driver</strong>. Since the sampling rate of ADC is between 500MHz and 1GHz, a dual-channel, 14-bit ADC chip with a sampling rate of 1GHz, GM4680-1000 is considered. In the mother board, the FPGA chip selection needs to give priority to meet the data reception requirements of the ADC to ensure the normal operation of the high-speed transceiver interface.</p>
+<p>The system clock is provided by the local crystal or clock interface. The FPGA generates the clocks for the ADC drivers and sends them to the ADCs through the clock driver to ensure that all the ADCs work synchronously. The clock synchronization of the MDC electronics needs to be done through the clock interface.</p>
+<p>The MDC signal input interface is determined by the output of the detector. The data trigger interface is determined by the DAQ together with the trigger system.</p>
+<p>The calibration circuit is used for subsequent testing or self-testing of the electronics function.</p>
+<h2 id="Design-of-the-Analog-Daughter-Board"><a href="#Design-of-the-Analog-Daughter-Board" class="headerlink" title="Design of the Analog Daughter Board"></a>Design of the Analog Daughter Board</h2><hr>
+<p>We use Cadence to design the electronics system. First design the circuit schematic in OrCAD Capture CIS and then design the printed circuit board (PCB) in Allegro PCB Editor.</p>
+<h3 id="Schematic-design"><a href="#Schematic-design" class="headerlink" title="Schematic design"></a>Schematic design</h3><p>The schematic of the daughter board consists of 4 pages, in order of the circuits of the <mark>TIA and ADC Driver, Power Supply, Master Control and Calibration</mark> sections.</p>
+<ul>
+<li><p><mark>TIA and ADC Driver Section</mark></p>
+
+
+	<div class="row">
+    <embed src="/pdf/TIA.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</li>
+</ul>
+<p><strong>The analog signal from the detector is fed into the daughter board through the LEMO connector, and then passes through the isolation capacitors and matching resistors into the preamplifier</strong>. A preamplifier is a circuit or electronic device placed between a signal source and an amplifier, and is designed to accept weak signals from the signal source. A preamplifier that processes charge (current) information is called a charge-sensitive amplifier.</p>
+<p><strong>The preamplifier uses the OPA855 chip</strong>. It is a wide-band low-noise operational amplifier with bipolar inputs for <strong>wideband transimpedance and voltage amplification</strong>. If this op-amp is configured as a TIA, its 8 GHz Gain-BandWidth Product (GBWP) is capable of achieving high closed-loop bandwidths with transimpedance gains of up to several tens of kilo-ohms. Simulation test results show that the OPA855&#x2019;s -3dB bandwidth is 80MHz when the OPA855&#x2019;s gain is 20k&#x3A9; and the detector&#x2019;s equivalent capacitance to ground is 50pF. The OPA855&#x2019;s reverse end is connected to a feedback resistor, and the forward end is connected to ground through a 0&#x3A9; resistor or can also be baselined through a Digital-Analog Converter (DAC). According to the impedance value of the MDC signal, adjust the matching resistors appropriately, and when the impedance is matched, the noise of the circuit is minimized. Bypass capacitors are placed near the power supply side to filter out high frequency noise and reduce coupling interference.</p>
+<p>After the signal is conditioned and amplified by OPA855, it is fed into CR-RC passive filter network to facilitate the subsequent debugging. The signals processed by the filter network are sequentially isolated by capacitors and matched by resistors, and then fed into the ADC driver, which is generally placed close to the ADC. Bypass capacitors are also required near the power supply.</p>
+<p><strong>The ADC driver uses the LTC6419 chip</strong>. It is a dual-channel, very high-speed and low-distortion differential amplifier that <strong>converts the input single-ended signal to a differential signal to drive the ADC connected behind it, and isolates the preamplifier from the ADC and acts as a buffer</strong>. The differential ADC driver is an indispensable signal conditioning component in the data acquisition system. In this design, the differential amplification gain of the LTC6419 is configured as 2.</p>
+<ul>
+<li><p><mark>Power Supply Section</mark></p>
+
+
+	<div class="row">
+    <embed src="/pdf/POWER.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</li>
+</ul>
+<p><strong>The external power supply enters the board through the power socket, and after a series of capacitive filtering and inductive isolation, it is fed into the Low-Dropout Regulator (LDO) component. The LDO is configured to obtain the required supply voltage for the entire board</strong>. A LDO is a type of linear DC regulator used to provide a stable DC voltage supply. It is able to operate with a smaller output-input voltage difference than a typical linear DC regulator. The LDO in this design is LT1764, which has the advantages of fast transient response and very low output voltage noise.</p>
+<ul>
+<li><p><mark>Main Control Section</mark></p>
+
+
+	<div class="row">
+    <embed src="/pdf/MASTER.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</li>
+</ul>
+<p><strong>The function of the main control section is globally control and connects the various modules between the daughter and mother boards</strong>. It mainly contains a connector that serves as the interface to the daughter and mother boards, a LEMO connector for the output signals, and several selection resistors for subsequent debugging and testing. The daughter-mother interface of this design uses Samtec&#x2019;s TFM-115-01-L-D-DS model connector, which has a total of 30 pins available. It has less than 1% crosstalk between adjacent pins for signals with a rising edge of 1 ns; single-ended impedance of 48.2-50.8 &#x3A9; and differential impedance of 92.2-102.8 &#x3A9;; a bandwidth of up to 8 GHz; and can pass current signals up to 1 A @ 70 &#xB0;C.</p>
+<p>The pins of the connector between the daughter boards are defined as following: DIFF_1_SAM_N, DIFF_1_SAM_P, and DIFF_2_SAM_N, DIFF_2_SAM_P are the output pins of the two-channel ADC drivers; DAC_CH_1, DAC_CH_2, DAC_CH_3, and DAC_CH_4 are the output pins of the DAC on the  mother board; FPGA_1, FPGA_2, FPGA_3, and FPGA_4 are the control signals of the calibration circuit, which are connected to the FPGA chip on the mother board; MASTER_POWER is the input pin of the power supply at +5.5 V; the other pins need to be grounded to reduce the noise and electromagnetic radiation and protect the signals.</p>
+<ul>
+<li><p><mark>Calibration section</mark></p>
+
+
+	<div class="row">
+    <embed src="/pdf/CALIBRATION.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</li>
+</ul>
+<p>By controlling the analog switch&#x2019;s disconnection and conduction, capacitors C19 and C20 are charged and discharged through resistors R38, R41 and R40, R42 respectively, and are input to TIA through resistors R36 and R39 as calibration signals. The charge of the calibration signal is determined by the calibration reference voltage and the capacitors C19 and C20, and the signal characteristics are determined by the capacitors C19 and C20 and the resistors R38, R41, R40 and R42. The analog switch in the calibration circuit is TMUX6211PWR, which is a four-channel Complementary Metal-Oxide-Semiconductor (CMOS) precision switch. It controls the outputs through the appropriate input logic on the SELx pins. The TMUX6211PWR has an on-resistance of 2 &#x3A9;, and has a maximum current of 200 mA when on. The bypass capacitor near the power supply is still required.</p>
+<h3 id="PCB-Design"><a href="#PCB-Design" class="headerlink" title="PCB Design"></a>PCB Design</h3><p>Since the number of components on the daughter board is small and the circuit structure is simple, a four-layer PCB board structure is enough. The top and bottom layers are the signal layer, which is convenient for flexible layout and alignment; the middle two layers are the ground layer and the power layer in order from top to bottom. The power supply layer and ground layer in the middle can play a role in isolating the two signal layers and reducing the mutual interference between them.</p>
+<img src="/images/STCF_MDC_FEE_PCB.png" alt="STCF_MDC_FEE_PCB" title="STCF_MDC_FEE_PCB" width="1000">
+
+<p>The completed PCB designed in Allegro PCB Editor is shown above. The figure shows only the signal layers, with the top layer in red and the bottom layer in blue. Both signal layers are covered with grounded copper to improve circuit shielding. The size of the rectangular PCB is 2500mil * 2800mil (about 63.5mm * 71.1mm).</p>
+<p>See <a href="https://mengisok.github.io/May-Aug-2023/">May-Aug 2023</a> for a picture of the real thing.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In this work, we have designed the schematic and PCB for the STCF MDC detector readout electronics analog daughter board, and have completed PCB manufacturing, elements soldering and preliminary testing, and are in the process of conducting joint testing with the detector. Based on this work, a more refined design is needed to incorporate the latest requirements of the detector and to carry out joint testing with the back-end digital system.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="http://www.wuli.ac.cn/cn/article/doi/10.7693/wl20200803">&#x4E2D;&#x56FD;&#x8D85;&#x7EA7;&#x9676;&#x7CB2;&#x88C5;&#x7F6E;</a></p>
+<p><a href="https://arxiv.org/abs/2303.15790">STCF Conceptual Design Report: Volume 1&#x2013;Physics</a></p>
+]]></content>
+      <categories>
+        <category>Laboratory Work</category>
+      </categories>
+      <tags>
+        <tag>Physical Electronics</tag>
+        <tag>Readout Electronics</tag>
+        <tag>STCF Project</tag>
+      </tags>
   </entry>
   <entry>
     <title>Drawing Schematics in OrCAD Capture CIS</title>
@@ -954,128 +1077,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Design of STCF MDC FEE</title>
-    <url>/Design-of-STCF-MDC-FEE/</url>
-    <content><![CDATA[<p>This is one of my course papers, which details the design of the Front-End Electronics for the Main Drift Chamber of the Super Tau-Charm Facility.</p>
-<span id="more"></span>
-
-<p>(The following has been modified and formatted in an informal paper format to make it easier to read. )</p>
-<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><hr>
-<p>The <strong>Super Tau-Charm Facility (STCF)</strong> is a new-generation positron collider planned to be built in China, which is a continuation of the currently operating Beijing Electron Positron Collider II (BEPC II) and its companion Beijing Spectrometer III (BES III), which are dedicated to the physics of the &#x3C4;-charm region.</p>
-<p><strong>The Main Drift Chamber (MDC)</strong> is one of the main sub-detectors of the STCF detector, which is mainly used for final-state charged particle trajectory, momentum measurement and particle identification. The weak analog electrical signals output from the detector need to be configured with a set of <strong>Readout Electronics</strong> system to process them, amplify them and convert them into digital signals to form case data that can reflect the characteristics of the particles for the Data Acquisition System (DAQ) to rebuild and record the physical cases, which are provided to physicists for offline analysis.</p>
-<p>This paper describes the overall structure of the STCF MDC front-end readout electronics system prototype circuit verification board, as well as the preliminary design of the analog daughter board. The MDC readout electronics consists of the <strong>Front End Electronics (FEE) module</strong> and the <strong>Readout Unit (RU) module</strong>, corresponding to the analog daughter board and the digital mother board, respectively. The whole system is a 16-channel system with 2 channels on a single daughter board, and every 2 daughter boards are connected to 1 mother board. The daughter board contains 4 parts: TIA and ADC drivers circuit, calibration circuit, power supply circuit and main control circuit.</p>
-<p>For now, PCB layout, soldering and preliminary testing have been completed, and the joint test of electronics and detector  is underway to prepare for further electronics system design.</p>
-<h2 id="Background-and-Significance"><a href="#Background-and-Significance" class="headerlink" title="Background and Significance"></a>Background and Significance</h2><hr>
-<p>Particle physics studies the composition and interaction of matter at a deeper level than the atomic nucleus, which is closely related to the origin and evolution of the universe, leading the development of mankind&#x2019;s basic view of space and time, and is the science at the forefront of mankind&#x2019;s understanding of the world. At the same time, it has given rise to many new cross-disciplines, spawned the construction of specialized large-scale scientific devices (e.g. colliders and accelerators), and developed into a large-scale comprehensive platform for multidisciplinary cross-frontier research.</p>
-<p><strong>Accelerator-based particle physics experiments</strong> are one of the most effective means of studying the microscopic material world. Today&#x2019;s accelerator-based particle physics experimental research can be categorized into high-energy frontier and high-brightness frontier, two different frontiers that complement each other. As one of the important representatives of <strong>high-brightness</strong> frontier accelerator experiments, the Positron-Negative Electron Collider &#x2013; tau-charm facility operates in the tau-charm energy region (center of mass energy of 2-5 GeV) and has been one of the key focuses of attention in the field of particle physics research in the past 40 years. The Beijing Positron-Negative Electron Collider/Beijing Spectrometer (BEPCII/BESIII) experiments built under the auspices of China have historically made world-renowned physics achievements such as tau lepton mass measurements, R-value measurements, and the discovery of X (1835), laying the foundation of China&#x2019;s high-energy physics research.</p>
-<p>However, due to the constraints of geographic location and some infrastructural conditions, BEPCII/BESIII does not have the space and potential to further improve its performance significantly. In addition, with the aging of the detectors and the competition from other particle physics experiments (e.g., BELLE-II, LHCb, etc.), BEPCII/BESIII will complete its historical mission in 5-10 years. In view of the importance and needs of physics in the tau-charm energy region mentioned above, as well as the current status of experimental research in this energy region both at home and abroad, China has proposed to build a new generation <strong>ultra-high-brightness positron-negative electron collider &#x2013; Super Tau Charm Facility</strong> &#x2013; to continue to maintain its leading position in this research field.</p>
-<img title="overall_layout_of_STCF" src="/images/overall_layout_of_STCF.png" alt="overall_layout_of_STCF" width="450">
-
-<p>The overall layout of the STCF is shown above. It includes an accelerator facility with a brightness greater than 0.5 &#xD7; 1035 cm-2s-1, a center-of-mass energy of collisions covering 2-7 GeV, a multifunctional magnetic spectrometer capable of adapting to high-brightness environments to meet the needs of physics research, and related infrastructure.</p>
-<p><strong>The core technology of the STCF accelerator is how to break through the peak collisional brightness</strong>. In order to realize the ultra-high brightness, STCF will adopt the widely used flat symmetric positive and negative electron beams and double-ring structure. The STCF detector is a large-scale integrated detector consisting of a combination of multiple particle detectors for the detection and species identification of end-state particles (protons, &#x3C0;, K, electrons, muons, photons, etc.) produced by collisions of positive and negative electrons.</p>
-<img src="/images/components_of_STCF_detector.png" alt="components_of_STCF_detector" title="components_of_STCF_detector" width="500">
-
-<p>As shown in the figure above, the STCF detector consists of <strong>the Inner Tracker (ITK), the Outer Track Detector (i.e. MDC), the Particle Identification (PID), the Electromagnetic Calorimeter (EMC), the Superconducting Magnet, and the Muon Detector (MUD)</strong>.</p>
-<p>Among them, the Outer Track Detector is a large cylindrical precision drift chamber surrounding the ITK,<strong>which carries out the main functions of charged particle trajectory and momentum measurements, and is therefore also called the Main Drift Chamber (MDC)</strong>. The MDC also measures the loss of ionization energy of charged particles, and is used to identify low-momentum charged particles. The MDC is filled with gas, and has a large number of fine wires arranged axially, forming a large number of drift cells. By measuring the drift time of the ionized electrons generated by the charged particles in the cells, the corresponding drift distance can be obtained, which together with the position of the anode filaments can be used to obtain the position of the charged particle trajectory. The STCF MDC has a total of 48 filament layers, and the positional resolution of the individual filaments is 120 &#xB5;m.</p>
-<img src="/images/components_of_electronics_for_particle_physics_experiments.png" alt="components_of_electronics_for_particle_physics_experiments" title="components_of_electronics_for_particle_physics_experiments" width="400">
-
-<p>As shown in the figure above, <strong>the basic composition of the electronics system in particle physics experiments is the front-end readout electronics, the trigger system, the data acquisition system and the slow control system</strong> (you can see <a href="https://mengisok.github.io/Basic-Components-of-Electronics-of-Particle-Physics-Experiments/">Basic Components of Electronics of Particle Physics Experiments</a>). In order to acquire and process the output signals of the STCF MDC, it is necessary to design the electronics system that accompanies it.</p>
-<p><strong>The function of the Front-End Readout Electronics</strong> is to amplify the weak electrical signals from the detector outputs, digitize them, and convert them into data reflecting the properties of the particles for reconstruction of the physical instances and recordings by the data acquisition system. The front-end readout electronics can provide the trigger system with information on which parts of the detector have been struck by particles and the energy deposition of the particles in the detector after the initial processing of the detector output signals, as the original conditions for triggering. Front-end readout electronics also need to carry out the necessary pre-processing of the data, such as data compression, data normalization and so on.</p>
-<p><strong>The function of the trigger system</strong> is to analyze the data provided by the front-end electronics in real time, and to select physically interested instances from a large amount of instance data, while discarding the false instance data.</p>
-<p><strong>The function of the Data Acquisition System</strong> is to collect and assemble the data digitized by the readout electronics system into a complete instance data recorded in mass memory.</p>
-<h2 id="Overall-System-Structure"><a href="#Overall-System-Structure" class="headerlink" title="Overall System Structure"></a>Overall System Structure</h2><hr>
-<h3 id="MDC-Readout-Electronics"><a href="#MDC-Readout-Electronics" class="headerlink" title="MDC Readout Electronics"></a>MDC Readout Electronics</h3><p>In the preliminary conceptual design of the STCF MDC, the MDC contains 11,520 cells and the total number of readout electronics channels for the signals is also 11,520. The readout electronics are set up in endcaps, which are made of 15 mm thick aluminum plates for mechanical support. The results of the beam simulations show that the first (innermost) layer of the MDC is subjected to the highest background count rate (approximately 200 to 400 kHz), which can severely interfere with the measurement of the charged trajectories of the signal events. The results of the GARFIELD simulations show that, due to the uncertain distribution of the electrons by the distance from the particle trajectories to the wires, the signals in each cell last from 200 to 500 ns. Therefore, the MDC readout electronics system requires highly accurate time measurements (~0.5 ns RMS) and charge measurements (up to 1.8 pC amplitude of the input signal).</p>
-<img src="/images/STCF_MDC_readout_electronics_system_architecture.png" alt="STCF_MDC_readout_electronics_system_architecture" title="STCF_MDC_readout_electronics_system_architecture" width="550">
-
-<p>The STCF MDC readout electronics system architecture is shown in the figure above, <strong>consisting of the FEE modules and the RU modules</strong>. The readout electronics of the MDC needs to be synchronized with the system clock signal, which is received by the RU and then fanned out to the FEE. The output of the FEE is collected by the RU, which further aggregates this data and transmits the signals to the DAQ via fiber optics. The RU also receives the global trigger signal and it fans out to the FEE for trigger matching to read out valid data.</p>
-<img src="/images/structure_of_FEE.png" alt="structure_of_FEE" title="structure_of_FEE" width="600">
-
-<p>The circuit structure of the FEE is shown above. <strong>The FEE is responsible for the processing of analog signals, A/D conversion, and the measurement of time and charge information</strong>. The signal from the detector MDC is first amplified by the <strong>Trans-Impedance Amplifier (TIA)</strong> to ensure fast response for time measurement and to provide charge measurement. <u>The output signal of the TIA is then split into two: one is connected to the charge measurement circuit and the other is connected to the time measurement circuit.</u></p>
-<p><u> For time measurement</u>, the threshold of the <strong>Discriminator (Disc)</strong> is set to a low level considering the characteristic shape of the signal. In order to achieve high time accuracy, an <strong>Amplifier</strong> located before the Discriminator is used to increase the slew rate of the signal. In order to filter out noise crossing the low threshold, another high threshold discriminator is used after shaping. Then, a <strong>Time-to-Digital Converter (TDC)</strong> is used to digitize the leading edge time of the low threshold discriminator.</p>
-<p><u>The charge measurement circuit</u> uses a <strong>Shaper</strong> to improve the signal-to-noise ratio, and its output waveform is digitized by an <strong>Analog-to-Digital Converter (ADC)</strong> and sent to an <strong>FPGA</strong> for charge calculation. The output signal of the shaping circuit is fed into a discriminator with a high threshold. The output of this discriminator is used as a HIT flag to start the charge calculation process and as a &#x201C;valid&#x201D; condition for the time measurement of the low threshold discriminator output. In order to suppress the effects of <strong>Data Packaging</strong>, baseline recovery and digital processing on the digitized signal waveform are applied to the circuit design.</p>
-<h3 id="Daughter-Mother-Structure-for-Validation-Boards"><a href="#Daughter-Mother-Structure-for-Validation-Boards" class="headerlink" title="Daughter-Mother Structure for Validation Boards"></a>Daughter-Mother Structure for Validation Boards</h3><img src="/images/circuit_model_in_LTspice.png" alt="circuit_model_in_LTspice" title="circuit_model_in_LTspice" width="1000">
-
-<p>The above figure shows the circuit model and simulation performed in LTspice software. In order to further ensure the principle correctness and application feasibility of the scheme, as well as to obtain a preliminary practical test result, a verification board needs to be designed.</p>
-<img src="/images/daughterboard_and_motherboard_structure_for_FEE.png" alt="daughterboard_and_motherboard_structure_for_FEE" title="daughterboard_and_motherboard_structure_for_FEE" width="500">
-
-<p>In terms of hardware structure, the verification board is designed as a <strong>flexible daughter-mother board</strong> as shown in the figure above, i.e., a combination of an analog daughter board and a digital mother board. <strong>The analog daughter board receives and conditions the analog signals</strong> from the MDC and inputs the signals to the digital mother board via differential LEMO connectors. <strong>The Digital mother board performs analog-to-digital conversion of the signals, and processes and calculates the digital signals in the FPGA</strong>, and finally outputs the desired data results to the PC through the connector. It is more difficult to use high-speed ADC to realize 32-channel signal readout, so the number of channels of a single verification board system is set at 16. 2 channels are available on a single daughter board, and a single mother board can be connected to 2 daughter boards, so a single verification board system contains 8 daughter boards and 4 mother boards.</p>
-<p><strong>The daughter boards mainly contain the TIA as well as the ADC driver</strong>. Since the sampling rate of ADC is between 500MHz and 1GHz, a dual-channel, 14-bit ADC chip with a sampling rate of 1GHz, GM4680-1000 is considered. In the mother board, the FPGA chip selection needs to give priority to meet the data reception requirements of the ADC to ensure the normal operation of the high-speed transceiver interface.</p>
-<p>The system clock is provided by the local crystal or clock interface. The FPGA generates the clocks for the ADC drivers and sends them to the ADCs through the clock driver to ensure that all the ADCs work synchronously. The clock synchronization of the MDC electronics needs to be done through the clock interface.</p>
-<p>The MDC signal input interface is determined by the output of the detector. The data trigger interface is determined by the DAQ together with the trigger system.</p>
-<p>The calibration circuit is used for subsequent testing or self-testing of the electronics function.</p>
-<h2 id="Design-of-the-Analog-Daughter-Board"><a href="#Design-of-the-Analog-Daughter-Board" class="headerlink" title="Design of the Analog Daughter Board"></a>Design of the Analog Daughter Board</h2><hr>
-<p>We use Cadence to design the electronics system. First design the circuit schematic in OrCAD Capture CIS and then design the printed circuit board (PCB) in Allegro PCB Editor.</p>
-<h3 id="Schematic-design"><a href="#Schematic-design" class="headerlink" title="Schematic design"></a>Schematic design</h3><p>The schematic of the daughter board consists of 4 pages, in order of the circuits of the <mark>TIA and ADC Driver, Power Supply, Master Control and Calibration</mark> sections.</p>
-<ul>
-<li><p><mark>TIA and ADC Driver Section</mark></p>
-
-
-	<div class="row">
-    <embed src="/pdf/TIA.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-</li>
-</ul>
-<p><strong>The analog signal from the detector is fed into the daughter board through the LEMO connector, and then passes through the isolation capacitors and matching resistors into the preamplifier</strong>. A preamplifier is a circuit or electronic device placed between a signal source and an amplifier, and is designed to accept weak signals from the signal source. A preamplifier that processes charge (current) information is called a charge-sensitive amplifier.</p>
-<p><strong>The preamplifier uses the OPA855 chip</strong>. It is a wide-band low-noise operational amplifier with bipolar inputs for <strong>wideband transimpedance and voltage amplification</strong>. If this op-amp is configured as a TIA, its 8 GHz Gain-BandWidth Product (GBWP) is capable of achieving high closed-loop bandwidths with transimpedance gains of up to several tens of kilo-ohms. Simulation test results show that the OPA855&#x2019;s -3dB bandwidth is 80MHz when the OPA855&#x2019;s gain is 20k&#x3A9; and the detector&#x2019;s equivalent capacitance to ground is 50pF. The OPA855&#x2019;s reverse end is connected to a feedback resistor, and the forward end is connected to ground through a 0&#x3A9; resistor or can also be baselined through a Digital-Analog Converter (DAC). According to the impedance value of the MDC signal, adjust the matching resistors appropriately, and when the impedance is matched, the noise of the circuit is minimized. Bypass capacitors are placed near the power supply side to filter out high frequency noise and reduce coupling interference.</p>
-<p>After the signal is conditioned and amplified by OPA855, it is fed into CR-RC passive filter network to facilitate the subsequent debugging. The signals processed by the filter network are sequentially isolated by capacitors and matched by resistors, and then fed into the ADC driver, which is generally placed close to the ADC. Bypass capacitors are also required near the power supply.</p>
-<p><strong>The ADC driver uses the LTC6419 chip</strong>. It is a dual-channel, very high-speed and low-distortion differential amplifier that <strong>converts the input single-ended signal to a differential signal to drive the ADC connected behind it, and isolates the preamplifier from the ADC and acts as a buffer</strong>. The differential ADC driver is an indispensable signal conditioning component in the data acquisition system. In this design, the differential amplification gain of the LTC6419 is configured as 2.</p>
-<ul>
-<li><p><mark>Power Supply Section</mark></p>
-
-
-	<div class="row">
-    <embed src="/pdf/POWER.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-</li>
-</ul>
-<p><strong>The external power supply enters the board through the power socket, and after a series of capacitive filtering and inductive isolation, it is fed into the Low-Dropout Regulator (LDO) component. The LDO is configured to obtain the required supply voltage for the entire board</strong>. A LDO is a type of linear DC regulator used to provide a stable DC voltage supply. It is able to operate with a smaller output-input voltage difference than a typical linear DC regulator. The LDO in this design is LT1764, which has the advantages of fast transient response and very low output voltage noise.</p>
-<ul>
-<li><p><mark>Main Control Section</mark></p>
-
-
-	<div class="row">
-    <embed src="/pdf/MASTER.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-</li>
-</ul>
-<p><strong>The function of the main control section is globally control and connects the various modules between the daughter and mother boards</strong>. It mainly contains a connector that serves as the interface to the daughter and mother boards, a LEMO connector for the output signals, and several selection resistors for subsequent debugging and testing. The daughter-mother interface of this design uses Samtec&#x2019;s TFM-115-01-L-D-DS model connector, which has a total of 30 pins available. It has less than 1% crosstalk between adjacent pins for signals with a rising edge of 1 ns; single-ended impedance of 48.2-50.8 &#x3A9; and differential impedance of 92.2-102.8 &#x3A9;; a bandwidth of up to 8 GHz; and can pass current signals up to 1 A @ 70 &#xB0;C.</p>
-<p>The pins of the connector between the daughter boards are defined as following: DIFF_1_SAM_N, DIFF_1_SAM_P, and DIFF_2_SAM_N, DIFF_2_SAM_P are the output pins of the two-channel ADC drivers; DAC_CH_1, DAC_CH_2, DAC_CH_3, and DAC_CH_4 are the output pins of the DAC on the  mother board; FPGA_1, FPGA_2, FPGA_3, and FPGA_4 are the control signals of the calibration circuit, which are connected to the FPGA chip on the mother board; MASTER_POWER is the input pin of the power supply at +5.5 V; the other pins need to be grounded to reduce the noise and electromagnetic radiation and protect the signals.</p>
-<ul>
-<li><p><mark>Calibration section</mark></p>
-
-
-	<div class="row">
-    <embed src="/pdf/CALIBRATION.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-</li>
-</ul>
-<p>By controlling the analog switch&#x2019;s disconnection and conduction, capacitors C19 and C20 are charged and discharged through resistors R38, R41 and R40, R42 respectively, and are input to TIA through resistors R36 and R39 as calibration signals. The charge of the calibration signal is determined by the calibration reference voltage and the capacitors C19 and C20, and the signal characteristics are determined by the capacitors C19 and C20 and the resistors R38, R41, R40 and R42. The analog switch in the calibration circuit is TMUX6211PWR, which is a four-channel Complementary Metal-Oxide-Semiconductor (CMOS) precision switch. It controls the outputs through the appropriate input logic on the SELx pins. The TMUX6211PWR has an on-resistance of 2 &#x3A9;, and has a maximum current of 200 mA when on. The bypass capacitor near the power supply is still required.</p>
-<h3 id="PCB-Design"><a href="#PCB-Design" class="headerlink" title="PCB Design"></a>PCB Design</h3><p>Since the number of components on the daughter board is small and the circuit structure is simple, a four-layer PCB board structure is enough. The top and bottom layers are the signal layer, which is convenient for flexible layout and alignment; the middle two layers are the ground layer and the power layer in order from top to bottom. The power supply layer and ground layer in the middle can play a role in isolating the two signal layers and reducing the mutual interference between them.</p>
-<img src="/images/STCF_MDC_FEE_PCB.png" alt="STCF_MDC_FEE_PCB" title="STCF_MDC_FEE_PCB" width="1000">
-
-<p>The completed PCB designed in Allegro PCB Editor is shown above. The figure shows only the signal layers, with the top layer in red and the bottom layer in blue. Both signal layers are covered with grounded copper to improve circuit shielding. The size of the rectangular PCB is 2500mil * 2800mil (about 63.5mm * 71.1mm).</p>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In this work, we have designed the schematic and PCB for the STCF MDC detector readout electronics analog daughter board, and have completed PCB manufacturing, elements soldering and preliminary testing, and are in the process of conducting joint testing with the detector. Based on this work, a more refined design is needed to incorporate the latest requirements of the detector and to carry out joint testing with the back-end digital system.</p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="http://www.wuli.ac.cn/cn/article/doi/10.7693/wl20200803">&#x4E2D;&#x56FD;&#x8D85;&#x7EA7;&#x9676;&#x7CB2;&#x88C5;&#x7F6E;</a></p>
-<p><a href="https://arxiv.org/abs/2303.15790">STCF Conceptual Design Report: Volume 1&#x2013;Physics</a></p>
-]]></content>
-      <categories>
-        <category>Laboratory Work</category>
-      </categories>
-      <tags>
-        <tag>Physical Electronics</tag>
-        <tag>Readout Electronics</tag>
-        <tag>STCF Project</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Fundamentals of Electronics</title>
     <url>/Fundamentals-of-Electronics/</url>
     <content><![CDATA[<p>Recently, when I drew the PCB, I felt that I was not familiar with a lot of electronics, so I searched Wikipedia to organize the basics.  </p>
@@ -1185,88 +1186,6 @@
       </categories>
       <tags>
         <tag>Analog Electronics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/Hello-World/</url>
-    <content><![CDATA[<p>I made it! :)</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Installing Software in Linux</title>
-    <url>/Installing-software-in-Linux/</url>
-    <content><![CDATA[<p>There are 5 ways to install software in Linux.  </p>
-<span id="more"></span>
-
-<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><hr>
-<h4 id="Using-the-APP-store"><a href="#Using-the-APP-store" class="headerlink" title="Using the APP store"></a><strong>Using the APP store</strong></h4><p>Available for distributions with APP store, such as Ubuntu, Manjaro, etc.</p>
-<p>In Xubuntu, the APP store is called &#x201C;Software&#x201D;, but it doesn&#x2019;t work well because it loads very slowly.  </p>
-<h4 id="Using-package-management-system"><a href="#Using-package-management-system" class="headerlink" title="Using package management system"></a><strong>Using package management system</strong></h4><p>A package management system is a collection of tools that automates the installation, update, configuration and removal of software.</p>
-<p>In Linux, many software can be installed with a single command, elegantly and quickly.</p>
-<p>In contrast to the APP store, using the package manager requires that you know in advance the name of the package in the repository where you want to install the software.</p>
-<p>For example, <code>dpkg</code>, which manages Debian (.deb) packages, and its front-end <code>apt</code> (for Debian distributions).</p>
-<p>The full name of apt is Advance Package Tool.</p>
-<p><strong>apt</strong></p>
-<p>Before installing, use <code>apt search</code> to see if the corresponding package name is in the repository.</p>
-<p>Once you have determined the package name, install it with <code>apt install package name</code>.</p>
-<p>Enter <code>Y</code> and enter to confirm the installation.</p>
-<p><strong>Permission problem</strong></p>
-<p>Prompt &#x201C;Permission denied&#x201D;, &#x201C;are you root?&#x201D;.</p>
-<p>To fix it, add <code>sudo</code> in front of the command, i.e. <code>sudo apt install firefox</code>.</p>
-<p>When the user inputs a password, the terminal does not display the password back for security reasons.</p>
-<p><strong>Official software sources</strong></p>
-<p>The list of software sources for apt is under <code>/etc/apt/sources.list</code>.</p>
-<p><strong>Third-party sources</strong></p>
-<p>You can add third-party sources and install the software if it is not in the official sources.</p>
-<p>After adding third-party sources to <code>/etc/apt/sources.list</code>, you can get the list of third-party software and install the required third-party software with <code>apt install package-name</code>.</p>
-<p>For example, install Docker by adding the Docker sources <a href="#refer-anchor-1"><sup>1</sup></a>. </p>
-<h4 id="Installing-packages-manually-using-the-package-manager"><a href="#Installing-packages-manually-using-the-package-manager" class="headerlink" title="Installing packages manually using the package manager"></a><strong>Installing packages manually using the package manager</strong></h4><p>In addition to installing software from official and third-party repositories, you can also directly download and install binary packages such as <code>deb</code>, <code>rpm</code>, etc., packaged by the software vendor, and install them using shell. </p>
-<p>Try to use <code>apt</code> to install deb, avoid using <code>dpkg -i</code> , because installing deb directly via <code>dpkg</code> will <strong>not install the required dependencies</strong>. It will only report that the corresponding dependencies are missing, and you need to fix them manually with the following command: </p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ sudo apt -f install</span><br></pre></td></tr></tbody></table></figure>
-
-<p>For example, install VSCode <a href="#refer-anchor-2"><sup>2</sup></a>. </p>
-<p>I tried but failed.  </p>
-<p>First, my Linux distribution was too old to install with <code>apt</code>, so I used <code>dpkg -i</code> and made some errors;<br>Second, I seemed to have insufficient storage space to install the whole VSCode;<br>Finally, I made the mistake of powering off Linux, and when I booted it up again, there was no GUI, only a cursor flashing in the upper left corner.  </p>
-<p>I searched for these problems, but they were not successfully solved. I had no choice but to delete the original virtual machine and add a new one.</p>
-<p><strong>File transfer between host win10 and virtual machine ubuntu</strong></p>
-<p>Transferring files via <strong>SSH connection</strong> to the server <a href="#refer-anchor-3"><sup>3</sup></a>. I chose <a href="https://mobaxterm.mobatek.net/">MobaXterm</a> and successfully transferred the files.  </p>
-<img src="/images/mobaxterm.png" alt="mobaxterm" title="mobaxterm" width="800">  
-
-<p>A few little penguins suddenly jumped out when the connection was disconnected ^_^</p>
-<h4 id="Installing-pre-compiled-executables"><a href="#Installing-pre-compiled-executables" class="headerlink" title="Installing pre-compiled executables"></a><strong>Installing pre-compiled executables</strong></h4><p>The software provider may also provide pre-compiled executables that can be run directly. </p>
-<p>For example, install a pre-compiled LLVM <a href="#refer-anchor-4"><sup>4</sup></a>.</p>
-<h4 id="Using-source-code-5"><a href="#Using-source-code-5" class="headerlink" title="Using source code 5"></a><strong>Using source code</strong> <a href="#refer-anchor-5"><sup>5</sup></a></h4><h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><hr>
-<p>Locally on the computer, the system maintains a list of packages that contains software information and package dependencies.</p>
-<p><strong>Update the software list</strong></p>
-<p>Use <code>apt update</code> to get the new software version and software dependencies.</p>
-<p><strong>Update the software</strong></p>
-<p>After getting the new software list, use <code>apt upgrade</code> to update the software.</p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>Tutorial</strong></p>
-<p><a href="https://101.lug.ustc.edu.cn/Ch03/">Linux 101 - chap 03: &#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x4E0E;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</a></p>
-<div id="refer-anchor-1"></div>
-
-<p>[1] <a href="https://101.lug.ustc.edu.cn/Ch03/#third-party-software-sources">Linux 101 - &#x7B2C;&#x4E09;&#x65B9;&#x8F6F;&#x4EF6;&#x6E90;</a></p>
-<div id="refer-anchor-2"></div>
-
-<p>[2] <a href="https://code.visualstudio.com/docs/setup/linux">Visual Studio Code on Linux</a></p>
-<div id="refer-anchor-3"></div>
-
-<p>[3] <a href="https://zhuanlan.zhihu.com/p/460471813">&#x5BBF;&#x4E3B;&#x673A;win10&#x4E0E;&#x865A;&#x62DF;&#x673A;ubuntu&#x4E4B;&#x95F4;&#x7684;&#x6587;&#x4EF6;&#x4F20;&#x8F93;&#x65B9;&#x6CD5;</a></p>
-<div id="refer-anchor-4"></div>
-
-<p>[4] <a href="https://101.lug.ustc.edu.cn/Ch03/#install-precompiled">Linux 101 - &#x5B89;&#x88C5;&#x9884;&#x7F16;&#x8BD1;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</a></p>
-<div id="refer-anchor-5"></div>
-
-<p>[5] <a href="https://101.lug.ustc.edu.cn/Ch03/supplement/#install-from-source">Linux 101 - &#x4F7F;&#x7528;&#x6E90;&#x4EE3;&#x7801;&#x5B89;&#x88C5;</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer Science</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1540,6 +1459,192 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<p>I made it! :)</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Installing Software in Linux</title>
+    <url>/Installing-software-in-Linux/</url>
+    <content><![CDATA[<p>There are 5 ways to install software in Linux.  </p>
+<span id="more"></span>
+
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><hr>
+<h4 id="Using-the-APP-store"><a href="#Using-the-APP-store" class="headerlink" title="Using the APP store"></a><strong>Using the APP store</strong></h4><p>Available for distributions with APP store, such as Ubuntu, Manjaro, etc.</p>
+<p>In Xubuntu, the APP store is called &#x201C;Software&#x201D;, but it doesn&#x2019;t work well because it loads very slowly.  </p>
+<h4 id="Using-package-management-system"><a href="#Using-package-management-system" class="headerlink" title="Using package management system"></a><strong>Using package management system</strong></h4><p>A package management system is a collection of tools that automates the installation, update, configuration and removal of software.</p>
+<p>In Linux, many software can be installed with a single command, elegantly and quickly.</p>
+<p>In contrast to the APP store, using the package manager requires that you know in advance the name of the package in the repository where you want to install the software.</p>
+<p>For example, <code>dpkg</code>, which manages Debian (.deb) packages, and its front-end <code>apt</code> (for Debian distributions).</p>
+<p>The full name of apt is Advance Package Tool.</p>
+<p><strong>apt</strong></p>
+<p>Before installing, use <code>apt search</code> to see if the corresponding package name is in the repository.</p>
+<p>Once you have determined the package name, install it with <code>apt install package name</code>.</p>
+<p>Enter <code>Y</code> and enter to confirm the installation.</p>
+<p><strong>Permission problem</strong></p>
+<p>Prompt &#x201C;Permission denied&#x201D;, &#x201C;are you root?&#x201D;.</p>
+<p>To fix it, add <code>sudo</code> in front of the command, i.e. <code>sudo apt install firefox</code>.</p>
+<p>When the user inputs a password, the terminal does not display the password back for security reasons.</p>
+<p><strong>Official software sources</strong></p>
+<p>The list of software sources for apt is under <code>/etc/apt/sources.list</code>.</p>
+<p><strong>Third-party sources</strong></p>
+<p>You can add third-party sources and install the software if it is not in the official sources.</p>
+<p>After adding third-party sources to <code>/etc/apt/sources.list</code>, you can get the list of third-party software and install the required third-party software with <code>apt install package-name</code>.</p>
+<p>For example, install Docker by adding the Docker sources <a href="#refer-anchor-1"><sup>1</sup></a>. </p>
+<h4 id="Installing-packages-manually-using-the-package-manager"><a href="#Installing-packages-manually-using-the-package-manager" class="headerlink" title="Installing packages manually using the package manager"></a><strong>Installing packages manually using the package manager</strong></h4><p>In addition to installing software from official and third-party repositories, you can also directly download and install binary packages such as <code>deb</code>, <code>rpm</code>, etc., packaged by the software vendor, and install them using shell. </p>
+<p>Try to use <code>apt</code> to install deb, avoid using <code>dpkg -i</code> , because installing deb directly via <code>dpkg</code> will <strong>not install the required dependencies</strong>. It will only report that the corresponding dependencies are missing, and you need to fix them manually with the following command: </p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ sudo apt -f install</span><br></pre></td></tr></tbody></table></figure>
+
+<p>For example, install VSCode <a href="#refer-anchor-2"><sup>2</sup></a>. </p>
+<p>I tried but failed.  </p>
+<p>First, my Linux distribution was too old to install with <code>apt</code>, so I used <code>dpkg -i</code> and made some errors;<br>Second, I seemed to have insufficient storage space to install the whole VSCode;<br>Finally, I made the mistake of powering off Linux, and when I booted it up again, there was no GUI, only a cursor flashing in the upper left corner.  </p>
+<p>I searched for these problems, but they were not successfully solved. I had no choice but to delete the original virtual machine and add a new one.</p>
+<p><strong>File transfer between host win10 and virtual machine ubuntu</strong></p>
+<p>Transferring files via <strong>SSH connection</strong> to the server <a href="#refer-anchor-3"><sup>3</sup></a>. I chose <a href="https://mobaxterm.mobatek.net/">MobaXterm</a> and successfully transferred the files.  </p>
+<img src="/images/mobaxterm.png" alt="mobaxterm" title="mobaxterm" width="800">  
+
+<p>A few little penguins suddenly jumped out when the connection was disconnected ^_^</p>
+<h4 id="Installing-pre-compiled-executables"><a href="#Installing-pre-compiled-executables" class="headerlink" title="Installing pre-compiled executables"></a><strong>Installing pre-compiled executables</strong></h4><p>The software provider may also provide pre-compiled executables that can be run directly. </p>
+<p>For example, install a pre-compiled LLVM <a href="#refer-anchor-4"><sup>4</sup></a>.</p>
+<h4 id="Using-source-code-5"><a href="#Using-source-code-5" class="headerlink" title="Using source code 5"></a><strong>Using source code</strong> <a href="#refer-anchor-5"><sup>5</sup></a></h4><h3 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h3><hr>
+<p>Locally on the computer, the system maintains a list of packages that contains software information and package dependencies.</p>
+<p><strong>Update the software list</strong></p>
+<p>Use <code>apt update</code> to get the new software version and software dependencies.</p>
+<p><strong>Update the software</strong></p>
+<p>After getting the new software list, use <code>apt upgrade</code> to update the software.</p>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>Tutorial</strong></p>
+<p><a href="https://101.lug.ustc.edu.cn/Ch03/">Linux 101 - chap 03: &#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x4E0E;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</a></p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a href="https://101.lug.ustc.edu.cn/Ch03/#third-party-software-sources">Linux 101 - &#x7B2C;&#x4E09;&#x65B9;&#x8F6F;&#x4EF6;&#x6E90;</a></p>
+<div id="refer-anchor-2"></div>
+
+<p>[2] <a href="https://code.visualstudio.com/docs/setup/linux">Visual Studio Code on Linux</a></p>
+<div id="refer-anchor-3"></div>
+
+<p>[3] <a href="https://zhuanlan.zhihu.com/p/460471813">&#x5BBF;&#x4E3B;&#x673A;win10&#x4E0E;&#x865A;&#x62DF;&#x673A;ubuntu&#x4E4B;&#x95F4;&#x7684;&#x6587;&#x4EF6;&#x4F20;&#x8F93;&#x65B9;&#x6CD5;</a></p>
+<div id="refer-anchor-4"></div>
+
+<p>[4] <a href="https://101.lug.ustc.edu.cn/Ch03/#install-precompiled">Linux 101 - &#x5B89;&#x88C5;&#x9884;&#x7F16;&#x8BD1;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;</a></p>
+<div id="refer-anchor-5"></div>
+
+<p>[5] <a href="https://101.lug.ustc.edu.cn/Ch03/supplement/#install-from-source">Linux 101 - &#x4F7F;&#x7528;&#x6E90;&#x4EE3;&#x7801;&#x5B89;&#x88C5;</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Intro to Java</title>
+    <url>/Intro-to-Java/</url>
+    <content><![CDATA[<p>The sections on the background of Java&#x2019;s birth, development history and version descriptions were very helpful to me.      </p>
+<span id="more"></span>
+
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><hr>
+<ul>
+<li>Founder: James Gosling</li>
+<li>Java is somewhere between a compiled language and an interpreted language. It compiles code into a kind of &#x201C;bytecode&#x201D;, similar to abstract CPU instructions, and then writes virtual machines for different platforms, which are responsible for loading the bytecode and executing it, so that it can be &#x201C;written once and run everywhere&#x201D;.</li>
+<li>Java three versions<ul>
+<li>Java SE: Standard Edition, which contains the standard JVM and standard libraries, and is the core of the entire Java platform</li>
+<li>Java EE: Enterprise Edition, which is based on Java SE with a large number of APIs and libraries to facilitate the development of Web applications, databases, messaging services, etc.; the virtual machine of Java EE is exactly the same as Java SE; it is necessary for further learning of Web applications</li>
+<li>Java ME: Micro Edition, a &#x201C;thin version&#x201D; for embedded devices, the standard libraries of Java SE cannot be used on Java ME; the virtual machine of Java ME is also a &#x201C;thin version&#x201D;; not popular, not Recommended to learn</li>
+</ul>
+</li>
+<li>The recommended route to learn Java<ul>
+<li>First learn Java SE, master the Java language itself, Java core development techniques and the use of Java standard libraries.</li>
+<li>If you continue to learn Java EE, then the Spring Framework, database development, distributed architecture is required to learn.</li>
+<li>If one wants to learn big data development, then Hadoop, Spark, Flink, these big data platforms are what one needs to learn, they are all based on Java or Scala development.</li>
+<li>If you want to learn mobile development, then go deep into the Android platform and master Android App development.</li>
+</ul>
+</li>
+<li>JDK: Java Development Kit, in addition to containing the JRE, also provides a compiler, debugger and other development tools, used to compile Java source code into Java byte code</li>
+<li>JRE: Java Runtime Environment, is a virtual machine to run Java byte code</li>
+<li>JSR specification: Java Specification Request</li>
+<li>JCP Organization: Java Community Process</li>
+<li>RI: Reference Implementation, Reference Implementation</li>
+<li>TCK: Technology Compatibility Kit, compatibility test kit</li>
+</ul>
+<h3 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h3><hr>
+<h4 id="Basic-structure-of-the-program"><a href="#Basic-structure-of-the-program" class="headerlink" title="Basic structure of the program"></a>Basic structure of the program</h4><figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> { <span class="hljs-comment">// The class name is Hello</span></span><br><span class="line">    <span class="hljs-comment">// ...</span></span><br><span class="line">} <span class="hljs-comment">// End of class definition</span></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {<span class="hljs-comment">// The method name is main</span></span><br><span class="line"><span class="hljs-comment">// Method code...</span></span><br><span class="line">    }<span class="hljs-comment">// End of method definition</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>Class names must start with English letters (customary uppercase); method names must start with English letters (customary lowercase)</li>
+<li>Inside a <code>class</code>, several methods can be defined </li>
+<li><code>public</code> is an access modifier that indicates that the <code>class</code> is public. It will compile correctly without <code>public</code>, but the class will not be executed from the command line</li>
+<li>The method specified by the Java entry program must be a static method, the method name must be `main<br>and the arguments in parentheses must be String arrays</li>
+<li>Intelli IDEA code formatting: Ctrl + Alt + L</li>
+</ul>
+<h4 id="Variables-and-Data-Types"><a href="#Variables-and-Data-Types" class="headerlink" title="Variables and Data Types"></a>Variables and Data Types</h4><ul>
+<li>Two types of variables: basic types and reference types<ul>
+<li>Basic types are types that the CPU can perform operations on directly. They include integer, floating point, boolean, and character types</li>
+<li>The rest are reference types, which are similar to pointers in C. They store an internal &#x201C;address&#x201D; that points to the location of an object in memory. The most common type is String</li>
+<li>Variables of basic types &#x201C;hold&#x201D; a value, while those of reference types &#x201C;point&#x201D; to an object</li>
+</ul>
+</li>
+<li>Constants cannot be reassigned after initialization</li>
+<li>Abbreviating variable types, using the <code>var</code> keyword</li>
+</ul>
+<h4 id="Arithmetic"><a href="#Arithmetic" class="headerlink" title="Arithmetic"></a>Arithmetic</h4><ul>
+<li>Integer operations are always exact, floating point operations are often not</li>
+</ul>
+<h3 id="Process-control"><a href="#Process-control" class="headerlink" title="Process control"></a>Process control</h3><hr>
+<h4 id="Inputs-and-Outputs"><a href="#Inputs-and-Outputs" class="headerlink" title="Inputs and Outputs"></a>Inputs and Outputs</h4><ul>
+<li>Output<ul>
+<li><code>System.out.println()</code>, output with line feed</li>
+<li><code>System.out.print()</code>, output without line break</li>
+<li><code>System.out.printf()</code>, formatted output</li>
+</ul>
+</li>
+<li>Input (cannot be run online, must be read from the command line)</li>
+</ul>
+<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Main</span> {publicstaticvoid <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {</span><br><span class="line">        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span><span class="hljs-keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="hljs-comment">// Creating a Scanner object</span></span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> scanner.nextLine();<span class="hljs-comment">// Read a line of input and get the string</span></span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> scanner.nextInt();<span class="hljs-comment">// Read a line of input and get the integer</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="If-condition-judgment"><a href="#If-condition-judgment" class="headerlink" title="If condition judgment"></a>If condition judgment</h4><ul>
+<li>It is not reliable to use <code>=</code> to determine the equality of floating point numbers, the correct way is to use the difference is less than a certain threshold value to determine</li>
+<li>To determine whether the contents of variables of reference types are equal, you must use the <code>equals()</code> method</li>
+</ul>
+<h4 id="Case-multiple-selection"><a href="#Case-multiple-selection" class="headerlink" title="Case multiple selection"></a>Case multiple selection</h4><ul>
+<li>Always write <code>default</code></li>
+<li>Starting from Java12, the new syntax uses <code>-&gt;</code> and if there are multiple statements, they need to be enclosed in <code>{}</code>. Don&#x2019;t write <code>break</code> statements, because the new syntax will only execute the matching statement, there is no penetration effect</li>
+<li>Inside a <code>switch</code> expression, use <code>yield</code> to return a value as the return value of the <code>switch</code> statement</li>
+</ul>
+<h4 id="While-loop"><a href="#While-loop" class="headerlink" title="While loop"></a>While loop</h4><ul>
+<li>Judgment first, then loop</li>
+<li>Possible loop 0 times</li>
+</ul>
+<h4 id="Do-while-loop"><a href="#Do-while-loop" class="headerlink" title="Do while loop"></a>Do while loop</h4><ul>
+<li>Loop first and judge later</li>
+<li>Loop at least once</li>
+</ul>
+<h4 id="For-loop"><a href="#For-loop" class="headerlink" title="For loop"></a>For loop</h4><ul>
+<li>May loop 0 times</li>
+</ul>
+<h4 id="Break-and-continue"><a href="#Break-and-continue" class="headerlink" title="Break and continue"></a>Break and continue</h4><ul>
+<li>In a multi-layer nested loop, both can only jump out of the loop they are in</li>
+</ul>
+<h3 id="Array-operations"><a href="#Array-operations" class="headerlink" title="Array operations"></a>Array operations</h3><hr>
+<p>Traversal, sorting, multidimensional arrays, command line arguments (omitted)</p>
+<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
+<p><strong>Tutorial</strong></p>
+<p><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255883772263712">Liao Xuefeng&#x2019;s Java course - Java Quick Start</a></p>
+]]></content>
+      <categories>
+        <category>Learning</category>
+        <category>Computer Science</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Intro to Git &amp; GitHub</title>
     <url>/Intro-to-Git-GitHub/</url>
     <content><![CDATA[<p>This is some simple notes I took when I was learning the LinkedIn course <a href="https://www.linkedin.com/learning/learning-git-and-github-14213624/travel-the-multiverse-with-git-and-github?autoplay=true">Learning Git and Github</a>. By the way, I found it very convenient to make notes in Notion first and then export Markdown, modify it, copy and paste it into the Blog.  </p>
@@ -1693,110 +1798,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Intro to Java</title>
-    <url>/Intro-to-Java/</url>
-    <content><![CDATA[<p>The sections on the background of Java&#x2019;s birth, development history and version descriptions were very helpful to me.      </p>
-<span id="more"></span>
-
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><hr>
-<ul>
-<li>Founder: James Gosling</li>
-<li>Java is somewhere between a compiled language and an interpreted language. It compiles code into a kind of &#x201C;bytecode&#x201D;, similar to abstract CPU instructions, and then writes virtual machines for different platforms, which are responsible for loading the bytecode and executing it, so that it can be &#x201C;written once and run everywhere&#x201D;.</li>
-<li>Java three versions<ul>
-<li>Java SE: Standard Edition, which contains the standard JVM and standard libraries, and is the core of the entire Java platform</li>
-<li>Java EE: Enterprise Edition, which is based on Java SE with a large number of APIs and libraries to facilitate the development of Web applications, databases, messaging services, etc.; the virtual machine of Java EE is exactly the same as Java SE; it is necessary for further learning of Web applications</li>
-<li>Java ME: Micro Edition, a &#x201C;thin version&#x201D; for embedded devices, the standard libraries of Java SE cannot be used on Java ME; the virtual machine of Java ME is also a &#x201C;thin version&#x201D;; not popular, not Recommended to learn</li>
-</ul>
-</li>
-<li>The recommended route to learn Java<ul>
-<li>First learn Java SE, master the Java language itself, Java core development techniques and the use of Java standard libraries.</li>
-<li>If you continue to learn Java EE, then the Spring Framework, database development, distributed architecture is required to learn.</li>
-<li>If one wants to learn big data development, then Hadoop, Spark, Flink, these big data platforms are what one needs to learn, they are all based on Java or Scala development.</li>
-<li>If you want to learn mobile development, then go deep into the Android platform and master Android App development.</li>
-</ul>
-</li>
-<li>JDK: Java Development Kit, in addition to containing the JRE, also provides a compiler, debugger and other development tools, used to compile Java source code into Java byte code</li>
-<li>JRE: Java Runtime Environment, is a virtual machine to run Java byte code</li>
-<li>JSR specification: Java Specification Request</li>
-<li>JCP Organization: Java Community Process</li>
-<li>RI: Reference Implementation, Reference Implementation</li>
-<li>TCK: Technology Compatibility Kit, compatibility test kit</li>
-</ul>
-<h3 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h3><hr>
-<h4 id="Basic-structure-of-the-program"><a href="#Basic-structure-of-the-program" class="headerlink" title="Basic structure of the program"></a>Basic structure of the program</h4><figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> { <span class="hljs-comment">// The class name is Hello</span></span><br><span class="line">    <span class="hljs-comment">// ...</span></span><br><span class="line">} <span class="hljs-comment">// End of class definition</span></span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Hello</span> {</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {<span class="hljs-comment">// The method name is main</span></span><br><span class="line"><span class="hljs-comment">// Method code...</span></span><br><span class="line">    }<span class="hljs-comment">// End of method definition</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<ul>
-<li>Class names must start with English letters (customary uppercase); method names must start with English letters (customary lowercase)</li>
-<li>Inside a <code>class</code>, several methods can be defined </li>
-<li><code>public</code> is an access modifier that indicates that the <code>class</code> is public. It will compile correctly without <code>public</code>, but the class will not be executed from the command line</li>
-<li>The method specified by the Java entry program must be a static method, the method name must be `main<br>and the arguments in parentheses must be String arrays</li>
-<li>Intelli IDEA code formatting: Ctrl + Alt + L</li>
-</ul>
-<h4 id="Variables-and-Data-Types"><a href="#Variables-and-Data-Types" class="headerlink" title="Variables and Data Types"></a>Variables and Data Types</h4><ul>
-<li>Two types of variables: basic types and reference types<ul>
-<li>Basic types are types that the CPU can perform operations on directly. They include integer, floating point, boolean, and character types</li>
-<li>The rest are reference types, which are similar to pointers in C. They store an internal &#x201C;address&#x201D; that points to the location of an object in memory. The most common type is String</li>
-<li>Variables of basic types &#x201C;hold&#x201D; a value, while those of reference types &#x201C;point&#x201D; to an object</li>
-</ul>
-</li>
-<li>Constants cannot be reassigned after initialization</li>
-<li>Abbreviating variable types, using the <code>var</code> keyword</li>
-</ul>
-<h4 id="Arithmetic"><a href="#Arithmetic" class="headerlink" title="Arithmetic"></a>Arithmetic</h4><ul>
-<li>Integer operations are always exact, floating point operations are often not</li>
-</ul>
-<h3 id="Process-control"><a href="#Process-control" class="headerlink" title="Process control"></a>Process control</h3><hr>
-<h4 id="Inputs-and-Outputs"><a href="#Inputs-and-Outputs" class="headerlink" title="Inputs and Outputs"></a>Inputs and Outputs</h4><ul>
-<li>Output<ul>
-<li><code>System.out.println()</code>, output with line feed</li>
-<li><code>System.out.print()</code>, output without line break</li>
-<li><code>System.out.printf()</code>, formatted output</li>
-</ul>
-</li>
-<li>Input (cannot be run online, must be read from the command line)</li>
-</ul>
-<figure class="highlight java hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="title class_">Main</span> {publicstaticvoid <span class="title function_">main</span><span class="hljs-params">(String[] args)</span> {</span><br><span class="line">        <span class="hljs-type">Scanner</span> <span class="hljs-variable">scanner</span> <span class="hljs-operator">=</span><span class="hljs-keyword">new</span> <span class="title class_">Scanner</span>(System.in);<span class="hljs-comment">// Creating a Scanner object</span></span><br><span class="line">        <span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> scanner.nextLine();<span class="hljs-comment">// Read a line of input and get the string</span></span><br><span class="line">        <span class="hljs-type">int</span> <span class="hljs-variable">age</span> <span class="hljs-operator">=</span> scanner.nextInt();<span class="hljs-comment">// Read a line of input and get the integer</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="If-condition-judgment"><a href="#If-condition-judgment" class="headerlink" title="If condition judgment"></a>If condition judgment</h4><ul>
-<li>It is not reliable to use <code>=</code> to determine the equality of floating point numbers, the correct way is to use the difference is less than a certain threshold value to determine</li>
-<li>To determine whether the contents of variables of reference types are equal, you must use the <code>equals()</code> method</li>
-</ul>
-<h4 id="Case-multiple-selection"><a href="#Case-multiple-selection" class="headerlink" title="Case multiple selection"></a>Case multiple selection</h4><ul>
-<li>Always write <code>default</code></li>
-<li>Starting from Java12, the new syntax uses <code>-&gt;</code> and if there are multiple statements, they need to be enclosed in <code>{}</code>. Don&#x2019;t write <code>break</code> statements, because the new syntax will only execute the matching statement, there is no penetration effect</li>
-<li>Inside a <code>switch</code> expression, use <code>yield</code> to return a value as the return value of the <code>switch</code> statement</li>
-</ul>
-<h4 id="While-loop"><a href="#While-loop" class="headerlink" title="While loop"></a>While loop</h4><ul>
-<li>Judgment first, then loop</li>
-<li>Possible loop 0 times</li>
-</ul>
-<h4 id="Do-while-loop"><a href="#Do-while-loop" class="headerlink" title="Do while loop"></a>Do while loop</h4><ul>
-<li>Loop first and judge later</li>
-<li>Loop at least once</li>
-</ul>
-<h4 id="For-loop"><a href="#For-loop" class="headerlink" title="For loop"></a>For loop</h4><ul>
-<li>May loop 0 times</li>
-</ul>
-<h4 id="Break-and-continue"><a href="#Break-and-continue" class="headerlink" title="Break and continue"></a>Break and continue</h4><ul>
-<li>In a multi-layer nested loop, both can only jump out of the loop they are in</li>
-</ul>
-<h3 id="Array-operations"><a href="#Array-operations" class="headerlink" title="Array operations"></a>Array operations</h3><hr>
-<p>Traversal, sorting, multidimensional arrays, command line arguments (omitted)</p>
-<h3 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h3><hr>
-<p><strong>Tutorial</strong></p>
-<p><a href="https://www.liaoxuefeng.com/wiki/1252599548343744/1255883772263712">Liao Xuefeng&#x2019;s Java course - Java Quick Start</a></p>
-]]></content>
-      <categories>
-        <category>Learning</category>
-        <category>Computer Science</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Intro to Linux</title>
     <url>/Intro-to-Linux/</url>
     <content><![CDATA[<p>I have successfully installed and used Xubuntu according to the tutorial! Great!  </p>
@@ -1941,6 +1942,22 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>May-Aug 2023</title>
+    <url>/May-Aug-2023/</url>
+    <content><![CDATA[<p>It&#x2019;s been a while since I wrote a blog &#x2026;&#x2026; It&#x2019;s so hard to overcome inertia.</p>
+<span id="more"></span>
+
+<h2 id="STCF-MDC-FEE-daughter-board-preliminary-completion"><a href="#STCF-MDC-FEE-daughter-board-preliminary-completion" class="headerlink" title="STCF MDC FEE daughter board preliminary completion"></a>STCF MDC FEE daughter board preliminary completion</h2><p>At the end of May, I finished PCB design, then the factory made the PCB, and at the end of July I tested the PCB basic function. It&#x2019;s OK. I feel a sense of accomplishment!<br><img src="/images/FEE_PCB_design.png" alt="FEE_PCB_design" title="FEE_PCB_design" width="800"><br><img src="/images/FEE_PCB.png" alt="FEE_PCB" title="FEE_PCB" width="500"><br>Originally, my mentor said that I might need to travel to Lanzhou in early August to test the PCB with actual detector signals, but it&#x2019;s not happening because of the summer vacation. Pity.<br>There is still a separate blog to be written about STCF.  </p>
+<h2 id="New-project-White-Rabbit-multi-port-node-development"><a href="#New-project-White-Rabbit-multi-port-node-development" class="headerlink" title="New project: White Rabbit multi-port node development"></a>New project: White Rabbit multi-port node development</h2><p>This is the second project I&#x2019;ve worked on recently, in collaboration with another student. We expect to design the PCB by the end of this year. White rabbit is really difficult &#x2026;&#x2026; Again, I will write a separate blog about it next time. I&#x2019;m still in a state of confusion at the moment.</p>
+<h2 id="Some-exam-results"><a href="#Some-exam-results" class="headerlink" title="Some exam results"></a>Some exam results</h2><p>The results of the final exams are almost all out, not bad &#x2026;&#x2026; The Software exam actually passed. JLPT really didn&#x2019;t pass, lol. I don&#x2019;t understand Japanese! </p>
+<p>(Very perfunctory summary of three months, but it&#x2019;s good to write~)</p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+        <category>Monthly Summary</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Mar 2023</title>
     <url>/Mar-2023/</url>
     <content><![CDATA[<p><del>Play games often and study occasionally this month.</del>  </p>
@@ -1954,22 +1971,6 @@ git push -u origin master
 <h2 id="Getting-into-Splatoon-3"><a href="#Getting-into-Splatoon-3" class="headerlink" title="Getting into Splatoon 3"></a>Getting into Splatoon 3</h2><p>The game arrived more than a week ago and I played 80 + hours! I do not confess, I love Splatoon without sin &#x1F649;. Let&#x2019;s Splatoon!  </p>
 <p><a href="https://splatoon.com.cn/">Splatoon Information Station</a><br><a href="https://splatoonwiki.org/wiki/Main_Page">Inkipedia</a><br><a href="http://mebuika.kenkenpa.net/">Customizing an avatar</a>  </p>
 <img src="/images/my_splatoon.png" alt="my_splatoon" title="my_splatoon" width="300">]]></content>
-      <categories>
-        <category>Summary</category>
-        <category>Monthly Summary</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>May-Aug 2023</title>
-    <url>/May-Aug-2023/</url>
-    <content><![CDATA[<p>It&#x2019;s been a while since I wrote a blog &#x2026;&#x2026; It&#x2019;s so hard to overcome inertia.</p>
-<span id="more"></span>
-
-<h2 id="STCF-MDC-FEE-daughter-board-preliminary-completion"><a href="#STCF-MDC-FEE-daughter-board-preliminary-completion" class="headerlink" title="STCF MDC FEE daughter board preliminary completion"></a>STCF MDC FEE daughter board preliminary completion</h2><p>At the end of May, I finished PCB design, then the factory made the PCB, and at the end of July I tested the PCB basic function. It&#x2019;s OK. I feel a sense of accomplishment!<br><img src="/images/FEE_PCB_design.png" alt="FEE_PCB_design" title="FEE_PCB_design" width="800"><br><img src="/images/FEE_PCB.png" alt="FEE_PCB" title="FEE_PCB" width="500"><br>Originally, my mentor said that I might need to travel to Lanzhou in early August to test the PCB with actual detector signals, but it&#x2019;s not happening because of the summer vacation. Pity.<br>There is still a separate blog to be written about STCF.  </p>
-<h2 id="New-project-White-Rabbit-multi-port-node-development"><a href="#New-project-White-Rabbit-multi-port-node-development" class="headerlink" title="New project: White Rabbit multi-port node development"></a>New project: White Rabbit multi-port node development</h2><p>This is the second project I&#x2019;ve worked on recently, in collaboration with another student. We expect to design the PCB by the end of this year. White rabbit is really difficult &#x2026;&#x2026; Again, I will write a separate blog about it next time. I&#x2019;m still in a state of confusion at the moment.</p>
-<h2 id="Some-exam-results"><a href="#Some-exam-results" class="headerlink" title="Some exam results"></a>Some exam results</h2><p>The results of the final exams are almost all out, not bad &#x2026;&#x2026; The Software exam actually passed. JLPT really didn&#x2019;t pass, lol. I don&#x2019;t understand Japanese! </p>
-<p>(Very perfunctory summary of three months, but it&#x2019;s good to write~)</p>
-]]></content>
       <categories>
         <category>Summary</category>
         <category>Monthly Summary</category>
@@ -2530,6 +2531,22 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>Sep 2023</title>
+    <url>/Sep-2023/</url>
+    <content><![CDATA[<p>I feels busier recently. So that&#x2019;s the second year of Master? </p>
+<span id="more"></span>
+
+<p>I don&#x2019;t have to take classes anymore, but the number of projects I&#x2019;m involved in has increased to three: the STCF readout electronics, the White rabbit device, and the trigger electronics for water lenses, which is my graduation project.</p>
+<p>Recently, I&#x2019;ve been working mainly on the WR project. The project is expected to be finished by the end of this year. It&#x2019;s quite stressful and difficult since there are only two of us working on it and we&#x2019;re both beginners. First of all, it&#x2019;s very hard to understand the principle of WR (I still don&#x2019;t understand it completely), and secondly, although there are some similar projects done by the labs, it&#x2019;s still very difficult to use it and design it by myself. The plan at first was for another student to draw the schematic and PCB for the multi-node module, and for me to write the FPGA code. However until he finished drawing, I was still at the stage of trying to understand the WRPC manual &#x2026;&#x2026; Now he is taking over the FPGA code part, and I am modifying the design based on his, and I am drawing a second board, the normal node module.</p>
+<p>The front-end amplifier plate for STCF will be taken by my colleague to the Institute of Modern Physics in Lanzhou next week for joint testing with the detector.</p>
+<p>Trigger electronics for water lenses is a topic I just finalized for my graduation project. I know almost nothing about it at the moment! </p>
+]]></content>
+      <categories>
+        <category>Summary</category>
+        <category>Monthly Summary</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Process</title>
     <url>/Process/</url>
     <content><![CDATA[<p>A process is a program that is running.  </p>
@@ -2707,22 +2724,6 @@ git push -u origin master
       <tags>
         <tag>Linux</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Sep 2023</title>
-    <url>/Sep-2023/</url>
-    <content><![CDATA[<p>I feels busier recently. So that&#x2019;s the second year of Master? </p>
-<span id="more"></span>
-
-<p>I don&#x2019;t have to take classes anymore, but the number of projects I&#x2019;m involved in has increased to three: the STCF readout electronics, the White rabbit device, and the trigger electronics for water lenses, which is my graduation project.</p>
-<p>Recently, I&#x2019;ve been working mainly on the WR project. The project is expected to be finished by the end of this year. It&#x2019;s quite stressful and difficult since there are only two of us working on it and we&#x2019;re both beginners. First of all, it&#x2019;s very hard to understand the principle of WR (I still don&#x2019;t understand it completely), and secondly, although there are some similar projects done by the labs, it&#x2019;s still very difficult to use it and design it by myself. The plan at first was for another student to draw the schematic and PCB for the multi-node module, and for me to write the FPGA code. However until he finished drawing, I was still at the stage of trying to understand the WRPC manual &#x2026;&#x2026; Now he is taking over the FPGA code part, and I am modifying the design based on his, and I am drawing a second board, the normal node module.</p>
-<p>The front-end amplifier plate for STCF will be taken by my colleague to the Institute of Modern Physics in Lanzhou next week for joint testing with the detector.</p>
-<p>Trigger electronics for water lenses is a topic I just finalized for my graduation project. I know almost nothing about it at the moment! </p>
-]]></content>
-      <categories>
-        <category>Summary</category>
-        <category>Monthly Summary</category>
-      </categories>
   </entry>
   <entry>
     <title>Shell</title>
@@ -3770,6 +3771,7 @@ git push -u origin master
 <img src="/images/STCF_MDC_FEE_PCB.png" alt="STCF_MDC_FEE_PCB" title="STCF_MDC_FEE_PCB" width="1000">
 
 <p>&#x5728;Allegro PCB Editor&#x4E2D;&#x8BBE;&#x8BA1;&#x5B8C;&#x6210;&#x7684;PCB&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#x3002;&#x56FE;&#x4E2D;&#x4EC5;&#x663E;&#x793A;&#x4FE1;&#x53F7;&#x5C42;&#xFF0C;&#x7EA2;&#x8272;&#x4E3A;&#x9876;&#x5C42;&#xFF0C;&#x84DD;&#x8272;&#x4E3A;&#x5E95;&#x5C42;&#xFF0C;&#x4E24;&#x4E2A;&#x4FE1;&#x53F7;&#x5C42;&#x90FD;&#x94FA;&#x4E0A;&#x4E86;&#x63A5;&#x5730;&#x7684;&#x94DC;&#x76AE;&#xFF0C;&#x4EE5;&#x63D0;&#x9AD8;&#x7535;&#x8DEF;&#x5C4F;&#x853D;&#x6027;&#x80FD;&#x3002;&#x77E9;&#x5F62;PCB&#x7684;&#x5927;&#x5C0F;&#x4E3A;2500mil * 2800mil (&#x7EA6;63.5mm * 71.1mm)&#x3002;</p>
+<p>&#x5B9E;&#x7269;&#x56FE;&#x89C1;<a href="https://mengisok.github.io/zh-cn/May-Aug-2023/">2023&#x5E74;5&#x6708;-8&#x6708;</a>&#x3002;</p>
 <h2 id="&#x7ED3;&#x8BBA;"><a href="#&#x7ED3;&#x8BBA;" class="headerlink" title="&#x7ED3;&#x8BBA;"></a>&#x7ED3;&#x8BBA;</h2><p>&#x672C;&#x6587;&#x8BBE;&#x8BA1;&#x4E86;STCF MDC&#x63A2;&#x6D4B;&#x5668;&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;&#x6A21;&#x62DF;&#x5B50;&#x677F;&#x7684;&#x539F;&#x7406;&#x56FE;&#x548C;PCB&#xFF0C;&#x5E76;&#x4E14;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x5236;&#x677F;&#x3001;&#x710A;&#x63A5;&#x548C;&#x521D;&#x6B65;&#x6D4B;&#x8BD5;&#xFF0C;&#x6B63;&#x5728;&#x8FDB;&#x884C;&#x4E0E;&#x63A2;&#x6D4B;&#x5668;&#x7684;&#x8054;&#x5408;&#x6D4B;&#x8BD5;&#x3002;&#x5728;&#x672C;&#x5DE5;&#x4F5C;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x9700;&#x8981;&#x7ED3;&#x5408;&#x63A2;&#x6D4B;&#x5668;&#x7684;&#x6700;&#x65B0;&#x9700;&#x6C42;&#xFF0C;&#x8FDB;&#x884C;&#x66F4;&#x5B8C;&#x5584;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x5E76;&#x5F00;&#x5C55;&#x4E0E;&#x540E;&#x7AEF;&#x6570;&#x5B57;&#x7CFB;&#x7EDF;&#x7684;&#x8054;&#x5408;&#x6D4B;&#x8BD5;&#x3002;</p>
 <h2 id="&#x53C2;&#x8003;&#x6587;&#x732E;"><a href="#&#x53C2;&#x8003;&#x6587;&#x732E;" class="headerlink" title="&#x53C2;&#x8003;&#x6587;&#x732E;"></a>&#x53C2;&#x8003;&#x6587;&#x732E;</h2><p><a href="http://www.wuli.ac.cn/cn/article/doi/10.7693/wl20200803">&#x4E2D;&#x56FD;&#x8D85;&#x7EA7;&#x9676;&#x7CB2;&#x88C5;&#x7F6E;</a></p>
 <p><a href="https://arxiv.org/abs/2303.15790">STCF Conceptual Design Report: Volume 1&#x2013;Physics</a></p>
@@ -5342,108 +5344,6 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
-    <title>在Linux中操作文件</title>
-    <url>/zh-cn/Operating-Files-in-Linux/</url>
-    <content><![CDATA[<p>Linux &#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;&#xFF0C;&#x5305;&#x62EC;&#x67E5;&#x770B;&#x3001;&#x7F16;&#x8F91;&#x3001;&#x590D;&#x5236;&#x3001;&#x79FB;&#x52A8;&#x3001;&#x5220;&#x9664;&#x3001;&#x521B;&#x5EFA;&#x3001;&#x641C;&#x7D22;&#x3001;&#x5339;&#x914D;&#x3001;&#x538B;&#x7F29;&#x3001;&#x89E3;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x3002;&#x5B66;&#x4F1A;&#x67E5;&#x770B;&#x4F7F;&#x7528;&#x6587;&#x6863;&#x4E5F;&#x5F88;&#x91CD;&#x8981;&#x3002;  </p>
-<span id="more"></span>
-
-<h3 id="&#x67E5;&#x770B;"><a href="#&#x67E5;&#x770B;" class="headerlink" title="&#x67E5;&#x770B;"></a>&#x67E5;&#x770B;</h3><hr>
-<p><strong>cat</strong></p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x8F93;&#x51FA; FILE &#x6587;&#x4EF6;&#x7684;&#x5168;&#x90E8;&#x5185;&#x5BB9;</span></span><br><span class="line">$ <span class="hljs-built_in">cat</span> [OPTION] FILE</span><br></pre></td></tr></tbody></table></figure>
-<p><code>cat</code> &#x662F; con<strong>cat</strong>enate&#xFF08;&#x8FDE;&#x63A5;&#xFF09;&#x7684;&#x7F29;&#x5199;&#x3002;<code>cat</code> &#x5DE5;&#x5177;&#x5B9E;&#x9645;&#x7684;&#x529F;&#x80FD;&#x662F;&#x8FDE;&#x63A5;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x8F93;&#x51FA;&#x3002;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;<code>cat</code> &#x5C31;&#x4F1A;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5; <code>cat</code> &#x6700;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x9014;&#x5C31;&#x662F;&#x8F93;&#x51FA;&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</p>
-<p><strong>less</strong></p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5728;&#x53EF;&#x4EA4;&#x4E92;&#x7684;&#x7A97;&#x53E3;&#x5185;&#x8F93;&#x51FA; FILE &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;</span></span><br><span class="line">$ less FILE</span><br></pre></td></tr></tbody></table></figure>
-
-<p><code>cat</code> &#x4F1A;&#x4E00;&#x6B21;&#x6027;&#x6253;&#x5370;&#x5168;&#x90E8;&#x5185;&#x5BB9;&#x5230;&#x7EC8;&#x7AEF;&#x4E2D;&#x5E76;&#x9000;&#x51FA;&#xFF0C;&#x800C; <code>less</code> &#x4E00;&#x6B21;&#x53EA;&#x663E;&#x793A;&#x4E00;&#x9875;&#xFF0C;&#x4E14;&#x652F;&#x6301;&#x5411;&#x524D;/&#x540E;&#x6EDA;&#x52A8;&#x3001;&#x641C;&#x7D22;&#x7B49;&#x529F;&#x80FD;&#x3002;&#x5982;&#x679C;&#x8981;&#x5728;&#x4E00;&#x4E2A;&#x5927;&#x6587;&#x4EF6;&#x4E2D;&#x67E5;&#x627E;&#x4E00;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#xFF0C;<code>less</code> &#x901A;&#x5E38;&#x8981;&#x6BD4; <code>cat</code> &#x65B9;&#x4FBF;&#x5F97;&#x591A;&#x3002;</p>
-<p>&#x548C; <code>less</code> &#x76F8;&#x4F3C;&#x7684;&#x6307;&#x4EE4;&#xFF1A;<code>more</code>, <code>most</code>&#x3002;</p>
-<h3 id="&#x7F16;&#x8F91;"><a href="#&#x7F16;&#x8F91;" class="headerlink" title="&#x7F16;&#x8F91;"></a>&#x7F16;&#x8F91;</h3><hr>
-<p><strong>Nano</strong> &#x662F;&#x5728;&#x5F88;&#x591A;&#x673A;&#x5668;&#x4E0A;&#x81EA;&#x5E26;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x6BD4; vim &#x548C; emacs &#x5BF9;&#x65B0;&#x624B;&#x66F4;&#x52A0;&#x53CB;&#x597D;&#x3002;</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ nano FILE  <span class="hljs-comment"># &#x4F7F;&#x7528; nano &#x7F16;&#x8F91; FILE &#x6587;&#x4EF6;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="&#x590D;&#x5236;"><a href="#&#x590D;&#x5236;" class="headerlink" title="&#x590D;&#x5236;"></a>&#x590D;&#x5236;</h3><hr>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230; DEST &#x6587;&#x4EF6;&#xFF0C;&#x62F7;&#x8D1D;&#x5F97;&#x5230;&#x7684;&#x6587;&#x4EF6;&#x5373;&#x4E3A; DEST</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE DEST</span><br><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230; DIRECTORY &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;SOURCE &#x53EF;&#x4EE5;&#x4E3A;&#x4E0D;&#x6B62;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE... DIRECTORY</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file3 <span class="hljs-comment"># &#x5C06; file1 &#x590D;&#x5236;&#x4E00;&#x4EFD;&#x5230;&#x540C;&#x76EE;&#x5F55;&#xFF0C;&#x547D;&#x540D;&#x4E3A; file3</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file2 ./file/ <span class="hljs-comment"># &#x5C06; file1&#x3001;file2 &#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x540C;&#x76EE;&#x5F55;&#x4E0B;&#x7684; file &#x76EE;&#x5F55;&#x4E2D;</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> -r file ./test/ <span class="hljs-comment"># &#x5C06; file &#x6587;&#x4EF6;&#x5939;&#x53CA;&#x5176;&#x6240;&#x6709;&#x5B50;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x540C;&#x76EE;&#x5F55;&#x4E0B;&#x7684; test &#x6587;&#x4EF6;&#x5939;&#x4E2D;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>&#x786C;&#x94FE;&#x63A5;&#x548C;&#x8F6F;&#x94FE;&#x63A5;</strong></p>
-<p>&#x786C;&#x94FE;&#x63A5;&#x4E0E;&#x6E90;&#x6587;&#x4EF6;&#x6709;&#x7740;&#x76F8;&#x540C;&#x7684; inode&#xFF0C;&#x90FD;&#x6307;&#x5411;&#x78C1;&#x76D8;&#x4E2D;&#x7684;&#x540C;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x3002;&#x5220;&#x9664;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#xFF0C;&#x5E76;&#x4E0D;&#x5F71;&#x54CD;&#x53E6;&#x4E00;&#x4E2A;&#x3002;</p>
-<p>&#x8F6F;&#x94FE;&#x63A5;&#x4E0E;&#x6E90;&#x6587;&#x4EF6;&#x7684; inode &#x4E0D;&#x540C;&#x3002;&#x8F6F;&#x94FE;&#x63A5;&#x4FDD;&#x5B58;&#x4E86;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x5728;&#x8BBF;&#x95EE;&#x8F6F;&#x94FE;&#x63A5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BBF;&#x95EE;&#x7684;&#x8DEF;&#x5F84;&#x88AB;&#x66FF;&#x6362;&#x4E3A;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x56E0;&#x6B64;&#x8BBF;&#x95EE;&#x8F6F;&#x94FE;&#x63A5;&#x4E5F;&#x7B49;&#x540C;&#x4E8E;&#x8BBF;&#x95EE;&#x6E90;&#x6587;&#x4EF6;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x5220;&#x9664;&#x4E86;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x8F6F;&#x94FE;&#x63A5;&#x6240;&#x4FDD;&#x5B58;&#x7684;&#x8DEF;&#x5F84;&#x4E5F;&#x5C31;&#x65E0;&#x6548;&#x4E86;&#xFF0C;&#x8F6F;&#x94FE;&#x63A5;&#x56E0;&#x6B64;&#x4E5F;&#x662F;&#x65E0;&#x6548;&#x7684;<a href="#refer-anchor-1"><sup>1</sup></a>&#x3002; </p>
-<h3 id="&#x79FB;&#x52A8;"><a href="#&#x79FB;&#x52A8;" class="headerlink" title="&#x79FB;&#x52A8;"></a>&#x79FB;&#x52A8;</h3><hr>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x79FB;&#x52A8;&#x5230; DEST &#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE DEST</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x79FB;&#x52A8;&#x5230; DIRECTORY &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;SOURCE &#x53EF;&#x4EE5;&#x4E3A;&#x591A;&#x4E2A;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE... DIRECTORY</span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x7C7B;&#x4F3C;&#x4E8E; Windows &#x4E0B;&#x7684;&#x526A;&#x5207;&#x3002;</p>
-<h3 id="&#x5220;&#x9664;"><a href="#&#x5220;&#x9664;" class="headerlink" title="&#x5220;&#x9664;"></a>&#x5220;&#x9664;</h3><hr>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5220;&#x9664; FILE &#x6587;&#x4EF6;&#xFF0C;FILE &#x53EF;&#x4EE5;&#x4E3A;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</span></span><br><span class="line">$ <span class="hljs-comment"># &#x5982;&#x679C;&#x9700;&#x8981;&#x5220;&#x9664;&#x76EE;&#x5F55;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7; -r &#x9009;&#x9879;&#x9012;&#x5F52;&#x5220;&#x9664;&#x76EE;&#x5F55;</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> [OPTION] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> file1 <span class="hljs-comment"># &#x5220;&#x9664; file1 &#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -r <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># &#x5220;&#x9664; test &#x76EE;&#x5F55;&#x53CA;&#x5176;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -rf test1/ test2/ file1.txt <span class="hljs-comment"># &#x5220;&#x9664; test1/&#x3001;test2/&#x3001;file1.txt &#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x5F55;&#x53EF;&#x80FD;&#x4E0D;&#x5B58;&#x5728;&#x3001;&#x5199;&#x4FDD;&#x62A4;&#x6216;&#x8005;&#x6CA1;&#x6709;&#x6743;&#x9650;&#x8BFB;&#x5199;</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="&#x521B;&#x5EFA;"><a href="#&#x521B;&#x5EFA;" class="headerlink" title="&#x521B;&#x5EFA;"></a>&#x521B;&#x5EFA;</h3><hr>
-<p><strong>&#x521B;&#x5EFA;&#x76EE;&#x5F55;</strong></p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x540D;&#x4E3A; DIR_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> [OPTION] DIR_NAME...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> test1 test2 <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x540D;&#x5B57;&#x5206;&#x522B;&#x4E3A; test1&#x3001;test2</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p test1/test2/test3/ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8DEF;&#x5F84; test1/test2/test3/</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>&#x521B;&#x5EFA;&#x6587;&#x4EF6;</strong></p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x540D;&#x4E3A; FILE_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">touch</span> FILE_NAME...</span><br></pre></td></tr></tbody></table></figure>
-
-<p><code>stat</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x7684;&#x5C5E;&#x6027;&#x4FE1;&#x606F;&#x3002;</p>
-<p><code>touch</code> &#x5B9E;&#x9645;&#x4E0A;&#x7684;&#x529F;&#x80FD;&#x662F;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#xFF08;access time, atime&#xFF09;&#x548C;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF08;modification time, mtime&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x5F53;&#x4F5C;&#x662F;&#x6478;&#xFF08;touch&#xFF09;&#x4E86;&#x4E00;&#x4E0B;&#x6587;&#x4EF6;&#xFF0C;&#x4F7F;&#x5F97;&#x5B83;&#x7684;&#x8BBF;&#x95EE;&#x4E0E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#x3002;&#x5F53;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;<code>touch</code> &#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x6587;&#x4EF6;&#x3002;</p>
-<h3 id="&#x641C;&#x7D22;"><a href="#&#x641C;&#x7D22;" class="headerlink" title="&#x641C;&#x7D22;"></a>&#x641C;&#x7D22;</h3><hr>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5728; PATH&#xFF08;&#x8DEF;&#x5F84;&#xFF09;&#x4E2D;&#x6839;&#x636E; EXPRESSION&#xFF08;&#x8868;&#x8FBE;&#x5F0F;&#xFF09;&#x641C;&#x7D22;&#x6587;&#x4EF6;</span></span><br><span class="line">$ find [OPTION] PATH [EXPRESSION]</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ find . -name <span class="hljs-string">&apos;report.pdf&apos;</span> <span class="hljs-comment"># &#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x641C;&#x7D22;&#x540D;&#x4E3A; report.pdf &#x7684;&#x6587;&#x4EF6;</span></span><br><span class="line">$ find / -size +1G <span class="hljs-comment"># &#x5168;&#x76D8;&#x641C;&#x7D22;&#x5927;&#x4E8E; 1G &#x7684;&#x6587;&#x4EF6;</span></span><br><span class="line">$ find ~/ -name <span class="hljs-string">&apos;node_modules&apos;</span> -<span class="hljs-built_in">type</span> d <span class="hljs-comment"># &#x5728;&#x7528;&#x6237;&#x76EE;&#x5F55;&#x641C;&#x7D22;&#x6240;&#x6709;&#x540D;&#x4E3A; node_modules &#x7684;&#x6587;&#x4EF6;&#x5939;</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="&#x6A21;&#x5F0F;&#x5339;&#x914D;"><a href="#&#x6A21;&#x5F0F;&#x5339;&#x914D;" class="headerlink" title="&#x6A21;&#x5F0F;&#x5339;&#x914D;"></a>&#x6A21;&#x5F0F;&#x5339;&#x914D;</h3><hr>
-<p>bash &#x7684;&#x5339;&#x914D;&#x6A21;&#x5F0F;&#x88AB;&#x79F0;&#x4E3A;<a href="https://mywiki.wooledge.org/glob">glob</a>&#x3002;</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> *.tar.gz <span class="hljs-comment"># &#x5220;&#x9664;&#x6240;&#x6709;&#x4EE5; tar.gz &#x7ED3;&#x5C3E;&#x7684;&#x538B;&#x7F29;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> -r *.[ch] /path <span class="hljs-comment"># &#x5C06;&#x5F53;&#x524D;&#x53CA;&#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x4EE5; .c &#x6216; .h &#x7ED3;&#x5C3E;&#x7684;&#x4EE3;&#x7801;&#x79FB;&#x52A8;&#x5230; /path</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#x524D;&#x4E00;&#x5B9A;&#x8981;&#x786E;&#x8BA4;&#x8F93;&#x5165;&#x65E0;&#x8BEF;&#xFF0C;&#x5426;&#x5219;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x4E25;&#x91CD;&#x7684;&#x540E;&#x679C;&#xFF08;&#x5982;&#xA0;<code>rm -rf *</code> &#x4F1A;&#x5220;&#x6389;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF09;&#x3002;</p>
-<h3 id="&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;"><a href="#&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;" class="headerlink" title="&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;"></a>&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;</h3><hr>
-<p><strong>&#x4F7F;&#x7528; tar &#x64CD;&#x4F5C;&#x5B58;&#x6863;&#x3001;&#x538B;&#x7F29;&#x6587;&#x4EF6;</strong></p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x7684;&#x4F7F;&#x7528;&#x6837;&#x4F8B;&#x4E86;&#x89E3;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</span></span><br><span class="line">$ tar [OPTIONS] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ tar -c -f target.tar file1 file2 file3 <span class="hljs-comment"># &#x5C06;file1&#x3001;file2&#x3001;file3 &#x6253;&#x5305;&#x4E3A; target.tar</span></span><br><span class="line">$ tar -x -f target.tar -C <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># &#x5C06; target.tar &#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x63D0;&#x53D6;&#x5230; test &#x76EE;&#x5F55;&#x4E2D;</span></span><br><span class="line">$ tar -cz -f target.tar.gz file1 file2 file3 <span class="hljs-comment"># &#x5C06; file1&#x3001;file2&#x3001;file3 &#x6253;&#x5305;&#xFF0C;&#x5E76;&#x4F7F;&#x7528; gzip &#x7B97;&#x6CD5;&#x538B;&#x7F29;&#xFF0C;&#x5F97;&#x5230;&#x538B;&#x7F29;&#x6587;&#x4EF6; target.tar.gz</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x548C;&#x5927;&#x90E8;&#x5206; Linux &#x547D;&#x4EE4;&#x4E00;&#x6837;&#xFF0C;<code>tar</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x53C2;&#x6570;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x7B49;&#x4EF7;&#xFF1A;</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ tar -c -z -v -f target.tar <span class="hljs-built_in">test</span>/</span><br><span class="line">$ tar -czvf target.tar <span class="hljs-built_in">test</span>/</span><br><span class="line">$ tar -f target.tar -czv <span class="hljs-built_in">test</span>/</span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x540E;&#x7F00;&#x540D;&#x5E76;&#x4E0D;&#x80FD;&#x51B3;&#x5B9A;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4EBA;&#x4EEC;&#x8FA8;&#x8BA4;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x53EF;&#x80FD;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x4ECE;&#x800C;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x6253;&#x5F00;&#x65B9;&#x6CD5;&#x3002;</p>
-<h3 id="&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;"><a href="#&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;" class="headerlink" title="&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;"></a>&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;</h3><hr>
-<p><strong>man &#x547D;&#x4EE4;</strong></p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x8C03;&#x51FA; tar &#x547D;&#x4EE4;&#x548C; ls &#x547D;&#x4EE4;&#x7684;&#x6587;&#x6863;</span></span><br><span class="line">$ man tar</span><br><span class="line">$ man <span class="hljs-built_in">ls</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x4F1A;&#x663E;&#x793A;&#x8F6F;&#x4EF6;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x542B;&#x4E49;&#x3001;&#x9000;&#x51FA;&#x503C;&#x542B;&#x4E49;&#x3001;&#x4F5C;&#x8005;&#x7B49;&#x5185;&#x5BB9;&#xFF0C;&#x5927;&#x800C;&#x5168;&#x3002;&#x4F46;&#x4E00;&#x822C;&#x8F83;&#x5C11;&#x5E26;&#x6709;&#x4F7F;&#x7528;&#x6837;&#x4F8B;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x81EA;&#x8EAB;&#x9700;&#x8981;&#x62FC;&#x63A5;&#x8F6F;&#x4EF6;&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x5229;&#x4E8E;&#x5FEB;&#x901F;&#x4E0A;&#x624B;&#x3002;</p>
-<p><strong><a href="https://github.com/tldr-pages/tldr">tldr &#x8F6F;&#x4EF6;</a></strong></p>
-<p>&#x901A;&#x8FC7;&#x51E0;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x8BA9;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x4E86;&#x89E3;&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x3002;</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ tldr COMMAND</span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x62A5;&#x9519;&#xFF1A;</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-built_in">mkdir</span>:&#x65E0;&#x6CD5;&#x521B;&#x5EFA;&#x76EE;&#x5F55;<span class="hljs-string">&quot;/home/lzy/.tldr&quot;</span>&#xFF1A;&#x6587;&#x4EF6;&#x5DF2;&#x5B58;&#x5728;</span><br></pre></td></tr></tbody></table></figure>
-
-<p>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#xFF1A;</p>
-<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install tldr</span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p ~/.tldr/tldr</span><br><span class="line">$ sudo git <span class="hljs-built_in">clone</span> https://github.com/tldr-pages/tldr.git ~/.tldr/tldr</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h3><hr>
-<p><a href="https://101.lug.ustc.edu.cn/Ch03/#operate-files-and-dirs">Linux 101 - chap 03: &#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x4E0E;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</a></p>
-<div id="refer-anchor-1"></div>
-
-<p>[1] <a href="https://www.ruanyifeng.com/blog/2011/12/inode.html">&#x962E;&#x4E00;&#x5CF0;&#x7684;&#x7F51;&#x7EDC;&#x65E5;&#x5FD7; - &#x7406;&#x89E3;inode</a></p>
-]]></content>
-      <categories>
-        <category>学习</category>
-        <category>计算机科学</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2023年9月</title>
-    <url>/zh-cn/Sep-2023/</url>
-    <content><![CDATA[<p>&#x6700;&#x8FD1;&#x660E;&#x663E;&#x611F;&#x89C9;&#x5230;&#x53D8;&#x5FD9;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x5C31;&#x662F;&#x7814;&#x4E8C;&#x5417;&#xFF1F;</p>
-<span id="more"></span>
-
-<p>&#x4E0D;&#x7528;&#x518D;&#x4E0A;&#x8BFE;&#xFF0C;&#x4F46;&#x662F;&#x53C2;&#x4E0E;&#x7684;&#x9879;&#x76EE;&#x589E;&#x52A0;&#x5230;&#x4E86;&#x4E09;&#x4E2A;&#xFF1A;STCF&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;&#xFF0C;White rabbit&#x8BBE;&#x5907;&#xFF0C;&#x4EE5;&#x53CA;&#x6C34;&#x900F;&#x955C;&#x7684;&#x89E6;&#x53D1;&#x7535;&#x5B50;&#x5B66;&#x2014;&#x2014;&#x6211;&#x7684;&#x6BD5;&#x4E1A;&#x8BFE;&#x9898;&#x3002;</p>
-<p>&#x6700;&#x8FD1;&#x4E3B;&#x8981;&#x5728;&#x505A;WR&#x9879;&#x76EE;&#x7684;&#x5DE5;&#x4F5C;&#x3002;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x9884;&#x8BA1;&#x4ECA;&#x5E74;&#x5E74;&#x5E95;&#x7ED3;&#x675F;&#x3002;&#x53EA;&#x6709;&#x6211;&#x4EEC;&#x4E24;&#x4E2A;&#x4EBA;&#x5E72;&#x6D3B;&#xFF0C;&#x53C8;&#x90FD;&#x662F;&#x521D;&#x5B66;&#x8005;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x662F;&#x86EE;&#x7D27;&#x5F20;&#x56F0;&#x96BE;&#x7684;&#x3002;&#x9996;&#x5148;&#x4E86;&#x89E3;WR&#x7684;&#x539F;&#x7406;&#x5C31;&#x975E;&#x5E38;&#x8D39;&#x52B2;&#xFF08;&#x81F3;&#x4ECA;&#x6CA1;&#x6709;&#x5B8C;&#x5168;&#x7406;&#x89E3;&#xFF09;&#xFF0C;&#x5176;&#x6B21;&#x867D;&#x7136;&#x5B9E;&#x9A8C;&#x5BA4;&#x6709;&#x4EE5;&#x524D;&#x5E08;&#x5144;&#x5E08;&#x59D0;&#x505A;&#x8FC7;&#x76F8;&#x4F3C;&#x7684;&#x8BFE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x53C2;&#x8003;&#x5F52;&#x53C2;&#x8003;&#xFF0C;&#x4EB2;&#x81EA;&#x4F7F;&#x7528;&#x548C;&#x8BBE;&#x8BA1;&#x8FD8;&#x662F;&#x6709;&#x5F88;&#x5927;&#x96BE;&#x5EA6;&#x3002;&#x4E00;&#x5F00;&#x59CB;&#x7684;&#x8BA1;&#x5212;&#x662F;&#x53E6;&#x4E00;&#x4E2A;&#x540C;&#x5B66;&#x753B;&#x591A;&#x8282;&#x70B9;&#x6A21;&#x5757;&#x7684;&#x539F;&#x7406;&#x56FE;&#x548C;PCB&#xFF0C;&#x6211;&#x5199;FPGA&#x4EE3;&#x7801;&#x3002;&#x7136;&#x800C;&#x76F4;&#x5230;&#x4ED6;&#x753B;&#x5B8C;&#x4E86;&#xFF0C;&#x6211;&#x8FD8;&#x5904;&#x4E8E;&#x52AA;&#x529B;&#x7406;&#x89E3;WRPC&#x4F7F;&#x7528;&#x624B;&#x518C;&#x7684;&#x9636;&#x6BB5;&#x2026;&#x2026;&#x73B0;&#x5728;&#x4ED6;&#x63A5;&#x624B;FPGA&#x4EE3;&#x7801;&#x90E8;&#x5206;&#xFF0C;&#x6211;&#x5728;&#x4ED6;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x4FEE;&#x6539;&#x8BBE;&#x8BA1;&#xFF0C;&#x6B63;&#x5728;&#x753B;&#x7B2C;&#x4E8C;&#x5757;&#x677F;&#xFF0C;&#x5373;&#x666E;&#x901A;&#x8282;&#x70B9;&#x6A21;&#x5757;&#x3002;</p>
-<p>STCF&#x7684;&#x524D;&#x7AEF;&#x653E;&#x5927;&#x677F;&#x4E0B;&#x5468;&#x7531;&#x5E08;&#x5144;&#x5E26;&#x53BB;&#x5170;&#x5DDE;&#x7684;&#x8FD1;&#x4EE3;&#x7269;&#x7406;&#x6240;&#xFF0C;&#x548C;&#x63A2;&#x6D4B;&#x5668;&#x8054;&#x5408;&#x6D4B;&#x8BD5;&#x3002;</p>
-<p>&#x6C34;&#x900F;&#x955C;&#x7684;&#x89E6;&#x53D1;&#x7535;&#x5B50;&#x5B66;&#x662F;&#x6211;&#x521A;&#x521A;&#x786E;&#x5B9A;&#x4E0B;&#x6765;&#x7684;&#x6BD5;&#x4E1A;&#x8BBE;&#x8BA1;&#x9898;&#x76EE;&#x3002;&#x76EE;&#x524D;&#x5BF9;&#x5B83;&#x51E0;&#x4E4E;&#x4E00;&#x65E0;&#x6240;&#x77E5;&#xFF01;</p>
-]]></content>
-      <categories>
-        <category>总结</category>
-        <category>月度总结</category>
-      </categories>
-  </entry>
-  <entry>
     <title>进程</title>
     <url>/zh-cn/Process/</url>
     <content><![CDATA[<p>&#x8FDB;&#x7A0B;&#x5C31;&#x662F;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x7A0B;&#x5E8F;&#x3002;</p>
@@ -5618,6 +5518,92 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>在Linux中操作文件</title>
+    <url>/zh-cn/Operating-Files-in-Linux/</url>
+    <content><![CDATA[<p>Linux &#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x64CD;&#x4F5C;&#x6587;&#x4EF6;&#xFF0C;&#x5305;&#x62EC;&#x67E5;&#x770B;&#x3001;&#x7F16;&#x8F91;&#x3001;&#x590D;&#x5236;&#x3001;&#x79FB;&#x52A8;&#x3001;&#x5220;&#x9664;&#x3001;&#x521B;&#x5EFA;&#x3001;&#x641C;&#x7D22;&#x3001;&#x5339;&#x914D;&#x3001;&#x538B;&#x7F29;&#x3001;&#x89E3;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x3002;&#x5B66;&#x4F1A;&#x67E5;&#x770B;&#x4F7F;&#x7528;&#x6587;&#x6863;&#x4E5F;&#x5F88;&#x91CD;&#x8981;&#x3002;  </p>
+<span id="more"></span>
+
+<h3 id="&#x67E5;&#x770B;"><a href="#&#x67E5;&#x770B;" class="headerlink" title="&#x67E5;&#x770B;"></a>&#x67E5;&#x770B;</h3><hr>
+<p><strong>cat</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x8F93;&#x51FA; FILE &#x6587;&#x4EF6;&#x7684;&#x5168;&#x90E8;&#x5185;&#x5BB9;</span></span><br><span class="line">$ <span class="hljs-built_in">cat</span> [OPTION] FILE</span><br></pre></td></tr></tbody></table></figure>
+<p><code>cat</code> &#x662F; con<strong>cat</strong>enate&#xFF08;&#x8FDE;&#x63A5;&#xFF09;&#x7684;&#x7F29;&#x5199;&#x3002;<code>cat</code> &#x5DE5;&#x5177;&#x5B9E;&#x9645;&#x7684;&#x529F;&#x80FD;&#x662F;&#x8FDE;&#x63A5;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x8F93;&#x51FA;&#x3002;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#xFF0C;<code>cat</code> &#x5C31;&#x4F1A;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5; <code>cat</code> &#x6700;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x9014;&#x5C31;&#x662F;&#x8F93;&#x51FA;&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</p>
+<p><strong>less</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5728;&#x53EF;&#x4EA4;&#x4E92;&#x7684;&#x7A97;&#x53E3;&#x5185;&#x8F93;&#x51FA; FILE &#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;</span></span><br><span class="line">$ less FILE</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>cat</code> &#x4F1A;&#x4E00;&#x6B21;&#x6027;&#x6253;&#x5370;&#x5168;&#x90E8;&#x5185;&#x5BB9;&#x5230;&#x7EC8;&#x7AEF;&#x4E2D;&#x5E76;&#x9000;&#x51FA;&#xFF0C;&#x800C; <code>less</code> &#x4E00;&#x6B21;&#x53EA;&#x663E;&#x793A;&#x4E00;&#x9875;&#xFF0C;&#x4E14;&#x652F;&#x6301;&#x5411;&#x524D;/&#x540E;&#x6EDA;&#x52A8;&#x3001;&#x641C;&#x7D22;&#x7B49;&#x529F;&#x80FD;&#x3002;&#x5982;&#x679C;&#x8981;&#x5728;&#x4E00;&#x4E2A;&#x5927;&#x6587;&#x4EF6;&#x4E2D;&#x67E5;&#x627E;&#x4E00;&#x90E8;&#x5206;&#x5185;&#x5BB9;&#xFF0C;<code>less</code> &#x901A;&#x5E38;&#x8981;&#x6BD4; <code>cat</code> &#x65B9;&#x4FBF;&#x5F97;&#x591A;&#x3002;</p>
+<p>&#x548C; <code>less</code> &#x76F8;&#x4F3C;&#x7684;&#x6307;&#x4EE4;&#xFF1A;<code>more</code>, <code>most</code>&#x3002;</p>
+<h3 id="&#x7F16;&#x8F91;"><a href="#&#x7F16;&#x8F91;" class="headerlink" title="&#x7F16;&#x8F91;"></a>&#x7F16;&#x8F91;</h3><hr>
+<p><strong>Nano</strong> &#x662F;&#x5728;&#x5F88;&#x591A;&#x673A;&#x5668;&#x4E0A;&#x81EA;&#x5E26;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x6BD4; vim &#x548C; emacs &#x5BF9;&#x65B0;&#x624B;&#x66F4;&#x52A0;&#x53CB;&#x597D;&#x3002;</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ nano FILE  <span class="hljs-comment"># &#x4F7F;&#x7528; nano &#x7F16;&#x8F91; FILE &#x6587;&#x4EF6;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="&#x590D;&#x5236;"><a href="#&#x590D;&#x5236;" class="headerlink" title="&#x590D;&#x5236;"></a>&#x590D;&#x5236;</h3><hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230; DEST &#x6587;&#x4EF6;&#xFF0C;&#x62F7;&#x8D1D;&#x5F97;&#x5230;&#x7684;&#x6587;&#x4EF6;&#x5373;&#x4E3A; DEST</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE DEST</span><br><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x62F7;&#x8D1D;&#x5230; DIRECTORY &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;SOURCE &#x53EF;&#x4EE5;&#x4E3A;&#x4E0D;&#x6B62;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> [OPTION] SOURCE... DIRECTORY</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file3 <span class="hljs-comment"># &#x5C06; file1 &#x590D;&#x5236;&#x4E00;&#x4EFD;&#x5230;&#x540C;&#x76EE;&#x5F55;&#xFF0C;&#x547D;&#x540D;&#x4E3A; file3</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> file1 file2 ./file/ <span class="hljs-comment"># &#x5C06; file1&#x3001;file2 &#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x540C;&#x76EE;&#x5F55;&#x4E0B;&#x7684; file &#x76EE;&#x5F55;&#x4E2D;</span></span><br><span class="line">$ <span class="hljs-built_in">cp</span> -r file ./test/ <span class="hljs-comment"># &#x5C06; file &#x6587;&#x4EF6;&#x5939;&#x53CA;&#x5176;&#x6240;&#x6709;&#x5B50;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x540C;&#x76EE;&#x5F55;&#x4E0B;&#x7684; test &#x6587;&#x4EF6;&#x5939;&#x4E2D;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>&#x786C;&#x94FE;&#x63A5;&#x548C;&#x8F6F;&#x94FE;&#x63A5;</strong></p>
+<p>&#x786C;&#x94FE;&#x63A5;&#x4E0E;&#x6E90;&#x6587;&#x4EF6;&#x6709;&#x7740;&#x76F8;&#x540C;&#x7684; inode&#xFF0C;&#x90FD;&#x6307;&#x5411;&#x78C1;&#x76D8;&#x4E2D;&#x7684;&#x540C;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x3002;&#x5220;&#x9664;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#xFF0C;&#x5E76;&#x4E0D;&#x5F71;&#x54CD;&#x53E6;&#x4E00;&#x4E2A;&#x3002;</p>
+<p>&#x8F6F;&#x94FE;&#x63A5;&#x4E0E;&#x6E90;&#x6587;&#x4EF6;&#x7684; inode &#x4E0D;&#x540C;&#x3002;&#x8F6F;&#x94FE;&#x63A5;&#x4FDD;&#x5B58;&#x4E86;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x5728;&#x8BBF;&#x95EE;&#x8F6F;&#x94FE;&#x63A5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8BBF;&#x95EE;&#x7684;&#x8DEF;&#x5F84;&#x88AB;&#x66FF;&#x6362;&#x4E3A;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x56E0;&#x6B64;&#x8BBF;&#x95EE;&#x8F6F;&#x94FE;&#x63A5;&#x4E5F;&#x7B49;&#x540C;&#x4E8E;&#x8BBF;&#x95EE;&#x6E90;&#x6587;&#x4EF6;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x5220;&#x9664;&#x4E86;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x8F6F;&#x94FE;&#x63A5;&#x6240;&#x4FDD;&#x5B58;&#x7684;&#x8DEF;&#x5F84;&#x4E5F;&#x5C31;&#x65E0;&#x6548;&#x4E86;&#xFF0C;&#x8F6F;&#x94FE;&#x63A5;&#x56E0;&#x6B64;&#x4E5F;&#x662F;&#x65E0;&#x6548;&#x7684;<a href="#refer-anchor-1"><sup>1</sup></a>&#x3002; </p>
+<h3 id="&#x79FB;&#x52A8;"><a href="#&#x79FB;&#x52A8;" class="headerlink" title="&#x79FB;&#x52A8;"></a>&#x79FB;&#x52A8;</h3><hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x79FB;&#x52A8;&#x5230; DEST &#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE DEST</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># &#x5C06; SOURCE &#x6587;&#x4EF6;&#x79FB;&#x52A8;&#x5230; DIRECTORY &#x76EE;&#x5F55;&#x4E0B;&#xFF0C;SOURCE &#x53EF;&#x4EE5;&#x4E3A;&#x591A;&#x4E2A;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> [OPTION] SOURCE... DIRECTORY</span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x7C7B;&#x4F3C;&#x4E8E; Windows &#x4E0B;&#x7684;&#x526A;&#x5207;&#x3002;</p>
+<h3 id="&#x5220;&#x9664;"><a href="#&#x5220;&#x9664;" class="headerlink" title="&#x5220;&#x9664;"></a>&#x5220;&#x9664;</h3><hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5220;&#x9664; FILE &#x6587;&#x4EF6;&#xFF0C;FILE &#x53EF;&#x4EE5;&#x4E3A;&#x591A;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</span></span><br><span class="line">$ <span class="hljs-comment"># &#x5982;&#x679C;&#x9700;&#x8981;&#x5220;&#x9664;&#x76EE;&#x5F55;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7; -r &#x9009;&#x9879;&#x9012;&#x5F52;&#x5220;&#x9664;&#x76EE;&#x5F55;</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> [OPTION] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> file1 <span class="hljs-comment"># &#x5220;&#x9664; file1 &#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -r <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># &#x5220;&#x9664; test &#x76EE;&#x5F55;&#x53CA;&#x5176;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> -rf test1/ test2/ file1.txt <span class="hljs-comment"># &#x5220;&#x9664; test1/&#x3001;test2/&#x3001;file1.txt &#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x3002;&#x5176;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x76EE;&#x5F55;&#x53EF;&#x80FD;&#x4E0D;&#x5B58;&#x5728;&#x3001;&#x5199;&#x4FDD;&#x62A4;&#x6216;&#x8005;&#x6CA1;&#x6709;&#x6743;&#x9650;&#x8BFB;&#x5199;</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="&#x521B;&#x5EFA;"><a href="#&#x521B;&#x5EFA;" class="headerlink" title="&#x521B;&#x5EFA;"></a>&#x521B;&#x5EFA;</h3><hr>
+<p><strong>&#x521B;&#x5EFA;&#x76EE;&#x5F55;</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x540D;&#x4E3A; DIR_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> [OPTION] DIR_NAME...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> test1 test2 <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x540D;&#x5B57;&#x5206;&#x522B;&#x4E3A; test1&#x3001;test2</span></span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p test1/test2/test3/ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x8DEF;&#x5F84; test1/test2/test3/</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>&#x521B;&#x5EFA;&#x6587;&#x4EF6;</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x540D;&#x4E3A; FILE_NAME</span></span><br><span class="line">$ <span class="hljs-built_in">touch</span> FILE_NAME...</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>stat</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x7684;&#x5C5E;&#x6027;&#x4FE1;&#x606F;&#x3002;</p>
+<p><code>touch</code> &#x5B9E;&#x9645;&#x4E0A;&#x7684;&#x529F;&#x80FD;&#x662F;&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x7684;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#xFF08;access time, atime&#xFF09;&#x548C;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF08;modification time, mtime&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x5F53;&#x4F5C;&#x662F;&#x6478;&#xFF08;touch&#xFF09;&#x4E86;&#x4E00;&#x4E0B;&#x6587;&#x4EF6;&#xFF0C;&#x4F7F;&#x5F97;&#x5B83;&#x7684;&#x8BBF;&#x95EE;&#x4E0E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x53D1;&#x751F;&#x4E86;&#x53D8;&#x5316;&#x3002;&#x5F53;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;<code>touch</code> &#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x6587;&#x4EF6;&#x3002;</p>
+<h3 id="&#x641C;&#x7D22;"><a href="#&#x641C;&#x7D22;" class="headerlink" title="&#x641C;&#x7D22;"></a>&#x641C;&#x7D22;</h3><hr>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x5728; PATH&#xFF08;&#x8DEF;&#x5F84;&#xFF09;&#x4E2D;&#x6839;&#x636E; EXPRESSION&#xFF08;&#x8868;&#x8FBE;&#x5F0F;&#xFF09;&#x641C;&#x7D22;&#x6587;&#x4EF6;</span></span><br><span class="line">$ find [OPTION] PATH [EXPRESSION]</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ find . -name <span class="hljs-string">&apos;report.pdf&apos;</span> <span class="hljs-comment"># &#x5728;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x641C;&#x7D22;&#x540D;&#x4E3A; report.pdf &#x7684;&#x6587;&#x4EF6;</span></span><br><span class="line">$ find / -size +1G <span class="hljs-comment"># &#x5168;&#x76D8;&#x641C;&#x7D22;&#x5927;&#x4E8E; 1G &#x7684;&#x6587;&#x4EF6;</span></span><br><span class="line">$ find ~/ -name <span class="hljs-string">&apos;node_modules&apos;</span> -<span class="hljs-built_in">type</span> d <span class="hljs-comment"># &#x5728;&#x7528;&#x6237;&#x76EE;&#x5F55;&#x641C;&#x7D22;&#x6240;&#x6709;&#x540D;&#x4E3A; node_modules &#x7684;&#x6587;&#x4EF6;&#x5939;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="&#x6A21;&#x5F0F;&#x5339;&#x914D;"><a href="#&#x6A21;&#x5F0F;&#x5339;&#x914D;" class="headerlink" title="&#x6A21;&#x5F0F;&#x5339;&#x914D;"></a>&#x6A21;&#x5F0F;&#x5339;&#x914D;</h3><hr>
+<p>bash &#x7684;&#x5339;&#x914D;&#x6A21;&#x5F0F;&#x88AB;&#x79F0;&#x4E3A;<a href="https://mywiki.wooledge.org/glob">glob</a>&#x3002;</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ <span class="hljs-built_in">rm</span> *.tar.gz <span class="hljs-comment"># &#x5220;&#x9664;&#x6240;&#x6709;&#x4EE5; tar.gz &#x7ED3;&#x5C3E;&#x7684;&#x538B;&#x7F29;&#x6587;&#x4EF6;</span></span><br><span class="line">$ <span class="hljs-built_in">mv</span> -r *.[ch] /path <span class="hljs-comment"># &#x5C06;&#x5F53;&#x524D;&#x53CA;&#x5B50;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x4EE5; .c &#x6216; .h &#x7ED3;&#x5C3E;&#x7684;&#x4EE3;&#x7801;&#x79FB;&#x52A8;&#x5230; /path</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#x524D;&#x4E00;&#x5B9A;&#x8981;&#x786E;&#x8BA4;&#x8F93;&#x5165;&#x65E0;&#x8BEF;&#xFF0C;&#x5426;&#x5219;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x4E25;&#x91CD;&#x7684;&#x540E;&#x679C;&#xFF08;&#x5982;&#xA0;<code>rm -rf *</code> &#x4F1A;&#x5220;&#x6389;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF09;&#x3002;</p>
+<h3 id="&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;"><a href="#&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;" class="headerlink" title="&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;"></a>&#x538B;&#x7F29;&#x4E0E;&#x89E3;&#x538B;&#x7F29;</h3><hr>
+<p><strong>&#x4F7F;&#x7528; tar &#x64CD;&#x4F5C;&#x5B58;&#x6863;&#x3001;&#x538B;&#x7F29;&#x6587;&#x4EF6;</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;&#x4E0B;&#x9762;&#x7684;&#x4F7F;&#x7528;&#x6837;&#x4F8B;&#x4E86;&#x89E3;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</span></span><br><span class="line">$ tar [OPTIONS] FILE...</span><br><span class="line"></span><br><span class="line">$ <span class="hljs-comment"># e.g.</span></span><br><span class="line">$ tar -c -f target.tar file1 file2 file3 <span class="hljs-comment"># &#x5C06;file1&#x3001;file2&#x3001;file3 &#x6253;&#x5305;&#x4E3A; target.tar</span></span><br><span class="line">$ tar -x -f target.tar -C <span class="hljs-built_in">test</span>/ <span class="hljs-comment"># &#x5C06; target.tar &#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x63D0;&#x53D6;&#x5230; test &#x76EE;&#x5F55;&#x4E2D;</span></span><br><span class="line">$ tar -cz -f target.tar.gz file1 file2 file3 <span class="hljs-comment"># &#x5C06; file1&#x3001;file2&#x3001;file3 &#x6253;&#x5305;&#xFF0C;&#x5E76;&#x4F7F;&#x7528; gzip &#x7B97;&#x6CD5;&#x538B;&#x7F29;&#xFF0C;&#x5F97;&#x5230;&#x538B;&#x7F29;&#x6587;&#x4EF6; target.tar.gz</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x548C;&#x5927;&#x90E8;&#x5206; Linux &#x547D;&#x4EE4;&#x4E00;&#x6837;&#xFF0C;<code>tar</code> &#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x53C2;&#x6570;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x7B49;&#x4EF7;&#xFF1A;</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ tar -c -z -v -f target.tar <span class="hljs-built_in">test</span>/</span><br><span class="line">$ tar -czvf target.tar <span class="hljs-built_in">test</span>/</span><br><span class="line">$ tar -f target.tar -czv <span class="hljs-built_in">test</span>/</span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x540E;&#x7F00;&#x540D;&#x5E76;&#x4E0D;&#x80FD;&#x51B3;&#x5B9A;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4EBA;&#x4EEC;&#x8FA8;&#x8BA4;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x53EF;&#x80FD;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x4ECE;&#x800C;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x6253;&#x5F00;&#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;"><a href="#&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;" class="headerlink" title="&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;"></a>&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x6587;&#x6863;</h3><hr>
+<p><strong>man &#x547D;&#x4EE4;</strong></p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ <span class="hljs-comment"># &#x8C03;&#x51FA; tar &#x547D;&#x4EE4;&#x548C; ls &#x547D;&#x4EE4;&#x7684;&#x6587;&#x6863;</span></span><br><span class="line">$ man tar</span><br><span class="line">$ man <span class="hljs-built_in">ls</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x4F1A;&#x663E;&#x793A;&#x8F6F;&#x4EF6;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x542B;&#x4E49;&#x3001;&#x9000;&#x51FA;&#x503C;&#x542B;&#x4E49;&#x3001;&#x4F5C;&#x8005;&#x7B49;&#x5185;&#x5BB9;&#xFF0C;&#x5927;&#x800C;&#x5168;&#x3002;&#x4F46;&#x4E00;&#x822C;&#x8F83;&#x5C11;&#x5E26;&#x6709;&#x4F7F;&#x7528;&#x6837;&#x4F8B;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x81EA;&#x8EAB;&#x9700;&#x8981;&#x62FC;&#x63A5;&#x8F6F;&#x4EF6;&#x53C2;&#x6570;&#xFF0C;&#x4E0D;&#x5229;&#x4E8E;&#x5FEB;&#x901F;&#x4E0A;&#x624B;&#x3002;</p>
+<p><strong><a href="https://github.com/tldr-pages/tldr">tldr &#x8F6F;&#x4EF6;</a></strong></p>
+<p>&#x901A;&#x8FC7;&#x51E0;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x8BA9;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x4E86;&#x89E3;&#x8F6F;&#x4EF6;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x3002;</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ tldr COMMAND</span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;&#x62A5;&#x9519;&#xFF1A;</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line"><span class="hljs-built_in">mkdir</span>:&#x65E0;&#x6CD5;&#x521B;&#x5EFA;&#x76EE;&#x5F55;<span class="hljs-string">&quot;/home/lzy/.tldr&quot;</span>&#xFF1A;&#x6587;&#x4EF6;&#x5DF2;&#x5B58;&#x5728;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#xFF1A;</p>
+<figure class="highlight bash hljs"><table><tbody><tr><td class="code"><pre><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get install tldr</span><br><span class="line">$ <span class="hljs-built_in">mkdir</span> -p ~/.tldr/tldr</span><br><span class="line">$ sudo git <span class="hljs-built_in">clone</span> https://github.com/tldr-pages/tldr.git ~/.tldr/tldr</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="&#x9644;&#x5F55;"><a href="#&#x9644;&#x5F55;" class="headerlink" title="&#x9644;&#x5F55;"></a>&#x9644;&#x5F55;</h3><hr>
+<p><a href="https://101.lug.ustc.edu.cn/Ch03/#operate-files-and-dirs">Linux 101 - chap 03: &#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x4E0E;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;</a></p>
+<div id="refer-anchor-1"></div>
+
+<p>[1] <a href="https://www.ruanyifeng.com/blog/2011/12/inode.html">&#x962E;&#x4E00;&#x5CF0;&#x7684;&#x7F51;&#x7EDC;&#x65E5;&#x5FD7; - &#x7406;&#x89E3;inode</a></p>
+]]></content>
+      <categories>
+        <category>学习</category>
+        <category>计算机科学</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>命令行</title>
     <url>/zh-cn/Shell/</url>
     <content><![CDATA[<p>&#x9ED1;&#x5BA2;&#x5E1D;&#x56FD;&#x7279;&#x6548;&#x597D;&#x9177;&#x3002;</p>
@@ -5736,6 +5722,22 @@ git push -u origin master
       </tags>
   </entry>
   <entry>
+    <title>2023年9月</title>
+    <url>/zh-cn/Sep-2023/</url>
+    <content><![CDATA[<p>&#x6700;&#x8FD1;&#x660E;&#x663E;&#x611F;&#x89C9;&#x5230;&#x53D8;&#x5FD9;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x5C31;&#x662F;&#x7814;&#x4E8C;&#x5417;&#xFF1F;</p>
+<span id="more"></span>
+
+<p>&#x4E0D;&#x7528;&#x518D;&#x4E0A;&#x8BFE;&#xFF0C;&#x4F46;&#x662F;&#x53C2;&#x4E0E;&#x7684;&#x9879;&#x76EE;&#x589E;&#x52A0;&#x5230;&#x4E86;&#x4E09;&#x4E2A;&#xFF1A;STCF&#x8BFB;&#x51FA;&#x7535;&#x5B50;&#x5B66;&#xFF0C;White rabbit&#x8BBE;&#x5907;&#xFF0C;&#x4EE5;&#x53CA;&#x6C34;&#x900F;&#x955C;&#x7684;&#x89E6;&#x53D1;&#x7535;&#x5B50;&#x5B66;&#x2014;&#x2014;&#x6211;&#x7684;&#x6BD5;&#x4E1A;&#x8BFE;&#x9898;&#x3002;</p>
+<p>&#x6700;&#x8FD1;&#x4E3B;&#x8981;&#x5728;&#x505A;WR&#x9879;&#x76EE;&#x7684;&#x5DE5;&#x4F5C;&#x3002;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x9884;&#x8BA1;&#x4ECA;&#x5E74;&#x5E74;&#x5E95;&#x7ED3;&#x675F;&#x3002;&#x53EA;&#x6709;&#x6211;&#x4EEC;&#x4E24;&#x4E2A;&#x4EBA;&#x5E72;&#x6D3B;&#xFF0C;&#x53C8;&#x90FD;&#x662F;&#x521D;&#x5B66;&#x8005;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x662F;&#x86EE;&#x7D27;&#x5F20;&#x56F0;&#x96BE;&#x7684;&#x3002;&#x9996;&#x5148;&#x4E86;&#x89E3;WR&#x7684;&#x539F;&#x7406;&#x5C31;&#x975E;&#x5E38;&#x8D39;&#x52B2;&#xFF08;&#x81F3;&#x4ECA;&#x6CA1;&#x6709;&#x5B8C;&#x5168;&#x7406;&#x89E3;&#xFF09;&#xFF0C;&#x5176;&#x6B21;&#x867D;&#x7136;&#x5B9E;&#x9A8C;&#x5BA4;&#x6709;&#x4EE5;&#x524D;&#x5E08;&#x5144;&#x5E08;&#x59D0;&#x505A;&#x8FC7;&#x76F8;&#x4F3C;&#x7684;&#x8BFE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x53C2;&#x8003;&#x5F52;&#x53C2;&#x8003;&#xFF0C;&#x4EB2;&#x81EA;&#x4F7F;&#x7528;&#x548C;&#x8BBE;&#x8BA1;&#x8FD8;&#x662F;&#x6709;&#x5F88;&#x5927;&#x96BE;&#x5EA6;&#x3002;&#x4E00;&#x5F00;&#x59CB;&#x7684;&#x8BA1;&#x5212;&#x662F;&#x53E6;&#x4E00;&#x4E2A;&#x540C;&#x5B66;&#x753B;&#x591A;&#x8282;&#x70B9;&#x6A21;&#x5757;&#x7684;&#x539F;&#x7406;&#x56FE;&#x548C;PCB&#xFF0C;&#x6211;&#x5199;FPGA&#x4EE3;&#x7801;&#x3002;&#x7136;&#x800C;&#x76F4;&#x5230;&#x4ED6;&#x753B;&#x5B8C;&#x4E86;&#xFF0C;&#x6211;&#x8FD8;&#x5904;&#x4E8E;&#x52AA;&#x529B;&#x7406;&#x89E3;WRPC&#x4F7F;&#x7528;&#x624B;&#x518C;&#x7684;&#x9636;&#x6BB5;&#x2026;&#x2026;&#x73B0;&#x5728;&#x4ED6;&#x63A5;&#x624B;FPGA&#x4EE3;&#x7801;&#x90E8;&#x5206;&#xFF0C;&#x6211;&#x5728;&#x4ED6;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x4FEE;&#x6539;&#x8BBE;&#x8BA1;&#xFF0C;&#x6B63;&#x5728;&#x753B;&#x7B2C;&#x4E8C;&#x5757;&#x677F;&#xFF0C;&#x5373;&#x666E;&#x901A;&#x8282;&#x70B9;&#x6A21;&#x5757;&#x3002;</p>
+<p>STCF&#x7684;&#x524D;&#x7AEF;&#x653E;&#x5927;&#x677F;&#x4E0B;&#x5468;&#x7531;&#x5E08;&#x5144;&#x5E26;&#x53BB;&#x5170;&#x5DDE;&#x7684;&#x8FD1;&#x4EE3;&#x7269;&#x7406;&#x6240;&#xFF0C;&#x548C;&#x63A2;&#x6D4B;&#x5668;&#x8054;&#x5408;&#x6D4B;&#x8BD5;&#x3002;</p>
+<p>&#x6C34;&#x900F;&#x955C;&#x7684;&#x89E6;&#x53D1;&#x7535;&#x5B50;&#x5B66;&#x662F;&#x6211;&#x521A;&#x521A;&#x786E;&#x5B9A;&#x4E0B;&#x6765;&#x7684;&#x6BD5;&#x4E1A;&#x8BBE;&#x8BA1;&#x9898;&#x76EE;&#x3002;&#x76EE;&#x524D;&#x5BF9;&#x5B83;&#x51E0;&#x4E4E;&#x4E00;&#x65E0;&#x6240;&#x77E5;&#xFF01;</p>
+]]></content>
+      <categories>
+        <category>总结</category>
+        <category>月度总结</category>
+      </categories>
+  </entry>
+  <entry>
     <title>用户、文件</title>
     <url>/zh-cn/Users-Files/</url>
     <content><![CDATA[<p>&#x8FD9;&#x662F;&#x4E00;&#x7BC7;&#x5BF9;Linux&#x4E2D;&#x7684;&#x201C;&#x7528;&#x6237;&#x201D;&#x548C;&#x201C;&#x6587;&#x4EF6;&#x201D;&#x7684;&#x7B80;&#x4ECB;&#x3002;</p>
@@ -5803,6 +5805,16 @@ git push -u origin master
 ]]></content>
   </entry>
   <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Links</title>
     <url>/links/index.html</url>
     <content><![CDATA[<h2 id="CS"><a href="#CS" class="headerlink" title="CS"></a>CS</h2><hr>
@@ -5822,13 +5834,8 @@ git push -u origin master
 ]]></content>
   </entry>
   <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
+    <title>分类</title>
+    <url>/zh-cn/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -5844,11 +5851,6 @@ git push -u origin master
 <hr>
 <p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;<a href="https://github.com/mengisok">GitHub</a>, <a href="https://www.linkedin.com/in/mengisok/">&#x9886;&#x82F1;</a>&#x4E0A;&#x627E;&#x5230;&#x6211;&#xFF0C;&#x6216;&#x8005;<a href="mailto:hanmengisok@gmail.com">&#x7ED9;&#x6211;&#x53D1;&#x90AE;&#x4EF6;</a>&#x3002;</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>分类</title>
-    <url>/zh-cn/categories/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>链接</title>
