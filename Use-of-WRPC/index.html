@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mengisok.github.io/images/testing_WR.png">
 <meta property="article:published_time" content="2023-11-04T09:20:08.000Z">
-<meta property="article:modified_time" content="2023-11-04T10:22:42.596Z">
+<meta property="article:modified_time" content="2023-11-11T06:01:00.307Z">
 <meta property="article:author" content="Han Meng">
 <meta property="article:tag" content="WR">
 <meta name="twitter:card" content="summary">
@@ -211,7 +211,7 @@
         
         <span class="column is-narrow article-category">
             <i class="far fa-folder"></i>
-            <a class="article-category-link" href="/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%B7%A5%E4%BD%9C/">Laboratory Work</a>
+            <a class="article-category-link" href="/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%B7%A5%E4%BD%9C/">Laboratory Work</a><span>></span><a class="article-category-link" href="/categories/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%B7%A5%E4%BD%9C/WR/">WR</a>
         </span>
         
         
@@ -226,33 +226,32 @@
     
         <p>A brief summary of recent experiences with White Rabbit PTP Core(WRPC).</p>
 <span id="more"></span>
-
-<h2 id="Software-and-hardware-preparation"><a href="#Software-and-hardware-preparation" class="headerlink" title="Software and hardware preparation"></a>Software and hardware preparation</h2><p>Download the required files (version 4.2) at <a target="_blank" rel="noopener" href="https://ohwr.org/project/wr-cores/wikis/Wrpc-release-v42">OHWR</a>:  </p>
+<h2 id="Software-and-hardware-preparation">Software and hardware preparation</h2>
+<p>Download the required files (version 4.2) at <a target="_blank" rel="noopener" href="https://ohwr.org/project/wr-cores/wikis/Wrpc-release-v42">OHWR</a>:</p>
 <ul>
 <li>wr-cores (HDL code)</li>
 <li>wrpc-sw (LM32 software code)</li>
 <li>wrpc-user-mannual (user manual)</li>
 </ul>
 <p>Hardware includes a PCB to run WRPC, a computer with Linux, a WR switch, fiber optics, etc.</p>
-<h2 id="LM32-software-compile-get-wrpc-bram"><a href="#LM32-software-compile-get-wrpc-bram" class="headerlink" title="LM32 software compile, get wrpc.bram"></a>LM32 software compile, get wrpc.bram</h2><p>The default LM32 path for wr_core.vhd is</p>
+<h2 id="LM32-software-compile-get-wrpc-bram">LM32 software compile, get wrpc.bram</h2>
+<p>The default LM32 path for wr_core.vhd is</p>
 <figure class="highlight vhdl hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g_dpram_initf : <span class="hljs-built_in">string</span> := <span class="hljs-string">&quot;default&quot;</span>;</span><br></pre></td></tr></tbody></table></figure>
-
 <p>Since the code download link in the first chapter of the manual is from GitLab and I downloaded it from OHWR, trying to use default failed, so I recompiled LM32 anyway.</p>
-<p><strong>1. Preparing the Linux environment</strong><br>For Windows systems, you can install the subsystem <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows/wsl/">Windows Subsystem for Linux (WSL)</a>.  </p>
-<p>Two suggestions:  </p>
+<p><strong>1. Preparing the Linux environment</strong><br>
+For Windows systems, you can install the subsystem <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows/wsl/">Windows Subsystem for Linux (WSL)</a>.</p>
+<p>Two suggestions:</p>
 <ul>
 <li>Set the default version of WSL to 1. WSL 2 seems to have bugs and may fail to install.</li>
 <li>Don&#x2019;t download too new Linux version to avoid version mismatch problem, after all, wrpc-v4.2 is from 2019. I&#x2019;m using Ubuntu LTS 18.04.</li>
 </ul>
-<p><strong>2. Cross-compile</strong><br>wrpc-sw is C code, and the LM32 CPU on FPGA requires HDL (IP core is sufficient), so cross-compilation is required to convert the C code to a binary suitable for the LM32 CPU.</p>
+<p><strong>2. Cross-compile</strong><br>
+wrpc-sw is C code, and the LM32 CPU on FPGA requires HDL (IP core is sufficient), so cross-compilation is required to convert the C code to a binary suitable for the LM32 CPU.</p>
 <figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Download and unzip the zip, 64bit version</span><br><span class="line">wget https://www.ohwr.org/project/wrpc-sw/uploads/2776ce0ba43503d1486ae205b48fb450/lm32_host_64bit.tar.xz</span><br><span class="line">tar -xvf lm32_host_64bit.tar.xz</span><br><span class="line">// Set the environment variables for cross-compilation</span><br><span class="line">export CROSS_COMPILE=&quot;&lt;your_location&gt;/lm32-gcc-4.5.3/bin/lm32-elf-&quot;</span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>3. Downloading the wrpc-sw code</strong>  </p>
+<p><strong>3. Downloading the wrpc-sw code</strong></p>
 <figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://ohwr.org/project/wrpc-sw.git</span><br><span class="line">cd wrpc-sw</span><br><span class="line">git checkout wrpc-v4.2 </span><br><span class="line">// You need to install the submodule ppsi separately</span><br><span class="line">git clone https://ohwr.org/project/ppsi.git</span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>4. Generate the bram file</strong>  </p>
+<p><strong>4. Generate the bram file</strong></p>
 <figure class="highlight plaintext hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make config</span><br></pre></td></tr></tbody></table></figure>
-
 <table>
 <thead>
 <tr>
@@ -260,7 +259,8 @@
 <th>Configuration content</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>WR_SWITCH</td>
 <td>NO</td>
 </tr>
@@ -352,27 +352,36 @@
 <td>DEVELOPER</td>
 <td>NO</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>Get the binary file wrc.bram.</p>
-<h2 id="Vivado-synthesis-to-get-wr-core-edif"><a href="#Vivado-synthesis-to-get-wr-core-edif" class="headerlink" title="Vivado synthesis to get wr_core.edif"></a>Vivado synthesis to get wr_core.edif</h2><p><strong>1. Replace the path of bram file</strong><br>Create a new Vivado project, import the wr-cores folder. Set wr_core.vhd to top and replace default in it with the path to wrc.bram, take F drive as an example</p>
+<h2 id="Vivado-synthesis-to-get-wr-core-edif">Vivado synthesis to get wr_core.edif</h2>
+<p><strong>1. Replace the path of bram file</strong><br>
+Create a new Vivado project, import the wr-cores folder. Set wr_core.vhd to top and replace default in it with the path to wrc.bram, take F drive as an example</p>
 <figure class="highlight vhdl hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g_dpram_initf : <span class="hljs-built_in">string</span> := <span class="hljs-string">&quot;F:/wrc.bram&quot;</span>.</span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>2. Synthesize</strong><br>Click <em>Run Synthesis -&gt; Open Eleboratated Design</em>.</p>
-<p><strong>3. Generate verilog file and edif file</strong><br>Enter the following command in TCL Console</p>
+<p><strong>2. Synthesize</strong><br>
+Click <em>Run Synthesis -&gt; Open Eleboratated Design</em>.</p>
+<p><strong>3. Generate verilog file and edif file</strong><br>
+Enter the following command in TCL Console</p>
 <pre><code>write_verilog -mode synth_stub F:/wr_core.v
 write_edif -security_mode all F:/wr_core.edif
 </code></pre>
 <p>Get the WRPC verilog file and edif netlist file.</p>
-<h2 id="Using-WRPC"><a href="#Using-WRPC" class="headerlink" title="Using WRPC"></a>Using WRPC</h2><p><strong>1. Adding WRPC</strong><br>Create a new Vivado project, write the test files and add wr_core.v and wr_core.edif to the project.</p>
-<p><strong>2. Generating bit file and ltx file</strong><br>Click <em>Generate Bitstream</em>.</p>
-<p><strong>3. Preparation before programming the FPGA</strong>.<br>Connection:</p>
+<h2 id="Using-WRPC">Using WRPC</h2>
+<p><strong>1. Adding WRPC</strong><br>
+Create a new Vivado project, write the test files and add wr_core.v and wr_core.edif to the project.</p>
+<p><strong>2. Generating bit file and ltx file</strong><br>
+Click <em>Generate Bitstream</em>.</p>
+<p><strong>3. Preparation before programming the FPGA</strong>.<br>
+Connection:</p>
 <ul>
 <li>JTAG connection: connect PC and FPGA via JTAG downloader</li>
 <li>Serial connection: connect PC and FPGA via USB Type-C (<a target="_blank" rel="noopener" href="http://www.hydro-temp.com/support/assets/blue-board-with-usb.pdf">PuTTY Tutorial</a>)</li>
 <li>Fiber optic connection: connect WR switch (master node) and PCB (slave node) via fiber optics</li>
 </ul>
 <p>Both PCB and WR switch need to be connected to power supply.</p>
-<p><strong>4. Programming the device and debugging</strong><br>Click <em>Open Hardware Manager -&gt; Auto Detect -&gt; Program Device</em> to program bit file and ltx file into FPGA. You can use the ILA IP core to debug FPGA.  </p>
+<p><strong>4. Programming the device and debugging</strong><br>
+Click <em>Open Hardware Manager -&gt; Auto Detect -&gt; Program Device</em> to program bit file and ltx file into FPGA. You can use the ILA IP core to debug FPGA.</p>
 <p>Type Enter in PuTTY Shell, and if <code>wrc#</code> is displayed, then WRPC is running. WRPC-user-mannual has a list of WRPC Shell commands in Appendix A. Try <code>gui</code> and <code>help</code> first.</p>
 <img title="testing_WR" src="/images/testing_WR.png" alt="testing_WR" width="600">
     
@@ -386,7 +395,9 @@ write_edif -security_mode all F:/wr_core.edif
     
     
     <div class="columns is-mobile is-multiline article-nav">
-        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+        <span class="column is-12-mobile is-half-desktop  article-nav-prev">
+            
+            <a href="/Oct-2023/">Oct 2023</a>
             
         </span>
         <span class="column is-12-mobile is-half-desktop  article-nav-next">

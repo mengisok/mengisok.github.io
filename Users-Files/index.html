@@ -260,12 +260,13 @@
     
         <p>This is an introduction to &#x201C;users&#x201D; and &#x201C;files&#x201D; in Linux.</p>
 <span id="more"></span>
-
 <p>Server administrators can create users for different users and assign different privileges to ensure the normal operation of the system. They can also create users for network services and limit the privileges to reduce the damage to the system security when the services are attacked.</p>
 <p>Modern operating systems generally distinguish between user &#x201C;user&#x201D; and &#x201C;system user&#x201D;, and divide the privileges to ensure that the integrity of the system will not be damaged by user&#x2019;s misuse or malicious programs.</p>
-<h2 id="Users-in-Linux"><a href="#Users-in-Linux" class="headerlink" title="Users in Linux"></a>Users in Linux</h2><hr>
+<h2 id="Users-in-Linux">Users in Linux</h2>
+<hr>
 <p>You can see various user information in <code>/etc/passwd</code>.</p>
-<h3 id="Root-user"><a href="#Root-user" class="headerlink" title="Root user"></a>Root user</h3><p>The root user <code>/root</code> user has the <strong>highest privileges</strong> in the Linux operating system and can do anything to the system (including the <strong>extremely dangerous operation of deleting all system files</strong>). The <code>root</code> user&#x2019;s data is stored under <code>/root</code>.</p>
+<h3 id="Root-user">Root user</h3>
+<p>The root user <code>/root</code> user has the <strong>highest privileges</strong> in the Linux operating system and can do anything to the system (including the <strong>extremely dangerous operation of deleting all system files</strong>). The <code>root</code> user&#x2019;s data is stored under <code>/root</code>.</p>
 <p>Use the <code>root</code> privilege carefully to execute commands (such as <code>sudo</code>), <strong>do not execute the following commands:</strong></p>
 <ul>
 <li><code>rm -rf /</code></li>
@@ -273,31 +274,36 @@
 <li><code>dd if=/dev/urandom of=/dev/sda</code></li>
 <li><code>:(){ :|: &amp; };:</code></li>
 </ul>
-<h3 id="System-users"><a href="#System-users" class="headerlink" title="System users"></a>System users</h3><p>System users are created by the system or related programs to perform system tasks such as services, e.g. <code>nobody</code> , <code>www-data</code> and so on. <strong>Do not delete these users at random</strong>.</p>
-<h3 id="Normal-users"><a href="#Normal-users" class="headerlink" title="Normal users"></a>Normal users</h3><p>The normal user is located at <code>/home/username/</code> and <code>username</code> is the username. Normal users can log in to the system and operate on files in their home directory. They cannot directly modify the system configuration or install or uninstall software for the system environment.</p>
-<h2 id="Switching-users"><a href="#Switching-users" class="headerlink" title="Switching users"></a>Switching users</h2><hr>
-<h3 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h3><p><code>sudo</code> is used to execute the specified command as another user.</p>
+<h3 id="System-users">System users</h3>
+<p>System users are created by the system or related programs to perform system tasks such as services, e.g. <code>nobody</code> , <code>www-data</code> and so on. <strong>Do not delete these users at random</strong>.</p>
+<h3 id="Normal-users">Normal users</h3>
+<p>The normal user is located at <code>/home/username/</code> and <code>username</code> is the username. Normal users can log in to the system and operate on files in their home directory. They cannot directly modify the system configuration or install or uninstall software for the system environment.</p>
+<h2 id="Switching-users">Switching users</h2>
+<hr>
+<h3 id="sudo">sudo</h3>
+<p><code>sudo</code> is used to execute the specified command as another user.</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo + <span class="hljs-built_in">command</span> <span class="hljs-comment"># Execute the command as the root user</span></span><br><span class="line">$ sudo !!! <span class="hljs-comment"># Execute the previous command as the root user</span></span><br><span class="line">$ sudo -u username <span class="hljs-built_in">command</span> <span class="hljs-comment"># Execute the command as a user other than root</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="su"><a href="#su" class="headerlink" title="su"></a>su</h3><p><code>su</code> is used to switch users directly.</p>
+<h3 id="su">su</h3>
+<p><code>su</code> is used to switch users directly.</p>
 <p>Note that Linux distributions such as Ubuntu disable password login for the <code>root</code> user by default, so you can&#x2019;t use <code>su</code> directly and have to raise privileges with <code>sudo</code>.</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo su <span class="hljs-comment"># Switch to root </span></span><br><span class="line">$ su username <span class="hljs-comment"># Switch to another user</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="User-group"><a href="#User-group" class="headerlink" title="User group"></a>User group</h2><hr>
+<h2 id="User-group">User group</h2>
+<hr>
 <p>A user group is a collection of users. User groups can set permissions for a group of users. User groups also have a number GID (Group ID).</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ group <span class="hljs-comment"># See which user group you belong to</span></span><br><span class="line"></span><br><span class="line">$ passwd username <span class="hljs-comment"># Change user username&apos;s password</span></span><br><span class="line">$ passwd <span class="hljs-comment"># Change your own password</span></span><br><span class="line"></span><br><span class="line">$ sudo adduser username <span class="hljs-comment"># Add user username</span></span><br><span class="line">$ sudo adduser --group groupname <span class="hljs-comment"># Add the user groupname</span></span><br><span class="line">$ sudo adduser username groupname <span class="hljs-comment"># Add user username to usergroup groupname</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="File-permissions"><a href="#File-permissions" class="headerlink" title="File permissions"></a>File permissions</h2><hr>
+<h2 id="File-permissions">File permissions</h2>
+<hr>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">ls</span> -l <span class="hljs-comment"># View the details of the files in the current directory</span></span><br><span class="line"><span class="hljs-comment">## eg. -rwxrw-r-- 1 ustc ustc 40 Feb 3 22:37 a_file</span></span><br><span class="line"><span class="hljs-comment">## a_file is a normal file (-); the permission of the user it belongs to is rwx, the permission of the user group it belongs to is rw-, the permission of others is r--; both the user and the user group it belongs to is ustc</span></span><br><span class="line"><span class="hljs-comment">## r for Read, w for Write, x for Execute, - for no corresponding permission</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="Execute-permissions"><a href="#Execute-permissions" class="headerlink" title="Execute permissions"></a>Execute permissions</h3><p>For a file, execute permission means that it can be executed as program code by the operating system. If a program file does not have execute permissions, you can still view the program file itself and modify its contents, but you cannot execute it.</p>
+<h3 id="Execute-permissions">Execute permissions</h3>
+<p>For a file, execute permission means that it can be executed as program code by the operating system. If a program file does not have execute permissions, you can still view the program file itself and modify its contents, but you cannot execute it.</p>
 <p>For a directory, execute permission means that you can access the contents of the files in that directory. You can think of a directory as a &#x201C;file&#x201D;, which contains a list of files at the next level of the directory, &#x201C;read&#x201D; corresponds to the permission to read the list of files, &#x201C;write&#x201D; corresponds to the permission to modify the list of files (add, delete, rename files), and &#x201C;execute&#x201D; for actually accessing the files in the list, and <code>cd</code> for switching from the current directory to this directory.</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">chmod</span> <span class="hljs-comment"># change file mode bits to modify permissions</span></span><br><span class="line">$ <span class="hljs-built_in">chmod</span> +x program <span class="hljs-comment"># Add execute permissions to the file program (x)</span></span><br><span class="line"></span><br><span class="line">$ <span class="hljs-built_in">chown</span> <span class="hljs-comment"># change file owner Modify file owner</span></span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="File-system-hierarchy"><a href="#File-system-hierarchy" class="headerlink" title="File system hierarchy"></a>File system hierarchy</h2><hr>
+<h2 id="File-system-hierarchy">File system hierarchy</h2>
+<hr>
 <p>The entire UNIX family of systems starts with <code>/</code> (the root directory) as a tree; other partitions are &#x201C;mounted&#x201D; on this tree.</p>
 <p>The Filesystem Hierarchy Standard (FHS) defines the standard directory structure for Linux distributions and can be found at <a target="_blank" rel="noopener" href="https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html">Filesystem Hierarchy Standard</a>. You can also use <code>man hier</code> and <code>man file-hierarchy</code> to see the documentation on the filesystem hierarchy on your system.</p>
-<h2 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h2><hr>
+<h2 id="Appendix">Appendix</h2>
+<hr>
 <p><a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch05/">Linux 101 - chap 05: &#x7528;&#x6237;&#x4E0E;&#x7528;&#x6237;&#x7EC4;&#x3001;&#x6587;&#x4EF6;&#x6743;&#x9650;&#x3001;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5C42;&#x6B21;&#x7ED3;&#x6784;</a></p>
 
     
