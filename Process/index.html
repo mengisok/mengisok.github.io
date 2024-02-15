@@ -274,29 +274,26 @@
     </div>
     <div class="article-entry is-size-6-mobile" itemprop="articleBody">
     
-        <p>A process is a program that is running.</p>
+        <p>A process is a program that is running.  </p>
 <span id="more"></span>
-<p>When you start a program, the operating system first reads the program file from the hard disk, then loads the program contents into memory, and finally the CPU executes the program. This is a process.</p>
-<h2 id="Basic-concepts-of-Process">Basic concepts of Process</h2>
-<hr>
-<h3 id="Checking-processes">Checking processes</h3>
-<p><strong>htop</strong></p>
-<p><strong>ps (process status)</strong></p>
-<p><code>ps</code> shows only the relevant processes running in this terminal.</p>
-<p><code>ps aux</code> shows all processes.</p>
-<h3 id="PID-process-identifier">PID (process identifier)</h3>
-<p>The PID is a number that uniquely identifies a process.</p>
+
+<p>When you start a program, the operating system first reads the program file from the hard disk, then loads the program contents into memory, and finally the CPU executes the program. This is a process.  </p>
+<h2 id="Basic-concepts-of-Process"><a href="#Basic-concepts-of-Process" class="headerlink" title="Basic concepts of Process"></a>Basic concepts of Process</h2><hr>
+<h3 id="Checking-processes"><a href="#Checking-processes" class="headerlink" title="Checking processes"></a>Checking processes</h3><p><strong>htop</strong></p>
+<p><strong>ps (process status)</strong> </p>
+<p> <code>ps</code> shows only the relevant processes running in this terminal.</p>
+<p> <code>ps aux</code> shows all processes.</p>
+<h3 id="PID-process-identifier"><a href="#PID-process-identifier" class="headerlink" title="PID (process identifier)"></a>PID (process identifier)</h3><p>The PID is a number that uniquely identifies a process.</p>
 <p>The PID can be used as an index when hanging, continuing or terminating a process.</p>
-<h3 id="Process-priority">Process priority</h3>
-<p><strong>NI (nice)</strong></p>
+<h3 id="Process-priority"><a href="#Process-priority" class="headerlink" title="Process priority"></a>Process priority</h3><p><strong>NI (nice)</strong> </p>
 <p>The range of values is -20 to 19. Usually the NI value of the currently running process is 0. The higher the NI, the lower the priority.</p>
 <p>Specify the priority:</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">nice</span> -n 10 vim <span class="hljs-comment"># Run vim with a nice value of 10</span></span><br><span class="line">$ renice -n 10 -p 12345 <span class="hljs-comment"># Set the nice value of the process with PID 12345 to 10</span></span><br></pre></td></tr></tbody></table></figure>
+
 <p>To lower the nice value you need <code>sudo</code>.</p>
 <p><strong>PRI (priority)</strong></p>
 <p>Normally PRI = nice + 20. If the PRI value is RT, or if it is negative, the corresponding process has higher real-time requirements (e.g. kernel processes, audio-related processes, etc.).</p>
-<h3 id="Process-status">Process status</h3>
-<p>Roughly divided into:</p>
+<h3 id="Process-status"><a href="#Process-status" class="headerlink" title="Process status"></a>Process status</h3><p>Roughly divided into:</p>
 <ul>
 <li>Running</li>
 <li>Ready</li>
@@ -311,8 +308,7 @@
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Running</td>
 <td>R</td>
 <td>Running/ready to run immediately</td>
@@ -337,32 +333,28 @@
 <td>Z</td>
 <td>Zombie processes</td>
 </tr>
-</tbody>
-</table>
-<h2 id="Process-Control">Process Control</h2>
-<hr>
-<h3 id="Signal">Signal</h3>
-<p>Signal is a mechanism for processes to communicate with each other on Unix family systems.</p>
+</tbody></table>
+<h2 id="Process-Control"><a href="#Process-Control" class="headerlink" title="Process Control"></a>Process Control</h2><hr>
+<h3 id="Signal"><a href="#Signal" class="headerlink" title="Signal"></a>Signal</h3><p>Signal is a mechanism for processes to communicate with each other on Unix family systems.</p>
 <p>The Linux command that sends signals is called <code>kill</code>.</p>
 <p>Use <code>man 7 signal</code> to see the list of signals.</p>
-<h3 id="Switching-from-front-to-back">Switching from front to back</h3>
-<p>By default, commands run in the shell are run in the foreground. If you need to run in the background, you need to add <code>&amp;</code> to the end of the command.</p>
+<h3 id="Switching-from-front-to-back"><a href="#Switching-from-front-to-back" class="headerlink" title="Switching from front to back"></a>Switching from front to back</h3><p>By default, commands run in the shell are run in the foreground. If you need to run in the background, you need to add <code>&amp;</code> to the end of the command.</p>
 <p>If you need to switch the foreground program to the background, you need to press Ctrl + Z to send SIGTSTP to hang the process and return control to the shell.</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">bg</span> %2 <span class="hljs-comment"># Put process 2 into the background</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Terminating-a-process">Terminating a process</h3>
-<p>The standard signal to terminate a process is SIGTERM, which implies the natural death of a process.</p>
+
+<h3 id="Terminating-a-process"><a href="#Terminating-a-process" class="headerlink" title="Terminating a process"></a>Terminating a process</h3><p>The standard signal to terminate a process is SIGTERM, which implies the natural death of a process.</p>
 <p><strong>Sending the signal in htop</strong></p>
 <p>Press K, select the desired signal in the left prompt bar and press enter to send it.</p>
 <p><strong>Kill</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="hljs-built_in">kill</span> -l <span class="hljs-comment"># Show all signals</span></span><br><span class="line">$ <span class="hljs-built_in">kill</span> -9 PID <span class="hljs-comment"># 9 for SIGKILL. End process PID immediately </span></span><br></pre></td></tr></tbody></table></figure>
+
 <p>If you don&#x2019;t add any arguments, only PID, <code>kill</code> will automatically use 15 (SIGTERM) as signal argument.</p>
 <p><strong>Kill-like commands</strong></p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apropos <span class="hljs-built_in">kill</span> <span class="hljs-comment"># Show various other kill-like commands</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Get-out-of-the-terminal">Get out of the terminal</h3>
-<p><strong>nohup</strong></p>
+
+<h3 id="Get-out-of-the-terminal"><a href="#Get-out-of-the-terminal" class="headerlink" title="Get out of the terminal"></a>Get out of the terminal</h3><p><strong>nohup</strong></p>
 <p>Once a terminal is closed, it sends a SIGHUP (Signal Hangup) to each process in it, and the default action for SIGHUP is to quit the program running. By adding <code>nohup</code> before the program that needs to block SIGHUP, the runtime output will be redirected to <code>nohup.out</code> (which can also be customized).</p>
-<h3 id="tmux">tmux</h3>
-<p>&#x201C;tmux&#x201D; is a split-screen, command-line emulated terminal that runs on the command line. It can integrate multiple interactive processes in a single window and does not disappear when disconnected or temporarily logged out, but is stored in the background and can be restored immediately when logging in next time.</p>
+<h3 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h3><p>&#x201C;tmux&#x201D; is a split-screen, command-line emulated terminal that runs on the command line. It can integrate multiple interactive processes in a single window and does not disappear when disconnected or temporarily logged out, but is stored in the background and can be restored immediately when logging in next time.</p>
 <p>&#x201C;tmux&#x201D; is divided into three parts:</p>
 <ul>
 <li>Session: to distinguish different jobs;</li>
@@ -371,6 +363,7 @@
 </ul>
 <p>To install and open tmux:</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install tmux</span><br><span class="line">$ tmux</span><br></pre></td></tr></tbody></table></figure>
+
 <table>
 <thead>
 <tr>
@@ -378,13 +371,12 @@
 <th>Function</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>%</td>
 <td>Left/right split screen</td>
 </tr>
 <tr>
-<td>&quot;</td>
+<td>&#x201C;</td>
 <td>Up and down split screen</td>
 </tr>
 <tr>
@@ -411,34 +403,30 @@
 <td>s</td>
 <td>List all sessions</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>If you are disconnected, use <code>tmux attach [-t window name]</code> to reconnect the window when you log in again. Without <code>-t</code>, the last opened window will be connected by default.</p>
 <p><strong>Customizing tmux</strong></p>
-<h2 id="Service">Service</h2>
-<hr>
-<h3 id="Daemon">Daemon</h3>
-<p>The only way to avoid disappearing due to terminal shutdown is to disconnect from the session at startup. Such processes, which work silently in the background, are called daemons.</p>
-<h3 id="Service-management">Service management</h3>
-<p>The init scheme for most Linux distributions is systemd, whose command for managing system services is <code>systemctl</code>.</p>
+<h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><hr>
+<h3 id="Daemon"><a href="#Daemon" class="headerlink" title="Daemon"></a>Daemon</h3><p>The only way to avoid disappearing due to terminal shutdown is to disconnect from the session at startup. Such processes, which work silently in the background, are called daemons.</p>
+<h3 id="Service-management"><a href="#Service-management" class="headerlink" title="Service management"></a>Service management</h3><p>The init scheme for most Linux distributions is systemd, whose command for managing system services is <code>systemctl</code>.</p>
 <p>Use the <code>systemctl status</code> command to see what services are running on the system. Use <code>systemctl list-units</code> to see the status of all systemd managed services.</p>
 <p>Use <code>tldr</code> to view the commands for starting, terminating, and reloading configuration of services.</p>
-<h3 id="Customizing-services">Customizing services</h3>
-<p>Write a .service configuration file and run it.</p>
-<h3 id="Routine-tasks">Routine tasks</h3>
-<p>Refers to the implementation of periodic scheduled tasks. The main ones in Linux are <code>at</code> and <code>crontab</code>.</p>
+<h3 id="Customizing-services"><a href="#Customizing-services" class="headerlink" title="Customizing services"></a>Customizing services</h3><p>Write a .service configuration file and run it.</p>
+<h3 id="Routine-tasks"><a href="#Routine-tasks" class="headerlink" title="Routine tasks"></a>Routine tasks</h3><p>Refers to the implementation of periodic scheduled tasks. The main ones in Linux are <code>at</code> and <code>crontab</code>.</p>
 <p><strong>at</strong></p>
 <p><code>at</code> is responsible for single scheduled tasks.</p>
 <p>Installation:</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install at</span><br></pre></td></tr></tbody></table></figure>
+
 <p>Use <code>tldr</code> to see how to use it.</p>
 <p><strong>crontab</strong></p>
 <p><code>crontab</code> is responsible for periodic tasks.</p>
 <p>Unlike <code>at</code>, <code>crontab</code> is mostly implemented through configuration files.</p>
 <p>To see the usage of crontab:</p>
 <figure class="highlight bash hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ crontab --<span class="hljs-built_in">help</span></span><br></pre></td></tr></tbody></table></figure>
+
 <p>Configuration format: The first half of each line is the time, and the second half is the shell execution command.</p>
-<pre><code class="language-bash"># minutes hour day month week | command
+<pre><code class="bash"># minutes hour day month week | command
 # Example
 * * * * * echo &quot;hello&quot; &gt;&gt; ~/count
 # Output hello every minute to count file in home directory
@@ -446,12 +434,11 @@
 # Do something randomly every Sunday in January every year for 15 minutes from 0:00 midnight to 6:00 am
 </code></pre>
 <p>The <a target="_blank" rel="noopener" href="https://crontab.guru/">crontab.guru</a> website can translate the configuration file into an easy-to-understand representation.</p>
-<h2 id="Appendix">Appendix</h2>
-<hr>
-<p><strong>Reference Tutorial</strong></p>
-<p><a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch04/">Linux 101 - chap 04: &#x8FDB;&#x7A0B;&#x3001;&#x524D;&#x540E;&#x53F0;&#x3001;&#x670D;&#x52A1;&#x4E0E;&#x4F8B;&#x884C;&#x6027;&#x4EFB;&#x52A1;</a></p>
-<p><strong>Recommended Reading</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017627212385376">&#x8FDB;&#x7A0B;&#x548C;&#x7EBF;&#x7A0B; - &#x5ED6;&#x96EA;&#x5CF0;&#x7684;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;</a></p>
+<h2 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h2><hr>
+<p><strong>Reference Tutorial</strong>  </p>
+<p><a target="_blank" rel="noopener" href="https://101.lug.ustc.edu.cn/Ch04/">Linux 101 - chap 04: &#x8FDB;&#x7A0B;&#x3001;&#x524D;&#x540E;&#x53F0;&#x3001;&#x670D;&#x52A1;&#x4E0E;&#x4F8B;&#x884C;&#x6027;&#x4EFB;&#x52A1;</a>  </p>
+<p><strong>Recommended Reading</strong>  </p>
+<p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017627212385376">&#x8FDB;&#x7A0B;&#x548C;&#x7EBF;&#x7A0B; - &#x5ED6;&#x96EA;&#x5CF0;&#x7684;&#x5B98;&#x65B9;&#x7F51;&#x7AD9;</a>  </p>
 <p><a target="_blank" rel="noopener" href="https://xiaolincoding.com/os/4_process/process_base.html">&#x8FDB;&#x7A0B;&#x3001;&#x7EBF;&#x7A0B;&#x57FA;&#x7840;&#x77E5;&#x8BC6; - &#x5C0F;&#x6797;coding</a></p>
 <p><a target="_blank" rel="noopener" href="https://lfool.gitbook.io/operating-system/di-er-zhang-jin-cheng-guan-li/1.-jin-cheng-de-gai-nian-zu-cheng-te-zheng">&#x8FDB;&#x7A0B;&#x7684;&#x6982;&#x5FF5; &amp; &#x7EC4;&#x6210; &amp; &#x7279;&#x5F81;</a></p>
 
@@ -522,7 +509,7 @@
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
                 Go forward. Don&#39;t look back. &nbsp;
-                <!-- &copy; 2023 Han Meng&nbsp;
+                <!-- &copy; 2024 Han Meng&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
                         target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a> -->
             </div>

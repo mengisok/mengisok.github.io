@@ -255,29 +255,24 @@
     
         <p>The particle physics experimental electronics system consists of four main components: <strong>Front-End Electronics (FEE), Trigger System, Data Acquisition System (DAQ), and Slow Control</strong>. This note focuses on FEE.</p>
 <span id="more"></span>
+
 <img src="/images/components_of_electronics_for_particle_physics_experiments.png" alt="components_of_electronics_for_particle_physics_experiments" title="components_of_electronics_for_particle_physics_experiments" width="400">
-<h2 id="1-Front-End-Readout-Electronics">1 Front-End Readout Electronics</h2>
-<hr>
+
+<h2 id="1-Front-End-Readout-Electronics"><a href="#1-Front-End-Readout-Electronics" class="headerlink" title="1 Front-End Readout Electronics"></a>1 Front-End Readout Electronics</h2><hr>
 <p>Front-end readout electronics carries out necessary pre-processing (e.g., amplification, digitization, etc.) of the weak electrical signal output from the detector and converts it into data reflecting the characteristics of the particle for use in the trigger selection system and DAQ system.</p>
 <p>Front-end readout electronics mainly has <strong>charge (energy) measurement, time measurement, and instance counting</strong> three functions.</p>
-<h3 id="1-1-Charge-measurement">1.1 Charge measurement</h3>
-<p>Charge measurement is to measure the charge of the detector output signal. Particles passing through the detector is the process of ionization, excitation or photoelectric conversion of the detector, etc. The charge of the output signal is often proportional to the energy consumed by the particles in the detector.</p>
+<h3 id="1-1-Charge-measurement"><a href="#1-1-Charge-measurement" class="headerlink" title="1.1 Charge measurement"></a>1.1 Charge measurement</h3><p>Charge measurement is to measure the charge of the detector output signal. Particles passing through the detector is the process of ionization, excitation or photoelectric conversion of the detector, etc. The charge of the output signal is often proportional to the energy consumed by the particles in the detector.</p>
 <p>Structure: preamplifier + long cable + <strong>main amplifier + shaping circuit + ADC</strong> + data cache + readout interface</p>
-<h3 id="1-2-Time-measurement">1.2 Time measurement</h3>
-<p>Time measurement is the measurement of the appearance time of the detector output signal (meaning the time interval against a certain reference signal t0). It requires the measurement of two data: the determination of the moment of appearance of the measured signal by the timing retort circuit; and the conversion of the time interval between the measured signal and the reference signal t0 into digital data by the time-to-digital conversion (TDC) circuit.</p>
+<h3 id="1-2-Time-measurement"><a href="#1-2-Time-measurement" class="headerlink" title="1.2 Time measurement"></a>1.2 Time measurement</h3><p>Time measurement is the measurement of the appearance time of the detector output signal (meaning the time interval against a certain reference signal t0). It requires the measurement of two data: the determination of the moment of appearance of the measured signal by the timing retort circuit; and the conversion of the time interval between the measured signal and the reference signal t0 into digital data by the time-to-digital conversion (TDC) circuit.</p>
 <p>Structure: Preamplifier + long cable + <strong>timing discriminator + TDC</strong> + data cache + readout interface</p>
 <p>The mainstream solution is full digital counter technology + time interpolation. The full digital counter technology is generally achieved by high-performance Gray code counters (i.e., digital counter-type TDC), using a reference clock frequency of several hundred megahertz to achieve a time resolution of a few ns. The time interpolation  is performed within a clock cycle to achieve sub-nanosecond (100 ps ~ 10ps) time resolution.</p>
-<h3 id="1-3-Incident-counting">1.3 Incident counting</h3>
-<p>Incident counting is the necessary amplification and differentiation of the detector output signal to get a &#x201C;yes&#x201D; or &#x201C;no&#x201D; message and record it. Sometimes we only need to know if a particle has hit the corresponding position, not to measure the charge or time of the signal (as in the case of the BES III &#xB5;-detector).</p>
+<h3 id="1-3-Incident-counting"><a href="#1-3-Incident-counting" class="headerlink" title="1.3 Incident counting"></a>1.3 Incident counting</h3><p>Incident counting is the necessary amplification and differentiation of the detector output signal to get a &#x201C;yes&#x201D; or &#x201C;no&#x201D; message and record it. Sometimes we only need to know if a particle has hit the corresponding position, not to measure the charge or time of the signal (as in the case of the BES III &#xB5;-detector).</p>
 <p>Structure: preamplifier + long cable + <strong>timing screening + register/counter</strong> + data cache + readout interface</p>
-<h3 id="1-4-Preamplifier">1.4 Preamplifier</h3>
-<h4 id="1-4-1-Classification">1.4.1 Classification</h4>
-<ul>
+<h3 id="1-4-Preamplifier"><a href="#1-4-Preamplifier" class="headerlink" title="1.4 Preamplifier"></a>1.4 Preamplifier</h3><h4 id="1-4-1-Classification"><a href="#1-4-1-Classification" class="headerlink" title="1.4.1 Classification"></a>1.4.1 Classification</h4><ul>
 <li>Integral type (charge-sensitive preamplifier, voltage-sensitive preamplifier): the output signal amplitude is proportional to the integral of the detector output current signal over time (i.e., the total charge of the detector output)</li>
 <li>Current type (current-sensitive preamplifier): the output signal waveform is consistent with the waveform of the detector output current signal</li>
 </ul>
-<h4 id="1-4-2-Three-main-types-of-preamplifiers">1.4.2 Three main types of preamplifiers</h4>
-<ul>
+<h4 id="1-4-2-Three-main-types-of-preamplifiers"><a href="#1-4-2-Three-main-types-of-preamplifiers" class="headerlink" title="1.4.2 Three main types of preamplifiers"></a>1.4.2 Three main types of preamplifiers</h4><ul>
 <li><strong>Charge-sensitive preamplifier</strong></li>
 </ul>
 <p>More complex circuit, good performance, low noise, most commonly used.</p>
@@ -291,17 +286,13 @@
 <li><strong>Current sensitive preamplifier</strong></li>
 </ul>
 <p>It is actually a current amplifier. It is generally used for obtaining accurate time information, intensity measurement systems in high count rate or high background cases, energy spectrum measurement systems, etc.</p>
-<h3 id="1-5-ADC">1.5 ADC</h3>
-<p>Linear discharge ADC, successive comparison ADC (SAR ADC), pipeline ADC (Pipeline ADC), flash ADC (Flash ADC).</p>
-<h2 id="2-Trigger-System">2 Trigger System</h2>
-<hr>
+<h3 id="1-5-ADC"><a href="#1-5-ADC" class="headerlink" title="1.5 ADC"></a>1.5 ADC</h3><p>Linear discharge ADC, successive comparison ADC (SAR ADC), pipeline ADC (Pipeline ADC), flash ADC (Flash ADC).</p>
+<h2 id="2-Trigger-System"><a href="#2-Trigger-System" class="headerlink" title="2 Trigger System"></a>2 Trigger System</h2><hr>
 <p>Real-time analysis of data provided by the front-end electronics to select instances of physical interest from a large number of false instances (background) data, while discarding false instances (background) data.</p>
 <p>Components: Trigger subsystem (feature extraction), total trigger (determination classification), and clock system.</p>
-<h2 id="3-Data-Acquisition-System-DAQ">3 Data Acquisition System (DAQ)</h2>
-<hr>
+<h2 id="3-Data-Acquisition-System-DAQ"><a href="#3-Data-Acquisition-System-DAQ" class="headerlink" title="3 Data Acquisition System (DAQ)"></a>3 Data Acquisition System (DAQ)</h2><hr>
 <p>Screening of retained instance data of physical interest and collection and assembly into a complete instance data, recorded to be available to physicists for off-line analysis.</p>
-<h2 id="Appendix">Appendix</h2>
-<hr>
+<h2 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h2><hr>
 <p><a target="_blank" rel="noopener" href="http://bes.ihep.ac.cn/bes3/internal/workshop/06electronics/anqi.pdf">http://bes.ihep.ac.cn/bes3/internal/workshop/06electronics/anqi.pdf</a></p>
 
     
@@ -373,7 +364,7 @@
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
                 Go forward. Don&#39;t look back. &nbsp;
-                <!-- &copy; 2023 Han Meng&nbsp;
+                <!-- &copy; 2024 Han Meng&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
                         target="_blank" rel="noopener" href="http://github.com/ppoffice/hexo-theme-minos">Minos</a> -->
             </div>
